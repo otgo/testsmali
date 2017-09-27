@@ -3,8 +3,8 @@
 .source "LoaderActivitySlave.java"
 
 # interfaces
-.implements Lcom/ideaworks3d/marmalade/event/ActivityResultListener;
 .implements Lcom/ideaworks3d/marmalade/SuspendResumeListener;
+.implements Lcom/ideaworks3d/marmalade/event/ActivityResultListener;
 
 
 # direct methods

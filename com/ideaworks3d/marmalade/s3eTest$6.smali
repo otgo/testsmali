@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 109
+    .line 97
     iput-object p1, p0, Lcom/ideaworks3d/marmalade/s3eTest$6;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
 
     iput p2, p0, Lcom/ideaworks3d/marmalade/s3eTest$6;->val$w:I
@@ -48,7 +48,7 @@
     .locals 5
 
     .prologue
-    .line 112
+    .line 100
     sget-object v0, Lcom/ideaworks3d/marmalade/LoaderActivity;->m_Activity:Lcom/ideaworks3d/marmalade/LoaderActivity;
 
     iget-object v0, v0, Lcom/ideaworks3d/marmalade/LoaderActivity;->m_View:Lcom/ideaworks3d/marmalade/LoaderView;
@@ -63,6 +63,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/ideaworks3d/marmalade/LoaderView;->surfaceChanged(Landroid/view/SurfaceHolder;III)V
 
-    .line 113
+    .line 101
     return-void
 .end method

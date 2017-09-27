@@ -202,11 +202,11 @@
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
     .line 202
-    sget-object v1, Lcom/jirbo/adcolony/a;->U:Lcom/jirbo/adcolony/ADCVideo;
+    sget-object v1, Lcom/jirbo/adcolony/a;->L:Lcom/jirbo/adcolony/ADCVideo;
 
     if-eqz v1, :cond_1
 
-    sget-object v1, Lcom/jirbo/adcolony/a;->U:Lcom/jirbo/adcolony/ADCVideo;
+    sget-object v1, Lcom/jirbo/adcolony/a;->L:Lcom/jirbo/adcolony/ADCVideo;
 
     invoke-virtual {v1, v0}, Lcom/jirbo/adcolony/ADCVideo;->startActivity(Landroid/content/Intent;)V
 

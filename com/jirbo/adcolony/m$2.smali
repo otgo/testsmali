@@ -43,16 +43,6 @@
 
     .prologue
     .line 190
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, Landroid/os/Looper;->prepare()V
-
-    .line 191
-    :cond_0
     iget-object v0, p0, Lcom/jirbo/adcolony/m$2;->a:Lcom/jirbo/adcolony/m;
 
     iget-object v0, v0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
@@ -67,6 +57,6 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 192
+    .line 191
     return-void
 .end method

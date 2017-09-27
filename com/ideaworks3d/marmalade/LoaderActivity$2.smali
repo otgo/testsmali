@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 371
+    .line 374
     iput-object p1, p0, Lcom/ideaworks3d/marmalade/LoaderActivity$2;->this$0:Lcom/ideaworks3d/marmalade/LoaderActivity;
 
     iput-object p2, p0, Lcom/ideaworks3d/marmalade/LoaderActivity$2;->val$i:Landroid/content/Intent;
@@ -44,7 +44,7 @@
     .locals 3
 
     .prologue
-    .line 376
+    .line 379
     :try_start_0
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/LoaderActivity$2;->this$0:Lcom/ideaworks3d/marmalade/LoaderActivity;
 
@@ -56,15 +56,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 382
+    .line 385
     :goto_0
     return-void
 
-    .line 378
+    .line 381
     :catch_0
     move-exception v0
 
-    .line 380
+    .line 383
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V

@@ -26,26 +26,26 @@
     .locals 2
 
     .prologue
-    .line 451
+    .line 407
     iput-object p1, p0, Lcom/ideaworks3d/marmalade/s3eCamera$Preview;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
 
-    .line 452
+    .line 408
     invoke-direct {p0, p2}, Landroid/view/SurfaceView;-><init>(Landroid/content/Context;)V
 
-    .line 453
+    .line 409
     invoke-virtual {p0}, Lcom/ideaworks3d/marmalade/s3eCamera$Preview;->getHolder()Landroid/view/SurfaceHolder;
 
     move-result-object v0
 
-    .line 454
+    .line 410
     invoke-interface {v0, p0}, Landroid/view/SurfaceHolder;->addCallback(Landroid/view/SurfaceHolder$Callback;)V
 
-    .line 455
+    .line 411
     const/4 v1, 0x3
 
     invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->setType(I)V
 
-    .line 456
+    .line 412
     return-void
 .end method
 
@@ -55,26 +55,14 @@
     .locals 2
 
     .prologue
-    .line 477
-    invoke-interface {p1}, Landroid/view/SurfaceHolder;->isCreating()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 486
-    :goto_0
-    return-void
-
-    .line 479
-    :cond_0
+    .line 433
     invoke-static {}, Lcom/ideaworks3d/marmalade/s3eCamera;->access$300()Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 481
+    .line 435
     :try_start_0
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eCamera$Preview;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
 
@@ -82,31 +70,22 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
-    .line 482
+    .line 436
     monitor-exit v1
 
-    goto :goto_0
+    .line 440
+    :goto_0
+    return-void
 
-    .line 485
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    .line 483
-    :cond_1
-    :try_start_1
+    .line 437
+    :cond_0
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eCamera$Preview;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
 
-    invoke-virtual {v0}, Lcom/ideaworks3d/marmalade/s3eCamera;->setCameraParameters()Landroid/hardware/Camera$Size;
+    invoke-virtual {v0}, Lcom/ideaworks3d/marmalade/s3eCamera;->setCameraParameters()V
 
-    .line 484
+    .line 438
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eCamera$Preview;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
 
     invoke-static {v0}, Lcom/ideaworks3d/marmalade/s3eCamera;->access$100(Lcom/ideaworks3d/marmalade/s3eCamera;)Landroid/hardware/Camera;
@@ -115,19 +94,26 @@
 
     invoke-virtual {v0}, Landroid/hardware/Camera;->startPreview()V
 
-    .line 485
+    .line 439
     monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
 .method public surfaceCreated(Landroid/view/SurfaceHolder;)V
     .locals 2
 
     .prologue
-    .line 459
+    .line 415
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eCamera$Preview;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
 
     invoke-static {v0}, Lcom/ideaworks3d/marmalade/s3eCamera;->access$000(Lcom/ideaworks3d/marmalade/s3eCamera;)Z
@@ -136,11 +122,11 @@
 
     if-nez v0, :cond_0
 
-    .line 470
+    .line 426
     :goto_0
     return-void
 
-    .line 463
+    .line 419
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eCamera$Preview;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
@@ -151,7 +137,7 @@
 
     invoke-virtual {v0, p1}, Landroid/hardware/Camera;->setPreviewDisplay(Landroid/view/SurfaceHolder;)V
 
-    .line 464
+    .line 420
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eCamera$Preview;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
 
     invoke-static {v0}, Lcom/ideaworks3d/marmalade/s3eCamera;->access$100(Lcom/ideaworks3d/marmalade/s3eCamera;)Landroid/hardware/Camera;
@@ -166,11 +152,11 @@
 
     goto :goto_0
 
-    .line 466
+    .line 422
     :catch_0
     move-exception v0
 
-    .line 468
+    .line 424
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eCamera$Preview;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
 
     invoke-static {v0}, Lcom/ideaworks3d/marmalade/s3eCamera;->access$200(Lcom/ideaworks3d/marmalade/s3eCamera;)V
@@ -182,11 +168,11 @@
     .locals 1
 
     .prologue
-    .line 473
+    .line 429
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eCamera$Preview;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
 
     invoke-static {v0}, Lcom/ideaworks3d/marmalade/s3eCamera;->access$200(Lcom/ideaworks3d/marmalade/s3eCamera;)V
 
-    .line 474
+    .line 430
     return-void
 .end method

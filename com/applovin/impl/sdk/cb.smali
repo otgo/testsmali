@@ -1,481 +1,346 @@
-.class Lcom/applovin/impl/sdk/cb;
-.super Ljava/lang/Object;
+.class abstract Lcom/applovin/impl/sdk/cb;
+.super Lcom/applovin/impl/sdk/bq;
 
 
 # instance fields
-.field private final a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+.field protected a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
-.field private final b:Ljava/util/Map;
+.field protected b:Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;
+
+.field private c:Ljava/util/List;
+
+.field private d:I
 
 
 # direct methods
-.method constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+.method constructor <init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/util/List;Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;)V
+    .locals 1
+
+    invoke-direct {p0, p1, p2}, Lcom/applovin/impl/sdk/bq;-><init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/applovin/impl/sdk/cb;->d:I
+
+    iput-object p4, p0, Lcom/applovin/impl/sdk/cb;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+    iput-object p3, p0, Lcom/applovin/impl/sdk/cb;->c:Ljava/util/List;
+
+    return-void
+.end method
+
+.method constructor <init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/util/List;Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;)V
     .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lcom/applovin/impl/sdk/bq;-><init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    new-instance v0, Ljava/util/HashMap;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    iput v0, p0, Lcom/applovin/impl/sdk/cb;->d:I
 
-    iput-object v0, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    if-nez p1, :cond_0
+    if-nez p3, :cond_0
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "No sdk specified"
+    const-string v1, "Slots cannot be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_0
-    iput-object p1, p0, Lcom/applovin/impl/sdk/cb;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+    iput-object p3, p0, Lcom/applovin/impl/sdk/cb;->c:Ljava/util/List;
 
+    iput-object p4, p0, Lcom/applovin/impl/sdk/cb;->b:Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;
+
+    return-void
+.end method
+
+.method private a(I)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+    invoke-interface {v0, p1}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsFailedToLoad(I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method private a(Ljava/util/List;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+    invoke-interface {v0, p1}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsLoaded(Ljava/util/List;)V
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method a()V
-    .locals 2
+.method protected a(Ljava/lang/String;Lcom/applovin/impl/sdk/x;)Ljava/lang/String;
+    .locals 6
 
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    monitor-enter v1
+    const/4 v0, 0x0
 
     :try_start_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
+    iget-object v1, p0, Lcom/applovin/impl/sdk/cb;->h:Landroid/content/Context;
 
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
+    const/4 v2, 0x1
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cb;->d()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method a(Ljava/lang/String;)V
-    .locals 2
-
-    const-wide/16 v0, 0x1
-
-    invoke-virtual {p0, p1, v0, v1}, Lcom/applovin/impl/sdk/cb;->a(Ljava/lang/String;J)V
-
-    return-void
-.end method
-
-.method a(Ljava/lang/String;J)V
-    .locals 4
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    if-nez v0, :cond_0
-
-    const-wide/16 v2, 0x0
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    add-long/2addr v2, p2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    invoke-interface {v2, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cb;->d()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method b(Ljava/lang/String;)J
-    .locals 4
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    if-nez v0, :cond_0
-
-    const-wide/16 v2, 0x0
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    monitor-exit v1
-
-    return-wide v2
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method b()Lorg/json/JSONObject;
-    .locals 5
-
-    iget-object v2, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    monitor-enter v2
-
-    :try_start_0
-    new-instance v3, Lorg/json/JSONObject;
-
-    invoke-direct {v3}, Lorg/json/JSONObject;-><init>()V
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-virtual {p2, v1, p1, v2}, Lcom/applovin/impl/sdk/x;->a(Landroid/content/Context;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, Ljava/lang/String;
+    if-nez v1, :cond_0
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    iget-object v1, p0, Lcom/applovin/impl/sdk/cb;->g:Lcom/applovin/sdk/AppLovinLogger;
 
-    move-result-object v0
-
-    invoke-virtual {v3, v1, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    :cond_0
-    :try_start_1
-    monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    return-object v3
-.end method
-
-.method b(Ljava/lang/String;J)V
-    .locals 4
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cb;->a()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-interface {v0, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cb;->d()V
+    const-string v4, "Unable to cache icon resource "
 
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method c()V
-    .locals 7
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getSettingsManager()Lcom/applovin/impl/sdk/bz;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bz;->a()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "stats"
-
-    const-string v2, "{}"
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :try_start_0
-    new-instance v1, Lorg/json/JSONObject;
-
-    invoke-direct {v1, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    monitor-enter v2
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
-
-    :try_start_1
-    invoke-virtual {v1}, Lorg/json/JSONObject;->keys()Ljava/util/Iterator;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3}, Lcom/applovin/sdk/AppLovinLogger;->w(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
     :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    return-object v0
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :try_start_2
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v4
-
-    iget-object v6, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    invoke-interface {v6, v0, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_2
-    .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :cond_0
+    move-object v0, v1
 
     goto :goto_0
 
     :catch_0
-    move-exception v0
+    move-exception v1
+
+    iget-object v2, p0, Lcom/applovin/impl/sdk/cb;->g:Lcom/applovin/sdk/AppLovinLogger;
+
+    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cb;->a()Ljava/lang/String;
+
+    move-result-object v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Unable to cache icon resource "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-interface {v2, v3, v4, v1}, Lcom/applovin/sdk/AppLovinLogger;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+.end method
+
+.method protected abstract a(Lcom/applovin/impl/sdk/NativeAdImpl;)V
+.end method
+
+.method protected abstract a(Lcom/applovin/impl/sdk/NativeAdImpl;Lcom/applovin/impl/sdk/x;)Z
+.end method
+
+.method public run()V
+    .locals 6
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->c:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/applovin/impl/sdk/NativeAdImpl;
+
+    iget-object v2, p0, Lcom/applovin/impl/sdk/cb;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+
+    invoke-virtual {v2}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getFileManager()Lcom/applovin/impl/sdk/x;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/applovin/impl/sdk/cb;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+
+    invoke-virtual {v3}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
+
+    move-result-object v3
+
+    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cb;->a()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "Beginning resource caching phase..."
+
+    invoke-interface {v3, v4, v5}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, v2}, Lcom/applovin/impl/sdk/cb;->a(Lcom/applovin/impl/sdk/NativeAdImpl;Lcom/applovin/impl/sdk/x;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget v2, p0, Lcom/applovin/impl/sdk/cb;->d:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    iput v2, p0, Lcom/applovin/impl/sdk/cb;->d:I
+
+    invoke-virtual {p0, v0}, Lcom/applovin/impl/sdk/cb;->a(Lcom/applovin/impl/sdk/NativeAdImpl;)V
 
     goto :goto_0
 
     :cond_0
-    :try_start_3
-    monitor-exit v2
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cb;->a()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "Unable to cache resources"
+
+    invoke-interface {v0, v2, v3}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_1
+    :try_start_0
+    iget v0, p0, Lcom/applovin/impl/sdk/cb;->d:I
+
+    iget-object v1, p0, Lcom/applovin/impl/sdk/cb;->c:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_2
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->c:Ljava/util/List;
+
+    check-cast v0, Ljava/util/List;
+
+    invoke-direct {p0, v0}, Lcom/applovin/impl/sdk/cb;->a(Ljava/util/List;)V
 
     :goto_1
     return-void
 
-    :catchall_0
-    move-exception v0
+    :cond_2
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    monitor-exit v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    sget-object v1, Lcom/applovin/impl/sdk/br;->aN:Lcom/applovin/impl/sdk/bt;
 
-    :try_start_4
-    throw v0
-    :try_end_4
-    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_1
+    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/impl/sdk/bt;)Ljava/lang/Object;
 
-    :catch_1
-    move-exception v0
+    move-result-object v0
 
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cb;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+    check-cast v0, Ljava/lang/Boolean;
 
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cb;->a()Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "StatsManager"
+    const-string v2, "Mismatch between successful populations and requested size"
 
-    const-string v3, "Unable to load stats"
+    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-interface {v1, v2, v3, v0}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    const/4 v0, -0x6
+
+    invoke-direct {p0, v0}, Lcom/applovin/impl/sdk/cb;->a(I)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_1
-.end method
-
-.method c(Ljava/lang/String;)V
-    .locals 2
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cb;->d()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method d()V
-    .locals 4
-
-    :try_start_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getSettingsManager()Lcom/applovin/impl/sdk/bz;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bz;->a()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "stats"
-
-    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cb;->b()Lorg/json/JSONObject;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
 
     :catch_0
     move-exception v0
 
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cb;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+    iget-object v1, p0, Lcom/applovin/impl/sdk/cb;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
     invoke-virtual {v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
 
     move-result-object v1
 
-    const-string v2, "StatsManager"
+    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cb;->a()Ljava/lang/String;
 
-    const-string v3, "Unable to save stats"
+    move-result-object v2
 
-    invoke-interface {v1, v2, v3, v0}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    const-string v3, "Encountered exception while notifying publisher code"
 
-    goto :goto_0
+    invoke-interface {v1, v2, v3, v0}, Lcom/applovin/sdk/AppLovinLogger;->userError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_1
+
+    :cond_3
+    :try_start_1
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cb;->c:Ljava/util/List;
+
+    check-cast v0, Ljava/util/List;
+
+    invoke-direct {p0, v0}, Lcom/applovin/impl/sdk/cb;->a(Ljava/util/List;)V
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_1
 .end method

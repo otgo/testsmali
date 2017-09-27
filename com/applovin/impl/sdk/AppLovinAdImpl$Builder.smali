@@ -27,12 +27,6 @@
 
 .field private l:Ljava/lang/String;
 
-.field private m:Ljava/lang/String;
-
-.field private n:Ljava/lang/String;
-
-.field private o:Ljava/lang/String;
-
 
 # direct methods
 .method public constructor <init>()V
@@ -46,81 +40,39 @@
 
 # virtual methods
 .method public build()Lcom/applovin/impl/sdk/AppLovinAdImpl;
-    .locals 20
+    .locals 15
 
-    new-instance v2, Lcom/applovin/impl/sdk/AppLovinAdImpl;
+    new-instance v0, Lcom/applovin/impl/sdk/AppLovinAdImpl;
 
-    move-object/from16 v0, p0
+    iget-object v1, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->a:Ljava/lang/String;
 
-    iget-object v3, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->a:Ljava/lang/String;
+    iget-object v2, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->b:Lcom/applovin/sdk/AppLovinAdSize;
 
-    move-object/from16 v0, p0
+    iget-object v3, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->c:Lcom/applovin/sdk/AppLovinAdType;
 
-    iget-object v4, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->b:Lcom/applovin/sdk/AppLovinAdSize;
+    iget-object v4, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->d:Ljava/lang/String;
 
-    move-object/from16 v0, p0
+    iget-object v5, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->e:Lcom/applovin/impl/sdk/AppLovinAdImpl$AdTarget;
 
-    iget-object v5, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->c:Lcom/applovin/sdk/AppLovinAdType;
+    iget-object v6, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->f:Lcom/applovin/impl/adview/v;
 
-    move-object/from16 v0, p0
+    iget v7, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->g:F
 
-    iget-object v6, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->d:Ljava/lang/String;
+    iget v8, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->h:F
 
-    move-object/from16 v0, p0
+    iget v9, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->i:I
 
-    iget-object v7, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->e:Lcom/applovin/impl/sdk/AppLovinAdImpl$AdTarget;
+    iget-wide v10, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->j:J
 
-    move-object/from16 v0, p0
+    iget-object v12, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->k:Ljava/lang/String;
 
-    iget-object v8, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->f:Lcom/applovin/impl/adview/v;
+    iget-object v13, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->l:Ljava/lang/String;
 
-    move-object/from16 v0, p0
+    const/4 v14, 0x0
 
-    iget v9, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->g:F
+    invoke-direct/range {v0 .. v14}, Lcom/applovin/impl/sdk/AppLovinAdImpl;-><init>(Ljava/lang/String;Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinAdImpl$AdTarget;Lcom/applovin/impl/adview/v;FFIJLjava/lang/String;Ljava/lang/String;Lcom/applovin/impl/sdk/e;)V
 
-    move-object/from16 v0, p0
-
-    iget v10, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->h:F
-
-    move-object/from16 v0, p0
-
-    iget v11, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->i:I
-
-    move-object/from16 v0, p0
-
-    iget-wide v12, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->j:J
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->k:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->l:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->m:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->n:Ljava/lang/String;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->o:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-
-    const/16 v19, 0x0
-
-    invoke-direct/range {v2 .. v19}, Lcom/applovin/impl/sdk/AppLovinAdImpl;-><init>(Ljava/lang/String;Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinAdImpl$AdTarget;Lcom/applovin/impl/adview/v;FFIJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/applovin/impl/sdk/d;)V
-
-    return-object v2
+    return-object v0
 .end method
 
 .method public setClCode(Ljava/lang/String;)Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;
@@ -171,14 +123,6 @@
     return-object p0
 .end method
 
-.method public setMuteImageFilename(Ljava/lang/String;)Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;
-    .locals 0
-
-    iput-object p1, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->n:Ljava/lang/String;
-
-    return-object p0
-.end method
-
 .method public setPoststitialCloseDelay(F)Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;
     .locals 0
 
@@ -195,14 +139,6 @@
     return-object p0
 .end method
 
-.method public setSupplementalClickTrackingUrl(Ljava/lang/String;)Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;
-    .locals 0
-
-    iput-object p1, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->m:Ljava/lang/String;
-
-    return-object p0
-.end method
-
 .method public setTarget(Lcom/applovin/impl/sdk/AppLovinAdImpl$AdTarget;)Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;
     .locals 0
 
@@ -215,14 +151,6 @@
     .locals 0
 
     iput-object p1, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->c:Lcom/applovin/sdk/AppLovinAdType;
-
-    return-object p0
-.end method
-
-.method public setUnmuteImageFilename(Ljava/lang/String;)Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;
-    .locals 0
-
-    iput-object p1, p0, Lcom/applovin/impl/sdk/AppLovinAdImpl$Builder;->o:Ljava/lang/String;
 
     return-object p0
 .end method

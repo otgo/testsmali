@@ -1,215 +1,131 @@
-.class public final Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
-.super Lcom/purplebrain/adbuddiz/sdk/e/a/a/b;
+.class public final enum Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
+.super Ljava/lang/Enum;
 
 
 # static fields
-.field private static i:Ljava/util/List;
+.field public static final enum a:Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
+
+.field public static final enum b:Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
+
+.field private static final synthetic d:[Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
+
+
+# instance fields
+.field c:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;
-
-    const/4 v1, 0x0
-
-    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;->NETWORK_TOO_SLOW:Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;->UNSUPPORTED_DEVICE:Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;->UNSUPPORTED_OS_VERSION:Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->i:Ljava/util/List;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/e/c;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/purplebrain/adbuddiz/sdk/e/a/a/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/e/c;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "next_incent"
-
-    return-object v0
-.end method
-
-.method public final a(Lcom/purplebrain/adbuddiz/sdk/h/i;)V
-    .locals 4
-
-    const/4 v3, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-super {p0, p1}, Lcom/purplebrain/adbuddiz/sdk/e/a/a/b;->a(Lcom/purplebrain/adbuddiz/sdk/h/i;)V
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/f/d;
-
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/f/d$a;->d:Lcom/purplebrain/adbuddiz/sdk/f/d$a;
-
-    invoke-direct {v0, v1, v3}, Lcom/purplebrain/adbuddiz/sdk/f/d;-><init>(Lcom/purplebrain/adbuddiz/sdk/f/d$a;Ljava/lang/String;)V
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/c/b;->a()Lcom/purplebrain/adbuddiz/sdk/c/b;
-
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;->NO_MORE_AVAILABLE_ADS:Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;
-
-    invoke-static {v0, v1, v3, v2, v2}, Lcom/purplebrain/adbuddiz/sdk/c/b;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;Ljava/lang/String;ZZ)V
-
-    return-void
-.end method
-
-.method public final a(Lcom/purplebrain/adbuddiz/sdk/h/i;Lcom/purplebrain/adbuddiz/sdk/h/i$a;Ljava/lang/String;)V
     .locals 5
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    invoke-super {p0, p1, p2, p3}, Lcom/purplebrain/adbuddiz/sdk/e/a/a/b;->a(Lcom/purplebrain/adbuddiz/sdk/h/i;Lcom/purplebrain/adbuddiz/sdk/h/i$a;Ljava/lang/String;)V
-
-    iget-object v2, p2, Lcom/purplebrain/adbuddiz/sdk/h/i$a;->f:Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;
-
-    if-nez v2, :cond_2
-
-    :cond_0
-    :goto_0
-    if-eqz v0, :cond_1
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/f/d;
-
-    sget-object v3, Lcom/purplebrain/adbuddiz/sdk/f/d$a;->d:Lcom/purplebrain/adbuddiz/sdk/f/d$a;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v3, v4}, Lcom/purplebrain/adbuddiz/sdk/f/d;-><init>(Lcom/purplebrain/adbuddiz/sdk/f/d$a;Ljava/lang/String;)V
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/c/b;->a()Lcom/purplebrain/adbuddiz/sdk/c/b;
-
-    invoke-static {v0, v2, p3, v1, v1}, Lcom/purplebrain/adbuddiz/sdk/c/b;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;Ljava/lang/String;ZZ)V
-
-    :cond_1
-    return-void
-
-    :cond_2
-    sget-object v3, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->i:Ljava/util/List;
-
-    invoke-interface {v3, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-.end method
-
-.method public final b()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final d()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final e()Lcom/purplebrain/adbuddiz/sdk/i/p;
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/p;->a(Z)Lcom/purplebrain/adbuddiz/sdk/i/p;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final f()Lcom/purplebrain/adbuddiz/sdk/h/i;
-    .locals 2
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/h/i;
-
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/h/i;-><init>()V
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcom/purplebrain/adbuddiz/sdk/h/i;->e:Z
-
-    return-object v0
-.end method
-
-.method public final g()V
-    .locals 5
-
-    const/4 v0, 0x0
 
     const/4 v4, 0x1
 
-    invoke-super {p0}, Lcom/purplebrain/adbuddiz/sdk/e/a/a/b;->g()V
+    const/4 v3, 0x0
 
-    new-instance v2, Lcom/purplebrain/adbuddiz/sdk/f/d;
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
 
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/f/d$a;->d:Lcom/purplebrain/adbuddiz/sdk/f/d$a;
+    const-string v1, "META_DATA"
 
-    invoke-direct {v2, v1, v0}, Lcom/purplebrain/adbuddiz/sdk/f/d;-><init>(Lcom/purplebrain/adbuddiz/sdk/f/d$a;Ljava/lang/String;)V
+    const-string v2, "D"
 
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;->NO_MORE_AVAILABLE_ADS:Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;
+    invoke-direct {v0, v1, v3, v2}, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    iget-object v3, p0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/b;->c:Lcom/purplebrain/adbuddiz/sdk/h/i$a;
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->a:Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
 
-    if-eqz v3, :cond_0
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
 
-    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/b;->c:Lcom/purplebrain/adbuddiz/sdk/h/i$a;
+    const-string v1, "MEDIA"
 
-    iget-object v1, v0, Lcom/purplebrain/adbuddiz/sdk/h/i$a;->f:Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;
+    const-string v2, "M"
 
-    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/b;->d:Ljava/lang/String;
+    invoke-direct {v0, v1, v4, v2}, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    :cond_0
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/c/b;->a()Lcom/purplebrain/adbuddiz/sdk/c/b;
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->b:Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
 
-    invoke-static {v2, v1, v0, v4, v4}, Lcom/purplebrain/adbuddiz/sdk/c/b;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;Ljava/lang/String;ZZ)V
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
+
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->a:Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->b:Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->d:[Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
 
     return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput-object p3, p0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->c:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;)Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
+    .locals 5
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->d:[Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
+
+    invoke-virtual {v0}, [Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
+
+    array-length v2, v0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v2, :cond_1
+
+    aget-object v3, v0, v1
+
+    iget-object v4, v3, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->c:Ljava/lang/String;
+
+    invoke-virtual {v4, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    return-object v3
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " is not a valid resource type"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

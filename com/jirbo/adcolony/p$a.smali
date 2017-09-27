@@ -19,15 +19,10 @@
     .locals 4
 
     .prologue
-    .line 167
+    .line 117
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 168
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->s:Z
-
-    .line 169
+    .line 118
     invoke-virtual {p0}, Lcom/jirbo/adcolony/p$a;->obtainMessage()Landroid/os/Message;
 
     move-result-object v0
@@ -36,7 +31,7 @@
 
     invoke-virtual {p0, v0, v2, v3}, Lcom/jirbo/adcolony/p$a;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 170
+    .line 119
     return-void
 .end method
 
@@ -47,8 +42,8 @@
     .param p1, "m"    # Landroid/os/Message;
 
     .prologue
-    .line 175
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
+    .line 124
+    sget-object v0, Lcom/jirbo/adcolony/a;->G:Landroid/app/Activity;
 
     if-eqz v0, :cond_0
 
@@ -62,31 +57,32 @@
 
     if-eqz v0, :cond_1
 
-    .line 177
+    .line 126
     :cond_0
     const-string v0, "Monitor pinger exiting."
 
     invoke-static {v0}, Lcom/jirbo/adcolony/a;->b(Ljava/lang/String;)V
 
-    .line 178
-    const/4 v0, 0x0
-
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->s:Z
-
-    .line 188
+    .line 135
     :goto_0
     return-void
 
-    .line 182
+    .line 130
     :cond_1
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->r:Z
+    invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
 
-    if-nez v0, :cond_2
+    move-result-object v0
 
-    .line 184
+    invoke-virtual {v0}, Landroid/app/Activity;->hasWindowFocus()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 132
     invoke-static {}, Lcom/jirbo/adcolony/p;->a()V
 
-    .line 187
+    .line 134
     :cond_2
     invoke-virtual {p0}, Lcom/jirbo/adcolony/p$a;->obtainMessage()Landroid/os/Message;
 

@@ -1,34 +1,39 @@
-.class public final Lcom/purplebrain/adbuddiz/sdk/i/k;
+.class final Lcom/purplebrain/adbuddiz/sdk/i/k;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/Comparator;
+
+
+# instance fields
+.field final synthetic a:Lcom/purplebrain/adbuddiz/sdk/i/j;
 
 
 # direct methods
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
+.method constructor <init>(Lcom/purplebrain/adbuddiz/sdk/i/j;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/i/k;->a:Lcom/purplebrain/adbuddiz/sdk/i/j;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 2
 
-    if-eqz p0, :cond_0
+    check-cast p1, Lcom/purplebrain/adbuddiz/sdk/i/l;
 
-    :try_start_0
-    new-instance v0, Lorg/json/JSONObject;
+    check-cast p2, Lcom/purplebrain/adbuddiz/sdk/i/l;
 
-    invoke-direct {v0, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    iget v0, p1, Lcom/purplebrain/adbuddiz/sdk/i/l;->a:I
 
-    const-string v1, "c"
+    iget v1, p2, Lcom/purplebrain/adbuddiz/sdk/i/l;->a:I
 
-    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+    sub-int/2addr v0, v1
 
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return v0
 .end method

@@ -2,685 +2,611 @@
 .super Ljava/lang/Object;
 
 
+# static fields
+.field private static j:Z
+
+
+# instance fields
+.field public a:Lcom/purplebrain/adbuddiz/sdk/e/a/i;
+
+.field public b:Landroid/webkit/WebView;
+
+.field public c:Lcom/purplebrain/adbuddiz/sdk/f/a;
+
+.field public d:Lcom/purplebrain/adbuddiz/sdk/f/l;
+
+.field public e:Z
+
+.field public f:Z
+
+.field public g:Landroid/graphics/Point;
+
+.field public h:Lcom/purplebrain/adbuddiz/sdk/f/f;
+
+.field public i:Lcom/purplebrain/adbuddiz/sdk/f/g;
+
+.field private k:Ljava/util/List;
+
+.field private l:Z
+
+.field private m:Ljava/lang/String;
+
+
 # direct methods
-.method public static a(Lorg/json/JSONObject;)Lcom/purplebrain/adbuddiz/sdk/f/b;
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lcom/purplebrain/adbuddiz/sdk/f/c;->j:Z
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/e/a/i;)V
+    .locals 4
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
 
     const/4 v1, 0x0
 
-    :try_start_0
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/f/b;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/f/b;-><init>()V
+    iput-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->k:Ljava/util/List;
 
-    const-string v2, "updateTimestamp"
+    iput-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->b:Landroid/webkit/WebView;
 
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+    iput-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->c:Lcom/purplebrain/adbuddiz/sdk/f/a;
 
-    move-result-wide v2
+    iput-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->d:Lcom/purplebrain/adbuddiz/sdk/f/l;
 
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->a:J
+    iput-boolean v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->e:Z
 
-    const-string v2, "updateFrequency"
+    iput-boolean v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->f:Z
 
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+    iput-boolean v3, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->l:Z
 
-    move-result-wide v2
+    const-string v0, "none"
 
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->b:J
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->m:Ljava/lang/String;
 
-    const-string v2, "cacheExpiration"
+    new-instance v0, Landroid/graphics/Point;
 
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+    invoke-direct {v0, v2, v2}, Landroid/graphics/Point;-><init>(II)V
 
-    move-result-wide v2
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->g:Landroid/graphics/Point;
 
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->d:J
+    iput-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->h:Lcom/purplebrain/adbuddiz/sdk/f/f;
 
-    const-string v2, "a"
+    iput-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->i:Lcom/purplebrain/adbuddiz/sdk/f/g;
 
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->a:Lcom/purplebrain/adbuddiz/sdk/e/a/i;
 
-    move-result-object v2
+    const/4 v0, 0x3
 
-    iput-object v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->c:Ljava/lang/String;
+    new-array v0, v0, [Ljava/lang/String;
 
-    const-string v2, "isTablet"
+    const-string v1, "none"
 
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+    aput-object v1, v0, v2
 
-    move-result v2
+    const-string v1, "portrait"
 
-    iput-boolean v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->e:Z
+    aput-object v1, v0, v3
 
-    const-string v2, "publisherId"
+    const/4 v1, 0x2
 
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+    const-string v2, "landscape"
 
-    move-result-wide v2
+    aput-object v2, v0, v1
 
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->f:J
-
-    const-string v2, "downloadAdBaseUrl"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->g:Ljava/lang/String;
-
-    const-string v2, "downloadVideoAdBaseUrl"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->h:Ljava/lang/String;
-
-    const-string v2, "byAdBuddizLinkUrl"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->i:Ljava/lang/String;
-
-    const-string v2, "inactivePlacementIds"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v3
-
-    move v2, v1
-
-    :goto_0
-    invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
-
-    move-result v4
-
-    if-ge v2, v4, :cond_0
-
-    iget-object v4, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->j:Ljava/util/List;
-
-    invoke-virtual {v3, v2}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const-string v2, "maxNbAdBuddizAdInCache"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    iput v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->k:I
-
-    const-string v2, "maxSizeRTBAdContent"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    iput v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->l:I
-
-    const-string v2, "maxNbAdBuddizImpressionTimestampSent"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    iput v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->m:I
-
-    const-string v2, "maxNbRTBImpressionTimestampSent"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    iput v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->n:I
-
-    const-string v2, "maxTimeToKeepRequestInformation"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->o:J
-
-    const-string v2, "additionalInformationToSend"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    iput v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->p:I
-
-    const-string v2, "automaticallyHideAdOnClick"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->q:Z
-
-    const-string v2, "minTimeBeforeClickEnabled"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->u:J
-
-    const-string v2, "minTimeBeforeCloseEnabledWhileFollowingLinks"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->v:J
-
-    const-string v2, "minTimeBeforeCloseEnabledWhenMediaPlayerStuck"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->x:J
-
-    const-string v2, "minTimeBeforeCloseEnabledOnMRAID"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    const-string v2, "minTimeBeforeCloseEnabledOnMRAID"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    iput-object v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->w:Ljava/lang/Long;
-
-    :cond_1
-    const-string v2, "minTimeBetween2ShowAdCalls"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->r:J
-
-    const-string v2, "minTimeBetween2ReportOnIsReady"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->s:J
-
-    const-string v2, "minTimeBetween2RequestNextAdAfterNoFill"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->t:J
-
-    const-string v2, "timeBeforeSendImpressionAfterLastResourceChecked"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->y:J
-
-    const-string v2, "timeBeforeSendImpressionIfResourceNotLoading"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->z:J
-
-    const-string v2, "showAdEventsToReport"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-object v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->A:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->clear()V
-
-    const-string v2, "showAdEventsToReport"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v3
-
-    move v2, v1
-
-    :goto_1
-    invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
-
-    move-result v4
-
-    if-ge v2, v4, :cond_2
-
-    iget-object v4, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->A:Ljava/util/List;
-
-    invoke-virtual {v3, v2}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->valueOf(Ljava/lang/String;)Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-
-    move-result-object v5
-
-    invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    const-string v2, "isReadyToShowAdEventsToReport"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    iget-object v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->B:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->clear()V
-
-    const-string v2, "isReadyToShowAdEventsToReport"
-
-    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v2
-
-    :goto_2
-    invoke-virtual {v2}, Lorg/json/JSONArray;->length()I
-
-    move-result v3
-
-    if-ge v1, v3, :cond_3
-
-    iget-object v3, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->B:Ljava/util/List;
-
-    invoke-virtual {v2, v1}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->valueOf(Ljava/lang/String;)Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-
-    move-result-object v4
-
-    invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_2
-
-    :cond_3
-    const-string v1, "mediaPlayerStartsMuted"
-
-    invoke-virtual {p0, v1}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v1
-
-    iput-boolean v1, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->C:Z
-
-    const-string v1, "percentageBeforeNotReportingVASTError"
-
-    invoke-virtual {p0, v1}, Lorg/json/JSONObject;->getDouble(Ljava/lang/String;)D
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->D:D
-
-    const-string v1, "mediaFileSelectorParameters"
-
-    invoke-virtual {p0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/f/f;->a(Lorg/json/JSONObject;)Lcom/purplebrain/adbuddiz/sdk/f/f;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/purplebrain/adbuddiz/sdk/f/b;->E:Lcom/purplebrain/adbuddiz/sdk/f/f;
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_3
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    const/4 v0, 0x0
-
-    goto :goto_3
-.end method
-
-.method public static a(Lcom/purplebrain/adbuddiz/sdk/f/b;)Lorg/json/JSONObject;
-    .locals 4
-
-    :try_start_0
-    new-instance v1, Lorg/json/JSONObject;
-
-    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
-
-    const-string v0, "updateTimestamp"
-
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->a:J
-
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
-
-    const-string v0, "updateFrequency"
-
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->b:J
-
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
-
-    const-string v0, "cacheExpiration"
-
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->d:J
-
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
-
-    const-string v0, "a"
-
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->c:Ljava/lang/String;
-
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v0, "isTablet"
-
-    iget-boolean v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->e:Z
-
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
-
-    const-string v0, "publisherId"
-
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->f:J
-
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
-
-    const-string v0, "downloadAdBaseUrl"
-
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->g:Ljava/lang/String;
-
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v0, "downloadVideoAdBaseUrl"
-
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->h:Ljava/lang/String;
-
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v0, "byAdBuddizLinkUrl"
-
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->i:Ljava/lang/String;
-
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    new-instance v2, Lorg/json/JSONArray;
-
-    invoke-direct {v2}, Lorg/json/JSONArray;-><init>()V
-
-    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->j:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->k:Ljava/util/List;
 
-    invoke-virtual {v2, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    return-void
+.end method
 
-    goto :goto_0
+.method static synthetic a(Lcom/purplebrain/adbuddiz/sdk/f/c;)Lcom/purplebrain/adbuddiz/sdk/f/g;
+    .locals 1
 
-    :catch_0
-    move-exception v0
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->i:Lcom/purplebrain/adbuddiz/sdk/f/g;
 
-    const/4 v0, 0x0
-
-    :goto_1
     return-object v0
+.end method
+
+.method public static a()V
+    .locals 2
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
+
+    sget-boolean v0, Lcom/purplebrain/adbuddiz/sdk/f/c;->j:Z
+
+    if-eqz v0, :cond_0
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x13
+
+    if-lt v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Landroid/webkit/WebView;->setWebContentsDebuggingEnabled(Z)V
 
     :cond_0
-    const-string v0, "inactivePlacementIds"
+    return-void
+.end method
 
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+.method public static a(Landroid/webkit/WebView;)V
+    .locals 5
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "SetJavaScriptEnabled",
+            "NewApi"
+        }
+    .end annotation
 
-    const-string v0, "maxNbAdBuddizAdInCache"
+    const/4 v4, 0x1
 
-    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->k:I
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    invoke-virtual {p0, v3}, Landroid/webkit/WebView;->setVerticalScrollBarEnabled(Z)V
 
-    const-string v0, "maxSizeRTBAdContent"
+    invoke-virtual {p0, v3}, Landroid/webkit/WebView;->setHorizontalScrollBarEnabled(Z)V
 
-    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->l:I
+    invoke-virtual {p0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    move-result-object v0
 
-    const-string v0, "maxNbAdBuddizImpressionTimestampSent"
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->m:I
+    const/16 v2, 0x11
 
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    if-lt v1, v2, :cond_0
 
-    const-string v0, "maxNbRTBImpressionTimestampSent"
+    invoke-virtual {v0, v3}, Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V
 
-    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->n:I
+    :cond_0
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    const/16 v2, 0x10
 
-    const-string v0, "maxTimeToKeepRequestInformation"
+    if-lt v1, v2, :cond_1
 
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->o:J
+    invoke-virtual {v0, v3}, Landroid/webkit/WebSettings;->setAllowFileAccessFromFileURLs(Z)V
 
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    invoke-virtual {v0, v3}, Landroid/webkit/WebSettings;->setAllowUniversalAccessFromFileURLs(Z)V
 
-    const-string v0, "additionalInformationToSend"
+    :cond_1
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->p:I
+    const/16 v2, 0xb
 
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    if-lt v1, v2, :cond_2
 
-    const-string v0, "automaticallyHideAdOnClick"
+    invoke-virtual {v0, v3}, Landroid/webkit/WebSettings;->setAllowContentAccess(Z)V
 
-    iget-boolean v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->q:Z
+    :cond_2
+    invoke-virtual {v0, v4}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+    invoke-virtual {v0, v4}, Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V
 
-    const-string v0, "minTimeBeforeClickEnabled"
+    return-void
+.end method
 
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->u:J
+.method static synthetic a(Lcom/purplebrain/adbuddiz/sdk/f/c;Landroid/net/Uri;)V
+    .locals 8
 
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    const/4 v3, 0x2
 
-    const-string v0, "minTimeBeforeCloseEnabledWhileFollowingLinks"
+    const/4 v7, 0x1
 
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->v:J
+    const/4 v6, 0x0
 
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    const-string v0, "/close"
 
-    const-string v0, "minTimeBeforeCloseEnabledWhenMediaPlayerStuck"
+    invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->x:J
+    move-result-object v1
 
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->w:Ljava/lang/Long;
+    move-result v0
 
     if-eqz v0, :cond_1
 
-    const-string v0, "minTimeBeforeCloseEnabledOnMRAID"
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->h:Lcom/purplebrain/adbuddiz/sdk/f/f;
 
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->w:Ljava/lang/Long;
+    invoke-interface {v0}, Lcom/purplebrain/adbuddiz/sdk/f/f;->a()V
 
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    :cond_0
+    :goto_0
+    return-void
 
     :cond_1
-    const-string v0, "minTimeBetween2ShowAdCalls"
+    const-string v0, "/open"
 
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->r:J
+    invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    move-result-object v1
 
-    const-string v0, "minTimeBetween2ReportOnIsReady"
-
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->s:J
-
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
-
-    const-string v0, "minTimeBetween2RequestNextAdAfterNoFill"
-
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->t:J
-
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
-
-    const-string v0, "timeBeforeSendImpressionAfterLastResourceChecked"
-
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->y:J
-
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
-
-    const-string v0, "timeBeforeSendImpressionIfResourceNotLoading"
-
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->z:J
-
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
-
-    new-instance v2, Lorg/json/JSONArray;
-
-    invoke-direct {v2}, Lorg/json/JSONArray;-><init>()V
-
-    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->A:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_2
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const-string v0, "url"
+
+    invoke-virtual {p1, v0}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->name()Ljava/lang/String;
+    :try_start_0
+    const-string v1, "UTF-8"
 
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
-
-    goto :goto_2
-
-    :cond_2
-    const-string v0, "showAdEventsToReport"
-
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    new-instance v2, Lorg/json/JSONArray;
-
-    invoke-direct {v2}, Lorg/json/JSONArray;-><init>()V
-
-    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->B:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_3
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v0, v1}, Ljava/net/URLDecoder;->decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+    new-instance v1, Ljava/net/URI;
 
-    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->name()Ljava/lang/String;
+    invoke-direct {v1, v0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->h:Lcom/purplebrain/adbuddiz/sdk/f/f;
 
-    invoke-virtual {v2, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
-
-    goto :goto_3
-
-    :cond_3
-    const-string v0, "isReadyToShowAdEventsToReport"
-
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v0, "mediaPlayerStartsMuted"
-
-    iget-boolean v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->C:Z
-
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
-
-    const-string v0, "percentageBeforeNotReportingVASTError"
-
-    iget-wide v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->D:D
-
-    invoke-virtual {v1, v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
-
-    const-string v0, "mediaFileSelectorParameters"
-
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/b;->E:Lcom/purplebrain/adbuddiz/sdk/f/f;
-
-    invoke-virtual {v2}, Lcom/purplebrain/adbuddiz/sdk/f/f;->a()Lorg/json/JSONObject;
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
-    invoke-virtual {v1, v0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-interface {v1, v2}, Lcom/purplebrain/adbuddiz/sdk/f/f;->a(Landroid/net/Uri;)V
     :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_1
 
-    move-object v0, v1
+    goto :goto_0
 
-    goto/16 :goto_1
+    :catch_0
+    move-exception v1
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->c:Lcom/purplebrain/adbuddiz/sdk/f/a;
+
+    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/f/h;->b:Lcom/purplebrain/adbuddiz/sdk/f/h;
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "\'"
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v4, "\' is not a valid URL. Will not be open"
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    aput-object v0, v3, v6
+
+    const-string v0, "open"
+
+    aput-object v0, v3, v7
+
+    invoke-virtual {v1, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/f/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/h;[Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->c:Lcom/purplebrain/adbuddiz/sdk/f/a;
+
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/f/h;->b:Lcom/purplebrain/adbuddiz/sdk/f/h;
+
+    new-array v2, v3, [Ljava/lang/Object;
+
+    const-string v3, "UTF-8 is not a valid charset"
+
+    aput-object v3, v2, v6
+
+    const-string v3, "open"
+
+    aput-object v3, v2, v7
+
+    invoke-virtual {v0, v1, v2}, Lcom/purplebrain/adbuddiz/sdk/f/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/h;[Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_2
+    const-string v0, "/setOrientationProperties"
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    const-string v0, "allowOrientationChange"
+
+    invoke-virtual {p1, v0}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "forceOrientation"
+
+    invoke-virtual {p1, v1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v0, :cond_0
+
+    if-eqz v1, :cond_0
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->k:Ljava/util/List;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->c:Lcom/purplebrain/adbuddiz/sdk/f/a;
+
+    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/f/h;->b:Lcom/purplebrain/adbuddiz/sdk/f/h;
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "\'"
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v4, "\' is not one of the orientation defined in MRAID 2.0. Allowed values are "
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->k:Ljava/util/List;
+
+    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    aput-object v1, v3, v6
+
+    const-string v1, "open"
+
+    aput-object v1, v3, v7
+
+    invoke-virtual {v0, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/f/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/h;[Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    :cond_3
+    invoke-static {v1}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->l:Z
+
+    iput-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->m:Ljava/lang/String;
+
+    goto/16 :goto_0
+
+    :cond_4
+    const-string v0, "/playVideo"
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "uri"
+
+    invoke-virtual {p1, v0}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    :try_start_1
+    const-string v1, "UTF-8"
+
+    invoke-static {v0, v1}, Ljava/net/URLDecoder;->decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/net/URI;
+
+    invoke-direct {v1, v0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->h:Lcom/purplebrain/adbuddiz/sdk/f/f;
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2}, Lcom/purplebrain/adbuddiz/sdk/f/f;->b(Landroid/net/Uri;)V
+    :try_end_1
+    .catch Ljava/net/URISyntaxException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_1 .. :try_end_1} :catch_3
+
+    goto/16 :goto_0
+
+    :catch_2
+    move-exception v1
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->c:Lcom/purplebrain/adbuddiz/sdk/f/a;
+
+    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/f/h;->b:Lcom/purplebrain/adbuddiz/sdk/f/h;
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "\'"
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v4, "\' is not a valid URI. Will not be played"
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    aput-object v0, v3, v6
+
+    const-string v0, "playVideo"
+
+    aput-object v0, v3, v7
+
+    invoke-virtual {v1, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/f/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/h;[Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    :catch_3
+    move-exception v0
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->c:Lcom/purplebrain/adbuddiz/sdk/f/a;
+
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/f/h;->b:Lcom/purplebrain/adbuddiz/sdk/f/h;
+
+    new-array v2, v3, [Ljava/lang/Object;
+
+    const-string v3, "UTF-8 is not a valid charset"
+
+    aput-object v3, v2, v6
+
+    const-string v3, "playVideo"
+
+    aput-object v3, v2, v7
+
+    invoke-virtual {v0, v1, v2}, Lcom/purplebrain/adbuddiz/sdk/f/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/h;[Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+.end method
+
+.method static synthetic b(Lcom/purplebrain/adbuddiz/sdk/f/c;)Lcom/purplebrain/adbuddiz/sdk/e/a/i;
+    .locals 1
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->a:Lcom/purplebrain/adbuddiz/sdk/e/a/i;
+
+    return-object v0
+.end method
+
+.method static synthetic c(Lcom/purplebrain/adbuddiz/sdk/f/c;)Lcom/purplebrain/adbuddiz/sdk/f/f;
+    .locals 1
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->h:Lcom/purplebrain/adbuddiz/sdk/f/f;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final a(Lcom/purplebrain/adbuddiz/sdk/f/l;)V
+    .locals 5
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->d:Lcom/purplebrain/adbuddiz/sdk/f/l;
+
+    if-eq v0, p1, :cond_0
+
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->d:Lcom/purplebrain/adbuddiz/sdk/f/l;
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->c:Lcom/purplebrain/adbuddiz/sdk/f/a;
+
+    const-string v1, "_setState"
+
+    new-array v2, v4, [Ljava/lang/Object;
+
+    aput-object p1, v2, v3
+
+    invoke-virtual {v0, v1, v2}, Lcom/purplebrain/adbuddiz/sdk/f/a;->a(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->c:Lcom/purplebrain/adbuddiz/sdk/f/a;
+
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/f/h;->c:Lcom/purplebrain/adbuddiz/sdk/f/h;
+
+    new-array v2, v4, [Ljava/lang/Object;
+
+    aput-object p1, v2, v3
+
+    invoke-virtual {v0, v1, v2}, Lcom/purplebrain/adbuddiz/sdk/f/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/h;[Ljava/lang/Object;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final b()Landroid/util/DisplayMetrics;
+    .locals 1
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/f/c;->b:Landroid/webkit/WebView;
+
+    invoke-virtual {v0}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    return-object v0
 .end method

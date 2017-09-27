@@ -47,7 +47,7 @@
     .line 48
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyOverlay$1;->b:Lcom/jirbo/adcolony/AdColonyOverlay;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyOverlay;->P:Landroid/widget/FrameLayout;
+    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyOverlay;->N:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyOverlay$1;->a:Landroid/view/View;
 

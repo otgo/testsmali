@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 95
+    .line 96
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,16 +35,16 @@
     .locals 2
 
     .prologue
-    .line 101
+    .line 102
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
-    .line 106
+    .line 107
     :goto_0
     return v0
 
-    .line 103
+    .line 104
     :cond_0
     const-string v0, "type"
 
@@ -56,12 +56,12 @@
 
     iput-object v0, p0, Lcom/jirbo/adcolony/n$i;->a:Ljava/lang/String;
 
-    .line 104
+    .line 105
     iget-object v0, p0, Lcom/jirbo/adcolony/n$i;->a:Ljava/lang/String;
 
-    sput-object v0, Lcom/jirbo/adcolony/a;->ah:Ljava/lang/String;
+    sput-object v0, Lcom/jirbo/adcolony/a;->Y:Ljava/lang/String;
 
-    .line 106
+    .line 107
     const/4 v0, 0x1
 
     goto :goto_0

@@ -2,9 +2,6 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/jirbo/adcolony/ADCDownload$Listener;
-
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -28,34 +25,33 @@
     .end annotation
 .end field
 
-.field c:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Lcom/jirbo/adcolony/t$a;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field d:I
-
-.field e:Z
-
-.field f:I
-
-.field g:Ljava/util/HashMap;
+.field c:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",
             "<",
             "Ljava/lang/Integer;",
-            "Ljava/lang/Boolean;",
+            "Ljava/lang/Integer;",
             ">;"
         }
     .end annotation
 .end field
+
+.field d:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field e:Z
+
+.field f:Z
 
 
 # direct methods
@@ -76,24 +72,24 @@
     iput-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
 
     .line 10
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/ArrayList;
-
-    .line 11
-    iput v1, p0, Lcom/jirbo/adcolony/t;->d:I
-
-    .line 12
-    iput-boolean v1, p0, Lcom/jirbo/adcolony/t;->e:Z
-
-    .line 15
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/jirbo/adcolony/t;->g:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/HashMap;
+
+    .line 12
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/t;->d:Ljava/util/HashMap;
+
+    .line 15
+    iput-boolean v1, p0, Lcom/jirbo/adcolony/t;->e:Z
+
+    .line 16
+    iput-boolean v1, p0, Lcom/jirbo/adcolony/t;->f:Z
 
     .line 20
     iput-object p1, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
@@ -104,1364 +100,527 @@
 
 
 # virtual methods
-.method a()V
-    .locals 1
-
-    .prologue
-    .line 177
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/t;->b()V
-
-    .line 178
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/jirbo/adcolony/t;->d:I
-
-    .line 179
-    return-void
-.end method
-
-.method a(DLcom/jirbo/adcolony/AdColonyAd;)V
-    .locals 17
-
-    .prologue
-    const-wide/high16 v14, 0x3ff0000000000000L    # 1.0
-
-    const-wide/high16 v12, 0x3fe8000000000000L    # 0.75
-
-    const-wide/high16 v10, 0x3fe0000000000000L    # 0.5
-
-    const-wide/high16 v8, 0x3fd0000000000000L    # 0.25
-
-    .line 145
-    move-object/from16 v0, p3
-
-    iget-wide v4, v0, Lcom/jirbo/adcolony/AdColonyAd;->p:D
-
-    .line 146
-    cmpg-double v6, p1, v4
-
-    if-gez v6, :cond_0
-
-    .line 173
-    :goto_0
-    return-void
-
-    .line 147
-    :cond_0
-    cmpg-double v6, v4, v8
-
-    if-gez v6, :cond_1
-
-    cmpl-double v6, p1, v8
-
-    if-ltz v6, :cond_1
-
-    .line 149
-    move-object/from16 v0, p3
-
-    iget-object v6, v0, Lcom/jirbo/adcolony/AdColonyAd;->h:Ljava/lang/String;
-
-    invoke-static {v6}, Lcom/jirbo/adcolony/AdColony;->isZoneV4VC(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_5
-
-    move-object/from16 v0, p3
-
-    iget-object v6, v0, Lcom/jirbo/adcolony/AdColonyAd;->l:Ljava/lang/String;
-
-    const-string v7, "native"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_5
-
-    const-string v6, "native_first_quartile"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v6, v1}, Lcom/jirbo/adcolony/t;->b(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    .line 152
-    :cond_1
-    :goto_1
-    cmpg-double v6, v4, v10
-
-    if-gez v6, :cond_2
-
-    cmpl-double v6, p1, v10
-
-    if-ltz v6, :cond_2
-
-    .line 154
-    move-object/from16 v0, p3
-
-    iget-object v6, v0, Lcom/jirbo/adcolony/AdColonyAd;->h:Ljava/lang/String;
-
-    invoke-static {v6}, Lcom/jirbo/adcolony/AdColony;->isZoneV4VC(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_6
-
-    move-object/from16 v0, p3
-
-    iget-object v6, v0, Lcom/jirbo/adcolony/AdColonyAd;->l:Ljava/lang/String;
-
-    const-string v7, "native"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_6
-
-    const-string v6, "native_midpoint"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v6, v1}, Lcom/jirbo/adcolony/t;->b(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    .line 157
-    :cond_2
-    :goto_2
-    cmpg-double v6, v4, v12
-
-    if-gez v6, :cond_3
-
-    cmpl-double v6, p1, v12
-
-    if-ltz v6, :cond_3
-
-    .line 159
-    move-object/from16 v0, p3
-
-    iget-object v6, v0, Lcom/jirbo/adcolony/AdColonyAd;->h:Ljava/lang/String;
-
-    invoke-static {v6}, Lcom/jirbo/adcolony/AdColony;->isZoneV4VC(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_7
-
-    move-object/from16 v0, p3
-
-    iget-object v6, v0, Lcom/jirbo/adcolony/AdColonyAd;->l:Ljava/lang/String;
-
-    const-string v7, "native"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_7
-
-    const-string v6, "native_third_quartile"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v6, v1}, Lcom/jirbo/adcolony/t;->b(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    .line 162
-    :cond_3
-    :goto_3
-    cmpg-double v4, v4, v14
-
-    if-gez v4, :cond_4
-
-    cmpl-double v4, p1, v14
-
-    if-ltz v4, :cond_4
-
-    move-object/from16 v0, p3
-
-    iget-object v4, v0, Lcom/jirbo/adcolony/AdColonyAd;->l:Ljava/lang/String;
-
-    const-string v5, "native"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_4
-
-    .line 164
-    sget-object v4, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v5, "Tracking ad event - complete"
-
-    invoke-virtual {v4, v5}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    .line 165
-    new-instance v4, Lcom/jirbo/adcolony/ADCData$g;
-
-    invoke-direct {v4}, Lcom/jirbo/adcolony/ADCData$g;-><init>()V
-
-    .line 166
-    move-object/from16 v0, p3
-
-    iget-boolean v5, v0, Lcom/jirbo/adcolony/AdColonyAd;->t:Z
-
-    if-eqz v5, :cond_8
-
-    const-string v5, "ad_slot"
-
-    sget-object v6, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
-
-    iget-object v6, v6, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/u;
-
-    iget v6, v6, Lcom/jirbo/adcolony/u;->j:I
-
-    invoke-virtual {v4, v5, v6}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;I)V
-
-    .line 168
-    :goto_4
-    const-string v5, "replay"
-
-    move-object/from16 v0, p3
-
-    iget-boolean v6, v0, Lcom/jirbo/adcolony/AdColonyAd;->u:Z
-
-    invoke-virtual {v4, v5, v6}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Z)V
-
-    .line 169
-    const-string v5, "complete"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v5, v4, v1}, Lcom/jirbo/adcolony/t;->a(Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    .line 170
-    move-object/from16 v0, p3
-
-    iget-object v4, v0, Lcom/jirbo/adcolony/AdColonyAd;->j:Lcom/jirbo/adcolony/n$a;
-
-    const/4 v5, 0x0
-
-    iput-boolean v5, v4, Lcom/jirbo/adcolony/n$a;->r:Z
-
-    .line 172
-    :cond_4
-    move-wide/from16 v0, p1
-
-    move-object/from16 v2, p3
-
-    iput-wide v0, v2, Lcom/jirbo/adcolony/AdColonyAd;->p:D
-
-    goto/16 :goto_0
-
-    .line 150
-    :cond_5
-    const-string v6, "first_quartile"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v6, v1}, Lcom/jirbo/adcolony/t;->b(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    goto/16 :goto_1
-
-    .line 155
-    :cond_6
-    const-string v6, "midpoint"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v6, v1}, Lcom/jirbo/adcolony/t;->b(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    goto/16 :goto_2
-
-    .line 160
-    :cond_7
-    const-string v6, "third_quartile"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-virtual {v0, v6, v1}, Lcom/jirbo/adcolony/t;->b(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    goto :goto_3
-
-    .line 167
-    :cond_8
-    const-string v5, "ad_slot"
-
-    sget-object v6, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
-
-    iget-object v6, v6, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/u;
-
-    iget v6, v6, Lcom/jirbo/adcolony/u;->j:I
-
-    invoke-virtual {v4, v5, v6}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;I)V
-
-    goto :goto_4
-.end method
-
-.method a(Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;)V
-    .locals 1
-
-    .prologue
-    .line 46
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/n$e;->k:Lcom/jirbo/adcolony/n$f;
-
-    .line 47
-    if-eqz v0, :cond_0
-
-    .line 49
-    iget-object v0, v0, Lcom/jirbo/adcolony/n$f;->h:Lcom/jirbo/adcolony/ADCData$g;
-
-    invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p1, v0, p2}, Lcom/jirbo/adcolony/t;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;)V
-
-    .line 52
-    :cond_0
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/n$e;->l:Lcom/jirbo/adcolony/n$y;
-
-    .line 53
-    if-eqz v0, :cond_1
-
-    .line 55
-    iget-object v0, v0, Lcom/jirbo/adcolony/n$y;->d:Ljava/util/HashMap;
-
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/ArrayList;
-
-    invoke-virtual {p0, p1, v0}, Lcom/jirbo/adcolony/t;->a(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    .line 57
-    :cond_1
-    return-void
-.end method
-
-.method a(Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;Lcom/jirbo/adcolony/AdColonyAd;)V
+.method a(I)I
     .locals 2
 
     .prologue
-    .line 66
-    if-nez p1, :cond_0
+    .line 114
+    const-wide v0, 0x40f5180000000000L    # 86400.0
 
-    .line 68
-    sget-object v0, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
-
-    const-string v1, "No such event type:"
-
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 82
-    :goto_0
-    return-void
-
-    .line 71
-    :cond_0
-    const-string v0, "start"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1, v0, v1}, Lcom/jirbo/adcolony/t;->a(ID)I
 
     move-result v0
 
-    if-nez v0, :cond_1
-
-    const-string v0, "native_start"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    :cond_1
-    sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/u;
-
-    iget v1, v0, Lcom/jirbo/adcolony/u;->j:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    iput v1, v0, Lcom/jirbo/adcolony/u;->j:I
-
-    .line 73
-    :cond_2
-    if-nez p2, :cond_3
-
-    .line 75
-    new-instance p2, Lcom/jirbo/adcolony/ADCData$g;
-
-    invoke-direct {p2}, Lcom/jirbo/adcolony/ADCData$g;-><init>()V
-
-    .line 76
-    const-string v0, "replay"
-
-    iget-boolean v1, p3, Lcom/jirbo/adcolony/AdColonyAd;->u:Z
-
-    invoke-virtual {p2, v0, v1}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Z)V
-
-    .line 79
-    :cond_3
-    const-string v0, "s_imp_count"
-
-    sget-object v1, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
-
-    iget-object v1, v1, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/u;
-
-    iget v1, v1, Lcom/jirbo/adcolony/u;->j:I
-
-    invoke-virtual {p2, v0, v1}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;I)V
-
-    .line 80
-    iget-object v0, p3, Lcom/jirbo/adcolony/AdColonyAd;->A:Ljava/util/HashMap;
-
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, p1, v0, p2, p3}, Lcom/jirbo/adcolony/t;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    .line 81
-    iget-object v0, p3, Lcom/jirbo/adcolony/AdColonyAd;->B:Ljava/util/HashMap;
-
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/ArrayList;
-
-    invoke-virtual {p0, p1, v0}, Lcom/jirbo/adcolony/t;->a(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    goto :goto_0
+    return v0
 .end method
 
-.method a(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
-    .locals 4
+.method declared-synchronized a(ID)I
+    .locals 8
 
     .prologue
-    .line 25
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
+    .line 89
+    monitor-enter p0
 
-    if-eqz v0, :cond_0
+    :try_start_0
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->c()D
 
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
+    move-result-wide v0
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/n$e;->n:Lcom/jirbo/adcolony/n$ag;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/n$e;->n:Lcom/jirbo/adcolony/n$ag;
-
-    .line 29
-    invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/n$ag;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/n$ad;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    .line 42
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 31
-    :cond_1
-    sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v1, "Ad request for zone "
-
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 32
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/n$e;->n:Lcom/jirbo/adcolony/n$ag;
-
-    invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/n$ag;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/n$ad;
-
-    move-result-object v0
-
-    .line 33
-    if-eqz v0, :cond_0
-
-    iget-object v1, v0, Lcom/jirbo/adcolony/n$ad;->l:Lcom/jirbo/adcolony/n$ae;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, v0, Lcom/jirbo/adcolony/n$ad;->l:Lcom/jirbo/adcolony/n$ae;
-
-    iget-object v1, v1, Lcom/jirbo/adcolony/n$ae;->a:Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    .line 35
-    new-instance v1, Lcom/jirbo/adcolony/ADCData$g;
-
-    invoke-direct {v1}, Lcom/jirbo/adcolony/ADCData$g;-><init>()V
-
-    .line 36
-    iget v2, p2, Lcom/jirbo/adcolony/AdColonyAd;->g:I
-
-    if-nez v2, :cond_2
-
-    const-string v2, "request_denied"
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Z)V
-
-    .line 38
-    :goto_1
-    const-string v2, "request_denied_reason"
-
-    iget v3, p2, Lcom/jirbo/adcolony/AdColonyAd;->g:I
-
-    invoke-virtual {v1, v2, v3}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;I)V
-
-    .line 39
-    const-string v2, "request"
-
-    iget-object v3, v0, Lcom/jirbo/adcolony/n$ad;->l:Lcom/jirbo/adcolony/n$ae;
-
-    iget-object v3, v3, Lcom/jirbo/adcolony/n$ae;->a:Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v3, v1, p2}, Lcom/jirbo/adcolony/t;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    .line 40
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v2, "Tracking ad request - URL : "
-
-    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v1
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/n$ad;->l:Lcom/jirbo/adcolony/n$ae;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/n$ae;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    goto :goto_0
-
-    .line 37
-    :cond_2
-    const-string v2, "request_denied"
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v1, v2, v3}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Z)V
-
-    goto :goto_1
-.end method
-
-.method a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;)V
-    .locals 1
-
-    .prologue
-    .line 86
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/jirbo/adcolony/t;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    .line 87
-    return-void
-.end method
-
-.method a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;Lcom/jirbo/adcolony/AdColonyAd;)V
-    .locals 7
-
-    .prologue
-    const/4 v6, 0x1
-
-    .line 90
-    if-eqz p2, :cond_0
-
-    const-string v0, ""
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 122
-    :cond_0
-    :goto_0
-    return-void
+    sub-double v4, v0, p2
 
     .line 91
-    :cond_1
-    if-nez p3, :cond_2
+    const/4 v1, 0x0
 
-    new-instance p3, Lcom/jirbo/adcolony/ADCData$g;
-
-    invoke-direct {p3}, Lcom/jirbo/adcolony/ADCData$g;-><init>()V
-
-    .line 93
-    :cond_2
-    invoke-static {}, Lcom/jirbo/adcolony/aa;->b()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 94
-    if-eqz p4, :cond_3
-
-    const-string v1, "asi"
-
-    iget-object v2, p4, Lcom/jirbo/adcolony/AdColonyAd;->m:Ljava/lang/String;
-
-    invoke-virtual {p3, v1, v2}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 96
-    :cond_3
-    invoke-static {}, Lcom/jirbo/adcolony/aa;->c()D
-
-    move-result-wide v2
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    iget-object v1, v1, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/u;
-
-    iget-wide v4, v1, Lcom/jirbo/adcolony/u;->g:D
-
-    sub-double/2addr v2, v4
-
-    .line 97
-    const-wide/16 v4, 0x0
-
-    cmpl-double v1, v2, v4
-
-    if-lez v1, :cond_4
-
-    const-wide v4, 0x4122750000000000L    # 604800.0
-
-    cmpg-double v1, v2, v4
-
-    if-gez v1, :cond_4
-
-    .line 99
-    :cond_4
-    const-string v1, "s_time"
-
-    sget-object v2, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
-
-    iget-object v2, v2, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/u;
-
-    iget-wide v2, v2, Lcom/jirbo/adcolony/u;->i:D
-
-    invoke-virtual {p3, v1, v2, v3}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;D)V
-
-    .line 100
-    const-string v1, "sid"
-
-    iget-object v2, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    iget-object v2, v2, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/u;
-
-    iget-object v2, v2, Lcom/jirbo/adcolony/u;->k:Ljava/lang/String;
-
-    invoke-virtual {p3, v1, v2}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 101
-    const-string v1, "guid"
-
-    invoke-virtual {p3, v1, v0}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 102
-    const-string v1, "guid_key"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "DUBu6wJ27y6xs7VWmNDw67DD"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/jirbo/adcolony/aa;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p3, v1, v0}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 104
-    new-instance v0, Lcom/jirbo/adcolony/t$a;
-
-    invoke-direct {v0}, Lcom/jirbo/adcolony/t$a;-><init>()V
-
-    .line 105
-    iput-object p1, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    .line 106
-    iput-object p2, v0, Lcom/jirbo/adcolony/t$a;->b:Ljava/lang/String;
-
-    .line 107
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v2, "EVENT ---------------------------"
-
-    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 108
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v2, "EVENT - TYPE = "
-
-    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 109
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v2, "EVENT - URL  = "
-
-    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 110
-    invoke-virtual {p3}, Lcom/jirbo/adcolony/ADCData$g;->q()Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/jirbo/adcolony/t$a;->c:Ljava/lang/String;
-
-    .line 112
-    const-string v1, "reward_v4vc"
-
-    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    .line 114
-    const-string v1, "v4vc_name"
-
-    invoke-virtual {p3, v1}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/jirbo/adcolony/t$a;->d:Ljava/lang/String;
-
-    .line 115
-    const-string v1, "v4vc_amount"
-
-    invoke-virtual {p3, v1}, Lcom/jirbo/adcolony/ADCData$g;->g(Ljava/lang/String;)I
-
-    move-result v1
-
-    iput v1, v0, Lcom/jirbo/adcolony/t$a;->h:I
-
-    .line 118
-    :cond_5
-    iget-object v1, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 120
-    iput-boolean v6, p0, Lcom/jirbo/adcolony/t;->e:Z
-
-    .line 121
-    sput-boolean v6, Lcom/jirbo/adcolony/a;->z:Z
-
-    goto/16 :goto_0
-.end method
-
-.method a(Ljava/lang/String;Ljava/util/ArrayList;)V
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/util/ArrayList",
-            "<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    const/4 v3, 0x1
-
-    .line 126
-    if-eqz p2, :cond_0
-
-    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 141
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 128
-    :cond_1
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_1
-    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-ge v1, v0, :cond_2
-
-    .line 130
-    invoke-virtual {p2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    .line 132
-    new-instance v2, Lcom/jirbo/adcolony/t$a;
-
-    invoke-direct {v2}, Lcom/jirbo/adcolony/t$a;-><init>()V
-
-    .line 133
-    iput-object p1, v2, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    .line 134
-    iput-object v0, v2, Lcom/jirbo/adcolony/t$a;->b:Ljava/lang/String;
-
-    .line 135
-    iput-boolean v3, v2, Lcom/jirbo/adcolony/t$a;->l:Z
-
-    .line 136
+    .line 92
     iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 128
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_1
-
-    .line 139
-    :cond_2
-    iput-boolean v3, p0, Lcom/jirbo/adcolony/t;->e:Z
-
-    .line 140
-    sput-boolean v3, Lcom/jirbo/adcolony/a;->z:Z
-
-    goto :goto_0
-.end method
-
-.method b()V
-    .locals 6
-
-    .prologue
-    .line 183
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->z:Z
-
-    .line 184
-    new-instance v0, Lcom/jirbo/adcolony/f;
-
-    const-string v1, "tracking_info.txt"
-
-    invoke-direct {v0, v1}, Lcom/jirbo/adcolony/f;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v0}, Lcom/jirbo/adcolony/k;->c(Lcom/jirbo/adcolony/f;)Lcom/jirbo/adcolony/ADCData$c;
-
-    move-result-object v1
-
-    .line 185
-    if-eqz v1, :cond_2
-
-    .line 187
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
-
-    .line 188
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {v1}, Lcom/jirbo/adcolony/ADCData$c;->i()I
-
-    move-result v2
-
-    if-ge v0, v2, :cond_2
-
-    .line 190
-    invoke-virtual {v1, v0}, Lcom/jirbo/adcolony/ADCData$c;->b(I)Lcom/jirbo/adcolony/ADCData$g;
-
-    move-result-object v2
-
-    .line 191
-    new-instance v3, Lcom/jirbo/adcolony/t$a;
-
-    invoke-direct {v3}, Lcom/jirbo/adcolony/t$a;-><init>()V
-
-    .line 192
-    const-string v4, "type"
-
-    invoke-virtual {v2, v4}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    iput-object v4, v3, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    .line 193
-    const-string v4, "url"
-
-    invoke-virtual {v2, v4}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    iput-object v4, v3, Lcom/jirbo/adcolony/t$a;->b:Ljava/lang/String;
-
-    .line 194
-    const-string v4, "payload"
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v2, v4, v5}, Lcom/jirbo/adcolony/ADCData$g;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    iput-object v4, v3, Lcom/jirbo/adcolony/t$a;->c:Ljava/lang/String;
-
-    .line 195
-    const-string v4, "attempts"
-
-    invoke-virtual {v2, v4}, Lcom/jirbo/adcolony/ADCData$g;->g(Ljava/lang/String;)I
-
-    move-result v4
-
-    iput v4, v3, Lcom/jirbo/adcolony/t$a;->f:I
-
-    .line 196
-    const-string v4, "third_party"
-
-    invoke-virtual {v2, v4}, Lcom/jirbo/adcolony/ADCData$g;->h(Ljava/lang/String;)Z
-
-    move-result v4
-
-    iput-boolean v4, v3, Lcom/jirbo/adcolony/t$a;->l:Z
-
-    .line 198
-    iget-object v4, v3, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    const-string v5, "v4vc_callback"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    iget-object v4, v3, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    const-string v5, "reward_v4vc"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    .line 200
-    :cond_0
-    const-string v4, "v4vc_name"
-
-    invoke-virtual {v2, v4}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    iput-object v4, v3, Lcom/jirbo/adcolony/t$a;->d:Ljava/lang/String;
-
-    .line 201
-    const-string v4, "v4vc_amount"
-
-    invoke-virtual {v2, v4}, Lcom/jirbo/adcolony/ADCData$g;->g(Ljava/lang/String;)I
-
-    move-result v2
-
-    iput v2, v3, Lcom/jirbo/adcolony/t$a;->h:I
-
-    .line 203
-    :cond_1
-    iget-object v2, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 188
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 206
-    :cond_2
-    sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v1, "Loaded "
-
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->a(I)Lcom/jirbo/adcolony/l;
-
-    move-result-object v0
-
-    const-string v1, " events"
-
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 207
-    return-void
-.end method
-
-.method b(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
-    .locals 1
-
-    .prologue
-    .line 61
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0, p2}, Lcom/jirbo/adcolony/t;->a(Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    .line 62
-    return-void
-.end method
-
-.method c()V
-    .locals 6
-
-    .prologue
-    .line 211
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
-
-    .line 212
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    .line 213
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
-
-    .line 214
-    new-instance v2, Lcom/jirbo/adcolony/ADCData$c;
-
-    invoke-direct {v2}, Lcom/jirbo/adcolony/ADCData$c;-><init>()V
-
-    .line 215
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_0
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-ge v1, v0, :cond_4
+    add-int/lit8 v0, v0, -0x1
 
-    .line 217
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/ArrayList;
+    move v2, v0
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    :goto_0
+    if-ltz v2, :cond_0
+
+    .line 94
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/jirbo/adcolony/t$a;
 
-    .line 218
-    iget-boolean v3, v0, Lcom/jirbo/adcolony/t$a;->j:Z
+    iget-wide v6, v0, Lcom/jirbo/adcolony/t$a;->d:D
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v3, :cond_3
+    cmpg-double v0, v6, v4
 
-    .line 220
-    iget-object v3, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+    if-gez v0, :cond_1
 
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 222
-    new-instance v3, Lcom/jirbo/adcolony/ADCData$g;
-
-    invoke-direct {v3}, Lcom/jirbo/adcolony/ADCData$g;-><init>()V
-
-    .line 223
-    const-string v4, "type"
-
-    iget-object v5, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    invoke-virtual {v3, v4, v5}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 224
-    const-string v4, "url"
-
-    iget-object v5, v0, Lcom/jirbo/adcolony/t$a;->b:Ljava/lang/String;
-
-    invoke-virtual {v3, v4, v5}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 225
-    iget-object v4, v0, Lcom/jirbo/adcolony/t$a;->c:Ljava/lang/String;
-
-    if-eqz v4, :cond_0
-
-    const-string v4, "payload"
-
-    iget-object v5, v0, Lcom/jirbo/adcolony/t$a;->c:Ljava/lang/String;
-
-    invoke-virtual {v3, v4, v5}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 226
+    .line 98
     :cond_0
-    const-string v4, "attempts"
+    monitor-exit p0
 
-    iget v5, v0, Lcom/jirbo/adcolony/t$a;->f:I
+    return v1
 
-    invoke-virtual {v3, v4, v5}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;I)V
-
-    .line 227
-    iget-object v4, v0, Lcom/jirbo/adcolony/t$a;->d:Ljava/lang/String;
-
-    if-eqz v4, :cond_1
-
-    .line 229
-    const-string v4, "v4vc_name"
-
-    iget-object v5, v0, Lcom/jirbo/adcolony/t$a;->d:Ljava/lang/String;
-
-    invoke-virtual {v3, v4, v5}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 230
-    const-string v4, "v4vc_amount"
-
-    iget v5, v0, Lcom/jirbo/adcolony/t$a;->h:I
-
-    invoke-virtual {v3, v4, v5}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;I)V
-
-    .line 232
+    .line 96
     :cond_1
-    iget-boolean v0, v0, Lcom/jirbo/adcolony/t$a;->l:Z
+    :try_start_1
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_2
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    const-string v0, "third_party"
+    move-result-object v0
 
-    const/4 v4, 0x1
+    check-cast v0, Lcom/jirbo/adcolony/t$a;
 
-    invoke-virtual {v3, v0, v4}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Z)V
+    iget v0, v0, Lcom/jirbo/adcolony/t$a;->b:I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 233
-    :cond_2
-    invoke-virtual {v2, v3}, Lcom/jirbo/adcolony/ADCData$c;->a(Lcom/jirbo/adcolony/ADCData$i;)Lcom/jirbo/adcolony/ADCData$c;
+    if-ne p1, v0, :cond_2
 
-    .line 215
-    :cond_3
     add-int/lit8 v0, v1, 0x1
+
+    .line 92
+    :goto_1
+    add-int/lit8 v1, v2, -0x1
+
+    move v2, v1
 
     move v1, v0
 
     goto :goto_0
 
-    .line 236
-    :cond_4
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/ArrayList;
+    .line 89
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+    monitor-exit p0
 
-    .line 238
-    sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
+    throw v0
 
-    const-string v1, "Saving tracking_info ("
+    :cond_2
+    move v0, v1
 
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->a(I)Lcom/jirbo/adcolony/l;
-
-    move-result-object v0
-
-    const-string v1, " events)"
-
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 239
-    new-instance v0, Lcom/jirbo/adcolony/f;
-
-    const-string v1, "tracking_info.txt"
-
-    invoke-direct {v0, v1}, Lcom/jirbo/adcolony/f;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v0, v2}, Lcom/jirbo/adcolony/k;->a(Lcom/jirbo/adcolony/f;Lcom/jirbo/adcolony/ADCData$c;)V
-
-    .line 240
-    return-void
+    goto :goto_1
 .end method
 
-.method d()V
-    .locals 1
+.method declared-synchronized a(Ljava/lang/String;)I
+    .locals 5
 
     .prologue
-    .line 244
-    iget-boolean v0, p0, Lcom/jirbo/adcolony/t;->e:Z
+    const/4 v1, 0x0
+
+    .line 51
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
+
+    iget-object v0, v0, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/v;
+
+    iget-object v4, v0, Lcom/jirbo/adcolony/v;->j:Ljava/lang/String;
+
+    .line 56
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    move v3, v0
+
+    move v2, v1
+
+    :goto_0
+    if-ltz v3, :cond_0
+
+    .line 58
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 246
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/jirbo/adcolony/t$a;
+
+    iget-object v0, v0, Lcom/jirbo/adcolony/t$a;->c:Ljava/lang/String;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez v0, :cond_1
+
+    .line 69
+    :cond_0
+    monitor-exit p0
+
+    return v1
+
+    .line 59
+    :cond_1
+    :try_start_1
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/jirbo/adcolony/t$a;
+
+    iget-object v0, v0, Lcom/jirbo/adcolony/t$a;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 61
+    const/4 v2, 0x1
+
+    .line 62
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/jirbo/adcolony/t$a;
+
+    iget-object v0, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v2
+
+    .line 56
+    :goto_1
+    add-int/lit8 v2, v3, -0x1
+
+    move v3, v2
+
+    move v2, v1
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 66
+    :cond_2
+    if-nez v2, :cond_0
+
+    :cond_3
+    move v0, v1
+
+    move v1, v2
+
+    goto :goto_1
+
+    .line 51
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method declared-synchronized a(Ljava/lang/String;D)I
+    .locals 8
+
+    .prologue
+    .line 74
+    monitor-enter p0
+
+    :try_start_0
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->c()D
+
+    move-result-wide v0
+
+    sub-double v4, v0, p2
+
+    .line 76
+    const/4 v1, 0x0
+
+    .line 77
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    move v2, v0
+
+    :goto_0
+    if-ltz v2, :cond_0
+
+    .line 79
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/jirbo/adcolony/t$a;
+
+    iget-wide v6, v0, Lcom/jirbo/adcolony/t$a;->d:D
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    cmpg-double v0, v6, v4
+
+    if-gez v0, :cond_1
+
+    .line 82
+    :cond_0
+    monitor-exit p0
+
+    return v1
+
+    .line 80
+    :cond_1
+    :try_start_1
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/jirbo/adcolony/t$a;
+
+    iget-object v0, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    add-int/lit8 v0, v1, 0x1
+
+    .line 77
+    :goto_1
+    add-int/lit8 v1, v2, -0x1
+
+    move v2, v1
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 74
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_1
+.end method
+
+.method a()V
+    .locals 1
+
+    .prologue
+    .line 25
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/t;->b()V
+
+    .line 26
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/jirbo/adcolony/t;->e:Z
 
-    .line 247
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/t;->c()V
-
-    .line 249
-    :cond_0
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/t;->e()V
-
-    .line 250
+    .line 27
     return-void
 .end method
 
-.method e()V
+.method a(Ljava/lang/String;I)V
     .locals 8
 
     .prologue
     const/4 v7, 0x1
 
-    .line 254
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+    .line 31
+    sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    const-string v1, "Adding play event to play history"
 
-    move-result v0
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    if-nez v0, :cond_1
+    .line 33
+    iput-boolean v7, p0, Lcom/jirbo/adcolony/t;->e:Z
 
-    .line 287
-    :cond_0
+    .line 35
+    iget-object v6, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    new-instance v0, Lcom/jirbo/adcolony/t$a;
+
+    iget-object v1, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
+
+    iget-object v1, v1, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/v;
+
+    iget-object v1, v1, Lcom/jirbo/adcolony/v;->j:Ljava/lang/String;
+
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->c()D
+
+    move-result-wide v2
+
+    move-object v4, p1
+
+    move v5, p2
+
+    invoke-direct/range {v0 .. v5}, Lcom/jirbo/adcolony/t$a;-><init>(Ljava/lang/String;DLjava/lang/String;I)V
+
+    invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 37
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/HashMap;
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    .line 38
+    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
+
+    const-string v2, "Got play count of "
+
+    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
+
+    move-result-object v1
+
+    const-string v2, " for this ad"
+
+    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
+
+    .line 39
+    if-nez v0, :cond_0
+
+    .line 41
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/HashMap;
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 47
+    :goto_0
     return-void
 
-    .line 256
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+    .line 45
+    :cond_0
+    iget-object v1, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/HashMap;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    const/16 v1, 0x3e8
+    add-int/lit8 v0, v0, 0x1
 
-    if-le v0, v1, :cond_2
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+.end method
+
+.method b(I)I
+    .locals 2
+
+    .prologue
+    .line 115
+    const-wide v0, 0x4122750000000000L    # 604800.0
+
+    invoke-virtual {p0, p1, v0, v1}, Lcom/jirbo/adcolony/t;->a(ID)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method b(Ljava/lang/String;)I
+    .locals 2
+
+    .prologue
+    .line 85
+    const-wide v0, 0x40f5180000000000L    # 86400.0
+
+    invoke-virtual {p0, p1, v0, v1}, Lcom/jirbo/adcolony/t;->a(Ljava/lang/String;D)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method b()V
+    .locals 12
+
+    .prologue
+    const/4 v11, 0x1
+
+    const/4 v6, 0x0
+
+    .line 121
+    sput-boolean v11, Lcom/jirbo/adcolony/a;->r:Z
+
+    .line 122
+    iget-boolean v0, p0, Lcom/jirbo/adcolony/t;->f:Z
+
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
 
@@ -1473,38 +632,358 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object v0
 
-    .line 258
+    check-cast v0, Lcom/jirbo/adcolony/t$a;
+
+    iget-object v0, v0, Lcom/jirbo/adcolony/t$a;->c:Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
+
+    iget-object v1, v1, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/v;
+
+    iget-object v1, v1, Lcom/jirbo/adcolony/v;->j:Ljava/lang/String;
+
+    if-ne v0, v1, :cond_1
+
+    .line 161
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 124
+    :cond_1
+    new-instance v0, Lcom/jirbo/adcolony/f;
+
+    const-string v1, "play_history_info.txt"
+
+    invoke-direct {v0, v1}, Lcom/jirbo/adcolony/f;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Lcom/jirbo/adcolony/k;->b(Lcom/jirbo/adcolony/f;)Lcom/jirbo/adcolony/ADCData$g;
+
+    move-result-object v8
+
+    .line 125
+    if-eqz v8, :cond_0
+
+    .line 126
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    .line 128
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/t;->d:Ljava/util/HashMap;
+
+    .line 129
+    const-string v0, "reward_credit"
+
+    invoke-virtual {v8, v0}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;)Lcom/jirbo/adcolony/ADCData$g;
+
+    move-result-object v1
+
+    move v0, v6
+
+    .line 130
+    :goto_1
+    invoke-virtual {v1}, Lcom/jirbo/adcolony/ADCData$g;->o()I
+
+    move-result v2
+
+    if-ge v0, v2, :cond_2
+
+    .line 132
+    invoke-virtual {v1, v0}, Lcom/jirbo/adcolony/ADCData$g;->a(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 133
+    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/ADCData$g;->g(Ljava/lang/String;)I
+
+    move-result v3
+
+    .line 134
+    iget-object v4, p0, Lcom/jirbo/adcolony/t;->d:Ljava/util/HashMap;
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v4, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 130
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    .line 137
     :cond_2
-    invoke-static {}, Lcom/jirbo/adcolony/q;->c()Z
+    const-string v0, "play_events"
+
+    invoke-virtual {v8, v0}, Lcom/jirbo/adcolony/ADCData$g;->c(Ljava/lang/String;)Lcom/jirbo/adcolony/ADCData$c;
+
+    move-result-object v9
+
+    move v7, v6
+
+    .line 138
+    :goto_2
+    invoke-virtual {v9}, Lcom/jirbo/adcolony/ADCData$c;->i()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-ge v7, v0, :cond_4
 
-    .line 260
-    invoke-static {}, Lcom/jirbo/adcolony/aa;->c()D
+    .line 140
+    invoke-virtual {v9, v7}, Lcom/jirbo/adcolony/ADCData$c;->b(I)Lcom/jirbo/adcolony/ADCData$g;
+
+    move-result-object v0
+
+    .line 141
+    const-string v1, "timestamp"
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/ADCData$g;->f(Ljava/lang/String;)D
 
     move-result-wide v2
 
-    .line 261
+    .line 142
+    const-string v1, "zone_id"
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 143
+    const-string v1, "ad_id"
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/ADCData$g;->g(Ljava/lang/String;)I
+
+    move-result v5
+
+    .line 144
+    const-wide/16 v0, 0x0
+
+    cmpl-double v0, v2, v0
+
+    if-eqz v0, :cond_3
+
+    if-eqz v4, :cond_3
+
+    if-eqz v5, :cond_3
+
+    .line 146
+    iget-object v10, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
+
+    new-instance v0, Lcom/jirbo/adcolony/t$a;
+
+    const/4 v1, 0x0
+
+    invoke-direct/range {v0 .. v5}, Lcom/jirbo/adcolony/t$a;-><init>(Ljava/lang/String;DLjava/lang/String;I)V
+
+    invoke-virtual {v10, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 138
+    :cond_3
+    add-int/lit8 v0, v7, 0x1
+
+    move v7, v0
+
+    goto :goto_2
+
+    .line 150
+    :cond_4
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/HashMap;
+
+    .line 151
+    const-string v0, "play_counts"
+
+    invoke-virtual {v8, v0}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;)Lcom/jirbo/adcolony/ADCData$g;
+
+    move-result-object v0
+
+    .line 152
+    :goto_3
+    invoke-virtual {v0}, Lcom/jirbo/adcolony/ADCData$g;->o()I
+
+    move-result v1
+
+    if-ge v6, v1, :cond_5
+
+    .line 154
+    invoke-virtual {v0, v6}, Lcom/jirbo/adcolony/ADCData$g;->a(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    .line 155
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/jirbo/adcolony/ADCData$g;->g(Ljava/lang/String;)I
+
+    move-result v2
+
+    .line 156
+    iget-object v3, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/HashMap;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v3, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 152
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_3
+
+    .line 159
+    :cond_5
+    iput-boolean v11, p0, Lcom/jirbo/adcolony/t;->f:Z
+
+    goto/16 :goto_0
+.end method
+
+.method b(Ljava/lang/String;I)V
+    .locals 2
+
+    .prologue
+    .line 110
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->d:Ljava/util/HashMap;
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 111
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/jirbo/adcolony/t;->e:Z
+
+    .line 112
+    return-void
+.end method
+
+.method c(I)I
+    .locals 2
+
+    .prologue
+    .line 116
+    const-wide v0, 0x41440cd000000000L    # 2628000.0
+
+    invoke-virtual {p0, p1, v0, v1}, Lcom/jirbo/adcolony/t;->a(ID)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method c(Ljava/lang/String;)I
+    .locals 1
+
+    .prologue
+    .line 103
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->d:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    .line 104
+    if-nez v0, :cond_0
+
     const/4 v0, 0x0
 
-    move v1, v0
+    .line 105
+    :goto_0
+    return v0
 
-    :goto_1
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method c()V
+    .locals 12
+
+    .prologue
+    .line 166
+    new-instance v2, Lcom/jirbo/adcolony/ADCData$c;
+
+    invoke-direct {v2}, Lcom/jirbo/adcolony/ADCData$c;-><init>()V
+
+    .line 168
+    new-instance v3, Lcom/jirbo/adcolony/ADCData$g;
+
+    invoke-direct {v3}, Lcom/jirbo/adcolony/ADCData$g;-><init>()V
+
+    .line 169
+    new-instance v4, Lcom/jirbo/adcolony/ADCData$g;
+
+    invoke-direct {v4}, Lcom/jirbo/adcolony/ADCData$g;-><init>()V
+
+    .line 170
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->c()D
+
+    move-result-wide v0
+
+    const-wide v6, 0x41446f4000000000L    # 2678400.0
+
+    sub-double v6, v0, v6
+
+    .line 171
     iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-ge v1, v0, :cond_0
+    add-int/lit8 v0, v0, -0x1
 
-    .line 263
+    move v1, v0
+
+    :goto_0
+    if-ltz v1, :cond_0
+
+    .line 173
     iget-object v0, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1513,657 +992,243 @@
 
     check-cast v0, Lcom/jirbo/adcolony/t$a;
 
-    .line 264
-    iget-wide v4, v0, Lcom/jirbo/adcolony/t$a;->e:D
+    .line 174
+    iget-wide v8, v0, Lcom/jirbo/adcolony/t$a;->d:D
 
-    cmpg-double v4, v4, v2
+    cmpg-double v5, v8, v6
 
-    if-gez v4, :cond_6
+    if-gez v5, :cond_1
 
-    iget-boolean v4, v0, Lcom/jirbo/adcolony/t$a;->k:Z
+    .line 181
+    :cond_0
+    const-string v0, "play_events"
 
-    if-nez v4, :cond_6
+    invoke-virtual {v3, v0, v2}, Lcom/jirbo/adcolony/ADCData$g;->a(Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$i;)V
 
-    .line 266
-    iget v4, p0, Lcom/jirbo/adcolony/t;->d:I
+    .line 183
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/HashMap;
 
-    const/4 v5, 0x5
-
-    if-eq v4, v5, :cond_0
-
-    .line 267
-    iget v4, p0, Lcom/jirbo/adcolony/t;->d:I
-
-    add-int/lit8 v4, v4, 0x1
-
-    iput v4, p0, Lcom/jirbo/adcolony/t;->d:I
-
-    .line 268
-    iput-boolean v7, v0, Lcom/jirbo/adcolony/t$a;->k:Z
-
-    .line 270
-    iget-object v4, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    const-string v5, "v4vc_callback"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    .line 272
-    iget v4, p0, Lcom/jirbo/adcolony/t;->f:I
-
-    add-int/lit8 v5, v4, 0x1
-
-    iput v5, p0, Lcom/jirbo/adcolony/t;->f:I
-
-    iput v4, v0, Lcom/jirbo/adcolony/t$a;->i:I
-
-    .line 273
-    iget-object v4, p0, Lcom/jirbo/adcolony/t;->g:Ljava/util/HashMap;
-
-    iget v5, v0, Lcom/jirbo/adcolony/t$a;->i:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    sget-boolean v6, Lcom/jirbo/adcolony/a;->o:Z
-
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 275
-    :cond_3
-    new-instance v4, Lcom/jirbo/adcolony/ADCDownload;
-
-    iget-object v5, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    iget-object v6, v0, Lcom/jirbo/adcolony/t$a;->b:Ljava/lang/String;
-
-    invoke-direct {v4, v5, v6, p0}, Lcom/jirbo/adcolony/ADCDownload;-><init>(Lcom/jirbo/adcolony/d;Ljava/lang/String;Lcom/jirbo/adcolony/ADCDownload$Listener;)V
-
-    invoke-virtual {v4, v0}, Lcom/jirbo/adcolony/ADCDownload;->a(Ljava/lang/Object;)Lcom/jirbo/adcolony/ADCDownload;
-
-    move-result-object v4
-
-    .line 276
-    iget-boolean v5, v0, Lcom/jirbo/adcolony/t$a;->l:Z
-
-    if-eqz v5, :cond_4
-
-    iput-boolean v7, v4, Lcom/jirbo/adcolony/ADCDownload;->h:Z
-
-    .line 277
-    :cond_4
-    iget-object v5, v0, Lcom/jirbo/adcolony/t$a;->c:Ljava/lang/String;
-
-    if-eqz v5, :cond_5
-
-    .line 279
-    const-string v5, "application/json"
-
-    iget-object v6, v0, Lcom/jirbo/adcolony/t$a;->c:Ljava/lang/String;
-
-    invoke-virtual {v4, v5, v6}, Lcom/jirbo/adcolony/ADCDownload;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/jirbo/adcolony/ADCDownload;
-
-    .line 282
-    :cond_5
-    sget-object v5, Lcom/jirbo/adcolony/l;->b:Lcom/jirbo/adcolony/l;
-
-    const-string v6, "Submitting \'"
-
-    invoke-virtual {v5, v6}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v5
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    invoke-virtual {v5, v0}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
+    invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    const-string v5, "\' event."
-
-    invoke-virtual {v0, v5}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 283
-    invoke-virtual {v4}, Lcom/jirbo/adcolony/ADCDownload;->b()V
-
-    .line 284
-    sput-boolean v7, Lcom/jirbo/adcolony/a;->z:Z
-
-    .line 261
-    :cond_6
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto/16 :goto_1
-.end method
-
-.method public on_download_finished(Lcom/jirbo/adcolony/ADCDownload;)V
-    .locals 9
-    .param p1, "download"    # Lcom/jirbo/adcolony/ADCDownload;
-
-    .prologue
-    const/16 v2, 0x2710
-
-    const/4 v8, -0x1
-
-    const/4 v7, 0x1
-
-    const/4 v4, 0x0
-
-    .line 291
-    sput-boolean v7, Lcom/jirbo/adcolony/a;->z:Z
-
-    .line 292
-    iput-boolean v7, p0, Lcom/jirbo/adcolony/t;->e:Z
-
-    .line 293
-    iget v0, p0, Lcom/jirbo/adcolony/t;->d:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lcom/jirbo/adcolony/t;->d:I
-
-    .line 294
-    iget-object v0, p1, Lcom/jirbo/adcolony/ADCDownload;->e:Ljava/lang/Object;
-
-    check-cast v0, Lcom/jirbo/adcolony/t$a;
-
-    .line 295
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v3, "on_download_finished - event.type = "
-
-    invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    iget-object v3, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 296
-    iput-boolean v4, v0, Lcom/jirbo/adcolony/t$a;->k:Z
-
-    .line 298
-    iget-boolean v3, p1, Lcom/jirbo/adcolony/ADCDownload;->i:Z
-
-    .line 299
-    if-eqz v3, :cond_0
-
-    iget-object v1, v0, Lcom/jirbo/adcolony/t$a;->c:Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    .line 301
-    iget-object v1, p1, Lcom/jirbo/adcolony/ADCDownload;->n:Ljava/lang/String;
-
-    invoke-static {v1}, Lcom/jirbo/adcolony/k;->b(Ljava/lang/String;)Lcom/jirbo/adcolony/ADCData$g;
-
-    move-result-object v1
-
-    .line 302
-    if-eqz v1, :cond_7
-
-    .line 304
-    const-string v3, "status"
-
-    invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v5, "success"
-
-    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    .line 305
-    if-eqz v3, :cond_0
-
-    .line 307
-    iget-object v5, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    const-string v6, "reward_v4vc"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    .line 309
-    const-string v5, "v4vc_status"
-
-    invoke-virtual {v1, v5}, Lcom/jirbo/adcolony/ADCData$g;->h(Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_6
-
-    .line 311
-    const-string v5, "v4vc_callback"
-
-    invoke-virtual {v1, v5}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 312
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    if-lez v5, :cond_4
-
-    .line 315
-    new-instance v5, Lcom/jirbo/adcolony/t$a;
-
-    invoke-direct {v5}, Lcom/jirbo/adcolony/t$a;-><init>()V
-
-    .line 316
-    const-string v6, "v4vc_callback"
-
-    iput-object v6, v5, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    .line 317
-    iput-object v1, v5, Lcom/jirbo/adcolony/t$a;->b:Ljava/lang/String;
-
-    .line 318
-    iget-object v1, v0, Lcom/jirbo/adcolony/t$a;->d:Ljava/lang/String;
-
-    iput-object v1, v5, Lcom/jirbo/adcolony/t$a;->d:Ljava/lang/String;
-
-    .line 319
-    iget v1, v0, Lcom/jirbo/adcolony/t$a;->h:I
-
-    iput v1, v5, Lcom/jirbo/adcolony/t$a;->h:I
-
-    .line 320
-    iget-object v1, p0, Lcom/jirbo/adcolony/t;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 343
-    :cond_0
-    :goto_0
-    if-eqz v3, :cond_f
-
-    iget-object v1, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    const-string v5, "v4vc_callback"
-
-    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_f
-
-    .line 345
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v5, "v4vc_callback response:"
-
-    invoke-virtual {v1, v5}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v1
-
-    iget-object v5, p1, Lcom/jirbo/adcolony/ADCDownload;->n:Ljava/lang/String;
-
-    invoke-virtual {v1, v5}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 346
-    iget-object v1, p1, Lcom/jirbo/adcolony/ADCDownload;->n:Ljava/lang/String;
-
-    const-string v5, "vc_success"
-
-    invoke-virtual {v1, v5}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v1
-
-    if-eq v1, v8, :cond_8
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/t;->g:Ljava/util/HashMap;
-
-    iget v5, v0, Lcom/jirbo/adcolony/t$a;->i:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_8
-
-    .line 348
-    sget-object v1, Lcom/jirbo/adcolony/a;->U:Lcom/jirbo/adcolony/ADCVideo;
-
-    if-eqz v1, :cond_1
-
-    sget-object v1, Lcom/jirbo/adcolony/a;->U:Lcom/jirbo/adcolony/ADCVideo;
-
-    iput-boolean v7, v1, Lcom/jirbo/adcolony/ADCVideo;->o:Z
-
-    .line 349
-    :cond_1
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v5, "v4vc_callback success"
-
-    invoke-virtual {v1, v5}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 350
-    iget-object v1, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    iget-object v5, v0, Lcom/jirbo/adcolony/t$a;->d:Ljava/lang/String;
-
-    iget v6, v0, Lcom/jirbo/adcolony/t$a;->h:I
-
-    invoke-virtual {v1, v7, v5, v6}, Lcom/jirbo/adcolony/d;->a(ZLjava/lang/String;I)V
-
-    move v1, v3
-
-    .line 365
     :goto_1
-    if-eqz v1, :cond_b
-
-    .line 367
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v2, "Event submission SUCCESS for type: "
-
-    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v1
-
-    iget-object v2, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 368
-    iput-boolean v7, v0, Lcom/jirbo/adcolony/t$a;->j:Z
-
-    .line 393
-    :cond_2
-    :goto_2
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/u;
-
-    iget-boolean v0, v0, Lcom/jirbo/adcolony/u;->b:Z
-
-    if-nez v0, :cond_3
-
-    .line 395
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/t;->c()V
-
-    .line 397
-    :cond_3
-    return-void
-
-    .line 325
-    :cond_4
-    sget-object v1, Lcom/jirbo/adcolony/a;->U:Lcom/jirbo/adcolony/ADCVideo;
-
-    if-eqz v1, :cond_5
-
-    sget-object v1, Lcom/jirbo/adcolony/a;->U:Lcom/jirbo/adcolony/ADCVideo;
-
-    iput-boolean v7, v1, Lcom/jirbo/adcolony/ADCVideo;->o:Z
-
-    .line 326
-    :cond_5
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v5, "Client-side V4VC success"
-
-    invoke-virtual {v1, v5}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    goto :goto_0
-
-    .line 332
-    :cond_6
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v5, "Client-side V4VC failure"
-
-    invoke-virtual {v1, v5}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    goto/16 :goto_0
-
-    :cond_7
-    move v3, v4
-
-    .line 339
-    goto/16 :goto_0
-
-    .line 352
-    :cond_8
-    iget-object v1, p1, Lcom/jirbo/adcolony/ADCDownload;->n:Ljava/lang/String;
-
-    const-string v5, "vc_decline"
-
-    invoke-virtual {v1, v5}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v1
-
-    if-ne v1, v8, :cond_9
-
-    iget-object v1, p1, Lcom/jirbo/adcolony/ADCDownload;->n:Ljava/lang/String;
-
-    const-string v5, "vc_noreward"
-
-    invoke-virtual {v1, v5}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v1
-
-    if-eq v1, v8, :cond_a
-
-    .line 354
-    :cond_9
-    sget-object v1, Lcom/jirbo/adcolony/l;->c:Lcom/jirbo/adcolony/l;
-
-    const-string v5, "Server-side V4VC failure: "
-
-    invoke-virtual {v1, v5}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v1
-
-    iget-object v5, p1, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
-
-    invoke-virtual {v1, v5}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 355
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v5, "v4vc_callback declined"
-
-    invoke-virtual {v1, v5}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 356
-    iget-object v1, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
-
-    const-string v5, ""
-
-    invoke-virtual {v1, v4, v5, v4}, Lcom/jirbo/adcolony/d;->a(ZLjava/lang/String;I)V
-
-    move v1, v3
-
-    goto :goto_1
-
-    .line 360
-    :cond_a
-    sget-object v1, Lcom/jirbo/adcolony/l;->c:Lcom/jirbo/adcolony/l;
-
-    const-string v3, "Server-side V4VC failure: "
-
-    invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v1
-
-    iget-object v3, p1, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    move v1, v4
-
-    .line 361
-    goto :goto_1
-
-    .line 372
-    :cond_b
-    sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
-
-    const-string v3, "Event submission FAILED for type: "
-
-    invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v1
-
-    iget-object v3, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v1
-
-    const-string v3, " on try "
-
-    invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v1
-
-    iget v3, v0, Lcom/jirbo/adcolony/t$a;->f:I
-
-    add-int/lit8 v3, v3, 0x1
-
-    invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/l;->b(I)Lcom/jirbo/adcolony/l;
-
-    .line 373
-    iget v1, v0, Lcom/jirbo/adcolony/t$a;->f:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    iput v1, v0, Lcom/jirbo/adcolony/t$a;->f:I
-
-    .line 375
-    iget v1, v0, Lcom/jirbo/adcolony/t$a;->f:I
-
-    const/16 v3, 0x18
-
-    if-lt v1, v3, :cond_c
-
-    .line 377
-    sget-object v1, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
-
-    const-string v2, "Discarding event after 24 attempts to report."
-
-    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 378
-    iput-boolean v7, v0, Lcom/jirbo/adcolony/t$a;->j:Z
-
-    .line 380
-    iget-object v0, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
-
-    const-string v1, "v4vc_callback"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/jirbo/adcolony/t;->a:Lcom/jirbo/adcolony/d;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const-string v1, ""
+    move-result-object v0
 
-    invoke-virtual {v0, v4, v1, v4}, Lcom/jirbo/adcolony/d;->a(ZLjava/lang/String;I)V
+    check-cast v0, Ljava/lang/Integer;
 
-    goto/16 :goto_2
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    .line 384
-    :cond_c
-    const/16 v1, 0x14
+    move-result v2
 
-    .line 385
-    iget v3, v0, Lcom/jirbo/adcolony/t$a;->g:I
+    .line 185
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->c:Ljava/util/HashMap;
 
-    if-lez v3, :cond_d
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget v1, v0, Lcom/jirbo/adcolony/t$a;->g:I
+    move-result-object v5
 
-    mul-int/lit8 v1, v1, 0x3
+    invoke-virtual {v0, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 386
-    :cond_d
-    if-le v1, v2, :cond_e
+    move-result-object v0
 
-    move v1, v2
+    check-cast v0, Ljava/lang/Integer;
 
-    .line 387
-    :cond_e
-    sget-object v2, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    const-string v3, "Retrying in "
+    move-result v0
 
-    invoke-virtual {v2, v3}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
+    .line 186
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v1}, Lcom/jirbo/adcolony/l;->a(I)Lcom/jirbo/adcolony/l;
+    const-string v6, ""
 
-    move-result-object v2
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, " seconds (attempt "
+    move-result-object v5
 
-    invoke-virtual {v2, v3}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    iget v3, v0, Lcom/jirbo/adcolony/t$a;->f:I
-
-    invoke-virtual {v2, v3}, Lcom/jirbo/adcolony/l;->a(I)Lcom/jirbo/adcolony/l;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, ")"
+    invoke-virtual {v4, v2, v0}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;I)V
 
-    invoke-virtual {v2, v3}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
+    goto :goto_1
 
-    .line 388
-    iput v1, v0, Lcom/jirbo/adcolony/t$a;->g:I
+    .line 175
+    :cond_1
+    new-instance v5, Lcom/jirbo/adcolony/ADCData$g;
 
-    .line 389
-    invoke-static {}, Lcom/jirbo/adcolony/aa;->c()D
+    invoke-direct {v5}, Lcom/jirbo/adcolony/ADCData$g;-><init>()V
 
-    move-result-wide v2
+    .line 176
+    const-string v8, "zone_id"
 
-    int-to-double v4, v1
+    iget-object v9, v0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
 
-    add-double/2addr v2, v4
+    invoke-virtual {v5, v8, v9}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    iput-wide v2, v0, Lcom/jirbo/adcolony/t$a;->e:D
+    .line 177
+    const-string v8, "ad_id"
 
-    goto/16 :goto_2
+    iget v9, v0, Lcom/jirbo/adcolony/t$a;->b:I
 
-    :cond_f
-    move v1, v3
+    invoke-virtual {v5, v8, v9}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;I)V
 
-    goto/16 :goto_1
+    .line 178
+    const-string v8, "timestamp"
+
+    iget-wide v10, v0, Lcom/jirbo/adcolony/t$a;->d:D
+
+    invoke-virtual {v5, v8, v10, v11}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;D)V
+
+    .line 179
+    invoke-virtual {v2, v5}, Lcom/jirbo/adcolony/ADCData$c;->a(Lcom/jirbo/adcolony/ADCData$i;)Lcom/jirbo/adcolony/ADCData$c;
+
+    .line 171
+    add-int/lit8 v0, v1, -0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 188
+    :cond_2
+    const-string v0, "play_counts"
+
+    invoke-virtual {v3, v0, v4}, Lcom/jirbo/adcolony/ADCData$g;->a(Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$i;)V
+
+    .line 190
+    new-instance v2, Lcom/jirbo/adcolony/ADCData$g;
+
+    invoke-direct {v2}, Lcom/jirbo/adcolony/ADCData$g;-><init>()V
+
+    .line 191
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->d:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_3
+
+    .line 193
+    iget-object v0, p0, Lcom/jirbo/adcolony/t;->d:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :goto_2
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 195
+    iget-object v1, p0, Lcom/jirbo/adcolony/t;->d:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-virtual {v2, v0, v1}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;I)V
+
+    goto :goto_2
+
+    .line 198
+    :cond_3
+    const-string v0, "reward_credit"
+
+    invoke-virtual {v3, v0, v2}, Lcom/jirbo/adcolony/ADCData$g;->a(Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$i;)V
+
+    .line 200
+    sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
+
+    const-string v1, "Saving play history"
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
+
+    .line 201
+    new-instance v0, Lcom/jirbo/adcolony/f;
+
+    const-string v1, "play_history_info.txt"
+
+    invoke-direct {v0, v1}, Lcom/jirbo/adcolony/f;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0, v3}, Lcom/jirbo/adcolony/k;->a(Lcom/jirbo/adcolony/f;Lcom/jirbo/adcolony/ADCData$g;)V
+
+    .line 202
+    return-void
+.end method
+
+.method d(I)I
+    .locals 2
+
+    .prologue
+    .line 117
+    const-wide v0, 0x416e133800000000L    # 1.5768E7
+
+    invoke-virtual {p0, p1, v0, v1}, Lcom/jirbo/adcolony/t;->a(ID)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method d()V
+    .locals 1
+
+    .prologue
+    .line 209
+    iget-boolean v0, p0, Lcom/jirbo/adcolony/t;->e:Z
+
+    if-eqz v0, :cond_0
+
+    .line 211
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/jirbo/adcolony/t;->e:Z
+
+    .line 212
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/t;->c()V
+
+    .line 214
+    :cond_0
+    return-void
 .end method

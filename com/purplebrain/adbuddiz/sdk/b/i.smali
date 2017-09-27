@@ -1,20 +1,14 @@
-.class public Lcom/purplebrain/adbuddiz/sdk/b/i;
-.super Lcom/purplebrain/adbuddiz/sdk/b/b;
+.class public final Lcom/purplebrain/adbuddiz/sdk/b/i;
+.super Lcom/purplebrain/adbuddiz/sdk/b/e;
 
 
 # direct methods
-.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0, p1}, Lcom/purplebrain/adbuddiz/sdk/b/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)V
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->INVALID_PUBLISHER_KEY:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
 
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lcom/purplebrain/adbuddiz/sdk/b/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;)V
+    invoke-direct {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/b/e;-><init>(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)V
 
     return-void
 .end method

@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 96
+    .line 98
     iput-object p1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd$1;->a:Lcom/jirbo/adcolony/AdColonyInterstitialAd;
 
     invoke-direct {p0, p2}, Lcom/jirbo/adcolony/j;-><init>(Lcom/jirbo/adcolony/d;)V
@@ -37,26 +37,26 @@
     .locals 3
 
     .prologue
-    .line 99
+    .line 101
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd$1;->a:Lcom/jirbo/adcolony/AdColonyInterstitialAd;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
+    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd$1;->o:Lcom/jirbo/adcolony/d;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->d:Lcom/jirbo/adcolony/t;
+    iget-object v0, v0, Lcom/jirbo/adcolony/d;->d:Lcom/jirbo/adcolony/u;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd$1;->a:Lcom/jirbo/adcolony/AdColonyInterstitialAd;
 
-    iget-object v1, v1, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
+    iget-object v1, v1, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
 
     iget-object v2, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd$1;->a:Lcom/jirbo/adcolony/AdColonyInterstitialAd;
 
-    invoke-virtual {v0, v1, v2}, Lcom/jirbo/adcolony/t;->a(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
+    invoke-virtual {v0, v1, v2}, Lcom/jirbo/adcolony/u;->a(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 100
+    .line 102
     :cond_0
     return-void
 .end method

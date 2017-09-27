@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 286
+    .line 237
     iput-object p1, p0, Lcom/warlings2/googleservices$4$2;->this$1:Lcom/warlings2/googleservices$4;
 
     iput-object p2, p0, Lcom/warlings2/googleservices$4$2;->val$inv:Lcom/google/android/gms/games/multiplayer/Invitation;
@@ -44,7 +44,7 @@
     .locals 4
 
     .prologue
-    .line 288
+    .line 239
     sget-object v0, Lcom/warlings2/googleservices;->room_update_listener:Lcom/google/android/gms/games/multiplayer/realtime/RoomUpdateListener;
 
     invoke-static {v0}, Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig;->builder(Lcom/google/android/gms/games/multiplayer/realtime/RoomUpdateListener;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;
@@ -63,7 +63,7 @@
 
     move-result-object v0
 
-    .line 292
+    .line 243
     iget-object v1, p0, Lcom/warlings2/googleservices$4$2;->val$inv:Lcom/google/android/gms/games/multiplayer/Invitation;
 
     invoke-interface {v1}, Lcom/google/android/gms/games/multiplayer/Invitation;->getInvitationId()Ljava/lang/String;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;->setInvitationIdToAccept(Ljava/lang/String;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;
 
-    .line 293
+    .line 244
     sget-object v1, Lcom/google/android/gms/games/Games;->RealTimeMultiplayer:Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;
 
     sget-object v2, Lcom/warlings2/googleservices;->client:Lcom/google/android/gms/common/api/GoogleApiClient;
@@ -83,21 +83,21 @@
 
     invoke-interface {v1, v2, v0}, Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;->join(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig;)V
 
-    .line 294
+    .line 245
     iget-object v0, p0, Lcom/warlings2/googleservices$4$2;->this$1:Lcom/warlings2/googleservices$4;
 
     iget-object v0, v0, Lcom/warlings2/googleservices$4;->this$0:Lcom/warlings2/googleservices;
 
     const-wide/16 v2, 0x0
 
-    invoke-static {v0, v2, v3}, Lcom/warlings2/googleservices;->access$302(Lcom/warlings2/googleservices;J)J
+    invoke-static {v0, v2, v3}, Lcom/warlings2/googleservices;->access$202(Lcom/warlings2/googleservices;J)J
 
-    .line 296
-    invoke-static {}, Lcom/warlings2/googleservices;->access$400()V
+    .line 247
+    invoke-static {}, Lcom/warlings2/googleservices;->access$300()V
 
-    .line 297
+    .line 248
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 298
+    .line 249
     return-void
 .end method

@@ -86,27 +86,14 @@
 
     invoke-direct {p0, p1, v0}, Lcom/jirbo/adcolony/j;-><init>(Lcom/jirbo/adcolony/d;Z)V
 
-    .line 18
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
-
     .line 46
     iput-object p2, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
 
-    .line 48
-    if-nez p2, :cond_0
-
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
-
-    .line 50
-    :cond_0
+    .line 47
     iput-object p3, p0, Lcom/jirbo/adcolony/ADCDownload;->b:Lcom/jirbo/adcolony/ADCDownload$Listener;
 
-    .line 51
-    if-eqz p4, :cond_1
+    .line 48
+    if-eqz p4, :cond_0
 
     new-instance v0, Ljava/io/File;
 
@@ -114,8 +101,8 @@
 
     iput-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->d:Ljava/io/File;
 
-    .line 52
-    :cond_1
+    .line 49
+    :cond_0
     return-void
 .end method
 
@@ -125,10 +112,10 @@
     .locals 0
 
     .prologue
-    .line 56
+    .line 53
     iput-object p1, p0, Lcom/jirbo/adcolony/ADCDownload;->e:Ljava/lang/Object;
 
-    .line 57
+    .line 54
     return-object p0
 .end method
 
@@ -136,13 +123,13 @@
     .locals 0
 
     .prologue
-    .line 62
+    .line 59
     iput-object p1, p0, Lcom/jirbo/adcolony/ADCDownload;->f:Ljava/lang/String;
 
-    .line 63
+    .line 60
     iput-object p2, p0, Lcom/jirbo/adcolony/ADCDownload;->g:Ljava/lang/String;
 
-    .line 64
+    .line 61
     return-object p0
 .end method
 
@@ -150,12 +137,12 @@
     .locals 1
 
     .prologue
-    .line 311
+    .line 286
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->b:Lcom/jirbo/adcolony/ADCDownload$Listener;
 
     invoke-interface {v0, p0}, Lcom/jirbo/adcolony/ADCDownload$Listener;->on_download_finished(Lcom/jirbo/adcolony/ADCDownload;)V
 
-    .line 312
+    .line 287
     return-void
 .end method
 
@@ -163,10 +150,10 @@
     .locals 0
 
     .prologue
-    .line 69
-    invoke-static {p0}, Lcom/jirbo/adcolony/z;->a(Ljava/lang/Runnable;)V
+    .line 66
+    invoke-static {p0}, Lcom/jirbo/adcolony/aa;->a(Ljava/lang/Runnable;)V
 
-    .line 70
+    .line 67
     return-void
 .end method
 
@@ -182,7 +169,7 @@
 
     const/4 v9, 0x0
 
-    .line 75
+    .line 72
     move v5, v0
 
     :goto_0
@@ -190,10 +177,10 @@
 
     if-gt v5, v0, :cond_3
 
-    .line 79
+    .line 76
     const/4 v1, 0x0
 
-    .line 80
+    .line 77
     :try_start_0
     new-instance v0, Ljava/net/URL;
 
@@ -209,19 +196,19 @@
 
     check-cast v0, Ljava/net/HttpURLConnection;
 
-    .line 82
+    .line 79
     iget-object v3, p0, Lcom/jirbo/adcolony/ADCDownload;->f:Ljava/lang/String;
 
-    if-eqz v3, :cond_e
+    if-eqz v3, :cond_c
 
-    .line 84
+    .line 81
     sget-object v3, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v4, "Performing POST"
 
     invoke-virtual {v3, v4}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 86
+    .line 83
     iget-object v3, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
 
     const-string v4, "https://"
@@ -230,13 +217,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_1d
 
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v3, v10, :cond_1e
+    if-lt v3, v10, :cond_1d
 
-    .line 88
+    .line 85
     new-instance v1, Ljava/net/URL;
 
     iget-object v3, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
@@ -251,39 +238,38 @@
 
     check-cast v1, Ljavax/net/ssl/HttpsURLConnection;
 
-    .line 89
+    .line 86
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
     move-object v4, v1
 
-    .line 92
+    .line 89
     :goto_1
     iget-boolean v1, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_4
 
-    .line 94
     const-string v1, "POST"
 
     invoke-virtual {v4, v1}, Ljavax/net/ssl/HttpsURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    .line 103
+    .line 92
     :goto_2
     iget-boolean v1, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_5
 
     const/4 v1, 0x1
 
     invoke-virtual {v4, v1}, Ljavax/net/ssl/HttpsURLConnection;->setDoOutput(Z)V
 
-    .line 106
+    .line 95
     :goto_3
     iget-boolean v1, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_6
 
     new-instance v1, Ljava/io/PrintStream;
 
@@ -293,13 +279,13 @@
 
     invoke-direct {v1, v3}, Ljava/io/PrintStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 107
+    .line 96
     :goto_4
     iget-object v3, p0, Lcom/jirbo/adcolony/ADCDownload;->g:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 109
+    .line 98
     sget-object v1, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v3, "Post data: "
@@ -312,14 +298,14 @@
 
     invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 111
+    .line 100
     iget-boolean v1, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_7
 
     invoke-virtual {v4}, Ljavax/net/ssl/HttpsURLConnection;->connect()V
 
-    .line 114
+    .line 103
     :goto_5
     iget-boolean v1, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
@@ -338,7 +324,7 @@
 
     if-nez v1, :cond_2
 
-    .line 115
+    .line 104
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v1
@@ -347,11 +333,11 @@
 
     if-ne v1, v3, :cond_2
 
-    .line 117
+    .line 106
     :cond_1
     iget-boolean v1, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_8
 
     invoke-virtual {v4}, Ljavax/net/ssl/HttpsURLConnection;->getInputStream()Ljava/io/InputStream;
 
@@ -359,16 +345,16 @@
 
     move-object v3, v1
 
-    .line 118
+    .line 107
     :goto_6
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 120
+    .line 109
     iget-boolean v1, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_9
 
     invoke-virtual {v4}, Ljavax/net/ssl/HttpsURLConnection;->getHeaderFields()Ljava/util/Map;
 
@@ -377,12 +363,12 @@
     :goto_7
     iput-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->k:Ljava/util/Map;
 
-    .line 122
+    .line 111
     const/16 v0, 0x400
 
     new-array v4, v0, [B
 
-    .line 123
+    .line 112
     const/4 v0, 0x0
 
     const/16 v1, 0x400
@@ -393,19 +379,19 @@
 
     move v1, v0
 
-    .line 124
+    .line 113
     :goto_8
-    if-eq v1, v2, :cond_c
+    if-eq v1, v2, :cond_b
 
     move v0, v2
 
-    .line 127
+    .line 116
     :goto_9
     add-int/lit8 v0, v0, 0x1
 
-    if-ge v0, v1, :cond_b
+    if-ge v0, v1, :cond_a
 
-    .line 129
+    .line 118
     aget-byte v7, v4, v0
 
     int-to-char v7, v7
@@ -416,11 +402,11 @@
 
     goto :goto_9
 
-    .line 286
+    .line 262
     :catch_0
     move-exception v0
 
-    .line 288
+    .line 264
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -457,39 +443,25 @@
 
     invoke-static {v0}, Lcom/jirbo/adcolony/a;->c(Ljava/lang/String;)V
 
-    .line 291
+    .line 267
     :cond_2
     const/4 v0, 0x3
 
-    if-ne v5, v0, :cond_1d
+    if-ne v5, v0, :cond_1c
 
-    .line 304
+    .line 280
     :cond_3
-    iget-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
-
-    const-string v1, "androidads23"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    sput-boolean v9, Lcom/jirbo/adcolony/a;->p:Z
-
-    .line 305
-    :cond_4
     iput-boolean v9, p0, Lcom/jirbo/adcolony/ADCDownload;->i:Z
 
-    .line 306
+    .line 281
     invoke-static {p0}, Lcom/jirbo/adcolony/a;->a(Lcom/jirbo/adcolony/j;)V
 
-    .line 307
+    .line 282
     :goto_a
     return-void
 
-    .line 99
-    :cond_5
+    .line 90
+    :cond_4
     :try_start_1
     const-string v1, "POST"
 
@@ -497,16 +469,16 @@
 
     goto/16 :goto_2
 
-    .line 104
-    :cond_6
+    .line 93
+    :cond_5
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
 
     goto/16 :goto_3
 
-    .line 106
-    :cond_7
+    .line 95
+    :cond_6
     new-instance v1, Ljava/io/PrintStream;
 
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getOutputStream()Ljava/io/OutputStream;
@@ -517,32 +489,32 @@
 
     goto/16 :goto_4
 
-    .line 112
-    :cond_8
+    .line 101
+    :cond_7
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->connect()V
 
     goto/16 :goto_5
 
-    .line 117
-    :cond_9
+    .line 106
+    :cond_8
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v1
 
     move-object v3, v1
 
-    goto/16 :goto_6
+    goto :goto_6
 
-    .line 120
-    :cond_a
+    .line 109
+    :cond_9
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
 
     move-result-object v0
 
     goto :goto_7
 
-    .line 131
-    :cond_b
+    .line 120
+    :cond_a
     const/4 v0, 0x0
 
     const/16 v1, 0x400
@@ -553,28 +525,21 @@
 
     move v1, v0
 
-    .line 132
+    .line 121
     goto :goto_8
 
-    .line 133
-    :cond_c
+    .line 122
+    :cond_b
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 137
-    :try_start_2
+    .line 124
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->n:Ljava/lang/String;
-    :try_end_2
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_2 .. :try_end_2} :catch_1
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 145
-    :try_start_3
+    .line 125
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->n:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -583,82 +548,47 @@
 
     iput v0, p0, Lcom/jirbo/adcolony/ADCDownload;->m:I
 
-    .line 147
-    iget-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
-
-    const-string v1, "androidads23"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_d
-
-    .line 149
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    sput-wide v0, Lcom/jirbo/adcolony/a;->al:J
-
-    .line 152
-    :cond_d
+    .line 127
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/jirbo/adcolony/ADCDownload;->i:Z
 
-    .line 153
+    .line 128
     invoke-static {p0}, Lcom/jirbo/adcolony/a;->a(Lcom/jirbo/adcolony/j;)V
 
     goto :goto_a
 
-    .line 139
-    :catch_1
-    move-exception v0
-
-    .line 141
-    sget-object v0, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
-
-    const-string v1, "Out of memory, disabling AdColony"
-
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 142
-    invoke-static {}, Lcom/jirbo/adcolony/AdColony;->disable()V
-
-    goto :goto_a
-
-    .line 160
-    :cond_e
+    .line 135
+    :cond_c
     const/16 v3, 0x7530
 
     invoke-virtual {v0, v3}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
 
-    .line 161
+    .line 136
     iget-boolean v3, p0, Lcom/jirbo/adcolony/ADCDownload;->h:Z
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_d
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
 
-    .line 163
-    :cond_f
+    .line 138
+    :cond_d
     iget-object v3, p0, Lcom/jirbo/adcolony/ADCDownload;->d:Ljava/io/File;
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_13
 
-    .line 165
+    .line 140
     iget-object v1, p0, Lcom/jirbo/adcolony/ADCDownload;->a:Lcom/jirbo/adcolony/d;
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_e
 
     iget-object v1, p0, Lcom/jirbo/adcolony/ADCDownload;->a:Lcom/jirbo/adcolony/d;
 
     iget-object v1, v1, Lcom/jirbo/adcolony/d;->f:Lcom/jirbo/adcolony/ADCStorage;
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_e
 
     iget-object v1, p0, Lcom/jirbo/adcolony/ADCDownload;->a:Lcom/jirbo/adcolony/d;
 
@@ -666,40 +596,40 @@
 
     invoke-virtual {v1}, Lcom/jirbo/adcolony/ADCStorage;->b()V
 
-    .line 167
-    :cond_10
+    .line 142
+    :cond_e
     iget-object v1, p0, Lcom/jirbo/adcolony/ADCDownload;->d:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 168
+    .line 143
     new-instance v4, Ljava/io/FileOutputStream;
 
     invoke-direct {v4, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
 
-    .line 169
+    .line 144
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v6
 
-    .line 171
+    .line 146
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getContentLength()I
 
     move-result v1
 
-    .line 172
+    .line 147
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/jirbo/adcolony/ADCDownload;->m:I
 
-    .line 174
+    .line 149
     const/16 v0, 0x400
 
     new-array v7, v0, [B
 
-    .line 175
+    .line 150
     const/4 v0, 0x0
 
     const/16 v8, 0x400
@@ -708,36 +638,36 @@
 
     move-result v0
 
-    .line 176
-    :cond_11
-    if-eq v0, v2, :cond_14
+    .line 151
+    :cond_f
+    if-eq v0, v2, :cond_12
 
-    .line 178
-    if-lez v1, :cond_13
+    .line 153
+    if-lez v1, :cond_11
 
-    .line 180
-    if-le v0, v1, :cond_12
+    .line 155
+    if-le v0, v1, :cond_10
 
     move v0, v1
 
-    .line 181
-    :cond_12
+    .line 156
+    :cond_10
     sub-int/2addr v1, v0
 
-    .line 184
-    :cond_13
+    .line 159
+    :cond_11
     iget v8, p0, Lcom/jirbo/adcolony/ADCDownload;->m:I
 
     add-int/2addr v8, v0
 
     iput v8, p0, Lcom/jirbo/adcolony/ADCDownload;->m:I
 
-    .line 185
+    .line 160
     const/4 v8, 0x0
 
     invoke-virtual {v4, v7, v8, v0}, Ljava/io/OutputStream;->write([BII)V
 
-    .line 186
+    .line 161
     const/4 v0, 0x0
 
     const/16 v8, 0x400
@@ -746,20 +676,20 @@
 
     move-result v0
 
-    .line 188
-    if-nez v1, :cond_11
+    .line 163
+    if-nez v1, :cond_f
 
-    .line 191
-    :cond_14
+    .line 166
+    :cond_12
     invoke-virtual {v6}, Ljava/io/InputStream;->close()V
 
-    .line 192
+    .line 167
     invoke-virtual {v4}, Ljava/io/OutputStream;->flush()V
 
-    .line 193
+    .line 168
     invoke-virtual {v4}, Ljava/io/OutputStream;->close()V
 
-    .line 195
+    .line 170
     sget-object v0, Lcom/jirbo/adcolony/l;->b:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Downloaded "
@@ -782,24 +712,24 @@
 
     invoke-virtual {v0, v3}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 281
+    .line 257
     :goto_b
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/jirbo/adcolony/ADCDownload;->i:Z
 
-    .line 282
+    .line 258
     invoke-static {p0}, Lcom/jirbo/adcolony/a;->a(Lcom/jirbo/adcolony/j;)V
 
     goto/16 :goto_a
 
-    .line 199
-    :cond_15
+    .line 174
+    :cond_13
     iget-boolean v3, p0, Lcom/jirbo/adcolony/ADCDownload;->h:Z
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_16
 
-    .line 201
+    .line 176
     iget-object v3, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
 
     const-string v4, "https://"
@@ -808,13 +738,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_14
 
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v3, v10, :cond_16
+    if-lt v3, v10, :cond_14
 
-    .line 203
+    .line 178
     new-instance v1, Ljava/net/URL;
 
     iget-object v3, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
@@ -829,26 +759,26 @@
 
     check-cast v1, Ljavax/net/ssl/HttpsURLConnection;
 
-    .line 204
+    .line 179
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
-    .line 207
-    :cond_16
+    .line 182
+    :cond_14
     iget-boolean v3, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_15
 
     invoke-virtual {v1}, Ljavax/net/ssl/HttpsURLConnection;->getResponseCode()I
 
     move-result v3
 
-    .line 208
+    .line 183
     :goto_c
-    if-lez v3, :cond_18
+    if-lez v3, :cond_16
 
-    .line 210
+    .line 185
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Got HTTP response "
@@ -865,7 +795,7 @@
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 211
+    .line 186
     sget-object v0, Lcom/jirbo/adcolony/l;->b:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Downloaded "
@@ -878,36 +808,36 @@
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 212
+    .line 187
     const-string v0, ""
 
     iput-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->n:Ljava/lang/String;
 
-    .line 213
+    .line 188
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/jirbo/adcolony/ADCDownload;->m:I
 
-    .line 214
+    .line 189
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/jirbo/adcolony/ADCDownload;->i:Z
 
-    .line 215
+    .line 190
     invoke-static {p0}, Lcom/jirbo/adcolony/a;->a(Lcom/jirbo/adcolony/j;)V
 
     goto/16 :goto_a
 
-    .line 207
-    :cond_17
+    .line 182
+    :cond_15
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v3
 
     goto :goto_c
 
-    .line 219
-    :cond_18
+    .line 194
+    :cond_16
     iget-object v3, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
 
     const-string v4, "https://"
@@ -916,13 +846,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_17
 
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v3, v10, :cond_19
+    if-lt v3, v10, :cond_17
 
-    .line 221
+    .line 196
     new-instance v1, Ljava/net/URL;
 
     iget-object v3, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
@@ -937,50 +867,50 @@
 
     check-cast v1, Ljavax/net/ssl/HttpsURLConnection;
 
-    .line 222
+    .line 197
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
-    .line 223
+    .line 198
     sget-object v3, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v4, "ADCDownload - use ssl!"
 
     invoke-virtual {v3, v4}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 229
+    .line 204
     :goto_d
     sget-object v3, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v4, "ADCDownload - before pause"
 
     invoke-virtual {v3, v4}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 232
+    .line 207
     const-wide/16 v6, 0xbb8
 
-    :try_start_4
+    :try_start_2
     invoke-static {v6, v7}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 238
+    .line 213
     :goto_e
-    :try_start_5
+    :try_start_3
     sget-object v3, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v4, "ADCDownload - getInputStream"
 
     invoke-virtual {v3, v4}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 239
+    .line 214
     iget-boolean v3, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_18
 
     invoke-virtual {v1}, Ljavax/net/ssl/HttpsURLConnection;->getInputStream()Ljava/io/InputStream;
 
@@ -988,85 +918,85 @@
 
     move-object v3, v0
 
-    .line 240
+    .line 215
     :goto_f
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 242
+    .line 217
     const/16 v0, 0x400
 
     new-array v6, v0, [B
 
-    .line 243
+    .line 218
     const/4 v0, 0x0
 
     const/16 v1, 0x400
 
     invoke-virtual {v3, v6, v0, v1}, Ljava/io/InputStream;->read([BII)I
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
     move-result v0
 
     move v1, v0
 
-    .line 246
+    .line 221
     :goto_10
-    if-eq v1, v2, :cond_1c
+    if-eq v1, v2, :cond_1a
 
     move v0, v2
 
-    .line 249
+    .line 224
     :goto_11
     add-int/lit8 v0, v0, 0x1
 
-    if-ge v0, v1, :cond_1b
+    if-ge v0, v1, :cond_19
 
-    .line 251
-    :try_start_6
+    .line 226
+    :try_start_4
     aget-byte v7, v6, v0
 
     int-to-char v7, v7
 
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-    :try_end_6
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_6 .. :try_end_6} :catch_2
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
+    :try_end_4
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
     goto :goto_11
 
-    .line 256
-    :catch_2
+    .line 231
+    :catch_1
     move-exception v0
 
-    .line 258
-    :try_start_7
+    .line 233
+    :try_start_5
     sget-object v0, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Out of memory, disabling AdColony"
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 259
+    .line 234
     invoke-static {}, Lcom/jirbo/adcolony/AdColony;->disable()V
 
     goto/16 :goto_a
 
-    .line 227
-    :cond_19
+    .line 202
+    :cond_17
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/jirbo/adcolony/ADCDownload;->j:Z
 
     goto :goto_d
 
-    .line 239
-    :cond_1a
+    .line 214
+    :cond_18
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_0
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
 
     move-result-object v0
 
@@ -1074,45 +1004,45 @@
 
     goto :goto_f
 
-    .line 253
-    :cond_1b
+    .line 228
+    :cond_19
     const/4 v0, 0x0
 
     const/16 v1, 0x400
 
-    :try_start_8
+    :try_start_6
     invoke-virtual {v3, v6, v0, v1}, Ljava/io/InputStream;->read([BII)I
-    :try_end_8
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_8 .. :try_end_8} :catch_2
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_0
+    :try_end_6
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_6 .. :try_end_6} :catch_1
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
 
     move-result v0
 
     move v1, v0
 
-    .line 254
+    .line 229
     goto :goto_10
 
-    .line 263
-    :cond_1c
-    :try_start_9
+    .line 238
+    :cond_1a
+    :try_start_7
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_0
+    :try_end_7
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_0
 
-    .line 267
-    :try_start_a
+    .line 242
+    :try_start_8
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->n:Ljava/lang/String;
-    :try_end_a
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_a .. :try_end_a} :catch_3
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_0
+    :try_end_8
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_8 .. :try_end_8} :catch_2
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_0
 
-    .line 276
-    :try_start_b
+    .line 251
+    :try_start_9
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->n:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -1121,7 +1051,25 @@
 
     iput v0, p0, Lcom/jirbo/adcolony/ADCDownload;->m:I
 
-    .line 278
+    .line 253
+    iget-object v0, p0, Lcom/jirbo/adcolony/ADCDownload;->c:Ljava/lang/String;
+
+    const-string v1, "androidads21"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1b
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    sput-wide v0, Lcom/jirbo/adcolony/a;->ac:J
+
+    .line 254
+    :cond_1b
     sget-object v0, Lcom/jirbo/adcolony/l;->b:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Downloaded "
@@ -1136,26 +1084,26 @@
 
     goto/16 :goto_b
 
-    .line 269
-    :catch_3
+    .line 244
+    :catch_2
     move-exception v0
 
-    .line 271
+    .line 246
     sget-object v0, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Out of memory, disabling AdColony"
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 272
+    .line 247
     invoke-static {}, Lcom/jirbo/adcolony/AdColony;->disable()V
-    :try_end_b
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_0
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_0
 
     goto/16 :goto_a
 
-    .line 295
-    :cond_1d
+    .line 271
+    :cond_1c
     add-int/lit8 v0, v5, 0x1
 
     mul-int/lit8 v0, v0, 0xa
@@ -1164,12 +1112,12 @@
 
     int-to-long v0, v0
 
-    :try_start_c
+    :try_start_a
     invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_c
-    .catch Ljava/lang/InterruptedException; {:try_start_c .. :try_end_c} :catch_5
+    :try_end_a
+    .catch Ljava/lang/InterruptedException; {:try_start_a .. :try_end_a} :catch_4
 
-    .line 301
+    .line 277
     :goto_12
     sget-object v0, Lcom/jirbo/adcolony/l;->b:Lcom/jirbo/adcolony/l;
 
@@ -1189,26 +1137,26 @@
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 75
+    .line 72
     add-int/lit8 v0, v5, 0x1
 
     move v5, v0
 
     goto/16 :goto_0
 
-    .line 234
-    :catch_4
+    .line 209
+    :catch_3
     move-exception v3
 
     goto/16 :goto_e
 
-    .line 297
-    :catch_5
+    .line 273
+    :catch_4
     move-exception v0
 
     goto :goto_12
 
-    :cond_1e
+    :cond_1d
     move-object v4, v1
 
     goto/16 :goto_1

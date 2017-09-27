@@ -10,113 +10,110 @@
 
 
 # static fields
-.field private static a:Lorg/json/JSONObject;
-
-.field private static b:Ljava/util/ArrayList;
-
-.field private static c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
-
-.field private static d:Ljava/util/ArrayList;
-
-.field private static final e:Ljava/lang/Object;
-
-.field private static f:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
-
-.field private static g:I
-
-.field private static h:I
-
-.field private static i:I
-
-.field private static j:Z
-
-.field private static k:Z
-
-.field private static l:Z
+.field private static g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
 .field private static m:Z
 
 .field private static n:Z
 
-.field private static o:Ljava/util/Timer;
 
-.field private static p:J
+# instance fields
+.field private a:Lorg/json/JSONObject;
+
+.field private b:Ljava/util/ArrayList;
+
+.field private c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
+
+.field private d:Ljava/util/ArrayList;
+
+.field private e:Lcom/unity3d/ads/android/webapp/j;
+
+.field private f:Ljava/lang/Object;
+
+.field private h:I
+
+.field private i:I
+
+.field private j:I
+
+.field private k:Z
+
+.field private l:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 2
 
     .prologue
-    const/4 v2, 0x0
-
     const/4 v1, 0x0
 
-    .line 57
-    sput-object v2, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
-
-    .line 58
-    sput-object v2, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
-
     .line 59
-    sput-object v2, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
+    const/4 v0, 0x0
 
-    .line 60
-    sput-object v2, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
-
-    .line 61
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->e:Ljava/lang/Object;
-
-    .line 62
-    sput-object v2, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
-
-    .line 63
-    sput v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:I
-
-    .line 64
-    sput v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->h:I
-
-    .line 65
-    sput v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i:I
+    sput-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
     .line 67
-    sput-boolean v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->j:Z
-
-    .line 68
-    sput-boolean v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k:Z
-
-    .line 70
-    sput-boolean v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->l:Z
-
-    .line 71
     sput-boolean v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->m:Z
 
-    .line 72
+    .line 68
     sput-boolean v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->n:Z
-
-    .line 74
-    sput-object v2, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->o:Ljava/util/Timer;
-
-    .line 75
-    const-wide/16 v0, 0x0
-
-    sput-wide v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->p:J
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .locals 0
+    .locals 2
 
     .prologue
-    .line 55
+    const/4 v1, 0x0
+
+    const/4 v0, 0x0
+
+    .line 121
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 883
+    .line 53
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
+
+    .line 54
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+
+    .line 55
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
+
+    .line 56
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
+
+    .line 57
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->e:Lcom/unity3d/ads/android/webapp/j;
+
+    .line 58
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Ljava/lang/Object;
+
+    .line 60
+    iput v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->h:I
+
+    .line 61
+    iput v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i:I
+
+    .line 62
+    iput v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->j:I
+
+    .line 64
+    iput-boolean v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k:Z
+
+    .line 65
+    iput-boolean v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->l:Z
+
+    .line 122
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Ljava/lang/Object;
+
+    .line 123
     return-void
 .end method
 
@@ -130,25 +127,34 @@
 
     const/4 v3, 0x0
 
-    .line 723
+    .line 718
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
-    .line 781
     :cond_0
-    :goto_0
-    return-object v1
+    move-object p0, v1
 
-    .line 725
+    .line 786
     :cond_1
-    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->APPLICATION_CONTEXT:Landroid/content/Context;
+    :goto_0
+    return-object p0
 
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    .line 720
+    :cond_2
+    invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getCurrentActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    .line 722
+    if-eqz v0, :cond_1
+
+    .line 724
+    invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v5
 
@@ -167,7 +173,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_a
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -187,7 +193,7 @@
 
     const/4 v8, -0x1
 
-    if-eq v7, v8, :cond_2
+    if-eq v7, v8, :cond_3
 
     .line 734
     invoke-virtual {v2, v9}, Ljava/lang/String;->indexOf(I)I
@@ -198,8 +204,11 @@
 
     move-result-object v2
 
-    .line 741
-    :cond_2
+    .line 737
+    :cond_3
+    if-eqz v2, :cond_9
+
+    .line 742
     const/4 v7, 0x0
 
     :try_start_0
@@ -207,8 +216,8 @@
 
     move-result-object v7
 
-    .line 742
-    if-eqz v7, :cond_a
+    .line 743
+    if-eqz v7, :cond_c
 
     iget-object v7, v7, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
@@ -218,39 +227,39 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_c
 
-    .line 743
+    .line 744
     const/4 v2, 0x1
 
-    .line 750
-    :goto_2
-    if-eqz v2, :cond_4
-
     .line 751
-    if-nez v1, :cond_3
+    :goto_2
+    if-eqz v2, :cond_5
 
     .line 752
+    if-nez v1, :cond_4
+
+    .line 753
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 755
-    :cond_3
+    .line 756
+    :cond_4
     invoke-virtual {v0}, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;->getGameId()Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {v1, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 758
-    :cond_4
+    .line 759
+    :cond_5
     invoke-virtual {v0}, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;->getFilterMode()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 760
-    if-eqz v7, :cond_6
+    .line 761
+    if-eqz v7, :cond_7
 
     const-string v8, "whitelist"
 
@@ -258,27 +267,27 @@
 
     move-result v7
 
-    if-eqz v7, :cond_6
-
-    .line 762
-    if-eqz v2, :cond_5
+    if-eqz v7, :cond_7
 
     .line 763
+    if-eqz v2, :cond_6
+
+    .line 764
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 745
+    .line 746
     :catch_0
     move-exception v2
 
     move v2, v3
 
-    .line 746
+    .line 747
     goto :goto_2
 
-    .line 765
-    :cond_5
+    .line 766
+    :cond_6
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v7, "Filtered game id "
@@ -307,11 +316,11 @@
 
     goto :goto_1
 
-    .line 769
-    :cond_6
-    if-eqz v2, :cond_7
-
     .line 770
+    :cond_7
+    if-eqz v2, :cond_8
+
+    .line 771
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v7, "Filtered game id "
@@ -340,17 +349,23 @@
 
     goto/16 :goto_1
 
-    .line 772
-    :cond_7
+    .line 773
+    :cond_8
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_1
 
-    .line 777
-    :cond_8
-    if-eqz v1, :cond_9
-
     .line 778
+    :cond_9
+    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1
+
+    .line 782
+    :cond_a
+    if-eqz v1, :cond_b
+
+    .line 783
     const-string v0, ","
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
@@ -359,13 +374,13 @@
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->APPFILTER_LIST:Ljava/lang/String;
 
-    :cond_9
-    move-object v1, v4
+    :cond_b
+    move-object p0, v4
 
-    .line 781
+    .line 786
     goto/16 :goto_0
 
-    :cond_a
+    :cond_c
     move v2, v3
 
     goto :goto_2
@@ -375,7 +390,7 @@
     .locals 4
 
     .prologue
-    .line 697
+    .line 692
     if-eqz p0, :cond_2
 
     invoke-virtual {p0}, Lorg/json/JSONArray;->length()I
@@ -384,12 +399,12 @@
 
     if-lez v0, :cond_2
 
-    .line 699
+    .line 694
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 701
+    .line 696
     const/4 v0, 0x0
 
     :goto_0
@@ -399,46 +414,45 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 703
+    .line 698
     :try_start_0
     invoke-virtual {p0, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v2
 
-    .line 704
+    .line 699
     new-instance v3, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;
 
     invoke-direct {v3, v2}, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;-><init>(Lorg/json/JSONObject;)V
 
-    .line 706
+    .line 701
     invoke-virtual {v3}, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;->hasValidData()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 707
+    .line 702
     const-string v2, "Adding campaign to cache"
 
     invoke-static {v2}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
 
-    .line 708
+    .line 703
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 701
+    .line 696
     :cond_0
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 711
+    .line 707
     :catch_0
     move-exception v2
 
-    .line 712
     const-string v2, "Problem with the campaign, skipping."
 
     invoke-static {v2}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
@@ -448,7 +462,7 @@
     :cond_1
     move-object v0, v1
 
-    .line 719
+    .line 714
     :goto_2
     return-object v0
 
@@ -458,27 +472,103 @@
     goto :goto_2
 .end method
 
-.method static synthetic a()V
+.method private a()V
+    .locals 3
+
+    .prologue
+    .line 399
+    iget-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 400
+    :try_start_0
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k:Z
+
+    if-nez v0, :cond_0
+
+    .line 401
+    const-string v0, "Starting next URL loader"
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
+
+    .line 402
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k:Z
+
+    .line 403
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/unity3d/ads/android/webapp/j;
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Lcom/unity3d/ads/android/webapp/j;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/unity3d/ads/android/webapp/j;
+
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->e:Lcom/unity3d/ads/android/webapp/j;
+
+    .line 405
+    :cond_0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method static synthetic a(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;)V
     .locals 0
 
     .prologue
-    .line 55
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k()V
+    .line 51
+    invoke-direct {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c()V
 
     return-void
 .end method
 
-.method static synthetic a(Lcom/unity3d/ads/android/webapp/k;)V
+.method static synthetic a(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;Lcom/unity3d/ads/android/webapp/j;)V
     .locals 2
 
     .prologue
-    .line 55
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->e:Ljava/lang/Object;
+    .line 51
+    iget-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Ljava/lang/Object;
 
     monitor-enter v1
 
     :try_start_0
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
@@ -486,12 +576,12 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
 
     :cond_0
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     monitor-exit v1
     :try_end_0
@@ -507,25 +597,25 @@
     throw v0
 .end method
 
-.method private static a(Ljava/lang/String;)V
-    .locals 10
+.method private a(Ljava/lang/String;)V
+    .locals 11
 
     .prologue
     const/4 v0, 0x1
 
+    const/4 v8, 0x0
+
     const/4 v7, 0x0
 
-    const/4 v6, 0x0
-
-    .line 569
+    .line 562
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    .line 570
-    sput-boolean v6, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k:Z
+    .line 564
+    iput-boolean v7, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->l:Z
 
-    .line 573
+    .line 567
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -533,7 +623,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -543,13 +633,15 @@
 
     invoke-static {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
 
-    .line 575
+    .line 569
     new-instance v1, Lorg/json/JSONObject;
 
-    invoke-direct {v1, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 578
-    sput-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
+    iput-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
+
+    .line 572
+    iget-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
 
     const-string v2, "data"
 
@@ -561,9 +653,9 @@
 
     if-eqz v1, :cond_10
 
-    .line 580
+    .line 574
     :try_start_1
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
+    iget-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
 
     const-string v2, "data"
 
@@ -571,13 +663,16 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    move-result-object v9
+    move-result-object v1
 
-    .line 587
+    move-object v10, v1
+
+    .line 580
+    :goto_0
     :try_start_2
     const-string v1, "webViewUrl"
 
-    invoke-virtual {v9, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -589,11 +684,11 @@
 
     move-result-object v0
 
-    .line 588
+    .line 581
     :cond_0
     const-string v1, "analyticsUrl"
 
-    invoke-virtual {v9, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -605,11 +700,11 @@
 
     move-result-object v0
 
-    .line 589
+    .line 582
     :cond_1
     const-string v1, "impactUrl"
 
-    invoke-virtual {v9, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -621,11 +716,11 @@
 
     move-result-object v0
 
-    .line 590
+    .line 583
     :cond_2
     const-string v1, "gamerId"
 
-    invoke-virtual {v9, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -637,11 +732,11 @@
 
     move-result-object v0
 
-    .line 591
+    .line 584
     :cond_3
     const-string v1, "campaigns"
 
-    invoke-virtual {v9, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -653,11 +748,11 @@
 
     move-result-object v0
 
-    .line 592
+    .line 585
     :cond_4
     const-string v1, "zones"
 
-    invoke-virtual {v9, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -669,49 +764,49 @@
 
     move-result-object v0
 
-    move-object v8, v0
+    move-object v9, v0
 
-    .line 595
-    :goto_0
-    invoke-virtual {v8}, Ljava/lang/Boolean;->booleanValue()Z
+    .line 588
+    :goto_1
+    invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 598
+    .line 591
     const-string v0, "campaigns"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v0
 
-    .line 599
+    .line 592
     if-eqz v0, :cond_5
 
-    .line 600
+    .line 593
     invoke-static {v0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a(Lorg/json/JSONArray;)Ljava/util/ArrayList;
 
-    move-result-object v7
+    move-result-object v8
 
-    .line 603
+    .line 596
     :cond_5
     const-string v0, "appFiltering"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 604
+    .line 597
     const-string v0, "appFiltering"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 606
+    .line 599
     if-eqz v0, :cond_8
 
     const-string v1, "simple"
@@ -730,7 +825,7 @@
 
     if-eqz v1, :cond_8
 
-    .line 607
+    .line 600
     :cond_6
     const-string v1, "advanced"
 
@@ -740,10 +835,10 @@
 
     if-eqz v0, :cond_7
 
-    .line 608
+    .line 601
     const-string v0, "installedAppsUrl"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -751,29 +846,29 @@
 
     const-string v0, "appWhitelist"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    .line 609
+    .line 602
     const-string v0, "installedAppsUrl"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->INSTALLED_APPS_URL:Ljava/lang/String;
 
-    .line 610
+    .line 603
     const-string v0, "appWhitelist"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 612
+    .line 605
     sget-boolean v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->m:Z
 
     if-nez v0, :cond_7
@@ -782,36 +877,38 @@
 
     sput-boolean v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->m:Z
 
-    new-instance v0, Lcom/unity3d/ads/android/webapp/l;
+    new-instance v0, Lcom/unity3d/ads/android/webapp/k;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    const-string v3, "GET"
+    const-string v4, "GET"
 
-    sget-object v4, Lcom/unity3d/ads/android/webapp/j;->AppWhitelist:Lcom/unity3d/ads/android/webapp/j;
+    sget-object v5, Lcom/unity3d/ads/android/webapp/i;->AppWhitelist:Lcom/unity3d/ads/android/webapp/i;
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    invoke-direct/range {v0 .. v5}, Lcom/unity3d/ads/android/webapp/l;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/j;I)V
+    move-object v1, p0
+
+    invoke-direct/range {v0 .. v6}, Lcom/unity3d/ads/android/webapp/k;-><init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/i;I)V
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 616
+    .line 609
     :cond_7
-    if-eqz v7, :cond_8
+    if-eqz v8, :cond_8
 
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-lez v0, :cond_8
 
-    .line 617
-    invoke-static {v7}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a(Ljava/util/ArrayList;)Ljava/util/ArrayList;
+    .line 610
+    invoke-static {v8}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a(Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 619
+    .line 612
     if-eqz v0, :cond_9
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -820,117 +917,46 @@
 
     if-nez v1, :cond_9
 
-    .line 620
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->initCampaigns()Z
+    .line 613
+    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->initCampaigns()Z
 
-    .line 689
-    :goto_1
+    .line 682
+    :goto_2
     return-void
 
-    .line 583
+    .line 577
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    const-string v0, "Malformed data JSON"
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
-
-    goto :goto_1
-
-    .line 669
-    :catch_1
-    move-exception v0
-
-    .line 670
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Malformed JSON: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "Malformed data JSON"
 
     invoke-static {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
 
-    .line 672
-    invoke-virtual {v0}, Ljava/lang/Exception;->getStackTrace()[Ljava/lang/StackTraceElement;
+    move-object v10, v8
 
-    move-result-object v1
-
-    if-eqz v1, :cond_11
-
-    .line 673
-    invoke-virtual {v0}, Ljava/lang/Exception;->getStackTrace()[Ljava/lang/StackTraceElement;
-
-    move-result-object v0
-
-    array-length v1, v0
-
-    :goto_2
-    if-ge v6, v1, :cond_11
-
-    aget-object v2, v0, v6
-
-    .line 674
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Malformed JSON: "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/lang/StackTraceElement;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
-
-    .line 673
-    add-int/lit8 v6, v6, 0x1
-
-    goto :goto_2
+    goto/16 :goto_0
 
     :cond_8
-    move-object v0, v7
+    move-object v0, v8
 
-    .line 629
+    .line 622
     :cond_9
-    :try_start_3
-    sput-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
-    .line 633
+    .line 626
     :cond_a
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     if-nez v0, :cond_b
 
-    .line 634
+    .line 627
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
-    .line 636
+    .line 629
     :cond_b
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -938,7 +964,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -960,140 +986,140 @@
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
 
-    .line 639
+    .line 632
     const-string v0, "webViewUrl"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->WEBVIEW_BASE_URL:Ljava/lang/String;
 
-    .line 640
+    .line 633
     const-string v0, "analyticsUrl"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->ANALYTICS_BASE_URL:Ljava/lang/String;
 
-    .line 641
+    .line 634
     const-string v0, "impactUrl"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_ADS_BASE_URL:Ljava/lang/String;
 
-    .line 642
+    .line 635
     const-string v0, "gamerId"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_ADS_GAMER_ID:Ljava/lang/String;
 
-    .line 645
+    .line 638
     const-string v0, "refreshCampaignsAfterViewed"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_c
 
-    .line 646
+    .line 639
     const/4 v0, 0x0
 
     sput v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_VIEWS_COUNT:I
 
-    .line 647
+    .line 640
     const-string v0, "refreshCampaignsAfterViewed"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
     move-result v0
 
     sput v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_VIEWS_MAX:I
 
-    .line 651
+    .line 644
     :cond_c
     const-string v0, "refreshCampaignsAfterSeconds"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 652
+    .line 645
     const-string v0, "refreshCampaignsAfterSeconds"
 
-    invoke-virtual {v9, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v10, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
     move-result v0
 
     sput v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_SECONDS:I
 
-    .line 656
+    .line 649
     :cond_d
-    invoke-virtual {v8}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 657
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
+    .line 650
+    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
     if-eqz v0, :cond_e
 
-    .line 658
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
+    .line 651
+    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
     invoke-virtual {v0}, Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;->clear()V
 
-    .line 659
+    .line 652
     const/4 v0, 0x0
 
-    sput-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
+    sput-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
-    .line 661
+    .line 654
     :cond_e
     new-instance v0, Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
     const-string v1, "zones"
 
-    invoke-virtual {v9, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+    invoke-virtual {v10, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;-><init>(Lorg/json/JSONArray;)V
 
-    sput-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    sput-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 682
+    .line 675
     :cond_f
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
 
     if-eqz v0, :cond_13
 
-    invoke-virtual {v8}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_13
 
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_13
 
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1101,14 +1127,14 @@
 
     if-lez v0, :cond_13
 
-    .line 683
+    .line 676
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Unity Ads initialized with "
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -1124,11 +1150,11 @@
 
     move-result-object v1
 
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
+    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
     if-eqz v0, :cond_12
 
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
+    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
     invoke-virtual {v0}, Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;->zoneCount()I
 
@@ -1151,68 +1177,334 @@
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->info(Ljava/lang/String;)V
 
-    .line 684
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
+    .line 677
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
 
     invoke-interface {v0}, Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;->onWebDataCompleted()V
 
-    goto/16 :goto_1
+    goto/16 :goto_2
+
+    .line 658
+    :cond_10
+    :try_start_3
+    invoke-direct {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c()V
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+
+    goto/16 :goto_2
+
+    .line 662
+    :catch_1
+    move-exception v0
+
+    .line 663
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Malformed JSON: "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
 
     .line 665
-    :cond_10
-    :try_start_4
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k()V
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
+    invoke-virtual {v0}, Ljava/lang/Exception;->getStackTrace()[Ljava/lang/StackTraceElement;
 
-    goto/16 :goto_1
+    move-result-object v1
 
-    .line 678
+    if-eqz v1, :cond_11
+
+    .line 666
+    invoke-virtual {v0}, Ljava/lang/Exception;->getStackTrace()[Ljava/lang/StackTraceElement;
+
+    move-result-object v0
+
+    array-length v1, v0
+
+    :goto_4
+    if-ge v7, v1, :cond_11
+
+    aget-object v2, v0, v7
+
+    .line 667
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "Malformed JSON: "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/lang/StackTraceElement;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
+
+    .line 666
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_4
+
+    .line 671
     :cond_11
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k()V
+    invoke-direct {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c()V
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :cond_12
-    move v0, v6
+    move v0, v7
 
-    .line 683
+    .line 676
     goto :goto_3
 
-    .line 687
+    .line 681
     :cond_13
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k()V
+    invoke-direct {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c()V
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :cond_14
-    move-object v8, v0
+    move-object v9, v0
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 .end method
 
-.method static synthetic b(Lcom/unity3d/ads/android/webapp/k;)V
+.method private b()V
+    .locals 9
+
+    .prologue
+    .line 469
+    new-instance v0, Ljava/io/File;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Lcom/unity3d/ads/android/UnityAdsUtils;->getCacheDirectory()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "/pendingrequests.dat"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 471
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 474
+    iget-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 475
+    const/4 v2, 0x1
+
+    :try_start_0
+    invoke-static {v0, v2}, Lcom/unity3d/ads/android/UnityAdsUtils;->readFile(Ljava/io/File;Z)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 476
+    invoke-virtual {v0}, Ljava/io/File;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->removeFile(Ljava/lang/String;)V
+
+    .line 477
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 479
+    :try_start_1
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    .line 485
+    const-string v1, "data"
+
+    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v8
+
+    .line 487
+    if-eqz v8, :cond_0
+
+    invoke-virtual {v8}, Lorg/json/JSONArray;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    .line 488
+    const/4 v0, 0x0
+
+    move v7, v0
+
+    :goto_0
+    invoke-virtual {v8}, Lorg/json/JSONArray;->length()I
+
+    move-result v0
+
+    if-ge v7, v0, :cond_0
+
+    .line 489
+    invoke-virtual {v8, v7}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+
+    move-result-object v1
+
+    .line 491
+    new-instance v0, Lcom/unity3d/ads/android/webapp/k;
+
+    const-string v2, "url"
+
+    .line 492
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "body"
+
+    .line 493
+    invoke-virtual {v1, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "methodType"
+
+    .line 494
+    invoke-virtual {v1, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "requestType"
+
+    .line 495
+    invoke-virtual {v1, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/unity3d/ads/android/webapp/i;->getValueOf(Ljava/lang/String;)Lcom/unity3d/ads/android/webapp/i;
+
+    move-result-object v5
+
+    const-string v6, "retries"
+
+    .line 496
+    invoke-virtual {v1, v6}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    add-int/lit8 v6, v1, 0x1
+
+    move-object v1, p0
+
+    invoke-direct/range {v0 .. v6}, Lcom/unity3d/ads/android/webapp/k;-><init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/i;I)V
+
+    .line 498
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    .line 488
+    add-int/lit8 v0, v7, 0x1
+
+    move v7, v0
+
+    goto :goto_0
+
+    .line 477
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+
+    .line 503
+    :catch_0
+    move-exception v0
+
+    const-string v0, "Problems while sending some of the failed urls."
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
+
+    .line 507
+    :cond_0
+    invoke-direct {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a()V
+
+    .line 508
+    return-void
+.end method
+
+.method static synthetic b(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;)V
+    .locals 0
+
+    .prologue
+    .line 51
+    invoke-direct {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a()V
+
+    return-void
+.end method
+
+.method static synthetic b(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;Lcom/unity3d/ads/android/webapp/j;)V
     .locals 7
 
     .prologue
     const/4 v0, 0x0
 
-    .line 55
-    if-eqz p0, :cond_4
+    .line 51
+    if-eqz p1, :cond_4
 
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->getRequestType()Lcom/unity3d/ads/android/webapp/j;
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->getRequestType()Lcom/unity3d/ads/android/webapp/i;
 
     move-result-object v1
 
     if-eqz v1, :cond_4
 
-    sget-object v1, Lcom/unity3d/ads/android/webapp/h;->b:[I
+    sget-object v1, Lcom/unity3d/ads/android/webapp/g;->b:[I
 
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->getRequestType()Lcom/unity3d/ads/android/webapp/j;
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->getRequestType()Lcom/unity3d/ads/android/webapp/i;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/unity3d/ads/android/webapp/j;->ordinal()I
+    invoke-virtual {v2}, Lcom/unity3d/ads/android/webapp/i;->ordinal()I
 
     move-result v2
 
@@ -1222,21 +1514,21 @@
 
     :cond_0
     :goto_0
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->clear()V
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->clear()V
 
     :goto_1
     const/4 v0, 0x0
 
-    sput-boolean v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->j:Z
+    iput-boolean v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k:Z
 
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i()V
+    invoke-direct {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a()V
 
     return-void
 
     :pswitch_0
-    if-eqz p0, :cond_0
+    if-eqz p1, :cond_0
 
-    sget-object v3, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->e:Ljava/lang/Object;
+    iget-object v3, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Ljava/lang/Object;
 
     monitor-enter v3
 
@@ -1247,7 +1539,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {}, Lcom/unity3d/ads/android/cache/UnityAdsCache;->getCacheDirectory()Ljava/lang/String;
+    invoke-static {}, Lcom/unity3d/ads/android/UnityAdsUtils;->getCacheDirectory()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1255,7 +1547,7 @@
 
     move-result-object v1
 
-    const-string v2, "/UnityAds-pendingrequests.dat"
+    const-string v2, "/pendingrequests.dat"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1361,7 +1653,7 @@
 
     const-string v5, "url"
 
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->getBaseUrl()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->getBaseUrl()Ljava/lang/String;
 
     move-result-object v6
 
@@ -1369,7 +1661,7 @@
 
     const-string v5, "requestType"
 
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->getRequestType()Lcom/unity3d/ads/android/webapp/j;
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->getRequestType()Lcom/unity3d/ads/android/webapp/i;
 
     move-result-object v6
 
@@ -1377,7 +1669,7 @@
 
     const-string v5, "methodType"
 
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->getHTTPMethod()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->getHTTPMethod()Ljava/lang/String;
 
     move-result-object v6
 
@@ -1385,7 +1677,7 @@
 
     const-string v5, "body"
 
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->getQueryParams()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->getQueryParams()Ljava/lang/String;
 
     move-result-object v6
 
@@ -1393,7 +1685,7 @@
 
     const-string v5, "retries"
 
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->getRetries()I
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->getRetries()I
 
     move-result v6
 
@@ -1416,30 +1708,6 @@
     move-result-object v0
 
     invoke-static {v4, v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->writeFile(Ljava/io/File;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Error while writing: "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -1496,7 +1764,7 @@
     goto :goto_3
 
     :pswitch_1
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k()V
+    invoke-direct {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c()V
 
     goto/16 :goto_0
 
@@ -1512,6 +1780,8 @@
 
     goto/16 :goto_2
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -1521,50 +1791,61 @@
     .end packed-switch
 .end method
 
-.method static synthetic b()Z
-    .locals 1
+.method static synthetic c(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;)I
+    .locals 2
 
     .prologue
-    .line 55
-    const/4 v0, 0x1
+    .line 51
+    iget v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i:I
 
-    sput-boolean v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->l:Z
+    add-int/lit8 v1, v0, 0x1
+
+    iput v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i:I
 
     return v0
 .end method
 
-.method static synthetic c()V
-    .locals 0
+.method private c()V
+    .locals 1
 
     .prologue
-    .line 55
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i()V
+    .line 687
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
 
+    if-eqz v0, :cond_0
+
+    .line 688
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
+
+    invoke-interface {v0}, Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;->onWebDataFailed()V
+
+    .line 689
+    :cond_0
     return-void
 .end method
 
-.method static synthetic c(Lcom/unity3d/ads/android/webapp/k;)V
-    .locals 8
+.method static synthetic c(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;Lcom/unity3d/ads/android/webapp/j;)V
+    .locals 9
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    .line 55
-    if-eqz p0, :cond_4
+    .line 51
+    if-eqz p1, :cond_4
 
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->getRequestType()Lcom/unity3d/ads/android/webapp/j;
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->getRequestType()Lcom/unity3d/ads/android/webapp/i;
 
     move-result-object v0
 
     if-eqz v0, :cond_4
 
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->b:[I
+    sget-object v0, Lcom/unity3d/ads/android/webapp/g;->b:[I
 
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->getRequestType()Lcom/unity3d/ads/android/webapp/j;
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->getRequestType()Lcom/unity3d/ads/android/webapp/i;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/j;->ordinal()I
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/i;->ordinal()I
 
     move-result v1
 
@@ -1575,14 +1856,14 @@
     :cond_0
     :goto_0
     :pswitch_0
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->clear()V
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->clear()V
 
     :goto_1
-    sget v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:I
+    iget v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->h:I
 
     add-int/lit8 v0, v0, 0x1
 
-    sput v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:I
+    iput v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->h:I
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1590,7 +1871,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:I
+    iget v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->h:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1602,23 +1883,23 @@
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
 
-    sput-boolean v6, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->j:Z
+    iput-boolean v7, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k:Z
 
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i()V
+    invoke-direct {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a()V
 
     return-void
 
     :pswitch_1
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->getData()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->getData()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a(Ljava/lang/String;)V
 
     goto :goto_0
 
     :pswitch_2
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/k;->getData()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/j;->getData()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1631,9 +1912,9 @@
 
     invoke-direct {v1, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    new-instance v2, Ljava/util/HashMap;
+    new-instance v3, Ljava/util/HashMap;
 
-    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
     const-string v0, "whitelist"
 
@@ -1641,25 +1922,25 @@
 
     move-result-object v1
 
-    move v0, v6
+    move v0, v7
 
     :goto_2
     invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v3
+    move-result v2
 
-    if-ge v0, v3, :cond_2
+    if-ge v0, v2, :cond_2
 
     :try_start_1
     invoke-virtual {v1, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
-    move-result-object v3
+    move-result-object v2
 
     const-string v4, "game"
 
-    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v2, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -1667,7 +1948,7 @@
 
     const-string v4, "id"
 
-    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v2, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -1675,7 +1956,7 @@
 
     const-string v4, "game"
 
-    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1685,11 +1966,11 @@
 
     const-string v5, "id"
 
-    invoke-virtual {v3, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v5}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -1702,7 +1983,7 @@
 
     :cond_2
     :try_start_2
-    sget-object v1, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->INSTALLED_APPS_URL:Ljava/lang/String;
+    sget-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->INSTALLED_APPS_URL:Ljava/lang/String;
 
     sget-boolean v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->n:Z
 
@@ -1712,27 +1993,29 @@
 
     sput-boolean v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->n:Z
 
-    invoke-static {v2}, Lcom/unity3d/ads/android/data/UnityAdsDevice;->getPackageDataJson(Ljava/util/Map;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/unity3d/ads/android/data/UnityAdsDevice;->getPackageDataJson(Ljava/util/Map;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    if-eqz v7, :cond_3
+    if-eqz v8, :cond_3
 
-    new-instance v0, Lcom/unity3d/ads/android/webapp/l;
+    new-instance v0, Lcom/unity3d/ads/android/webapp/k;
 
     invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getCampaignQueryArguments()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "POST"
+    const-string v4, "POST"
 
-    sget-object v4, Lcom/unity3d/ads/android/webapp/j;->InstalledApps:Lcom/unity3d/ads/android/webapp/j;
+    sget-object v5, Lcom/unity3d/ads/android/webapp/i;->InstalledApps:Lcom/unity3d/ads/android/webapp/i;
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    invoke-direct/range {v0 .. v5}, Lcom/unity3d/ads/android/webapp/l;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/j;I)V
+    move-object v1, p0
 
-    invoke-virtual {v0, v7}, Lcom/unity3d/ads/android/webapp/l;->setPostBody(Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v6}, Lcom/unity3d/ads/android/webapp/k;-><init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/i;I)V
+
+    invoke-virtual {v0, v8}, Lcom/unity3d/ads/android/webapp/k;->setPostBody(Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
     :try_end_2
@@ -1779,11 +2062,9 @@
     goto/16 :goto_1
 
     :catch_1
-    move-exception v3
+    move-exception v2
 
     goto :goto_3
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -1795,72 +2076,111 @@
     .end packed-switch
 .end method
 
-.method static synthetic d()I
-    .locals 2
-
-    .prologue
-    .line 55
-    sget v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->h:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    sput v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->h:I
-
-    return v0
-.end method
-
-.method static synthetic e()I
+.method static synthetic d(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;)I
     .locals 1
 
     .prologue
-    .line 55
-    sget v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->h:I
+    .line 51
+    iget v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i:I
 
     return v0
 .end method
 
-.method static synthetic f()I
+.method static synthetic e(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;)I
     .locals 2
 
     .prologue
-    .line 55
-    sget v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i:I
+    .line 51
+    iget v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->j:I
 
     add-int/lit8 v1, v0, 0x1
 
-    sput v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i:I
+    iput v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->j:I
 
     return v0
 .end method
 
-.method static synthetic g()I
+.method static synthetic f(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;)I
     .locals 1
 
     .prologue
-    .line 55
-    sget v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i:I
+    .line 51
+    iget v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->j:I
 
     return v0
 .end method
 
-.method public static getCampaignById(Ljava/lang/String;)Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;
+.method public static getZoneManager()Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
+    .locals 1
+
+    .prologue
+    .line 384
+    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public clearData()V
     .locals 2
 
     .prologue
-    .line 131
-    if-eqz p0, :cond_1
+    const/4 v1, 0x0
 
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    .line 345
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_0
+
+    .line 346
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    .line 347
+    iput-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+
+    .line 350
+    :cond_0
+    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
     if-eqz v0, :cond_1
 
-    .line 132
+    .line 351
+    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
+
+    invoke-virtual {v0}, Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;->clear()V
+
+    .line 352
+    sput-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->g:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
+
+    .line 355
+    :cond_1
+    iput-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
+
+    .line 356
+    return-void
+.end method
+
+.method public getCampaignById(Ljava/lang/String;)Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;
+    .locals 2
+
+    .prologue
+    .line 134
+    if-eqz p1, :cond_1
+
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_1
+
+    .line 135
     const/4 v0, 0x0
 
     move v1, v0
 
     :goto_0
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1868,8 +2188,8 @@
 
     if-ge v1, v0, :cond_1
 
-    .line 133
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    .line 136
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1877,7 +2197,7 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1891,7 +2211,7 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1903,14 +2223,14 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 134
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    .line 137
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1918,11 +2238,11 @@
 
     check-cast v0, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;
 
-    .line 138
+    .line 141
     :goto_1
     return-object v0
 
-    .line 132
+    .line 135
     :cond_0
     add-int/lit8 v0, v1, 0x1
 
@@ -1930,57 +2250,83 @@
 
     goto :goto_0
 
-    .line 138
+    .line 141
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_1
 .end method
 
-.method public static getData()Lorg/json/JSONObject;
+.method public getData()Lorg/json/JSONObject;
     .locals 1
 
     .prologue
-    .line 327
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
+    .line 373
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
 
     return-object v0
 .end method
 
-.method public static getVideoPlanCampaigns()Ljava/util/ArrayList;
+.method public getVideoPlan()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 127
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    .line 377
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
+
+    if-eqz v0, :cond_0
+
+    .line 378
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a:Lorg/json/JSONObject;
+
+    invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 380
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public getVideoPlanCampaigns()Ljava/util/ArrayList;
+    .locals 1
+
+    .prologue
+    .line 130
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     return-object v0
 .end method
 
-.method public static getViewableVideoPlanCampaigns()Ljava/util/ArrayList;
+.method public getViewableVideoPlanCampaigns()Ljava/util/ArrayList;
     .locals 5
 
     .prologue
-    .line 142
+    .line 145
     const/4 v0, 0x0
 
-    .line 145
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    .line 148
+    iget-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_2
 
-    .line 146
+    .line 149
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 147
+    .line 150
     const/4 v0, 0x0
 
     move v1, v0
 
     :goto_0
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1988,8 +2334,8 @@
 
     if-ge v1, v0, :cond_1
 
-    .line 148
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
+    .line 151
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1997,7 +2343,7 @@
 
     check-cast v0, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;
 
-    .line 149
+    .line 152
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;->getCampaignStatus()Lcom/unity3d/ads/android/campaign/UnityAdsCampaign$UnityAdsCampaignStatus;
@@ -2012,10 +2358,10 @@
 
     if-nez v3, :cond_0
 
-    .line 150
+    .line 153
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 147
+    .line 150
     :cond_0
     add-int/lit8 v0, v1, 0x1
 
@@ -2026,167 +2372,41 @@
     :cond_1
     move-object v0, v2
 
-    .line 154
+    .line 157
     :cond_2
     return-object v0
 .end method
 
-.method public static getZoneManager()Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
-    .locals 1
+.method public initCampaigns()Z
+    .locals 8
 
     .prologue
-    .line 385
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
+    const/4 v6, 0x0
 
-    return-object v0
-.end method
-
-.method private static h()V
-    .locals 2
-
-    .prologue
-    .line 391
-    const-wide/16 v0, 0x0
-
-    sput-wide v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->p:J
-
-    .line 393
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->o:Ljava/util/Timer;
-
-    if-eqz v0, :cond_0
-
-    .line 394
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->o:Ljava/util/Timer;
-
-    invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
-
-    .line 396
-    :cond_0
-    return-void
-.end method
-
-.method public static hasViewableAds()Z
-    .locals 1
-
-    .prologue
-    .line 119
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->getViewableVideoPlanCampaigns()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->getViewableVideoPlanCampaigns()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private static i()V
-    .locals 3
-
-    .prologue
-    .line 408
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->e:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 409
-    :try_start_0
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    sget-boolean v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->j:Z
-
-    if-nez v0, :cond_0
-
-    .line 410
-    const-string v0, "Starting next URL loader"
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
-
-    .line 411
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->j:Z
-
-    .line 412
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/unity3d/ads/android/webapp/k;
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Lcom/unity3d/ads/android/webapp/k;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
-
-    .line 414
-    :cond_0
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method public static initCampaigns()Z
-    .locals 7
-
-    .prologue
-    const/4 v6, 0x1
-
-    const/4 v5, 0x0
-
-    .line 162
-    sget-boolean v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k:Z
-
-    if-eqz v0, :cond_0
-
-    .line 228
-    :goto_0
-    return v6
+    const/4 v7, 0x1
 
     .line 166
+    iget-boolean v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->l:Z
+
+    if-eqz v0, :cond_0
+
+    .line 244
+    :goto_0
+    return v7
+
+    .line 170
     :cond_0
-    invoke-static {}, Lcom/unity3d/ads/android/UnityAdsUtils;->isDebuggable()Z
+    invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getBaseActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getBaseActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->isDebuggable(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -2196,20 +2416,66 @@
 
     if-eqz v0, :cond_1
 
-    .line 167
+    .line 171
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TEST_DATA:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->a(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 171
-    :cond_1
-    sput-boolean v6, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k:Z
-
     .line 175
+    :cond_1
+    iput-boolean v7, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->l:Z
+
+    .line 178
     :try_start_0
-    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->APPLICATION_CONTEXT:Landroid/content/Context;
+    invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getCurrentActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    .line 179
+    if-nez v0, :cond_2
+
+    .line 180
+    const-string v0, "initCampaigns failed due to currentActivity null"
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
+
+    .line 181
+    new-instance v0, Lcom/unity3d/ads/android/webapp/c;
+
+    invoke-direct {v0, p0}, Lcom/unity3d/ads/android/webapp/c;-><init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;)V
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
+    :try_end_0
+    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    goto :goto_0
+
+    .line 223
+    :catch_0
+    move-exception v0
+
+    const-string v0, "initCampaigns failed due to DNS error, unable to resolve ad server address"
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
+
+    .line 224
+    new-instance v0, Lcom/unity3d/ads/android/webapp/f;
+
+    invoke-direct {v0, p0}, Lcom/unity3d/ads/android/webapp/f;-><init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;)V
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+
+    .line 191
+    :cond_2
+    :try_start_1
+    invoke-virtual {v0}, Landroid/app/Activity;->getBaseContext()Landroid/content/Context;
+
+    move-result-object v0
 
     const-string v1, "connectivity"
 
@@ -2219,129 +2485,51 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 177
-    if-eqz v0, :cond_5
+    .line 193
+    if-eqz v0, :cond_6
 
-    .line 178
+    .line 194
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v0
 
-    .line 179
-    if-eqz v0, :cond_2
+    .line 195
+    if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
-    move v0, v6
+    move v0, v7
 
-    .line 182
+    .line 198
     :goto_1
-    if-nez v0, :cond_3
+    if-nez v0, :cond_5
 
-    .line 183
+    .line 199
     const-string v0, "Device offline, can\'t init campaigns"
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
 
-    .line 184
-    new-instance v0, Lcom/unity3d/ads/android/webapp/c;
-
-    invoke-direct {v0}, Lcom/unity3d/ads/android/webapp/c;-><init>()V
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
-
-    move v6, v5
-
-    .line 190
-    goto :goto_0
-
-    :cond_2
-    move v0, v5
-
-    .line 179
-    goto :goto_1
-
-    .line 193
-    :cond_3
-    const-string v0, "impact.applifier.com"
-
-    invoke-static {v0}, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
-
-    move-result-object v0
-
-    .line 194
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Ad server resolves to "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
-
-    .line 196
-    invoke-virtual {v0}, Ljava/net/InetAddress;->isLoopbackAddress()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 197
-    const-string v0, "initCampaigns failed, ad server resolves to loopback address (due to ad blocker?)"
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
-
-    .line 198
+    .line 200
     new-instance v0, Lcom/unity3d/ads/android/webapp/d;
 
-    invoke-direct {v0}, Lcom/unity3d/ads/android/webapp/d;-><init>()V
+    invoke-direct {v0, p0}, Lcom/unity3d/ads/android/webapp/d;-><init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;)V
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    :try_end_1
+    .catch Ljava/net/UnknownHostException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    move v6, v5
-
-    .line 204
     goto :goto_0
 
-    .line 208
-    :catch_0
-    move-exception v0
-
-    const-string v0, "initCampaigns failed due to DNS error, unable to resolve ad server address"
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
-
-    .line 209
-    new-instance v0, Lcom/unity3d/ads/android/webapp/e;
-
-    invoke-direct {v0}, Lcom/unity3d/ads/android/webapp/e;-><init>()V
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
-
-    move v6, v5
-
-    .line 215
-    goto :goto_0
-
-    .line 217
+    .line 231
     :catch_1
     move-exception v0
 
-    .line 218
+    .line 232
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Unknown exception during DNS test: "
@@ -2358,13 +2546,13 @@
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
 
-    .line 221
-    :cond_4
+    .line 235
+    :cond_3
     invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getCampaignQueryUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 222
+    .line 236
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Requesting Unity Ads ad plan from "
@@ -2381,72 +2569,59 @@
 
     invoke-static {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->info(Ljava/lang/String;)V
 
-    .line 223
+    .line 237
     const-string v1, "\\?"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    .line 224
-    new-instance v0, Lcom/unity3d/ads/android/webapp/l;
+    .line 239
+    new-instance v0, Lcom/unity3d/ads/android/webapp/k;
 
-    aget-object v1, v2, v5
+    aget-object v2, v1, v6
 
-    aget-object v2, v2, v6
+    aget-object v3, v1, v7
 
-    const-string v3, "GET"
+    const-string v4, "GET"
 
-    sget-object v4, Lcom/unity3d/ads/android/webapp/j;->VideoPlan:Lcom/unity3d/ads/android/webapp/j;
+    sget-object v5, Lcom/unity3d/ads/android/webapp/i;->VideoPlan:Lcom/unity3d/ads/android/webapp/i;
 
-    invoke-direct/range {v0 .. v5}, Lcom/unity3d/ads/android/webapp/l;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/j;I)V
+    move-object v1, p0
 
-    .line 225
+    invoke-direct/range {v0 .. v6}, Lcom/unity3d/ads/android/webapp/k;-><init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/i;I)V
+
+    .line 240
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 226
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->j()V
+    .line 242
+    invoke-direct {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->b()V
 
     goto/16 :goto_0
 
+    :cond_4
+    move v0, v6
+
+    .line 195
+    goto :goto_1
+
+    .line 209
     :cond_5
-    move v0, v5
+    :try_start_2
+    const-string v0, "impact.applifier.com"
 
-    goto/16 :goto_1
-.end method
+    invoke-static {v0}, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
 
-.method public static initInProgress()Z
-    .locals 1
+    move-result-object v0
 
-    .prologue
-    .line 158
-    sget-boolean v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->k:Z
-
-    return v0
-.end method
-
-.method private static j()V
-    .locals 9
-
-    .prologue
-    .line 476
-    new-instance v0, Ljava/io/File;
-
+    .line 211
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "Ad server resolves to "
 
-    invoke-static {}, Lcom/unity3d/ads/android/cache/UnityAdsCache;->getCacheDirectory()Ljava/lang/String;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "/UnityAds-pendingrequests.dat"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2454,325 +2629,49 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
 
-    .line 478
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 481
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->e:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 482
-    const/4 v2, 0x1
-
-    :try_start_0
-    invoke-static {v0, v2}, Lcom/unity3d/ads/android/UnityAdsUtils;->readFile(Ljava/io/File;Z)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 483
-    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+    .line 212
+    invoke-virtual {v0}, Ljava/net/InetAddress;->isLoopbackAddress()Z
 
     move-result v0
 
-    .line 484
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_3
 
-    const-string v0, "Could not remove pending requests file"
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
-
-    .line 485
-    :cond_0
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 491
-    :try_start_1
-    new-instance v0, Lorg/json/JSONObject;
-
-    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-
-    .line 492
-    const-string v1, "data"
-
-    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v7
-
-    .line 494
-    if-eqz v7, :cond_1
-
-    invoke-virtual {v7}, Lorg/json/JSONArray;->length()I
-
-    move-result v0
-
-    if-lez v0, :cond_1
-
-    .line 495
-    const/4 v0, 0x0
-
-    move v6, v0
-
-    :goto_0
-    invoke-virtual {v7}, Lorg/json/JSONArray;->length()I
-
-    move-result v0
-
-    if-ge v6, v0, :cond_1
-
-    .line 496
-    invoke-virtual {v7, v6}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
-
-    move-result-object v5
-
-    .line 497
-    new-instance v0, Lcom/unity3d/ads/android/webapp/l;
-
-    const-string v1, "url"
-
-    .line 498
-    invoke-virtual {v5, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "body"
-
-    .line 499
-    invoke-virtual {v5, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "methodType"
-
-    .line 500
-    invoke-virtual {v5, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "requestType"
-
-    .line 501
-    invoke-virtual {v5, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/unity3d/ads/android/webapp/j;->getValueOf(Ljava/lang/String;)Lcom/unity3d/ads/android/webapp/j;
-
-    move-result-object v4
-
-    const-string v8, "retries"
-
-    .line 502
-    invoke-virtual {v5, v8}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v5
-
-    add-int/lit8 v5, v5, 0x1
-
-    invoke-direct/range {v0 .. v5}, Lcom/unity3d/ads/android/webapp/l;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/j;I)V
-
-    .line 504
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    .line 495
-    add-int/lit8 v0, v6, 0x1
-
-    move v6, v0
-
-    goto :goto_0
-
-    .line 485
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-
-    .line 509
-    :catch_0
-    move-exception v0
-
-    const-string v0, "Problems while sending some of the failed urls."
+    .line 213
+    const-string v0, "initCampaigns failed, ad server resolves to loopback address (due to ad blocker?)"
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
 
-    .line 513
-    :cond_1
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->i()V
+    .line 214
+    new-instance v0, Lcom/unity3d/ads/android/webapp/e;
 
-    .line 514
-    return-void
+    invoke-direct {v0, p0}, Lcom/unity3d/ads/android/webapp/e;-><init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;)V
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
+    :try_end_2
+    .catch Ljava/net/UnknownHostException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+
+    goto/16 :goto_0
+
+    :cond_6
+    move v0, v6
+
+    goto/16 :goto_1
 .end method
 
-.method private static k()V
+.method public initInProgress()Z
     .locals 1
 
     .prologue
-    .line 692
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
+    .line 161
+    iget-boolean v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->l:Z
 
-    if-eqz v0, :cond_0
-
-    .line 693
-    sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
-
-    invoke-interface {v0}, Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;->onWebDataFailed()V
-
-    .line 694
-    :cond_0
-    return-void
-.end method
-
-.method public static refreshCampaignsIfNeeded()Z
-    .locals 6
-
-    .prologue
-    const/4 v1, 0x0
-
-    const/4 v0, 0x1
-
-    .line 333
-    sget-boolean v2, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->l:Z
-
-    if-eqz v2, :cond_0
-
-    .line 334
-    sput-boolean v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->l:Z
-
-    .line 335
-    const-string v2, "Starting delayed ad plan refresh"
-
-    invoke-static {v2}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
-
-    move v2, v0
-
-    .line 349
-    :goto_0
-    if-eqz v2, :cond_3
-
-    .line 350
-    new-instance v1, Ljava/lang/Thread;
-
-    new-instance v2, Lcom/unity3d/ads/android/webapp/f;
-
-    invoke-direct {v2}, Lcom/unity3d/ads/android/webapp/f;-><init>()V
-
-    invoke-direct {v1, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
-
-    .line 354
-    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
-
-    .line 358
-    :goto_1
     return v0
-
-    .line 337
-    :cond_0
-    sget-wide v2, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->p:J
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_1
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    sget-wide v4, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->p:J
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_1
-
-    .line 338
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->h()V
-
-    .line 339
-    const-string v2, "Refreshing ad plan from server due to timer deadline"
-
-    invoke-static {v2}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
-
-    move v2, v0
-
-    .line 340
-    goto :goto_0
-
-    .line 341
-    :cond_1
-    sget v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_VIEWS_MAX:I
-
-    if-lez v2, :cond_2
-
-    sget v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_VIEWS_COUNT:I
-
-    sget v3, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_VIEWS_MAX:I
-
-    if-lt v2, v3, :cond_2
-
-    .line 342
-    const-string v2, "Refreshing ad plan from server due to endscreen limit"
-
-    invoke-static {v2}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
-
-    move v2, v0
-
-    .line 343
-    goto :goto_0
-
-    .line 344
-    :cond_2
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->getVideoPlanCampaigns()Ljava/util/ArrayList;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_4
-
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->getViewableVideoPlanCampaigns()Ljava/util/ArrayList;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    .line 345
-    const-string v2, "All available videos watched, refreshing ad plan from server"
-
-    invoke-static {v2}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
-
-    move v2, v0
-
-    .line 346
-    goto :goto_0
-
-    :cond_3
-    move v0, v1
-
-    .line 358
-    goto :goto_1
-
-    :cond_4
-    move v2, v1
-
-    goto :goto_0
 .end method
 
-.method public static sendAnalyticsRequest(Ljava/lang/String;Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;)V
+.method public sendAnalyticsRequest(Ljava/lang/String;Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;)V
     .locals 10
 
     .prologue
@@ -2782,64 +2681,64 @@
 
     const/4 v7, 0x1
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    .line 304
-    if-eqz p1, :cond_0
+    .line 321
+    if-eqz p2, :cond_0
 
-    .line 305
+    .line 322
     const-string v0, "%s"
 
     new-array v1, v7, [Ljava/lang/Object;
 
     sget-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->ANALYTICS_BASE_URL:Ljava/lang/String;
 
-    aput-object v2, v1, v5
+    aput-object v2, v1, v6
 
     invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 306
+    .line 323
     const-string v0, "%s=%s"
 
-    new-array v2, v8, [Ljava/lang/Object;
+    new-array v1, v8, [Ljava/lang/Object;
 
     const-string v3, "gameId"
 
-    aput-object v3, v2, v5
+    aput-object v3, v1, v6
 
     sget-object v3, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_ADS_GAME_ID:Ljava/lang/String;
 
-    aput-object v3, v2, v7
+    aput-object v3, v1, v7
 
-    invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 307
-    const-string v2, "%s&%s=%s"
+    .line 324
+    const-string v1, "%s&%s=%s"
 
     new-array v3, v9, [Ljava/lang/Object;
 
-    aput-object v0, v3, v5
+    aput-object v0, v3, v6
 
     const-string v0, "type"
 
     aput-object v0, v3, v7
 
-    aput-object p0, v3, v8
+    aput-object p1, v3, v8
 
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 308
-    const-string v2, "%s&%s=%s"
+    .line 325
+    const-string v1, "%s&%s=%s"
 
     new-array v3, v9, [Ljava/lang/Object;
 
-    aput-object v0, v3, v5
+    aput-object v0, v3, v6
 
     const-string v0, "trackingId"
 
@@ -2849,52 +2748,52 @@
 
     aput-object v0, v3, v8
 
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 309
-    const-string v2, "%s&%s=%s"
+    .line 326
+    const-string v1, "%s&%s=%s"
 
     new-array v3, v9, [Ljava/lang/Object;
 
-    aput-object v0, v3, v5
+    aput-object v0, v3, v6
 
     const-string v0, "providerId"
 
     aput-object v0, v3, v7
 
-    invoke-virtual {p1}, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;->getCampaignId()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;->getCampaignId()Ljava/lang/String;
 
     move-result-object v0
 
     aput-object v0, v3, v8
 
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 310
+    .line 328
     invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->getZoneManager()Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;->getCurrentZone()Lcom/unity3d/ads/android/zone/UnityAdsZone;
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;->getCurrentZone()Lcom/unity3d/ads/android/zone/UnityAdsZone;
 
-    move-result-object v2
+    move-result-object v1
 
-    .line 311
+    .line 329
     const-string v3, "%s&%s=%s"
 
     new-array v4, v9, [Ljava/lang/Object;
 
-    aput-object v0, v4, v5
+    aput-object v0, v4, v6
 
     const-string v0, "zone"
 
     aput-object v0, v4, v7
 
-    invoke-virtual {v2}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getZoneId()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getZoneId()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2904,32 +2803,32 @@
 
     move-result-object v3
 
-    .line 313
-    invoke-virtual {v2}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->isIncentivized()Z
+    .line 331
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->isIncentivized()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    move-object v0, v2
+    move-object v0, v1
 
-    .line 314
+    .line 332
     check-cast v0, Lcom/unity3d/ads/android/zone/UnityAdsIncentivizedZone;
 
     invoke-virtual {v0}, Lcom/unity3d/ads/android/zone/UnityAdsIncentivizedZone;->itemManager()Lcom/unity3d/ads/android/item/UnityAdsRewardItemManager;
 
     move-result-object v0
 
-    .line 315
+    .line 333
     const-string v4, "%s&%s=%s"
 
-    new-array v6, v9, [Ljava/lang/Object;
+    new-array v5, v9, [Ljava/lang/Object;
 
-    aput-object v3, v6, v5
+    aput-object v3, v5, v6
 
     const-string v3, "rewardItem"
 
-    aput-object v3, v6, v7
+    aput-object v3, v5, v7
 
     invoke-virtual {v0}, Lcom/unity3d/ads/android/item/UnityAdsRewardItemManager;->getCurrentItem()Lcom/unity3d/ads/android/item/UnityAdsRewardItem;
 
@@ -2939,32 +2838,32 @@
 
     move-result-object v0
 
-    aput-object v0, v6, v8
+    aput-object v0, v5, v8
 
-    invoke-static {v4, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 318
+    .line 336
     :goto_0
-    invoke-virtual {v2}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getGamerSid()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getGamerSid()Ljava/lang/String;
 
     move-result-object v3
 
     if-eqz v3, :cond_1
 
-    .line 319
+    .line 337
     const-string v3, "%s&%s=%s"
 
     new-array v4, v9, [Ljava/lang/Object;
 
-    aput-object v0, v4, v5
+    aput-object v0, v4, v6
 
     const-string v0, "sid"
 
     aput-object v0, v4, v7
 
-    invoke-virtual {v2}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getGamerSid()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getGamerSid()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2972,27 +2871,29 @@
 
     invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 321
+    .line 339
     :goto_1
-    new-instance v0, Lcom/unity3d/ads/android/webapp/l;
+    new-instance v0, Lcom/unity3d/ads/android/webapp/k;
 
-    const-string v3, "GET"
+    const-string v4, "GET"
 
-    sget-object v4, Lcom/unity3d/ads/android/webapp/j;->Analytics:Lcom/unity3d/ads/android/webapp/j;
+    sget-object v5, Lcom/unity3d/ads/android/webapp/i;->Analytics:Lcom/unity3d/ads/android/webapp/i;
 
-    invoke-direct/range {v0 .. v5}, Lcom/unity3d/ads/android/webapp/l;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/j;I)V
+    move-object v1, p0
 
-    .line 322
+    invoke-direct/range {v0 .. v6}, Lcom/unity3d/ads/android/webapp/k;-><init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/i;I)V
+
+    .line 340
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 324
+    .line 342
     :cond_0
     return-void
 
     :cond_1
-    move-object v2, v0
+    move-object v3, v0
 
     goto :goto_1
 
@@ -3002,24 +2903,24 @@
     goto :goto_0
 .end method
 
-.method public static sendCampaignViewProgress(Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;)Z
+.method public sendCampaignViewProgress(Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;)Z
     .locals 10
 
     .prologue
-    .line 232
+    .line 248
     const/4 v0, 0x0
 
-    .line 233
-    if-nez p0, :cond_1
+    .line 249
+    if-nez p1, :cond_1
 
     const/4 v0, 0x0
 
-    .line 299
+    .line 317
     :cond_0
     :goto_0
     return v0
 
-    .line 235
+    .line 251
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3027,7 +2928,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -3053,12 +2954,14 @@
 
     invoke-static {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->info(Ljava/lang/String;)V
 
-    .line 237
+    .line 253
+    if-eqz p2, :cond_0
+
     sget-object v1, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_ADS_GAMER_ID:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 238
+    .line 254
     const-string v0, "%s%s"
 
     const/4 v1, 0x2
@@ -3081,7 +2984,7 @@
 
     move-result-object v0
 
-    .line 239
+    .line 255
     const-string v1, "%s%s/video/%s/%s"
 
     const/4 v2, 0x4
@@ -3100,7 +3003,7 @@
 
     const/4 v0, 0x2
 
-    invoke-virtual {p1}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -3108,7 +3011,7 @@
 
     const/4 v0, 0x3
 
-    invoke-virtual {p0}, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;->getCampaignId()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;->getCampaignId()Ljava/lang/String;
 
     move-result-object v3
 
@@ -3118,7 +3021,7 @@
 
     move-result-object v0
 
-    .line 240
+    .line 256
     const-string v1, "%s/%s"
 
     const/4 v2, 0x2
@@ -3137,18 +3040,18 @@
 
     invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 241
+    .line 258
     invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->getZoneManager()Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;->getCurrentZone()Lcom/unity3d/ads/android/zone/UnityAdsZone;
 
-    move-result-object v2
+    move-result-object v1
 
-    .line 242
+    .line 259
     const-string v0, "%s=%s"
 
     const/4 v3, 0x2
@@ -3163,7 +3066,7 @@
 
     const/4 v4, 0x1
 
-    invoke-virtual {v2}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getZoneId()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getZoneId()Ljava/lang/String;
 
     move-result-object v5
 
@@ -3173,7 +3076,7 @@
 
     move-result-object v3
 
-    .line 245
+    .line 262
     :try_start_0
     const-string v0, "%s&%s=%s"
 
@@ -3201,15 +3104,15 @@
 
     move-result-object v3
 
-    .line 246
+    .line 264
     invoke-static {}, Lcom/unity3d/ads/android/data/UnityAdsDevice;->getAdvertisingTrackingId()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 248
-    if-eqz v4, :cond_7
+    .line 265
+    if-eqz v4, :cond_8
 
-    .line 249
+    .line 266
     const-string v5, "%s&%s=%d"
 
     const/4 v0, 0x3
@@ -3232,7 +3135,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     const/4 v0, 0x0
 
@@ -3247,7 +3150,7 @@
 
     move-result-object v3
 
-    .line 250
+    .line 268
     invoke-static {v4}, Lcom/unity3d/ads/android/UnityAdsUtils;->Md5(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -3256,7 +3159,7 @@
 
     move-result-object v0
 
-    .line 251
+    .line 269
     const-string v5, "%s&%s=%s"
 
     const/4 v6, 0x3
@@ -3287,7 +3190,7 @@
 
     move-result-object v3
 
-    .line 252
+    .line 270
     const-string v0, "%s&%s=%s"
 
     const/4 v5, 0x3
@@ -3318,7 +3221,7 @@
 
     move-result-object v3
 
-    .line 261
+    .line 278
     :cond_2
     :goto_2
     const-string v0, "%s&%s=%s"
@@ -3353,7 +3256,7 @@
 
     move-result-object v3
 
-    .line 262
+    .line 279
     const-string v0, "%s&%s=%s"
 
     const/4 v4, 0x3
@@ -3372,7 +3275,7 @@
 
     const/4 v5, 0x2
 
-    const-string v6, "1502"
+    const-string v6, "1407"
 
     const-string v7, "UTF-8"
 
@@ -3386,7 +3289,7 @@
 
     move-result-object v3
 
-    .line 263
+    .line 280
     const-string v0, "%s&%s=%s"
 
     const/4 v4, 0x3
@@ -3421,7 +3324,7 @@
 
     move-result-object v3
 
-    .line 264
+    .line 281
     const-string v0, "%s&%s=%s"
 
     const/4 v4, 0x3
@@ -3456,7 +3359,7 @@
 
     move-result-object v3
 
-    .line 265
+    .line 282
     const-string v0, "%s&%s=%s"
 
     const/4 v4, 0x3
@@ -3489,7 +3392,7 @@
 
     move-result-object v3
 
-    .line 266
+    .line 283
     const-string v0, "%s&%s=%s"
 
     const/4 v4, 0x3
@@ -3524,14 +3427,14 @@
 
     move-result-object v3
 
-    .line 268
+    .line 285
     invoke-static {}, Lcom/unity3d/ads/android/data/UnityAdsDevice;->isUsingWifi()Z
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    .line 269
+    .line 286
     const-string v0, "%s&%s=%d"
 
     const/4 v4, 0x3
@@ -3564,7 +3467,7 @@
 
     move-result-object v3
 
-    .line 272
+    .line 289
     :cond_3
     sget-wide v4, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CACHING_SPEED:J
 
@@ -3574,7 +3477,7 @@
 
     if-lez v0, :cond_4
 
-    .line 273
+    .line 290
     const-string v0, "%s&%s=%d"
 
     const/4 v4, 0x3
@@ -3605,7 +3508,7 @@
 
     move-result-object v3
 
-    .line 276
+    .line 293
     :cond_4
     const-string v0, "%s&%s=%s"
 
@@ -3639,7 +3542,7 @@
 
     move-result-object v3
 
-    .line 277
+    .line 294
     const-string v0, "%s&%s=%s"
 
     const/4 v4, 0x3
@@ -3672,7 +3575,7 @@
 
     move-result-object v3
 
-    .line 278
+    .line 296
     const-string v4, "%s&%s=%s"
 
     const/4 v0, 0x3
@@ -3697,7 +3600,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     const-string v0, "true"
 
@@ -3712,24 +3615,24 @@
 
     move-object v3, v0
 
-    .line 284
+    .line 302
     :goto_4
-    invoke-virtual {v2}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->isIncentivized()Z
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->isIncentivized()Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    move-object v0, v2
+    move-object v0, v1
 
-    .line 285
+    .line 303
     check-cast v0, Lcom/unity3d/ads/android/zone/UnityAdsIncentivizedZone;
 
     invoke-virtual {v0}, Lcom/unity3d/ads/android/zone/UnityAdsIncentivizedZone;->itemManager()Lcom/unity3d/ads/android/item/UnityAdsRewardItemManager;
 
     move-result-object v0
 
-    .line 286
+    .line 304
     const-string v4, "%s&%s=%s"
 
     const/4 v5, 0x3
@@ -3762,15 +3665,15 @@
 
     move-result-object v3
 
-    .line 289
+    .line 307
     :cond_5
-    invoke-virtual {v2}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getGamerSid()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getGamerSid()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_6
 
-    .line 290
+    .line 308
     const-string v0, "%s&%s=%s"
 
     const/4 v4, 0x3
@@ -3789,44 +3692,46 @@
 
     const/4 v3, 0x2
 
-    invoke-virtual {v2}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getGamerSid()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->getGamerSid()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v4, v3
+    aput-object v1, v4, v3
 
     invoke-static {v0, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 293
-    :goto_5
-    new-instance v0, Lcom/unity3d/ads/android/webapp/l;
+    .line 311
+    :cond_6
+    new-instance v0, Lcom/unity3d/ads/android/webapp/k;
 
-    const-string v3, "POST"
+    const-string v4, "POST"
 
-    sget-object v4, Lcom/unity3d/ads/android/webapp/j;->VideoViewed:Lcom/unity3d/ads/android/webapp/j;
+    sget-object v5, Lcom/unity3d/ads/android/webapp/i;->VideoViewed:Lcom/unity3d/ads/android/webapp/i;
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    invoke-direct/range {v0 .. v5}, Lcom/unity3d/ads/android/webapp/l;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/j;I)V
+    move-object v1, p0
 
-    .line 294
+    invoke-direct/range {v0 .. v6}, Lcom/unity3d/ads/android/webapp/k;-><init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/ads/android/webapp/i;I)V
+
+    .line 312
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 296
+    .line 314
     const/4 v0, 0x1
 
     goto/16 :goto_0
 
-    .line 249
-    :cond_6
+    .line 266
+    :cond_7
     const/4 v0, 0x1
 
     goto/16 :goto_1
 
-    .line 255
-    :cond_7
+    .line 272
+    :cond_8
     const/4 v0, 0x0
 
     :try_start_1
@@ -3842,7 +3747,7 @@
 
     if-nez v0, :cond_2
 
-    .line 256
+    .line 273
     const-string v0, "%s&%s=%s"
 
     const/4 v4, 0x3
@@ -3879,7 +3784,7 @@
 
     move-result-object v3
 
-    .line 257
+    .line 274
     const-string v0, "%s&%s=%s"
 
     const/4 v4, 0x3
@@ -3918,15 +3823,15 @@
 
     goto/16 :goto_2
 
-    .line 278
-    :cond_8
+    .line 296
+    :cond_9
     const-string v0, "false"
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto/16 :goto_3
 
-    .line 280
+    .line 298
     :catch_0
     move-exception v0
 
@@ -3936,22 +3841,34 @@
 
     move-object v3, v9
 
-    .line 281
-    const-string v4, "Problems creating campaigns query: %s"
+    .line 299
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    const/4 v5, 0x1
+    const-string v5, "Problems creating campaigns query: "
 
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v3}, Ljava/lang/Exception;->getStackTrace()[Ljava/lang/StackTraceElement;
+
     move-result-object v3
 
-    aput-object v3, v5, v6
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v3
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -3960,73 +3877,74 @@
     move-object v3, v0
 
     goto/16 :goto_4
-
-    :cond_9
-    move-object v2, v3
-
-    goto :goto_5
 .end method
 
-.method public static setWebDataListener(Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;)V
+.method public setWebDataListener(Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;)V
     .locals 0
 
     .prologue
-    .line 123
-    sput-object p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
+    .line 126
+    iput-object p1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->c:Lcom/unity3d/ads/android/webapp/IUnityAdsWebDataListener;
 
-    .line 124
+    .line 127
     return-void
 .end method
 
-.method public static setupCampaignRefreshTimer()V
-    .locals 6
+.method public stopAllRequests()V
+    .locals 3
 
     .prologue
+    .line 359
+    iget-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->f:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 360
+    :try_start_0
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_0
+
+    .line 361
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
     .line 362
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->h()V
+    const/4 v0, 0x0
 
-    .line 364
-    sget v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_SECONDS:I
-
-    if-lez v0, :cond_0
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->d:Ljava/util/ArrayList;
 
     .line 365
-    new-instance v0, Lcom/unity3d/ads/android/webapp/g;
-
-    invoke-direct {v0}, Lcom/unity3d/ads/android/webapp/g;-><init>()V
-
-    .line 378
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    sget v1, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_SECONDS:I
-
-    mul-int/lit16 v1, v1, 0x3e8
-
-    int-to-long v4, v1
-
-    add-long/2addr v2, v4
-
-    sput-wide v2, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->p:J
-
-    .line 379
-    new-instance v1, Ljava/util/Timer;
-
-    invoke-direct {v1}, Ljava/util/Timer;-><init>()V
-
-    .line 380
-    sput-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->o:Ljava/util/Timer;
-
-    sget v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_SECONDS:I
-
-    mul-int/lit16 v2, v2, 0x3e8
-
-    int-to-long v2, v2
-
-    invoke-virtual {v1, v0, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
-
-    .line 382
     :cond_0
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->e:Lcom/unity3d/ads/android/webapp/j;
+
+    if-eqz v0, :cond_1
+
+    .line 366
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->e:Lcom/unity3d/ads/android/webapp/j;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v2}, Lcom/unity3d/ads/android/webapp/j;->cancel(Z)Z
+
+    .line 367
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->e:Lcom/unity3d/ads/android/webapp/j;
+
+    .line 369
+    :cond_1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
 .end method

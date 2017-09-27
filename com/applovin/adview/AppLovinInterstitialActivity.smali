@@ -12,15 +12,9 @@
 
 
 # instance fields
-.field private A:Landroid/view/View;
+.field private A:Lcom/applovin/impl/adview/s;
 
-.field private B:Lcom/applovin/impl/adview/s;
-
-.field private volatile C:Ljava/util/UUID;
-
-.field private D:Landroid/widget/ImageView;
-
-.field private E:Ljava/lang/ref/WeakReference;
+.field private volatile B:Ljava/util/UUID;
 
 .field private a:Lcom/applovin/adview/AppLovinAdView;
 
@@ -30,7 +24,7 @@
 
 .field private d:Lcom/applovin/sdk/AppLovinLogger;
 
-.field private e:Lcom/applovin/impl/sdk/ca;
+.field private e:Lcom/applovin/impl/sdk/bv;
 
 .field private f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
@@ -56,23 +50,23 @@
 
 .field private q:Z
 
-.field private volatile r:Z
+.field private r:Z
 
-.field private s:Z
+.field private s:I
 
-.field private t:I
+.field private t:Landroid/os/Handler;
 
-.field private u:Landroid/os/Handler;
+.field private u:Landroid/widget/FrameLayout;
 
-.field private v:Landroid/widget/FrameLayout;
+.field private v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
-.field private w:Lcom/applovin/impl/adview/AppLovinVideoView;
+.field private w:Lcom/applovin/impl/adview/u;
 
-.field private x:Lcom/applovin/impl/adview/u;
+.field private x:Landroid/view/View;
 
-.field private y:Landroid/view/View;
+.field private y:Lcom/applovin/impl/adview/u;
 
-.field private z:Lcom/applovin/impl/adview/u;
+.field private z:Landroid/view/View;
 
 
 # direct methods
@@ -95,7 +89,7 @@
 
     iput-boolean v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->c:Z
 
-    invoke-static {}, Lcom/applovin/impl/sdk/dh;->a()Lcom/applovin/impl/sdk/AppLovinAdImpl;
+    invoke-static {}, Lcom/applovin/impl/sdk/da;->a()Lcom/applovin/impl/sdk/AppLovinAdImpl;
 
     move-result-object v0
 
@@ -123,17 +117,7 @@
 
     iput-boolean v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->r:Z
 
-    iput-boolean v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->s:Z
-
-    iput v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->t:I
-
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->E:Ljava/lang/ref/WeakReference;
+    iput v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->s:I
 
     return-void
 .end method
@@ -180,23 +164,23 @@
 .method static synthetic a(Lcom/applovin/adview/AppLovinInterstitialActivity;I)I
     .locals 0
 
-    iput p1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->t:I
+    iput p1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->s:I
 
     return p1
+.end method
+
+.method static synthetic a(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/AppLovinVideoView;
+    .locals 1
+
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
+
+    return-object v0
 .end method
 
 .method static synthetic a(Lcom/applovin/adview/AppLovinInterstitialActivity;Lcom/applovin/impl/sdk/AppLovinAdImpl;)Lcom/applovin/impl/sdk/AppLovinAdImpl;
     .locals 0
 
     iput-object p1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
-
-    return-object p1
-.end method
-
-.method static synthetic a(Lcom/applovin/adview/AppLovinInterstitialActivity;Ljava/lang/ref/WeakReference;)Ljava/lang/ref/WeakReference;
-    .locals 0
-
-    iput-object p1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->E:Ljava/lang/ref/WeakReference;
 
     return-object p1
 .end method
@@ -208,7 +192,7 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-static {v1}, Lcom/applovin/impl/sdk/dh;->a(F)F
+    invoke-static {v1}, Lcom/applovin/impl/sdk/da;->a(F)F
 
     move-result v1
 
@@ -224,11 +208,11 @@
 .method private a(ILjava/util/UUID;)V
     .locals 6
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->C:Ljava/util/UUID;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Ljava/util/UUID;
 
     invoke-virtual {p2, v0}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
@@ -238,7 +222,7 @@
 
     if-gtz p1, :cond_1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
     const/16 v1, 0x8
 
@@ -246,28 +230,28 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->s:Z
+    iput-boolean v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->r:Z
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    iget-boolean v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->s:Z
+    iget-boolean v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->r:Z
 
     if-nez v0, :cond_0
 
     add-int/lit8 v0, p1, -0x1
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
     invoke-virtual {v1, v0}, Lcom/applovin/impl/adview/s;->a(I)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->t:Landroid/os/Handler;
 
-    new-instance v2, Lcom/applovin/adview/h;
+    new-instance v2, Lcom/applovin/adview/g;
 
-    invoke-direct {v2, p0, v0, p2}, Lcom/applovin/adview/h;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;ILjava/util/UUID;)V
+    invoke-direct {v2, p0, v0, p2}, Lcom/applovin/adview/g;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;ILjava/util/UUID;)V
 
     const-wide/16 v4, 0x3e8
 
@@ -279,11 +263,11 @@
 .method private a(JLcom/applovin/impl/adview/u;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->t:Landroid/os/Handler;
 
-    new-instance v1, Lcom/applovin/adview/g;
+    new-instance v1, Lcom/applovin/adview/f;
 
-    invoke-direct {v1, p0, p3}, Lcom/applovin/adview/g;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;Lcom/applovin/impl/adview/u;)V
+    invoke-direct {v1, p0, p3}, Lcom/applovin/adview/f;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;Lcom/applovin/impl/adview/u;)V
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
@@ -348,41 +332,6 @@
     return-void
 .end method
 
-.method private a(Z)V
-    .locals 3
-
-    iput-boolean p1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->r:Z
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->E:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/media/MediaPlayer;
-
-    if-eqz v0, :cond_0
-
-    if-eqz p1, :cond_1
-
-    const/4 v1, 0x0
-
-    :goto_0
-    int-to-float v2, v1
-
-    int-to-float v1, v1
-
-    invoke-virtual {v0, v2, v1}, Landroid/media/MediaPlayer;->setVolume(FF)V
-
-    :cond_0
-    return-void
-
-    :cond_1
-    const/4 v1, 0x1
-
-    goto :goto_0
-.end method
-
 .method private a()Z
     .locals 2
 
@@ -392,7 +341,7 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
     if-nez v1, :cond_1
 
@@ -401,17 +350,17 @@
     return v0
 
     :cond_1
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/ca;->a()Z
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bv;->a()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/ca;->c()Z
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bv;->c()Z
 
     move-result v1
 
@@ -422,9 +371,9 @@
     if-nez v1, :cond_0
 
     :cond_2
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/ca;->b()Z
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bv;->b()Z
 
     move-result v1
 
@@ -440,16 +389,6 @@
     goto :goto_0
 .end method
 
-.method static synthetic a(Lcom/applovin/adview/AppLovinInterstitialActivity;)Z
-    .locals 1
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->d()Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method static synthetic a(Lcom/applovin/adview/AppLovinInterstitialActivity;Z)Z
     .locals 0
 
@@ -458,10 +397,10 @@
     return p1
 .end method
 
-.method static synthetic b(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/AppLovinVideoView;
+.method static synthetic b(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/sdk/AppLovinLogger;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->d:Lcom/applovin/sdk/AppLovinLogger;
 
     return-object v0
 .end method
@@ -471,7 +410,7 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->x()Landroid/content/SharedPreferences;
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->t()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -495,7 +434,7 @@
 .method private b(I)V
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->C:Ljava/util/UUID;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Ljava/util/UUID;
 
     invoke-direct {p0, p1, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(ILjava/util/UUID;)V
 
@@ -538,14 +477,6 @@
     return v0
 .end method
 
-.method static synthetic c(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/sdk/AppLovinLogger;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->d:Lcom/applovin/sdk/AppLovinLogger;
-
-    return-object v0
-.end method
-
 .method private c()V
     .locals 4
 
@@ -553,7 +484,7 @@
 
     iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getFileManager()Lcom/applovin/impl/sdk/y;
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getFileManager()Lcom/applovin/impl/sdk/x;
 
     move-result-object v0
 
@@ -565,7 +496,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, p0, v2}, Lcom/applovin/impl/sdk/y;->a(Ljava/lang/String;Landroid/content/Context;Z)Ljava/io/File;
+    invoke-virtual {v0, v1, p0, v2}, Lcom/applovin/impl/sdk/x;->a(Ljava/lang/String;Landroid/content/Context;Z)Ljava/io/File;
 
     move-result-object v0
 
@@ -577,9 +508,9 @@
 
     invoke-direct {v1, p0}, Lcom/applovin/impl/adview/AppLovinVideoView;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iput-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     new-instance v2, Lcom/applovin/adview/b;
 
@@ -587,27 +518,27 @@
 
     invoke-virtual {v1, v2}, Lcom/applovin/impl/adview/AppLovinVideoView;->setOnPreparedListener(Landroid/media/MediaPlayer$OnPreparedListener;)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
+
+    new-instance v2, Lcom/applovin/adview/j;
+
+    invoke-direct {v2, p0}, Lcom/applovin/adview/j;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+
+    invoke-virtual {v1, v2}, Lcom/applovin/impl/adview/AppLovinVideoView;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
+
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     new-instance v2, Lcom/applovin/adview/k;
 
     invoke-direct {v2, p0}, Lcom/applovin/adview/k;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
-    invoke-virtual {v1, v2}, Lcom/applovin/impl/adview/AppLovinVideoView;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
-
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
-
-    new-instance v2, Lcom/applovin/adview/l;
-
-    invoke-direct {v2, p0}, Lcom/applovin/adview/l;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
-
     invoke-virtual {v1, v2}, Lcom/applovin/impl/adview/AppLovinVideoView;->setOnErrorListener(Landroid/media/MediaPlayer$OnErrorListener;)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     invoke-virtual {v1, v0}, Lcom/applovin/impl/adview/AppLovinVideoView;->setVideoURI(Landroid/net/Uri;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -617,29 +548,37 @@
 
     invoke-virtual {v0, v1}, Lcom/applovin/impl/adview/AppLovinVideoView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     new-instance v1, Lcom/applovin/adview/AppLovinTouchToClickListener;
 
-    new-instance v2, Lcom/applovin/adview/n;
+    new-instance v2, Lcom/applovin/adview/m;
 
-    invoke-direct {v2, p0}, Lcom/applovin/adview/n;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    invoke-direct {v2, p0}, Lcom/applovin/adview/m;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
     invoke-direct {v1, p0, v2}, Lcom/applovin/adview/AppLovinTouchToClickListener;-><init>(Landroid/content/Context;Landroid/view/View$OnClickListener;)V
 
     invoke-virtual {v0, v1}, Lcom/applovin/impl/adview/AppLovinVideoView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->setContentView(Landroid/view/View;)V
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->m()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->k()V
+
+    return-void
+.end method
+
+.method static synthetic c(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->e()V
 
     return-void
 .end method
@@ -681,10 +620,44 @@
     return p1
 .end method
 
-.method static synthetic d(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
-    .locals 0
+.method static synthetic d(Lcom/applovin/adview/AppLovinInterstitialActivity;)Landroid/os/Handler;
+    .locals 1
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->f()V
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->t:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method private d()V
+    .locals 2
+
+    const/4 v1, -0x1
+
+    new-instance v0, Landroid/widget/RelativeLayout$LayoutParams;
+
+    invoke-direct {v0, v1, v1}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
+
+    new-instance v1, Landroid/widget/FrameLayout;
+
+    invoke-direct {v1, p0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    iput-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
+
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
+
+    const/high16 v1, -0x1000000
+
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->t:Landroid/os/Handler;
 
     return-void
 .end method
@@ -714,66 +687,12 @@
     return-void
 .end method
 
-.method private d()Z
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->G()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic e(Lcom/applovin/adview/AppLovinInterstitialActivity;)Landroid/os/Handler;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/os/Handler;
-
-    return-object v0
-.end method
-
 .method private e()V
-    .locals 2
-
-    const/4 v1, -0x1
-
-    new-instance v0, Landroid/widget/RelativeLayout$LayoutParams;
-
-    invoke-direct {v0, v1, v1}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
-
-    new-instance v1, Landroid/widget/FrameLayout;
-
-    invoke-direct {v1, p0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    iput-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
-
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
-
-    const/high16 v1, -0x1000000
-
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
-
-    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/os/Handler;
-
-    return-void
-.end method
-
-.method private f()V
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->k()Z
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->k()Z
 
     move-result v0
 
@@ -785,9 +704,37 @@
     return-void
 
     :cond_0
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->j()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->h()V
 
     goto :goto_0
+.end method
+
+.method static synthetic e(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->l()V
+
+    return-void
+.end method
+
+.method private f()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
+
+    invoke-direct {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->d(Lcom/applovin/sdk/AppLovinAd;)V
+
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
+
+    invoke-virtual {v0}, Lcom/applovin/impl/adview/AppLovinVideoView;->start()V
+
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->m()I
+
+    move-result v0
+
+    invoke-direct {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->b(I)V
+
+    return-void
 .end method
 
 .method static synthetic f(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
@@ -799,34 +746,6 @@
 .end method
 
 .method private g()V
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
-
-    invoke-direct {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->d(Lcom/applovin/sdk/AppLovinAd;)V
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/adview/AppLovinVideoView;->start()V
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->o()I
-
-    move-result v0
-
-    invoke-direct {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->b(I)V
-
-    return-void
-.end method
-
-.method static synthetic g(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->i()V
-
-    return-void
-.end method
-
-.method private h()V
     .locals 10
 
     const/4 v9, 0x0
@@ -849,23 +768,23 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0, v8}, Lcom/applovin/impl/adview/u;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
-    new-instance v3, Lcom/applovin/adview/p;
+    new-instance v3, Lcom/applovin/adview/o;
 
-    invoke-direct {v3, p0}, Lcom/applovin/adview/p;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    invoke-direct {v3, p0}, Lcom/applovin/adview/o;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
     invoke-virtual {v0, v3}, Lcom/applovin/impl/adview/u;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->m()I
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->m()I
 
     move-result v0
 
@@ -875,9 +794,9 @@
 
     new-instance v4, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->x()Z
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->x()Z
 
     move-result v0
 
@@ -890,13 +809,13 @@
 
     invoke-direct {v4, v3, v3, v0}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0, v3}, Lcom/applovin/impl/adview/u;->a(I)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->o()I
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->o()I
 
     move-result v0
 
@@ -904,9 +823,9 @@
 
     move-result v5
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->q()I
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->q()I
 
     move-result v0
 
@@ -916,9 +835,9 @@
 
     invoke-virtual {v4, v6, v5, v6, v5}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
 
-    iget-object v7, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v7, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0, v7, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -934,25 +853,25 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0, v8}, Lcom/applovin/impl/adview/u;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
-    new-instance v4, Lcom/applovin/adview/q;
+    new-instance v4, Lcom/applovin/adview/p;
 
-    invoke-direct {v4, p0}, Lcom/applovin/adview/q;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    invoke-direct {v4, p0}, Lcom/applovin/adview/p;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
     invoke-virtual {v0, v4}, Lcom/applovin/impl/adview/u;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     new-instance v4, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->w()Z
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->w()Z
 
     move-result v0
 
@@ -967,33 +886,33 @@
 
     invoke-virtual {v4, v6, v5, v6, v5}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0, v3}, Lcom/applovin/impl/adview/u;->a(I)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
 
-    iget-object v6, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v6, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0, v6, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/u;->bringToFront()V
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->k()Z
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->i()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Lcom/applovin/impl/sdk/ca;
+    new-instance v0, Lcom/applovin/impl/sdk/bv;
 
     iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    invoke-direct {v0, v4}, Lcom/applovin/impl/sdk/ca;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+    invoke-direct {v0, v4}, Lcom/applovin/impl/sdk/bv;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->r()I
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->r()I
 
     move-result v0
 
@@ -1005,13 +924,13 @@
 
     invoke-direct {v4, p0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    iput-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iput-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
 
-    iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
 
     invoke-virtual {v4, v9}, Landroid/view/View;->setBackgroundColor(I)V
 
-    iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
 
     invoke-virtual {v4, v8}, Landroid/view/View;->setVisibility(I)V
 
@@ -1019,13 +938,13 @@
 
     invoke-direct {v4, p0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    iput-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Landroid/view/View;
+    iput-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Landroid/view/View;
 
-    iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Landroid/view/View;
+    iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Landroid/view/View;
 
     invoke-virtual {v4, v9}, Landroid/view/View;->setBackgroundColor(I)V
 
-    iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Landroid/view/View;
+    iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Landroid/view/View;
 
     invoke-virtual {v4, v8}, Landroid/view/View;->setVisibility(I)V
 
@@ -1039,9 +958,9 @@
 
     new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->x()Z
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->x()Z
 
     move-result v0
 
@@ -1058,9 +977,9 @@
 
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget-object v6, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v6, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v6}, Lcom/applovin/impl/sdk/ca;->w()Z
+    invoke-virtual {v6}, Lcom/applovin/impl/sdk/bv;->w()Z
 
     move-result v6
 
@@ -1073,7 +992,15 @@
 
     invoke-virtual {v0, v4, v4, v4, v4}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
+
+    new-instance v2, Lcom/applovin/adview/q;
+
+    invoke-direct {v2, p0}, Lcom/applovin/adview/q;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Landroid/view/View;
 
     new-instance v2, Lcom/applovin/adview/r;
 
@@ -1081,31 +1008,23 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Landroid/view/View;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
 
-    new-instance v2, Lcom/applovin/adview/s;
-
-    invoke-direct {v2, p0}, Lcom/applovin/adview/s;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
-
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
 
     invoke-virtual {v1, v2, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->bringToFront()V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Landroid/view/View;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Landroid/view/View;
 
     invoke-virtual {v1, v2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Landroid/view/View;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->bringToFront()V
 
@@ -1133,218 +1052,35 @@
     goto :goto_3
 .end method
 
-.method static synthetic h(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+.method static synthetic g(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->p()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->f()V
 
     return-void
 .end method
 
-.method private i()V
-    .locals 7
-
-    const/4 v6, 0x1
-
-    new-instance v0, Landroid/widget/ImageView;
-
-    invoke-direct {v0, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
-
-    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->D:Landroid/widget/ImageView;
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->A()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->d()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->B()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->C()I
-
-    move-result v0
-
-    invoke-direct {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->c(I)I
-
-    move-result v1
-
-    new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->D()I
-
-    move-result v0
-
-    invoke-direct {v2, v1, v1, v0}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->D:Landroid/widget/ImageView;
-
-    sget-object v3, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->E()I
-
-    move-result v0
-
-    invoke-direct {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->c(I)I
-
-    move-result v0
-
-    invoke-virtual {v2, v0, v0, v0, v0}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
-
-    move-result-object v0
-
-    const-string v3, "AppLovinInterstitialActivity"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Added mute button with params: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v0, v3, v4}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinAdImpl;->getMuteImageFilename()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_1
-    iget-object v3, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->D:Landroid/widget/ImageView;
-
-    iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v4}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getFileManager()Lcom/applovin/impl/sdk/y;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0, p0, v6}, Lcom/applovin/impl/sdk/y;->a(Ljava/lang/String;Landroid/content/Context;Z)Ljava/io/File;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    invoke-static {v3, v0, v1}, Lcom/applovin/sdk/AppLovinSdkUtils;->safePopulateImageView(Landroid/widget/ImageView;Landroid/net/Uri;I)V
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->D:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setClickable(Z)V
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->D:Landroid/widget/ImageView;
-
-    new-instance v1, Lcom/applovin/adview/t;
-
-    invoke-direct {v1, p0}, Lcom/applovin/adview/t;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
-
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->D:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->D:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->bringToFront()V
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->d()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->r:Z
-
-    goto/16 :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinAdImpl;->getUnmuteImageFilename()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_1
-.end method
-
-.method static synthetic i(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->g()V
-
-    return-void
-.end method
-
-.method private j()V
+.method private h()V
     .locals 1
 
-    new-instance v0, Lcom/applovin/adview/e;
+    new-instance v0, Lcom/applovin/adview/s;
 
-    invoke-direct {v0, p0}, Lcom/applovin/adview/e;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    invoke-direct {v0, p0}, Lcom/applovin/adview/s;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
     invoke-virtual {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method static synthetic j(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+.method static synthetic h(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->t()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->r()V
 
     return-void
 .end method
 
-.method static synthetic k(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+.method static synthetic i(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
     .locals 1
 
     iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
@@ -1352,12 +1088,12 @@
     return-object v0
 .end method
 
-.method private k()Z
+.method private i()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->r()I
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->r()I
 
     move-result v0
 
@@ -1374,35 +1110,35 @@
     goto :goto_0
 .end method
 
-.method static synthetic l(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/sdk/ca;
+.method static synthetic j(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/sdk/bv;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
     return-object v0
 .end method
 
-.method private l()V
+.method private j()V
     .locals 1
 
-    new-instance v0, Lcom/applovin/adview/f;
+    new-instance v0, Lcom/applovin/adview/e;
 
-    invoke-direct {v0, p0}, Lcom/applovin/adview/f;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    invoke-direct {v0, p0}, Lcom/applovin/adview/e;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
     invoke-virtual {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method static synthetic m(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/s;
+.method static synthetic k(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/s;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
     return-object v0
 .end method
 
-.method private m()V
+.method private k()V
     .locals 4
 
     iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
@@ -1421,11 +1157,11 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     :goto_0
     iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
@@ -1434,7 +1170,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Lcom/applovin/impl/sdk/dh;->c(F)J
+    invoke-static {v1}, Lcom/applovin/impl/sdk/da;->c(F)J
 
     move-result-wide v2
 
@@ -1444,15 +1180,15 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     goto :goto_0
 .end method
 
-.method private n()V
+.method private l()V
     .locals 4
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
     if-nez v0, :cond_0
 
@@ -1460,21 +1196,21 @@
 
     invoke-direct {v0, p0}, Lcom/applovin/impl/adview/s;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->q()I
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->o()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
     invoke-virtual {v1, v0}, Lcom/applovin/impl/adview/s;->c(I)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v2}, Lcom/applovin/impl/sdk/ca;->h()I
+    invoke-virtual {v2}, Lcom/applovin/impl/sdk/bv;->h()I
 
     move-result v2
 
@@ -1482,15 +1218,15 @@
 
     invoke-virtual {v1, v2}, Lcom/applovin/impl/adview/s;->b(F)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
     invoke-virtual {v1, v0}, Lcom/applovin/impl/adview/s;->d(I)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/ca;->g()I
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bv;->g()I
 
     move-result v1
 
@@ -1498,9 +1234,9 @@
 
     invoke-virtual {v0, v1}, Lcom/applovin/impl/adview/s;->a(F)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->o()I
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->m()I
 
     move-result v1
 
@@ -1508,9 +1244,9 @@
 
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/ca;->f()I
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bv;->f()I
 
     move-result v1
 
@@ -1518,9 +1254,9 @@
 
     move-result v1
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v2}, Lcom/applovin/impl/sdk/ca;->f()I
+    invoke-virtual {v2}, Lcom/applovin/impl/sdk/bv;->f()I
 
     move-result v2
 
@@ -1528,17 +1264,17 @@
 
     move-result v2
 
-    iget-object v3, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v3, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v3}, Lcom/applovin/impl/sdk/ca;->v()I
+    invoke-virtual {v3}, Lcom/applovin/impl/sdk/bv;->v()I
 
     move-result v3
 
     invoke-direct {v0, v1, v2, v3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/ca;->u()I
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bv;->u()I
 
     move-result v1
 
@@ -1548,27 +1284,27 @@
 
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
     invoke-virtual {v1, v2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/s;->bringToFront()V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Lcom/applovin/impl/adview/s;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Lcom/applovin/impl/adview/s;
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->i()Z
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->i()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->o()I
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->m()I
 
     move-result v0
 
@@ -1588,15 +1324,15 @@
     goto :goto_0
 .end method
 
-.method static synthetic n(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+.method static synthetic l(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->r()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->p()V
 
     return-void
 .end method
 
-.method private o()I
+.method private m()I
     .locals 2
 
     iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
@@ -1612,55 +1348,55 @@
     return v0
 
     :cond_1
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/ca;->t()Z
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bv;->t()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    iget v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->t:I
+    iget v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->s:I
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 .end method
 
-.method static synthetic o(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/u;
+.method static synthetic m(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/u;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     return-object v0
 .end method
 
-.method static synthetic p(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/u;
+.method static synthetic n(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/u;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     return-object v0
 .end method
 
-.method private p()V
+.method private n()V
     .locals 1
 
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->C:Ljava/util/UUID;
+    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->B:Ljava/util/UUID;
 
     return-void
 .end method
 
-.method private q()I
+.method private o()I
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->d()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->d()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1671,23 +1407,7 @@
     return v0
 .end method
 
-.method static synthetic q(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->u()V
-
-    return-void
-.end method
-
-.method private r()V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->t()V
-
-    return-void
-.end method
-
-.method static synthetic r(Lcom/applovin/adview/AppLovinInterstitialActivity;)Z
+.method static synthetic o(Lcom/applovin/adview/AppLovinInterstitialActivity;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->n:Z
@@ -1695,7 +1415,37 @@
     return v0
 .end method
 
-.method private s()V
+.method private p()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
+
+    invoke-virtual {v0}, Lcom/applovin/impl/adview/AppLovinVideoView;->stopPlayback()V
+
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->r()V
+
+    return-void
+.end method
+
+.method static synthetic p(Lcom/applovin/adview/AppLovinInterstitialActivity;)Z
+    .locals 1
+
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->i()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic q(Lcom/applovin/adview/AppLovinInterstitialActivity;)Landroid/view/View;
+    .locals 1
+
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
+
+    return-object v0
+.end method
+
+.method private q()V
     .locals 4
 
     const/4 v3, 0x1
@@ -1710,17 +1460,17 @@
 
     iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->a:Lcom/applovin/adview/AppLovinAdView;
 
-    new-instance v1, Lcom/applovin/adview/i;
+    new-instance v1, Lcom/applovin/adview/h;
 
-    invoke-direct {v1, p0}, Lcom/applovin/adview/i;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    invoke-direct {v1, p0}, Lcom/applovin/adview/h;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
     invoke-virtual {v0, v1}, Lcom/applovin/adview/AppLovinAdView;->setAdDisplayListener(Lcom/applovin/sdk/AppLovinAdDisplayListener;)V
 
     iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->a:Lcom/applovin/adview/AppLovinAdView;
 
-    new-instance v1, Lcom/applovin/adview/j;
+    new-instance v1, Lcom/applovin/adview/i;
 
-    invoke-direct {v1, p0}, Lcom/applovin/adview/j;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    invoke-direct {v1, p0}, Lcom/applovin/adview/i;-><init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
     invoke-virtual {v0, v1}, Lcom/applovin/adview/AppLovinAdView;->setAdClickListener(Lcom/applovin/sdk/AppLovinAdClickListener;)V
 
@@ -1734,9 +1484,9 @@
 
     iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->e()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->d()V
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->h()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->g()V
 
     iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
 
@@ -1749,30 +1499,30 @@
     invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->c()V
 
     :goto_0
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/u;->bringToFront()V
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->k()Z
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->i()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->bringToFront()V
 
     :cond_0
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/u;->bringToFront()V
 
@@ -1806,7 +1556,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->t()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->r()V
 
     goto :goto_0
 
@@ -1818,34 +1568,10 @@
     goto :goto_1
 .end method
 
-.method static synthetic s(Lcom/applovin/adview/AppLovinInterstitialActivity;)Z
-    .locals 1
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->k()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic t(Lcom/applovin/adview/AppLovinInterstitialActivity;)Landroid/view/View;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
-
-    return-object v0
-.end method
-
-.method private t()V
+.method private r()V
     .locals 3
 
     const/4 v2, -0x1
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->w()V
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/adview/AppLovinVideoView;->stopPlayback()V
 
     new-instance v0, Landroid/widget/FrameLayout;
 
@@ -1865,65 +1591,65 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Landroid/view/View;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Landroid/view/View;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Landroid/view/View;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
     :cond_0
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->k()Z
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->i()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Landroid/view/View;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->bringToFront()V
 
     :cond_1
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->u:Landroid/widget/FrameLayout;
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     invoke-virtual {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->setContentView(Landroid/view/View;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/u;->bringToFront()V
 
@@ -1945,11 +1671,11 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/applovin/impl/sdk/dh;->c(F)J
+    invoke-static {v0}, Lcom/applovin/impl/sdk/da;->c(F)J
 
     move-result-wide v0
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     invoke-direct {p0, v0, v1, v2}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(JLcom/applovin/impl/adview/u;)V
 
@@ -1958,10 +1684,12 @@
 
     iput-boolean v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->p:Z
 
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->s()V
+
     return-void
 
     :cond_2
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     const/4 v1, 0x0
 
@@ -1970,77 +1698,7 @@
     goto :goto_0
 .end method
 
-.method private u()V
-    .locals 5
-
-    const/4 v1, 0x1
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->v()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    invoke-direct {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(Z)V
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinAdImpl;->getMuteImageFilename()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_1
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
-
-    invoke-virtual {v2}, Lcom/applovin/impl/sdk/ca;->C()I
-
-    move-result v2
-
-    invoke-direct {p0, v2}, Lcom/applovin/adview/AppLovinInterstitialActivity;->c(I)I
-
-    move-result v2
-
-    iget-object v3, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->D:Landroid/widget/ImageView;
-
-    iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v4}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getFileManager()Lcom/applovin/impl/sdk/y;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0, p0, v1}, Lcom/applovin/impl/sdk/y;->a(Ljava/lang/String;Landroid/content/Context;Z)Ljava/io/File;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    invoke-static {v3, v0, v2}, Lcom/applovin/sdk/AppLovinSdkUtils;->safePopulateImageView(Landroid/widget/ImageView;Landroid/net/Uri;I)V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->g:Lcom/applovin/impl/sdk/AppLovinAdImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinAdImpl;->getUnmuteImageFilename()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_1
-.end method
-
-.method static synthetic u(Lcom/applovin/adview/AppLovinInterstitialActivity;)Z
+.method static synthetic r(Lcom/applovin/adview/AppLovinInterstitialActivity;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->o:Z
@@ -2048,23 +1706,15 @@
     return v0
 .end method
 
-.method static synthetic v(Lcom/applovin/adview/AppLovinInterstitialActivity;)Landroid/view/View;
+.method static synthetic s(Lcom/applovin/adview/AppLovinInterstitialActivity;)Landroid/view/View;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->A:Landroid/view/View;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Landroid/view/View;
 
     return-object v0
 .end method
 
-.method private v()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->r:Z
-
-    return v0
-.end method
-
-.method private w()V
+.method private s()V
     .locals 6
 
     const-wide/high16 v0, 0x4059000000000000L    # 100.0
@@ -2116,17 +1766,17 @@
     goto :goto_0
 
     :cond_1
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     invoke-virtual {v2}, Lcom/applovin/impl/adview/AppLovinVideoView;->getDuration()I
 
     move-result v2
 
-    iget-object v3, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v3, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     invoke-virtual {v3}, Lcom/applovin/impl/adview/AppLovinVideoView;->getCurrentPosition()I
 
@@ -2159,15 +1809,7 @@
     goto :goto_2
 .end method
 
-.method static synthetic w(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->j()V
-
-    return-void
-.end method
-
-.method private x()Landroid/content/SharedPreferences;
+.method private t()Landroid/content/SharedPreferences;
     .locals 2
 
     const-string v0, "com.applovin.interstitial.sharedpreferences"
@@ -2181,15 +1823,23 @@
     return-object v0
 .end method
 
-.method static synthetic x(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+.method static synthetic t(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->l()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->h()V
 
     return-void
 .end method
 
-.method static synthetic y(Lcom/applovin/adview/AppLovinInterstitialActivity;)Z
+.method static synthetic u(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->j()V
+
+    return-void
+.end method
+
+.method static synthetic v(Lcom/applovin/adview/AppLovinInterstitialActivity;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->i:Z
@@ -2197,7 +1847,7 @@
     return v0
 .end method
 
-.method static synthetic z(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/af;
+.method static synthetic w(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/af;
     .locals 1
 
     iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->b:Lcom/applovin/impl/adview/af;
@@ -2210,21 +1860,9 @@
 .method public dismiss()V
     .locals 2
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->a:Lcom/applovin/adview/AppLovinAdView;
-
-    invoke-virtual {v0}, Lcom/applovin/adview/AppLovinAdView;->getAdViewController()Lcom/applovin/adview/AdViewController;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/applovin/impl/adview/AdViewControllerImpl;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/adview/AdViewControllerImpl;->setIsForegroundClickInvalidated(Z)V
-
     invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->b()V
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->w()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->s()V
 
     iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->b:Lcom/applovin/impl/adview/af;
 
@@ -2317,7 +1955,7 @@
 
     invoke-static {v1, v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    invoke-static {}, Lcom/applovin/impl/sdk/dh;->a()Lcom/applovin/impl/sdk/AppLovinAdImpl;
+    invoke-static {}, Lcom/applovin/impl/sdk/da;->a()Lcom/applovin/impl/sdk/AppLovinAdImpl;
 
     move-result-object v0
 
@@ -2372,11 +2010,11 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/u;->getVisibility()I
 
@@ -2384,7 +2022,7 @@
 
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/u;->getAlpha()F
 
@@ -2406,7 +2044,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/u;->performClick()Z
     :try_end_0
@@ -2423,11 +2061,11 @@
 
     :cond_1
     :try_start_1
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/u;->getVisibility()I
 
@@ -2435,7 +2073,7 @@
 
     if-nez v0, :cond_2
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/u;->getAlpha()F
 
@@ -2453,7 +2091,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/u;->performClick()Z
 
@@ -2502,7 +2140,9 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
-    invoke-virtual {p0, v1}, Lcom/applovin/adview/AppLovinInterstitialActivity;->requestWindowFeature(I)Z
+    const v0, 0x1030011
+
+    invoke-virtual {p0, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->setTheme(I)V
 
     invoke-virtual {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->getIntent()Landroid/content/Intent;
 
@@ -2573,7 +2213,7 @@
 
     iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->d:Lcom/applovin/sdk/AppLovinLogger;
 
-    new-instance v0, Lcom/applovin/impl/sdk/ca;
+    new-instance v0, Lcom/applovin/impl/sdk/bv;
 
     iget-object v4, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->b:Lcom/applovin/impl/adview/af;
 
@@ -2581,9 +2221,9 @@
 
     move-result-object v4
 
-    invoke-direct {v0, v4}, Lcom/applovin/impl/sdk/ca;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
+    invoke-direct {v0, v4}, Lcom/applovin/impl/sdk/bv;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
 
-    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iput-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
     if-eqz v3, :cond_a
 
@@ -2670,16 +2310,16 @@
 
     invoke-virtual {v0, p0}, Lcom/applovin/impl/adview/af;->a(Lcom/applovin/impl/adview/w;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->s()Z
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->s()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->q:Z
 
     :goto_3
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->x()Landroid/content/SharedPreferences;
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->t()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -2695,7 +2335,7 @@
 
     invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->b()V
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->s()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->q()V
 
     return-void
 
@@ -2801,15 +2441,15 @@
     invoke-virtual {v0}, Lcom/applovin/adview/AppLovinAdView;->destroy()V
 
     :cond_0
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/AppLovinVideoView;->pause()V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/AppLovinVideoView;->stopPlayback()V
     :try_end_0
@@ -2846,7 +2486,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->x()Landroid/content/SharedPreferences;
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->t()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -2856,7 +2496,7 @@
 
     const-string v1, "com.applovin.interstitial.last_video_position"
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     invoke-virtual {v2}, Lcom/applovin/impl/adview/AppLovinVideoView;->getCurrentPosition()I
 
@@ -2872,7 +2512,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/AppLovinVideoView;->pause()V
 
@@ -2899,7 +2539,7 @@
 
     invoke-virtual {v0, v1}, Lcom/applovin/impl/adview/af;->a(Z)V
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->x()Landroid/content/SharedPreferences;
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->t()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -2913,11 +2553,11 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v1, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     invoke-virtual {v1}, Lcom/applovin/impl/adview/AppLovinVideoView;->getDuration()I
 
@@ -2931,26 +2571,26 @@
 
     sub-int/2addr v1, v0
 
-    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->p()V
+    invoke-direct {p0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->n()V
 
-    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v2, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     invoke-virtual {v2, v0}, Lcom/applovin/impl/adview/AppLovinVideoView;->seekTo(I)V
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/AppLovinVideoView;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->v:Lcom/applovin/impl/adview/AppLovinVideoView;
 
     invoke-virtual {v0}, Lcom/applovin/impl/adview/AppLovinVideoView;->start()V
 
     invoke-direct {p0, v1}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(I)V
 
     :cond_0
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/ca;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->e:Lcom/applovin/impl/sdk/bv;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->j()Z
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bv;->j()Z
 
     move-result v0
 
@@ -2970,11 +2610,11 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->z:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->y:Lcom/applovin/impl/adview/u;
 
     :goto_0
     invoke-direct {p0, v2, v3, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(JLcom/applovin/impl/adview/u;)V
@@ -2984,7 +2624,7 @@
     return-void
 
     :cond_2
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->x:Lcom/applovin/impl/adview/u;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinInterstitialActivity;->w:Lcom/applovin/impl/adview/u;
 
     goto :goto_0
 

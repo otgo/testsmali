@@ -23,67 +23,47 @@
 
 .field static E:Z = false
 
-.field static F:I = 0x0
+.field static F:Z = false
 
-.field static G:D = 0.0
+.field static G:Landroid/app/Activity; = null
 
 .field static H:Z = false
 
 .field static I:Z = false
 
-.field static J:Z = false
+.field static J:Lcom/jirbo/adcolony/h; = null
 
-.field static K:Z = false
+.field static K:Lcom/jirbo/adcolony/AdColonyAd; = null
 
-.field static L:Z = false
+.field static L:Lcom/jirbo/adcolony/ADCVideo; = null
 
-.field static M:Z = false
+.field static M:Lcom/jirbo/adcolony/ADCVideo; = null
 
-.field static N:Z = false
+.field static N:Lcom/jirbo/adcolony/a$a; = null
 
-.field static O:Z = false
+.field static O:Lcom/jirbo/adcolony/a$b; = null
 
-.field static P:Landroid/app/Activity; = null
+.field static P:Z = false
 
 .field static Q:Z = false
 
 .field static R:Z = false
 
-.field static S:Lcom/jirbo/adcolony/h; = null
+.field static S:Z = false
 
-.field static T:Lcom/jirbo/adcolony/AdColonyAd; = null
+.field static T:I = 0x0
 
-.field static U:Lcom/jirbo/adcolony/ADCVideo; = null
+.field static U:Ljava/lang/String; = null
 
-.field static V:Lcom/jirbo/adcolony/ADCVideo; = null
+.field static V:Ljava/lang/String; = null
 
-.field static W:Lcom/jirbo/adcolony/a$a; = null
+.field static W:Ljava/lang/String; = null
 
-.field static X:Lcom/jirbo/adcolony/a$b; = null
+.field static X:Ljava/lang/String; = null
 
-.field static Y:Z = false
+.field static Y:Ljava/lang/String; = null
 
-.field static Z:Z = false
-
-.field public static final a:Z = false
-
-.field static aa:Z = false
-
-.field static ab:Z = false
-
-.field static ac:I = 0x0
-
-.field static ad:Ljava/lang/String; = null
-
-.field static ae:Ljava/lang/String; = null
-
-.field static af:Ljava/lang/String; = null
-
-.field static ag:Ljava/lang/String; = null
-
-.field static ah:Ljava/lang/String; = null
-
-.field static ai:Ljava/util/ArrayList; = null
+.field static Z:Ljava/util/ArrayList; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -94,15 +74,17 @@
     .end annotation
 .end field
 
-.field static aj:Lcom/jirbo/adcolony/ADCData$c; = null
+.field public static final a:Z = false
 
-.field static ak:Z = false
+.field static aa:Lcom/jirbo/adcolony/ADCData$c; = null
 
-.field static al:J = 0x0L
+.field static ab:Z = false
 
-.field static am:I = 0x0
+.field static ac:J = 0x0L
 
-.field static an:Ljava/util/ArrayList; = null
+.field static ad:I = 0x0
+
+.field static ae:Ljava/util/ArrayList; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -113,7 +95,7 @@
     .end annotation
 .end field
 
-.field static ao:Ljava/util/ArrayList; = null
+.field static af:Ljava/util/ArrayList; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -124,7 +106,7 @@
     .end annotation
 .end field
 
-.field static ap:Ljava/util/ArrayList; = null
+.field static ag:Ljava/util/ArrayList; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -135,7 +117,7 @@
     .end annotation
 .end field
 
-.field static aq:Ljava/util/ArrayList; = null
+.field static ah:Ljava/util/ArrayList; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -146,7 +128,7 @@
     .end annotation
 .end field
 
-.field static ar:Ljava/util/HashMap; = null
+.field static ai:Ljava/util/HashMap; = null
 
 .field public static final b:Z = false
 
@@ -178,21 +160,21 @@
 
 .field static p:Z
 
-.field static q:D
+.field static q:Z
 
 .field static r:Z
 
 .field static s:Z
 
-.field static t:J
+.field static t:Z
 
-.field static u:J
+.field static u:Z
 
-.field static v:Lcom/jirbo/adcolony/AdColonyAd;
+.field static v:Z
 
-.field static w:Z
+.field static w:I
 
-.field static x:Z
+.field static x:D
 
 .field static y:Z
 
@@ -228,82 +210,82 @@
 
     sput v0, Lcom/jirbo/adcolony/a;->n:I
 
-    .line 84
-    sput-boolean v2, Lcom/jirbo/adcolony/a;->D:Z
+    .line 72
+    sput-boolean v2, Lcom/jirbo/adcolony/a;->u:Z
 
-    .line 85
-    sput-boolean v3, Lcom/jirbo/adcolony/a;->E:Z
+    .line 73
+    sput-boolean v3, Lcom/jirbo/adcolony/a;->v:Z
 
-    .line 86
-    sput v2, Lcom/jirbo/adcolony/a;->F:I
+    .line 74
+    sput v2, Lcom/jirbo/adcolony/a;->w:I
 
-    .line 87
+    .line 75
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    sput-wide v0, Lcom/jirbo/adcolony/a;->G:D
+    sput-wide v0, Lcom/jirbo/adcolony/a;->x:D
 
-    .line 88
-    sput-boolean v2, Lcom/jirbo/adcolony/a;->H:Z
+    .line 76
+    sput-boolean v2, Lcom/jirbo/adcolony/a;->y:Z
 
-    .line 89
-    sput-boolean v2, Lcom/jirbo/adcolony/a;->I:Z
+    .line 77
+    sput-boolean v2, Lcom/jirbo/adcolony/a;->z:Z
 
-    .line 90
-    sput-boolean v2, Lcom/jirbo/adcolony/a;->J:Z
+    .line 78
+    sput-boolean v2, Lcom/jirbo/adcolony/a;->A:Z
 
-    .line 91
-    sput-boolean v2, Lcom/jirbo/adcolony/a;->K:Z
+    .line 79
+    sput-boolean v2, Lcom/jirbo/adcolony/a;->B:Z
 
-    .line 92
-    sput-boolean v3, Lcom/jirbo/adcolony/a;->L:Z
+    .line 80
+    sput-boolean v3, Lcom/jirbo/adcolony/a;->C:Z
 
-    .line 95
-    sput-boolean v2, Lcom/jirbo/adcolony/a;->O:Z
+    .line 83
+    sput-boolean v2, Lcom/jirbo/adcolony/a;->F:Z
+
+    .line 105
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sput-object v0, Lcom/jirbo/adcolony/a;->Z:Ljava/util/ArrayList;
+
+    .line 107
+    new-instance v0, Lcom/jirbo/adcolony/ADCData$c;
+
+    invoke-direct {v0}, Lcom/jirbo/adcolony/ADCData$c;-><init>()V
+
+    sput-object v0, Lcom/jirbo/adcolony/a;->aa:Lcom/jirbo/adcolony/ADCData$c;
+
+    .line 112
+    sput v2, Lcom/jirbo/adcolony/a;->ad:I
+
+    .line 114
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sput-object v0, Lcom/jirbo/adcolony/a;->ae:Ljava/util/ArrayList;
+
+    .line 115
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sput-object v0, Lcom/jirbo/adcolony/a;->af:Ljava/util/ArrayList;
+
+    .line 116
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sput-object v0, Lcom/jirbo/adcolony/a;->ag:Ljava/util/ArrayList;
 
     .line 117
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lcom/jirbo/adcolony/a;->ai:Ljava/util/ArrayList;
-
-    .line 119
-    new-instance v0, Lcom/jirbo/adcolony/ADCData$c;
-
-    invoke-direct {v0}, Lcom/jirbo/adcolony/ADCData$c;-><init>()V
-
-    sput-object v0, Lcom/jirbo/adcolony/a;->aj:Lcom/jirbo/adcolony/ADCData$c;
-
-    .line 124
-    sput v2, Lcom/jirbo/adcolony/a;->am:I
-
-    .line 126
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    sput-object v0, Lcom/jirbo/adcolony/a;->an:Ljava/util/ArrayList;
-
-    .line 127
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    sput-object v0, Lcom/jirbo/adcolony/a;->ao:Ljava/util/ArrayList;
-
-    .line 128
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    sput-object v0, Lcom/jirbo/adcolony/a;->ap:Ljava/util/ArrayList;
-
-    .line 129
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    sput-object v0, Lcom/jirbo/adcolony/a;->aq:Ljava/util/ArrayList;
+    sput-object v0, Lcom/jirbo/adcolony/a;->ah:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -315,7 +297,7 @@
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 390
+    .line 372
     return-void
 .end method
 
@@ -327,10 +309,10 @@
 
     const/4 v1, 0x1
 
-    .line 219
+    .line 207
     sput p0, Lcom/jirbo/adcolony/a;->n:I
 
-    .line 221
+    .line 209
     sget-object v3, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     if-gtz p0, :cond_3
@@ -340,7 +322,7 @@
     :goto_0
     iput-boolean v0, v3, Lcom/jirbo/adcolony/l;->f:Z
 
-    .line 222
+    .line 210
     sget-object v3, Lcom/jirbo/adcolony/l;->b:Lcom/jirbo/adcolony/l;
 
     if-gt p0, v1, :cond_4
@@ -350,7 +332,7 @@
     :goto_1
     iput-boolean v0, v3, Lcom/jirbo/adcolony/l;->f:Z
 
-    .line 223
+    .line 211
     sget-object v3, Lcom/jirbo/adcolony/l;->c:Lcom/jirbo/adcolony/l;
 
     const/4 v0, 0x2
@@ -362,7 +344,7 @@
     :goto_2
     iput-boolean v0, v3, Lcom/jirbo/adcolony/l;->f:Z
 
-    .line 224
+    .line 212
     sget-object v0, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
 
     const/4 v3, 0x3
@@ -374,14 +356,14 @@
     :cond_0
     iput-boolean v2, v0, Lcom/jirbo/adcolony/l;->f:Z
 
-    .line 225
+    .line 213
     if-gtz p0, :cond_1
 
     const-string v0, "DEVELOPER LOGGING ENABLED"
 
     invoke-static {v0}, Lcom/jirbo/adcolony/a;->b(Ljava/lang/String;)V
 
-    .line 226
+    .line 214
     :cond_1
     if-gt p0, v1, :cond_2
 
@@ -389,26 +371,26 @@
 
     invoke-static {v0}, Lcom/jirbo/adcolony/a;->c(Ljava/lang/String;)V
 
-    .line 227
+    .line 215
     :cond_2
     return-void
 
     :cond_3
     move v0, v2
 
-    .line 221
+    .line 209
     goto :goto_0
 
     :cond_4
     move v0, v2
 
-    .line 222
+    .line 210
     goto :goto_1
 
     :cond_5
     move v0, v2
 
-    .line 223
+    .line 211
     goto :goto_2
 .end method
 
@@ -416,20 +398,20 @@
     .locals 1
 
     .prologue
-    .line 236
+    .line 224
     sget v0, Lcom/jirbo/adcolony/a;->n:I
 
     if-gt v0, p0, :cond_0
 
-    .line 238
+    .line 226
     packed-switch p0, :pswitch_data_0
 
-    .line 254
+    .line 242
     :cond_0
     :goto_0
     return-void
 
-    .line 242
+    .line 230
     :pswitch_0
     const-string v0, "AdColony"
 
@@ -437,7 +419,7 @@
 
     goto :goto_0
 
-    .line 246
+    .line 234
     :pswitch_1
     const-string v0, "AdColony"
 
@@ -445,7 +427,7 @@
 
     goto :goto_0
 
-    .line 250
+    .line 238
     :pswitch_2
     const-string v0, "AdColony"
 
@@ -453,7 +435,7 @@
 
     goto :goto_0
 
-    .line 238
+    .line 226
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -467,41 +449,37 @@
     .locals 1
 
     .prologue
-    .line 135
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
+    .line 123
+    sget-object v0, Lcom/jirbo/adcolony/a;->G:Landroid/app/Activity;
 
     if-eq p0, v0, :cond_0
 
     if-nez p0, :cond_1
 
-    .line 143
+    .line 131
     :cond_0
     :goto_0
     return-void
 
-    .line 137
+    .line 125
     :cond_1
-    sput-object p0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
+    sput-object p0, Lcom/jirbo/adcolony/a;->G:Landroid/app/Activity;
 
-    .line 138
+    .line 126
     new-instance v0, Lcom/jirbo/adcolony/a$a;
 
     invoke-direct {v0}, Lcom/jirbo/adcolony/a$a;-><init>()V
 
-    sput-object v0, Lcom/jirbo/adcolony/a;->W:Lcom/jirbo/adcolony/a$a;
+    sput-object v0, Lcom/jirbo/adcolony/a;->N:Lcom/jirbo/adcolony/a$a;
 
-    .line 139
+    .line 127
     new-instance v0, Lcom/jirbo/adcolony/a$b;
 
     invoke-direct {v0}, Lcom/jirbo/adcolony/a$b;-><init>()V
 
-    sput-object v0, Lcom/jirbo/adcolony/a;->X:Lcom/jirbo/adcolony/a$b;
+    sput-object v0, Lcom/jirbo/adcolony/a;->O:Lcom/jirbo/adcolony/a$b;
 
-    .line 142
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->s:Z
-
-    if-nez v0, :cond_0
-
+    .line 130
     new-instance v0, Lcom/jirbo/adcolony/p$a;
 
     invoke-direct {v0}, Lcom/jirbo/adcolony/p$a;-><init>()V
@@ -509,27 +487,16 @@
     goto :goto_0
 .end method
 
-.method static a(Lcom/jirbo/adcolony/AdColonyAd;)V
-    .locals 0
-
-    .prologue
-    .line 317
-    sput-object p0, Lcom/jirbo/adcolony/a;->v:Lcom/jirbo/adcolony/AdColonyAd;
-
-    .line 318
-    return-void
-.end method
-
 .method static a(Lcom/jirbo/adcolony/AdColonyNativeAdView;)V
     .locals 1
 
     .prologue
-    .line 322
-    sget-object v0, Lcom/jirbo/adcolony/a;->aq:Ljava/util/ArrayList;
+    .line 304
+    sget-object v0, Lcom/jirbo/adcolony/a;->ah:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 323
+    .line 305
     return-void
 .end method
 
@@ -537,12 +504,12 @@
     .locals 1
 
     .prologue
-    .line 416
+    .line 397
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     invoke-virtual {v0, p0}, Lcom/jirbo/adcolony/d;->a(Lcom/jirbo/adcolony/j;)V
 
-    .line 417
+    .line 398
     return-void
 .end method
 
@@ -550,22 +517,22 @@
     .locals 1
 
     .prologue
-    .line 206
+    .line 194
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->Q:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->H:Z
 
-    .line 207
+    .line 195
     invoke-virtual {p0}, Ljava/lang/RuntimeException;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/jirbo/adcolony/a;->e(Ljava/lang/String;)V
 
-    .line 208
+    .line 196
     invoke-virtual {p0}, Ljava/lang/RuntimeException;->printStackTrace()V
 
-    .line 209
+    .line 197
     return-void
 .end method
 
@@ -573,15 +540,15 @@
     .locals 1
 
     .prologue
-    .line 200
+    .line 188
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->Q:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->H:Z
 
-    .line 201
+    .line 189
     invoke-static {p0}, Lcom/jirbo/adcolony/a;->e(Ljava/lang/String;)V
 
-    .line 202
+    .line 190
     return-void
 .end method
 
@@ -589,7 +556,7 @@
     .locals 2
 
     .prologue
-    .line 275
+    .line 263
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     const/4 v1, 0x0
@@ -603,7 +570,7 @@
     .locals 1
 
     .prologue
-    .line 274
+    .line 262
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     invoke-virtual {v0, p0, p1}, Lcom/jirbo/adcolony/d;->a(Ljava/lang/String;Ljava/lang/String;)V
@@ -615,7 +582,7 @@
     .locals 1
 
     .prologue
-    .line 276
+    .line 264
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     invoke-virtual {v0, p0, p1, p2}, Lcom/jirbo/adcolony/d;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
@@ -627,14 +594,14 @@
     .locals 1
 
     .prologue
-    .line 164
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
+    .line 152
+    sget-object v0, Lcom/jirbo/adcolony/a;->G:Landroid/app/Activity;
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 165
+    .line 153
     :goto_0
     return v0
 
@@ -648,12 +615,12 @@
     .locals 2
 
     .prologue
-    .line 170
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
+    .line 158
+    sget-object v0, Lcom/jirbo/adcolony/a;->G:Landroid/app/Activity;
 
     if-nez v0, :cond_0
 
-    .line 172
+    .line 160
     new-instance v0, Lcom/jirbo/adcolony/AdColonyException;
 
     const-string v1, "AdColony.configure() must be called before any other AdColony methods. If you have called AdColony.configure(), the Activity reference you passed in via AdColony.configure()/AdColony.resume() is null OR you have not called AdColony.resume() as appropriate."
@@ -662,9 +629,9 @@
 
     throw v0
 
-    .line 176
+    .line 164
     :cond_0
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
+    sget-object v0, Lcom/jirbo/adcolony/a;->G:Landroid/app/Activity;
 
     return-object v0
 .end method
@@ -675,43 +642,43 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 148
-    sput-boolean v1, Lcom/jirbo/adcolony/a;->x:Z
+    .line 136
+    sput-boolean v1, Lcom/jirbo/adcolony/a;->p:Z
 
-    .line 149
+    .line 137
     invoke-static {p0}, Lcom/jirbo/adcolony/a;->a(Landroid/app/Activity;)V
 
-    .line 150
+    .line 138
     const/4 v0, 0x0
 
-    sput-object v0, Lcom/jirbo/adcolony/a;->S:Lcom/jirbo/adcolony/h;
+    sput-object v0, Lcom/jirbo/adcolony/a;->J:Lcom/jirbo/adcolony/h;
 
-    .line 151
+    .line 139
     invoke-static {}, Lcom/jirbo/adcolony/g;->i()Z
 
     move-result v0
 
     sput-boolean v0, Lcom/jirbo/adcolony/a;->m:Z
 
-    .line 153
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->Q:Z
+    .line 141
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->H:Z
 
     if-eqz v0, :cond_0
 
-    .line 156
-    sput-boolean v1, Lcom/jirbo/adcolony/a;->Q:Z
+    .line 144
+    sput-boolean v1, Lcom/jirbo/adcolony/a;->H:Z
 
-    .line 157
-    sput-boolean v1, Lcom/jirbo/adcolony/a;->w:Z
+    .line 145
+    sput-boolean v1, Lcom/jirbo/adcolony/a;->o:Z
 
-    .line 158
+    .line 146
     new-instance v0, Lcom/jirbo/adcolony/d;
 
     invoke-direct {v0}, Lcom/jirbo/adcolony/d;-><init>()V
 
     sput-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    .line 160
+    .line 148
     :cond_0
     return-void
 .end method
@@ -720,7 +687,7 @@
     .locals 1
 
     .prologue
-    .line 256
+    .line 244
     const/4 v0, 0x0
 
     invoke-static {v0, p0}, Lcom/jirbo/adcolony/a;->a(ILjava/lang/String;)V
@@ -732,7 +699,7 @@
     .locals 1
 
     .prologue
-    .line 229
+    .line 217
     sget v0, Lcom/jirbo/adcolony/a;->n:I
 
     if-gt v0, p0, :cond_0
@@ -752,7 +719,7 @@
     .locals 1
 
     .prologue
-    .line 257
+    .line 245
     const/4 v0, 0x1
 
     invoke-static {v0, p0}, Lcom/jirbo/adcolony/a;->a(ILjava/lang/String;)V
@@ -764,16 +731,16 @@
     .locals 1
 
     .prologue
-    .line 184
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->Q:Z
+    .line 172
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->H:Z
 
     if-nez v0, :cond_0
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->y:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->q:Z
 
     if-nez v0, :cond_0
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->w:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->o:Z
 
     if-nez v0, :cond_1
 
@@ -793,7 +760,7 @@
     .locals 1
 
     .prologue
-    .line 258
+    .line 246
     const/4 v0, 0x2
 
     invoke-static {v0, p0}, Lcom/jirbo/adcolony/a;->a(ILjava/lang/String;)V
@@ -805,16 +772,16 @@
     .locals 1
 
     .prologue
-    .line 192
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->w:Z
+    .line 180
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->o:Z
 
     if-eqz v0, :cond_0
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->Q:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->H:Z
 
     if-nez v0, :cond_0
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->y:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->q:Z
 
     if-nez v0, :cond_0
 
@@ -833,10 +800,10 @@
     .locals 0
 
     .prologue
-    .line 213
+    .line 201
     invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
 
-    .line 214
+    .line 202
     return-void
 .end method
 
@@ -844,7 +811,7 @@
     .locals 1
 
     .prologue
-    .line 259
+    .line 247
     const/4 v0, 0x3
 
     invoke-static {v0, p0}, Lcom/jirbo/adcolony/a;->a(ILjava/lang/String;)V
@@ -856,7 +823,7 @@
     .locals 2
 
     .prologue
-    .line 263
+    .line 251
     invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
 
     move-result-object v0
@@ -869,7 +836,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 264
+    .line 252
     return-void
 .end method
 
@@ -877,7 +844,7 @@
     .locals 1
 
     .prologue
-    .line 231
+    .line 219
     sget v0, Lcom/jirbo/adcolony/a;->n:I
 
     if-gtz v0, :cond_0
@@ -897,7 +864,7 @@
     .locals 2
 
     .prologue
-    .line 267
+    .line 255
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     invoke-virtual {v0, p0}, Lcom/jirbo/adcolony/d;->a(Ljava/lang/String;)D
@@ -913,7 +880,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 232
+    .line 220
     sget v1, Lcom/jirbo/adcolony/a;->n:I
 
     if-gt v1, v0, :cond_0
@@ -931,7 +898,7 @@
     .locals 1
 
     .prologue
-    .line 268
+    .line 256
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     invoke-virtual {v0, p0}, Lcom/jirbo/adcolony/d;->b(Ljava/lang/String;)I
@@ -945,22 +912,22 @@
     .locals 9
 
     .prologue
-    const/4 v8, 0x1
-
     const/4 v4, 0x0
 
-    .line 281
+    const/4 v8, 0x1
+
+    .line 269
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     if-nez v0, :cond_1
 
-    .line 313
+    .line 300
     :cond_0
     return-void
 
-    .line 282
+    .line 270
     :cond_1
-    sget-object v0, Lcom/jirbo/adcolony/a;->ap:Ljava/util/ArrayList;
+    sget-object v0, Lcom/jirbo/adcolony/a;->ag:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -968,13 +935,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 283
-    sget-object v0, Lcom/jirbo/adcolony/a;->ar:Ljava/util/HashMap;
+    .line 271
+    sget-object v0, Lcom/jirbo/adcolony/a;->ai:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
 
-    .line 285
-    sget-object v0, Lcom/jirbo/adcolony/a;->ar:Ljava/util/HashMap;
+    .line 273
+    sget-object v0, Lcom/jirbo/adcolony/a;->ai:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -984,7 +951,7 @@
 
     move-result-object v6
 
-    .line 286
+    .line 274
     :cond_2
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
@@ -992,14 +959,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 288
+    .line 276
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 289
+    .line 277
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -1010,7 +977,7 @@
 
     move-result v3
 
-    .line 290
+    .line 278
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -1025,7 +992,7 @@
 
     sget-object v2, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    .line 291
+    .line 279
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -1038,7 +1005,7 @@
 
     move v2, v1
 
-    .line 294
+    .line 282
     :goto_0
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -1052,11 +1019,11 @@
 
     if-eqz v1, :cond_4
 
-    sget-object v1, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
+    sget-object v1, Lcom/jirbo/adcolony/a;->G:Landroid/app/Activity;
 
     if-eqz v1, :cond_4
 
-    .line 296
+    .line 284
     new-instance v2, Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
     invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
@@ -1073,19 +1040,19 @@
 
     invoke-direct {v2, v5, v1, v7, v8}, Lcom/jirbo/adcolony/AdColonyNativeAdView;-><init>(Landroid/app/Activity;Ljava/lang/String;IZ)V
 
-    .line 297
+    .line 285
     invoke-virtual {v2, v8}, Lcom/jirbo/adcolony/AdColonyNativeAdView;->b(Z)Z
 
     move-result v2
 
     move v5, v2
 
-    .line 301
+    .line 288
     :goto_1
     if-eq v3, v5, :cond_2
 
-    .line 304
-    sget-object v1, Lcom/jirbo/adcolony/a;->ar:Ljava/util/HashMap;
+    .line 291
+    sget-object v1, Lcom/jirbo/adcolony/a;->ai:Ljava/util/HashMap;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -1099,9 +1066,9 @@
 
     move v3, v4
 
-    .line 307
+    .line 294
     :goto_2
-    sget-object v1, Lcom/jirbo/adcolony/a;->ap:Ljava/util/ArrayList;
+    sget-object v1, Lcom/jirbo/adcolony/a;->ag:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -1109,8 +1076,8 @@
 
     if-ge v3, v1, :cond_2
 
-    .line 309
-    sget-object v1, Lcom/jirbo/adcolony/a;->ap:Ljava/util/ArrayList;
+    .line 296
+    sget-object v1, Lcom/jirbo/adcolony/a;->ag:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1126,18 +1093,18 @@
 
     invoke-interface {v1, v5, v2}, Lcom/jirbo/adcolony/AdColonyAdAvailabilityListener;->onAdColonyAdAvailabilityChange(ZLjava/lang/String;)V
 
-    .line 307
+    .line 294
     add-int/lit8 v1, v3, 0x1
 
     move v3, v1
 
     goto :goto_2
 
-    .line 291
+    .line 279
     :cond_3
     sget-object v2, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    .line 292
+    .line 280
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -1152,17 +1119,7 @@
 
     goto :goto_0
 
-    .line 299
     :cond_4
-    sget-object v1, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v1, :cond_5
-
-    move v5, v4
-
-    goto :goto_1
-
-    :cond_5
     move v5, v2
 
     goto :goto_1
@@ -1172,7 +1129,7 @@
     .locals 1
 
     .prologue
-    .line 269
+    .line 257
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     invoke-virtual {v0, p0}, Lcom/jirbo/adcolony/d;->c(Ljava/lang/String;)Z
@@ -1186,7 +1143,7 @@
     .locals 1
 
     .prologue
-    .line 270
+    .line 258
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     invoke-virtual {v0, p0}, Lcom/jirbo/adcolony/d;->d(Ljava/lang/String;)Ljava/lang/String;
@@ -1200,7 +1157,7 @@
     .locals 2
 
     .prologue
-    .line 273
+    .line 261
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     const/4 v1, 0x0

@@ -3,7 +3,7 @@
 .source "UnityAdsVideoPlayView.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/media/MediaPlayer$OnCompletionListener;
 
 
 # instance fields
@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 306
+    .line 263
     iput-object p1, p0, Lcom/unity3d/ads/android/video/g;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,34 +25,24 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final onCompletion(Landroid/media/MediaPlayer;)V
     .locals 1
 
     .prologue
-    .line 309
+    .line 266
     iget-object v0, p0, Lcom/unity3d/ads/android/video/g;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
 
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->b(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Lcom/unity3d/ads/android/video/UnityAdsVideoView;
+    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->f(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Z
+
+    .line 267
+    iget-object v0, p0, Lcom/unity3d/ads/android/video/g;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->e(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Lcom/unity3d/ads/android/video/IUnityAdsVideoPlayerListener;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoView;->isPlaying()Z
+    invoke-interface {v0, p1}, Lcom/unity3d/ads/android/video/IUnityAdsVideoPlayerListener;->onCompletion(Landroid/media/MediaPlayer;)V
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 310
-    iget-object v0, p0, Lcom/unity3d/ads/android/video/g;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->m(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)V
-
-    .line 311
-    iget-object v0, p0, Lcom/unity3d/ads/android/video/g;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->n(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)V
-
-    .line 313
-    :cond_0
+    .line 268
     return-void
 .end method

@@ -3,12 +3,12 @@
 .source "s3eCamera.java"
 
 # interfaces
-.implements Landroid/hardware/Camera$AutoFocusCallback;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/ideaworks3d/marmalade/s3eCamera;->forceRefocus()V
+    value = Lcom/ideaworks3d/marmalade/s3eCamera;->s3eCameraStart(III)I
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 167
+    .line 227
     iput-object p1, p0, Lcom/ideaworks3d/marmalade/s3eCamera$1;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,10 +36,15 @@
 
 
 # virtual methods
-.method public onAutoFocus(ZLandroid/hardware/Camera;)V
-    .locals 0
+.method public run()V
+    .locals 1
 
     .prologue
-    .line 171
+    .line 230
+    iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eCamera$1;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
+
+    invoke-virtual {v0}, Lcom/ideaworks3d/marmalade/s3eCamera;->createPreview()I
+
+    .line 231
     return-void
 .end method

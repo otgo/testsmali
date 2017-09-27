@@ -27,14 +27,14 @@
 
 
 # virtual methods
-.method a(Lcom/jirbo/adcolony/ae;)V
+.method a(Lcom/jirbo/adcolony/af;)V
     .locals 1
 
     .prologue
     .line 129
     const-string v0, "false"
 
-    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ae;->a(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/af;->a(Ljava/lang/String;)V
 
     return-void
 .end method

@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 503
+    .line 906
     iput-object p1, p0, Lcom/unity3d/ads/android/b;->a:Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,22 +29,24 @@
     .locals 1
 
     .prologue
-    .line 505
+    .line 908
     iget-object v0, p0, Lcom/unity3d/ads/android/b;->a:Landroid/app/Activity;
 
     invoke-static {v0}, Lcom/unity3d/ads/android/data/UnityAdsAdvertisingId;->init(Landroid/app/Activity;)V
 
-    .line 506
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->initCampaigns()Z
+    .line 909
+    sget-object v0, Lcom/unity3d/ads/android/UnityAds;->webdata:Lcom/unity3d/ads/android/webapp/UnityAdsWebData;
+
+    invoke-virtual {v0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->initCampaigns()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 507
-    invoke-static {}, Lcom/unity3d/ads/android/UnityAds;->a()Z
+    .line 910
+    invoke-static {}, Lcom/unity3d/ads/android/UnityAds;->b()Z
 
-    .line 509
+    .line 912
     :cond_0
     return-void
 .end method

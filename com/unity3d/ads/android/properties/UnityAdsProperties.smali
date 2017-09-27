@@ -8,13 +8,13 @@
 
 .field public static APPFILTER_LIST:Ljava/lang/String; = null
 
-.field public static APPLICATION_CONTEXT:Landroid/content/Context; = null
-
 .field public static BASE_ACTIVITY:Ljava/lang/ref/WeakReference; = null
 
 .field public static CACHING_SPEED:J = 0x0L
 
 .field public static CAMPAIGN_DATA_URL:Ljava/lang/String; = null
+
+.field public static CAMPAIGN_QUERY_STRING:Ljava/lang/String; = null
 
 .field public static CAMPAIGN_REFRESH_SECONDS:I = 0x0
 
@@ -36,6 +36,8 @@
 
 .field public static SELECTED_CAMPAIGN_CACHED:Ljava/lang/Boolean;
 
+.field public static SEND_INTERNAL_DETAILS:Ljava/lang/Boolean;
+
 .field public static TESTMODE_ENABLED:Ljava/lang/Boolean;
 
 .field public static TEST_DATA:Ljava/lang/String;
@@ -46,13 +48,13 @@
 
 .field public static TEST_OPTIONS_ID:Ljava/lang/String;
 
+.field public static TEST_URL:Ljava/lang/String;
+
 .field public static UNITY_ADS_BASE_URL:Ljava/lang/String;
 
 .field public static UNITY_ADS_GAMER_ID:Ljava/lang/String;
 
 .field public static UNITY_ADS_GAME_ID:Ljava/lang/String;
-
-.field public static UNITY_ADS_READY_SENT:Ljava/lang/Boolean;
 
 .field public static UNITY_DEVELOPER_INTERNAL_TEST:Ljava/lang/Boolean;
 
@@ -62,9 +64,9 @@
 
 .field private static a:Ljava/util/Map;
 
-.field private static b:Ljava/lang/Boolean;
+.field private static b:Ljava/lang/String;
 
-.field private static c:Ljava/lang/String;
+.field private static c:Z
 
 
 # direct methods
@@ -76,120 +78,119 @@
 
     const/4 v2, 0x0
 
-    .line 18
+    .line 16
     const-string v0, "https://impact.applifier.com/mobile/campaigns"
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_DATA_URL:Ljava/lang/String;
 
-    .line 19
+    .line 17
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->WEBVIEW_BASE_URL:Ljava/lang/String;
 
-    .line 20
+    .line 18
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->ANALYTICS_BASE_URL:Ljava/lang/String;
 
-    .line 21
+    .line 19
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_ADS_BASE_URL:Ljava/lang/String;
 
-    .line 22
+    .line 20
+    sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_QUERY_STRING:Ljava/lang/String;
+
+    .line 21
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_ADS_GAME_ID:Ljava/lang/String;
 
-    .line 23
+    .line 22
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_ADS_GAMER_ID:Ljava/lang/String;
 
-    .line 24
+    .line 23
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->APPFILTER_LIST:Ljava/lang/String;
 
-    .line 25
+    .line 24
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->INSTALLED_APPS_URL:Ljava/lang/String;
 
-    .line 26
+    .line 25
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TESTMODE_ENABLED:Ljava/lang/Boolean;
 
+    .line 26
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->SEND_INTERNAL_DETAILS:Ljava/lang/Boolean;
+
     .line 27
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->BASE_ACTIVITY:Ljava/lang/ref/WeakReference;
 
     .line 28
-    sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->APPLICATION_CONTEXT:Landroid/content/Context;
-
-    .line 29
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CURRENT_ACTIVITY:Ljava/lang/ref/WeakReference;
 
-    .line 30
+    .line 29
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->SELECTED_CAMPAIGN:Lcom/unity3d/ads/android/campaign/UnityAdsCampaign;
 
-    .line 31
+    .line 30
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->SELECTED_CAMPAIGN_CACHED:Ljava/lang/Boolean;
 
-    .line 32
+    .line 31
     sput v3, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_VIEWS_COUNT:I
 
-    .line 33
+    .line 32
     sput v3, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_VIEWS_MAX:I
 
-    .line 34
+    .line 33
     sput v3, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_REFRESH_SECONDS:I
 
-    .line 35
+    .line 34
     const-wide/16 v0, 0x0
 
     sput-wide v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CACHING_SPEED:J
 
-    .line 36
+    .line 35
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_VERSION:Ljava/lang/String;
 
-    .line 40
+    .line 37
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TEST_DATA:Ljava/lang/String;
 
-    .line 42
+    .line 38
+    sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TEST_URL:Ljava/lang/String;
+
+    .line 39
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TEST_JAVASCRIPT:Ljava/lang/String;
 
-    .line 44
+    .line 40
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->RUN_WEBVIEW_TESTS:Ljava/lang/Boolean;
 
-    .line 45
+    .line 41
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_DEVELOPER_INTERNAL_TEST:Ljava/lang/Boolean;
 
-    .line 47
+    .line 43
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TEST_DEVELOPER_ID:Ljava/lang/String;
 
-    .line 48
+    .line 44
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TEST_OPTIONS_ID:Ljava/lang/String;
 
-    .line 51
+    .line 47
     sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->a:Ljava/util/Map;
 
-    .line 56
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    .line 52
+    sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->b:Ljava/lang/String;
 
-    move-result-object v0
-
-    sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_ADS_READY_SENT:Ljava/lang/Boolean;
-
-    .line 58
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->b:Ljava/lang/Boolean;
-
-    .line 59
-    sput-object v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->c:Ljava/lang/String;
+    .line 184
+    sput-boolean v3, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->c:Z
 
     return-void
 .end method
@@ -198,103 +199,24 @@
     .locals 0
 
     .prologue
-    .line 17
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method private static a(Landroid/app/Activity;)Z
-    .locals 5
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 175
-    .line 176
-    const/4 v0, 0x0
-
-    .line 179
-    :try_start_0
-    const-class v2, Landroid/app/Activity;
-
-    const-string v3, "isDestroyed"
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Class;
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    .line 185
-    :goto_0
-    if-eqz v0, :cond_0
-
-    .line 186
-    if-eqz p0, :cond_0
-
-    .line 188
-    const/4 v2, 0x0
-
-    :try_start_1
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-virtual {v0, p0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    move-result v0
-
-    .line 196
-    :goto_1
-    return v0
-
-    .line 182
-    :catch_0
-    move-exception v2
-
-    const-string v2, "Couldn\'t get isDestroyed -method"
-
-    invoke-static {v2}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 191
-    :catch_1
-    move-exception v0
-
-    const-string v0, "Error running isDestroyed -method"
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
-
-    :cond_0
-    move v0, v1
-
-    goto :goto_1
 .end method
 
 .method public static getBaseActivity()Landroid/app/Activity;
     .locals 1
 
     .prologue
-    .line 153
+    .line 150
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->BASE_ACTIVITY:Ljava/lang/ref/WeakReference;
 
     if-eqz v0, :cond_0
 
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->BASE_ACTIVITY:Ljava/lang/ref/WeakReference;
 
-    .line 154
+    .line 151
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -303,7 +225,7 @@
 
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->BASE_ACTIVITY:Ljava/lang/ref/WeakReference;
 
-    .line 155
+    .line 152
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -318,20 +240,20 @@
 
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->BASE_ACTIVITY:Ljava/lang/ref/WeakReference;
 
-    .line 156
+    .line 153
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/app/Activity;
 
-    invoke-static {v0}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->a(Landroid/app/Activity;)Z
+    invoke-static {v0}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->isActivityDestroyed(Landroid/app/Activity;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 157
+    .line 154
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->BASE_ACTIVITY:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -340,7 +262,7 @@
 
     check-cast v0, Landroid/app/Activity;
 
-    .line 159
+    .line 156
     :goto_0
     return-object v0
 
@@ -354,12 +276,12 @@
     .locals 2
 
     .prologue
-    .line 145
-    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->c:Ljava/lang/String;
+    .line 142
+    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->b:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->c:Ljava/lang/String;
+    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->b:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -369,8 +291,8 @@
 
     if-le v0, v1, :cond_0
 
-    .line 146
-    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->c:Ljava/lang/String;
+    .line 143
+    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->b:Ljava/lang/String;
 
     const/4 v1, 0x1
 
@@ -378,7 +300,7 @@
 
     move-result-object v0
 
-    .line 149
+    .line 146
     :goto_0
     return-object v0
 
@@ -400,7 +322,7 @@
 
     const/4 v4, 0x0
 
-    .line 138
+    .line 132
     const-string v1, "?"
 
     :try_start_0
@@ -434,7 +356,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_a
 
     const-string v3, "%s&%s=%d"
 
@@ -458,7 +380,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     move v0, v4
 
@@ -593,7 +515,7 @@
 
     const/4 v3, 0x2
 
-    const-string v6, "1502"
+    const-string v6, "1407"
 
     const-string v7, "UTF-8"
 
@@ -794,7 +716,7 @@
 
     const-string v0, "%s&%s=%d"
 
-    const/4 v2, 0x3
+    const/4 v2, 0x4
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -817,6 +739,12 @@
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
+
+    aput-object v6, v2, v3
+
+    const/4 v3, 0x3
+
+    const-string v6, "UTF-8"
 
     aput-object v6, v2, v3
 
@@ -975,7 +903,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_b
 
     const-string v1, "%s&%s=%s"
 
@@ -1062,7 +990,7 @@
     move-result-object v0
 
     :cond_6
-    sget-object v1, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->b:Ljava/lang/Boolean;
+    sget-object v1, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->SEND_INTERNAL_DETAILS:Ljava/lang/Boolean;
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -1092,22 +1020,47 @@
 
     move-result-object v1
 
-    sput-object v1, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->b:Ljava/lang/Boolean;
+    sput-object v1, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->SEND_INTERNAL_DETAILS:Ljava/lang/Boolean;
 
     :cond_7
-    sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->c:Ljava/lang/String;
+    sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->b:Ljava/lang/String;
 
-    .line 139
+    .line 133
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CAMPAIGN_DATA_URL:Ljava/lang/String;
 
-    .line 141
+    .line 135
+    invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getBaseActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_8
+
+    invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getBaseActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/unity3d/ads/android/UnityAdsUtils;->isDebuggable(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_8
+
+    sget-object v1, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TEST_URL:Ljava/lang/String;
+
+    if-eqz v1, :cond_8
+
+    .line 136
+    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TEST_URL:Ljava/lang/String;
+
+    .line 138
+    :cond_8
     const-string v1, "%s%s"
 
     new-array v2, v9, [Ljava/lang/Object;
 
     aput-object v0, v2, v4
 
-    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->c:Ljava/lang/String;
+    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->b:Ljava/lang/String;
 
     aput-object v0, v2, v5
 
@@ -1117,13 +1070,13 @@
 
     return-object v0
 
-    :cond_8
+    :cond_9
     move v0, v5
 
-    .line 138
+    .line 132
     goto/16 :goto_0
 
-    :cond_9
+    :cond_a
     const/4 v0, 0x0
 
     :try_start_2
@@ -1233,6 +1186,18 @@
 
     invoke-virtual {v1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v1}, Ljava/lang/Exception;->getStackTrace()[Ljava/lang/StackTraceElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
     move-result-object v1
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1247,7 +1212,13 @@
 
     goto/16 :goto_2
 
-    :cond_a
+    :cond_b
+    invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getCurrentActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_6
+
     const-string v2, "%s&%s=%s"
 
     new-array v1, v10, [Ljava/lang/Object;
@@ -1258,11 +1229,15 @@
 
     aput-object v0, v1, v5
 
-    invoke-static {}, Lcom/unity3d/ads/android/UnityAdsUtils;->isDebuggable()Z
+    invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getCurrentActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->isDebuggable(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
     const-string v0, "false"
 
@@ -1272,7 +1247,7 @@
 
     goto/16 :goto_3
 
-    :cond_b
+    :cond_c
     const-string v0, "true"
 
     move-object v3, v2
@@ -1291,14 +1266,14 @@
     .locals 1
 
     .prologue
-    .line 163
+    .line 160
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CURRENT_ACTIVITY:Ljava/lang/ref/WeakReference;
 
     if-eqz v0, :cond_0
 
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CURRENT_ACTIVITY:Ljava/lang/ref/WeakReference;
 
-    .line 164
+    .line 161
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -1307,7 +1282,7 @@
 
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CURRENT_ACTIVITY:Ljava/lang/ref/WeakReference;
 
-    .line 165
+    .line 162
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -1322,20 +1297,20 @@
 
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CURRENT_ACTIVITY:Ljava/lang/ref/WeakReference;
 
-    .line 166
+    .line 163
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/app/Activity;
 
-    invoke-static {v0}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->a(Landroid/app/Activity;)Z
+    invoke-static {v0}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->isActivityDestroyed(Landroid/app/Activity;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 167
+    .line 164
     sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->CURRENT_ACTIVITY:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -1344,7 +1319,7 @@
 
     check-cast v0, Landroid/app/Activity;
 
-    .line 169
+    .line 166
     :goto_0
     return-object v0
 
@@ -1356,45 +1331,163 @@
     goto :goto_0
 .end method
 
-.method public static isAdsReadySent()Z
-    .locals 1
+.method public static isActivityDestroyed(Landroid/app/Activity;)Z
+    .locals 5
 
     .prologue
-    .line 201
-    sget-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_ADS_READY_SENT:Ljava/lang/Boolean;
+    const/4 v1, 0x0
+
+    .line 186
+    .line 187
+    const/4 v0, 0x0
+
+    .line 190
+    :try_start_0
+    const-class v2, Landroid/app/Activity;
+
+    const-string v3, "isDestroyed"
+
+    const/4 v4, 0x0
+
+    new-array v4, v4, [Ljava/lang/Class;
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    .line 199
+    :cond_0
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 200
+    if-eqz p0, :cond_1
+
+    .line 202
+    const/4 v2, 0x0
+
+    :try_start_1
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-virtual {v0, p0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     move-result v0
 
-    return v0
-.end method
-
-.method public static isShowingAds()Z
-    .locals 1
-
-    .prologue
     .line 210
-    invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getCurrentActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    instance-of v0, v0, Lcom/unity3d/ads/android/view/UnityAdsFullscreenActivity;
-
+    :goto_1
     return v0
+
+    .line 193
+    :catch_0
+    move-exception v2
+
+    sget-boolean v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->c:Z
+
+    if-nez v2, :cond_0
+
+    .line 194
+    const/4 v2, 0x1
+
+    sput-boolean v2, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->c:Z
+
+    .line 195
+    const-string v2, "Couldn\'t get isDestroyed -method"
+
+    invoke-static {v2}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 205
+    :catch_1
+    move-exception v0
+
+    const-string v0, "Error running isDestroyed -method"
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_1
 .end method
 
-.method public static setAdsReadySent(Z)V
+.method public static setExtraParams(Ljava/util/Map;)V
     .locals 1
 
     .prologue
-    .line 206
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    .line 171
+    const-string v0, "testData"
+
+    invoke-interface {p0, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 172
+    const-string v0, "testData"
+
+    invoke-interface {p0, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_ADS_READY_SENT:Ljava/lang/Boolean;
+    check-cast v0, Ljava/lang/String;
 
-    .line 207
+    sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TEST_DATA:Ljava/lang/String;
+
+    .line 175
+    :cond_0
+    const-string v0, "testUrl"
+
+    invoke-interface {p0, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 176
+    const-string v0, "testUrl"
+
+    invoke-interface {p0, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TEST_URL:Ljava/lang/String;
+
+    .line 179
+    :cond_1
+    const-string v0, "testJavaScript"
+
+    invoke-interface {p0, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 180
+    const-string v0, "testJavaScript"
+
+    invoke-interface {p0, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->TEST_JAVASCRIPT:Ljava/lang/String;
+
+    .line 182
+    :cond_2
     return-void
 .end method

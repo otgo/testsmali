@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field Z:Landroid/graphics/Rect;
+.field U:Landroid/graphics/Rect;
 
-.field aa:I
+.field V:I
 
 
 # direct methods
@@ -22,12 +22,12 @@
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->Z:Landroid/graphics/Rect;
+    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->U:Landroid/graphics/Rect;
 
     .line 27
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->aa:I
+    iput v0, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->V:I
 
     return-void
 .end method
@@ -70,7 +70,7 @@
     .line 35
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->K:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->B:Z
 
     .line 37
     new-instance v0, Landroid/view/View;
@@ -87,14 +87,14 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->H:Lcom/jirbo/adcolony/ad;
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->F:Lcom/jirbo/adcolony/ae;
 
-    iget-boolean v1, v1, Lcom/jirbo/adcolony/ad;->Q:Z
+    iget-boolean v1, v1, Lcom/jirbo/adcolony/ae;->Q:Z
 
     if-eqz v1, :cond_0
 
     .line 41
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->Q:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->O:Landroid/widget/FrameLayout;
 
     new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -102,9 +102,9 @@
 
     iget v4, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->u:I
 
-    iget-object v5, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->H:Lcom/jirbo/adcolony/ad;
+    iget-object v5, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->F:Lcom/jirbo/adcolony/ae;
 
-    iget v5, v5, Lcom/jirbo/adcolony/ad;->m:I
+    iget v5, v5, Lcom/jirbo/adcolony/ae;->m:I
 
     sub-int/2addr v4, v5
 
@@ -113,7 +113,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 42
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->P:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->N:Landroid/widget/FrameLayout;
 
     new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -142,9 +142,9 @@
 
     .line 54
     :cond_0
-    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->H:Lcom/jirbo/adcolony/ad;
+    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyOverlay;->F:Lcom/jirbo/adcolony/ae;
 
-    invoke-virtual {v0}, Lcom/jirbo/adcolony/ad;->a()V
+    invoke-virtual {v0}, Lcom/jirbo/adcolony/ae;->a()V
 
     .line 55
     return-void

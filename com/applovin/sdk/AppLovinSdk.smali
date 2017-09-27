@@ -7,9 +7,7 @@
 
 .field public static final URI_SCHEME:Ljava/lang/String; = "applovin"
 
-.field public static final VERSION:Ljava/lang/String; = "6.1.4"
-
-.field public static final VERSION_CODE:I = 0x266
+.field public static final VERSION:Ljava/lang/String; = "6.0.0"
 
 .field private static a:[Lcom/applovin/sdk/AppLovinSdk;
 
@@ -293,9 +291,6 @@
 .end method
 
 .method public abstract getApplicationContext()Landroid/content/Context;
-.end method
-
-.method public abstract getEventService()Lcom/applovin/sdk/AppLovinEventService;
 .end method
 
 .method public abstract getLogger()Lcom/applovin/sdk/AppLovinLogger;

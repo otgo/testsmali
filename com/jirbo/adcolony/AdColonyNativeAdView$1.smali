@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 428
+    .line 365
     iput-object p1, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,25 +46,25 @@
 
     const/4 v4, 0x1
 
-    .line 431
+    .line 368
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 433
+    .line 370
     if-nez v0, :cond_1
 
-    .line 435
+    .line 372
     new-array v0, v1, [F
 
-    .line 436
+    .line 373
     iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    iget v1, v1, Lcom/jirbo/adcolony/AdColonyNativeAdView;->ax:I
+    iget v1, v1, Lcom/jirbo/adcolony/AdColonyNativeAdView;->at:I
 
     invoke-static {v1, v0}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 437
+    .line 374
     const/4 v1, 0x2
 
     aget v2, v0, v1
@@ -75,10 +75,10 @@
 
     aput v2, v0, v1
 
-    .line 438
+    .line 375
     iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    iget-object v1, v1, Lcom/jirbo/adcolony/AdColonyNativeAdView;->ac:Landroid/widget/Button;
+    iget-object v1, v1, Lcom/jirbo/adcolony/AdColonyNativeAdView;->Z:Landroid/widget/Button;
 
     invoke-static {v0}, Landroid/graphics/Color;->HSVToColor([F)I
 
@@ -86,58 +86,58 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 469
+    .line 406
     :cond_0
     :goto_0
     return v4
 
-    .line 440
+    .line 377
     :cond_1
     if-ne v0, v1, :cond_2
 
-    .line 443
+    .line 380
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->ac:Landroid/widget/Button;
+    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->Z:Landroid/widget/Button;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    iget v1, v1, Lcom/jirbo/adcolony/AdColonyNativeAdView;->ax:I
+    iget v1, v1, Lcom/jirbo/adcolony/AdColonyNativeAdView;->at:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundColor(I)V
 
     goto :goto_0
 
-    .line 445
+    .line 382
     :cond_2
     if-ne v0, v4, :cond_0
 
-    .line 447
+    .line 384
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
     iget-boolean v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->J:Z
 
     if-eqz v0, :cond_3
 
-    .line 449
+    .line 386
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
     sget-object v1, Lcom/jirbo/adcolony/AdColonyIAPEngagement;->OVERLAY:Lcom/jirbo/adcolony/AdColonyIAPEngagement;
 
-    iput-object v1, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->ar:Lcom/jirbo/adcolony/AdColonyIAPEngagement;
+    iput-object v1, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->an:Lcom/jirbo/adcolony/AdColonyIAPEngagement;
 
-    .line 450
+    .line 387
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
     iput-boolean v4, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->u:Z
 
     goto :goto_0
 
-    .line 453
+    .line 390
     :cond_3
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->af:Ljava/lang/String;
+    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->ac:Ljava/lang/String;
 
     const-string v1, "install"
 
@@ -149,7 +149,7 @@
 
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->af:Ljava/lang/String;
+    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->ac:Ljava/lang/String;
 
     const-string v1, "url"
 
@@ -159,21 +159,21 @@
 
     if-eqz v0, :cond_5
 
-    .line 455
+    .line 392
     :cond_4
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->d:Lcom/jirbo/adcolony/t;
+    iget-object v0, v0, Lcom/jirbo/adcolony/d;->d:Lcom/jirbo/adcolony/u;
 
     const-string v1, "native_overlay_click"
 
     iget-object v2, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    iget-object v2, v2, Lcom/jirbo/adcolony/AdColonyNativeAdView;->M:Lcom/jirbo/adcolony/AdColonyInterstitialAd;
+    iget-object v2, v2, Lcom/jirbo/adcolony/AdColonyNativeAdView;->K:Lcom/jirbo/adcolony/AdColonyInterstitialAd;
 
-    invoke-virtual {v0, v1, v2}, Lcom/jirbo/adcolony/t;->b(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
+    invoke-virtual {v0, v1, v2}, Lcom/jirbo/adcolony/u;->b(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 458
+    .line 395
     :try_start_0
     new-instance v0, Landroid/content/Intent;
 
@@ -181,7 +181,7 @@
 
     iget-object v2, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    iget-object v2, v2, Lcom/jirbo/adcolony/AdColonyNativeAdView;->ae:Ljava/lang/String;
+    iget-object v2, v2, Lcom/jirbo/adcolony/AdColonyNativeAdView;->ab:Ljava/lang/String;
 
     invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -189,7 +189,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 459
+    .line 396
     invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
 
     move-result-object v1
@@ -198,26 +198,26 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 467
+    .line 404
     :cond_5
     :goto_1
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->ac:Landroid/widget/Button;
+    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->Z:Landroid/widget/Button;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    iget v1, v1, Lcom/jirbo/adcolony/AdColonyNativeAdView;->ax:I
+    iget v1, v1, Lcom/jirbo/adcolony/AdColonyNativeAdView;->at:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundColor(I)V
 
     goto :goto_0
 
-    .line 461
+    .line 398
     :catch_0
     move-exception v0
 
-    .line 463
+    .line 400
     invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
 
     move-result-object v0

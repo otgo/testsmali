@@ -1,792 +1,155 @@
 .class public Lcom/applovin/impl/sdk/ca;
-.super Ljava/lang/Object;
-
-
-# instance fields
-.field private final a:Lcom/applovin/impl/sdk/bz;
+.super Lcom/applovin/impl/sdk/cb;
 
 
 # direct methods
-.method public constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+.method public constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/util/List;Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "TaskCacheNativeAdImages"
 
-    invoke-virtual {p1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getSettingsManager()Lcom/applovin/impl/sdk/bz;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
+    invoke-direct {p0, v0, p1, p2, p3}, Lcom/applovin/impl/sdk/cb;-><init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/util/List;Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/applovin/sdk/AppLovinSdk;)V
+.method public constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/util/List;Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "TaskCacheNativeAdImages"
 
-    check-cast p1, Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {p1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getSettingsManager()Lcom/applovin/impl/sdk/bz;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
+    invoke-direct {p0, v0, p1, p2, p3}, Lcom/applovin/impl/sdk/cb;-><init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/util/List;Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;)V
 
     return-void
+.end method
+
+.method private b(Lcom/applovin/impl/sdk/NativeAdImpl;)Z
+    .locals 1
+
+    const/16 v0, -0xc9
+
+    invoke-virtual {p0, p1, v0}, Lcom/applovin/impl/sdk/ca;->a(Lcom/applovin/impl/sdk/NativeAdImpl;I)V
+
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 
 # virtual methods
-.method public A()Z
-    .locals 2
+.method protected a(Lcom/applovin/impl/sdk/NativeAdImpl;)V
+    .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->b:Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;
 
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aZ:Lcom/applovin/impl/sdk/by;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->b:Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;
+
+    invoke-interface {v0, p1}, Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;->onNativeAdImagesPrecached(Lcom/applovin/nativeAds/AppLovinNativeAd;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method protected a(Lcom/applovin/impl/sdk/NativeAdImpl;I)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->b:Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->b:Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;
+
+    invoke-interface {v0, p1, p2}, Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;->onNativeAdImagePrecachingFailed(Lcom/applovin/nativeAds/AppLovinNativeAd;I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method protected a(Lcom/applovin/impl/sdk/NativeAdImpl;Lcom/applovin/impl/sdk/x;)Z
+    .locals 6
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    const-string v1, "TaskCacheNativeAdImages"
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Beginning slot image caching for ad "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Lcom/applovin/impl/sdk/NativeAdImpl;->getAdId()J
+
+    move-result-wide v4
+
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Lcom/applovin/impl/sdk/NativeAdImpl;->getSourceIconUrl()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0, p2}, Lcom/applovin/impl/sdk/ca;->a(Ljava/lang/String;Lcom/applovin/impl/sdk/x;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1, v0}, Lcom/applovin/impl/sdk/NativeAdImpl;->setIconUrl(Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Lcom/applovin/impl/sdk/NativeAdImpl;->getSourceImageUrl()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0, p2}, Lcom/applovin/impl/sdk/ca;->a(Ljava/lang/String;Lcom/applovin/impl/sdk/x;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p1, v0}, Lcom/applovin/impl/sdk/NativeAdImpl;->setImageUrl(Ljava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-direct {p0, p1}, Lcom/applovin/impl/sdk/ca;->b(Lcom/applovin/impl/sdk/NativeAdImpl;)Z
 
     move-result v0
 
-    return v0
-.end method
+    goto :goto_0
 
-.method public B()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->ba:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    :cond_1
+    invoke-direct {p0, p1}, Lcom/applovin/impl/sdk/ca;->b(Lcom/applovin/impl/sdk/NativeAdImpl;)Z
 
     move-result v0
 
-    return v0
+    goto :goto_0
 .end method
 
-.method public C()I
-    .locals 2
+.method public bridge synthetic run()V
+    .locals 0
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
+    invoke-super {p0}, Lcom/applovin/impl/sdk/cb;->run()V
 
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->bb:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public D()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->bd:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public E()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->bc:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public F()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->bf:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public G()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->bg:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public H()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->bn:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public I()Ljava/lang/String;
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->bo:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public J()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->bs:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public K()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->bt:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public L()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->bu:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public a()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->O:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public b()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aw:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public c()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->ax:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public d()Ljava/lang/String;
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->R:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public e()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->T:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public f()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aJ:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public g()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aK:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public h()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aL:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public i()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aI:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public j()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->W:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public k()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->ao:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public l()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aq:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public m()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->ar:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public n()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->as:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public o()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->au:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public p()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->at:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public q()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->av:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public r()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->ay:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public s()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->az:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public t()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aO:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public u()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aP:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public v()I
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aQ:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public w()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aW:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public x()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aU:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public y()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aV:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public z()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ca;->a:Lcom/applovin/impl/sdk/bz;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aX:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
+    return-void
 .end method

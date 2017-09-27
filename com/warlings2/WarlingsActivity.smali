@@ -12,7 +12,7 @@
     .locals 0
 
     .prologue
-    .line 57
+    .line 54
     invoke-direct {p0}, Lcom/ideaworks3d/marmalade/LoaderActivity;-><init>()V
 
     return-void
@@ -26,38 +26,38 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 62
+    .line 59
     const/16 v0, 0x2710
 
     if-ne p1, v0, :cond_3
 
-    .line 63
+    .line 60
     if-eq p2, v1, :cond_1
 
-    .line 96
+    .line 94
     :cond_0
     :goto_0
     return-void
 
-    .line 68
+    .line 65
     :cond_1
     invoke-virtual {p3}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    .line 69
+    .line 66
     const-string v0, "players"
 
     invoke-virtual {p3, v0}, Landroid/content/Intent;->getStringArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 72
+    .line 69
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-lez v0, :cond_2
 
-    .line 73
+    .line 70
     sget-object v0, Lcom/warlings2/googleservices;->room_update_listener:Lcom/google/android/gms/games/multiplayer/realtime/RoomUpdateListener;
 
     invoke-static {v0}, Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig;->builder(Lcom/google/android/gms/games/multiplayer/realtime/RoomUpdateListener;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;
@@ -76,7 +76,7 @@
 
     move-result-object v2
 
-    .line 77
+    .line 74
     const/4 v0, 0x0
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -87,15 +87,15 @@
 
     sput-object v0, Lcom/warlings2/googleservices;->other_player_participant_id:Ljava/lang/String;
 
-    .line 79
+    .line 76
     invoke-virtual {v2, v1}, Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;->addPlayersToInvite(Ljava/util/ArrayList;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;
 
-    .line 80
+    .line 77
     invoke-virtual {v2}, Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;->build()Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig;
 
     move-result-object v0
 
-    .line 81
+    .line 78
     sget-object v1, Lcom/google/android/gms/games/Games;->RealTimeMultiplayer:Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;
 
     sget-object v2, Lcom/warlings2/googleservices;->client:Lcom/google/android/gms/common/api/GoogleApiClient;
@@ -104,7 +104,7 @@
 
     goto :goto_0
 
-    .line 83
+    .line 80
     :cond_2
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
@@ -114,41 +114,41 @@
 
     goto :goto_0
 
-    .line 85
+    .line 82
     :cond_3
     const/16 v0, 0x2713
 
     if-ne p1, v0, :cond_4
 
-    .line 86
+    .line 83
     if-ne p2, v1, :cond_0
 
-    .line 87
+    .line 84
     sget-object v0, Lcom/warlings2/googleservices;->client:Lcom/google/android/gms/common/api/GoogleApiClient;
 
     invoke-interface {v0}, Lcom/google/android/gms/common/api/GoogleApiClient;->connect()V
 
     goto :goto_0
 
-    .line 89
+    .line 86
     :cond_4
-    const/16 v0, 0x162e
+    sget v0, Lcom/warlings2/googleservices;->FYBER_INTENT_ID:I
 
     if-ne p1, v0, :cond_0
 
-    .line 90
+    .line 87
     sget v0, Lcom/warlings2/googleservices;->callback:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_5
 
-    .line 91
+    .line 88
     invoke-static {}, Lcom/warlings2/googleservices;->ad_closed()V
 
     goto :goto_0
 
-    .line 93
+    .line 90
     :cond_5
     invoke-static {p0}, Lcom/warlings2/googleservices;->request_fyber_ad(Landroid/app/Activity;)V
 
@@ -159,37 +159,10 @@
     .locals 0
 
     .prologue
-    .line 144
+    .line 126
     invoke-super {p0}, Lcom/ideaworks3d/marmalade/LoaderActivity;->onBackPressed()V
 
-    .line 145
-    return-void
-.end method
-
-.method protected onCreate(Landroid/os/Bundle;)V
-    .locals 2
-
-    .prologue
-    .line 100
-    invoke-super {p0, p1}, Lcom/ideaworks3d/marmalade/LoaderActivity;->onCreate(Landroid/os/Bundle;)V
-
-    .line 101
-    invoke-static {}, Lcom/supersonic/mediationsdk/sdk/SupersonicFactory;->getInstance()Lcom/supersonic/mediationsdk/sdk/Supersonic;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/warlings2/googleservices;->mMediationAgent:Lcom/supersonic/mediationsdk/sdk/Supersonic;
-
-    .line 102
-    invoke-static {}, Lcom/supersonic/adapters/supersonicads/SupersonicConfig;->getConfigObj()Lcom/supersonic/adapters/supersonicads/SupersonicConfig;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/supersonic/adapters/supersonicads/SupersonicConfig;->setClientSideCallbacks(Z)V
-
-    .line 103
+    .line 127
     return-void
 .end method
 
@@ -197,88 +170,65 @@
     .locals 0
 
     .prologue
-    .line 139
+    .line 121
     invoke-super {p0}, Lcom/ideaworks3d/marmalade/LoaderActivity;->onDestroy()V
 
-    .line 140
+    .line 122
     return-void
 .end method
 
 .method public onPause()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 112
+    .line 103
     invoke-super {p0}, Lcom/ideaworks3d/marmalade/LoaderActivity;->onPause()V
 
-    .line 113
-    sget-object v0, Lcom/warlings2/googleservices;->mMediationAgent:Lcom/supersonic/mediationsdk/sdk/Supersonic;
-
-    if-eqz v0, :cond_0
-
-    .line 114
-    sget-object v0, Lcom/warlings2/googleservices;->mMediationAgent:Lcom/supersonic/mediationsdk/sdk/Supersonic;
-
-    invoke-interface {v0, p0}, Lcom/supersonic/mediationsdk/sdk/Supersonic;->onPause(Landroid/app/Activity;)V
-
-    .line 116
-    :cond_0
+    .line 104
     return-void
 .end method
 
 .method protected onResume()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 120
+    .line 108
     invoke-super {p0}, Lcom/ideaworks3d/marmalade/LoaderActivity;->onResume()V
 
-    .line 121
-    sget-object v0, Lcom/warlings2/googleservices;->mMediationAgent:Lcom/supersonic/mediationsdk/sdk/Supersonic;
-
-    if-eqz v0, :cond_0
-
-    .line 122
-    sget-object v0, Lcom/warlings2/googleservices;->mMediationAgent:Lcom/supersonic/mediationsdk/sdk/Supersonic;
-
-    invoke-interface {v0, p0}, Lcom/supersonic/mediationsdk/sdk/Supersonic;->onResume(Landroid/app/Activity;)V
-
-    .line 126
-    :cond_0
+    .line 110
     const/4 v0, 0x0
 
     :try_start_0
     sput-object v0, Lcom/warlings2/googleservices;->fyber_intent:Landroid/content/Intent;
 
-    .line 128
+    .line 111
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lcom/sponsorpay/utils/SponsorPayLogger;->enableLogging(Z)Z
+
+    .line 112
     const-string v0, "35843"
 
-    invoke-static {v0, p0}, Lcom/fyber/Fyber;->with(Ljava/lang/String;Landroid/app/Activity;)Lcom/fyber/Fyber;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    const-string v2, "473add42d509d8f1ec9130388e8b20b8"
 
-    const-string v1, "473add42d509d8f1ec9130388e8b20b8"
+    invoke-static {v0, v1, v2, p0}, Lcom/sponsorpay/SponsorPay;->start(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/fyber/Fyber;->withSecurityToken(Ljava/lang/String;)Lcom/fyber/Fyber;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/fyber/Fyber;->start()Lcom/fyber/Fyber$Settings;
-
-    .line 131
+    .line 113
     invoke-static {p0}, Lcom/warlings2/googleservices;->request_fyber_ad(Landroid/app/Activity;)V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 135
+    .line 117
     :goto_0
     return-void
 
-    .line 132
+    .line 114
     :catch_0
     move-exception v0
 
-    .line 133
+    .line 115
     const-string v1, "Fyber"
 
     invoke-virtual {v0}, Ljava/lang/RuntimeException;->getLocalizedMessage()Ljava/lang/String;
@@ -294,10 +244,10 @@
     .locals 0
 
     .prologue
-    .line 107
+    .line 98
     invoke-super {p0}, Lcom/ideaworks3d/marmalade/LoaderActivity;->onStop()V
 
-    .line 108
+    .line 99
     return-void
 .end method
 
@@ -305,10 +255,10 @@
     .locals 2
 
     .prologue
-    .line 150
+    .line 132
     invoke-super {p0, p1}, Lcom/ideaworks3d/marmalade/LoaderActivity;->onWindowFocusChanged(Z)V
 
-    .line 151
+    .line 133
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
@@ -317,7 +267,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 152
+    .line 134
     invoke-virtual {p0}, Lcom/warlings2/WarlingsActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -326,12 +276,12 @@
 
     move-result-object v0
 
-    .line 153
+    .line 135
     const/16 v1, 0x1706
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    .line 161
+    .line 143
     :cond_0
     return-void
 .end method

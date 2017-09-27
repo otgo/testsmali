@@ -59,7 +59,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/impl/sdk/e;)V
+.method synthetic constructor <init>(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/impl/sdk/g;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/applovin/impl/sdk/i;-><init>(Lcom/applovin/sdk/AppLovinAdSize;)V

@@ -41,7 +41,7 @@
     .locals 0
 
     .prologue
-    .line 1865
+    .line 1810
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -55,19 +55,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1884
+    .line 1829
     invoke-static {}, Lcom/jirbo/adcolony/q;->c()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 1886
+    .line 1831
     const/16 v0, 0x8
 
-    sput v0, Lcom/jirbo/adcolony/a;->am:I
+    sput v0, Lcom/jirbo/adcolony/a;->ad:I
 
-    .line 1887
+    .line 1832
     sget-object v0, Lcom/jirbo/adcolony/l;->c:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Ad not ready due to no network connection."
@@ -76,18 +76,18 @@
 
     move-result v0
 
-    .line 1894
+    .line 1839
     :cond_0
     :goto_0
     return v0
 
-    .line 1889
+    .line 1834
     :cond_1
     iget-boolean v1, p0, Lcom/jirbo/adcolony/n$j;->a:Z
 
     if-eqz v1, :cond_0
 
-    .line 1890
+    .line 1835
     iget-object v1, p0, Lcom/jirbo/adcolony/n$j;->f:Lcom/jirbo/adcolony/n$o;
 
     invoke-virtual {v1}, Lcom/jirbo/adcolony/n$o;->a()Z
@@ -96,7 +96,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1891
+    .line 1836
     iget-object v1, p0, Lcom/jirbo/adcolony/n$j;->h:Lcom/jirbo/adcolony/n$l;
 
     invoke-virtual {v1}, Lcom/jirbo/adcolony/n$l;->a()Z
@@ -105,7 +105,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1892
+    .line 1837
     iget-object v1, p0, Lcom/jirbo/adcolony/n$j;->i:Lcom/jirbo/adcolony/n$g;
 
     invoke-virtual {v1}, Lcom/jirbo/adcolony/n$g;->a()Z
@@ -114,7 +114,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1893
+    .line 1838
     iget-object v1, p0, Lcom/jirbo/adcolony/n$j;->j:Lcom/jirbo/adcolony/n$g;
 
     invoke-virtual {v1}, Lcom/jirbo/adcolony/n$g;->a()Z
@@ -123,7 +123,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1894
+    .line 1839
     const/4 v0, 0x1
 
     goto :goto_0
@@ -135,15 +135,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1899
+    .line 1844
     if-nez p1, :cond_1
 
-    .line 1926
+    .line 1871
     :cond_0
     :goto_0
     return v0
 
-    .line 1901
+    .line 1846
     :cond_1
     const-string v1, "enabled"
 
@@ -153,7 +153,7 @@
 
     iput-boolean v1, p0, Lcom/jirbo/adcolony/n$j;->a:Z
 
-    .line 1903
+    .line 1848
     const-string v1, "load_timeout"
 
     invoke-virtual {p1, v1}, Lcom/jirbo/adcolony/ADCData$g;->f(Ljava/lang/String;)D
@@ -162,7 +162,7 @@
 
     iput-wide v2, p0, Lcom/jirbo/adcolony/n$j;->b:D
 
-    .line 1904
+    .line 1849
     const-string v1, "load_timeout_enabled"
 
     invoke-virtual {p1, v1}, Lcom/jirbo/adcolony/ADCData$g;->h(Ljava/lang/String;)Z
@@ -171,7 +171,7 @@
 
     iput-boolean v1, p0, Lcom/jirbo/adcolony/n$j;->c:Z
 
-    .line 1905
+    .line 1850
     const-string v1, "load_spinner_enabled"
 
     invoke-virtual {p1, v1}, Lcom/jirbo/adcolony/ADCData$g;->h(Ljava/lang/String;)Z
@@ -180,7 +180,7 @@
 
     iput-boolean v1, p0, Lcom/jirbo/adcolony/n$j;->d:Z
 
-    .line 1906
+    .line 1851
     const-string v1, "background_color"
 
     invoke-virtual {p1, v1}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
@@ -189,7 +189,7 @@
 
     iput-object v1, p0, Lcom/jirbo/adcolony/n$j;->e:Ljava/lang/String;
 
-    .line 1908
+    .line 1853
     const-string v1, "html5_tag"
 
     invoke-virtual {p1, v1}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
@@ -198,14 +198,14 @@
 
     iput-object v1, p0, Lcom/jirbo/adcolony/n$j;->g:Ljava/lang/String;
 
-    .line 1911
+    .line 1856
     new-instance v1, Lcom/jirbo/adcolony/n$o;
 
     invoke-direct {v1}, Lcom/jirbo/adcolony/n$o;-><init>()V
 
     iput-object v1, p0, Lcom/jirbo/adcolony/n$j;->f:Lcom/jirbo/adcolony/n$o;
 
-    .line 1912
+    .line 1857
     iget-object v1, p0, Lcom/jirbo/adcolony/n$j;->f:Lcom/jirbo/adcolony/n$o;
 
     const-string v2, "mraid_js"
@@ -220,14 +220,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 1915
+    .line 1860
     new-instance v1, Lcom/jirbo/adcolony/n$l;
 
     invoke-direct {v1}, Lcom/jirbo/adcolony/n$l;-><init>()V
 
     iput-object v1, p0, Lcom/jirbo/adcolony/n$j;->h:Lcom/jirbo/adcolony/n$l;
 
-    .line 1916
+    .line 1861
     iget-object v1, p0, Lcom/jirbo/adcolony/n$j;->h:Lcom/jirbo/adcolony/n$l;
 
     const-string v2, "background_logo"
@@ -242,14 +242,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 1919
+    .line 1864
     new-instance v1, Lcom/jirbo/adcolony/n$g;
 
     invoke-direct {v1}, Lcom/jirbo/adcolony/n$g;-><init>()V
 
     iput-object v1, p0, Lcom/jirbo/adcolony/n$j;->i:Lcom/jirbo/adcolony/n$g;
 
-    .line 1920
+    .line 1865
     iget-object v1, p0, Lcom/jirbo/adcolony/n$j;->i:Lcom/jirbo/adcolony/n$g;
 
     const-string v2, "replay"
@@ -264,14 +264,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 1923
+    .line 1868
     new-instance v1, Lcom/jirbo/adcolony/n$g;
 
     invoke-direct {v1}, Lcom/jirbo/adcolony/n$g;-><init>()V
 
     iput-object v1, p0, Lcom/jirbo/adcolony/n$j;->j:Lcom/jirbo/adcolony/n$g;
 
-    .line 1924
+    .line 1869
     iget-object v1, p0, Lcom/jirbo/adcolony/n$j;->j:Lcom/jirbo/adcolony/n$g;
 
     const-string v2, "close"
@@ -286,7 +286,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1926
+    .line 1871
     const/4 v0, 0x1
 
     goto/16 :goto_0
@@ -296,17 +296,17 @@
     .locals 1
 
     .prologue
-    .line 1931
+    .line 1876
     iget-boolean v0, p0, Lcom/jirbo/adcolony/n$j;->a:Z
 
     if-nez v0, :cond_1
 
-    .line 1936
+    .line 1881
     :cond_0
     :goto_0
     return-void
 
-    .line 1932
+    .line 1877
     :cond_1
     iget-object v0, p0, Lcom/jirbo/adcolony/n$j;->f:Lcom/jirbo/adcolony/n$o;
 
@@ -316,7 +316,7 @@
 
     invoke-virtual {v0}, Lcom/jirbo/adcolony/n$o;->b()V
 
-    .line 1933
+    .line 1878
     :cond_2
     iget-object v0, p0, Lcom/jirbo/adcolony/n$j;->h:Lcom/jirbo/adcolony/n$l;
 
@@ -326,7 +326,7 @@
 
     invoke-virtual {v0}, Lcom/jirbo/adcolony/n$l;->b()V
 
-    .line 1934
+    .line 1879
     :cond_3
     iget-object v0, p0, Lcom/jirbo/adcolony/n$j;->i:Lcom/jirbo/adcolony/n$g;
 
@@ -336,7 +336,7 @@
 
     invoke-virtual {v0}, Lcom/jirbo/adcolony/n$g;->b()V
 
-    .line 1935
+    .line 1880
     :cond_4
     iget-object v0, p0, Lcom/jirbo/adcolony/n$j;->j:Lcom/jirbo/adcolony/n$g;
 

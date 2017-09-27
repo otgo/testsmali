@@ -217,7 +217,7 @@
     :try_start_1
     iget-object v1, p0, Lcom/jirbo/adcolony/l;->g:Ljava/lang/StringBuilder;
 
-    invoke-static {p1, p2, v0, v1}, Lcom/jirbo/adcolony/aa;->a(DILjava/lang/StringBuilder;)V
+    invoke-static {p1, p2, v0, v1}, Lcom/jirbo/adcolony/ab;->a(DILjava/lang/StringBuilder;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

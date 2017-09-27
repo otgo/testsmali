@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 300
+    .line 251
     iput-object p1, p0, Lcom/warlings2/googleservices$4$1;->this$1:Lcom/warlings2/googleservices$4;
 
     iput-object p2, p0, Lcom/warlings2/googleservices$4$1;->val$inv:Lcom/google/android/gms/games/multiplayer/Invitation;
@@ -44,7 +44,7 @@
     .locals 3
 
     .prologue
-    .line 302
+    .line 253
     sget-object v0, Lcom/google/android/gms/games/Games;->RealTimeMultiplayer:Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;
 
     sget-object v1, Lcom/warlings2/googleservices;->client:Lcom/google/android/gms/common/api/GoogleApiClient;
@@ -57,9 +57,9 @@
 
     invoke-interface {v0, v1, v2}, Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;->declineInvitation(Lcom/google/android/gms/common/api/GoogleApiClient;Ljava/lang/String;)V
 
-    .line 303
+    .line 254
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 304
+    .line 255
     return-void
 .end method

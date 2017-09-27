@@ -7,16 +7,16 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/unity3d/ads/android/video/j;
+.field final synthetic a:Lcom/unity3d/ads/android/video/l;
 
 
 # direct methods
-.method constructor <init>(Lcom/unity3d/ads/android/video/j;)V
+.method constructor <init>(Lcom/unity3d/ads/android/video/l;)V
     .locals 0
 
     .prologue
-    .line 517
-    iput-object p1, p0, Lcom/unity3d/ads/android/video/n;->a:Lcom/unity3d/ads/android/video/j;
+    .line 646
+    iput-object p1, p0, Lcom/unity3d/ads/android/video/n;->a:Lcom/unity3d/ads/android/video/l;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,13 +29,13 @@
     .locals 1
 
     .prologue
-    .line 520
-    iget-object v0, p0, Lcom/unity3d/ads/android/video/n;->a:Lcom/unity3d/ads/android/video/j;
+    .line 649
+    iget-object v0, p0, Lcom/unity3d/ads/android/video/n;->a:Lcom/unity3d/ads/android/video/l;
 
-    iget-object v0, v0, Lcom/unity3d/ads/android/video/j;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
+    iget-object v0, v0, Lcom/unity3d/ads/android/video/l;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
 
     invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->t(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)V
 
-    .line 521
+    .line 650
     return-void
 .end method

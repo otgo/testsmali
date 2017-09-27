@@ -913,7 +913,7 @@
 
     .line 174
     :cond_4
-    sget v0, Lcom/jirbo/adcolony/a;->F:I
+    sget v0, Lcom/jirbo/adcolony/a;->w:I
 
     invoke-virtual {p0, v0}, Lcom/jirbo/adcolony/AdColonyBrowser;->setRequestedOrientation(I)V
 
@@ -935,7 +935,7 @@
     const/4 v2, 0x0
 
     .line 298
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->D:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->u:Z
 
     if-nez v0, :cond_1
 
@@ -949,7 +949,7 @@
 
     .line 300
     :goto_0
-    sget-object v0, Lcom/jirbo/adcolony/a;->an:Ljava/util/ArrayList;
+    sget-object v0, Lcom/jirbo/adcolony/a;->ae:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -957,7 +957,7 @@
 
     if-ge v1, v0, :cond_0
 
-    sget-object v0, Lcom/jirbo/adcolony/a;->an:Ljava/util/ArrayList;
+    sget-object v0, Lcom/jirbo/adcolony/a;->ae:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -975,7 +975,7 @@
 
     .line 301
     :cond_0
-    sget-object v0, Lcom/jirbo/adcolony/a;->an:Ljava/util/ArrayList;
+    sget-object v0, Lcom/jirbo/adcolony/a;->ae:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 

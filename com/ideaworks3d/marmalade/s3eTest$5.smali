@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 67
+    .line 61
     iput-object p1, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
 
     iput p2, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->val$iterations:I
@@ -48,155 +48,96 @@
     .locals 5
 
     .prologue
-    const/4 v4, 0x0
-
     const/4 v0, 0x0
 
-    .line 72
+    const/4 v4, 0x0
+
+    .line 66
     :goto_0
     :try_start_0
     iget v1, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->val$iterations:I
 
-    if-ge v0, v1, :cond_1
+    if-ge v0, v1, :cond_0
 
-    .line 74
-    iget-object v1, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2}, Lcom/ideaworks3d/marmalade/s3eTest;->access$202(Lcom/ideaworks3d/marmalade/s3eTest;Z)Z
-
-    .line 75
+    .line 68
     iget-object v1, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
 
     invoke-virtual {v1}, Lcom/ideaworks3d/marmalade/s3eTest;->PostSuspend()V
 
-    .line 76
+    .line 69
     iget-object v1, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/ideaworks3d/marmalade/s3eTest;->PostSetFocus(Z)V
 
-    .line 77
+    .line 70
     iget v1, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->val$sleepTimeMS:I
 
     int-to-long v2, v1
 
     invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
 
-    .line 78
+    .line 71
     iget-object v1, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
 
     invoke-virtual {v1}, Lcom/ideaworks3d/marmalade/s3eTest;->PostResume()V
 
-    .line 79
+    .line 72
     iget-object v1, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lcom/ideaworks3d/marmalade/s3eTest;->PostSetFocus(Z)V
-
-    .line 80
-    iget-object v1, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
-
-    invoke-static {v1}, Lcom/ideaworks3d/marmalade/s3eTest;->access$100(Lcom/ideaworks3d/marmalade/s3eTest;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-enter v1
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 81
-    :goto_1
-    :try_start_1
-    iget-object v2, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
-
-    invoke-static {v2}, Lcom/ideaworks3d/marmalade/s3eTest;->access$200(Lcom/ideaworks3d/marmalade/s3eTest;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    .line 82
-    iget-object v2, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
-
-    invoke-static {v2}, Lcom/ideaworks3d/marmalade/s3eTest;->access$100(Lcom/ideaworks3d/marmalade/s3eTest;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Object;->wait()V
-
-    goto :goto_1
-
-    .line 84
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    throw v0
-    :try_end_2
-    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    .line 87
-    :catch_0
-    move-exception v0
-
-    .line 92
-    iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
-
-    invoke-virtual {v0}, Lcom/ideaworks3d/marmalade/s3eTest;->PostResume()V
-
-    .line 93
-    iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
-
-    iput-object v4, v0, Lcom/ideaworks3d/marmalade/s3eTest;->thread:Ljava/lang/Thread;
-
-    .line 95
-    :goto_2
-    return-void
-
-    .line 84
-    :cond_0
-    :try_start_3
-    monitor-exit v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 72
+    .line 66
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 92
-    :cond_1
+    .line 80
+    :cond_0
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
 
     invoke-virtual {v0}, Lcom/ideaworks3d/marmalade/s3eTest;->PostResume()V
 
-    .line 93
+    .line 81
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
 
     iput-object v4, v0, Lcom/ideaworks3d/marmalade/s3eTest;->thread:Ljava/lang/Thread;
 
-    goto :goto_2
+    .line 83
+    :goto_1
+    return-void
 
-    .line 92
-    :catchall_1
+    .line 75
+    :catch_0
+    move-exception v0
+
+    .line 80
+    iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
+
+    invoke-virtual {v0}, Lcom/ideaworks3d/marmalade/s3eTest;->PostResume()V
+
+    .line 81
+    iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
+
+    iput-object v4, v0, Lcom/ideaworks3d/marmalade/s3eTest;->thread:Ljava/lang/Thread;
+
+    goto :goto_1
+
+    .line 80
+    :catchall_0
     move-exception v0
 
     iget-object v1, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
 
     invoke-virtual {v1}, Lcom/ideaworks3d/marmalade/s3eTest;->PostResume()V
 
-    .line 93
+    .line 81
     iget-object v1, p0, Lcom/ideaworks3d/marmalade/s3eTest$5;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
 
     iput-object v4, v1, Lcom/ideaworks3d/marmalade/s3eTest;->thread:Ljava/lang/Thread;

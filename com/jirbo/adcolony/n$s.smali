@@ -19,13 +19,17 @@
 
 .field b:Ljava/lang/String;
 
+.field c:Lcom/jirbo/adcolony/n$l;
+
+.field d:Lcom/jirbo/adcolony/n$r;
+
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 1120
+    .line 1458
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,40 +37,155 @@
 
 
 # virtual methods
-.method a(Lcom/jirbo/adcolony/ADCData$g;)Z
-    .locals 1
+.method a()Z
+    .locals 3
 
     .prologue
-    .line 1127
-    if-nez p1, :cond_0
-
     const/4 v0, 0x0
 
-    .line 1132
+    .line 1469
+    sget-object v1, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
+
+    iget-object v1, v1, Lcom/jirbo/adcolony/d;->c:Lcom/jirbo/adcolony/o;
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$s;->a:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/o;->a(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    .line 1472
+    :cond_0
     :goto_0
     return v0
 
-    .line 1129
-    :cond_0
-    const-string v0, "image"
+    .line 1470
+    :cond_1
+    iget-object v1, p0, Lcom/jirbo/adcolony/n$s;->c:Lcom/jirbo/adcolony/n$l;
 
-    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/jirbo/adcolony/n$l;->a()Z
 
-    move-result-object v0
+    move-result v1
 
-    iput-object v0, p0, Lcom/jirbo/adcolony/n$s;->a:Ljava/lang/String;
+    if-eqz v1, :cond_0
 
-    .line 1130
-    const-string v0, "last_modified"
+    .line 1471
+    iget-object v1, p0, Lcom/jirbo/adcolony/n$s;->d:Lcom/jirbo/adcolony/n$r;
 
-    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/jirbo/adcolony/n$r;->a()Z
 
-    move-result-object v0
+    move-result v1
 
-    iput-object v0, p0, Lcom/jirbo/adcolony/n$s;->b:Ljava/lang/String;
+    if-eqz v1, :cond_0
 
-    .line 1132
+    .line 1472
     const/4 v0, 0x1
 
     goto :goto_0
+.end method
+
+.method a(Lcom/jirbo/adcolony/ADCData$g;)Z
+    .locals 3
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 1477
+    const-string v1, "background_image"
+
+    invoke-virtual {p1, v1}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/jirbo/adcolony/n$s;->a:Ljava/lang/String;
+
+    .line 1478
+    const-string v1, "background_image_last_modified"
+
+    invoke-virtual {p1, v1}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/jirbo/adcolony/n$s;->b:Ljava/lang/String;
+
+    .line 1480
+    new-instance v1, Lcom/jirbo/adcolony/n$l;
+
+    invoke-direct {v1}, Lcom/jirbo/adcolony/n$l;-><init>()V
+
+    iput-object v1, p0, Lcom/jirbo/adcolony/n$s;->c:Lcom/jirbo/adcolony/n$l;
+
+    .line 1481
+    iget-object v1, p0, Lcom/jirbo/adcolony/n$s;->c:Lcom/jirbo/adcolony/n$l;
+
+    const-string v2, "background_logo"
+
+    invoke-virtual {p1, v2}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;)Lcom/jirbo/adcolony/ADCData$g;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/n$l;->a(Lcom/jirbo/adcolony/ADCData$g;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    .line 1486
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 1483
+    :cond_1
+    new-instance v1, Lcom/jirbo/adcolony/n$r;
+
+    invoke-direct {v1}, Lcom/jirbo/adcolony/n$r;-><init>()V
+
+    iput-object v1, p0, Lcom/jirbo/adcolony/n$s;->d:Lcom/jirbo/adcolony/n$r;
+
+    .line 1484
+    iget-object v1, p0, Lcom/jirbo/adcolony/n$s;->d:Lcom/jirbo/adcolony/n$r;
+
+    const-string v2, "dialog"
+
+    invoke-virtual {p1, v2}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;)Lcom/jirbo/adcolony/ADCData$g;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/n$r;->a(Lcom/jirbo/adcolony/ADCData$g;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 1486
+    const/4 v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method b()V
+    .locals 3
+
+    .prologue
+    .line 1491
+    sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
+
+    iget-object v0, v0, Lcom/jirbo/adcolony/d;->c:Lcom/jirbo/adcolony/o;
+
+    iget-object v1, p0, Lcom/jirbo/adcolony/n$s;->a:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$s;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lcom/jirbo/adcolony/o;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1492
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$s;->d:Lcom/jirbo/adcolony/n$r;
+
+    invoke-virtual {v0}, Lcom/jirbo/adcolony/n$r;->b()V
+
+    .line 1493
+    return-void
 .end method

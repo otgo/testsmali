@@ -3,8 +3,8 @@
 .source "LoaderThread.java"
 
 # interfaces
-.implements Landroid/media/MediaPlayer$OnErrorListener;
 .implements Landroid/media/MediaPlayer$OnCompletionListener;
+.implements Landroid/media/MediaPlayer$OnErrorListener;
 
 
 # annotations

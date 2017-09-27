@@ -1,58 +1,126 @@
 .class public final Lcom/purplebrain/adbuddiz/sdk/i/a/b;
-.super Ljava/lang/Object;
+.super Ljava/lang/Exception;
+
+
+# instance fields
+.field public a:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+.field public b:Ljava/util/List;
 
 
 # direct methods
-.method public static a()Z
-    .locals 2
+.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;)V
+    .locals 1
 
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;->b()I
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v1, 0x7
+    invoke-direct {p0, p1, v0}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Ljava/util/List;)V
 
-    if-lt v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method
 
-.method public static b()I
-    .locals 3
+.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Lcom/purplebrain/adbuddiz/sdk/i/b/a/a;)V
+    .locals 1
 
-    const/4 v0, 0x3
+    invoke-static {p2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
-    sget-object v1, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
+    move-result-object v0
 
-    const-string v2, "1.5"
+    invoke-direct {p0, p1, v0}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Ljava/util/List;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    return-void
+.end method
 
-    move-result v1
+.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Ljava/lang/Throwable;)V
+    .locals 1
 
-    if-eqz v1, :cond_0
+    new-instance v0, Ljava/util/ArrayList;
 
-    :goto_0
-    return v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    :cond_0
-    :try_start_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-    :try_end_0
-    .catch Ljava/lang/VerifyError; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {p0, p1, v0, p2}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Ljava/util/List;Ljava/lang/Throwable;)V
 
-    goto :goto_0
+    return-void
+.end method
 
-    :catch_0
-    move-exception v1
+.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Ljava/util/List;)V
+    .locals 4
 
-    goto :goto_0
+    const-string v0, "VAST Error: %d"
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    iget v3, p1, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->j:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/a/b;->b:Ljava/util/List;
+
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/i/a/b;->a:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/a/b;->b:Ljava/util/List;
+
+    invoke-interface {v0, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    return-void
+.end method
+
+.method private constructor <init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Ljava/util/List;Ljava/lang/Throwable;)V
+    .locals 4
+
+    const-string v0, "VAST Error: %d"
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    iget v3, p1, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->j:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0, p3}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/a/b;->b:Ljava/util/List;
+
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/i/a/b;->a:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/a/b;->b:Ljava/util/List;
+
+    invoke-interface {v0, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    return-void
 .end method

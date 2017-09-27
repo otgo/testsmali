@@ -1,174 +1,76 @@
-.class public Lcom/applovin/impl/sdk/ck;
-.super Lcom/applovin/impl/sdk/bv;
+.class final enum Lcom/applovin/impl/sdk/ck;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field private final a:Ljava/lang/String;
+# static fields
+.field public static final enum a:Lcom/applovin/impl/sdk/ck;
 
-.field private final b:Ljava/util/Map;
+.field public static final enum b:Lcom/applovin/impl/sdk/ck;
 
-.field private final c:Lcom/applovin/sdk/AppLovinPostbackListener;
+.field public static final enum c:Lcom/applovin/impl/sdk/ck;
 
-.field private d:I
-
-.field private i:I
-
-.field private j:I
+.field private static final synthetic d:[Lcom/applovin/impl/sdk/ck;
 
 
 # direct methods
-.method public constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/lang/String;Ljava/util/Map;Lcom/applovin/sdk/AppLovinPostbackListener;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 5
 
-    const-string v0, "TaskDispatchPostback"
+    const/4 v4, 0x2
 
-    invoke-direct {p0, v0, p1}, Lcom/applovin/impl/sdk/bv;-><init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+    const/4 v3, 0x1
 
-    const/4 v0, -0x1
+    const/4 v2, 0x0
 
-    iput v0, p0, Lcom/applovin/impl/sdk/ck;->j:I
+    new-instance v0, Lcom/applovin/impl/sdk/ck;
 
-    iput-object p2, p0, Lcom/applovin/impl/sdk/ck;->a:Ljava/lang/String;
+    const-string v1, "MAIN"
 
-    iput-object p4, p0, Lcom/applovin/impl/sdk/ck;->c:Lcom/applovin/sdk/AppLovinPostbackListener;
+    invoke-direct {v0, v1, v2}, Lcom/applovin/impl/sdk/ck;-><init>(Ljava/lang/String;I)V
 
-    iput-object p3, p0, Lcom/applovin/impl/sdk/ck;->b:Ljava/util/Map;
+    sput-object v0, Lcom/applovin/impl/sdk/ck;->a:Lcom/applovin/impl/sdk/ck;
+
+    new-instance v0, Lcom/applovin/impl/sdk/ck;
+
+    const-string v1, "BACKGROUND"
+
+    invoke-direct {v0, v1, v3}, Lcom/applovin/impl/sdk/ck;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/applovin/impl/sdk/ck;->b:Lcom/applovin/impl/sdk/ck;
+
+    new-instance v0, Lcom/applovin/impl/sdk/ck;
+
+    const-string v1, "POSTBACKS"
+
+    invoke-direct {v0, v1, v4}, Lcom/applovin/impl/sdk/ck;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/applovin/impl/sdk/ck;->c:Lcom/applovin/impl/sdk/ck;
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lcom/applovin/impl/sdk/ck;
+
+    sget-object v1, Lcom/applovin/impl/sdk/ck;->a:Lcom/applovin/impl/sdk/ck;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/applovin/impl/sdk/ck;->b:Lcom/applovin/impl/sdk/ck;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lcom/applovin/impl/sdk/ck;->c:Lcom/applovin/impl/sdk/ck;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lcom/applovin/impl/sdk/ck;->d:[Lcom/applovin/impl/sdk/ck;
 
     return-void
 .end method
 
-.method static synthetic a(Lcom/applovin/impl/sdk/ck;)I
-    .locals 1
-
-    iget v0, p0, Lcom/applovin/impl/sdk/ck;->j:I
-
-    return v0
-.end method
-
-.method static synthetic b(Lcom/applovin/impl/sdk/ck;)Ljava/util/Map;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ck;->b:Ljava/util/Map;
-
-    return-object v0
-.end method
-
-.method static synthetic c(Lcom/applovin/impl/sdk/ck;)Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ck;->a:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic d(Lcom/applovin/impl/sdk/ck;)Lcom/applovin/sdk/AppLovinPostbackListener;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ck;->c:Lcom/applovin/sdk/AppLovinPostbackListener;
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public a(I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    iput p1, p0, Lcom/applovin/impl/sdk/ck;->d:I
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
-.end method
-
-.method public b(I)V
-    .locals 0
-
-    iput p1, p0, Lcom/applovin/impl/sdk/ck;->i:I
-
-    return-void
-.end method
-
-.method public c(I)V
-    .locals 0
-
-    iput p1, p0, Lcom/applovin/impl/sdk/ck;->j:I
-
-    return-void
-.end method
-
-.method public run()V
-    .locals 4
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ck;->a:Ljava/lang/String;
-
-    invoke-static {v0}, Lcom/applovin/sdk/AppLovinSdkUtils;->isValidString(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ck;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
-
-    move-result-object v0
-
-    const-string v1, "TaskDispatchPostback"
-
-    const-string v2, "Requested URL is not valid; nothing to do..."
-
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ck;->c:Lcom/applovin/sdk/AppLovinPostbackListener;
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/ck;->a:Ljava/lang/String;
-
-    const/16 v2, -0x384
-
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinPostbackListener;->onPostbackFailure(Ljava/lang/String;I)V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget v0, p0, Lcom/applovin/impl/sdk/ck;->d:I
-
-    if-gez v0, :cond_1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ck;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aG:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    :goto_1
-    new-instance v1, Lcom/applovin/impl/sdk/cl;
-
-    const-string v2, "RepeatTaskDispatchPostback"
-
-    iget-object v3, p0, Lcom/applovin/impl/sdk/ck;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-direct {v1, p0, v2, v0, v3}, Lcom/applovin/impl/sdk/cl;-><init>(Lcom/applovin/impl/sdk/ck;Ljava/lang/String;ILcom/applovin/impl/sdk/AppLovinSdkImpl;)V
-
-    iget v0, p0, Lcom/applovin/impl/sdk/ck;->i:I
-
-    int-to-long v2, v0
-
-    invoke-virtual {v1, v2, v3}, Lcom/applovin/impl/sdk/cx;->a(J)V
-
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/cx;->run()V
-
-    goto :goto_0
-
-    :cond_1
-    iget v0, p0, Lcom/applovin/impl/sdk/ck;->d:I
-
-    goto :goto_1
 .end method

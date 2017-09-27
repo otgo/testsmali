@@ -2,197 +2,249 @@
 .super Ljava/lang/Object;
 
 
+# instance fields
+.field public a:Lcom/purplebrain/adbuddiz/sdk/e/a/i;
+
+.field public b:Lcom/purplebrain/adbuddiz/sdk/i/b/a;
+
+.field public c:Ljava/util/List;
+
+
 # direct methods
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
+.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/e/a/a;Lcom/purplebrain/adbuddiz/sdk/i/b/a;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/g;->b:Lcom/purplebrain/adbuddiz/sdk/i/b/a;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/g;->c:Ljava/util/List;
+
+    check-cast p1, Lcom/purplebrain/adbuddiz/sdk/e/a/i;
+
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/i/g;->a:Lcom/purplebrain/adbuddiz/sdk/e/a/i;
+
+    iput-object p2, p0, Lcom/purplebrain/adbuddiz/sdk/i/g;->b:Lcom/purplebrain/adbuddiz/sdk/i/b/a;
+
+    return-void
+.end method
+
+.method public static a(Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;)Lcom/purplebrain/adbuddiz/sdk/i/b/a;
+    .locals 5
+
+    const/4 v1, 0x0
 
     :try_start_0
-    new-instance v0, Ljava/io/ByteArrayOutputStream;
+    invoke-static {}, Ljavax/xml/parsers/DocumentBuilderFactory;->newInstance()Ljavax/xml/parsers/DocumentBuilderFactory;
 
-    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
+    move-result-object v0
 
-    new-instance v1, Ljava/util/zip/GZIPOutputStream;
+    invoke-virtual {v0}, Ljavax/xml/parsers/DocumentBuilderFactory;->newDocumentBuilder()Ljavax/xml/parsers/DocumentBuilder;
 
-    invoke-direct {v1, v0}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
+    move-result-object v0
 
-    const-string v2, "UTF-8"
-
-    invoke-virtual {p0, v2}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+    invoke-static {p0}, Lcom/purplebrain/adbuddiz/sdk/d/k;->a(Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;)Ljava/io/InputStream;
+    :try_end_0
+    .catch Lorg/xml/sax/SAXException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/util/zip/GZIPOutputStream;->write([B)V
-
-    invoke-virtual {v1}, Ljava/util/zip/GZIPOutputStream;->flush()V
-
-    invoke-virtual {v1}, Ljava/util/zip/GZIPOutputStream;->close()V
-
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/g;->a([B)Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :try_start_1
+    invoke-virtual {v0, v2}, Ljavax/xml/parsers/DocumentBuilder;->parse(Ljava/io/InputStream;)Lorg/w3c/dom/Document;
+    :try_end_1
+    .catch Lorg/xml/sax/SAXException; {:try_start_1 .. :try_end_1} :catch_7
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_6
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_5
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     move-result-object v0
+
+    :try_start_2
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_3
 
     :goto_0
+    invoke-interface {v0}, Lorg/w3c/dom/Document;->getChildNodes()Lorg/w3c/dom/NodeList;
+
+    move-result-object v2
+
+    const/4 v0, 0x0
+
+    :goto_1
+    invoke-interface {v2}, Lorg/w3c/dom/NodeList;->getLength()I
+
+    move-result v3
+
+    if-ge v0, v3, :cond_1
+
+    const-string v3, "VAST"
+
+    invoke-interface {v2, v0}, Lorg/w3c/dom/NodeList;->item(I)Lorg/w3c/dom/Node;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    new-instance v1, Lcom/purplebrain/adbuddiz/sdk/i/b/a;
+
+    invoke-interface {v2, v0}, Lorg/w3c/dom/NodeList;->item(I)Lorg/w3c/dom/Node;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Lcom/purplebrain/adbuddiz/sdk/i/b/a;-><init>(Lorg/w3c/dom/Node;)V
+
+    move-object v0, v1
+
+    :goto_2
     return-object v0
 
     :catch_0
     move-exception v0
 
-    const-string v1, "ABDataEncryptionHelper.gzipAndEncode()"
+    :goto_3
+    :try_start_3
+    new-instance v2, Lcom/purplebrain/adbuddiz/sdk/i/a/b;
 
-    invoke-static {v1, v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    sget-object v3, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->a:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    const/4 v0, 0x0
+    invoke-direct {v2, v3, v0}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Ljava/lang/Throwable;)V
 
-    goto :goto_0
-.end method
+    throw v2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-.method private static a([B)Ljava/lang/String;
-    .locals 5
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "TrulyRandom"
-        }
-    .end annotation
+    :catchall_0
+    move-exception v0
 
-    const/4 v0, 0x0
+    :goto_4
+    :try_start_4
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    :try_end_4
+    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_4
 
-    :try_start_0
-    const-string v1, "bWZSYjVSNUtlc2tkYjJ4Tg=="
+    :goto_5
+    throw v0
 
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/f;->a(Ljava/lang/String;)[B
+    :catch_1
+    move-exception v0
 
-    move-result-object v1
+    :goto_6
+    :try_start_5
+    new-instance v2, Lcom/purplebrain/adbuddiz/sdk/i/a/b;
 
-    new-instance v2, Ljavax/crypto/spec/IvParameterSpec;
+    sget-object v3, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->i:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    invoke-direct {v2, v1}, Ljavax/crypto/spec/IvParameterSpec;-><init>([B)V
+    invoke-direct {v2, v3, v0}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Ljava/lang/Throwable;)V
 
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/i/g;->a()Ljavax/crypto/spec/SecretKeySpec;
+    throw v2
 
-    move-result-object v1
+    :catch_2
+    move-exception v0
 
-    if-nez v1, :cond_0
+    :goto_7
+    new-instance v2, Lcom/purplebrain/adbuddiz/sdk/i/a/b;
 
-    :goto_0
-    return-object v0
+    sget-object v3, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->a:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    invoke-direct {v2, v3, v0}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Ljava/lang/Throwable;)V
+
+    throw v2
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     :cond_0
-    const-string v3, "AES/CBC/PKCS5Padding"
+    add-int/lit8 v0, v0, 0x1
 
-    invoke-static {v3}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
+    goto :goto_1
 
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v3, v4, v1, v2}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
-
-    invoke-virtual {v3, p0}, Ljavax/crypto/Cipher;->doFinal([B)[B
-
-    move-result-object v2
-
-    new-instance v1, Ljava/lang/String;
-
-    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/i/f;->a([B)[C
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/lang/String;-><init>([C)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
+    :cond_1
     move-object v0, v1
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    const-string v2, "ABDataEncryptionHelper.encrypt()"
-
-    invoke-static {v2, v1}, Lcom/purplebrain/adbuddiz/sdk/i/o;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_0
-.end method
-
-.method private static a()Ljavax/crypto/spec/SecretKeySpec;
-    .locals 5
-
-    const/4 v0, 0x0
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/b;->a()Lcom/purplebrain/adbuddiz/sdk/e/b;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/purplebrain/adbuddiz/sdk/e/b;->b()Lcom/purplebrain/adbuddiz/sdk/f/b;
-
-    move-result-object v2
-
-    if-nez v2, :cond_0
-
-    move-object v1, v0
-
-    :goto_0
-    if-nez v1, :cond_2
-
-    :goto_1
-    return-object v0
-
-    :cond_0
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const/4 v1, 0x0
-
-    :goto_2
-    const/16 v4, 0xc
-
-    if-ge v1, v4, :cond_1
-
-    iget-object v4, v2, Lcom/purplebrain/adbuddiz/sdk/f/b;->c:Ljava/lang/String;
-
-    invoke-virtual {v4, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    const-string v4, "D01FX2jKW5g="
-
-    invoke-virtual {v4, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    :cond_1
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    :catch_3
+    move-exception v2
 
     goto :goto_0
 
-    :cond_2
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/f;->a(Ljava/lang/String;)[B
+    :catch_4
+    move-exception v1
 
-    move-result-object v1
+    goto :goto_5
 
-    new-instance v0, Ljavax/crypto/spec/SecretKeySpec;
+    :catchall_1
+    move-exception v0
 
-    const-string v2, "AES"
+    move-object v1, v2
 
-    invoke-direct {v0, v1, v2}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
+    goto :goto_4
 
-    goto :goto_1
+    :catch_5
+    move-exception v0
+
+    move-object v1, v2
+
+    goto :goto_7
+
+    :catch_6
+    move-exception v0
+
+    move-object v1, v2
+
+    goto :goto_6
+
+    :catch_7
+    move-exception v0
+
+    move-object v1, v2
+
+    goto :goto_3
+.end method
+
+
+# virtual methods
+.method public final a(Lcom/purplebrain/adbuddiz/sdk/i/b/a/a;)Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;
+    .locals 7
+
+    check-cast p1, Lcom/purplebrain/adbuddiz/sdk/i/b/a/d;
+
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/e/a/a/d;
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/i/g;->a:Lcom/purplebrain/adbuddiz/sdk/e/a/i;
+
+    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;->a:Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;
+
+    const/4 v3, 0x0
+
+    sget-object v4, Lcom/purplebrain/adbuddiz/sdk/e/f;->c:Lcom/purplebrain/adbuddiz/sdk/e/f;
+
+    new-instance v5, Ljava/net/URL;
+
+    invoke-virtual {p1}, Lcom/purplebrain/adbuddiz/sdk/i/b/a/d;->f()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+
+    invoke-direct/range {v0 .. v5}, Lcom/purplebrain/adbuddiz/sdk/e/a/a/d;-><init>(Lcom/purplebrain/adbuddiz/sdk/e/a/a;Lcom/purplebrain/adbuddiz/sdk/e/a/a/c;ZLcom/purplebrain/adbuddiz/sdk/e/f;Ljava/net/URL;)V
+
+    return-object v0
 .end method

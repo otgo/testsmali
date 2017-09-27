@@ -25,60 +25,78 @@
     return-void
 .end method
 
-.method private a(Lcom/applovin/impl/adview/o;Landroid/net/Uri;)V
-    .locals 4
+.method private a(Landroid/net/Uri;Lcom/applovin/impl/adview/o;)V
+    .locals 5
 
-    invoke-virtual {p1}, Lcom/applovin/impl/adview/o;->a()Lcom/applovin/sdk/AppLovinAd;
+    :try_start_0
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.intent.action.VIEW"
+
+    invoke-direct {v0, v1, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    invoke-virtual {p2}, Lcom/applovin/impl/adview/o;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/applovin/impl/adview/o;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    instance-of v2, v0, Lcom/applovin/adview/AppLovinAdView;
-
-    if-eqz v2, :cond_0
-
-    if-eqz v1, :cond_0
-
-    iget-object v2, p0, Lcom/applovin/impl/adview/r;->b:Lcom/applovin/impl/adview/AdViewControllerImpl;
-
-    check-cast v0, Lcom/applovin/adview/AppLovinAdView;
-
-    iget-object v3, p0, Lcom/applovin/impl/adview/r;->b:Lcom/applovin/impl/adview/AdViewControllerImpl;
-
-    invoke-virtual {v2, v1, v0, v3, p2}, Lcom/applovin/impl/adview/AdViewControllerImpl;->a(Lcom/applovin/sdk/AppLovinAd;Lcom/applovin/adview/AppLovinAdView;Lcom/applovin/impl/adview/AdViewControllerImpl;Landroid/net/Uri;)V
+    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
     return-void
 
-    :cond_0
-    iget-object v0, p0, Lcom/applovin/impl/adview/r;->a:Lcom/applovin/sdk/AppLovinLogger;
+    :catch_0
+    move-exception v0
 
-    const-string v1, "AdWebViewClient"
+    iget-object v1, p0, Lcom/applovin/impl/adview/r;->a:Lcom/applovin/sdk/AppLovinLogger;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "AdWebViewClient"
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v3, "Attempting to track click that is null or not an ApplovinAdView instance for clickedUri = "
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, "Unable to show \""
 
-    move-result-object v2
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    move-result-object v2
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v2
+    const-string v4, "\"."
 
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3, v0}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_0
+.end method
+
+.method private c(Lcom/applovin/impl/adview/o;)V
+    .locals 2
+
+    invoke-virtual {p1}, Lcom/applovin/impl/adview/o;->a()Lcom/applovin/sdk/AppLovinAd;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Lcom/applovin/impl/adview/r;->b:Lcom/applovin/impl/adview/AdViewControllerImpl;
+
+    invoke-virtual {v1, v0}, Lcom/applovin/impl/adview/AdViewControllerImpl;->a(Lcom/applovin/sdk/AppLovinAd;)V
+
+    :cond_0
+    return-void
 .end method
 
 
@@ -148,7 +166,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_4
 
     const-string v2, "com.applovin.sdk"
 
@@ -156,7 +174,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_4
 
     const-string v2, "/adservice/next_ad"
 
@@ -186,34 +204,7 @@
     goto :goto_0
 
     :cond_2
-    sget-object v2, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;->URI_NO_OP:Ljava/lang/String;
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    sget-object v2, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;->URI_TRACK_CLICK_IMMEDIATELY:Ljava/lang/String;
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    sget-object v1, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;->URI_TRACK_CLICK_IMMEDIATELY:Ljava/lang/String;
-
-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {p0, v0, v1}, Lcom/applovin/impl/adview/r;->a(Lcom/applovin/impl/adview/o;Landroid/net/Uri;)V
-
-    goto :goto_0
-
-    :cond_3
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_3
 
     const-string v2, "/launch/"
 
@@ -221,7 +212,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_3
 
     invoke-virtual {v1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
@@ -264,9 +255,7 @@
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    const/4 v2, 0x0
-
-    invoke-direct {p0, v0, v2}, Lcom/applovin/impl/adview/r;->a(Lcom/applovin/impl/adview/o;Landroid/net/Uri;)V
+    invoke-direct {p0, v0}, Lcom/applovin/impl/adview/r;->c(Lcom/applovin/impl/adview/o;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -301,7 +290,7 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     iget-object v0, p0, Lcom/applovin/impl/adview/r;->a:Lcom/applovin/sdk/AppLovinLogger;
 
     const-string v1, "AdWebViewClient"
@@ -352,8 +341,10 @@
 
     goto/16 :goto_0
 
-    :cond_5
-    invoke-direct {p0, v0, v1}, Lcom/applovin/impl/adview/r;->a(Lcom/applovin/impl/adview/o;Landroid/net/Uri;)V
+    :cond_4
+    invoke-direct {p0, v0}, Lcom/applovin/impl/adview/r;->c(Lcom/applovin/impl/adview/o;)V
+
+    invoke-direct {p0, v1, v0}, Lcom/applovin/impl/adview/r;->a(Landroid/net/Uri;Lcom/applovin/impl/adview/o;)V
 
     goto/16 :goto_0
 .end method

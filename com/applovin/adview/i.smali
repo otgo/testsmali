@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/applovin/sdk/AppLovinAdDisplayListener;
+.implements Lcom/applovin/sdk/AppLovinAdClickListener;
 
 
 # instance fields
@@ -22,39 +22,23 @@
 
 
 # virtual methods
-.method public adDisplayed(Lcom/applovin/sdk/AppLovinAd;)V
-    .locals 2
-
-    iget-object v1, p0, Lcom/applovin/adview/i;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    move-object v0, p1
-
-    check-cast v0, Lcom/applovin/impl/sdk/AppLovinAdImpl;
-
-    invoke-static {v1, v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(Lcom/applovin/adview/AppLovinInterstitialActivity;Lcom/applovin/impl/sdk/AppLovinAdImpl;)Lcom/applovin/impl/sdk/AppLovinAdImpl;
-
-    iget-object v0, p0, Lcom/applovin/adview/i;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->y(Lcom/applovin/adview/AppLovinInterstitialActivity;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/applovin/adview/i;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    invoke-static {v0, p1}, Lcom/applovin/adview/AppLovinInterstitialActivity;->b(Lcom/applovin/adview/AppLovinInterstitialActivity;Lcom/applovin/sdk/AppLovinAd;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public adHidden(Lcom/applovin/sdk/AppLovinAd;)V
+.method public adClicked(Lcom/applovin/sdk/AppLovinAd;)V
     .locals 1
 
     iget-object v0, p0, Lcom/applovin/adview/i;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    invoke-static {v0, p1}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(Lcom/applovin/adview/AppLovinInterstitialActivity;Lcom/applovin/sdk/AppLovinAd;)V
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->w(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/af;
 
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/applovin/impl/adview/af;->e()Lcom/applovin/sdk/AppLovinAdClickListener;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0, p1}, Lcom/applovin/sdk/AppLovinAdClickListener;->adClicked(Lcom/applovin/sdk/AppLovinAd;)V
+
+    :cond_0
     return-void
 .end method

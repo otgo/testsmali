@@ -38,14 +38,14 @@
 
 
 # virtual methods
-.method a(Lcom/jirbo/adcolony/ae;)V
+.method a(Lcom/jirbo/adcolony/af;)V
     .locals 1
 
     .prologue
     .line 464
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCData$f;->a:Ljava/lang/String;
 
-    invoke-virtual {p0, p1, v0}, Lcom/jirbo/adcolony/ADCData$f;->a(Lcom/jirbo/adcolony/ae;Ljava/lang/String;)V
+    invoke-virtual {p0, p1, v0}, Lcom/jirbo/adcolony/ADCData$f;->a(Lcom/jirbo/adcolony/af;Ljava/lang/String;)V
 
     .line 465
     return-void

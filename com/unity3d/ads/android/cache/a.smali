@@ -1,62 +1,69 @@
-.class final Lcom/unity3d/ads/android/cache/a;
+.class final synthetic Lcom/unity3d/ads/android/cache/a;
 .super Ljava/lang/Object;
-.source "UnityAdsCache.java"
+.source "UnityAdsDownloader.java"
 
-# interfaces
-.implements Ljava/io/FilenameFilter;
+
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 118
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final accept(Ljava/io/File;Ljava/lang/String;)Z
+.method static constructor <clinit>()V
     .locals 3
 
     .prologue
-    .line 121
-    const-string v0, "UnityAds-"
+    .line 120
+    invoke-static {}, Lcom/unity3d/ads/android/cache/c;->values()[Lcom/unity3d/ads/android/cache/c;
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    move-result-object v0
 
-    move-result v0
+    array-length v0, v0
 
-    .line 122
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-array v0, v0, [I
 
-    const-string v2, "Unity Ads cache: filtering result for file: "
+    sput-object v0, Lcom/unity3d/ads/android/cache/a;->a:[I
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :try_start_0
+    sget-object v0, Lcom/unity3d/ads/android/cache/a;->a:[I
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v1, Lcom/unity3d/ads/android/cache/c;->DownloadCompleted:Lcom/unity3d/ads/android/cache/c;
 
-    move-result-object v1
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/cache/c;->ordinal()I
 
-    const-string v2, ", "
+    move-result v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v2, 0x1
 
-    move-result-object v1
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    :goto_0
+    :try_start_1
+    sget-object v0, Lcom/unity3d/ads/android/cache/a;->a:[I
 
-    move-result-object v1
+    sget-object v1, Lcom/unity3d/ads/android/cache/c;->DownloadCancelled:Lcom/unity3d/ads/android/cache/c;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/cache/c;->ordinal()I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-static {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
+    const/4 v2, 0x2
 
-    .line 123
-    return v0
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
+
+    :goto_1
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_0
 .end method

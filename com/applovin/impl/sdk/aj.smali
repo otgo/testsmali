@@ -8,24 +8,20 @@
 # instance fields
 .field final synthetic a:Lcom/applovin/sdk/AppLovinAd;
 
-.field final synthetic b:D
+.field final synthetic b:Ljava/util/Map;
 
-.field final synthetic c:Z
-
-.field final synthetic d:Lcom/applovin/impl/sdk/ae;
+.field final synthetic c:Lcom/applovin/impl/sdk/ad;
 
 
 # direct methods
-.method constructor <init>(Lcom/applovin/impl/sdk/ae;Lcom/applovin/sdk/AppLovinAd;DZ)V
-    .locals 1
+.method constructor <init>(Lcom/applovin/impl/sdk/ad;Lcom/applovin/sdk/AppLovinAd;Ljava/util/Map;)V
+    .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/aj;->d:Lcom/applovin/impl/sdk/ae;
+    iput-object p1, p0, Lcom/applovin/impl/sdk/aj;->c:Lcom/applovin/impl/sdk/ad;
 
     iput-object p2, p0, Lcom/applovin/impl/sdk/aj;->a:Lcom/applovin/sdk/AppLovinAd;
 
-    iput-wide p3, p0, Lcom/applovin/impl/sdk/aj;->b:D
-
-    iput-boolean p5, p0, Lcom/applovin/impl/sdk/aj;->c:Z
+    iput-object p3, p0, Lcom/applovin/impl/sdk/aj;->b:Ljava/util/Map;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,21 +31,19 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 3
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/aj;->d:Lcom/applovin/impl/sdk/ae;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/aj;->c:Lcom/applovin/impl/sdk/ad;
 
-    invoke-static {v0}, Lcom/applovin/impl/sdk/ae;->d(Lcom/applovin/impl/sdk/ae;)Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
+    invoke-static {v0}, Lcom/applovin/impl/sdk/ad;->a(Lcom/applovin/impl/sdk/ad;)Lcom/applovin/sdk/AppLovinAdRewardListener;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/applovin/impl/sdk/aj;->a:Lcom/applovin/sdk/AppLovinAd;
 
-    iget-wide v2, p0, Lcom/applovin/impl/sdk/aj;->b:D
+    iget-object v2, p0, Lcom/applovin/impl/sdk/aj;->b:Ljava/util/Map;
 
-    iget-boolean v4, p0, Lcom/applovin/impl/sdk/aj;->c:Z
-
-    invoke-interface {v0, v1, v2, v3, v4}, Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;->videoPlaybackEnded(Lcom/applovin/sdk/AppLovinAd;DZ)V
+    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinAdRewardListener;->userRewardVerified(Lcom/applovin/sdk/AppLovinAd;Ljava/util/Map;)V
 
     return-void
 .end method

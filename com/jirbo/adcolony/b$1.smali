@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jirbo/adcolony/b;->g()V
+    value = Lcom/jirbo/adcolony/b;-><init>(Lcom/jirbo/adcolony/d;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 190
+    .line 32
     iput-object p1, p0, Lcom/jirbo/adcolony/b$1;->a:Lcom/jirbo/adcolony/b;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,45 +37,29 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 194
-    const/4 v0, 0x0
+    .line 35
+    iget-object v0, p0, Lcom/jirbo/adcolony/b$1;->a:Lcom/jirbo/adcolony/b;
 
-    :goto_0
-    const/16 v1, 0x1f4
+    const/4 v1, 0x1
 
-    if-ge v0, v1, :cond_0
+    iput-boolean v1, v0, Lcom/jirbo/adcolony/b;->e:Z
 
-    .line 196
-    invoke-static {}, Lcom/jirbo/adcolony/a;->a()Z
+    .line 36
+    iget-object v0, p0, Lcom/jirbo/adcolony/b$1;->a:Lcom/jirbo/adcolony/b;
 
-    move-result v1
+    iget-boolean v0, v0, Lcom/jirbo/adcolony/b;->f:Z
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    .line 200
-    const-wide/16 v2, 0xa
+    .line 38
+    iget-object v0, p0, Lcom/jirbo/adcolony/b$1;->a:Lcom/jirbo/adcolony/b;
 
-    :try_start_0
-    invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0}, Lcom/jirbo/adcolony/b;->e()V
 
-    .line 194
-    :goto_1
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 202
-    :catch_0
-    move-exception v1
-
-    goto :goto_1
-
-    .line 209
+    .line 40
     :cond_0
     return-void
 .end method

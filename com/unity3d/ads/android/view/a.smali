@@ -1,39 +1,69 @@
-.class final Lcom/unity3d/ads/android/view/a;
+.class final synthetic Lcom/unity3d/ads/android/view/a;
 .super Ljava/lang/Object;
-.source "UnityAdsFullscreenActivity.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "UnityAdsMainView.java"
 
 
-# instance fields
-.field final synthetic a:Lcom/unity3d/ads/android/view/UnityAdsFullscreenActivity;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/unity3d/ads/android/view/UnityAdsFullscreenActivity;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 354
-    iput-object p1, p0, Lcom/unity3d/ads/android/view/a;->a:Lcom/unity3d/ads/android/view/UnityAdsFullscreenActivity;
+    .line 117
+    invoke-static {}, Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;->values()[Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
 
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/unity3d/ads/android/view/a;->a:[I
+
+    :try_start_0
+    sget-object v0, Lcom/unity3d/ads/android/view/a;->a:[I
+
+    sget-object v1, Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;->WebView:Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;
+
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
+
+    :goto_0
+    :try_start_1
+    sget-object v0, Lcom/unity3d/ads/android/view/a;->a:[I
+
+    sget-object v1, Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;->VideoPlayer:Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;
+
+    invoke-virtual {v1}, Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
+
+    :goto_1
     return-void
-.end method
 
+    :catch_0
+    move-exception v0
 
-# virtual methods
-.method public final run()V
-    .locals 1
+    goto :goto_1
 
-    .prologue
-    .line 357
-    iget-object v0, p0, Lcom/unity3d/ads/android/view/a;->a:Lcom/unity3d/ads/android/view/UnityAdsFullscreenActivity;
+    :catch_1
+    move-exception v0
 
-    invoke-virtual {v0}, Lcom/unity3d/ads/android/view/UnityAdsFullscreenActivity;->finish()V
-
-    .line 358
-    return-void
+    goto :goto_0
 .end method

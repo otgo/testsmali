@@ -168,14 +168,6 @@
     return-void
 .end method
 
-.method public getAdViewController()Lcom/applovin/adview/AdViewController;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinAdView;->a:Lcom/applovin/adview/AdViewController;
-
-    return-object v0
-.end method
-
 .method public getSize()Lcom/applovin/sdk/AppLovinAdSize;
     .locals 1
 

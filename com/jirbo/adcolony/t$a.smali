@@ -17,41 +17,33 @@
 # instance fields
 .field a:Ljava/lang/String;
 
-.field b:Ljava/lang/String;
+.field b:I
 
 .field c:Ljava/lang/String;
 
-.field d:Ljava/lang/String;
-
-.field e:D
-
-.field f:I
-
-.field g:I
-
-.field h:I
-
-.field i:I
-
-.field j:Z
-
-.field k:Z
-
-.field l:Z
+.field d:D
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 1
+.method constructor <init>(Ljava/lang/String;DLjava/lang/String;I)V
+    .locals 0
 
     .prologue
-    .line 399
+    .line 224
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 409
-    const/4 v0, -0x1
+    .line 225
+    iput-object p1, p0, Lcom/jirbo/adcolony/t$a;->c:Ljava/lang/String;
 
-    iput v0, p0, Lcom/jirbo/adcolony/t$a;->i:I
+    .line 226
+    iput-wide p2, p0, Lcom/jirbo/adcolony/t$a;->d:D
 
+    .line 227
+    iput-object p4, p0, Lcom/jirbo/adcolony/t$a;->a:Ljava/lang/String;
+
+    .line 228
+    iput p5, p0, Lcom/jirbo/adcolony/t$a;->b:I
+
+    .line 229
     return-void
 .end method

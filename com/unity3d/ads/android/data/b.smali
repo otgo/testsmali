@@ -19,17 +19,17 @@
     .locals 1
 
     .prologue
-    .line 179
+    .line 174
     iput-object p1, p0, Lcom/unity3d/ads/android/data/b;->b:Lcom/unity3d/ads/android/data/UnityAdsAdvertisingId;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 180
+    .line 175
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/unity3d/ads/android/data/b;->a:Z
 
-    .line 181
+    .line 176
     new-instance v0, Ljava/util/concurrent/LinkedBlockingQueue;
 
     invoke-direct {v0}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
@@ -43,7 +43,7 @@
     .locals 0
 
     .prologue
-    .line 179
+    .line 174
     invoke-direct {p0, p1}, Lcom/unity3d/ads/android/data/b;-><init>(Lcom/unity3d/ads/android/data/UnityAdsAdvertisingId;)V
 
     return-void
@@ -55,7 +55,7 @@
     .locals 1
 
     .prologue
-    .line 196
+    .line 187
     iget-boolean v0, p0, Lcom/unity3d/ads/android/data/b;->a:Z
 
     if-eqz v0, :cond_0
@@ -66,13 +66,13 @@
 
     throw v0
 
-    .line 197
+    .line 188
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/unity3d/ads/android/data/b;->a:Z
 
-    .line 198
+    .line 189
     iget-object v0, p0, Lcom/unity3d/ads/android/data/b;->c:Ljava/util/concurrent/BlockingQueue;
 
     invoke-interface {v0}, Ljava/util/concurrent/BlockingQueue;->take()Ljava/lang/Object;
@@ -88,7 +88,7 @@
     .locals 1
 
     .prologue
-    .line 186
+    .line 180
     :try_start_0
     iget-object v0, p0, Lcom/unity3d/ads/android/data/b;->c:Ljava/util/concurrent/BlockingQueue;
 
@@ -96,17 +96,12 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 190
+    .line 181
     :goto_0
     return-void
 
-    .line 188
     :catch_0
     move-exception v0
-
-    const-string v0, "Couldn\'t put service to binder que"
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -115,6 +110,6 @@
     .locals 0
 
     .prologue
-    .line 193
+    .line 184
     return-void
 .end method

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/applovin/adview/p;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    invoke-virtual {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->dismiss()V
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->l(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
     return-void
 .end method

@@ -2,57 +2,86 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/purplebrain/adbuddiz/sdk/h/a/d$a;
-    }
-.end annotation
-
-
-# instance fields
-.field a:Ljava/lang/String;
-
-.field b:Ljava/lang/String;
-
-.field c:Ljava/lang/String;
-
-
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static a()Lcom/purplebrain/adbuddiz/sdk/e/f;
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/AdBuddiz;->getContext()Landroid/content/Context;
 
-    return-void
-.end method
+    move-result-object v1
 
+    const-string v0, "window"
 
-# virtual methods
-.method public final a()Lorg/json/JSONObject;
-    .locals 3
+    invoke-virtual {v1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    new-instance v0, Lorg/json/JSONObject;
+    move-result-object v0
 
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
+    check-cast v0, Landroid/view/WindowManager;
 
-    const-string v1, "pk"
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/h/a/d;->a:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v0}, Landroid/view/Display;->getWidth()I
 
-    const-string v1, "v"
+    move-result v2
 
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/h/a/d;->b:Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/view/Display;->getHeight()I
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    move-result v3
 
-    const-string v1, "t"
+    if-ge v2, v3, :cond_0
 
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/h/a/d;->c:Ljava/lang/String;
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/e/f;->a:Lcom/purplebrain/adbuddiz/sdk/e/f;
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
+    :goto_0
     return-object v0
+
+    :cond_0
+    invoke-virtual {v0}, Landroid/view/Display;->getWidth()I
+
+    move-result v2
+
+    invoke-virtual {v0}, Landroid/view/Display;->getHeight()I
+
+    move-result v0
+
+    if-le v2, v0, :cond_1
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/e/f;->b:Lcom/purplebrain/adbuddiz/sdk/e/f;
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/content/res/Configuration;->orientation:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_2
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/e/f;->a:Lcom/purplebrain/adbuddiz/sdk/e/f;
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_3
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/e/f;->b:Lcom/purplebrain/adbuddiz/sdk/e/f;
+
+    goto :goto_0
+
+    :cond_3
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/e/f;->a:Lcom/purplebrain/adbuddiz/sdk/e/f;
+
+    goto :goto_0
 .end method

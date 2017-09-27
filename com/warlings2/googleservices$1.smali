@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 100
+    .line 77
     iput-object p1, p0, Lcom/warlings2/googleservices$1;->this$0:Lcom/warlings2/googleservices;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 0
 
     .prologue
-    .line 101
+    .line 78
     return-void
 .end method
 
@@ -48,100 +48,70 @@
     .locals 2
 
     .prologue
-    .line 117
+    .line 91
     sget v0, Lcom/warlings2/googleservices;->callback:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 118
+    .line 92
     invoke-static {}, Lcom/warlings2/googleservices;->ad_closed()V
 
-    .line 120
+    .line 94
     :cond_0
     return-void
 .end method
 
 .method public didFailToShowAd(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x1
-
-    .line 104
+    .line 81
     const-string v0, "ADBUDDIZ"
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "didFailToShowAd, fyber_intent:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/warlings2/googleservices;->fyber_intent:Landroid/content/Intent;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "didFailToShowAd"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 105
+    .line 82
     sget-object v0, Lcom/warlings2/googleservices;->fyber_intent:Landroid/content/Intent;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     sget-object v0, Lcom/ideaworks3d/marmalade/LoaderActivity;->m_Activity:Lcom/ideaworks3d/marmalade/LoaderActivity;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 106
-    const-string v0, "ADBUDDIZ"
-
-    const-string v1, "startActivityForResult"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 107
+    .line 83
     sget-object v0, Lcom/ideaworks3d/marmalade/LoaderActivity;->m_Activity:Lcom/ideaworks3d/marmalade/LoaderActivity;
 
     sget-object v1, Lcom/warlings2/googleservices;->fyber_intent:Landroid/content/Intent;
 
-    const/16 v2, 0x162e
+    sget v2, Lcom/warlings2/googleservices;->FYBER_INTENT_ID:I
 
     invoke-virtual {v0, v1, v2}, Lcom/ideaworks3d/marmalade/LoaderActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 108
+    .line 84
     const/4 v0, 0x0
 
     sput-object v0, Lcom/warlings2/googleservices;->fyber_intent:Landroid/content/Intent;
 
-    .line 114
+    .line 88
+    :cond_0
     :goto_0
     return-void
 
-    .line 109
-    :cond_0
+    .line 85
+    :cond_1
     sget v0, Lcom/warlings2/googleservices;->callback:I
 
-    if-ne v0, v3, :cond_1
+    const/4 v1, 0x1
 
-    .line 110
+    if-ne v0, v1, :cond_0
+
+    .line 86
     invoke-static {}, Lcom/warlings2/googleservices;->ad_closed()V
-
-    goto :goto_0
-
-    .line 112
-    :cond_1
-    invoke-static {v3}, Lcom/warlings2/googleservices;->access$002(Z)Z
 
     goto :goto_0
 .end method
@@ -150,17 +120,17 @@
     .locals 2
 
     .prologue
-    .line 123
+    .line 97
     sget v0, Lcom/warlings2/googleservices;->callback:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 124
+    .line 98
     invoke-static {}, Lcom/warlings2/googleservices;->ad_closed()V
 
-    .line 126
+    .line 100
     :cond_0
     return-void
 .end method
@@ -169,6 +139,6 @@
     .locals 0
 
     .prologue
-    .line 102
+    .line 79
     return-void
 .end method

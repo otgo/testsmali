@@ -25,17 +25,6 @@
 
     .prologue
     .line 25
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    const-string v0, ""
-
-    .line 26
-    :goto_0
-    return-object v0
-
-    :cond_0
     invoke-static {}, Lcom/jirbo/adcolony/AdColony;->activity()Landroid/app/Activity;
 
     move-result-object v0
@@ -50,27 +39,14 @@
 
     move-result-object v0
 
-    goto :goto_0
+    return-object v0
 .end method
 
 .method static b()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 31
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v0, :cond_1
-
-    const-string v0, ""
-
-    .line 35
-    :cond_0
-    :goto_0
-    return-object v0
-
-    .line 32
-    :cond_1
+    .line 30
     invoke-static {}, Lcom/jirbo/adcolony/AdColony;->activity()Landroid/app/Activity;
 
     move-result-object v0
@@ -83,12 +59,12 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
-    .line 33
+    .line 31
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getNetworkOperatorName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 34
+    .line 32
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -97,26 +73,16 @@
 
     const-string v0, "unknown"
 
-    goto :goto_0
+    .line 33
+    :cond_0
+    return-object v0
 .end method
 
 .method static c()I
     .locals 2
 
     .prologue
-    .line 40
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    .line 42
-    :goto_0
-    return v0
-
-    .line 41
-    :cond_0
+    .line 38
     invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
 
     move-result-object v0
@@ -135,27 +101,27 @@
 
     check-cast v0, Landroid/app/ActivityManager;
 
-    .line 42
+    .line 39
     invoke-virtual {v0}, Landroid/app/ActivityManager;->getMemoryClass()I
 
     move-result v0
 
-    goto :goto_0
+    return v0
 .end method
 
 .method static d()J
     .locals 6
 
     .prologue
-    .line 47
+    .line 44
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
-    .line 48
+    .line 45
     const/high16 v1, 0x100000
 
-    .line 49
+    .line 46
     invoke-virtual {v0}, Ljava/lang/Runtime;->totalMemory()J
 
     move-result-wide v2
@@ -177,45 +143,23 @@
     .locals 1
 
     .prologue
-    .line 54
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    const-string v0, ""
-
-    .line 55
-    :goto_0
-    return-object v0
-
-    :cond_0
+    .line 51
     invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/jirbo/adcolony/ai;->a(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/jirbo/adcolony/aj;->a(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_0
+    return-object v0
 .end method
 
 .method static f()I
     .locals 1
 
     .prologue
-    .line 60
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    .line 61
-    :goto_0
-    return v0
-
-    :cond_0
+    .line 56
     invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
 
     move-result-object v0
@@ -232,25 +176,14 @@
 
     move-result v0
 
-    goto :goto_0
+    return v0
 .end method
 
 .method static g()I
     .locals 1
 
     .prologue
-    .line 66
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    .line 67
-    :goto_0
-    return v0
-
-    :cond_0
+    .line 61
     invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
 
     move-result-object v0
@@ -267,14 +200,14 @@
 
     move-result v0
 
-    goto :goto_0
+    return v0
 .end method
 
 .method static h()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 72
+    .line 66
     const-string v0, ""
 
     return-object v0
@@ -288,25 +221,12 @@
 
     const/4 v1, 0x0
 
-    .line 77
-    sget-object v2, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v2, :cond_1
-
-    move v0, v1
-
-    .line 86
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 78
-    :cond_1
-    sget-object v2, Lcom/jirbo/adcolony/a;->ah:Ljava/lang/String;
+    .line 71
+    sget-object v2, Lcom/jirbo/adcolony/a;->Y:Ljava/lang/String;
 
     if-eqz v2, :cond_2
 
-    sget-object v2, Lcom/jirbo/adcolony/a;->ah:Ljava/lang/String;
+    sget-object v2, Lcom/jirbo/adcolony/a;->Y:Ljava/lang/String;
 
     const-string v3, "tablet"
 
@@ -314,13 +234,20 @@
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_1
 
+    .line 79
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
     move v0, v1
 
+    .line 71
     goto :goto_0
 
-    .line 80
+    .line 73
     :cond_2
     invoke-static {}, Lcom/jirbo/adcolony/AdColony;->activity()Landroid/app/Activity;
 
@@ -334,7 +261,7 @@
 
     move-result-object v2
 
-    .line 81
+    .line 74
     iget v3, v2, Landroid/util/DisplayMetrics;->widthPixels:I
 
     int-to-float v3, v3
@@ -343,7 +270,7 @@
 
     div-float/2addr v3, v4
 
-    .line 82
+    .line 75
     iget v4, v2, Landroid/util/DisplayMetrics;->heightPixels:I
 
     int-to-float v4, v4
@@ -352,7 +279,7 @@
 
     div-float v2, v4, v2
 
-    .line 83
+    .line 76
     mul-float/2addr v3, v3
 
     mul-float/2addr v2, v2
@@ -365,7 +292,7 @@
 
     move-result-wide v2
 
-    .line 86
+    .line 79
     const-wide/high16 v4, 0x4018000000000000L    # 6.0
 
     cmpl-double v2, v2, v4
@@ -381,7 +308,7 @@
     .locals 1
 
     .prologue
-    .line 89
+    .line 82
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
@@ -397,19 +324,7 @@
     .locals 2
 
     .prologue
-    .line 93
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    const-string v0, ""
-
-    .line 102
-    :goto_0
-    return-object v0
-
-    .line 96
-    :cond_0
+    .line 88
     :try_start_0
     invoke-static {}, Lcom/jirbo/adcolony/AdColony;->activity()Landroid/app/Activity;
 
@@ -423,25 +338,27 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 97
+    .line 89
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
     move-result-object v0
 
-    .line 98
+    .line 90
     invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getMacAddress()Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
-    goto :goto_0
+    .line 94
+    :goto_0
+    return-object v0
 
-    .line 100
+    .line 92
     :catch_0
     move-exception v0
 
-    .line 102
+    .line 94
     const/4 v0, 0x0
 
     goto :goto_0
@@ -451,7 +368,7 @@
     .locals 1
 
     .prologue
-    .line 108
+    .line 100
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     return-object v0
@@ -461,7 +378,7 @@
     .locals 1
 
     .prologue
-    .line 111
+    .line 103
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     return-object v0
@@ -471,7 +388,7 @@
     .locals 1
 
     .prologue
-    .line 115
+    .line 107
     const-string v0, ""
 
     return-object v0
@@ -481,7 +398,7 @@
     .locals 1
 
     .prologue
-    .line 120
+    .line 112
     sget-object v0, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
 
     return-object v0

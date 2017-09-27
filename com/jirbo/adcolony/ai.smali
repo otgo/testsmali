@@ -3,194 +3,144 @@
 .source "SourceFile"
 
 
-# static fields
-.field private static a:Ljava/lang/String; = null
-
-.field private static final b:Ljava/lang/String; = "INSTALLATION"
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 126
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/jirbo/adcolony/ai;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
 .method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 124
+    .line 237
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static declared-synchronized a(Landroid/content/Context;)Ljava/lang/String;
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/security/NoSuchAlgorithmException;,
+            Ljava/io/UnsupportedEncodingException;
+        }
+    .end annotation
 
     .prologue
-    .line 131
-    const-class v1, Lcom/jirbo/adcolony/ai;
+    .line 255
+    const-string v0, "SHA-1"
 
-    monitor-enter v1
+    invoke-static {v0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
-    :try_start_0
-    sget-object v0, Lcom/jirbo/adcolony/ai;->a:Ljava/lang/String;
+    move-result-object v0
 
-    if-nez v0, :cond_1
+    .line 256
+    const-string v1, "iso-8859-1"
 
-    .line 133
-    new-instance v0, Ljava/io/File;
+    invoke-virtual {p0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
-    invoke-virtual {p0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    const-string v3, "INSTALLATION"
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result v3
 
-    .line 136
-    :try_start_1
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+    invoke-virtual {v0, v1, v2, v3}, Ljava/security/MessageDigest;->update([BII)V
 
-    move-result v2
+    .line 257
+    invoke-virtual {v0}, Ljava/security/MessageDigest;->digest()[B
 
-    if-nez v2, :cond_0
+    move-result-object v0
 
-    .line 138
-    invoke-static {v0}, Lcom/jirbo/adcolony/ai;->b(Ljava/io/File;)V
+    .line 258
+    invoke-static {v0}, Lcom/jirbo/adcolony/ai;->a([B)Ljava/lang/String;
 
-    .line 140
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private static a([B)Ljava/lang/String;
+    .locals 9
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 241
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 242
+    array-length v6, p0
+
+    move v4, v2
+
+    :goto_0
+    if-ge v4, v6, :cond_1
+
+    aget-byte v7, p0, v4
+
+    .line 243
+    ushr-int/lit8 v0, v7, 0x4
+
+    and-int/lit8 v0, v0, 0xf
+
+    move v1, v2
+
+    .line 246
+    :goto_1
+    if-ltz v0, :cond_0
+
+    const/16 v3, 0x9
+
+    if-gt v0, v3, :cond_0
+
+    add-int/lit8 v0, v0, 0x30
+
+    int-to-char v0, v0
+
+    :goto_2
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 247
+    and-int/lit8 v3, v7, 0xf
+
+    .line 248
+    add-int/lit8 v0, v1, 0x1
+
+    const/4 v8, 0x1
+
+    if-lt v1, v8, :cond_2
+
+    .line 242
+    add-int/lit8 v0, v4, 0x1
+
+    move v4, v0
+
+    goto :goto_0
+
+    .line 246
     :cond_0
-    invoke-static {v0}, Lcom/jirbo/adcolony/ai;->a(Ljava/io/File;)Ljava/lang/String;
+    add-int/lit8 v0, v0, -0xa
 
-    move-result-object v0
+    add-int/lit8 v0, v0, 0x61
 
-    sput-object v0, Lcom/jirbo/adcolony/ai;->a:Ljava/lang/String;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    int-to-char v0, v0
 
-    .line 147
+    goto :goto_2
+
+    .line 250
     :cond_1
-    :try_start_2
-    sget-object v0, Lcom/jirbo/adcolony/ai;->a:Ljava/lang/String;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 142
-    :catch_0
-    move-exception v0
-
-    .line 144
-    :try_start_3
-    new-instance v2, Lcom/jirbo/adcolony/AdColonyException;
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v2, v0}, Lcom/jirbo/adcolony/AdColonyException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 131
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method private static a(Ljava/io/File;)Ljava/lang/String;
-    .locals 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 152
-    new-instance v0, Ljava/io/RandomAccessFile;
-
-    const-string v1, "r"
-
-    invoke-direct {v0, p0, v1}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 153
-    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->length()J
-
-    move-result-wide v2
-
-    long-to-int v1, v2
-
-    new-array v1, v1, [B
-
-    .line 154
-    invoke-virtual {v0, v1}, Ljava/io/RandomAccessFile;->readFully([B)V
-
-    .line 155
-    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->close()V
-
-    .line 156
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
-
     return-object v0
-.end method
 
-.method private static b(Ljava/io/File;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    :cond_2
+    move v1, v0
 
-    .prologue
-    .line 161
-    new-instance v0, Ljava/io/FileOutputStream;
+    move v0, v3
 
-    invoke-direct {v0, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-
-    .line 162
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/util/UUID;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 163
-    invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/FileOutputStream;->write([B)V
-
-    .line 164
-    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
-
-    .line 165
-    return-void
+    goto :goto_1
 .end method

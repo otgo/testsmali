@@ -1,162 +1,150 @@
 .class final Lcom/unity3d/ads/android/webapp/n;
-.super Ljava/lang/Object;
+.super Landroid/webkit/WebChromeClient;
 .source "UnityAdsWebView.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field final synthetic a:Lcom/unity3d/ads/android/webapp/UnityAdsWebView;
 
-.field private b:Ljava/lang/String;
-
-.field private c:Landroid/webkit/WebView;
-
 
 # direct methods
-.method public constructor <init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebView;Ljava/lang/String;Landroid/webkit/WebView;)V
-    .locals 1
+.method private constructor <init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebView;)V
+    .locals 0
 
     .prologue
-    const/4 v0, 0x0
-
-    .line 302
+    .line 297
     iput-object p1, p0, Lcom/unity3d/ads/android/webapp/n;->a:Lcom/unity3d/ads/android/webapp/UnityAdsWebView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
 
-    .line 299
-    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/n;->b:Ljava/lang/String;
+    return-void
+.end method
 
-    .line 300
-    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/n;->c:Landroid/webkit/WebView;
+.method synthetic constructor <init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebView;B)V
+    .locals 0
 
-    .line 303
-    iput-object p2, p0, Lcom/unity3d/ads/android/webapp/n;->b:Ljava/lang/String;
+    .prologue
+    .line 297
+    invoke-direct {p0, p1}, Lcom/unity3d/ads/android/webapp/n;-><init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebView;)V
 
-    .line 304
-    iput-object p3, p0, Lcom/unity3d/ads/android/webapp/n;->c:Landroid/webkit/WebView;
-
-    .line 305
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V
+    .locals 4
 
     .prologue
-    .line 309
-    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/n;->b:Ljava/lang/String;
+    .line 299
+    .line 300
+    const/4 v1, 0x0
 
-    if-eqz v0, :cond_1
-
-    .line 311
+    .line 303
     :try_start_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    new-instance v0, Ljava/io/File;
+
+    invoke-direct {v0, p3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/16 v1, 0x13
+    .line 309
+    :goto_0
+    if-eqz v0, :cond_0
 
-    if-lt v0, v1, :cond_0
+    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
 
-    .line 313
-    :try_start_1
-    const-class v0, Landroid/webkit/WebView;
+    move-result-object v1
 
-    const-string v1, "evaluateJavascript"
+    if-eqz v1, :cond_0
 
-    const/4 v2, 0x2
+    .line 310
+    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
 
-    new-array v2, v2, [Ljava/lang/Class;
+    move-result-object p3
 
-    const/4 v3, 0x0
+    .line 312
+    :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-class v4, Ljava/lang/String;
+    const-string v1, "JavaScript (sourceId="
 
-    aput-object v4, v2, v3
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const/4 v3, 0x1
-
-    const-class v4, Landroid/webkit/ValueCallback;
-
-    aput-object v4, v2, v3
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 314
-    iget-object v1, p0, Lcom/unity3d/ads/android/webapp/n;->c:Landroid/webkit/WebView;
+    const-string v1, ", line="
 
-    const/4 v2, 0x2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    move-result-object v0
 
-    const/4 v3, 0x0
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v4, p0, Lcom/unity3d/ads/android/webapp/n;->b:Ljava/lang/String;
+    move-result-object v0
 
-    aput-object v4, v2, v3
+    const-string v1, "): "
 
-    const/4 v3, 0x1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x0
+    move-result-object v0
 
-    aput-object v4, v2, v3
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    move-result-object v0
 
-    .line 331
-    :goto_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
+
+    .line 313
     return-void
 
-    .line 317
+    .line 305
     :catch_0
     move-exception v0
 
-    :try_start_2
-    const-string v0, "Could not invoke evaluateJavascript"
+    .line 306
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    const-string v3, "Could not handle sourceId: "
 
-    goto :goto_0
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 325
-    :catch_1
-    move-exception v0
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    const-string v0, "Error while processing JavaScriptString!"
+    move-result-object v0
 
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    move-result-object v0
 
-    .line 321
-    :cond_0
-    :try_start_3
-    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/n;->a:Lcom/unity3d/ads/android/webapp/UnityAdsWebView;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/unity3d/ads/android/webapp/n;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lcom/unity3d/ads/android/webapp/UnityAdsWebView;->loadUrl(Ljava/lang/String;)V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
-
-    goto :goto_0
-
-    .line 329
-    :cond_1
-    const-string v0, "Could not process JavaScript, the string is NULL"
+    move-result-object v0
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
 
+    move-object v0, v1
+
     goto :goto_0
+.end method
+
+.method public final onReachedMaxAppCacheSize(JJLandroid/webkit/WebStorage$QuotaUpdater;)V
+    .locals 3
+
+    .prologue
+    .line 316
+    const-wide/16 v0, 0x2
+
+    mul-long/2addr v0, p1
+
+    invoke-interface {p5, v0, v1}, Landroid/webkit/WebStorage$QuotaUpdater;->updateQuota(J)V
+
+    .line 317
+    return-void
 .end method

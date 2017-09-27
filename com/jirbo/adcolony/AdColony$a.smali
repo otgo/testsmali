@@ -38,18 +38,18 @@
     .locals 1
 
     .prologue
-    .line 450
+    .line 442
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 445
+    .line 437
     const-string v0, ""
 
     iput-object v0, p0, Lcom/jirbo/adcolony/AdColony$a;->b:Ljava/lang/String;
 
-    .line 451
+    .line 443
     iput-object p1, p0, Lcom/jirbo/adcolony/AdColony$a;->a:Landroid/app/Activity;
 
-    .line 452
+    .line 444
     return-void
 .end method
 
@@ -61,8 +61,8 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 457
-    .line 460
+    .line 449
+    .line 452
     :try_start_0
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColony$a;->a:Landroid/app/Activity;
 
@@ -74,30 +74,29 @@
 
     move-result-object v0
 
-    .line 482
+    .line 473
     invoke-virtual {v0}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->getId()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/jirbo/adcolony/AdColony$a;->b:Ljava/lang/String;
 
-    .line 483
+    .line 474
     invoke-virtual {v0}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->isLimitAdTrackingEnabled()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/jirbo/adcolony/AdColony$a;->c:Z
 
-    .line 484
-    :cond_0
+    .line 475
     :goto_0
     return-object v3
 
-    .line 462
+    .line 454
     :catch_0
     move-exception v0
 
-    .line 465
+    .line 457
     sget-object v0, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Google Play Services SDK not installed! Collecting Android Id instead of Advertising Id."
@@ -106,11 +105,11 @@
 
     goto :goto_0
 
-    .line 468
+    .line 460
     :catch_1
     move-exception v0
 
-    .line 471
+    .line 463
     sget-object v0, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Google Play Services SDK is out of date! Collecting Android Id instead of Advertising Id."
@@ -119,29 +118,18 @@
 
     goto :goto_0
 
-    .line 474
+    .line 466
     :catch_2
     move-exception v0
 
-    .line 476
-    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
-
-    const-string v2, "Amazon"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 478
+    .line 469
     sget-object v1, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
 
     const-string v2, "Advertising Id not available! Collecting Android Id instead of Advertising Id."
 
     invoke-virtual {v1, v2}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 479
+    .line 470
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
@@ -151,22 +139,22 @@
     .locals 1
 
     .prologue
-    .line 490
+    .line 481
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColony$a;->b:Ljava/lang/String;
 
     sput-object v0, Lcom/jirbo/adcolony/g;->a:Ljava/lang/String;
 
-    .line 491
+    .line 482
     iget-boolean v0, p0, Lcom/jirbo/adcolony/AdColony$a;->c:Z
 
     sput-boolean v0, Lcom/jirbo/adcolony/g;->b:Z
 
-    .line 492
+    .line 483
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/jirbo/adcolony/AdColony;->c:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/AdColony;->b:Z
 
-    .line 493
+    .line 484
     return-void
 .end method
 
@@ -174,7 +162,7 @@
     .locals 1
 
     .prologue
-    .line 442
+    .line 434
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/jirbo/adcolony/AdColony$a;->a([Ljava/lang/Void;)Ljava/lang/Void;
@@ -188,7 +176,7 @@
     .locals 0
 
     .prologue
-    .line 442
+    .line 434
     check-cast p1, Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/jirbo/adcolony/AdColony$a;->a(Ljava/lang/Void;)V

@@ -12,7 +12,7 @@
 
 .field private d:Lorg/json/JSONObject;
 
-.field private final e:[Ljava/lang/String;
+.field private e:[Ljava/lang/String;
 
 
 # direct methods
@@ -116,16 +116,41 @@
 
 
 # virtual methods
+.method public clearData()V
+    .locals 1
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 45
+    iput-object v0, p0, Lcom/unity3d/ads/android/item/UnityAdsRewardItem;->a:Ljava/lang/String;
+
+    .line 46
+    iput-object v0, p0, Lcom/unity3d/ads/android/item/UnityAdsRewardItem;->b:Ljava/lang/String;
+
+    .line 47
+    iput-object v0, p0, Lcom/unity3d/ads/android/item/UnityAdsRewardItem;->c:Ljava/lang/String;
+
+    .line 48
+    iput-object v0, p0, Lcom/unity3d/ads/android/item/UnityAdsRewardItem;->d:Lorg/json/JSONObject;
+
+    .line 49
+    iput-object v0, p0, Lcom/unity3d/ads/android/item/UnityAdsRewardItem;->e:[Ljava/lang/String;
+
+    .line 50
+    return-void
+.end method
+
 .method public getDetails()Ljava/util/Map;
     .locals 3
 
     .prologue
-    .line 47
+    .line 53
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 48
+    .line 54
     const-string v1, "name"
 
     invoke-virtual {p0}, Lcom/unity3d/ads/android/item/UnityAdsRewardItem;->getName()Ljava/lang/String;
@@ -134,7 +159,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 49
+    .line 55
     const-string v1, "picture"
 
     invoke-virtual {p0}, Lcom/unity3d/ads/android/item/UnityAdsRewardItem;->getPictureUrl()Ljava/lang/String;
@@ -143,7 +168,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 50
+    .line 56
     return-object v0
 .end method
 
@@ -161,7 +186,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 33
     iget-object v0, p0, Lcom/unity3d/ads/android/item/UnityAdsRewardItem;->b:Ljava/lang/String;
 
     return-object v0
@@ -171,7 +196,7 @@
     .locals 1
 
     .prologue
-    .line 39
+    .line 37
     iget-object v0, p0, Lcom/unity3d/ads/android/item/UnityAdsRewardItem;->c:Ljava/lang/String;
 
     return-object v0
@@ -183,7 +208,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 43
+    .line 41
     iget-object v1, p0, Lcom/unity3d/ads/android/item/UnityAdsRewardItem;->d:Lorg/json/JSONObject;
 
     if-eqz v1, :cond_1

@@ -6,18 +6,18 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/applovin/sdk/AppLovinAd;
+.field final synthetic a:I
 
-.field final synthetic b:Lcom/applovin/impl/sdk/ab;
+.field final synthetic b:Lcom/applovin/impl/sdk/aa;
 
 
 # direct methods
-.method constructor <init>(Lcom/applovin/impl/sdk/ab;Lcom/applovin/sdk/AppLovinAd;)V
+.method constructor <init>(Lcom/applovin/impl/sdk/aa;I)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ac;->b:Lcom/applovin/impl/sdk/ab;
+    iput-object p1, p0, Lcom/applovin/impl/sdk/ac;->b:Lcom/applovin/impl/sdk/aa;
 
-    iput-object p2, p0, Lcom/applovin/impl/sdk/ac;->a:Lcom/applovin/sdk/AppLovinAd;
+    iput p2, p0, Lcom/applovin/impl/sdk/ac;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,15 +29,15 @@
 .method public run()V
     .locals 2
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ac;->b:Lcom/applovin/impl/sdk/ab;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/ac;->b:Lcom/applovin/impl/sdk/aa;
 
-    invoke-static {v0}, Lcom/applovin/impl/sdk/ab;->a(Lcom/applovin/impl/sdk/ab;)Lcom/applovin/sdk/AppLovinAdLoadListener;
+    invoke-static {v0}, Lcom/applovin/impl/sdk/aa;->a(Lcom/applovin/impl/sdk/aa;)Lcom/applovin/sdk/AppLovinAdLoadListener;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/applovin/impl/sdk/ac;->a:Lcom/applovin/sdk/AppLovinAd;
+    iget v1, p0, Lcom/applovin/impl/sdk/ac;->a:I
 
-    invoke-interface {v0, v1}, Lcom/applovin/sdk/AppLovinAdLoadListener;->adReceived(Lcom/applovin/sdk/AppLovinAd;)V
+    invoke-interface {v0, v1}, Lcom/applovin/sdk/AppLovinAdLoadListener;->failedToReceiveAd(I)V
 
     return-void
 .end method

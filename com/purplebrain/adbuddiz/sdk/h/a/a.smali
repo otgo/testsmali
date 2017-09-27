@@ -2,57 +2,95 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/purplebrain/adbuddiz/sdk/h/a/a$a;
-    }
-.end annotation
-
-
-# instance fields
-.field a:Ljava/lang/String;
-
-.field b:I
-
-.field c:Ljava/lang/String;
-
-
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static a(Landroid/content/Context;Landroid/graphics/RectF;)Landroid/graphics/Rect;
+    .locals 8
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-wide/high16 v6, 0x403a000000000000L    # 26.0
 
-    return-void
-.end method
+    new-instance v0, Landroid/graphics/Rect;
 
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-# virtual methods
-.method public final a()Lorg/json/JSONObject;
-    .locals 3
+    invoke-static {p0}, Lcom/purplebrain/adbuddiz/sdk/h/a/r;->a(Landroid/content/Context;)Lcom/purplebrain/adbuddiz/sdk/h/a/r;
 
-    new-instance v0, Lorg/json/JSONObject;
+    move-result-object v1
 
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
+    iget-wide v2, v1, Lcom/purplebrain/adbuddiz/sdk/h/a/r;->e:D
 
-    const-string v1, "pa"
+    mul-double/2addr v2, v6
 
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/h/a/a;->a:Ljava/lang/String;
+    iget v4, p1, Landroid/graphics/RectF;->left:F
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    float-to-double v4, v4
 
-    const-string v1, "vc"
+    mul-double/2addr v2, v4
 
-    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/h/a/a;->b:I
+    double-to-int v2, v2
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    invoke-static {p0, v2}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;I)I
 
-    const-string v1, "vn"
+    move-result v2
 
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/h/a/a;->c:Ljava/lang/String;
+    iput v2, v0, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    iget-wide v2, v1, Lcom/purplebrain/adbuddiz/sdk/h/a/r;->f:D
+
+    mul-double/2addr v2, v6
+
+    iget v4, p1, Landroid/graphics/RectF;->top:F
+
+    float-to-double v4, v4
+
+    mul-double/2addr v2, v4
+
+    double-to-int v2, v2
+
+    iget v3, v1, Lcom/purplebrain/adbuddiz/sdk/h/a/r;->g:I
+
+    add-int/2addr v2, v3
+
+    invoke-static {p0, v2}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;I)I
+
+    move-result v2
+
+    iput v2, v0, Landroid/graphics/Rect;->top:I
+
+    iget-wide v2, v1, Lcom/purplebrain/adbuddiz/sdk/h/a/r;->e:D
+
+    mul-double/2addr v2, v6
+
+    iget v4, p1, Landroid/graphics/RectF;->right:F
+
+    float-to-double v4, v4
+
+    mul-double/2addr v2, v4
+
+    double-to-int v2, v2
+
+    invoke-static {p0, v2}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;I)I
+
+    move-result v2
+
+    iput v2, v0, Landroid/graphics/Rect;->right:I
+
+    iget-wide v2, v1, Lcom/purplebrain/adbuddiz/sdk/h/a/r;->e:D
+
+    mul-double/2addr v2, v6
+
+    iget v1, p1, Landroid/graphics/RectF;->bottom:F
+
+    float-to-double v4, v1
+
+    mul-double/2addr v2, v4
+
+    double-to-int v1, v2
+
+    invoke-static {p0, v1}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;I)I
+
+    move-result v1
+
+    iput v1, v0, Landroid/graphics/Rect;->bottom:I
 
     return-object v0
 .end method

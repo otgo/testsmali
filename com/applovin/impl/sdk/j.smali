@@ -1,26 +1,26 @@
 .class Lcom/applovin/impl/sdk/j;
-.super Lcom/applovin/impl/sdk/bv;
+.super Lcom/applovin/impl/sdk/bq;
 
 
 # instance fields
-.field final synthetic a:Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
+.field final synthetic a:Lcom/applovin/impl/sdk/f;
 
 .field private final b:Lcom/applovin/sdk/AppLovinAdSize;
 
 
 # direct methods
-.method public constructor <init>(Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;Lcom/applovin/sdk/AppLovinAdSize;)V
+.method public constructor <init>(Lcom/applovin/impl/sdk/f;Lcom/applovin/sdk/AppLovinAdSize;)V
     .locals 2
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
+    iput-object p1, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/f;
 
     const-string v0, "UpdateAdTask"
 
-    invoke-static {p1}, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;->c(Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+    invoke-static {p1}, Lcom/applovin/impl/sdk/f;->b(Lcom/applovin/impl/sdk/f;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/applovin/impl/sdk/bv;-><init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+    invoke-direct {p0, v0, v1}, Lcom/applovin/impl/sdk/bq;-><init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
     iput-object p2, p0, Lcom/applovin/impl/sdk/j;->b:Lcom/applovin/sdk/AppLovinAdSize;
 
@@ -36,9 +36,9 @@
 
     const/4 v1, 0x1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/f;
 
-    invoke-static {v0}, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;->d(Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;)Ljava/util/Map;
+    invoke-static {v0}, Lcom/applovin/impl/sdk/f;->c(Lcom/applovin/impl/sdk/f;)Ljava/util/Map;
 
     move-result-object v0
 
@@ -63,17 +63,17 @@
     monitor-enter v4
 
     :try_start_0
-    iget-object v3, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
+    iget-object v3, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/f;
 
     iget-object v5, p0, Lcom/applovin/impl/sdk/j;->b:Lcom/applovin/sdk/AppLovinAdSize;
 
-    invoke-static {v3, v5}, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;->a(Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;Lcom/applovin/sdk/AppLovinAdSize;)Z
+    invoke-static {v3, v5}, Lcom/applovin/impl/sdk/f;->a(Lcom/applovin/impl/sdk/f;Lcom/applovin/sdk/AppLovinAdSize;)Z
 
     move-result v5
 
-    iget-object v3, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
+    iget-object v3, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/f;
 
-    invoke-static {v3}, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;->e(Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;)Z
+    invoke-static {v3}, Lcom/applovin/impl/sdk/f;->d(Lcom/applovin/impl/sdk/f;)Z
 
     move-result v6
 
@@ -117,7 +117,7 @@
 
     iput-boolean v1, v0, Lcom/applovin/impl/sdk/i;->e:Z
 
-    iget-object v1, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
+    iget-object v1, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/f;
 
     iget-object v2, p0, Lcom/applovin/impl/sdk/j;->b:Lcom/applovin/sdk/AppLovinAdSize;
 
@@ -125,13 +125,13 @@
 
     new-instance v5, Lcom/applovin/impl/sdk/h;
 
-    iget-object v6, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
+    iget-object v6, p0, Lcom/applovin/impl/sdk/j;->a:Lcom/applovin/impl/sdk/f;
 
     const/4 v7, 0x0
 
-    invoke-direct {v5, v6, v0, v7}, Lcom/applovin/impl/sdk/h;-><init>(Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;Lcom/applovin/impl/sdk/i;Lcom/applovin/impl/sdk/e;)V
+    invoke-direct {v5, v6, v0, v7}, Lcom/applovin/impl/sdk/h;-><init>(Lcom/applovin/impl/sdk/f;Lcom/applovin/impl/sdk/i;Lcom/applovin/impl/sdk/g;)V
 
-    invoke-static {v1, v2, v3, v5}, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;->a(Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;Lcom/applovin/sdk/AppLovinAdLoadListener;)V
+    invoke-static {v1, v2, v3, v5}, Lcom/applovin/impl/sdk/f;->a(Lcom/applovin/impl/sdk/f;Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;Lcom/applovin/sdk/AppLovinAdLoadListener;)V
 
     :cond_0
     monitor-exit v4

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/applovin/sdk/AppLovinAdClickListener;
+.implements Landroid/media/MediaPlayer$OnCompletionListener;
 
 
 # instance fields
@@ -22,23 +22,18 @@
 
 
 # virtual methods
-.method public adClicked(Lcom/applovin/sdk/AppLovinAd;)V
-    .locals 1
+.method public onCompletion(Landroid/media/MediaPlayer;)V
+    .locals 2
 
     iget-object v0, p0, Lcom/applovin/adview/j;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->z(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/af;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(Lcom/applovin/adview/AppLovinInterstitialActivity;Z)Z
 
-    invoke-virtual {v0}, Lcom/applovin/impl/adview/af;->e()Lcom/applovin/sdk/AppLovinAdClickListener;
+    iget-object v0, p0, Lcom/applovin/adview/j;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    move-result-object v0
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->h(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lcom/applovin/sdk/AppLovinAdClickListener;->adClicked(Lcom/applovin/sdk/AppLovinAd;)V
-
-    :cond_0
     return-void
 .end method

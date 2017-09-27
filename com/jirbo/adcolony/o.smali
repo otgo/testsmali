@@ -42,7 +42,7 @@
 
 .field d:I
 
-.field e:Lcom/jirbo/adcolony/aa$b;
+.field e:Lcom/jirbo/adcolony/ab$b;
 
 .field f:I
 
@@ -92,13 +92,13 @@
     iput v0, p0, Lcom/jirbo/adcolony/o;->d:I
 
     .line 15
-    new-instance v0, Lcom/jirbo/adcolony/aa$b;
+    new-instance v0, Lcom/jirbo/adcolony/ab$b;
 
     const-wide/high16 v2, 0x4000000000000000L    # 2.0
 
-    invoke-direct {v0, v2, v3}, Lcom/jirbo/adcolony/aa$b;-><init>(D)V
+    invoke-direct {v0, v2, v3}, Lcom/jirbo/adcolony/ab$b;-><init>(D)V
 
-    iput-object v0, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/aa$b;
+    iput-object v0, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/ab$b;
 
     .line 17
     new-instance v0, Ljava/util/ArrayList;
@@ -250,7 +250,7 @@
     if-eqz v0, :cond_5
 
     .line 218
-    invoke-static {}, Lcom/jirbo/adcolony/aa;->c()D
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->c()D
 
     move-result-wide v2
 
@@ -359,14 +359,14 @@
     iput-boolean v5, p0, Lcom/jirbo/adcolony/o;->i:Z
 
     .line 258
-    iget-object v0, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/aa$b;
+    iget-object v0, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/ab$b;
 
     const-wide/high16 v2, 0x4000000000000000L    # 2.0
 
-    invoke-virtual {v0, v2, v3}, Lcom/jirbo/adcolony/aa$b;->a(D)V
+    invoke-virtual {v0, v2, v3}, Lcom/jirbo/adcolony/ab$b;->a(D)V
 
     .line 259
-    sput-boolean v5, Lcom/jirbo/adcolony/a;->z:Z
+    sput-boolean v5, Lcom/jirbo/adcolony/a;->r:Z
 
     goto :goto_0
 
@@ -385,7 +385,7 @@
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 238
-    invoke-static {}, Lcom/jirbo/adcolony/aa;->c()D
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->c()D
 
     move-result-wide v2
 
@@ -441,7 +441,7 @@
 
     iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
+    iget-object v0, v0, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
     invoke-virtual {v0}, Lcom/jirbo/adcolony/n$e;->a()V
 
@@ -467,7 +467,7 @@
 
     .line 188
     :cond_3
-    invoke-static {}, Lcom/jirbo/adcolony/aa;->c()D
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->c()D
 
     move-result-wide v2
 
@@ -488,7 +488,7 @@
 
     iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
+    iget-object v0, v0, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
     invoke-virtual {v0}, Lcom/jirbo/adcolony/n$e;->a()V
 
@@ -528,7 +528,7 @@
 
     .line 203
     :cond_1
-    invoke-static {}, Lcom/jirbo/adcolony/aa;->c()D
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->c()D
 
     move-result-wide v2
 
@@ -540,11 +540,11 @@
     iput-boolean v1, p0, Lcom/jirbo/adcolony/o;->i:Z
 
     .line 205
-    iget-object v1, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/aa$b;
+    iget-object v1, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/ab$b;
 
     const-wide/high16 v2, 0x4000000000000000L    # 2.0
 
-    invoke-virtual {v1, v2, v3}, Lcom/jirbo/adcolony/aa$b;->a(D)V
+    invoke-virtual {v1, v2, v3}, Lcom/jirbo/adcolony/ab$b;->a(D)V
 
     .line 206
     iget-object v0, v0, Lcom/jirbo/adcolony/o$a;->b:Ljava/lang/String;
@@ -1031,7 +1031,7 @@
 
     iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
+    iget-object v0, v0, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
     iget-wide v0, v0, Lcom/jirbo/adcolony/n$e;->g:D
 
@@ -1248,9 +1248,9 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/aa$b;
+    iget-object v0, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/ab$b;
 
-    invoke-virtual {v0}, Lcom/jirbo/adcolony/aa$b;->a()Z
+    invoke-virtual {v0}, Lcom/jirbo/adcolony/ab$b;->a()Z
 
     move-result v0
 
@@ -1276,7 +1276,7 @@
 
     iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
+    iget-object v0, v0, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
     iget-object v0, v0, Lcom/jirbo/adcolony/n$e;->j:Ljava/lang/String;
 
@@ -1312,7 +1312,7 @@
 
     iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
+    iget-object v0, v0, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
     iget-object v0, v0, Lcom/jirbo/adcolony/n$e;->j:Ljava/lang/String;
 
@@ -1421,7 +1421,7 @@
     .line 300
     const/4 v2, 0x1
 
-    sput-boolean v2, Lcom/jirbo/adcolony/a;->z:Z
+    sput-boolean v2, Lcom/jirbo/adcolony/a;->r:Z
 
     .line 301
     iget v2, p0, Lcom/jirbo/adcolony/o;->f:I
@@ -1463,7 +1463,7 @@
 
     iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
+    iget-object v0, v0, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
     iget-wide v6, v0, Lcom/jirbo/adcolony/n$e;->g:D
 
@@ -1558,11 +1558,11 @@
     iput-boolean v0, p0, Lcom/jirbo/adcolony/o;->i:Z
 
     .line 359
-    iget-object v0, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/aa$b;
+    iget-object v0, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/ab$b;
 
     const-wide/high16 v8, 0x4000000000000000L    # 2.0
 
-    invoke-virtual {v0, v8, v9}, Lcom/jirbo/adcolony/aa$b;->a(D)V
+    invoke-virtual {v0, v8, v9}, Lcom/jirbo/adcolony/ab$b;->a(D)V
 
     .line 332
     :cond_2
@@ -1572,7 +1572,7 @@
 
     iget-object v2, v2, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    iget-object v2, v2, Lcom/jirbo/adcolony/b;->i:Lcom/jirbo/adcolony/n$e;
+    iget-object v2, v2, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
     iget-wide v8, v2, Lcom/jirbo/adcolony/n$e;->g:D
 
@@ -1657,11 +1657,11 @@
     iput-boolean v0, p0, Lcom/jirbo/adcolony/o;->i:Z
 
     .line 366
-    iget-object v0, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/aa$b;
+    iget-object v0, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/ab$b;
 
     const-wide/high16 v2, 0x4000000000000000L    # 2.0
 
-    invoke-virtual {v0, v2, v3}, Lcom/jirbo/adcolony/aa$b;->a(D)V
+    invoke-virtual {v0, v2, v3}, Lcom/jirbo/adcolony/ab$b;->a(D)V
 
     .line 367
     iget v0, p0, Lcom/jirbo/adcolony/o;->d:I
@@ -1696,11 +1696,11 @@
     iput-boolean v1, p0, Lcom/jirbo/adcolony/o;->i:Z
 
     .line 313
-    iget-object v1, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/aa$b;
+    iget-object v1, p0, Lcom/jirbo/adcolony/o;->e:Lcom/jirbo/adcolony/ab$b;
 
     const-wide/high16 v2, 0x4000000000000000L    # 2.0
 
-    invoke-virtual {v1, v2, v3}, Lcom/jirbo/adcolony/aa$b;->a(D)V
+    invoke-virtual {v1, v2, v3}, Lcom/jirbo/adcolony/ab$b;->a(D)V
 
     .line 314
     iget-boolean v1, p1, Lcom/jirbo/adcolony/ADCDownload;->i:Z

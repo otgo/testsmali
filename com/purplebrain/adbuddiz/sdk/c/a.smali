@@ -1,1351 +1,2132 @@
 .class public final Lcom/purplebrain/adbuddiz/sdk/c/a;
-.super Ljava/lang/Object;
+.super Landroid/view/ViewGroup;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation build Landroid/annotation/SuppressLint;
     value = {
-        Lcom/purplebrain/adbuddiz/sdk/c/a$4;
+        "NewApi"
     }
 .end annotation
 
 
-# static fields
-.field private static c:Lcom/purplebrain/adbuddiz/sdk/c/a;
-
-.field private static d:Ljava/lang/Boolean;
-
-
 # instance fields
-.field public a:Landroid/content/Context;
+.field private A:I
 
-.field public b:Lcom/purplebrain/adbuddiz/sdk/AdBuddizDelegate;
+.field private B:Z
+
+.field private C:Landroid/graphics/Rect;
+
+.field private D:Ljava/lang/Double;
+
+.field private E:Z
+
+.field public a:Landroid/graphics/drawable/Drawable;
+
+.field public b:Landroid/graphics/drawable/Drawable;
+
+.field public c:Landroid/graphics/drawable/Drawable;
+
+.field public d:Z
+
+.field public e:Lcom/purplebrain/adbuddiz/sdk/c/b;
+
+.field private f:I
+
+.field private g:I
+
+.field private h:I
+
+.field private i:I
+
+.field private j:I
+
+.field private k:I
+
+.field private l:Landroid/graphics/drawable/Drawable;
+
+.field private m:Landroid/graphics/drawable/Drawable;
+
+.field private n:I
+
+.field private o:Ljava/lang/String;
+
+.field private p:Landroid/text/TextPaint;
+
+.field private q:I
+
+.field private r:I
+
+.field private s:I
+
+.field private t:I
+
+.field private u:I
+
+.field private v:I
+
+.field private w:Ljava/lang/Integer;
+
+.field private x:I
+
+.field private y:I
+
+.field private z:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 7
 
-    const/4 v0, 0x0
+    const/high16 v6, 0x41000000    # 8.0f
 
-    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->c:Lcom/purplebrain/adbuddiz/sdk/c/a;
+    const/4 v5, 0x2
 
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->d:Ljava/lang/Boolean;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/content/Context;
-
-    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->b:Lcom/purplebrain/adbuddiz/sdk/AdBuddizDelegate;
-
-    return-void
-.end method
-
-.method static synthetic a(Lcom/purplebrain/adbuddiz/sdk/c/a;)Landroid/content/Context;
-    .locals 1
-
-    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method public static a()Lcom/purplebrain/adbuddiz/sdk/c/a;
-    .locals 2
-
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/c/a;->d:Ljava/lang/Boolean;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->c:Lcom/purplebrain/adbuddiz/sdk/c/a;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/c/a;
-
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;-><init>()V
-
-    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->c:Lcom/purplebrain/adbuddiz/sdk/c/a;
-
-    :cond_0
-    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->c:Lcom/purplebrain/adbuddiz/sdk/c/a;
-
-    monitor-exit v1
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method private static a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Can\'t show Ad: "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ". "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method private static a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;ZZ)V
-    .locals 4
-
-    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/c/a$4;->a:[I
-
-    invoke-virtual {p1}, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    packed-switch v0, :pswitch_data_0
-
-    :goto_0
-    if-eqz p2, :cond_0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "didFailToShowAd "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->name()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/i$5;
-
-    invoke-direct {v0, p1}, Lcom/purplebrain/adbuddiz/sdk/i/i$5;-><init>(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)V
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/i;->a(Ljava/lang/Runnable;)V
-
-    :cond_0
-    if-eqz p3, :cond_1
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/AdBuddiz;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    :try_start_0
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/b;->a()Lcom/purplebrain/adbuddiz/sdk/e/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/e/b;->c()V
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/b;->a()Lcom/purplebrain/adbuddiz/sdk/e/b;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/purplebrain/adbuddiz/sdk/e/b;->b()Lcom/purplebrain/adbuddiz/sdk/f/b;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/f/d;->c:Lcom/purplebrain/adbuddiz/sdk/f/d$a;
-
-    if-eqz v2, :cond_1
-
-    sget-object v3, Lcom/purplebrain/adbuddiz/sdk/c/a$4;->b:[I
-
-    invoke-virtual {v2}, Lcom/purplebrain/adbuddiz/sdk/f/d$a;->ordinal()I
-
-    move-result v2
-
-    aget v2, v3, v2
-
-    packed-switch v2, :pswitch_data_1
-
-    :goto_1
-    invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/h/g;
-
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/h/g;-><init>()V
-
-    invoke-virtual {v0, p1}, Lcom/purplebrain/adbuddiz/sdk/h/g;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)V
-
-    iput-object p0, v0, Lcom/purplebrain/adbuddiz/sdk/h/g;->i:Lcom/purplebrain/adbuddiz/sdk/f/d;
-
-    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/h/g;->f()V
-    :try_end_0
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/b; {:try_start_0 .. :try_end_0} :catch_0
-
-    :cond_1
-    :goto_2
-    return-void
-
-    :pswitch_0
-    const-string v0, "AdBuddiz only shows ads for Android SDK >= 2.1 - Eclair."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :pswitch_1
-    const-string v0, "showAd() activity parameter is null."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :pswitch_2
-    const-string v0, "Add <uses-permission android:name=\"android.permission.INTERNET\" /> in AndroidManifest.xml."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :pswitch_3
-    const-string v0, "Add AdBuddiz.setPublisherKey(); call before calling cacheAds();"
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :pswitch_4
-    const-string v0, ""
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    const-string v0, " ---------------------------------------------------------------------- "
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v0, " Missing AdBuddizActivity in Manifest, add this :                       "
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v0, " <activity android:name=\"com.purplebrain.adbuddiz.sdk.AdBuddizActivity\" "
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v0, "           android:theme=\"@android:style/Theme.Translucent\" />          "
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v0, " ---------------------------------------------------------------------- "
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_5
-    const-string v0, "AdBuddiz Config isn\'t ready yet. Did you call cacheAds ? Please wait for cache initialization..."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_6
-    const-string v0, "AdBuddiz Config is expired. Currently updating..."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_7
-    const-string v0, "Check Publisher Key value in AdBuddiz.setPublisherKey(); call."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_8
-    const-string v0, "Check Publisher Key value in AdBuddiz.setPublisherKey(); call. That key can only work with an iOS application."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_9
-    const-string v0, "This placement is blocked, no Ad will be shown."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_a
-    const-string v0, "Connect device to Internet."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_b
-    const-string v0, ""
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    const-string v0, "Server request responded HTTP \'403 Forbidden\'."
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v0, "You may be behind a proxy blocking all communications from the SDK."
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v0, "Try to open to www.adbuddiz.com on the browser of your device to check if our service is reachable."
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_c
-    const-string v0, "Currently caching ads..."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_d
-    const-string v0, "No ad inventory is currently available for your parameters (Country, Device, OS...)."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_e
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Ad was already shown less than "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/p;->a(Z)Lcom/purplebrain/adbuddiz/sdk/i/p;
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/i/p;->a()J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "ms ago. Please wait between calls."
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_f
-    const-string v0, "Ad is already displayed on screen."
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_10
-    const-string v0, ""
-
-    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :pswitch_11
-    :try_start_1
-    iget-object v1, v1, Lcom/purplebrain/adbuddiz/sdk/f/b;->B:Ljava/util/List;
-
-    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    goto/16 :goto_1
-
-    :catch_0
-    move-exception v0
-
-    goto/16 :goto_2
-
-    :pswitch_12
-    iget-object v1, v1, Lcom/purplebrain/adbuddiz/sdk/f/b;->A:Ljava/util/List;
-
-    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-    :try_end_1
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/b; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto/16 :goto_1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-        :pswitch_7
-        :pswitch_8
-        :pswitch_9
-        :pswitch_a
-        :pswitch_b
-        :pswitch_c
-        :pswitch_d
-        :pswitch_e
-        :pswitch_f
-        :pswitch_10
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0x1
-        :pswitch_11
-        :pswitch_12
-    .end packed-switch
-.end method
-
-.method static synthetic a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)Z
-    .locals 1
-
-    invoke-static {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->b(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private static b(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)Z
-    .locals 4
-
-    const/4 v1, 0x1
-
-    const/4 v0, 0x0
-
-    if-eqz p0, :cond_2
-
-    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->CONFIG_NOT_READY:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-
-    if-eq v2, p0, :cond_0
-
-    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->CONFIG_EXPIRED:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-
-    if-ne v2, p0, :cond_1
-
-    :cond_0
-    move v0, v1
-
-    :cond_1
-    :goto_0
-    return v0
-
-    :cond_2
-    :try_start_0
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a()Lcom/purplebrain/adbuddiz/sdk/e/a;
-
-    move-result-object v2
+    const/4 v4, 0x1
 
     const/4 v3, 0x0
 
-    invoke-virtual {v2, v3}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a(Z)Lcom/purplebrain/adbuddiz/sdk/f/a/a;
-    :try_end_0
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/q; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/b; {:try_start_0 .. :try_end_0} :catch_1
+    const/4 v2, 0x0
 
-    goto :goto_0
+    invoke-direct {p0, p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
-    :catch_0
-    move-exception v0
+    iput-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->l:Landroid/graphics/drawable/Drawable;
 
-    move v0, v1
+    iput-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->m:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_0
+    iput-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/graphics/drawable/Drawable;
 
-    :catch_1
-    move-exception v1
+    iput-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->b:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_0
-.end method
+    iput-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->c:Landroid/graphics/drawable/Drawable;
 
-.method static synthetic c(Landroid/content/Context;Ljava/lang/String;)Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-    .locals 1
+    iput-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->o:Ljava/lang/String;
 
-    invoke-static {p0, p1}, Lcom/purplebrain/adbuddiz/sdk/c/a;->e(Landroid/content/Context;Ljava/lang/String;)Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+    iput-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->p:Landroid/text/TextPaint;
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->C:Landroid/graphics/Rect;
+
+    iput-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->e:Lcom/purplebrain/adbuddiz/sdk/c/b;
+
+    iput-boolean v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->E:Z
+
+    invoke-virtual {p0, v3}, Lcom/purplebrain/adbuddiz/sdk/c/a;->setClipToPadding(Z)V
+
+    invoke-virtual {p0, v4}, Lcom/purplebrain/adbuddiz/sdk/c/a;->setDrawingCacheEnabled(Z)V
+
+    invoke-virtual {p0, v4}, Lcom/purplebrain/adbuddiz/sdk/c/a;->setClickable(Z)V
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0xb
+
+    if-lt v0, v1, :cond_0
+
+    invoke-virtual {p0, v5, v2}, Lcom/purplebrain/adbuddiz/sdk/c/a;->setLayerType(ILandroid/graphics/Paint;)V
+
+    :cond_0
+    iput-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->D:Ljava/lang/Double;
+
+    iput-boolean v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->B:Z
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
 
     move-result-object v0
+
+    invoke-static {v0, v5}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->g:I
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->f:I
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    invoke-static {v0, v1}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->i:I
+
+    const/high16 v0, -0x1000000
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->h:I
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const/16 v1, 0xf
+
+    invoke-static {v0, v1}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->j:I
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const/16 v1, 0xc
+
+    invoke-static {v0, v1}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->k:I
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a()Landroid/graphics/drawable/GradientDrawable;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->i:I
+
+    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->g:I
+
+    add-int/2addr v1, v2
+
+    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->h:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
+
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->l:Landroid/graphics/drawable/Drawable;
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a()Landroid/graphics/drawable/GradientDrawable;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->g:I
+
+    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->f:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
+
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->m:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const/16 v1, 0x2d
+
+    invoke-static {v0, v1}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->x:I
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const/16 v1, -0x12
+
+    invoke-static {v0, v1}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->q:I
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const/4 v1, -0x2
+
+    invoke-static {v0, v1}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->r:I
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const v1, 0x40aaaaab
+
+    invoke-static {v0, v1}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;F)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->t:I
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const v1, 0x40955555
+
+    invoke-static {v0, v1}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;F)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->u:I
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, v6}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;F)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->s:I
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, v6}, Lcom/purplebrain/adbuddiz/sdk/h/a/o;->a(Landroid/content/Context;F)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->v:I
+
+    new-instance v0, Landroid/text/TextPaint;
+
+    invoke-direct {v0}, Landroid/text/TextPaint;-><init>()V
+
+    const/4 v1, -0x1
+
+    invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
+
+    sget-object v1, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
+
+    invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+
+    sget-object v1, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
+
+    invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setTextAlign(Landroid/graphics/Paint$Align;)V
+
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->p:Landroid/text/TextPaint;
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    const/high16 v1, 0x41800000    # 16.0f
+
+    invoke-static {v5, v1, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->n:I
+
+    iput-boolean v4, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->d:Z
+
+    return-void
+.end method
+
+.method private a()Landroid/graphics/drawable/GradientDrawable;
+    .locals 4
+
+    const/4 v3, 0x0
+
+    new-instance v0, Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-direct {v0}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
+
+    invoke-virtual {v0, v3}, Landroid/graphics/drawable/GradientDrawable;->setGradientType(I)V
+
+    invoke-virtual {v0, v3}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
+
+    const/16 v1, 0x8
+
+    new-array v1, v1, [F
+
+    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->j:I
+
+    int-to-float v2, v2
+
+    aput v2, v1, v3
+
+    const/4 v2, 0x1
+
+    iget v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->j:I
+
+    int-to-float v3, v3
+
+    aput v3, v1, v2
+
+    const/4 v2, 0x2
+
+    iget v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->j:I
+
+    int-to-float v3, v3
+
+    aput v3, v1, v2
+
+    const/4 v2, 0x3
+
+    iget v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->j:I
+
+    int-to-float v3, v3
+
+    aput v3, v1, v2
+
+    const/4 v2, 0x4
+
+    iget v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->j:I
+
+    int-to-float v3, v3
+
+    aput v3, v1, v2
+
+    const/4 v2, 0x5
+
+    iget v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->j:I
+
+    int-to-float v3, v3
+
+    aput v3, v1, v2
+
+    const/4 v2, 0x6
+
+    iget v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->j:I
+
+    int-to-float v3, v3
+
+    aput v3, v1, v2
+
+    const/4 v2, 0x7
+
+    iget v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->j:I
+
+    int-to-float v3, v3
+
+    aput v3, v1, v2
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadii([F)V
 
     return-object v0
 .end method
 
-.method private static d(Landroid/content/Context;Ljava/lang/String;)V
-    .locals 2
+.method private a(Ljava/lang/String;Landroid/text/TextPaint;III)V
+    .locals 4
 
-    if-nez p0, :cond_0
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->o:Ljava/lang/String;
 
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/b/a;
+    if-eqz v0, :cond_1
 
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/b/a;-><init>()V
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->o:Ljava/lang/String;
 
-    throw v0
-
-    :cond_0
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;->a()Z
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    if-nez v0, :cond_1
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/b/v;
-
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/b/v;-><init>()V
-
-    throw v0
-
-    :cond_1
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/AdBuddizActivity;->isAdOnScreen()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/b/d;
-
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/b/d;-><init>()V
-
-    throw v0
-
-    :cond_2
-    invoke-static {p0}, Lcom/purplebrain/adbuddiz/sdk/i/a/i;->a(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/b/r;
-
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/b/r;-><init>()V
-
-    throw v0
-
-    :cond_3
-    :try_start_0
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/b;->a()Lcom/purplebrain/adbuddiz/sdk/e/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/e/b;->c()V
-    :try_end_0
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/r; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/j; {:try_start_0 .. :try_end_0} :catch_1
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/p;->a(Z)Lcom/purplebrain/adbuddiz/sdk/i/p;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/i/p;->e()Z
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-ne v0, v1, :cond_1
 
-    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/i/p;->f()Z
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    const-string v0, "9"
+
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->o:Ljava/lang/String;
+
+    const/4 v0, 0x1
+
+    :goto_1
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_2
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->o:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "9"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->o:Ljava/lang/String;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    :cond_3
+    int-to-float v1, p3
+
+    invoke-virtual {p2, v1}, Landroid/text/TextPaint;->setTextSize(F)V
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->o:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->o:Ljava/lang/String;
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    invoke-virtual {p2, v1, v2, v3, v0}, Landroid/text/TextPaint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
+
+    add-int/lit8 p3, p3, -0x1
+
+    if-lez p3, :cond_0
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v1
+
+    if-gt v1, p4, :cond_3
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+
+    move-result v1
+
+    if-gt v1, p5, :cond_3
+
+    goto :goto_0
+.end method
+
+.method private a(Landroid/view/MotionEvent;)Z
+    .locals 10
+
+    const-wide/high16 v8, 0x4000000000000000L    # 2.0
+
+    const/4 v1, 0x0
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v2
+
+    and-int/lit16 v2, v2, 0xff
+
+    if-eq v2, v0, :cond_0
+
+    if-nez v2, :cond_3
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v3
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->g()I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    sub-float/2addr v3, v4
+
+    float-to-double v4, v3
+
+    invoke-static {v4, v5, v8, v9}, Ljava/lang/Math;->pow(DD)D
+
+    move-result-wide v4
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v3
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->h()I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    sub-float/2addr v3, v6
+
+    float-to-double v6, v3
+
+    invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->pow(DD)D
+
+    move-result-wide v6
+
+    add-double/2addr v4, v6
+
+    invoke-static {v4, v5}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v4
+
+    if-nez v2, :cond_4
+
+    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->x:I
+
+    int-to-double v2, v2
+
+    cmpg-double v2, v4, v2
+
+    if-gez v2, :cond_2
+
+    iput-boolean v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->E:Z
+
+    :cond_1
+    :goto_0
+    return v0
+
+    :cond_2
+    iput-boolean v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->E:Z
+
+    :cond_3
+    :goto_1
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_4
+    if-ne v2, v0, :cond_3
+
+    iget-boolean v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->E:Z
+
+    if-eqz v2, :cond_5
+
+    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->x:I
+
+    int-to-double v2, v2
+
+    cmpg-double v2, v4, v2
+
+    if-gez v2, :cond_5
+
+    iget-boolean v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->d:Z
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {p0, v1}, Lcom/purplebrain/adbuddiz/sdk/c/a;->playSoundEffect(I)V
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->e:Lcom/purplebrain/adbuddiz/sdk/c/b;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->e:Lcom/purplebrain/adbuddiz/sdk/c/b;
+
+    invoke-interface {v1}, Lcom/purplebrain/adbuddiz/sdk/c/b;->a()V
+
+    goto :goto_0
+
+    :cond_5
+    iput-boolean v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->E:Z
+
+    goto :goto_1
+.end method
+
+.method private b()I
+    .locals 2
+
+    iget v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->i:I
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->g:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x2
+
+    return v0
+.end method
+
+.method private c()I
+    .locals 2
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getPaddingTop()I
+
+    move-result v0
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->y:I
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method private d()I
+    .locals 2
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getPaddingLeft()I
+
+    move-result v0
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->A:I
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method private e()I
+    .locals 3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
+
+    move-result v1
+
+    div-int/lit8 v1, v1, 0x2
+
+    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->r:I
+
+    add-int/2addr v1, v2
+
+    if-gez v1, :cond_1
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+.end method
+
+.method private f()I
+    .locals 2
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->b()I
+
+    move-result v0
+
+    div-int/lit8 v0, v0, 0x2
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->e()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method private g()I
+    .locals 2
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->d()I
+
+    move-result v0
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->b()I
+
+    move-result v1
+
+    div-int/lit8 v1, v1, 0x2
+
+    add-int/2addr v0, v1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v1}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->q:I
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method private h()I
+    .locals 2
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->c()I
+
+    move-result v0
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->f()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->r:I
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+
+# virtual methods
+.method public final a(Landroid/graphics/Rect;)V
+    .locals 3
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->d()I
+
+    move-result v1
+
+    iput v1, p1, Landroid/graphics/Rect;->left:I
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->c()I
+
+    move-result v1
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->e()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    iput v1, p1, Landroid/graphics/Rect;->top:I
+
+    iget v1, p1, Landroid/graphics/Rect;->left:I
+
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->b()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    iput v1, p1, Landroid/graphics/Rect;->right:I
+
+    iget v1, p1, Landroid/graphics/Rect;->top:I
+
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->b()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    iput v0, p1, Landroid/graphics/Rect;->bottom:I
+
+    return-void
+.end method
+
+.method public final a(Ljava/lang/Double;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->D:Ljava/lang/Double;
+
+    if-eq v0, p1, :cond_0
+
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->D:Ljava/lang/Double;
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->invalidate()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final a(Ljava/lang/Integer;)V
+    .locals 1
+
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->w:Ljava/lang/Integer;
+
+    iget-boolean v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->d:Z
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->invalidate()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final a(Z)V
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->d:Z
+
+    if-eq v0, p1, :cond_0
+
+    iput-boolean p1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->d:Z
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->invalidate()V
+
+    :cond_0
+    return-void
+.end method
+
+.method protected final dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 8
+
+    :try_start_0
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildCount()I
+
+    move-result v0
+
+    if-lez v0, :cond_4
+
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x12
+
+    if-lt v0, v1, :cond_0
+
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->isHardwareAccelerated()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    new-instance v1, Landroid/graphics/Path;
+
+    invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
+
+    new-instance v2, Landroid/graphics/RectF;
+
+    invoke-direct {v2}, Landroid/graphics/RectF;-><init>()V
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->d()I
+
+    move-result v3
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->b()I
+
+    move-result v4
+
+    div-int/lit8 v4, v4, 0x2
+
+    add-int/2addr v3, v4
+
+    int-to-float v3, v3
+
+    iput v3, v2, Landroid/graphics/RectF;->left:F
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->c()I
+
+    move-result v3
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->f()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    int-to-float v3, v3
+
+    iput v3, v2, Landroid/graphics/RectF;->top:F
+
+    iget v3, v2, Landroid/graphics/RectF;->left:F
+
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    add-float/2addr v3, v4
+
+    iput v3, v2, Landroid/graphics/RectF;->right:F
+
+    iget v3, v2, Landroid/graphics/RectF;->top:F
+
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    add-float/2addr v0, v3
+
+    iput v0, v2, Landroid/graphics/RectF;->bottom:F
+
+    const/16 v0, 0x8
+
+    new-array v0, v0, [F
+
+    const/4 v3, 0x0
+
+    iget v4, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->k:I
+
+    int-to-float v4, v4
+
+    aput v4, v0, v3
+
+    const/4 v3, 0x1
+
+    iget v4, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->k:I
+
+    int-to-float v4, v4
+
+    aput v4, v0, v3
+
+    const/4 v3, 0x2
+
+    iget v4, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->k:I
+
+    int-to-float v4, v4
+
+    aput v4, v0, v3
+
+    const/4 v3, 0x3
+
+    iget v4, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->k:I
+
+    int-to-float v4, v4
+
+    aput v4, v0, v3
+
+    const/4 v3, 0x4
+
+    iget v4, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->k:I
+
+    int-to-float v4, v4
+
+    aput v4, v0, v3
+
+    const/4 v3, 0x5
+
+    iget v4, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->k:I
+
+    int-to-float v4, v4
+
+    aput v4, v0, v3
+
+    const/4 v3, 0x6
+
+    iget v4, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->k:I
+
+    int-to-float v4, v4
+
+    aput v4, v0, v3
+
+    const/4 v3, 0x7
+
+    iget v4, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->k:I
+
+    int-to-float v4, v4
+
+    aput v4, v0, v3
+
+    sget-object v3, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
+
+    invoke-virtual {v1, v2, v0, v3}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
+
+    invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
+
+    :cond_0
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
+
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->C:Landroid/graphics/Rect;
+
+    invoke-virtual {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Landroid/graphics/Rect;)V
+
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->C:Landroid/graphics/Rect;
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    int-to-float v0, v0
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->C:Landroid/graphics/Rect;
+
+    iget v1, v1, Landroid/graphics/Rect;->top:I
+
+    int-to-float v1, v1
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->l:Landroid/graphics/drawable/Drawable;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->C:Landroid/graphics/Rect;
+
+    invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
+
+    move-result v3
+
+    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->C:Landroid/graphics/Rect;
+
+    invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
+
+    move-result v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->l:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->m:Landroid/graphics/drawable/Drawable;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->C:Landroid/graphics/Rect;
+
+    invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
+
+    move-result v3
+
+    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->C:Landroid/graphics/Rect;
+
+    invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
+
+    move-result v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->m:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    iget v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->g:I
+
+    int-to-float v0, v0
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->g:I
+
+    int-to-float v1, v1
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
+
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->g()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
+
+    move-result v1
+
+    div-int/lit8 v1, v1, 0x2
+
+    sub-int/2addr v0, v1
+
+    int-to-float v0, v0
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->h()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
+
+    move-result v2
+
+    div-int/lit8 v2, v2, 0x2
+
+    sub-int/2addr v1, v2
+
+    int-to-float v1, v1
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
+
+    iget-boolean v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->d:Z
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    :cond_1
+    iget-boolean v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->d:Z
+
+    if-nez v0, :cond_3
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->b:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->c:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->w:Ljava/lang/Integer;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->w:Ljava/lang/Integer;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    :cond_4
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/b/u;
-
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/b/u;-><init>()V
-
-    throw v0
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/b;->a()Lcom/purplebrain/adbuddiz/sdk/e/b;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/purplebrain/adbuddiz/sdk/e/b;->e()V
-
-    throw v0
-
-    :catch_1
-    move-exception v0
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/b;->a()Lcom/purplebrain/adbuddiz/sdk/e/b;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/purplebrain/adbuddiz/sdk/e/b;->e()V
-
-    throw v0
-
-    :cond_5
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/b;->a()Lcom/purplebrain/adbuddiz/sdk/e/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/purplebrain/adbuddiz/sdk/e/b;->a(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/b/t;
-
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/b/t;-><init>()V
-
-    throw v0
-
-    :cond_6
-    return-void
-.end method
-
-.method private static e(Landroid/content/Context;Ljava/lang/String;)Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-    .locals 1
-
-    :try_start_0
-    invoke-static {p0, p1}, Lcom/purplebrain/adbuddiz/sdk/c/a;->d(Landroid/content/Context;Ljava/lang/String;)V
-    :try_end_0
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/b; {:try_start_0 .. :try_end_0} :catch_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    iget-object v0, v0, Lcom/purplebrain/adbuddiz/sdk/b/b;->a:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-
-    goto :goto_0
-.end method
-
-
-# virtual methods
-.method public final declared-synchronized a(Landroid/content/Context;)V
-    .locals 4
-
-    monitor-enter p0
-
-    :try_start_0
-    const-string v0, "cacheAds"
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->a(Ljava/lang/String;)V
-
-    if-nez p1, :cond_1
-
-    const-string v0, "Can\'t cache ads: cacheAds() context parameter is null."
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    :goto_0
-    monitor-exit p0
-
-    return-void
-
-    :cond_1
-    :try_start_1
-    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/content/Context;
-
-    invoke-static {p1}, Lcom/purplebrain/adbuddiz/sdk/i/j;->a(Landroid/content/Context;)V
-
-    invoke-static {p1}, Lcom/purplebrain/adbuddiz/sdk/i/q;->b(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_2
-
-    const-string v0, "Can\'t cache ads: no Publisher Key set. Call AdBuddiz.setPublisherKey(); before calling cacheAds();"
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    :try_start_2
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/f/d$a;->a:Lcom/purplebrain/adbuddiz/sdk/f/d$a;
-
-    invoke-static {v1, v0}, Lcom/purplebrain/adbuddiz/sdk/i/l;->a(Lcom/purplebrain/adbuddiz/sdk/f/d$a;Ljava/lang/Throwable;)V
-
-    const-string v1, "AdBuddiz.cacheAds() Exception : "
-
-    invoke-static {v1, v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
     :cond_2
-    :try_start_3
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;->a()Z
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->b:Landroid/graphics/drawable/Drawable;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Lcom/purplebrain/adbuddiz/sdk/i/a/e;->f(Landroid/content/Context;)V
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/i/b/b;->a()Z
-
-    move-result v0
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/i/b/b;->b()Z
-
-    move-result v1
-
-    if-nez v0, :cond_3
-
-    if-eqz v1, :cond_4
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     :cond_3
-    const-string v2, "Configuration changed."
-
-    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/i/o;->a(Ljava/lang/String;)V
-
-    invoke-static {p1}, Lcom/purplebrain/adbuddiz/sdk/i/b/c;->a(Landroid/content/Context;)V
-
-    if-eqz v1, :cond_4
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a()Lcom/purplebrain/adbuddiz/sdk/e/a;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/purplebrain/adbuddiz/sdk/e/a;->b()V
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/b;->a()Lcom/purplebrain/adbuddiz/sdk/e/b;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/purplebrain/adbuddiz/sdk/e/b;->g()V
-
-    invoke-static {p1}, Lcom/purplebrain/adbuddiz/sdk/i/q;->a(Landroid/content/Context;)V
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/i/b/b;->c()V
-
-    :cond_4
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/b;->a()Lcom/purplebrain/adbuddiz/sdk/e/b;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/purplebrain/adbuddiz/sdk/e/b;->d()V
-
-    invoke-static {p1}, Lcom/purplebrain/adbuddiz/sdk/i/e;->a(Landroid/content/Context;)V
-
-    invoke-static {p1}, Lcom/purplebrain/adbuddiz/sdk/i/d;->a(Landroid/content/Context;)V
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a()Lcom/purplebrain/adbuddiz/sdk/e/a;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a(Landroid/content/Context;)V
-
-    iget-object v3, v2, Lcom/purplebrain/adbuddiz/sdk/e/a;->a:Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;
-
-    invoke-virtual {v2, p1, v3}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a(Landroid/content/Context;Lcom/purplebrain/adbuddiz/sdk/e/a/a/b;)V
-
-    if-nez v0, :cond_5
-
-    if-eqz v1, :cond_0
-
-    :cond_5
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a()Lcom/purplebrain/adbuddiz/sdk/e/a;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/purplebrain/adbuddiz/sdk/e/a;->b(Z)V
-    :try_end_3
-    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_0
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto :goto_0
-.end method
-
-.method public final declared-synchronized a(Landroid/content/Context;Ljava/lang/String;)Z
-    .locals 7
-
-    const/4 v2, 0x1
-
-    const/4 v0, 0x0
-
-    monitor-enter p0
-
-    :try_start_0
-    new-instance v4, Lcom/purplebrain/adbuddiz/sdk/f/d;
-
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/f/d$a;->c:Lcom/purplebrain/adbuddiz/sdk/f/d$a;
-
-    invoke-direct {v4, v1, p2}, Lcom/purplebrain/adbuddiz/sdk/f/d;-><init>(Lcom/purplebrain/adbuddiz/sdk/f/d$a;Ljava/lang/String;)V
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/p;->a(Z)Lcom/purplebrain/adbuddiz/sdk/i/p;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v5
-
-    :try_start_1
-    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/content/Context;
-
-    if-nez v1, :cond_0
-
-    const-string v1, " ----------------------------------------------------------------- "
-
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v1, " WARNING - cacheAds wasn\'t called! You MUST call cacheAds before   "
-
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v1, " isReadyToShowAd.                                                  "
-
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v1, " isReadyToShowAd will ALWAYS return false.                         "
-
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v1, " ----------------------------------------------------------------- "
-
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-    :try_end_1
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/b; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
     :goto_0
-    monitor-exit p0
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    return v0
+    iget-boolean v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->B:Z
 
-    :cond_0
-    :try_start_2
-    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/content/Context;
+    if-eqz v0, :cond_4
 
-    invoke-static {p1}, Lcom/purplebrain/adbuddiz/sdk/i/j;->a(Landroid/content/Context;)V
+    new-instance v0, Landroid/graphics/Paint;
 
-    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/i/p;->g()Z
-    :try_end_2
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/b; {:try_start_2 .. :try_end_2} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    const/high16 v1, -0x10000
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    const/16 v1, 0x7f
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->g()I
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    int-to-float v1, v1
 
-    move v3, v0
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->h()I
 
+    move-result v2
+
+    int-to-float v2, v2
+
+    iget v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->x:I
+
+    int-to-float v3, v3
+
+    invoke-virtual {p1, v1, v2, v3, v0}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
+    :cond_4
     :goto_1
-    :try_start_3
-    const-string v1, "isReadyToShowAd"
+    return-void
 
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/o;->a(Ljava/lang/String;)V
+    :cond_5
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->c:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {p1, p2}, Lcom/purplebrain/adbuddiz/sdk/c/a;->d(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a()Lcom/purplebrain/adbuddiz/sdk/e/a;
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v0
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->t:I
+
+    sub-int/2addr v0, v1
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->s:I
+
+    sub-int v4, v0, v1
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->c:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+
+    move-result v0
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->u:I
+
+    sub-int/2addr v0, v1
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->v:I
+
+    sub-int v5, v0, v1
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->w:Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v6, 0x0
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->c:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v1, v6}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a(Z)Lcom/purplebrain/adbuddiz/sdk/f/a/a;
-    :try_end_3
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/b; {:try_start_3 .. :try_end_3} :catch_3
-    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_2
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    move v0, v2
+    new-instance v6, Landroid/graphics/Rect;
 
-    :goto_2
-    :try_start_4
-    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/i/p;->d()V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    invoke-direct {v6}, Landroid/graphics/Rect;-><init>()V
 
-    goto :goto_0
+    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->p:Landroid/text/TextPaint;
 
-    :catchall_0
-    move-exception v0
+    iget v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->n:I
 
-    monitor-exit p0
+    move-object v0, p0
 
-    throw v0
+    invoke-direct/range {v0 .. v5}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Ljava/lang/String;Landroid/text/TextPaint;III)V
 
-    :catch_0
-    move-exception v1
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->p:Landroid/text/TextPaint;
 
-    :goto_3
-    :try_start_5
-    iget-object v1, v1, Lcom/purplebrain/adbuddiz/sdk/b/b;->a:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+    invoke-virtual {v0}, Landroid/text/TextPaint;->descent()F
+
+    move-result v0
+
+    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->p:Landroid/text/TextPaint;
+
+    invoke-virtual {v2}, Landroid/text/TextPaint;->ascent()F
+
+    move-result v2
+
+    sub-float/2addr v0, v2
+
+    const/high16 v2, 0x40000000    # 2.0f
+
+    div-float/2addr v0, v2
+
+    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->p:Landroid/text/TextPaint;
+
+    invoke-virtual {v2}, Landroid/text/TextPaint;->descent()F
+
+    move-result v2
+
+    sub-float/2addr v0, v2
+
+    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->p:Landroid/text/TextPaint;
 
     const/4 v3, 0x0
 
-    invoke-static {v4, v1, v3, v2}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;ZZ)V
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    goto :goto_2
+    move-result v7
 
-    :catch_1
-    move-exception v1
+    invoke-virtual {v2, v1, v3, v7, v6}, Landroid/text/TextPaint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    :goto_4
-    sget-object v3, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->UNKNOWN_EXCEPTION_RAISED:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->t:I
 
-    const/4 v6, 0x0
+    div-int/lit8 v3, v4, 0x2
 
-    invoke-static {v4, v3, v6, v2}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;ZZ)V
+    add-int/2addr v2, v3
 
-    const-string v2, "AdBuddiz.isReadyToShowAd() Exception : "
+    int-to-float v2, v2
 
-    invoke-static {v2, v1}, Lcom/purplebrain/adbuddiz/sdk/i/o;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    iget v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->u:I
 
-    goto :goto_2
+    div-int/lit8 v4, v5, 0x2
 
-    :catch_2
-    move-exception v1
+    add-int/2addr v3, v4
 
-    move v2, v3
+    int-to-float v3, v3
 
-    goto :goto_4
+    add-float/2addr v0, v3
 
-    :catch_3
-    move-exception v1
+    invoke-virtual {p1, v2, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    move v2, v3
-
-    goto :goto_3
-
-    :cond_1
-    move v3, v2
-
-    goto :goto_1
-.end method
-
-.method public final declared-synchronized b(Landroid/content/Context;Ljava/lang/String;)V
-    .locals 7
+    const/4 v0, 0x0
 
     const/4 v2, 0x0
 
-    const/4 v1, 0x1
+    iget-object v3, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->p:Landroid/text/TextPaint;
 
-    monitor-enter p0
+    invoke-virtual {p1, v1, v0, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto/16 :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ABInterstitialAdLayout.dispatchDraw"
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2, v0}, Lcom/purplebrain/adbuddiz/sdk/h/p;->a(Ljava/lang/String;Lcom/purplebrain/adbuddiz/sdk/e/a/a;Ljava/lang/Throwable;)V
+
+    const-string v1, "ABInterstitialLayout.dispatchDraw()"
+
+    invoke-static {v1, v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto/16 :goto_1
+.end method
+
+.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 3
 
     :try_start_0
-    new-instance v3, Lcom/purplebrain/adbuddiz/sdk/f/d;
-
-    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/f/d$a;->b:Lcom/purplebrain/adbuddiz/sdk/f/d$a;
-
-    invoke-direct {v3, v0, p2}, Lcom/purplebrain/adbuddiz/sdk/f/d;-><init>(Lcom/purplebrain/adbuddiz/sdk/f/d$a;Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Landroid/view/MotionEvent;)Z
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
-    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/content/Context;
-
-    if-nez v0, :cond_2
-
-    if-nez p1, :cond_1
-
-    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->ACTIVITY_PARAMETER_IS_NULL:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x1
-
-    invoke-static {v3, v0, v1, v2}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;ZZ)V
-    :try_end_1
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :cond_0
-    :goto_0
-    monitor-exit p0
-
-    return-void
-
-    :cond_1
-    :try_start_2
-    const-string v0, " ----------------------------------------------------------------- "
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v0, " WARNING - cacheAds wasn\'t called! You MUST call cacheAds before   "
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v0, " showAd.                                                           "
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v0, " cacheAds will be called automatically. showAd will be delayed.    "
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    const-string v0, " ----------------------------------------------------------------- "
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->b(Ljava/lang/String;)V
-
-    invoke-virtual {p0, p1}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Landroid/content/Context;)V
-
-    :cond_2
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v0
 
-    if-nez v0, :cond_4
+    :goto_0
+    return v0
 
-    if-nez p1, :cond_3
+    :catch_0
+    move-exception v0
 
-    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->ACTIVITY_PARAMETER_IS_NULL:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+    const-string v1, "ABIntersitialAdLayout.onInterceptTouchEvent"
 
-    const/4 v1, 0x1
+    const/4 v2, 0x0
 
-    const/4 v2, 0x1
+    invoke-static {v1, v2, v0}, Lcom/purplebrain/adbuddiz/sdk/h/p;->a(Ljava/lang/String;Lcom/purplebrain/adbuddiz/sdk/e/a/a;Ljava/lang/Throwable;)V
 
-    invoke-static {v3, v0, v1, v2}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;ZZ)V
+    const-string v1, "ABInterstitialLayout.onInterceptTouchEvent()"
 
-    :cond_3
-    new-instance v0, Landroid/os/Handler;
+    invoke-static {v1, v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    const/4 v0, 0x0
 
-    move-result-object v1
+    goto :goto_0
+.end method
 
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+.method protected final onLayout(ZIIII)V
+    .locals 8
 
-    new-instance v1, Lcom/purplebrain/adbuddiz/sdk/c/a$1;
+    :try_start_0
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildCount()I
 
-    invoke-direct {v1, p0, p1, p2}, Lcom/purplebrain/adbuddiz/sdk/c/a$1;-><init>(Lcom/purplebrain/adbuddiz/sdk/c/a;Landroid/content/Context;Ljava/lang/String;)V
+    move-result v0
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_2
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->d()I
+
+    move-result v0
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->b()I
+
+    move-result v1
+
+    div-int/lit8 v1, v1, 0x2
+
+    add-int/2addr v0, v1
+
+    add-int v1, p2, v0
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->c()I
+
+    move-result v0
+
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->f()I
+
+    move-result v2
+
+    add-int/2addr v0, v2
+
+    add-int v2, p3, v0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v4
+
+    add-int/2addr v4, v2
+
+    invoke-virtual {v3, v1, v2, v0, v4}, Landroid/view/View;->layout(IIII)V
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildCount()I
+
+    move-result v4
+
+    if-ge v0, v4, :cond_0
+
+    invoke-virtual {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v4
+
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v5
+
+    add-int/2addr v5, v2
+
+    invoke-virtual {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v6
+
+    sub-int/2addr v5, v6
+
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v6
+
+    add-int/2addr v6, v1
+
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v7
+
+    add-int/2addr v7, v2
+
+    invoke-virtual {v4, v1, v5, v6, v7}, Landroid/view/View;->layout(IIII)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :catch_0
     move-exception v0
 
-    :try_start_3
-    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->MISSING_ADBUDDIZ_ACTIVITY_IN_MANIFEST:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+    const-string v1, "ABInterstitialLayout.onLayout()"
 
-    const/4 v1, 0x1
+    invoke-static {v1, v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    const/4 v2, 0x1
+    :cond_0
+    return-void
+.end method
 
-    invoke-static {v3, v0, v1, v2}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;ZZ)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+.method protected final onMeasure(II)V
+    .locals 18
 
-    goto :goto_0
+    :try_start_0
+    invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    :catchall_0
-    move-exception v0
+    move-result v6
 
-    monitor-exit p0
+    invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    throw v0
+    move-result v7
 
-    :cond_4
-    :try_start_4
-    const-string v0, "showAd"
+    invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->a(Ljava/lang/String;)V
-    :try_end_4
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_4 .. :try_end_4} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_1
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    move-result v8
 
-    const/4 v0, 0x0
+    invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    :try_start_5
-    invoke-static {p1, p2}, Lcom/purplebrain/adbuddiz/sdk/c/a;->d(Landroid/content/Context;Ljava/lang/String;)V
+    move-result v9
 
-    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getPaddingLeft()I
 
-    invoke-static {p1}, Lcom/purplebrain/adbuddiz/sdk/i/j;->a(Landroid/content/Context;)V
+    move-result v2
 
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a()Lcom/purplebrain/adbuddiz/sdk/e/a;
+    invoke-virtual/range {p0 .. p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getPaddingRight()I
 
-    move-result-object v4
+    move-result v3
 
-    const/4 v5, 0x0
+    add-int/2addr v2, v3
 
-    invoke-virtual {v4, p1, v5}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a(Landroid/content/Context;Z)Lcom/purplebrain/adbuddiz/sdk/f/a/a;
+    invoke-direct/range {p0 .. p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->b()I
 
-    move-result-object v4
+    move-result v3
 
-    const/4 v5, 0x0
+    div-int/lit8 v3, v3, 0x2
 
-    invoke-static {v5}, Lcom/purplebrain/adbuddiz/sdk/i/p;->a(Z)Lcom/purplebrain/adbuddiz/sdk/i/p;
+    add-int/2addr v3, v2
 
-    move-result-object v5
+    invoke-direct/range {p0 .. p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->b()I
 
-    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/i/p;->c()V
+    move-result v2
 
-    new-instance v5, Lcom/purplebrain/adbuddiz/sdk/i/a;
+    div-int/lit8 v4, v2, 0x2
 
-    iget-object v6, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/content/Context;
+    const/4 v2, 0x0
 
-    invoke-direct {v5, v6}, Lcom/purplebrain/adbuddiz/sdk/i/a;-><init>(Landroid/content/Context;)V
+    move-object/from16 v0, p0
 
-    iput-object v4, v5, Lcom/purplebrain/adbuddiz/sdk/i/a;->a:Lcom/purplebrain/adbuddiz/sdk/f/a/a;
+    iget-object v5, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/graphics/drawable/Drawable;
 
-    iput-object p2, v5, Lcom/purplebrain/adbuddiz/sdk/i/a;->b:Ljava/lang/String;
+    if-eqz v5, :cond_0
 
-    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/i/a;->a()Landroid/content/Intent;
+    move-object/from16 v0, p0
 
-    move-result-object v5
+    iget-object v2, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/graphics/drawable/Drawable;
 
-    iget-object v6, p0, Lcom/purplebrain/adbuddiz/sdk/c/a;->a:Landroid/content/Context;
-
-    invoke-virtual {v6, v5}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_5
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/p; {:try_start_5 .. :try_end_5} :catch_2
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/b; {:try_start_5 .. :try_end_5} :catch_3
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_5 .. :try_end_5} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_1
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    :try_start_6
-    new-instance v2, Lcom/purplebrain/adbuddiz/sdk/i/i$3;
-
-    invoke-direct {v2}, Lcom/purplebrain/adbuddiz/sdk/i/i$3;-><init>()V
-
-    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/i/i;->a(Ljava/lang/Runnable;)V
-
-    new-instance v2, Ljava/lang/Thread;
-
-    new-instance v5, Lcom/purplebrain/adbuddiz/sdk/c/a$3;
-
-    invoke-direct {v5, p0, v4}, Lcom/purplebrain/adbuddiz/sdk/c/a$3;-><init>(Lcom/purplebrain/adbuddiz/sdk/c/a;Lcom/purplebrain/adbuddiz/sdk/f/a/a;)V
-
-    invoke-direct {v2, v5}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
-
-    invoke-virtual {v2}, Ljava/lang/Thread;->start()V
-    :try_end_6
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/p; {:try_start_6 .. :try_end_6} :catch_5
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/b; {:try_start_6 .. :try_end_6} :catch_4
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_6 .. :try_end_6} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_1
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    :goto_1
-    if-nez v1, :cond_0
-
-    :try_start_7
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/b;->a()Lcom/purplebrain/adbuddiz/sdk/e/b;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/purplebrain/adbuddiz/sdk/e/b;->f()Ljava/lang/Long;
-
-    move-result-object v1
-
-    const/16 v2, 0x1f4
-
-    invoke-static {v1, v2}, Lcom/purplebrain/adbuddiz/sdk/i/h;->a(Ljava/lang/Long;I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->b(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljava/lang/Thread;
-
-    new-instance v1, Lcom/purplebrain/adbuddiz/sdk/c/a$2;
-
-    invoke-direct {v1, p0, p1, p2}, Lcom/purplebrain/adbuddiz/sdk/c/a$2;-><init>(Lcom/purplebrain/adbuddiz/sdk/c/a;Landroid/content/Context;Ljava/lang/String;)V
-
-    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
-
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
-    :try_end_7
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_7 .. :try_end_7} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_1
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
-
-    goto/16 :goto_0
-
-    :catch_1
-    move-exception v0
-
-    :try_start_8
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->UNKNOWN_EXCEPTION_RAISED:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-
-    const/4 v2, 0x1
-
-    const/4 v4, 0x1
-
-    invoke-static {v3, v1, v2, v4}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;ZZ)V
-
-    const-string v1, "AdBuddiz.showAd() Exception : "
-
-    invoke-static {v1, v0}, Lcom/purplebrain/adbuddiz/sdk/i/o;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
-
-    goto/16 :goto_0
-
-    :catch_2
-    move-exception v0
-
-    move v1, v2
-
-    :goto_2
-    :try_start_9
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/e/a;->a()Lcom/purplebrain/adbuddiz/sdk/e/a;
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    const/4 v4, 0x0
+    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
 
-    invoke-virtual {v2, v4}, Lcom/purplebrain/adbuddiz/sdk/e/a;->b(Z)V
+    move-result v2
 
-    iget-object v2, v0, Lcom/purplebrain/adbuddiz/sdk/b/b;->a:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+    div-int/lit8 v2, v2, 0x2
 
-    const/4 v4, 0x1
+    move-object/from16 v0, p0
 
-    const/4 v5, 0x1
+    iget v5, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->q:I
 
-    invoke-static {v3, v2, v4, v5}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;ZZ)V
+    add-int/2addr v2, v5
 
-    iget-object v0, v0, Lcom/purplebrain/adbuddiz/sdk/b/b;->a:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+    if-gez v2, :cond_0
+
+    const/4 v2, 0x0
+
+    :cond_0
+    add-int/2addr v2, v4
+
+    add-int v10, v3, v2
+
+    invoke-virtual/range {p0 .. p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getPaddingTop()I
+
+    move-result v2
+
+    invoke-virtual/range {p0 .. p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getPaddingBottom()I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    invoke-direct/range {p0 .. p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->f()I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    invoke-direct/range {p0 .. p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->b()I
+
+    move-result v3
+
+    div-int/lit8 v3, v3, 0x2
+
+    add-int v11, v2, v3
+
+    sub-int v2, v6, v10
+
+    int-to-double v4, v2
+
+    sub-int v2, v8, v11
+
+    int-to-double v2, v2
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->D:Ljava/lang/Double;
+
+    if-eqz v12, :cond_2
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->D:Ljava/lang/Double;
+
+    invoke-virtual {v12}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v12
+
+    div-double v12, v4, v12
+
+    cmpg-double v12, v12, v2
+
+    if-gez v12, :cond_1
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->D:Ljava/lang/Double;
+
+    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v2
+
+    div-double v2, v4, v2
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->floor(D)D
+
+    move-result-wide v2
+
+    :cond_1
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->D:Ljava/lang/Double;
+
+    invoke-virtual {v12}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v12
+
+    mul-double/2addr v12, v2
+
+    cmpg-double v12, v12, v4
+
+    if-gez v12, :cond_2
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->D:Ljava/lang/Double;
+
+    invoke-virtual {v4}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v4
+
+    mul-double/2addr v4, v2
+
+    invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
+
+    move-result-wide v4
+
+    :cond_2
+    invoke-virtual/range {p0 .. p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildCount()I
+
+    move-result v12
+
+    if-eqz v12, :cond_6
+
+    const/4 v12, 0x0
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v12}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v12
+
+    double-to-int v13, v4
+
+    const/high16 v14, -0x80000000
+
+    invoke-static {v13, v14}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v13
+
+    double-to-int v14, v2
+
+    const/high16 v15, -0x80000000
+
+    invoke-static {v14, v15}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v14
+
+    invoke-virtual {v12, v13, v14}, Landroid/view/View;->measure(II)V
+
+    invoke-virtual {v12}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v13
+
+    int-to-double v14, v13
+
+    div-double v14, v4, v14
+
+    invoke-virtual {v12}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v13
+
+    int-to-double v0, v13
+
+    move-wide/from16 v16, v0
+
+    div-double v16, v2, v16
+
+    invoke-static/range {v14 .. v17}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide v14
+
+    invoke-virtual {v12}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v13
+
+    if-eqz v13, :cond_3
+
+    invoke-virtual {v12}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v4
+
+    int-to-double v4, v4
+
+    mul-double/2addr v4, v14
+
+    invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
+
+    move-result-wide v4
+
+    double-to-int v4, v4
+
+    const/high16 v5, 0x40000000    # 2.0f
+
+    invoke-static {v4, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p1
+
+    :goto_0
+    invoke-virtual {v12}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    invoke-virtual {v12}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v2
+
+    int-to-double v2, v2
+
+    mul-double/2addr v2, v14
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->floor(D)D
+
+    move-result-wide v2
+
+    double-to-int v2, v2
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    invoke-static {v2, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p2
+
+    :goto_1
+    move/from16 v0, p1
+
+    move/from16 v1, p2
+
+    invoke-virtual {v12, v0, v1}, Landroid/view/View;->measure(II)V
+
+    const/4 v2, 0x1
+
+    :goto_2
+    invoke-virtual/range {p0 .. p0}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildCount()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_5
+
+    invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v3
+
+    const/high16 v4, 0x40000000    # 2.0f
+
+    invoke-static {v3, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v3
+
+    invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v4
+
+    const/high16 v5, -0x80000000
+
+    invoke-static {v4, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v4
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v2}, Lcom/purplebrain/adbuddiz/sdk/c/a;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v3, v4}, Landroid/view/View;->measure(II)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_3
+    mul-double/2addr v4, v14
+
+    invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
+
+    move-result-wide v4
+
+    double-to-int v4, v4
+
+    const/high16 v5, 0x40000000    # 2.0f
+
+    invoke-static {v4, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p1
+
+    goto :goto_0
+
+    :cond_4
+    mul-double/2addr v2, v14
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->floor(D)D
+
+    move-result-wide v2
+
+    double-to-int v2, v2
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    invoke-static {v2, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p2
 
     goto :goto_1
 
-    :catch_3
-    move-exception v0
+    :cond_5
+    const/high16 v2, 0x40000000    # 2.0f
+
+    if-ne v9, v2, :cond_7
+
+    const/high16 v2, 0x40000000    # 2.0f
+
+    invoke-static {v8, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p2
+
+    invoke-virtual {v12}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v2
+
+    sub-int v2, v8, v2
+
+    sub-int/2addr v2, v11
+
+    div-int/lit8 v2, v2, 0x2
+
+    move-object/from16 v0, p0
+
+    iput v2, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->y:I
 
     :goto_3
-    iget-object v1, v0, Lcom/purplebrain/adbuddiz/sdk/b/b;->a:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+    const/high16 v2, 0x40000000    # 2.0f
 
-    const/4 v4, 0x1
+    if-ne v7, v2, :cond_8
 
-    const/4 v5, 0x1
+    const/high16 v2, 0x40000000    # 2.0f
 
-    invoke-static {v3, v1, v4, v5}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;ZZ)V
+    invoke-static {v6, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    iget-object v0, v0, Lcom/purplebrain/adbuddiz/sdk/b/b;->a:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-    :try_end_9
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_9 .. :try_end_9} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_1
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
+    move-result p1
 
-    move v1, v2
+    invoke-virtual {v12}, Landroid/view/View;->getMeasuredWidth()I
 
-    goto :goto_1
+    move-result v2
 
-    :catch_4
-    move-exception v0
+    sub-int v2, v6, v2
 
-    move v2, v1
+    sub-int/2addr v2, v10
+
+    div-int/lit8 v2, v2, 0x2
+
+    move-object/from16 v0, p0
+
+    iput v2, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->z:I
+
+    move-object/from16 v0, p0
+
+    iget v2, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->z:I
+
+    move-object/from16 v0, p0
+
+    iput v2, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->A:I
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_6
+    :goto_4
+    invoke-super/range {p0 .. p2}, Landroid/view/ViewGroup;->onMeasure(II)V
+
+    return-void
+
+    :cond_7
+    :try_start_1
+    invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v2
+
+    add-int/2addr v2, v11
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    invoke-static {v2, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p2
+
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p0
+
+    iput v2, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->y:I
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_3
 
-    :catch_5
+    :catch_0
+    move-exception v2
+
+    const-string v3, "ABInterstitialAdLayout.onMeasure"
+
+    const/4 v4, 0x0
+
+    invoke-static {v3, v4, v2}, Lcom/purplebrain/adbuddiz/sdk/h/p;->a(Ljava/lang/String;Lcom/purplebrain/adbuddiz/sdk/e/a/a;Ljava/lang/Throwable;)V
+
+    const-string v3, "ABInterstitialLayout.onMeasure()"
+
+    invoke-static {v3, v2}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_4
+
+    :cond_8
+    :try_start_2
+    invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v2
+
+    add-int/2addr v2, v10
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    invoke-static {v2, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p1
+
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p0
+
+    iput v2, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->z:I
+
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p0
+
+    iput v2, v0, Lcom/purplebrain/adbuddiz/sdk/c/a;->A:I
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_4
+.end method
+
+.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 3
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "ClickableViewAccessibility"
+        }
+    .end annotation
+
+    :try_start_0
+    invoke-direct {p0, p1}, Lcom/purplebrain/adbuddiz/sdk/c/a;->a(Landroid/view/MotionEvent;)Z
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :catch_0
     move-exception v0
 
-    goto :goto_2
+    const-string v1, "ABInterstitialAdLayout.onTouchEvent"
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2, v0}, Lcom/purplebrain/adbuddiz/sdk/h/p;->a(Ljava/lang/String;Lcom/purplebrain/adbuddiz/sdk/e/a/a;Ljava/lang/Throwable;)V
+
+    const-string v1, "ABIntersitialAdLayout.onTouchEvent()"
+
+    invoke-static {v1, v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    goto :goto_0
 .end method

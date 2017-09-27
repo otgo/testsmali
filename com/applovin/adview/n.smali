@@ -2,18 +2,22 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/applovin/adview/AppLovinInterstitialActivity;
+.field final synthetic a:Z
+
+.field final synthetic b:Lcom/applovin/adview/m;
 
 
 # direct methods
-.method constructor <init>(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+.method constructor <init>(Lcom/applovin/adview/m;Z)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/adview/n;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
+    iput-object p1, p0, Lcom/applovin/adview/n;->b:Lcom/applovin/adview/m;
+
+    iput-boolean p2, p0, Lcom/applovin/adview/n;->a:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,125 +26,49 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 5
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .locals 2
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    iget-boolean v0, p0, Lcom/applovin/adview/n;->a:Z
 
-    const/4 v2, 0x0
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/applovin/adview/n;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
+    iget-object v0, p0, Lcom/applovin/adview/n;->b:Lcom/applovin/adview/m;
 
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->k(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+    iget-object v0, v0, Lcom/applovin/adview/m;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->k(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/s;
 
     move-result-object v0
 
-    const-string v3, "AppLovinInterstitialActivity"
+    const/4 v1, 0x4
 
-    const-string v4, "Video view tapped!"
-
-    invoke-interface {v0, v3, v4}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/applovin/adview/n;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->l(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/sdk/ca;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->z()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/applovin/adview/n;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->m(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/s;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/applovin/adview/n;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->m(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/s;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/applovin/impl/adview/s;->getVisibility()I
-
-    move-result v0
-
-    const/16 v3, 0x8
-
-    if-eq v0, v3, :cond_0
-
-    iget-object v0, p0, Lcom/applovin/adview/n;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->m(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/s;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/applovin/impl/adview/s;->getVisibility()I
-
-    move-result v0
-
-    const/4 v3, 0x4
-
-    if-ne v0, v3, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_0
-    new-instance v4, Landroid/view/animation/AlphaAnimation;
-
-    if-eqz v0, :cond_2
-
-    move v3, v2
-
-    :goto_1
-    if-eqz v0, :cond_3
-
-    :goto_2
-    invoke-direct {v4, v3, v1}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
-
-    const-wide/16 v2, 0x2ee
-
-    invoke-virtual {v4, v2, v3}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
-
-    new-instance v1, Lcom/applovin/adview/o;
-
-    invoke-direct {v1, p0, v0}, Lcom/applovin/adview/o;-><init>(Lcom/applovin/adview/n;Z)V
-
-    invoke-virtual {v4, v1}, Landroid/view/animation/AlphaAnimation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
-
-    iget-object v0, p0, Lcom/applovin/adview/n;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->m(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/s;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Lcom/applovin/impl/adview/s;->startAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v0, v1}, Lcom/applovin/impl/adview/s;->setVisibility(I)V
 
     :cond_0
     return-void
+.end method
 
-    :cond_1
-    const/4 v0, 0x0
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .locals 0
 
-    goto :goto_0
+    return-void
+.end method
 
-    :cond_2
-    move v3, v1
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .locals 2
 
-    goto :goto_1
+    iget-object v0, p0, Lcom/applovin/adview/n;->b:Lcom/applovin/adview/m;
 
-    :cond_3
-    move v1, v2
+    iget-object v0, v0, Lcom/applovin/adview/m;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    goto :goto_2
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->k(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/s;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/applovin/impl/adview/s;->setVisibility(I)V
+
+    return-void
 .end method

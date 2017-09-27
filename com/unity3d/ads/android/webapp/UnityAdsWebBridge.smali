@@ -89,7 +89,7 @@
 
     const/4 v0, 0x0
 
-    .line 72
+    .line 67
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -114,19 +114,19 @@
 
     invoke-static {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
 
-    .line 74
+    .line 69
     iget-object v1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebBridge;->a:Lcom/unity3d/ads/android/webapp/IUnityAdsWebBridgeListener;
 
     if-eqz v1, :cond_0
 
     if-nez p2, :cond_1
 
-    .line 145
+    .line 141
     :cond_0
     :goto_0
     return v0
 
-    .line 80
+    .line 73
     :cond_1
     :try_start_0
     new-instance v2, Lorg/json/JSONObject;
@@ -135,7 +135,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 81
+    .line 77
     :try_start_1
     const-string v1, "data"
 
@@ -145,21 +145,21 @@
 
     move-result-object v3
 
-    .line 87
+    .line 83
     :goto_1
     if-eqz v2, :cond_0
 
     if-eqz p1, :cond_0
 
-    .line 89
+    .line 85
     invoke-static {p1}, Lcom/unity3d/ads/android/webapp/UnityAdsWebBridge;->a(Ljava/lang/String;)Lcom/unity3d/ads/android/webapp/b;
 
     move-result-object v1
 
-    .line 91
+    .line 87
     if-eqz v1, :cond_0
 
-    .line 93
+    .line 89
     sget-object v2, Lcom/unity3d/ads/android/webapp/a;->a:[I
 
     invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/b;->ordinal()I
@@ -170,20 +170,20 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 145
+    .line 141
     :cond_2
     :goto_2
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 83
+    .line 79
     :catch_0
     move-exception v1
 
     move-object v2, v3
 
-    .line 84
+    .line 80
     :goto_3
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -207,7 +207,7 @@
 
     goto :goto_1
 
-    .line 95
+    .line 91
     :pswitch_0
     iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebBridge;->a:Lcom/unity3d/ads/android/webapp/IUnityAdsWebBridgeListener;
 
@@ -215,7 +215,7 @@
 
     goto :goto_2
 
-    .line 98
+    .line 94
     :pswitch_1
     iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebBridge;->a:Lcom/unity3d/ads/android/webapp/IUnityAdsWebBridgeListener;
 
@@ -223,7 +223,7 @@
 
     goto :goto_2
 
-    .line 101
+    .line 97
     :pswitch_2
     iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebBridge;->a:Lcom/unity3d/ads/android/webapp/IUnityAdsWebBridgeListener;
 
@@ -231,7 +231,7 @@
 
     goto :goto_2
 
-    .line 104
+    .line 100
     :pswitch_3
     iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebBridge;->a:Lcom/unity3d/ads/android/webapp/IUnityAdsWebBridgeListener;
 
@@ -239,7 +239,7 @@
 
     goto :goto_2
 
-    .line 107
+    .line 103
     :pswitch_4
     iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebBridge;->a:Lcom/unity3d/ads/android/webapp/IUnityAdsWebBridgeListener;
 
@@ -247,7 +247,7 @@
 
     goto :goto_2
 
-    .line 110
+    .line 106
     :pswitch_5
     iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebBridge;->a:Lcom/unity3d/ads/android/webapp/IUnityAdsWebBridgeListener;
 
@@ -255,7 +255,7 @@
 
     goto :goto_2
 
-    .line 113
+    .line 109
     :pswitch_6
     iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebBridge;->a:Lcom/unity3d/ads/android/webapp/IUnityAdsWebBridgeListener;
 
@@ -263,10 +263,8 @@
 
     goto :goto_2
 
-    .line 116
+    .line 112
     :pswitch_7
-    if-eqz v3, :cond_2
-
     const-string v1, "clickUrl"
 
     invoke-virtual {v3, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
@@ -275,7 +273,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 120
+    .line 113
     :try_start_2
     const-string v1, "clickUrl"
 
@@ -285,10 +283,10 @@
 
     move-result-object v0
 
-    .line 127
+    .line 123
     if-eqz v0, :cond_2
 
-    .line 129
+    .line 125
     :try_start_3
     new-instance v1, Landroid/content/Intent;
 
@@ -296,14 +294,14 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 130
+    .line 126
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 131
+    .line 127
     invoke-static {}, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->getCurrentActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -314,7 +312,7 @@
 
     goto :goto_2
 
-    .line 134
+    .line 130
     :catch_1
     move-exception v1
 
@@ -342,7 +340,7 @@
 
     goto/16 :goto_2
 
-    .line 123
+    .line 119
     :catch_2
     move-exception v1
 
@@ -352,7 +350,7 @@
 
     goto/16 :goto_0
 
-    .line 141
+    .line 137
     :pswitch_8
     iget-object v0, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebBridge;->a:Lcom/unity3d/ads/android/webapp/IUnityAdsWebBridgeListener;
 
@@ -360,13 +358,13 @@
 
     goto/16 :goto_2
 
-    .line 83
+    .line 79
     :catch_3
     move-exception v1
 
     goto/16 :goto_3
 
-    .line 93
+    .line 89
     nop
 
     :pswitch_data_0
@@ -381,15 +379,4 @@
         :pswitch_7
         :pswitch_8
     .end packed-switch
-.end method
-
-.method public setListener(Lcom/unity3d/ads/android/webapp/IUnityAdsWebBridgeListener;)V
-    .locals 0
-
-    .prologue
-    .line 66
-    iput-object p1, p0, Lcom/unity3d/ads/android/webapp/UnityAdsWebBridge;->a:Lcom/unity3d/ads/android/webapp/IUnityAdsWebBridgeListener;
-
-    .line 67
-    return-void
 .end method

@@ -1,267 +1,1100 @@
-.class public Lcom/purplebrain/adbuddiz/sdk/g/a;
+.class public abstract Lcom/purplebrain/adbuddiz/sdk/g/a;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # static fields
-.field private static final a:Ljava/lang/String;
+.field private static e:Ljava/util/concurrent/ExecutorService;
+
+.field private static f:Ljava/util/concurrent/ExecutorService;
 
 
 # instance fields
-.field private b:Landroid/webkit/WebView;
+.field public a:I
+
+.field protected b:Lcom/purplebrain/adbuddiz/sdk/g/b;
+
+.field private c:I
+
+.field private d:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
 
-    const-class v0, Lcom/purplebrain/adbuddiz/sdk/g/a;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/webkit/WebView;)V
-    .locals 1
+    const/4 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput v1, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->a:I
 
-    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->b:Landroid/webkit/WebView;
+    const/16 v0, 0xa
 
-    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->b:Landroid/webkit/WebView;
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->c:I
+
+    iput-boolean v1, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->d:Z
 
     return-void
 .end method
 
-.method public static a(Landroid/webkit/WebView;)V
-    .locals 1
+.method protected static a(Ljava/net/HttpURLConnection;)Ljava/io/InputStream;
+    .locals 3
 
-    :try_start_0
-    const-string v0, "InVzZSBzdHJpY3QiO3dpbmRvdy5fbXJhaWQ9KGZ1bmN0aW9uKCl7dmFyIGg9WyJsb2FkaW5nIiwiZGVmYXVsdCIsImV4cGFuZGVkIiwicmVzaXplZCIsImhpZGRlbiJdO3ZhciBnPVsicmVhZHkiLCJlcnJvciIsInN0YXRlQ2hhbmdlIiwidmlld2FibGVDaGFuZ2UiLCJzaXplQ2hhbmdlIl07dmFyIGE9ImxvYWRpbmciO3ZhciBkPWZhbHNlO3ZhciBiPXt9O3ZhciBmPXt9O3ZhciBsPXtzbXM6ZmFsc2UsdGVsOmZhbHNlLGNhbGVuZGFyOmZhbHNlLHN0b3JlUGljdHVyZTpmYWxzZSxpbmxpbmVWaWRlbzpmYWxzZX07dmFyIGM9e2FsbG93T3JpZW50YXRpb25DaGFuZ2U6dHJ1ZSxmb3JjZU9yaWVudGF0aW9uOiJub25lIn07dmFyIGs9e307Zm9yKHZhciBlPTA7ZTxnLmxlbmd0aDtlKyspe2tbZ1tlXV09W119dmFyIGo9e19maXJlRXZlbnQ6ZnVuY3Rpb24ocCl7aWYoZy5pbmRleE9mKHApPT0tMSl7cmV0dXJufXZhciBuPVtdO2Zvcih2YXIgbT0xO208YXJndW1lbnRzLmxlbmd0aDttKyspe24ucHVzaChhcmd1bWVudHNbbV0pfXZhciBxPWtbcF07Zm9yKHZhciBvPTA7bzxxLmxlbmd0aDtvKyspe3Fbb10uYXBwbHkodW5kZWZpbmVkLG4pfX0sX2NhbGxBY3Rpb246ZnVuY3Rpb24obyxxKXt2YXIgbT0ibXJhaWQ6Ly9hZGJ1ZGRpei8iK287aWYocSE9dW5kZWZpbmVkKXt2YXIgaT0iIjtmb3IodmFyIHAgaW4gcSl7aWYoaS5sZW5ndGg9PTApe2krPSI/In1lbHNle2krPSImIn1pKz1wKyI9IitlbmNvZGVVUklDb21wb25lbnQocVtwXSl9bSs9aX12YXIgbj1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCJpZnJhbWUiKTtuLnNldEF0dHJpYnV0ZSgic3JjIixtKTtuLnNldEF0dHJpYnV0ZSgic3R5bGUiLCJkaXNwbGF5OiBub25lOyIpO2lmKGRvY3VtZW50LmJvZHkhPW51bGwpe2RvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQobil9ZWxzZXtkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCJET01Db250ZW50TG9hZGVkIixmdW5jdGlvbigpe2RvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQobil9LGZhbHNlKX19LF9zZXRTdXBwb3J0Rm9yOmZ1bmN0aW9uKGksbSl7aWYobFtpXT09dW5kZWZpbmVkKXtyZXR1cm59bFtpXT0obT09InRydWUiKX0sX3N1cHBvcnRzOmZ1bmN0aW9uKGkpe2lmKGxbaV09PXVuZGVmaW5lZCl7cmV0dXJuIGZhbHNlfXJldHVybiBsW2ldfSxfc2V0U3RhdGU6ZnVuY3Rpb24oaSl7YT1pfSxfZ2V0U3RhdGU6ZnVuY3Rpb24oKXtyZXR1cm4gYX0sX3NldFZpc2libGU6ZnVuY3Rpb24oaSl7ZD0oaT09InRydWUiKX0sX2lzVmlld2FibGU6ZnVuY3Rpb24oKXtyZXR1cm4oZD09dHJ1ZSl9LF9zZXRNYXhTaXplOmZ1bmN0aW9uKG0saSl7Zj17d2lkdGg6cGFyc2VJbnQobSksaGVpZ2h0OnBhcnNlSW50KGkpfX0sX2dldE1heFNpemU6ZnVuY3Rpb24oKXtyZXR1cm4gZn0sX3NldFNjcmVlblNpemU6ZnVuY3Rpb24obSxpKXtiPXt3aWR0aDpwYXJzZUludChtKSxoZWlnaHQ6cGFyc2VJbnQoaSl9fSxfZ2V0U2NyZWVuU2l6ZTpmdW5jdGlvbigpe3JldHVybiBifSxfc2V0T3JpZW50YXRpb25Qcm9wZXJ0aWVzOmZ1bmN0aW9uKG0saSl7ai5fY2FsbEFjdGlvbigic2V0T3JpZW50YXRpb25Qcm9wZXJ0aWVzIix7YWxsb3dPcmllbnRhdGlvbkNoYW5nZTptfHx0cnVlLGZvcmNlT3JpZW50YXRpb246aXx8Im5vbmUifSl9LF9nZXRPcmllbnRhdGlvblByb3BlcnRpZXM6ZnVuY3Rpb24oKXt9LF9vcGVuOmZ1bmN0aW9uKGkpe2lmKGk9PXVuZGVmaW5lZCl7ai5fZmlyZUV2ZW50KCJlcnJvciIsInVybCBwYXJhbWF0ZXIgaXMgbWFuZGF0b3J5Iiwib3BlbiIpO3JldHVybn1qLl9jYWxsQWN0aW9uKCJvcGVuIix7dXJsOml9KX0sX3BsYXlWaWRlbzpmdW5jdGlvbihpKXtpZihpPT11bmRlZmluZWQpe2ouX2ZpcmVFdmVudCgiZXJyb3IiLCJ1cmkgcGFyYW1hdGVyIGlzIG1hbmRhdG9yeSIsIm9wZW4iKTtyZXR1cm59ai5fY2FsbEFjdGlvbigicGxheVZpZGVvIix7dXJpOml9KX0sX2Nsb3NlOmZ1bmN0aW9uKCl7ai5fY2FsbEFjdGlvbigiY2xvc2UiKX0sX2FkZEV2ZW50TGlzdGVuZXI6ZnVuY3Rpb24oaSxtKXtpZihnLmluZGV4T2YoaSk9PS0xKXtqLl9maXJlRXZlbnQoImVycm9yIixpKyIgaXMgbm90IGEgdmFsaWQgTVJBSUQgMi4wIGV2ZW50LiIsImFkZEV2ZW50TGlzdGVuZXIiKTtyZXR1cm59a1tpXS5wdXNoKG0pfSxfcmVtb3ZlRXZlbnRMaXN0ZW5lcjpmdW5jdGlvbihtLG4pe2lmKGcuaW5kZXhPZihtKT09LTEpe3JldHVybn12YXIgaT1rW21dLmluZGV4T2Yobik7aWYoaSE9LTEpe2tbbV0uc3BsaWNlKDEsMSl9fX07cmV0dXJuIGp9KSgpO3ZhciBtcmFpZD0oZnVuY3Rpb24oKXtyZXR1cm57YWRkRXZlbnRMaXN0ZW5lcjp3aW5kb3cuX21yYWlkLl9hZGRFdmVudExpc3RlbmVyLGNyZWF0ZUNhbGVuZGFyRXZlbnQ6ZnVuY3Rpb24oKXt9LGNsb3NlOndpbmRvdy5fbXJhaWQuX2Nsb3NlLGV4cGFuZDpmdW5jdGlvbigpe30sZ2V0Q3VycmVudFBvc2l0aW9uOmZ1bmN0aW9uKCl7cmV0dXJue3g6MCx5OjAsd2lkdGg6d2luZG93Ll9tcmFpZC5fZ2V0TWF4U2l6ZSgpLndpZHRoLGhlaWdodDp3aW5kb3cuX21yYWlkLl9nZXRNYXhTaXplKCkuaGVpZ2h0fX0sZ2V0RGVmYXVsdFBvc2l0aW9uOmZ1bmN0aW9uKCl7cmV0dXJue3g6MCx5OjAsd2lkdGg6d2luZG93Ll9tcmFpZC5fZ2V0TWF4U2l6ZSgpLndpZHRoLGhlaWdodDp3aW5kb3cuX21yYWlkLl9nZXRNYXhTaXplKCkuaGVpZ2h0fX0sZ2V0RXhwYW5kUHJvcGVydGllczpmdW5jdGlvbigpe3JldHVybnt3aWR0aDp3aW5kb3cuX21yYWlkLl9nZXRNYXhTaXplKCkud2lkdGgsaGVpZ2h0OndpbmRvdy5fbXJhaWQuX2dldE1heFNpemUoKS5oZWlnaHQsdXNlQ3VzdG9tQ2xvc2U6ZmFsc2UsaXNNb2RhbDp0cnVlfX0sZ2V0TWF4U2l6ZTp3aW5kb3cuX21yYWlkLl9nZXRNYXhTaXplLGdldE9yaWVudGF0aW9uUHJvcGVydGllczp3aW5kb3cuX21yYWlkLl9nZXRPcmllbnRhdGlvblByb3BlcnRpZXMsZ2V0UGxhY2VtZW50VHlwZTpmdW5jdGlvbigpe3JldHVybiJpbnRlcnN0aXRpYWwifSxnZXRSZXNpemVQcm9wZXJ0aWVzOmZ1bmN0aW9uKCl7cmV0dXJue3dpZHRoOndpbmRvdy5fbXJhaWQuX2dldE1heFNpemUoKS53aWR0aCxoZWlnaHQ6d2luZG93Ll9tcmFpZC5fZ2V0TWF4U2l6ZSgpLmhlaWdodCxvZmZzZXRYOjAsb2Zmc2V0WTowfX0sZ2V0U2NyZWVuU2l6ZTp3aW5kb3cuX21yYWlkLl9nZXRTY3JlZW5TaXplLGdldFN0YXRlOndpbmRvdy5fbXJhaWQuX2dldFN0YXRlLGdldFZlcnNpb246ZnVuY3Rpb24oKXtyZXR1cm4iMi4wIn0saXNWaWV3YWJsZTp3aW5kb3cuX21yYWlkLl9pc1ZpZXdhYmxlLG9wZW46d2luZG93Ll9tcmFpZC5fb3BlbixwbGF5VmlkZW86d2luZG93Ll9tcmFpZC5fcGxheVZpZGVvLHJlbW92ZUV2ZW50TGlzdGVuZXI6d2luZG93Ll9tcmFpZC5fcmVtb3ZlRXZlbnRMaXN0ZW5lcixyZXNpemU6ZnVuY3Rpb24oKXt9LHNldEV4cGFuZFByb3BlcnRpZXM6ZnVuY3Rpb24oKXt9LHNldE9yaWVudGF0aW9uUHJvcGVydGllczpmdW5jdGlvbihhKXt3aW5kb3cuX21yYWlkLl9zZXRPcmllbnRhdGlvblByb3BlcnRpZXMoYS5hbGxvd09yaWVudGF0aW9uQ2hhbmdlLGEuZm9yY2VPcmllbnRhdGlvbnx8Im5vbmUiKX0sc2V0UmVzaXplUHJvcGVydGllczpmdW5jdGlvbigpe30sc3RvcmVQaWN0dXJlOmZ1bmN0aW9uKCl7fSxzdXBwb3J0czp3aW5kb3cuX21yYWlkLl9zdXBwb3J0cyx1c2VDdXN0b21DbG9zZTpmdW5jdGlvbigpe319fSkoKTs="
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
-    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/i/f;->b(Ljava/lang/String;)Ljava/lang/String;
+    move-result v0
+
+    const/16 v1, 0x190
+
+    if-lt v0, v1, :cond_1
+
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getErrorStream()Ljava/io/InputStream;
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->a(Landroid/webkit/WebView;Ljava/lang/String;)V
+    :goto_0
+    const-string v1, "Content-Encoding"
+
+    invoke-virtual {p0, v1}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "gzip"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    new-instance v1, Ljava/util/zip/GZIPInputStream;
+
+    invoke-direct {v1, v0}, Ljava/util/zip/GZIPInputStream;-><init>(Ljava/io/InputStream;)V
+
+    move-object v0, v1
+
+    :cond_0
+    return-object v0
+
+    :cond_1
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public static a(Ljava/net/URL;Ljava/lang/String;)Ljava/net/HttpURLConnection;
+    .locals 4
+
+    const/16 v2, 0x3a98
+
+    const/4 v3, 0x1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/net/HttpURLConnection;
+
+    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
+
+    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
+
+    invoke-virtual {v0, v3}, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
+
+    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setUseCaches(Z)V
+
+    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setAllowUserInteraction(Z)V
+
+    const-string v1, "Accept-Encoding"
+
+    const-string v2, "gzip"
+
+    invoke-virtual {v0, v1, v2}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v3}, Ljava/net/HttpURLConnection;->setDoInput(Z)V
+
+    invoke-virtual {v0, p1}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method static a(Ljava/net/HttpURLConnection;Ljava/lang/String;)V
+    .locals 2
+
+    const-string v0, "Content-Type"
+
+    const-string v1, "application/json; charset=utf-8"
+
+    invoke-virtual {p0, v0, v1}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v0, "Content-Encoding"
+
+    const-string v1, "gzip"
+
+    invoke-virtual {p0, v0, v1}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
+
+    new-instance v0, Ljava/util/zip/GZIPOutputStream;
+
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getOutputStream()Ljava/io/OutputStream;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
+
+    new-instance v1, Ljava/io/BufferedOutputStream;
+
+    invoke-direct {v1, v0}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
+
+    const-string v0, "UTF-8"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/io/OutputStream;->write([B)V
+
+    invoke-virtual {v1}, Ljava/io/OutputStream;->flush()V
+
+    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
+
+    return-void
+.end method
+
+.method protected static b(Ljava/net/HttpURLConnection;)Ljava/lang/String;
+    .locals 1
+
+    invoke-static {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->a(Ljava/net/HttpURLConnection;)Ljava/io/InputStream;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/v;->a(Ljava/io/InputStream;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected static b(Ljava/net/URL;Ljava/lang/String;)Ljava/net/HttpURLConnection;
+    .locals 1
+
+    const-string v0, "POST"
+
+    invoke-static {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->a(Ljava/net/URL;Ljava/lang/String;)Ljava/net/HttpURLConnection;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/purplebrain/adbuddiz/sdk/g/a;->a(Ljava/net/HttpURLConnection;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public static g()V
+    .locals 2
+
+    const-class v1, Lcom/purplebrain/adbuddiz/sdk/g/a;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->e:Ljava/util/concurrent/ExecutorService;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->e:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
+
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->e:Ljava/util/concurrent/ExecutorService;
+
+    :cond_0
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->f:Ljava/util/concurrent/ExecutorService;
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->f:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
+
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->f:Ljava/util/concurrent/ExecutorService;
+
+    :cond_1
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
     :try_end_0
-    .catch Lcom/purplebrain/adbuddiz/sdk/b/h; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method private static h()Ljava/util/concurrent/ExecutorService;
+    .locals 2
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->e:Ljava/util/concurrent/ExecutorService;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->e:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->isShutdown()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    :cond_0
+    const-class v1, Lcom/purplebrain/adbuddiz/sdk/g/a;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->e:Ljava/util/concurrent/ExecutorService;
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->e:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->isShutdown()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    :cond_1
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->newFixedThreadPool(I)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->e:Ljava/util/concurrent/ExecutorService;
+
+    :cond_2
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_3
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->e:Ljava/util/concurrent/ExecutorService;
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method private static i()Ljava/util/concurrent/ExecutorService;
+    .locals 2
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->f:Ljava/util/concurrent/ExecutorService;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->f:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->isShutdown()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    :cond_0
+    const-class v1, Lcom/purplebrain/adbuddiz/sdk/g/a;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->f:Ljava/util/concurrent/ExecutorService;
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->f:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->isShutdown()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    :cond_1
+    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->f:Ljava/util/concurrent/ExecutorService;
+
+    :cond_2
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_3
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/g/a;->f:Ljava/util/concurrent/ExecutorService;
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+
+# virtual methods
+.method public final a(Lcom/purplebrain/adbuddiz/sdk/g/b;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->b:Lcom/purplebrain/adbuddiz/sdk/g/b;
+
+    return-void
+.end method
+
+.method public final a()Z
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->d:Z
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public abstract b()V
+.end method
+
+.method public abstract c()Z
+.end method
+
+.method public abstract d()Ljava/lang/String;
+.end method
+
+.method public final e()V
+    .locals 1
+
+    iget v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->a:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->a:I
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/g/a;->i()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
 
     :goto_0
+    :try_start_0
+    invoke-interface {v0, p0}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_1
     return-void
+
+    :cond_0
+    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/g/a;->h()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
+
+    goto :goto_1
+.end method
+
+.method public final f()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->d:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->d:Z
+
+    :cond_0
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public run()V
+    .locals 8
+
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    const v3, 0x36ee80
+
+    const v2, 0xdbba0
+
+    const v1, 0xea60
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Request Canceled : "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;)V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    :try_start_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v6, "LaunchRequest : "
+
+    invoke-direct {v0, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->d()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->b()V
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->a()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v6, "Request Ok : "
+
+    invoke-direct {v0, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->d()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;)V
+    :try_end_0
+    .catch Lcom/purplebrain/adbuddiz/sdk/g/l; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/net/ConnectException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_4
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_5
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_6
+
+    :goto_1
+    move v0, v4
+
+    move v4, v5
+
+    :goto_2
+    if-nez v4, :cond_0
+
+    :try_start_1
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->a()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Request canceled before #"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v1, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->a:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " try : "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;)V
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_0
 
     :catch_0
     move-exception v0
 
     goto :goto_0
-.end method
-
-.method static a(Landroid/webkit/WebView;Ljava/lang/String;)V
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "javascript:"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method private varargs b(Ljava/lang/String;[Ljava/lang/Object;)V
-    .locals 6
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "javascript:"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    if-eqz p2, :cond_0
-
-    array-length v0, p2
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "()"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->b:Landroid/webkit/WebView;
-
-    invoke-virtual {v1, v0}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
-
-    return-void
-
-    :cond_1
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    array-length v3, p2
-
-    const/4 v0, 0x0
-
-    :goto_1
-    if-ge v0, v3, :cond_3
-
-    aget-object v4, p2, v0
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
-
-    move-result v5
-
-    if-eqz v5, :cond_2
-
-    const/16 v5, 0x2c
-
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     :cond_2
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    :try_start_2
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    const-string v6, "Request Canceled : "
 
-    invoke-static {v4}, Lorg/json/JSONObject;->quote(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v0, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v4
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->d()Ljava/lang/String;
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;)V
+    :try_end_2
+    .catch Lcom/purplebrain/adbuddiz/sdk/g/l; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/net/UnknownHostException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/net/ConnectException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_5
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_6
 
     goto :goto_1
 
+    :catch_1
+    move-exception v0
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    const-string v7, "AdBuddizServerException : "
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, " - "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/g/l;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->b(Ljava/lang/String;)V
+
+    move v0, v5
+
+    goto :goto_2
+
+    :catch_2
+    move-exception v0
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v5, "No network available (UnknownHostException) : "
+
+    invoke-direct {v0, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->d()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->b(Ljava/lang/String;)V
+
+    move v0, v4
+
+    goto/16 :goto_2
+
+    :catch_3
+    move-exception v0
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v5, "No network available (ConnectException) : "
+
+    invoke-direct {v0, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->d()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->b(Ljava/lang/String;)V
+
+    move v0, v4
+
+    goto/16 :goto_2
+
+    :catch_4
+    move-exception v0
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v5, "No network available (SocketTimeoutException) : "
+
+    invoke-direct {v0, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->d()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->b(Ljava/lang/String;)V
+
+    move v0, v4
+
+    goto/16 :goto_2
+
+    :catch_5
+    move-exception v0
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    const-string v6, "Exception in Request : "
+
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->d()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, " - "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->b(Ljava/lang/String;)V
+
+    move v0, v4
+
+    goto/16 :goto_2
+
+    :catch_6
+    move-exception v0
+
+    const-string v5, "ABGenericRequest.run"
+
+    const/4 v6, 0x0
+
+    invoke-static {v5, v6, v0}, Lcom/purplebrain/adbuddiz/sdk/h/p;->a(Ljava/lang/String;Lcom/purplebrain/adbuddiz/sdk/e/a/a;Ljava/lang/Throwable;)V
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v5, "Throwable thrown in Request : "
+
+    invoke-direct {v0, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->d()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->b(Ljava/lang/String;)V
+
+    move v0, v4
+
+    goto/16 :goto_2
+
     :cond_3
-    new-instance v0, Ljava/lang/StringBuilder;
+    :try_start_3
+    iget v4, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->a:I
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    iget v5, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->c:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-ge v4, v5, :cond_5
 
-    move-result-object v0
+    if-eqz v0, :cond_4
 
-    const-string v1, "("
+    iget v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->a:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    new-instance v0, Ljava/util/Random;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/util/Random;-><init>()V
 
-    move-result-object v0
+    const v1, 0x36ee80
 
-    const-string v1, ")"
+    invoke-virtual {v0, v1}, Ljava/util/Random;->nextInt(I)I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v0
+    add-int/2addr v0, v3
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :goto_3
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v2, "Request sleeps "
 
-    goto :goto_0
-.end method
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-# virtual methods
-.method public final varargs a(Lcom/purplebrain/adbuddiz/sdk/g/d;[Ljava/lang/Object;)V
-    .locals 3
+    move-result-object v1
 
-    array-length v0, p2
+    const-string v2, "ms before #"
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-array v1, v0, [Ljava/lang/Object;
+    move-result-object v1
 
-    const/4 v0, 0x0
+    iget v2, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->a:I
 
-    aput-object p1, v1, v0
+    add-int/lit8 v2, v2, 0x1
 
-    const/4 v0, 0x1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    :goto_0
-    array-length v2, p2
+    move-result-object v1
 
-    if-gt v0, v2, :cond_0
+    const-string v2, " try : "
 
-    add-int/lit8 v2, v0, -0x1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aget-object v2, p2, v2
+    move-result-object v1
 
-    aput-object v2, v1, v0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    add-int/lit8 v0, v0, 0x1
+    move-result-object v2
 
-    goto :goto_0
+    invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    :cond_0
-    const-string v0, "_fireEvent"
+    move-result-object v2
 
-    invoke-virtual {p0, v0, v1}, Lcom/purplebrain/adbuddiz/sdk/g/a;->a(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    move-result-object v1
 
-.method public final varargs a(Ljava/lang/String;[Ljava/lang/Object;)V
-    .locals 2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    const-string v1, "window._mraid."
+    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    int-to-long v0, v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
 
-    move-result-object v0
+    invoke-virtual {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;->e()V
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    goto/16 :goto_0
 
-    move-result-object v0
+    :pswitch_0
+    new-instance v0, Ljava/util/Random;
 
-    invoke-direct {p0, v0, p2}, Lcom/purplebrain/adbuddiz/sdk/g/a;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-direct {v0}, Ljava/util/Random;-><init>()V
 
-    return-void
+    const/16 v1, 0x2710
+
+    invoke-virtual {v0, v1}, Ljava/util/Random;->nextInt(I)I
+
+    move-result v0
+
+    add-int/lit16 v0, v0, 0x2710
+
+    goto :goto_3
+
+    :pswitch_1
+    new-instance v0, Ljava/util/Random;
+
+    invoke-direct {v0}, Ljava/util/Random;-><init>()V
+
+    const/16 v1, 0x7530
+
+    invoke-virtual {v0, v1}, Ljava/util/Random;->nextInt(I)I
+
+    move-result v0
+
+    add-int/lit16 v0, v0, 0x7530
+
+    goto :goto_3
+
+    :pswitch_2
+    new-instance v0, Ljava/util/Random;
+
+    invoke-direct {v0}, Ljava/util/Random;-><init>()V
+
+    const v2, 0xea60
+
+    invoke-virtual {v0, v2}, Ljava/util/Random;->nextInt(I)I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    goto :goto_3
+
+    :pswitch_3
+    new-instance v0, Ljava/util/Random;
+
+    invoke-direct {v0}, Ljava/util/Random;-><init>()V
+
+    const v1, 0xdbba0
+
+    invoke-virtual {v0, v1}, Ljava/util/Random;->nextInt(I)I
+
+    move-result v0
+
+    add-int/2addr v0, v2
+
+    goto :goto_3
+
+    :cond_4
+    iget v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->a:I
+
+    packed-switch v0, :pswitch_data_1
+
+    move v0, v3
+
+    goto :goto_3
+
+    :pswitch_4
+    const/16 v0, 0x3e8
+
+    goto :goto_3
+
+    :pswitch_5
+    const/16 v0, 0xbb8
+
+    goto :goto_3
+
+    :pswitch_6
+    const/16 v0, 0x1b58
+
+    goto/16 :goto_3
+
+    :pswitch_7
+    const/16 v0, 0x7530
+
+    goto/16 :goto_3
+
+    :pswitch_8
+    move v0, v1
+
+    goto/16 :goto_3
+
+    :pswitch_9
+    move v0, v2
+
+    goto/16 :goto_3
+
+    :cond_5
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->b:Lcom/purplebrain/adbuddiz/sdk/g/b;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/a;->b:Lcom/purplebrain/adbuddiz/sdk/g/b;
+
+    invoke-interface {v0, p0}, Lcom/purplebrain/adbuddiz/sdk/g/b;->a(Lcom/purplebrain/adbuddiz/sdk/g/a;)V
+    :try_end_3
+    .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
+
+    goto/16 :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x1
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+        :pswitch_7
+        :pswitch_8
+        :pswitch_9
+    .end packed-switch
 .end method

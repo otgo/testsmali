@@ -39,7 +39,7 @@
 
     iget-object v0, v0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->c(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/sdk/AppLovinLogger;
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->b(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/sdk/AppLovinLogger;
 
     move-result-object v0
 
@@ -91,7 +91,7 @@
 
     iget-object v0, v0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->d(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->c(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
     return-void
 .end method

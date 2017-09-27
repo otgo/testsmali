@@ -1,271 +1,83 @@
-.class final synthetic Lcom/unity3d/ads/android/webapp/h;
+.class final Lcom/unity3d/ads/android/webapp/h;
 .super Ljava/lang/Object;
 .source "UnityAdsWebData.java"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field static final synthetic a:[I
 
-.field static final synthetic b:[I
+# instance fields
+.field final synthetic a:Lcom/unity3d/ads/android/webapp/UnityAdsWebData;
+
+.field private b:Lcom/unity3d/ads/android/webapp/j;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lcom/unity3d/ads/android/webapp/UnityAdsWebData;Lcom/unity3d/ads/android/webapp/j;)V
+    .locals 1
+
+    .prologue
+    .line 880
+    iput-object p1, p0, Lcom/unity3d/ads/android/webapp/h;->a:Lcom/unity3d/ads/android/webapp/UnityAdsWebData;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 879
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/unity3d/ads/android/webapp/h;->b:Lcom/unity3d/ads/android/webapp/j;
+
+    .line 881
+    iput-object p2, p0, Lcom/unity3d/ads/android/webapp/h;->b:Lcom/unity3d/ads/android/webapp/j;
+
+    .line 882
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
     .locals 3
 
     .prologue
-    .line 419
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/j;->values()[Lcom/unity3d/ads/android/webapp/j;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/unity3d/ads/android/webapp/h;->b:[I
-
+    .line 885
     :try_start_0
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->b:[I
+    iget-object v0, p0, Lcom/unity3d/ads/android/webapp/h;->b:Lcom/unity3d/ads/android/webapp/j;
 
-    sget-object v1, Lcom/unity3d/ads/android/webapp/j;->VideoPlan:Lcom/unity3d/ads/android/webapp/j;
+    const/4 v1, 0x1
 
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/j;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
+    invoke-virtual {v0, v1}, Lcom/unity3d/ads/android/webapp/j;->cancel(Z)Z
     :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_a
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 891
     :goto_0
-    :try_start_1
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->b:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/webapp/j;->VideoViewed:Lcom/unity3d/ads/android/webapp/j;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/j;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_9
-
-    :goto_1
-    :try_start_2
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->b:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/webapp/j;->Unsent:Lcom/unity3d/ads/android/webapp/j;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/j;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_8
-
-    :goto_2
-    :try_start_3
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->b:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/webapp/j;->Analytics:Lcom/unity3d/ads/android/webapp/j;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/j;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_7
-
-    :goto_3
-    :try_start_4
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->b:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/webapp/j;->AppWhitelist:Lcom/unity3d/ads/android/webapp/j;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/j;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_6
-
-    :goto_4
-    :try_start_5
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->b:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/webapp/j;->InstalledApps:Lcom/unity3d/ads/android/webapp/j;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/j;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    .line 81
-    :goto_5
-    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->values()[Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/unity3d/ads/android/webapp/h;->a:[I
-
-    :try_start_6
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->a:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->FirstQuartile:Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_4
-
-    :goto_6
-    :try_start_7
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->a:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->MidPoint:Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_7
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_3
-
-    :goto_7
-    :try_start_8
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->a:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->ThirdQuartile:Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_8
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_2
-
-    :goto_8
-    :try_start_9
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->a:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->End:Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_9
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_1
-
-    :goto_9
-    :try_start_a
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->a:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->Start:Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_0
-
-    :goto_a
     return-void
 
+    .line 888
     :catch_0
     move-exception v0
 
-    goto :goto_a
+    .line 889
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    :catch_1
-    move-exception v0
+    const-string v2, "Cancelling urlLoader got exception: "
 
-    goto :goto_9
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    :catch_2
-    move-exception v0
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    goto :goto_8
+    move-result-object v0
 
-    :catch_3
-    move-exception v0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_7
+    move-result-object v0
 
-    :catch_4
-    move-exception v0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    goto :goto_6
+    move-result-object v0
 
-    :catch_5
-    move-exception v0
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
 
-    goto :goto_5
-
-    :catch_6
-    move-exception v0
-
-    goto :goto_4
-
-    :catch_7
-    move-exception v0
-
-    goto :goto_3
-
-    :catch_8
-    move-exception v0
-
-    goto :goto_2
-
-    :catch_9
-    move-exception v0
-
-    goto :goto_1
-
-    :catch_a
-    move-exception v0
-
-    goto/16 :goto_0
+    goto :goto_0
 .end method

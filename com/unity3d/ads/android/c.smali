@@ -6,12 +6,22 @@
 .implements Ljava/lang/Runnable;
 
 
+# instance fields
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:Lorg/json/JSONObject;
+
+
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Ljava/lang/String;Lorg/json/JSONObject;)V
     .locals 0
 
     .prologue
-    .line 516
+    .line 953
+    iput-object p1, p0, Lcom/unity3d/ads/android/c;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lcom/unity3d/ads/android/c;->b:Lorg/json/JSONObject;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,12 +30,16 @@
 
 # virtual methods
 .method public final run()V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 519
-    invoke-static {}, Lcom/unity3d/ads/android/view/UnityAdsMainView;->initWebView()V
+    .line 955
+    new-instance v0, Lcom/unity3d/ads/android/d;
 
-    .line 520
+    invoke-direct {v0, p0}, Lcom/unity3d/ads/android/d;-><init>(Lcom/unity3d/ads/android/c;)V
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsUtils;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    .line 974
     return-void
 .end method

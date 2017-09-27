@@ -33,14 +33,14 @@
 
 
 # virtual methods
-.method a(Lcom/jirbo/adcolony/ae;)V
+.method a(Lcom/jirbo/adcolony/af;)V
     .locals 2
 
     .prologue
     .line 480
     iget-wide v0, p0, Lcom/jirbo/adcolony/ADCData$e;->a:D
 
-    invoke-virtual {p1, v0, v1}, Lcom/jirbo/adcolony/ae;->a(D)V
+    invoke-virtual {p1, v0, v1}, Lcom/jirbo/adcolony/af;->a(D)V
 
     .line 481
     return-void

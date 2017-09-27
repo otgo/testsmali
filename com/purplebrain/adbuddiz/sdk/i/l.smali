@@ -1,54 +1,32 @@
-.class public final Lcom/purplebrain/adbuddiz/sdk/i/l;
+.class final Lcom/purplebrain/adbuddiz/sdk/i/l;
 .super Ljava/lang/Object;
 
 
+# instance fields
+.field public a:I
+
+.field public b:Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;
+
+.field public c:Ljava/util/List;
+
+.field final synthetic d:Lcom/purplebrain/adbuddiz/sdk/i/j;
+
+
 # direct methods
-.method public static a(Lcom/purplebrain/adbuddiz/sdk/f/d$a;Ljava/lang/Throwable;)V
-    .locals 2
+.method private constructor <init>(Lcom/purplebrain/adbuddiz/sdk/i/j;)V
+    .locals 0
 
-    const/4 v1, 0x0
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/i/l;->d:Lcom/purplebrain/adbuddiz/sdk/i/j;
 
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/f/d;
-
-    invoke-direct {v0, p0, v1}, Lcom/purplebrain/adbuddiz/sdk/f/d;-><init>(Lcom/purplebrain/adbuddiz/sdk/f/d$a;Ljava/lang/String;)V
-
-    invoke-static {v0, v1, p1}, Lcom/purplebrain/adbuddiz/sdk/i/l;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/f/a/a;Ljava/lang/Throwable;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private static a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/f/a/a;Ljava/lang/Throwable;)V
-    .locals 2
+.method synthetic constructor <init>(Lcom/purplebrain/adbuddiz/sdk/i/j;B)V
+    .locals 0
 
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/h/g;
-
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/h/g;-><init>()V
-
-    iput-object p1, v0, Lcom/purplebrain/adbuddiz/sdk/h/g;->g:Lcom/purplebrain/adbuddiz/sdk/f/a/a;
-
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->UNKNOWN_EXCEPTION_RAISED:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-
-    invoke-virtual {v0, v1}, Lcom/purplebrain/adbuddiz/sdk/h/g;->a(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)V
-
-    iput-object p0, v0, Lcom/purplebrain/adbuddiz/sdk/h/g;->i:Lcom/purplebrain/adbuddiz/sdk/f/d;
-
-    invoke-virtual {v0, p2}, Lcom/purplebrain/adbuddiz/sdk/h/g;->a(Ljava/lang/Throwable;)V
-
-    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/h/g;->f()V
-
-    return-void
-.end method
-
-.method public static a(Ljava/lang/String;Lcom/purplebrain/adbuddiz/sdk/f/a/a;Ljava/lang/Throwable;)V
-    .locals 2
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/f/d;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/purplebrain/adbuddiz/sdk/f/d;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v0, p1, p2}, Lcom/purplebrain/adbuddiz/sdk/i/l;->a(Lcom/purplebrain/adbuddiz/sdk/f/d;Lcom/purplebrain/adbuddiz/sdk/f/a/a;Ljava/lang/Throwable;)V
+    invoke-direct {p0, p1}, Lcom/purplebrain/adbuddiz/sdk/i/l;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/j;)V
 
     return-void
 .end method

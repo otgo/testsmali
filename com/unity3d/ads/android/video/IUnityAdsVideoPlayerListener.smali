@@ -4,10 +4,14 @@
 
 # interfaces
 .implements Landroid/media/MediaPlayer$OnCompletionListener;
+.implements Lcom/unity3d/ads/android/view/IUnityAdsViewListener;
 
 
 # virtual methods
 .method public abstract onEventPositionReached(Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;)V
+.end method
+
+.method public abstract onVideoHidden()V
 .end method
 
 .method public abstract onVideoPlaybackError()V

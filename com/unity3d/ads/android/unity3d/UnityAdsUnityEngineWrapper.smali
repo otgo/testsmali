@@ -21,7 +21,7 @@
     .locals 1
 
     .prologue
-    .line 20
+    .line 19
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -37,10 +37,10 @@
     .locals 0
 
     .prologue
-    .line 22
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23
+    .line 22
     return-void
 .end method
 
@@ -65,51 +65,45 @@
 
 # virtual methods
 .method public canShowAds(Ljava/lang/String;)Z
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 91
+    const/4 v0, 0x0
+
+    .line 82
     if-eqz p1, :cond_1
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v0
+    move-result v1
 
-    if-lez v0, :cond_1
+    if-lez v1, :cond_1
 
-    .line 92
+    .line 83
     invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->getZoneManager()Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 93
-    if-eqz v0, :cond_0
+    .line 84
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v0, p1}, Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;->getZone(Ljava/lang/String;)Lcom/unity3d/ads/android/zone/UnityAdsZone;
+    .line 85
+    invoke-virtual {v1, p1}, Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;->getZone(Ljava/lang/String;)Lcom/unity3d/ads/android/zone/UnityAdsZone;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
+    .line 86
     invoke-static {}, Lcom/unity3d/ads/android/UnityAds;->canShow()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    .line 96
+    .line 95
+    :cond_0
     :goto_0
     return v0
 
-    .line 93
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 96
     :cond_1
     invoke-static {}, Lcom/unity3d/ads/android/UnityAds;->canShow()Z
 
@@ -122,7 +116,7 @@
     .locals 8
 
     .prologue
-    .line 28
+    .line 27
     sget-object v0, Lcom/unity3d/ads/android/unity3d/UnityAdsUnityEngineWrapper;->a:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -131,7 +125,7 @@
 
     if-nez v0, :cond_0
 
-    .line 29
+    .line 28
     const/4 v0, 0x1
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -140,7 +134,7 @@
 
     sput-object v0, Lcom/unity3d/ads/android/unity3d/UnityAdsUnityEngineWrapper;->a:Ljava/lang/Boolean;
 
-    .line 34
+    .line 33
     :try_start_0
     new-instance v0, Lcom/unity3d/ads/android/unity3d/a;
 
@@ -164,12 +158,12 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 50
+    .line 49
     :cond_0
     :goto_0
     return-void
 
-    .line 47
+    .line 46
     :catch_0
     move-exception v0
 
@@ -184,10 +178,10 @@
     .locals 0
 
     .prologue
-    .line 137
+    .line 136
     invoke-static {}, Lcom/unity3d/ads/android/unity3d/UnityAdsUnityEngineWrapper;->UnityAdsOnFetchCompleted()V
 
-    .line 138
+    .line 137
     return-void
 .end method
 
@@ -195,10 +189,10 @@
     .locals 0
 
     .prologue
-    .line 143
+    .line 142
     invoke-static {}, Lcom/unity3d/ads/android/unity3d/UnityAdsUnityEngineWrapper;->UnityAdsOnFetchFailed()V
 
-    .line 144
+    .line 143
     return-void
 .end method
 
@@ -206,10 +200,10 @@
     .locals 0
 
     .prologue
-    .line 110
+    .line 109
     invoke-static {}, Lcom/unity3d/ads/android/unity3d/UnityAdsUnityEngineWrapper;->UnityAdsOnHide()V
 
-    .line 111
+    .line 110
     return-void
 .end method
 
@@ -217,10 +211,10 @@
     .locals 0
 
     .prologue
-    .line 116
+    .line 115
     invoke-static {}, Lcom/unity3d/ads/android/unity3d/UnityAdsUnityEngineWrapper;->UnityAdsOnShow()V
 
-    .line 117
+    .line 116
     return-void
 .end method
 
@@ -228,7 +222,7 @@
     .locals 1
 
     .prologue
-    .line 128
+    .line 127
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
@@ -237,11 +231,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 129
+    .line 128
     :cond_0
     const-string p1, "null"
 
-    .line 131
+    .line 130
     :cond_1
     if-eqz p2, :cond_2
 
@@ -250,10 +244,10 @@
     :goto_0
     invoke-static {p1, v0}, Lcom/unity3d/ads/android/unity3d/UnityAdsUnityEngineWrapper;->UnityAdsOnVideoCompleted(Ljava/lang/String;I)V
 
-    .line 132
+    .line 131
     return-void
 
-    .line 131
+    .line 130
     :cond_2
     const/4 v0, 0x0
 
@@ -264,10 +258,10 @@
     .locals 0
 
     .prologue
-    .line 122
+    .line 121
     invoke-static {}, Lcom/unity3d/ads/android/unity3d/UnityAdsUnityEngineWrapper;->UnityAdsOnVideoStarted()V
 
-    .line 123
+    .line 122
     return-void
 .end method
 
@@ -275,7 +269,7 @@
     .locals 0
 
     .prologue
-    .line 103
+    .line 102
     invoke-static {p1}, Lcom/unity3d/ads/android/UnityAds;->setCampaignDataURL(Ljava/lang/String;)V
 
     return-void
@@ -285,10 +279,10 @@
     .locals 0
 
     .prologue
-    .line 100
+    .line 99
     invoke-static {p1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->setLogLevel(I)V
 
-    .line 101
+    .line 100
     return-void
 .end method
 
@@ -298,29 +292,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 53
-    invoke-static {}, Lcom/unity3d/ads/android/UnityAds;->canShow()Z
+    .line 52
+    invoke-static {}, Lcom/unity3d/ads/android/UnityAds;->canShowAds()Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    .line 54
+    .line 53
     const/4 v0, 0x0
 
-    .line 56
+    .line 55
     invoke-virtual {p3}, Ljava/lang/String;->length()I
 
     move-result v2
 
     if-lez v2, :cond_0
 
-    .line 57
+    .line 56
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 58
+    .line 57
     const-string v2, ","
 
     invoke-virtual {p3, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -336,14 +330,14 @@
 
     aget-object v5, v3, v2
 
-    .line 59
+    .line 58
     const-string v6, ":"
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v5
 
-    .line 60
+    .line 59
     aget-object v6, v5, v1
 
     const/4 v7, 0x1
@@ -352,88 +346,62 @@
 
     invoke-virtual {v0, v6, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 58
+    .line 57
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 64
+    .line 63
     :cond_0
     invoke-virtual {p0, p1}, Lcom/unity3d/ads/android/unity3d/UnityAdsUnityEngineWrapper;->canShowAds(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
-    .line 65
+    .line 64
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v1
 
-    if-lez v2, :cond_1
+    if-lez v1, :cond_2
 
-    .line 66
+    .line 65
     invoke-static {p1, p2}, Lcom/unity3d/ads/android/UnityAds;->setZone(Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v2
-
-    .line 67
-    if-nez v2, :cond_3
-
-    .line 68
-    const-string v0, "Could not set zone"
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
-
-    move v0, v1
-
-    .line 87
-    :goto_1
-    return v0
-
-    .line 72
-    :cond_1
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-lez v2, :cond_3
-
-    .line 73
-    invoke-static {p1}, Lcom/unity3d/ads/android/UnityAds;->setZone(Ljava/lang/String;)Z
-
-    move-result v2
-
-    .line 74
-    if-nez v2, :cond_3
-
     .line 75
-    const-string v0, "Could not set zone"
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
-
-    move v0, v1
-
-    .line 76
-    goto :goto_1
-
-    :cond_2
-    move v0, v1
-
-    .line 81
-    goto :goto_1
-
-    .line 84
-    :cond_3
+    :cond_1
+    :goto_1
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAds;->show(Ljava/util/Map;)Z
 
     move-result v0
 
+    .line 78
+    :goto_2
+    return v0
+
+    .line 67
+    :cond_2
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-lez v1, :cond_1
+
+    .line 68
+    invoke-static {p1}, Lcom/unity3d/ads/android/UnityAds;->setZone(Ljava/lang/String;)Z
+
     goto :goto_1
+
+    :cond_3
+    move v0, v1
+
+    .line 72
+    goto :goto_2
 
     :cond_4
     move v0, v1
 
-    .line 87
-    goto :goto_1
+    .line 78
+    goto :goto_2
 .end method

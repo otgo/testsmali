@@ -63,7 +63,7 @@
 
     if-eqz v4, :cond_0
 
-    invoke-static {v3}, Lcom/applovin/impl/sdk/dh;->c(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/applovin/impl/sdk/da;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -130,7 +130,7 @@
 
     move-result-object v0
 
-    invoke-static {p2}, Lcom/applovin/impl/sdk/dh;->c(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2}, Lcom/applovin/impl/sdk/da;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

@@ -1,201 +1,131 @@
-.class public Lcom/applovin/impl/sdk/bl;
+.class Lcom/applovin/impl/sdk/bl;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field private static d:Lcom/applovin/impl/sdk/bl;
+# interfaces
+.implements Lcom/applovin/sdk/AppLovinPostbackListener;
 
 
 # instance fields
-.field private final a:Ljava/util/Map;
+.field final synthetic a:Lcom/applovin/sdk/AppLovinPostbackListener;
 
-.field private final b:Ljava/util/Map;
-
-.field private final c:Ljava/lang/Object;
+.field final synthetic b:Lcom/applovin/impl/sdk/PostbackServiceImpl;
 
 
 # direct methods
-.method private constructor <init>()V
-    .locals 2
+.method constructor <init>(Lcom/applovin/impl/sdk/PostbackServiceImpl;Lcom/applovin/sdk/AppLovinPostbackListener;)V
+    .locals 0
 
-    const/4 v1, 0x1
+    iput-object p1, p0, Lcom/applovin/impl/sdk/bl;->b:Lcom/applovin/impl/sdk/PostbackServiceImpl;
+
+    iput-object p2, p0, Lcom/applovin/impl/sdk/bl;->a:Lcom/applovin/sdk/AppLovinPostbackListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
-
-    iput-object v0, p0, Lcom/applovin/impl/sdk/bl;->a:Ljava/util/Map;
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
-
-    iput-object v0, p0, Lcom/applovin/impl/sdk/bl;->b:Ljava/util/Map;
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lcom/applovin/impl/sdk/bl;->c:Ljava/lang/Object;
-
     return-void
-.end method
-
-.method public static declared-synchronized a()Lcom/applovin/impl/sdk/bl;
-    .locals 2
-
-    const-class v1, Lcom/applovin/impl/sdk/bl;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Lcom/applovin/impl/sdk/bl;->d:Lcom/applovin/impl/sdk/bl;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/applovin/impl/sdk/bl;
-
-    invoke-direct {v0}, Lcom/applovin/impl/sdk/bl;-><init>()V
-
-    sput-object v0, Lcom/applovin/impl/sdk/bl;->d:Lcom/applovin/impl/sdk/bl;
-
-    :cond_0
-    sget-object v0, Lcom/applovin/impl/sdk/bl;->d:Lcom/applovin/impl/sdk/bl;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v1
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
 .end method
 
 
 # virtual methods
-.method public a(Lcom/applovin/sdk/AppLovinAd;)Ljava/util/Map;
-    .locals 2
+.method public onPostbackFailure(Ljava/lang/String;I)V
+    .locals 4
 
-    check-cast p1, Lcom/applovin/impl/sdk/AppLovinAdImpl;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bl;->b:Lcom/applovin/impl/sdk/PostbackServiceImpl;
 
-    iget-object v1, p0, Lcom/applovin/impl/sdk/bl;->c:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/bl;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/applovin/impl/sdk/PostbackServiceImpl;->a(Lcom/applovin/impl/sdk/PostbackServiceImpl;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/Map;
-
-    monitor-exit v1
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public a(Lcom/applovin/sdk/AppLovinAd;Ljava/lang/String;)V
-    .locals 2
-
-    check-cast p1, Lcom/applovin/impl/sdk/AppLovinAdImpl;
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/bl;->c:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/bl;->a:Ljava/util/Map;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public a(Lcom/applovin/sdk/AppLovinAd;Ljava/util/Map;)V
-    .locals 2
-
-    check-cast p1, Lcom/applovin/impl/sdk/AppLovinAdImpl;
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/bl;->c:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/bl;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public b(Lcom/applovin/sdk/AppLovinAd;)Ljava/lang/String;
-    .locals 2
-
-    check-cast p1, Lcom/applovin/impl/sdk/AppLovinAdImpl;
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/bl;->c:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/bl;->a:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    const-string v1, "PostbackService"
 
-    monitor-exit v1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    return-object v0
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    :catchall_0
-    move-exception v0
+    const-string v3, "Failed to dispatch postback to URL "
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    throw v0
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ": "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bl;->a:Lcom/applovin/sdk/AppLovinPostbackListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bl;->a:Lcom/applovin/sdk/AppLovinPostbackListener;
+
+    invoke-interface {v0, p1, p2}, Lcom/applovin/sdk/AppLovinPostbackListener;->onPostbackFailure(Ljava/lang/String;I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public onPostbackSuccess(Ljava/lang/String;)V
+    .locals 4
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bl;->b:Lcom/applovin/impl/sdk/PostbackServiceImpl;
+
+    invoke-static {v0}, Lcom/applovin/impl/sdk/PostbackServiceImpl;->a(Lcom/applovin/impl/sdk/PostbackServiceImpl;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
+
+    move-result-object v0
+
+    const-string v1, "PostbackService"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Successfully dispatched postback to URL "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bl;->a:Lcom/applovin/sdk/AppLovinPostbackListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bl;->a:Lcom/applovin/sdk/AppLovinPostbackListener;
+
+    invoke-interface {v0, p1}, Lcom/applovin/sdk/AppLovinPostbackListener;->onPostbackSuccess(Ljava/lang/String;)V
+
+    :cond_0
+    return-void
 .end method

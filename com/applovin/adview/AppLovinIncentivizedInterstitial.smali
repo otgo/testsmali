@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private a:Lcom/applovin/impl/sdk/z;
+.field private a:Lcom/applovin/impl/sdk/y;
 
 
 # direct methods
@@ -35,11 +35,11 @@
     throw v0
 
     :cond_0
-    new-instance v0, Lcom/applovin/impl/sdk/z;
+    new-instance v0, Lcom/applovin/impl/sdk/y;
 
-    invoke-direct {v0, p1}, Lcom/applovin/impl/sdk/z;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
+    invoke-direct {v0, p1}, Lcom/applovin/impl/sdk/y;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
 
-    iput-object v0, p0, Lcom/applovin/adview/AppLovinIncentivizedInterstitial;->a:Lcom/applovin/impl/sdk/z;
+    iput-object v0, p0, Lcom/applovin/adview/AppLovinIncentivizedInterstitial;->a:Lcom/applovin/impl/sdk/y;
 
     return-void
 .end method
@@ -73,9 +73,9 @@
 .method public dismiss()V
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinIncentivizedInterstitial;->a:Lcom/applovin/impl/sdk/z;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinIncentivizedInterstitial;->a:Lcom/applovin/impl/sdk/y;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/z;->d()V
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/y;->d()V
 
     return-void
 .end method
@@ -83,7 +83,7 @@
 .method public getUserIdentifier()Ljava/lang/String;
     .locals 1
 
-    invoke-static {}, Lcom/applovin/impl/sdk/z;->b()Ljava/lang/String;
+    invoke-static {}, Lcom/applovin/impl/sdk/y;->b()Ljava/lang/String;
 
     move-result-object v0
 
@@ -93,9 +93,9 @@
 .method public isAdReadyToDisplay()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinIncentivizedInterstitial;->a:Lcom/applovin/impl/sdk/z;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinIncentivizedInterstitial;->a:Lcom/applovin/impl/sdk/y;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/z;->a()Z
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/y;->a()Z
 
     move-result v0
 
@@ -114,9 +114,9 @@
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinIncentivizedInterstitial;->a:Lcom/applovin/impl/sdk/z;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinIncentivizedInterstitial;->a:Lcom/applovin/impl/sdk/y;
 
-    invoke-virtual {v0, p1}, Lcom/applovin/impl/sdk/z;->a(Lcom/applovin/sdk/AppLovinAdLoadListener;)V
+    invoke-virtual {v0, p1}, Lcom/applovin/impl/sdk/y;->a(Lcom/applovin/sdk/AppLovinAdLoadListener;)V
 
     return-void
 .end method
@@ -124,7 +124,7 @@
 .method public setUserIdentifier(Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p1}, Lcom/applovin/impl/sdk/z;->a(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/applovin/impl/sdk/y;->a(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -182,7 +182,7 @@
 .method public show(Landroid/app/Activity;Lcom/applovin/sdk/AppLovinAdRewardListener;Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;Lcom/applovin/sdk/AppLovinAdDisplayListener;Lcom/applovin/sdk/AppLovinAdClickListener;)V
     .locals 6
 
-    iget-object v0, p0, Lcom/applovin/adview/AppLovinIncentivizedInterstitial;->a:Lcom/applovin/impl/sdk/z;
+    iget-object v0, p0, Lcom/applovin/adview/AppLovinIncentivizedInterstitial;->a:Lcom/applovin/impl/sdk/y;
 
     move-object v1, p1
 
@@ -194,7 +194,7 @@
 
     move-object v5, p5
 
-    invoke-virtual/range {v0 .. v5}, Lcom/applovin/impl/sdk/z;->a(Landroid/app/Activity;Lcom/applovin/sdk/AppLovinAdRewardListener;Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;Lcom/applovin/sdk/AppLovinAdDisplayListener;Lcom/applovin/sdk/AppLovinAdClickListener;)V
+    invoke-virtual/range {v0 .. v5}, Lcom/applovin/impl/sdk/y;->a(Landroid/app/Activity;Lcom/applovin/sdk/AppLovinAdRewardListener;Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;Lcom/applovin/sdk/AppLovinAdDisplayListener;Lcom/applovin/sdk/AppLovinAdClickListener;)V
 
     return-void
 .end method

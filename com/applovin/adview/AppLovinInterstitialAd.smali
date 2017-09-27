@@ -169,9 +169,9 @@
     throw v0
 
     :cond_1
-    new-instance v0, Lcom/applovin/adview/u;
+    new-instance v0, Lcom/applovin/adview/t;
 
-    invoke-direct {v0, p0, p1}, Lcom/applovin/adview/u;-><init>(Lcom/applovin/sdk/AppLovinSdk;Landroid/app/Activity;)V
+    invoke-direct {v0, p0, p1}, Lcom/applovin/adview/t;-><init>(Lcom/applovin/sdk/AppLovinSdk;Landroid/app/Activity;)V
 
     invoke-virtual {p1, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 

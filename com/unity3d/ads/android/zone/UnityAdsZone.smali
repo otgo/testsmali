@@ -16,7 +16,7 @@
 
 .field private f:Ljava/lang/String;
 
-.field private final g:Ljava/util/ArrayList;
+.field private g:Ljava/util/ArrayList;
 
 
 # direct methods
@@ -28,35 +28,35 @@
 
     const/4 v1, 0x0
 
-    .line 23
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
+    .line 16
     iput-object v1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->a:Lorg/json/JSONObject;
 
-    .line 16
+    .line 17
     iput-object v1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->b:Lorg/json/JSONObject;
 
-    .line 17
+    .line 19
     iput-object v1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->c:Ljava/lang/String;
 
-    .line 18
+    .line 20
     iput-object v1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->d:Ljava/lang/String;
 
-    .line 19
+    .line 21
     iput-boolean v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->e:Z
 
-    .line 20
+    .line 22
     iput-object v1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->f:Ljava/lang/String;
 
-    .line 21
+    .line 24
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->g:Ljava/util/ArrayList;
 
-    .line 24
+    .line 27
     new-instance v1, Lorg/json/JSONObject;
 
     invoke-virtual {p1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
@@ -67,10 +67,10 @@
 
     iput-object v1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->a:Lorg/json/JSONObject;
 
-    .line 25
+    .line 28
     iput-object p1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->b:Lorg/json/JSONObject;
 
-    .line 26
+    .line 29
     const-string v1, "id"
 
     invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -79,7 +79,7 @@
 
     iput-object v1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->c:Ljava/lang/String;
 
-    .line 27
+    .line 30
     const-string v1, "name"
 
     invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -88,7 +88,7 @@
 
     iput-object v1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->d:Ljava/lang/String;
 
-    .line 28
+    .line 31
     const-string v1, "default"
 
     const/4 v2, 0x1
@@ -99,17 +99,17 @@
 
     iput-boolean v1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->e:Z
 
-    .line 29
+    .line 33
     const-string v1, "allowClientOverrides"
 
     invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v1
 
-    .line 31
+    .line 34
     if-eqz v1, :cond_0
 
-    .line 32
+    .line 35
     :goto_0
     invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
 
@@ -117,7 +117,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 33
+    .line 36
     iget-object v2, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->g:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
@@ -126,12 +126,12 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 32
+    .line 35
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 36
+    .line 39
     :cond_0
     return-void
 .end method
@@ -142,7 +142,7 @@
     .locals 4
 
     .prologue
-    .line 75
+    .line 78
     iget-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->b:Lorg/json/JSONObject;
 
     const-string v1, "allowSkipVideoInSeconds"
@@ -156,11 +156,25 @@
     return-wide v0
 .end method
 
+.method public allowsOverride(Ljava/lang/String;)Z
+    .locals 1
+
+    .prologue
+    .line 115
+    iget-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->g:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public disableBackButtonForSeconds()J
     .locals 4
 
     .prologue
-    .line 79
+    .line 82
     iget-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->b:Lorg/json/JSONObject;
 
     const-string v1, "disableBackButtonForSeconds"
@@ -178,7 +192,7 @@
     .locals 1
 
     .prologue
-    .line 83
+    .line 86
     iget-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->f:Ljava/lang/String;
 
     return-object v0
@@ -188,7 +202,7 @@
     .locals 1
 
     .prologue
-    .line 39
+    .line 42
     iget-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->c:Ljava/lang/String;
 
     return-object v0
@@ -198,7 +212,7 @@
     .locals 1
 
     .prologue
-    .line 43
+    .line 46
     iget-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->d:Ljava/lang/String;
 
     return-object v0
@@ -208,7 +222,7 @@
     .locals 1
 
     .prologue
-    .line 47
+    .line 50
     iget-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->b:Lorg/json/JSONObject;
 
     return-object v0
@@ -218,7 +232,7 @@
     .locals 1
 
     .prologue
-    .line 51
+    .line 54
     iget-boolean v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->e:Z
 
     return v0
@@ -228,7 +242,7 @@
     .locals 1
 
     .prologue
-    .line 55
+    .line 58
     const/4 v0, 0x0
 
     return v0
@@ -238,7 +252,7 @@
     .locals 4
 
     .prologue
-    .line 93
+    .line 95
     :try_start_0
     new-instance v0, Lorg/json/JSONObject;
 
@@ -252,18 +266,18 @@
 
     iput-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->b:Lorg/json/JSONObject;
 
-    .line 94
+    .line 96
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->setGamerSid(Ljava/lang/String;)V
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 100
+    .line 98
     :goto_0
     if-eqz p1, :cond_2
 
-    .line 101
+    .line 99
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -286,22 +300,20 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 102
+    .line 100
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->g:Ljava/util/ArrayList;
-
-    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->allowsOverride(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 104
+    .line 102
     :try_start_1
     iget-object v3, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->b:Lorg/json/JSONObject;
 
@@ -321,7 +333,7 @@
 
     goto :goto_1
 
-    .line 106
+    .line 104
     :catch_0
     move-exception v0
 
@@ -331,17 +343,7 @@
 
     goto :goto_1
 
-    .line 97
-    :catch_1
-    move-exception v0
-
-    const-string v0, "Could not set Gamer SID"
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->debug(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 111
+    .line 108
     :cond_1
     const-string v0, "sid"
 
@@ -351,7 +353,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 112
+    .line 109
     const-string v0, "sid"
 
     invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -362,16 +364,21 @@
 
     invoke-virtual {p0, v0}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->setGamerSid(Ljava/lang/String;)V
 
-    .line 115
+    .line 112
     :cond_2
     return-void
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_0
 .end method
 
 .method public muteVideoSounds()Z
     .locals 3
 
     .prologue
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->b:Lorg/json/JSONObject;
 
     const-string v1, "muteVideoSounds"
@@ -389,7 +396,7 @@
     .locals 3
 
     .prologue
-    .line 63
+    .line 66
     iget-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->b:Lorg/json/JSONObject;
 
     const-string v1, "noOfferScreen"
@@ -407,7 +414,7 @@
     .locals 3
 
     .prologue
-    .line 67
+    .line 70
     iget-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->b:Lorg/json/JSONObject;
 
     const-string v1, "openAnimated"
@@ -425,10 +432,10 @@
     .locals 0
 
     .prologue
-    .line 88
+    .line 90
     iput-object p1, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->f:Ljava/lang/String;
 
-    .line 89
+    .line 91
     return-void
 .end method
 
@@ -436,7 +443,7 @@
     .locals 3
 
     .prologue
-    .line 71
+    .line 74
     iget-object v0, p0, Lcom/unity3d/ads/android/zone/UnityAdsZone;->b:Lorg/json/JSONObject;
 
     const-string v1, "useDeviceOrientationForVideo"

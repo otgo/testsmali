@@ -64,16 +64,16 @@
 
 
 # virtual methods
-.method a()Lcom/jirbo/adcolony/x;
+.method a()Lcom/jirbo/adcolony/y;
     .locals 2
 
     .prologue
     .line 18
-    new-instance v0, Lcom/jirbo/adcolony/x;
+    new-instance v0, Lcom/jirbo/adcolony/y;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/f;->b:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Lcom/jirbo/adcolony/x;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/jirbo/adcolony/y;-><init>(Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -83,7 +83,7 @@
 
     .prologue
     .line 35
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/f;->a()Lcom/jirbo/adcolony/x;
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/f;->a()Lcom/jirbo/adcolony/y;
 
     move-result-object v1
 
@@ -103,7 +103,7 @@
 
     move-result v3
 
-    invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/x;->a(C)V
+    invoke-virtual {v1, v3}, Lcom/jirbo/adcolony/y;->a(C)V
 
     .line 37
     add-int/lit8 v0, v0, 0x1
@@ -112,7 +112,7 @@
 
     .line 41
     :cond_0
-    invoke-virtual {v1}, Lcom/jirbo/adcolony/x;->b()V
+    invoke-virtual {v1}, Lcom/jirbo/adcolony/y;->b()V
 
     .line 42
     return-void
@@ -126,11 +126,11 @@
     :try_start_0
     new-instance v0, Lcom/jirbo/adcolony/s;
 
-    new-instance v1, Lcom/jirbo/adcolony/w;
+    new-instance v1, Lcom/jirbo/adcolony/x;
 
     iget-object v2, p0, Lcom/jirbo/adcolony/f;->b:Ljava/lang/String;
 
-    invoke-direct {v1, v2}, Lcom/jirbo/adcolony/w;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lcom/jirbo/adcolony/x;-><init>(Ljava/lang/String;)V
 
     invoke-direct {v0, v1}, Lcom/jirbo/adcolony/s;-><init>(Ljava/io/InputStream;)V
     :try_end_0

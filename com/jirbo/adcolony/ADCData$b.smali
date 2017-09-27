@@ -33,7 +33,7 @@
 
 
 # virtual methods
-.method a(Lcom/jirbo/adcolony/ae;)V
+.method a(Lcom/jirbo/adcolony/af;)V
     .locals 2
 
     .prologue
@@ -42,7 +42,7 @@
 
     int-to-long v0, v0
 
-    invoke-virtual {p1, v0, v1}, Lcom/jirbo/adcolony/ae;->a(J)V
+    invoke-virtual {p1, v0, v1}, Lcom/jirbo/adcolony/af;->a(J)V
 
     .line 497
     return-void

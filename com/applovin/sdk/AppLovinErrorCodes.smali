@@ -13,8 +13,6 @@
 
 .field public static final INCENTIVIZED_USER_CLOSED_VIDEO:I = -0x258
 
-.field public static final INVALID_URL:I = -0x384
-
 .field public static final NO_FILL:I = 0xcc
 
 .field public static final NO_NETWORK:I = -0x67

@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 162
+    .line 165
     iput-object p1, p0, Lcom/ideaworks3d/marmalade/LoaderActivity$1;->this$0:Lcom/ideaworks3d/marmalade/LoaderActivity;
 
     invoke-direct {p0, p2, p3}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;I)V
@@ -37,11 +37,11 @@
     .locals 1
 
     .prologue
-    .line 166
+    .line 169
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/LoaderActivity$1;->this$0:Lcom/ideaworks3d/marmalade/LoaderActivity;
 
     invoke-static {v0}, Lcom/ideaworks3d/marmalade/LoaderActivity;->access$300(Lcom/ideaworks3d/marmalade/LoaderActivity;)V
 
-    .line 167
+    .line 170
     return-void
 .end method

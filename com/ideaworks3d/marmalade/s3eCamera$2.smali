@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 287
+    .line 246
     iput-object p1, p0, Lcom/ideaworks3d/marmalade/s3eCamera$2;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
 
     .prologue
-    .line 290
+    .line 249
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/s3eCamera$2;->this$0:Lcom/ideaworks3d/marmalade/s3eCamera;
 
     invoke-virtual {v0}, Lcom/ideaworks3d/marmalade/s3eCamera;->createPreview()I
 
-    .line 291
+    .line 250
     return-void
 .end method

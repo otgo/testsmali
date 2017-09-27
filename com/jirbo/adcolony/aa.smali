@@ -6,36 +6,102 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/jirbo/adcolony/aa$b;,
         Lcom/jirbo/adcolony/aa$a;
     }
 .end annotation
 
 
 # static fields
-.field static a:[B
+.field static a:Ljava/lang/String;
 
-.field static b:Ljava/lang/StringBuilder;
+.field static b:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Lcom/jirbo/adcolony/aa$a;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static c:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Lcom/jirbo/adcolony/aa$a;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static d:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/Runnable;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static e:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/Runnable;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static volatile f:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .prologue
+    .line 19
+    new-instance v0, Ljava/lang/String;
+
+    const-string v1, "mutex"
+
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/jirbo/adcolony/aa;->a:Ljava/lang/String;
+
     .line 20
-    const/16 v0, 0x400
+    new-instance v0, Ljava/util/ArrayList;
 
-    new-array v0, v0, [B
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lcom/jirbo/adcolony/aa;->a:[B
+    sput-object v0, Lcom/jirbo/adcolony/aa;->b:Ljava/util/ArrayList;
 
     .line 21
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lcom/jirbo/adcolony/aa;->b:Ljava/lang/StringBuilder;
+    sput-object v0, Lcom/jirbo/adcolony/aa;->c:Ljava/util/ArrayList;
+
+    .line 22
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sput-object v0, Lcom/jirbo/adcolony/aa;->d:Ljava/util/ArrayList;
+
+    .line 23
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sput-object v0, Lcom/jirbo/adcolony/aa;->e:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -44,632 +110,390 @@
     .locals 0
 
     .prologue
-    .line 18
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 206
+    .line 117
     return-void
 .end method
 
-.method static a()Ljava/lang/String;
-    .locals 3
-
-    .prologue
-    .line 40
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    const-string v0, "1.0"
-
-    .line 49
-    :goto_0
-    return-object v0
-
-    .line 43
-    :cond_0
-    :try_start_0
-    invoke-static {}, Lcom/jirbo/adcolony/AdColony;->activity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    .line 44
-    invoke-static {}, Lcom/jirbo/adcolony/AdColony;->activity()Landroid/app/Activity;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    .line 43
-    invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-
-    move-result-object v0
-
-    iget-object v0, v0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 46
-    :catch_0
-    move-exception v0
-
-    .line 48
-    const-string v0, "Failed to retrieve package info."
-
-    invoke-static {v0}, Lcom/jirbo/adcolony/a;->e(Ljava/lang/String;)V
-
-    .line 49
-    const-string v0, "1.0"
-
-    goto :goto_0
-.end method
-
-.method static a(DI)Ljava/lang/String;
+.method static a()V
     .locals 2
 
     .prologue
-    .line 77
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 28
+    invoke-static {}, Lcom/jirbo/adcolony/aa;->c()V
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    .line 29
+    sget-object v1, Lcom/jirbo/adcolony/aa;->a:Ljava/lang/String;
 
-    .line 78
-    invoke-static {p0, p1, p2, v0}, Lcom/jirbo/adcolony/aa;->a(DILjava/lang/StringBuilder;)V
+    monitor-enter v1
 
-    .line 79
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 7
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 140
-    if-eqz p0, :cond_2
-
-    .line 144
+    .line 31
     :try_start_0
-    sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
+    sget-object v0, Lcom/jirbo/adcolony/aa;->d:Ljava/util/ArrayList;
 
-    const-string v2, "Loading "
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    invoke-virtual {v0, v2}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 145
-    new-instance v3, Ljava/io/FileInputStream;
-
-    invoke-direct {v3, p0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
-
-    .line 146
-    sget-object v4, Lcom/jirbo/adcolony/aa;->a:[B
-
-    monitor-enter v4
+    .line 32
+    monitor-exit v1
     :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 148
-    :try_start_1
-    sget-object v0, Lcom/jirbo/adcolony/aa;->b:Ljava/lang/StringBuilder;
+    .line 33
+    invoke-static {}, Lcom/jirbo/adcolony/aa;->b()V
 
-    const/4 v2, 0x0
+    .line 34
+    return-void
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->setLength(I)V
-
-    .line 149
-    sget-object v0, Lcom/jirbo/adcolony/aa;->b:Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 150
-    sget-object v0, Lcom/jirbo/adcolony/aa;->a:[B
-
-    const/4 v2, 0x0
-
-    sget-object v5, Lcom/jirbo/adcolony/aa;->a:[B
-
-    array-length v5, v5
-
-    invoke-virtual {v3, v0, v2, v5}, Ljava/io/FileInputStream;->read([BII)I
-
-    move-result v0
-
-    move v2, v0
-
-    .line 151
-    :goto_0
-    const/4 v0, -0x1
-
-    if-eq v2, v0, :cond_1
-
-    move v0, v1
-
-    .line 153
-    :goto_1
-    if-ge v0, v2, :cond_0
-
-    .line 155
-    sget-object v5, Lcom/jirbo/adcolony/aa;->b:Ljava/lang/StringBuilder;
-
-    sget-object v6, Lcom/jirbo/adcolony/aa;->a:[B
-
-    aget-byte v6, v6, v0
-
-    int-to-char v6, v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 153
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    .line 157
-    :cond_0
-    sget-object v0, Lcom/jirbo/adcolony/aa;->a:[B
-
-    const/4 v2, 0x0
-
-    sget-object v5, Lcom/jirbo/adcolony/aa;->a:[B
-
-    array-length v5, v5
-
-    invoke-virtual {v3, v0, v2, v5}, Ljava/io/FileInputStream;->read([BII)I
-
-    move-result v0
-
-    move v2, v0
-
-    goto :goto_0
-
-    .line 159
-    :cond_1
-    invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
-
-    .line 161
-    sget-object v0, Lcom/jirbo/adcolony/aa;->b:Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    monitor-exit v4
-
-    .line 170
-    :goto_2
-    return-object v0
-
-    .line 162
+    .line 32
     :catchall_0
     move-exception v0
 
-    monitor-exit v4
+    :try_start_1
+    monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :try_start_2
     throw v0
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-
-    .line 164
-    :catch_0
-    move-exception v0
-
-    .line 166
-    sget-object v0, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
-
-    const-string v1, "Unable to load "
-
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
-
-    .line 167
-    const-string v0, ""
-
-    goto :goto_2
-
-    .line 170
-    :cond_2
-    const-string v0, ""
-
-    goto :goto_2
 .end method
 
-.method static a(DILjava/lang/StringBuilder;)V
-    .locals 10
+.method static a(Ljava/lang/Runnable;)V
+    .locals 3
 
     .prologue
-    const-wide/16 v8, 0xa
+    .line 43
+    const/4 v0, 0x0
 
-    const/16 v7, 0x30
+    .line 44
+    sget-object v2, Lcom/jirbo/adcolony/aa;->a:Ljava/lang/String;
 
-    .line 84
-    invoke-static {p0, p1}, Ljava/lang/Double;->isNaN(D)Z
+    monitor-enter v2
 
-    move-result v0
+    .line 46
+    :try_start_0
+    sget-boolean v1, Lcom/jirbo/adcolony/aa;->f:Z
 
-    if-nez v0, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-static {p0, p1}, Ljava/lang/Double;->isInfinite(D)Z
+    .line 48
+    sget-object v0, Lcom/jirbo/adcolony/aa;->d:Ljava/util/ArrayList;
 
-    move-result v0
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_2
+    .line 49
+    monitor-exit v2
 
-    .line 86
-    :cond_0
-    invoke-virtual {p3, p0, p1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    .line 124
-    :cond_1
+    .line 74
     :goto_0
     return-void
 
-    .line 90
-    :cond_2
-    const-wide/16 v0, 0x0
-
-    cmpg-double v0, p0, v0
-
-    if-gez v0, :cond_3
-
-    .line 92
-    neg-double p0, p0
-
-    .line 93
-    const/16 v0, 0x2d
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 96
-    :cond_3
-    if-nez p2, :cond_4
-
-    .line 98
-    invoke-static {p0, p1}, Ljava/lang/Math;->round(D)J
-
-    move-result-wide v0
-
-    invoke-virtual {p3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-
-    .line 102
-    :cond_4
-    const-wide/high16 v0, 0x4024000000000000L    # 10.0
-
-    int-to-double v2, p2
-
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
-
-    move-result-wide v0
-
-    double-to-long v2, v0
-
-    .line 103
-    long-to-double v0, v2
-
-    mul-double/2addr v0, p0
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->round(D)J
-
-    move-result-wide v0
-
-    .line 104
-    div-long v4, v0, v2
-
-    invoke-virtual {p3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    .line 105
-    const/16 v4, 0x2e
-
-    invoke-virtual {p3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 106
-    rem-long v4, v0, v2
-
-    .line 107
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, v4, v0
-
-    if-nez v0, :cond_5
-
-    .line 109
-    const/4 v0, 0x0
-
-    :goto_1
-    if-ge v0, p2, :cond_1
-
-    .line 111
-    invoke-virtual {p3, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 109
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    .line 116
-    :cond_5
-    mul-long v0, v4, v8
-
-    :goto_2
-    cmp-long v6, v0, v2
-
-    if-gez v6, :cond_6
-
-    .line 118
-    invoke-virtual {p3, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 116
-    mul-long/2addr v0, v8
-
-    goto :goto_2
-
-    .line 120
-    :cond_6
-    invoke-virtual {p3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-.end method
-
-.method static a(Ljava/lang/String;)Z
-    .locals 3
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 25
-    sget-object v1, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v1, :cond_0
-
-    .line 34
-    :goto_0
-    return v0
-
-    .line 28
+    .line 52
     :cond_0
-    :try_start_0
-    invoke-static {}, Lcom/jirbo/adcolony/AdColony;->activity()Landroid/app/Activity;
+    sget-object v1, Lcom/jirbo/adcolony/aa;->b:Ljava/util/ArrayList;
 
-    move-result-object v1
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    invoke-virtual {v1}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
+    move-result v1
 
-    move-result-object v1
+    .line 53
+    if-lez v1, :cond_2
 
-    invoke-virtual {v1}, Landroid/app/Application;->getPackageManager()Landroid/content/pm/PackageManager;
+    sget-object v0, Lcom/jirbo/adcolony/aa;->b:Ljava/util/ArrayList;
 
-    move-result-object v1
+    add-int/lit8 v1, v1, -0x1
 
-    .line 29
-    const/4 v2, 0x0
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    invoke-virtual {v1, p0, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    move-result-object v0
+
+    check-cast v0, Lcom/jirbo/adcolony/aa$a;
+
+    move-object v1, v0
+
+    .line 54
+    :goto_1
+    monitor-exit v2
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 30
-    const/4 v0, 0x1
+    .line 56
+    if-nez v1, :cond_1
 
-    goto :goto_0
+    .line 58
+    new-instance v0, Lcom/jirbo/adcolony/aa$a;
 
-    .line 32
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-.end method
-
-.method static b()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 67
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/UUID;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static b(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 57
-    :try_start_0
-    invoke-static {p0}, Lcom/jirbo/adcolony/ah;->a(Ljava/lang/String;)Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    .line 61
-    :goto_0
-    return-object v0
+    invoke-direct {v0}, Lcom/jirbo/adcolony/aa$a;-><init>()V
 
     .line 59
-    :catch_0
-    move-exception v0
+    sget-object v1, Lcom/jirbo/adcolony/aa;->a:Ljava/lang/String;
+
+    monitor-enter v1
 
     .line 61
-    const/4 v0, 0x0
+    :try_start_1
+    sget-object v2, Lcom/jirbo/adcolony/aa;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 62
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    .line 63
+    iput-object p0, v0, Lcom/jirbo/adcolony/aa$a;->a:Ljava/lang/Runnable;
+
+    .line 64
+    invoke-virtual {v0}, Lcom/jirbo/adcolony/aa$a;->start()V
 
     goto :goto_0
-.end method
 
-.method static c()D
-    .locals 4
+    .line 54
+    :catchall_0
+    move-exception v0
 
-    .prologue
+    :try_start_2
+    monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v0
+
+    .line 62
+    :catchall_1
+    move-exception v0
+
+    :try_start_3
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw v0
+
+    .line 68
+    :cond_1
+    monitor-enter v1
+
+    .line 70
+    :try_start_4
+    iput-object p0, v1, Lcom/jirbo/adcolony/aa$a;->a:Ljava/lang/Runnable;
+
+    .line 71
+    invoke-virtual {v1}, Ljava/lang/Object;->notify()V
+
     .line 72
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    monitor-exit v1
 
-    move-result-wide v0
+    goto :goto_0
 
-    long-to-double v0, v0
+    :catchall_2
+    move-exception v0
 
-    const-wide v2, 0x408f400000000000L    # 1000.0
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    div-double/2addr v0, v2
+    throw v0
 
-    return-wide v0
+    :cond_2
+    move-object v1, v0
+
+    goto :goto_1
 .end method
 
-.method static c(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 135
-    const-string v0, ""
-
-    invoke-static {p0, v0}, Lcom/jirbo/adcolony/aa;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static d()Z
+.method static b()V
     .locals 3
 
     .prologue
-    .line 128
-    new-instance v0, Ljava/io/File;
+    .line 78
+    sget-object v1, Lcom/jirbo/adcolony/aa;->a:Ljava/lang/String;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    monitor-enter v1
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 80
+    const/4 v0, 0x0
 
-    sget-object v2, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
+    :try_start_0
+    sput-boolean v0, Lcom/jirbo/adcolony/aa;->f:Z
 
-    iget-object v2, v2, Lcom/jirbo/adcolony/d;->f:Lcom/jirbo/adcolony/ADCStorage;
+    .line 81
+    sget-object v0, Lcom/jirbo/adcolony/aa;->e:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Lcom/jirbo/adcolony/ADCStorage;->c()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    move-result-object v2
+    .line 82
+    sget-object v0, Lcom/jirbo/adcolony/aa;->e:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v2, Lcom/jirbo/adcolony/aa;->d:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    .line 83
+    sget-object v0, Lcom/jirbo/adcolony/aa;->d:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    .line 84
+    sget-object v0, Lcom/jirbo/adcolony/aa;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    .line 85
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 87
+    sget-object v0, Lcom/jirbo/adcolony/aa;->e:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    const-string v2, "/../lib/libImmEndpointWarpJ.so"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 129
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    .line 130
-    :goto_0
-    return v0
+    move-result-object v0
 
-    :cond_0
-    const/4 v0, 0x0
+    check-cast v0, Ljava/lang/Runnable;
+
+    .line 89
+    invoke-static {v0}, Lcom/jirbo/adcolony/aa;->a(Ljava/lang/Runnable;)V
 
     goto :goto_0
+
+    .line 85
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+
+    .line 91
+    :cond_0
+    return-void
 .end method
 
-.method static e()Z
+.method static c()V
     .locals 3
 
     .prologue
-    const/4 v0, 0x0
+    .line 98
+    sget-object v2, Lcom/jirbo/adcolony/aa;->a:Ljava/lang/String;
 
-    .line 175
-    sget-object v1, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
+    monitor-enter v2
 
-    if-nez v1, :cond_1
+    .line 100
+    const/4 v0, 0x1
 
-    .line 176
-    :cond_0
-    :goto_0
-    return v0
+    :try_start_0
+    sput-boolean v0, Lcom/jirbo/adcolony/aa;->f:Z
 
-    :cond_1
-    invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
+    .line 102
+    sget-object v0, Lcom/jirbo/adcolony/aa;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    const-string v2, "android.permission.VIBRATE"
-
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->checkCallingOrSelfPermission(Ljava/lang/String;)I
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-.end method
-
-.method static f()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 181
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    const-string v0, ""
-
-    .line 182
     :goto_0
-    return-object v0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    :cond_0
-    invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
+    check-cast v0, Lcom/jirbo/adcolony/aa$a;
 
-    move-result-object v0
+    .line 104
+    monitor-enter v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    .line 106
+    :try_start_1
+    invoke-virtual {v0}, Ljava/lang/Object;->notify()V
+
+    .line 107
+    monitor-exit v0
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    throw v1
+
+    .line 114
+    :catchall_1
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    throw v0
+
+    .line 110
+    :cond_0
+    :try_start_3
+    sget-object v1, Lcom/jirbo/adcolony/aa;->a:Ljava/lang/String;
+
+    monitor-enter v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    .line 112
+    :try_start_4
+    sget-object v0, Lcom/jirbo/adcolony/aa;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    .line 113
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+
+    .line 114
+    :try_start_5
+    monitor-exit v2
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+
+    .line 115
+    return-void
+
+    .line 113
+    :catchall_2
+    move-exception v0
+
+    :try_start_6
+    monitor-exit v1
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
+
+    :try_start_7
+    throw v0
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 .end method

@@ -1,6 +1,9 @@
 .class public interface abstract Lcom/applovin/sdk/AppLovinAd;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lcom/applovin/impl/sdk/ax;
+
 
 # virtual methods
 .method public abstract getAdIdNumber()J

@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/applovin/impl/sdk/at;
+.field final synthetic a:Lcom/applovin/impl/sdk/aq;
 
 
 # direct methods
-.method constructor <init>(Lcom/applovin/impl/sdk/at;)V
+.method constructor <init>(Lcom/applovin/impl/sdk/aq;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/au;->a:Lcom/applovin/impl/sdk/at;
+    iput-object p1, p0, Lcom/applovin/impl/sdk/au;->a:Lcom/applovin/impl/sdk/aq;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,18 +22,28 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 1
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 2
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/au;->a:Lcom/applovin/impl/sdk/at;
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    iget-object v0, v0, Lcom/applovin/impl/sdk/at;->a:Lcom/applovin/impl/sdk/as;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/au;->a:Lcom/applovin/impl/sdk/aq;
 
-    iget-object v0, v0, Lcom/applovin/impl/sdk/as;->a:Lcom/applovin/impl/sdk/ar;
+    iget-object v0, v0, Lcom/applovin/impl/sdk/aq;->a:Lcom/applovin/impl/sdk/ap;
 
-    iget-object v0, v0, Lcom/applovin/impl/sdk/ar;->a:Lcom/applovin/impl/sdk/aq;
+    invoke-static {v0}, Lcom/applovin/impl/sdk/ap;->f(Lcom/applovin/impl/sdk/ap;)Lcom/applovin/impl/sdk/y;
 
-    invoke-static {v0}, Lcom/applovin/impl/sdk/aq;->c(Lcom/applovin/impl/sdk/aq;)V
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/applovin/impl/sdk/au;->a:Lcom/applovin/impl/sdk/aq;
+
+    iget-object v1, v1, Lcom/applovin/impl/sdk/aq;->a:Lcom/applovin/impl/sdk/ap;
+
+    invoke-static {v1}, Lcom/applovin/impl/sdk/ap;->e(Lcom/applovin/impl/sdk/ap;)Lcom/applovin/sdk/AppLovinAdRewardListener;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/y;->a(Lcom/applovin/sdk/AppLovinAdRewardListener;)V
 
     return-void
 .end method

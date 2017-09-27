@@ -1,687 +1,577 @@
 .class Lcom/jirbo/adcolony/v;
-.super Lcom/jirbo/adcolony/h;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field static H:Z
-
-.field static I:Lcom/jirbo/adcolony/v;
-
-
 # instance fields
-.field J:Z
+.field a:Lcom/jirbo/adcolony/d;
 
-.field K:Z
+.field b:Z
 
-.field L:Lcom/jirbo/adcolony/ADCVideo;
+.field c:Z
+
+.field d:Z
+
+.field e:Z
+
+.field f:D
+
+.field g:D
+
+.field h:D
+
+.field i:I
+
+.field j:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/jirbo/adcolony/ADCVideo;Lcom/jirbo/adcolony/AdColonyV4VCAd;)V
+.method constructor <init>(Lcom/jirbo/adcolony/d;)V
     .locals 1
 
     .prologue
-    .line 27
-    invoke-direct {p0}, Lcom/jirbo/adcolony/h;-><init>()V
+    const/4 v0, 0x0
 
-    .line 28
-    iput-object p1, p0, Lcom/jirbo/adcolony/v;->L:Lcom/jirbo/adcolony/ADCVideo;
+    .line 35
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
-    iput-object p2, p0, Lcom/jirbo/adcolony/v;->G:Lcom/jirbo/adcolony/AdColonyV4VCAd;
+    .line 22
+    iput-boolean v0, p0, Lcom/jirbo/adcolony/v;->d:Z
 
-    .line 30
-    iget-object v0, p1, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/e;
-
-    invoke-virtual {v0}, Lcom/jirbo/adcolony/e;->pause()V
+    .line 23
+    iput-boolean v0, p0, Lcom/jirbo/adcolony/v;->e:Z
 
     .line 31
-    sput-object p0, Lcom/jirbo/adcolony/v;->I:Lcom/jirbo/adcolony/v;
+    const-string v0, "uuid"
 
-    .line 32
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->a()Z
+    iput-object v0, p0, Lcom/jirbo/adcolony/v;->j:Ljava/lang/String;
 
-    move-result v0
-
-    if-nez v0, :cond_0
+    .line 36
+    iput-object p1, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/d;
 
     .line 37
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method d()V
-    .locals 10
+.method a()V
+    .locals 0
 
     .prologue
-    const-wide/high16 v8, 0x4030000000000000L    # 16.0
-
-    .line 165
-    iget-object v0, p0, Lcom/jirbo/adcolony/v;->L:Lcom/jirbo/adcolony/ADCVideo;
-
-    iget v0, v0, Lcom/jirbo/adcolony/ADCVideo;->t:I
-
-    .line 166
-    iget-object v1, p0, Lcom/jirbo/adcolony/v;->L:Lcom/jirbo/adcolony/ADCVideo;
-
-    iget v1, v1, Lcom/jirbo/adcolony/ADCVideo;->u:I
-
-    .line 168
-    iget-object v2, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v2, v2, Lcom/jirbo/adcolony/ADCImage;->f:I
-
-    sub-int/2addr v0, v2
-
-    div-int/lit8 v0, v0, 0x2
-
-    iput v0, p0, Lcom/jirbo/adcolony/v;->x:I
-
-    .line 169
-    iget-object v0, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v0, v0, Lcom/jirbo/adcolony/ADCImage;->g:I
-
-    sub-int v0, v1, v0
-
-    div-int/lit8 v0, v0, 0x2
-
-    iput v0, p0, Lcom/jirbo/adcolony/v;->y:I
-
-    .line 170
-    iget v0, p0, Lcom/jirbo/adcolony/v;->x:I
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, v1, Lcom/jirbo/adcolony/ADCImage;->f:I
-
-    div-int/lit8 v1, v1, 0x2
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lcom/jirbo/adcolony/v;->z:I
-
-    .line 171
-    iget v0, p0, Lcom/jirbo/adcolony/v;->y:I
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, v1, Lcom/jirbo/adcolony/ADCImage;->g:I
-
-    div-int/lit8 v1, v1, 0x2
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lcom/jirbo/adcolony/v;->A:I
-
-    .line 173
-    iget v0, p0, Lcom/jirbo/adcolony/v;->y:I
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, v1, Lcom/jirbo/adcolony/ADCImage;->g:I
-
-    int-to-double v2, v1
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/v;->c:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, v1, Lcom/jirbo/adcolony/ADCImage;->g:I
-
-    int-to-double v4, v1
-
-    sget-wide v6, Lcom/jirbo/adcolony/v;->p:D
-
-    mul-double/2addr v6, v8
-
-    add-double/2addr v4, v6
-
-    sub-double/2addr v2, v4
-
-    double-to-int v1, v2
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lcom/jirbo/adcolony/v;->D:I
-
-    .line 175
-    iget v0, p0, Lcom/jirbo/adcolony/v;->x:I
-
-    sget-wide v2, Lcom/jirbo/adcolony/v;->p:D
-
-    mul-double/2addr v2, v8
-
-    double-to-int v1, v2
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lcom/jirbo/adcolony/v;->B:I
-
-    .line 176
-    iget v0, p0, Lcom/jirbo/adcolony/v;->x:I
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, v1, Lcom/jirbo/adcolony/ADCImage;->f:I
-
-    int-to-double v2, v1
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/v;->c:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, v1, Lcom/jirbo/adcolony/ADCImage;->f:I
-
-    int-to-double v4, v1
-
-    sget-wide v6, Lcom/jirbo/adcolony/v;->p:D
-
-    mul-double/2addr v6, v8
-
-    add-double/2addr v4, v6
-
-    sub-double/2addr v2, v4
-
-    double-to-int v1, v2
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lcom/jirbo/adcolony/v;->C:I
-
-    .line 177
+    .line 41
     return-void
 .end method
 
-.method public onDraw(Landroid/graphics/Canvas;)V
-    .locals 10
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+.method a(D)V
+    .locals 3
 
     .prologue
-    const/16 v0, 0x80
+    .line 167
+    sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
-    const/4 v6, 0x0
+    const-string v1, "Submitting session duration "
 
-    .line 41
-    iget-object v1, p0, Lcom/jirbo/adcolony/v;->L:Lcom/jirbo/adcolony/ADCVideo;
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->a(Ljava/lang/String;)Lcom/jirbo/adcolony/l;
 
-    iget-object v1, v1, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/e;
+    move-result-object v0
 
-    if-nez v1, :cond_0
+    invoke-virtual {v0, p1, p2}, Lcom/jirbo/adcolony/l;->b(D)Lcom/jirbo/adcolony/l;
 
-    .line 86
-    :goto_0
+    .line 168
+    new-instance v0, Lcom/jirbo/adcolony/ADCData$g;
+
+    invoke-direct {v0}, Lcom/jirbo/adcolony/ADCData$g;-><init>()V
+
+    .line 169
+    const-string v1, "session_length"
+
+    double-to-int v2, p1
+
+    invoke-virtual {v0, v1, v2}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;I)V
+
+    .line 170
+    iget-object v1, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/d;
+
+    iget-object v1, v1, Lcom/jirbo/adcolony/d;->d:Lcom/jirbo/adcolony/u;
+
+    const-string v2, "session_end"
+
+    invoke-virtual {v1, v2, v0}, Lcom/jirbo/adcolony/u;->a(Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;)V
+
+    .line 171
     return-void
+.end method
 
-    .line 44
-    :cond_0
-    const/4 v1, 0x1
+.method b()V
+    .locals 4
 
-    sput-boolean v1, Lcom/jirbo/adcolony/v;->H:Z
+    .prologue
+    const/4 v3, 0x0
+
+    const/4 v2, 0x0
 
     .line 45
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->d()V
+    iget-object v0, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/d;
 
-    .line 48
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
+
+    iget-boolean v0, v0, Lcom/jirbo/adcolony/b;->b:Z
+
+    if-eqz v0, :cond_1
+
+    .line 47
+    iget-boolean v0, p0, Lcom/jirbo/adcolony/v;->d:Z
+
+    if-eqz v0, :cond_0
+
+    .line 49
+    iput-boolean v2, p0, Lcom/jirbo/adcolony/v;->d:Z
+
+    .line 50
+    iget-object v0, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/d;
+
+    iget-object v0, v0, Lcom/jirbo/adcolony/d;->d:Lcom/jirbo/adcolony/u;
+
+    const-string v1, "install"
+
+    invoke-virtual {v0, v1, v3}, Lcom/jirbo/adcolony/u;->a(Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;)V
+
+    .line 53
+    :cond_0
+    iget-boolean v0, p0, Lcom/jirbo/adcolony/v;->e:Z
+
+    if-eqz v0, :cond_1
+
+    .line 55
+    iput-boolean v2, p0, Lcom/jirbo/adcolony/v;->e:Z
+
+    .line 56
+    iget-object v0, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/d;
+
+    iget-object v0, v0, Lcom/jirbo/adcolony/d;->d:Lcom/jirbo/adcolony/u;
+
+    const-string v1, "session_start"
+
+    invoke-virtual {v0, v1, v3}, Lcom/jirbo/adcolony/u;->a(Ljava/lang/String;Lcom/jirbo/adcolony/ADCData$g;)V
+
+    .line 59
+    :cond_1
+    return-void
+.end method
+
+.method c()V
+    .locals 6
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 63
+    sget-object v0, Lcom/jirbo/adcolony/l;->b:Lcom/jirbo/adcolony/l;
+
+    const-string v1, "AdColony resuming"
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
+
+    .line 64
+    sput-boolean v2, Lcom/jirbo/adcolony/a;->r:Z
+
+    .line 66
+    iget-boolean v0, p0, Lcom/jirbo/adcolony/v;->b:Z
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
+
+    const-string v1, "AdColony.onResume() called multiple times in succession."
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
+
+    .line 67
+    :cond_0
+    iput-boolean v2, p0, Lcom/jirbo/adcolony/v;->b:Z
+
+    .line 68
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->g()V
+
+    .line 70
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->c()D
+
+    move-result-wide v0
+
+    .line 71
+    iget-boolean v2, p0, Lcom/jirbo/adcolony/v;->c:Z
+
+    if-eqz v2, :cond_2
+
+    .line 73
+    iget-wide v2, p0, Lcom/jirbo/adcolony/v;->g:D
+
+    sub-double v2, v0, v2
+
+    iget-object v4, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/d;
+
+    iget-object v4, v4, Lcom/jirbo/adcolony/d;->a:Lcom/jirbo/adcolony/c;
+
+    iget v4, v4, Lcom/jirbo/adcolony/c;->d:I
+
+    int-to-double v4, v4
+
+    cmpl-double v2, v2, v4
+
+    if-lez v2, :cond_1
+
+    .line 75
+    iget-wide v2, p0, Lcom/jirbo/adcolony/v;->h:D
+
+    invoke-virtual {p0, v2, v3}, Lcom/jirbo/adcolony/v;->a(D)V
+
+    .line 76
+    iput-wide v0, p0, Lcom/jirbo/adcolony/v;->f:D
+
+    .line 77
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->h()V
+
+    .line 85
+    :cond_1
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/jirbo/adcolony/v;->c:Z
+
+    .line 86
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->f()V
+
+    .line 93
+    :goto_0
+    invoke-static {}, Lcom/jirbo/adcolony/a;->h()V
+
+    .line 94
+    return-void
+
+    .line 90
+    :cond_2
+    iput-wide v0, p0, Lcom/jirbo/adcolony/v;->f:D
+
+    .line 91
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->h()V
+
+    goto :goto_0
+.end method
+
+.method d()V
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 98
+    sget-object v0, Lcom/jirbo/adcolony/l;->b:Lcom/jirbo/adcolony/l;
+
+    const-string v1, "AdColony suspending"
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
+
+    .line 99
+    sput-boolean v2, Lcom/jirbo/adcolony/a;->r:Z
+
+    .line 101
+    iget-boolean v0, p0, Lcom/jirbo/adcolony/v;->b:Z
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
+
+    const-string v1, "AdColony.onPause() called without initial call to onResume()."
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
+
+    .line 102
+    :cond_0
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/jirbo/adcolony/v;->b:Z
+
+    .line 104
+    iput-boolean v2, p0, Lcom/jirbo/adcolony/v;->c:Z
+
+    .line 105
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->c()D
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/jirbo/adcolony/v;->g:D
+
+    .line 106
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->f()V
+
+    .line 107
+    return-void
+.end method
+
+.method e()V
+    .locals 2
+
+    .prologue
+    .line 112
+    sget-object v0, Lcom/jirbo/adcolony/l;->b:Lcom/jirbo/adcolony/l;
+
+    const-string v1, "AdColony terminating"
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
+
+    .line 113
+    const/4 v0, 0x1
+
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->r:Z
+
+    .line 115
+    iget-wide v0, p0, Lcom/jirbo/adcolony/v;->h:D
+
+    invoke-virtual {p0, v0, v1}, Lcom/jirbo/adcolony/v;->a(D)V
+
+    .line 117
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/jirbo/adcolony/v;->c:Z
+
+    .line 118
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->f()V
+
+    .line 119
+    return-void
+.end method
+
+.method f()V
+    .locals 4
+
+    .prologue
+    .line 123
+    new-instance v0, Lcom/jirbo/adcolony/ADCData$g;
+
+    invoke-direct {v0}, Lcom/jirbo/adcolony/ADCData$g;-><init>()V
+
+    .line 124
+    const-string v1, "allow_resume"
+
+    iget-boolean v2, p0, Lcom/jirbo/adcolony/v;->c:Z
+
+    invoke-virtual {v0, v1, v2}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;Z)V
+
+    .line 125
+    const-string v1, "start_time"
+
+    iget-wide v2, p0, Lcom/jirbo/adcolony/v;->f:D
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;D)V
+
+    .line 126
+    const-string v1, "finish_time"
+
+    iget-wide v2, p0, Lcom/jirbo/adcolony/v;->g:D
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;D)V
+
+    .line 127
+    const-string v1, "session_time"
+
+    iget-wide v2, p0, Lcom/jirbo/adcolony/v;->h:D
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;D)V
+
+    .line 129
+    new-instance v1, Lcom/jirbo/adcolony/f;
+
+    const-string v2, "session_info.txt"
+
+    invoke-direct {v1, v2}, Lcom/jirbo/adcolony/f;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v1, v0}, Lcom/jirbo/adcolony/k;->a(Lcom/jirbo/adcolony/f;Lcom/jirbo/adcolony/ADCData$g;)V
+
+    .line 130
+    return-void
+.end method
+
+.method g()V
+    .locals 4
+
+    .prologue
+    .line 134
+    new-instance v0, Lcom/jirbo/adcolony/f;
+
+    const-string v1, "session_info.txt"
+
+    invoke-direct {v0, v1}, Lcom/jirbo/adcolony/f;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Lcom/jirbo/adcolony/k;->b(Lcom/jirbo/adcolony/f;)Lcom/jirbo/adcolony/ADCData$g;
+
+    move-result-object v0
+
+    .line 135
+    if-eqz v0, :cond_0
+
+    .line 137
+    const-string v1, "allow_resume"
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/ADCData$g;->h(Ljava/lang/String;)Z
+
+    move-result v1
+
+    iput-boolean v1, p0, Lcom/jirbo/adcolony/v;->c:Z
+
+    .line 138
+    const-string v1, "start_time"
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/ADCData$g;->f(Ljava/lang/String;)D
 
     move-result-wide v2
 
-    .line 49
-    iget-wide v4, p0, Lcom/jirbo/adcolony/v;->w:J
+    iput-wide v2, p0, Lcom/jirbo/adcolony/v;->f:D
 
-    sub-long/2addr v2, v4
+    .line 139
+    const-string v1, "finish_time"
 
-    long-to-int v1, v2
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/ADCData$g;->f(Ljava/lang/String;)D
 
-    .line 50
-    mul-int/lit16 v1, v1, 0xff
+    move-result-wide v2
 
-    div-int/lit16 v1, v1, 0x3e8
+    iput-wide v2, p0, Lcom/jirbo/adcolony/v;->g:D
 
-    .line 51
-    if-le v1, v0, :cond_3
+    .line 140
+    const-string v1, "session_time"
 
-    .line 52
-    :goto_1
-    invoke-virtual {p1, v0, v6, v6, v6}, Landroid/graphics/Canvas;->drawARGB(IIII)V
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/ADCData$g;->f(Ljava/lang/String;)D
 
-    .line 54
-    iget-object v0, p0, Lcom/jirbo/adcolony/v;->a:Lcom/jirbo/adcolony/ADCImage;
+    move-result-wide v0
 
-    iget v1, p0, Lcom/jirbo/adcolony/v;->x:I
+    iput-wide v0, p0, Lcom/jirbo/adcolony/v;->h:D
 
-    iget v2, p0, Lcom/jirbo/adcolony/v;->y:I
+    .line 146
+    :goto_0
+    return-void
 
-    invoke-virtual {v0, p1, v1, v2}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
+    .line 144
+    :cond_0
+    const/4 v0, 0x1
 
-    .line 56
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->b()I
+    iput-boolean v0, p0, Lcom/jirbo/adcolony/v;->d:Z
 
-    move-result v0
+    goto :goto_0
+.end method
 
-    .line 57
-    mul-int/lit8 v0, v0, 0x3
+.method h()V
+    .locals 4
 
-    div-int/lit8 v0, v0, 0x2
+    .prologue
+    const/4 v1, 0x0
 
-    .line 59
-    const-string v1, "Completion is required to receive"
+    .line 150
+    const/4 v0, 0x1
 
-    iget v2, p0, Lcom/jirbo/adcolony/v;->z:I
+    iput-boolean v0, p0, Lcom/jirbo/adcolony/v;->e:Z
 
-    iget v3, p0, Lcom/jirbo/adcolony/v;->A:I
+    .line 151
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->b()Ljava/lang/String;
 
-    int-to-double v4, v3
+    move-result-object v0
 
-    int-to-double v6, v0
+    iput-object v0, p0, Lcom/jirbo/adcolony/v;->j:Ljava/lang/String;
 
-    const-wide/high16 v8, 0x4006000000000000L    # 2.75
+    .line 152
+    const-wide/16 v2, 0x0
 
-    mul-double/2addr v6, v8
+    iput-wide v2, p0, Lcom/jirbo/adcolony/v;->h:D
 
-    sub-double/2addr v4, v6
+    .line 153
+    iput v1, p0, Lcom/jirbo/adcolony/v;->i:I
 
-    double-to-int v3, v4
+    .line 156
+    sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    invoke-virtual {p0, v1, v2, v3, p1}, Lcom/jirbo/adcolony/v;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+    if-eqz v0, :cond_0
 
-    .line 60
-    const-string v1, "your reward."
+    sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    iget v2, p0, Lcom/jirbo/adcolony/v;->z:I
+    iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    iget v3, p0, Lcom/jirbo/adcolony/v;->A:I
+    if-eqz v0, :cond_0
 
-    mul-int/lit8 v4, v0, 0x2
+    sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    sub-int/2addr v3, v4
+    iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    invoke-virtual {p0, v1, v2, v3, p1}, Lcom/jirbo/adcolony/v;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+    iget-object v0, v0, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
-    .line 61
-    const-string v1, "Are you sure you want to skip?"
+    if-eqz v0, :cond_0
 
-    iget v2, p0, Lcom/jirbo/adcolony/v;->z:I
+    sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    iget v3, p0, Lcom/jirbo/adcolony/v;->A:I
+    iget-object v0, v0, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    int-to-double v4, v3
+    iget-object v0, v0, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
-    int-to-double v6, v0
-
-    const-wide/high16 v8, 0x3ff4000000000000L    # 1.25
-
-    mul-double/2addr v6, v8
-
-    sub-double/2addr v4, v6
-
-    double-to-int v0, v4
-
-    invoke-virtual {p0, v1, v2, v0, p1}, Lcom/jirbo/adcolony/v;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
-
-    .line 63
-    iget-object v0, p0, Lcom/jirbo/adcolony/v;->b:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, p0, Lcom/jirbo/adcolony/v;->z:I
-
-    iget-object v2, p0, Lcom/jirbo/adcolony/v;->b:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v2, v2, Lcom/jirbo/adcolony/ADCImage;->f:I
-
-    div-int/lit8 v2, v2, 0x2
-
-    sub-int/2addr v1, v2
-
-    iget v2, p0, Lcom/jirbo/adcolony/v;->A:I
-
-    iget-object v3, p0, Lcom/jirbo/adcolony/v;->b:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v3, v3, Lcom/jirbo/adcolony/ADCImage;->g:I
-
-    div-int/lit8 v3, v3, 0x2
-
-    sub-int/2addr v2, v3
-
-    invoke-virtual {v0, p1, v1, v2}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
-
-    .line 65
-    iget-boolean v0, p0, Lcom/jirbo/adcolony/v;->J:Z
+    iget-object v0, v0, Lcom/jirbo/adcolony/n$e;->n:Lcom/jirbo/adcolony/n$ae;
 
     if-nez v0, :cond_1
 
-    .line 67
-    iget-object v0, p0, Lcom/jirbo/adcolony/v;->c:Lcom/jirbo/adcolony/ADCImage;
+    .line 163
+    :cond_0
+    return-void
 
-    iget v1, p0, Lcom/jirbo/adcolony/v;->B:I
-
-    iget v2, p0, Lcom/jirbo/adcolony/v;->D:I
-
-    invoke-virtual {v0, p1, v1, v2}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
-
-    .line 74
-    :goto_2
-    iget-boolean v0, p0, Lcom/jirbo/adcolony/v;->K:Z
-
-    if-nez v0, :cond_2
-
-    .line 76
-    iget-object v0, p0, Lcom/jirbo/adcolony/v;->e:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, p0, Lcom/jirbo/adcolony/v;->C:I
-
-    iget v2, p0, Lcom/jirbo/adcolony/v;->D:I
-
-    invoke-virtual {v0, p1, v1, v2}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
-
-    .line 82
-    :goto_3
-    const-string v0, "Yes"
-
-    iget v1, p0, Lcom/jirbo/adcolony/v;->B:I
-
-    iget v2, p0, Lcom/jirbo/adcolony/v;->D:I
-
-    invoke-virtual {p0, v0, v1, v2, p1}, Lcom/jirbo/adcolony/v;->c(Ljava/lang/String;IILandroid/graphics/Canvas;)V
-
-    .line 83
-    const-string v0, "No"
-
-    iget v1, p0, Lcom/jirbo/adcolony/v;->C:I
-
-    iget v2, p0, Lcom/jirbo/adcolony/v;->D:I
-
-    invoke-virtual {p0, v0, v1, v2, p1}, Lcom/jirbo/adcolony/v;->c(Ljava/lang/String;IILandroid/graphics/Canvas;)V
-
-    goto/16 :goto_0
-
-    .line 71
     :cond_1
-    iget-object v0, p0, Lcom/jirbo/adcolony/v;->d:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, p0, Lcom/jirbo/adcolony/v;->B:I
-
-    iget v2, p0, Lcom/jirbo/adcolony/v;->D:I
-
-    invoke-virtual {v0, p1, v1, v2}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
-
-    goto :goto_2
-
-    .line 80
-    :cond_2
-    iget-object v0, p0, Lcom/jirbo/adcolony/v;->f:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, p0, Lcom/jirbo/adcolony/v;->C:I
-
-    iget v2, p0, Lcom/jirbo/adcolony/v;->D:I
-
-    invoke-virtual {v0, p1, v1, v2}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
-
-    goto :goto_3
-
-    :cond_3
     move v0, v1
 
-    goto/16 :goto_1
-.end method
-
-.method public onKeyDown(ILandroid/view/KeyEvent;)Z
-    .locals 2
-    .param p1, "keycode"    # I
-    .param p2, "event"    # Landroid/view/KeyEvent;
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 145
-    iget-object v1, p0, Lcom/jirbo/adcolony/v;->L:Lcom/jirbo/adcolony/ADCVideo;
-
-    iget-object v1, v1, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/e;
-
-    if-nez v1, :cond_1
-
-    .line 150
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 146
-    :cond_1
-    const/4 v1, 0x4
-
-    if-ne p1, v1, :cond_0
-
-    .line 148
-    invoke-super {p0, p1, p2}, Lcom/jirbo/adcolony/h;->onKeyDown(ILandroid/view/KeyEvent;)Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public onKeyUp(ILandroid/view/KeyEvent;)Z
-    .locals 1
-    .param p1, "keycode"    # I
-    .param p2, "event"    # Landroid/view/KeyEvent;
-
-    .prologue
-    .line 155
-    const/4 v0, 0x4
-
-    if-ne p1, v0, :cond_0
-
-    .line 157
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/jirbo/adcolony/v;->I:Lcom/jirbo/adcolony/v;
-
     .line 158
-    iget-object v0, p0, Lcom/jirbo/adcolony/v;->L:Lcom/jirbo/adcolony/ADCVideo;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/e;
-
-    invoke-virtual {v0}, Lcom/jirbo/adcolony/e;->start()V
-
-    .line 159
-    const/4 v0, 0x1
-
-    .line 161
     :goto_0
-    return v0
+    sget-object v2, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    :cond_0
-    const/4 v0, 0x0
+    iget-object v2, v2, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    goto :goto_0
-.end method
+    iget-object v2, v2, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 7
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    iget-object v2, v2, Lcom/jirbo/adcolony/n$e;->n:Lcom/jirbo/adcolony/n$ae;
 
-    .prologue
-    const/4 v6, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v0, 0x1
-
-    .line 90
-    iget-object v1, p0, Lcom/jirbo/adcolony/v;->L:Lcom/jirbo/adcolony/ADCVideo;
-
-    sget-boolean v1, Lcom/jirbo/adcolony/ADCVideo;->d:Z
-
-    if-eqz v1, :cond_1
-
-    .line 91
-    sput-object v6, Lcom/jirbo/adcolony/v;->I:Lcom/jirbo/adcolony/v;
-
-    .line 92
-    iget-object v0, p0, Lcom/jirbo/adcolony/v;->L:Lcom/jirbo/adcolony/ADCVideo;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/ADCVideo;->H:Lcom/jirbo/adcolony/ad;
-
-    invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/ad;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v0
-
-    .line 140
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 95
-    :cond_1
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    .line 96
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+    invoke-virtual {v2}, Lcom/jirbo/adcolony/n$ae;->a()I
 
     move-result v2
 
-    float-to-int v2, v2
+    if-ge v0, v2, :cond_0
 
-    .line 98
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    .line 160
+    sget-object v2, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    move-result v3
+    iget-object v2, v2, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    if-ne v3, v0, :cond_3
+    iget-object v2, v2, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
-    .line 101
-    iget v3, p0, Lcom/jirbo/adcolony/v;->B:I
+    iget-object v2, v2, Lcom/jirbo/adcolony/n$e;->n:Lcom/jirbo/adcolony/n$ae;
 
-    iget v4, p0, Lcom/jirbo/adcolony/v;->D:I
+    invoke-virtual {v2, v0}, Lcom/jirbo/adcolony/n$ae;->a(I)Lcom/jirbo/adcolony/n$ab;
 
-    invoke-virtual {p0, v1, v2, v3, v4}, Lcom/jirbo/adcolony/v;->a(IIII)Z
+    move-result-object v2
 
-    move-result v3
+    iget-object v2, v2, Lcom/jirbo/adcolony/n$ab;->k:Lcom/jirbo/adcolony/ag;
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_2
 
-    iget-boolean v3, p0, Lcom/jirbo/adcolony/v;->J:Z
+    sget-object v2, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    if-eqz v3, :cond_4
+    iget-object v2, v2, Lcom/jirbo/adcolony/d;->b:Lcom/jirbo/adcolony/b;
 
-    .line 103
-    sput-object v6, Lcom/jirbo/adcolony/v;->I:Lcom/jirbo/adcolony/v;
+    iget-object v2, v2, Lcom/jirbo/adcolony/b;->j:Lcom/jirbo/adcolony/n$e;
 
-    .line 104
-    sput-boolean v5, Lcom/jirbo/adcolony/v;->H:Z
+    iget-object v2, v2, Lcom/jirbo/adcolony/n$e;->n:Lcom/jirbo/adcolony/n$ae;
 
-    .line 105
-    sput-boolean v5, Lcom/jirbo/adcolony/a;->D:Z
+    invoke-virtual {v2, v0}, Lcom/jirbo/adcolony/n$ae;->a(I)Lcom/jirbo/adcolony/n$ab;
 
-    .line 106
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->ak:Z
+    move-result-object v2
 
-    .line 107
-    sget-object v3, Lcom/jirbo/adcolony/a;->W:Lcom/jirbo/adcolony/a$a;
+    iget-object v2, v2, Lcom/jirbo/adcolony/n$ab;->k:Lcom/jirbo/adcolony/ag;
 
-    iget-object v4, p0, Lcom/jirbo/adcolony/v;->G:Lcom/jirbo/adcolony/AdColonyV4VCAd;
+    iput v1, v2, Lcom/jirbo/adcolony/ag;->d:I
 
-    invoke-virtual {v3, v4}, Lcom/jirbo/adcolony/a$a;->b(Lcom/jirbo/adcolony/AdColonyAd;)V
-
-    .line 108
-    sput-boolean v0, Lcom/jirbo/adcolony/AdColonyBrowser;->A:Z
-
-    .line 109
-    iget-object v3, p0, Lcom/jirbo/adcolony/v;->L:Lcom/jirbo/adcolony/ADCVideo;
-
-    invoke-virtual {v3}, Lcom/jirbo/adcolony/ADCVideo;->finish()V
-
-    .line 110
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->E:Z
-
-    .line 120
+    .line 158
     :cond_2
-    :goto_1
-    iput-boolean v5, p0, Lcom/jirbo/adcolony/v;->J:Z
-
-    .line 121
-    iput-boolean v5, p0, Lcom/jirbo/adcolony/v;->K:Z
-
-    .line 122
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->invalidate()V
-
-    .line 125
-    :cond_3
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    .line 127
-    iget v3, p0, Lcom/jirbo/adcolony/v;->B:I
-
-    iget v4, p0, Lcom/jirbo/adcolony/v;->D:I
-
-    invoke-virtual {p0, v1, v2, v3, v4}, Lcom/jirbo/adcolony/v;->a(IIII)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    .line 130
-    iput-boolean v0, p0, Lcom/jirbo/adcolony/v;->J:Z
-
-    .line 131
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->invalidate()V
-
-    goto :goto_0
-
-    .line 113
-    :cond_4
-    iget v3, p0, Lcom/jirbo/adcolony/v;->C:I
-
-    iget v4, p0, Lcom/jirbo/adcolony/v;->D:I
-
-    invoke-virtual {p0, v1, v2, v3, v4}, Lcom/jirbo/adcolony/v;->a(IIII)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    iget-boolean v3, p0, Lcom/jirbo/adcolony/v;->K:Z
-
-    if-eqz v3, :cond_2
-
-    .line 115
-    sput-object v6, Lcom/jirbo/adcolony/v;->I:Lcom/jirbo/adcolony/v;
-
-    .line 116
-    sput-boolean v5, Lcom/jirbo/adcolony/v;->H:Z
-
-    .line 117
-    iget-object v3, p0, Lcom/jirbo/adcolony/v;->L:Lcom/jirbo/adcolony/ADCVideo;
-
-    iget-object v3, v3, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/e;
-
-    invoke-virtual {v3}, Lcom/jirbo/adcolony/e;->start()V
-
-    goto :goto_1
-
-    .line 133
-    :cond_5
-    iget v3, p0, Lcom/jirbo/adcolony/v;->C:I
-
-    iget v4, p0, Lcom/jirbo/adcolony/v;->D:I
-
-    invoke-virtual {p0, v1, v2, v3, v4}, Lcom/jirbo/adcolony/v;->a(IIII)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 136
-    iput-boolean v0, p0, Lcom/jirbo/adcolony/v;->K:Z
-
-    .line 137
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/v;->invalidate()V
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 .end method

@@ -10,14 +10,14 @@
 
 .field final synthetic b:Ljava/util/Map;
 
-.field final synthetic c:Lcom/applovin/impl/sdk/ae;
+.field final synthetic c:Lcom/applovin/impl/sdk/ad;
 
 
 # direct methods
-.method constructor <init>(Lcom/applovin/impl/sdk/ae;Lcom/applovin/sdk/AppLovinAd;Ljava/util/Map;)V
+.method constructor <init>(Lcom/applovin/impl/sdk/ad;Lcom/applovin/sdk/AppLovinAd;Ljava/util/Map;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/al;->c:Lcom/applovin/impl/sdk/ae;
+    iput-object p1, p0, Lcom/applovin/impl/sdk/al;->c:Lcom/applovin/impl/sdk/ad;
 
     iput-object p2, p0, Lcom/applovin/impl/sdk/al;->a:Lcom/applovin/sdk/AppLovinAd;
 
@@ -33,9 +33,9 @@
 .method public run()V
     .locals 3
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/al;->c:Lcom/applovin/impl/sdk/ae;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/al;->c:Lcom/applovin/impl/sdk/ad;
 
-    invoke-static {v0}, Lcom/applovin/impl/sdk/ae;->a(Lcom/applovin/impl/sdk/ae;)Lcom/applovin/sdk/AppLovinAdRewardListener;
+    invoke-static {v0}, Lcom/applovin/impl/sdk/ad;->a(Lcom/applovin/impl/sdk/ad;)Lcom/applovin/sdk/AppLovinAdRewardListener;
 
     move-result-object v0
 
@@ -43,7 +43,7 @@
 
     iget-object v2, p0, Lcom/applovin/impl/sdk/al;->b:Ljava/util/Map;
 
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinAdRewardListener;->userOverQuota(Lcom/applovin/sdk/AppLovinAd;Ljava/util/Map;)V
+    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinAdRewardListener;->userRewardRejected(Lcom/applovin/sdk/AppLovinAd;Ljava/util/Map;)V
 
     return-void
 .end method

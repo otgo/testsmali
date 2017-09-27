@@ -28,7 +28,7 @@
 
     const/4 v2, 0x0
 
-    .line 20
+    .line 23
     new-instance v0, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;
 
     const-string v1, "INFO"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->ERROR:Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;
 
-    .line 19
+    .line 22
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;
@@ -91,7 +91,7 @@
     .locals 0
 
     .prologue
-    .line 19
+    .line 22
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -101,7 +101,7 @@
     .locals 1
 
     .prologue
-    .line 19
+    .line 22
     const-class v0, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -117,7 +117,7 @@
     .locals 1
 
     .prologue
-    .line 19
+    .line 22
     sget-object v0, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->a:[Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;
 
     invoke-virtual {v0}, [Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->clone()Ljava/lang/Object;

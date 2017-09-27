@@ -1,187 +1,136 @@
-.class public Lcom/applovin/impl/sdk/ch;
-.super Lcom/applovin/impl/sdk/cg;
+.class Lcom/applovin/impl/sdk/ch;
+.super Lcom/applovin/impl/sdk/cf;
+
+
+# instance fields
+.field private a:I
+
+.field private final b:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
 
 # direct methods
-.method public constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/util/List;Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;)V
-    .locals 1
+.method public constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;ILcom/applovin/nativeAds/AppLovinNativeAdLoadListener;)V
+    .locals 3
 
-    const-string v0, "TaskCacheNativeAdVideos"
+    sget-object v0, Lcom/applovin/impl/sdk/NativeAdImpl;->SIZE_NATIVE:Lcom/applovin/sdk/AppLovinAdSize;
 
-    invoke-direct {p0, v0, p1, p2, p3}, Lcom/applovin/impl/sdk/cg;-><init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/util/List;Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;)V
+    sget-object v1, Lcom/applovin/impl/sdk/NativeAdImpl;->TYPE_NATIVE:Lcom/applovin/sdk/AppLovinAdType;
 
-    return-void
-.end method
+    const/4 v2, 0x0
 
-.method public constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/util/List;Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;)V
-    .locals 1
+    invoke-direct {p0, v0, v1, v2, p1}, Lcom/applovin/impl/sdk/cf;-><init>(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;Lcom/applovin/sdk/AppLovinAdLoadListener;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    const-string v0, "TaskCacheNativeAdVideos"
+    iput-object p3, p0, Lcom/applovin/impl/sdk/ch;->b:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
-    invoke-direct {p0, v0, p1, p2, p3}, Lcom/applovin/impl/sdk/cg;-><init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/util/List;Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;)V
+    iput p2, p0, Lcom/applovin/impl/sdk/ch;->a:I
 
     return-void
-.end method
-
-.method private b(Lcom/applovin/impl/sdk/NativeAdImpl;)Z
-    .locals 4
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ch;->g:Lcom/applovin/sdk/AppLovinLogger;
-
-    const-string v1, "TaskCacheNativeAdVideos"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Unable to cache video resource "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Lcom/applovin/impl/sdk/NativeAdImpl;->getSourceVideoUrl()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->w(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/16 v0, -0xca
-
-    invoke-virtual {p0, p1, v0}, Lcom/applovin/impl/sdk/ch;->a(Lcom/applovin/impl/sdk/NativeAdImpl;I)V
-
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 
 # virtual methods
-.method protected a(Lcom/applovin/impl/sdk/NativeAdImpl;)V
+.method protected a(Lorg/json/JSONObject;)Lcom/applovin/impl/sdk/bq;
+    .locals 3
+
+    new-instance v0, Lcom/applovin/impl/sdk/cp;
+
+    iget-object v1, p0, Lcom/applovin/impl/sdk/ch;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+
+    iget-object v2, p0, Lcom/applovin/impl/sdk/ch;->b:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+    invoke-direct {v0, p1, v1, v2}, Lcom/applovin/impl/sdk/cp;-><init>(Lorg/json/JSONObject;Lcom/applovin/impl/sdk/AppLovinSdkImpl;Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;)V
+
+    return-object v0
+.end method
+
+.method protected a(I)V
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ch;->b:Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/ch;->b:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ch;->b:Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/ch;->b:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
-    invoke-interface {v0, p1}, Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;->onNativeAdVideoPreceached(Lcom/applovin/nativeAds/AppLovinNativeAd;)V
+    invoke-interface {v0, p1}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsFailedToLoad(I)V
 
     :cond_0
     return-void
 .end method
 
-.method protected a(Lcom/applovin/impl/sdk/NativeAdImpl;I)V
-    .locals 1
+.method protected b(Ljava/util/Map;)V
+    .locals 2
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ch;->b:Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;
+    const-string v0, "slot_count"
+
+    iget v1, p0, Lcom/applovin/impl/sdk/ch;->a:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p1, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method protected c(Ljava/util/Map;)V
+    .locals 4
+
+    invoke-static {}, Lcom/applovin/impl/sdk/cu;->a()Lcom/applovin/impl/sdk/cu;
+
+    move-result-object v0
+
+    const-string v1, "tFNW"
+
+    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/cu;->a(Ljava/lang/String;)Lcom/applovin/impl/sdk/cw;
+
+    move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ch;->b:Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;
+    const-string v1, "etfw"
 
-    invoke-interface {v0, p1, p2}, Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;->onNativeAdVideoPrecachingFailed(Lcom/applovin/nativeAds/AppLovinNativeAd;I)V
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/cw;->b()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {p1, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v1, "ntfw"
+
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/cw;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {p1, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method protected a(Lcom/applovin/impl/sdk/NativeAdImpl;Lcom/applovin/impl/sdk/y;)Z
-    .locals 6
+.method protected e()Ljava/lang/String;
+    .locals 2
 
-    invoke-virtual {p1}, Lcom/applovin/impl/sdk/NativeAdImpl;->getSourceVideoUrl()Ljava/lang/String;
+    const-string v0, "nad"
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/applovin/impl/sdk/ch;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    invoke-static {v0}, Lcom/applovin/sdk/AppLovinSdkUtils;->isValidString(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ch;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
+    invoke-static {v0, v1}, Lcom/applovin/impl/sdk/q;->b(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "TaskCacheNativeAdVideos"
-
-    const-string v2, "No video attached to ad, nothing to cache..."
-
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ch;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
-
-    move-result-object v0
-
-    const-string v1, "TaskCacheNativeAdVideos"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Beginning slot video caching for ad "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Lcom/applovin/impl/sdk/NativeAdImpl;->getAdId()J
-
-    move-result-wide v4
-
-    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Lcom/applovin/impl/sdk/NativeAdImpl;->getSourceVideoUrl()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0, p2}, Lcom/applovin/impl/sdk/ch;->a(Ljava/lang/String;Lcom/applovin/impl/sdk/y;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p1, v0}, Lcom/applovin/impl/sdk/NativeAdImpl;->setVideoUrl(Ljava/lang/String;)V
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    invoke-direct {p0, p1}, Lcom/applovin/impl/sdk/ch;->b(Lcom/applovin/impl/sdk/NativeAdImpl;)Z
-
-    move-result v0
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method public bridge synthetic run()V
-    .locals 0
+.method public f()Ljava/lang/String;
+    .locals 1
 
-    invoke-super {p0}, Lcom/applovin/impl/sdk/cg;->run()V
+    const-string v0, "tFNW"
 
-    return-void
+    return-object v0
 .end method

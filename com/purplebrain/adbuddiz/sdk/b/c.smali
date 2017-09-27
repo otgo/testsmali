@@ -3,14 +3,12 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/h/i$a;Ljava/lang/String;)V
-    .locals 2
+.method public constructor <init>()V
+    .locals 1
 
-    iget-object v0, p1, Lcom/purplebrain/adbuddiz/sdk/h/i$a;->e:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->AD_IS_ALREADY_ON_SCREEN:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
 
-    iget-object v1, p1, Lcom/purplebrain/adbuddiz/sdk/h/i$a;->f:Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;
-
-    invoke-direct {p0, v0, v1, p2}, Lcom/purplebrain/adbuddiz/sdk/b/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/b/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)V
 
     return-void
 .end method

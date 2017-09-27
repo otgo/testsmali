@@ -39,20 +39,20 @@
     .locals 4
 
     .prologue
-    .line 123
+    .line 136
     :try_start_0
     new-instance v0, Landroid/os/StatFs;
 
     invoke-direct {v0, p1}, Landroid/os/StatFs;-><init>(Ljava/lang/String;)V
 
-    .line 124
+    .line 137
     invoke-virtual {v0}, Landroid/os/StatFs;->getBlockSize()I
 
     move-result v1
 
     int-to-long v2, v1
 
-    .line 125
+    .line 138
     invoke-virtual {v0}, Landroid/os/StatFs;->getAvailableBlocks()I
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
@@ -61,28 +61,28 @@
 
     int-to-long v0, v0
 
-    .line 126
+    .line 139
     mul-long/2addr v0, v2
 
-    .line 127
+    .line 140
     long-to-double v0, v0
 
-    .line 131
+    .line 144
     :goto_0
     return-wide v0
 
-    .line 129
+    .line 142
     :catch_0
     move-exception v0
 
-    .line 131
+    .line 144
     const-wide/16 v0, 0x0
 
     goto :goto_0
 .end method
 
 .method a()V
-    .locals 4
+    .locals 8
 
     .prologue
     .line 34
@@ -92,14 +92,71 @@
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
+    .line 36
+    const/4 v0, 0x1
+
+    .line 37
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/ADCStorage;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    .line 39
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/ADCStorage;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/jirbo/adcolony/ADCStorage;->a(Ljava/lang/String;)D
+
+    move-result-wide v2
+
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/ADCStorage;->c()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/jirbo/adcolony/ADCStorage;->a(Ljava/lang/String;)D
+
+    move-result-wide v4
+
+    const-wide/high16 v6, 0x4130000000000000L    # 1048576.0
+
+    add-double/2addr v4, v6
+
+    cmpl-double v1, v2, v4
+
+    if-lez v1, :cond_0
+
+    .line 41
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/ADCStorage;->c()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/jirbo/adcolony/ADCStorage;->a(Ljava/lang/String;)D
+
+    move-result-wide v2
+
+    const-wide/high16 v4, 0x417e000000000000L    # 3.145728E7
+
+    cmpg-double v1, v2, v4
+
+    if-gez v1, :cond_0
+
+    .line 43
+    const/4 v0, 0x0
+
     .line 50
+    :cond_0
+    if-eqz v0, :cond_2
+
+    .line 52
     sget-object v0, Lcom/jirbo/adcolony/l;->b:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Using internal storage:"
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 51
+    .line 53
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -124,7 +181,8 @@
 
     iput-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->b:Ljava/lang/String;
 
-    .line 53
+    .line 60
+    :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -147,14 +205,14 @@
 
     iput-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->c:Ljava/lang/String;
 
-    .line 54
+    .line 61
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/ADCStorage;->c:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 56
+    .line 63
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/ADCStorage;->c:Ljava/lang/String;
@@ -163,27 +221,7 @@
 
     iput-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->e:Ljava/io/File;
 
-    .line 58
-    iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->e:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 60
-    iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->e:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->delete()Z
-
-    .line 61
-    iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->e:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
-
-    .line 64
-    :cond_0
+    .line 65
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->e:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
@@ -192,17 +230,86 @@
 
     if-nez v0, :cond_1
 
-    .line 66
+    .line 67
+    iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->e:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+
+    .line 68
+    iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->e:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
+
+    .line 71
+    :cond_1
+    iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->e:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    .line 73
     const-string v0, "Cannot create media folder."
 
     invoke-static {v0}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;)V
 
-    .line 93
-    :goto_0
+    .line 100
+    :goto_1
     return-void
 
-    .line 70
-    :cond_1
+    .line 57
+    :cond_2
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/ADCStorage;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "/.adc2/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->f()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->b:Ljava/lang/String;
+
+    .line 58
+    sget-object v0, Lcom/jirbo/adcolony/l;->b:Lcom/jirbo/adcolony/l;
+
+    const-string v1, "Using external storage:"
+
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
+
+    goto :goto_0
+
+    .line 77
+    :cond_3
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->c:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/jirbo/adcolony/ADCStorage;->a(Ljava/lang/String;)D
@@ -213,9 +320,9 @@
 
     cmpg-double v0, v0, v2
 
-    if-gez v0, :cond_2
+    if-gez v0, :cond_4
 
-    .line 72
+    .line 79
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -248,10 +355,10 @@
 
     invoke-static {v0}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;)V
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 76
-    :cond_2
+    .line 83
+    :cond_4
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -276,10 +383,10 @@
 
     iput-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->d:Ljava/lang/String;
 
-    .line 78
+    .line 85
     sget v0, Lcom/jirbo/adcolony/a;->n:I
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_5
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -303,8 +410,8 @@
 
     iput-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->d:Ljava/lang/String;
 
-    .line 80
-    :cond_3
+    .line 87
+    :cond_5
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Internal data path: "
@@ -317,7 +424,7 @@
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 82
+    .line 89
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/ADCStorage;->d:Ljava/lang/String;
@@ -326,48 +433,48 @@
 
     iput-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->f:Ljava/io/File;
 
-    .line 83
+    .line 90
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->f:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_6
 
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->f:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 84
-    :cond_4
+    .line 91
+    :cond_6
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->f:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 86
+    .line 93
     new-instance v0, Lcom/jirbo/adcolony/f;
 
     const-string v1, "iap_cache.txt"
 
     invoke-direct {v0, v1}, Lcom/jirbo/adcolony/f;-><init>(Ljava/lang/String;)V
 
-    .line 89
+    .line 96
     invoke-virtual {v0}, Lcom/jirbo/adcolony/f;->c()V
 
-    .line 92
-    sget-object v1, Lcom/jirbo/adcolony/a;->aj:Lcom/jirbo/adcolony/ADCData$c;
+    .line 99
+    sget-object v1, Lcom/jirbo/adcolony/a;->aa:Lcom/jirbo/adcolony/ADCData$c;
 
     invoke-static {v0, v1}, Lcom/jirbo/adcolony/k;->a(Lcom/jirbo/adcolony/f;Lcom/jirbo/adcolony/ADCData$c;)V
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 .end method
 
 .method b()V
     .locals 1
 
     .prologue
-    .line 97
+    .line 104
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->e:Ljava/io/File;
 
     if-eqz v0, :cond_0
@@ -376,12 +483,12 @@
 
     if-nez v0, :cond_1
 
-    .line 104
+    .line 111
     :cond_0
     :goto_0
     return-void
 
-    .line 99
+    .line 106
     :cond_1
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->e:Ljava/io/File;
 
@@ -395,7 +502,7 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 100
+    .line 107
     :cond_2
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->f:Ljava/io/File;
 
@@ -409,13 +516,13 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 102
+    .line 109
     :cond_3
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->e:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 103
+    .line 110
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCStorage;->f:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
@@ -427,18 +534,7 @@
     .locals 1
 
     .prologue
-    .line 108
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    const-string v0, ""
-
-    .line 109
-    :goto_0
-    return-object v0
-
-    :cond_0
+    .line 115
     invoke-static {}, Lcom/jirbo/adcolony/AdColony;->activity()Landroid/app/Activity;
 
     move-result-object v0
@@ -451,38 +547,42 @@
 
     move-result-object v0
 
-    goto :goto_0
+    return-object v0
 .end method
 
 .method d()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 114
-    sget-object v0, Lcom/jirbo/adcolony/a;->P:Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    const-string v0, ""
-
-    .line 115
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-static {}, Lcom/jirbo/adcolony/AdColony;->activity()Landroid/app/Activity;
+    .line 120
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    .line 121
+    const-string v1, "mounted"
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 123
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
+
+    .line 127
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

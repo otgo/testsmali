@@ -1,138 +1,221 @@
-.class public final enum Lcom/purplebrain/adbuddiz/sdk/g/d;
-.super Ljava/lang/Enum;
-
-
-# static fields
-.field public static final enum a:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-.field public static final enum b:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-.field public static final enum c:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-.field public static final enum d:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-.field public static final enum e:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-.field private static final synthetic h:[Lcom/purplebrain/adbuddiz/sdk/g/d;
+.class public final Lcom/purplebrain/adbuddiz/sdk/g/d;
+.super Lcom/purplebrain/adbuddiz/sdk/g/a;
 
 
 # instance fields
-.field private f:Ljava/lang/String;
+.field public c:Lcom/purplebrain/adbuddiz/sdk/e/a/a;
 
-.field private g:I
+.field public d:Ljava/lang/String;
+
+.field public e:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
-
-    const/4 v7, 0x4
-
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x0
-
-    const/4 v3, 0x1
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    const-string v1, "READY"
-
-    const-string v2, "ready"
-
-    invoke-direct {v0, v1, v4, v2, v4}, Lcom/purplebrain/adbuddiz/sdk/g/d;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
-
-    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/g/d;->a:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    const-string v1, "ERROR"
-
-    const-string v2, "error"
-
-    invoke-direct {v0, v1, v3, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/g/d;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
-
-    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/g/d;->b:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    const-string v1, "STATE_CHANGE"
-
-    const-string v2, "stateChange"
-
-    invoke-direct {v0, v1, v5, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/g/d;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
-
-    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/g/d;->c:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    const-string v1, "VIEWABLE_CHANGE"
-
-    const-string v2, "viewableChange"
-
-    invoke-direct {v0, v1, v6, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/g/d;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
-
-    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/g/d;->d:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    const-string v1, "SIZE_CHANGE"
-
-    const-string v2, "sizeChange"
-
-    invoke-direct {v0, v1, v7, v2, v5}, Lcom/purplebrain/adbuddiz/sdk/g/d;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
-
-    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/g/d;->e:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    const/4 v0, 0x5
-
-    new-array v0, v0, [Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/g/d;->a:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/g/d;->b:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/g/d;->c:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/g/d;->d:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/g/d;->e:Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    aput-object v1, v0, v7
-
-    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/g/d;->h:[Lcom/purplebrain/adbuddiz/sdk/g/d;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;I)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput-object p3, p0, Lcom/purplebrain/adbuddiz/sdk/g/d;->f:Ljava/lang/String;
-
-    iput p4, p0, Lcom/purplebrain/adbuddiz/sdk/g/d;->g:I
+    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/g/a;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method protected final b()V
+    .locals 8
+
+    const/4 v1, 0x0
+
+    :try_start_0
+    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/d/i;->a()Lcom/purplebrain/adbuddiz/sdk/d/i;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/d/i;->b()Lcom/purplebrain/adbuddiz/sdk/e/b;
+
+    move-result-object v0
+
+    iget-wide v2, v0, Lcom/purplebrain/adbuddiz/sdk/e/b;->f:J
+
+    new-instance v0, Ljava/net/URL;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "http://sdk.adbuddiz.com/sdk/android/v3/adImpression/"
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/AdBuddiz;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    new-instance v3, Lorg/json/JSONObject;
+
+    invoke-direct {v3}, Lorg/json/JSONObject;-><init>()V
+
+    const-string v4, "a"
+
+    new-instance v5, Lcom/purplebrain/adbuddiz/sdk/g/a/b;
+
+    invoke-direct {v5}, Lcom/purplebrain/adbuddiz/sdk/g/a/b;-><init>()V
+
+    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/g/a/b;->a(Landroid/content/Context;)Lcom/purplebrain/adbuddiz/sdk/g/a/a;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/g/a/a;->a()Lorg/json/JSONObject;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v4, "d"
+
+    new-instance v5, Lcom/purplebrain/adbuddiz/sdk/g/a/d;
+
+    invoke-direct {v5}, Lcom/purplebrain/adbuddiz/sdk/g/a/d;-><init>()V
+
+    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/g/a/d;->a(Landroid/content/Context;)Lcom/purplebrain/adbuddiz/sdk/g/a/c;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/g/a/c;->a()Lorg/json/JSONObject;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v4, "s"
+
+    new-instance v5, Lcom/purplebrain/adbuddiz/sdk/g/a/h;
+
+    invoke-direct {v5}, Lcom/purplebrain/adbuddiz/sdk/g/a/h;-><init>()V
+
+    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/g/a/h;->a(Landroid/content/Context;)Lcom/purplebrain/adbuddiz/sdk/g/a/g;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/g/a/g;->a()Lorg/json/JSONObject;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v4, "p"
+
+    iget-object v5, p0, Lcom/purplebrain/adbuddiz/sdk/g/d;->d:Ljava/lang/String;
+
+    invoke-virtual {v3, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v4, "or"
+
+    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/h/a/d;->a()Lcom/purplebrain/adbuddiz/sdk/e/f;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/e/f;->name()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v4, "b"
+
+    iget-boolean v5, p0, Lcom/purplebrain/adbuddiz/sdk/g/d;->e:Z
+
+    invoke-virtual {v3, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+
+    const-string v4, "t"
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    invoke-virtual {v3, v4, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+
+    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/g/d;->c:Lcom/purplebrain/adbuddiz/sdk/e/a/a;
+
+    invoke-virtual {v4, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/e/a/a;->a(Landroid/content/Context;Lorg/json/JSONObject;)V
+
+    invoke-virtual {v3}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/purplebrain/adbuddiz/sdk/g/d;->b(Ljava/net/URL;Ljava/lang/String;)Ljava/net/HttpURLConnection;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
+
+    move-result v0
+
+    const/16 v2, 0x1f4
+
+    if-lt v0, v2, :cond_1
+
+    new-instance v2, Lcom/purplebrain/adbuddiz/sdk/g/l;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "Server Error : "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Lcom/purplebrain/adbuddiz/sdk/g/l;-><init>(Ljava/lang/String;)V
+
+    throw v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
+
+    :cond_0
+    throw v0
+
+    :cond_1
+    if-eqz v1, :cond_2
+
+    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
+
+    :cond_2
+    return-void
+.end method
+
+.method protected final c()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/g/d;->f:Ljava/lang/String;
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method protected final d()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "AdImpression"
 
     return-object v0
 .end method

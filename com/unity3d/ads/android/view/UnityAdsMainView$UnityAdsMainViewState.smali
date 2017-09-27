@@ -20,7 +20,7 @@
 
     const/4 v2, 0x0
 
-    .line 27
+    .line 37
     new-instance v0, Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;
 
     const-string v1, "WebView"
@@ -58,7 +58,7 @@
     .locals 0
 
     .prologue
-    .line 27
+    .line 37
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -68,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 27
+    .line 37
     const-class v0, Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -84,7 +84,7 @@
     .locals 1
 
     .prologue
-    .line 27
+    .line 37
     sget-object v0, Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;->a:[Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;
 
     invoke-virtual {v0}, [Lcom/unity3d/ads/android/view/UnityAdsMainView$UnityAdsMainViewState;->clone()Ljava/lang/Object;

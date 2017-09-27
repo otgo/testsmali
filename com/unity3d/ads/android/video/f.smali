@@ -1,9 +1,6 @@
 .class final Lcom/unity3d/ads/android/video/f;
-.super Ljava/lang/Object;
+.super Landroid/widget/VideoView;
 .source "UnityAdsVideoPlayView.java"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
@@ -11,128 +8,53 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)V
+.method constructor <init>(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;Landroid/content/Context;)V
     .locals 0
 
     .prologue
-    .line 267
+    .line 247
     iput-object p1, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Landroid/widget/VideoView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 3
+.method public final onWindowVisibilityChanged(I)V
+    .locals 1
 
     .prologue
-    const/4 v2, 0x0
+    .line 250
+    if-nez p1, :cond_1
 
-    .line 270
-    iget-object v0, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
+    .line 251
+    invoke-super {p0, p1}, Landroid/widget/VideoView;->onWindowVisibilityChanged(I)V
 
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->i(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->j(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 271
-    iget-object v0, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->e(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 272
-    iget-object v0, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->a(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;Z)Z
-
-    .line 273
-    iget-object v0, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->k(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Lcom/unity3d/ads/android/view/UnityAdsMuteVideoButton;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/unity3d/ads/android/view/UnityAdsMuteVideoButton$UnityAdsMuteVideoButtonState;->UnMuted:Lcom/unity3d/ads/android/view/UnityAdsMuteVideoButton$UnityAdsMuteVideoButtonState;
-
-    invoke-virtual {v0, v1}, Lcom/unity3d/ads/android/view/UnityAdsMuteVideoButton;->setState(Lcom/unity3d/ads/android/view/UnityAdsMuteVideoButton$UnityAdsMuteVideoButtonState;)V
-
-    .line 274
-    iget-object v0, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->g(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Landroid/media/MediaPlayer;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
-
-    invoke-static {v1}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->l(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)F
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
-
-    invoke-static {v2}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->l(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)F
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/media/MediaPlayer;->setVolume(FF)V
-
-    .line 283
+    .line 255
     :cond_0
     :goto_0
     return-void
 
-    .line 277
+    .line 252
     :cond_1
     iget-object v0, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
 
-    const/4 v1, 0x1
+    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->d(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Z
 
-    invoke-static {v0, v1}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->a(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;Z)Z
+    move-result v0
 
-    .line 278
+    if-nez v0, :cond_0
+
+    .line 253
     iget-object v0, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
 
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->k(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Lcom/unity3d/ads/android/view/UnityAdsMuteVideoButton;
+    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->e(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Lcom/unity3d/ads/android/video/IUnityAdsVideoPlayerListener;
 
     move-result-object v0
 
-    sget-object v1, Lcom/unity3d/ads/android/view/UnityAdsMuteVideoButton$UnityAdsMuteVideoButtonState;->Muted:Lcom/unity3d/ads/android/view/UnityAdsMuteVideoButton$UnityAdsMuteVideoButtonState;
-
-    invoke-virtual {v0, v1}, Lcom/unity3d/ads/android/view/UnityAdsMuteVideoButton;->setState(Lcom/unity3d/ads/android/view/UnityAdsMuteVideoButton$UnityAdsMuteVideoButtonState;)V
-
-    .line 279
-    iget-object v0, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->f(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)V
-
-    .line 280
-    iget-object v0, p0, Lcom/unity3d/ads/android/video/f;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
-
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->g(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Landroid/media/MediaPlayer;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2, v2}, Landroid/media/MediaPlayer;->setVolume(FF)V
+    invoke-interface {v0}, Lcom/unity3d/ads/android/video/IUnityAdsVideoPlayerListener;->onVideoHidden()V
 
     goto :goto_0
 .end method

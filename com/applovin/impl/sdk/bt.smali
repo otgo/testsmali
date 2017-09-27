@@ -1,62 +1,153 @@
-.class abstract Lcom/applovin/impl/sdk/bt;
-.super Lcom/applovin/impl/sdk/bv;
+.class public Lcom/applovin/impl/sdk/bt;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Comparable;
+
+
+# static fields
+.field private static a:I
+
+
+# instance fields
+.field private final b:I
+
+.field private final c:Ljava/lang/String;
+
+.field private final d:Ljava/lang/Object;
 
 
 # direct methods
-.method protected constructor <init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    sput v0, Lcom/applovin/impl/sdk/bt;->a:I
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "No name specified"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "No default value specified"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    iput-object p1, p0, Lcom/applovin/impl/sdk/bt;->c:Ljava/lang/String;
+
+    iput-object p2, p0, Lcom/applovin/impl/sdk/bt;->d:Ljava/lang/Object;
+
+    sget v0, Lcom/applovin/impl/sdk/bt;->a:I
+
+    iput v0, p0, Lcom/applovin/impl/sdk/bt;->b:I
+
+    sget v0, Lcom/applovin/impl/sdk/bt;->a:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    sput v0, Lcom/applovin/impl/sdk/bt;->a:I
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Object;Lcom/applovin/impl/sdk/bs;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcom/applovin/impl/sdk/bv;-><init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+    invoke-direct {p0, p1, p2}, Lcom/applovin/impl/sdk/bt;-><init>(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a(Ljava/lang/String;Lorg/json/JSONObject;Lcom/applovin/impl/sdk/p;)V
-    .locals 8
+.method public a()I
+    .locals 1
 
-    new-instance v0, Lcom/applovin/impl/sdk/bu;
+    iget v0, p0, Lcom/applovin/impl/sdk/bt;->b:I
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    return v0
+.end method
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+.method a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    const-string v2, "Repeat"
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bt;->d:Ljava/lang/Object;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public b()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bt;->c:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public c()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bt;->d:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public compareTo(Ljava/lang/Object;)I
+    .locals 2
+
+    if-eqz p1, :cond_0
+
+    instance-of v0, p1, Lcom/applovin/impl/sdk/bt;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bt;->c:Ljava/lang/String;
+
+    check-cast p1, Lcom/applovin/impl/sdk/bt;
+
+    invoke-virtual {p1}, Lcom/applovin/impl/sdk/bt;->b()Ljava/lang/String;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/applovin/impl/sdk/bt;->e:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v1
+    :goto_0
+    return v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_0
+    const/4 v0, 0x0
 
-    move-result-object v2
-
-    sget-object v3, Lcom/applovin/impl/sdk/bw;->h:Lcom/applovin/impl/sdk/by;
-
-    iget-object v4, p0, Lcom/applovin/impl/sdk/bt;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    move-object v1, p0
-
-    move-object v5, p1
-
-    move-object v6, p2
-
-    move-object v7, p3
-
-    invoke-direct/range {v0 .. v7}, Lcom/applovin/impl/sdk/bu;-><init>(Lcom/applovin/impl/sdk/bt;Ljava/lang/String;Lcom/applovin/impl/sdk/by;Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/lang/String;Lorg/json/JSONObject;Lcom/applovin/impl/sdk/p;)V
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->k:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/cx;->a(Lcom/applovin/impl/sdk/by;)V
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/cx;->run()V
-
-    return-void
+    goto :goto_0
 .end method

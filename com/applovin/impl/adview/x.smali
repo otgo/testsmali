@@ -93,20 +93,6 @@
 
     invoke-virtual {v0, v2}, Lcom/applovin/adview/AppLovinAdView;->setAutoDestroy(Z)V
 
-    iget-object v0, p0, Lcom/applovin/impl/adview/x;->e:Lcom/applovin/adview/AppLovinAdView;
-
-    invoke-virtual {v0}, Lcom/applovin/adview/AppLovinAdView;->getAdViewController()Lcom/applovin/adview/AdViewController;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/applovin/impl/adview/AdViewControllerImpl;
-
-    new-instance v1, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v1, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/adview/AdViewControllerImpl;->setParentDialog(Ljava/lang/ref/WeakReference;)V
-
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/applovin/impl/adview/x;->requestWindowFeature(I)Z
@@ -260,13 +246,13 @@
 
     invoke-virtual {v3, v0}, Lcom/applovin/impl/adview/u;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    new-instance v4, Lcom/applovin/impl/sdk/ca;
+    new-instance v4, Lcom/applovin/impl/sdk/bv;
 
     iget-object v0, p0, Lcom/applovin/impl/adview/x;->b:Lcom/applovin/sdk/AppLovinSdk;
 
-    invoke-direct {v4, v0}, Lcom/applovin/impl/sdk/ca;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
+    invoke-direct {v4, v0}, Lcom/applovin/impl/sdk/bv;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
 
-    invoke-virtual {v4}, Lcom/applovin/impl/sdk/ca;->l()I
+    invoke-virtual {v4}, Lcom/applovin/impl/sdk/bv;->l()I
 
     move-result v0
 
@@ -280,7 +266,7 @@
 
     invoke-virtual {v6, v13}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    invoke-virtual {v4}, Lcom/applovin/impl/sdk/ca;->y()Z
+    invoke-virtual {v4}, Lcom/applovin/impl/sdk/bv;->y()Z
 
     move-result v0
 
@@ -293,7 +279,7 @@
 
     invoke-virtual {v3, v5}, Lcom/applovin/impl/adview/u;->a(I)V
 
-    invoke-virtual {v4}, Lcom/applovin/impl/sdk/ca;->n()I
+    invoke-virtual {v4}, Lcom/applovin/impl/sdk/bv;->n()I
 
     move-result v0
 
@@ -301,7 +287,7 @@
 
     move-result v0
 
-    invoke-virtual {v4}, Lcom/applovin/impl/sdk/ca;->p()I
+    invoke-virtual {v4}, Lcom/applovin/impl/sdk/bv;->p()I
 
     move-result v7
 
@@ -317,13 +303,13 @@
 
     invoke-virtual {v3}, Lcom/applovin/impl/adview/u;->bringToFront()V
 
-    new-instance v6, Lcom/applovin/impl/sdk/ca;
+    new-instance v6, Lcom/applovin/impl/sdk/bv;
 
     iget-object v8, p0, Lcom/applovin/impl/adview/x;->b:Lcom/applovin/sdk/AppLovinSdk;
 
-    invoke-direct {v6, v8}, Lcom/applovin/impl/sdk/ca;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
+    invoke-direct {v6, v8}, Lcom/applovin/impl/sdk/bv;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
 
-    invoke-virtual {v6}, Lcom/applovin/impl/sdk/ca;->r()I
+    invoke-virtual {v6}, Lcom/applovin/impl/sdk/bv;->r()I
 
     move-result v6
 
@@ -349,7 +335,7 @@
 
     invoke-virtual {v9, v13}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    invoke-virtual {v4}, Lcom/applovin/impl/sdk/ca;->x()Z
+    invoke-virtual {v4}, Lcom/applovin/impl/sdk/bv;->x()Z
 
     move-result v4
 

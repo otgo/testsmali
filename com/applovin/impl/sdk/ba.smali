@@ -1,306 +1,224 @@
 .class public Lcom/applovin/impl/sdk/ba;
-.super Ljava/lang/Object;
-
-
-# instance fields
-.field private a:Ljava/lang/String;
-
-.field private b:Ljava/lang/String;
-
-.field private c:Ljava/lang/String;
-
-.field private d:Ljava/lang/String;
-
-.field private e:Ljava/lang/String;
-
-.field private f:Ljava/lang/String;
-
-.field private g:Ljava/lang/String;
-
-.field private h:Ljava/lang/String;
-
-.field private i:Ljava/lang/String;
-
-.field private j:F
-
-.field private k:Ljava/lang/String;
-
-.field private l:Ljava/lang/String;
-
-.field private m:Ljava/lang/String;
-
-.field private n:Ljava/lang/String;
-
-.field private o:Ljava/lang/String;
-
-.field private p:Ljava/lang/String;
-
-.field private q:Ljava/lang/String;
-
-.field private r:J
-
-.field private s:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+.super Lcom/applovin/impl/sdk/bm;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lcom/applovin/impl/sdk/bm;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Lcom/applovin/impl/sdk/NativeAdImpl;
-    .locals 24
+.method a(Lcom/applovin/impl/sdk/d;)Lcom/applovin/impl/sdk/bq;
+    .locals 3
 
-    new-instance v2, Lcom/applovin/impl/sdk/NativeAdImpl;
+    const/4 v2, 0x1
 
-    move-object/from16 v0, p0
+    new-instance v0, Lcom/applovin/impl/sdk/ch;
 
-    iget-object v3, v0, Lcom/applovin/impl/sdk/ba;->a:Ljava/lang/String;
+    iget-object v1, p0, Lcom/applovin/impl/sdk/ba;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    move-object/from16 v0, p0
+    invoke-direct {v0, v1, v2, p0}, Lcom/applovin/impl/sdk/ch;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;ILcom/applovin/nativeAds/AppLovinNativeAdLoadListener;)V
 
-    iget-object v4, v0, Lcom/applovin/impl/sdk/ba;->b:Ljava/lang/String;
+    invoke-virtual {v0, v2}, Lcom/applovin/impl/sdk/ch;->a(Z)V
 
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/applovin/impl/sdk/ba;->c:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v6, v0, Lcom/applovin/impl/sdk/ba;->d:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v7, v0, Lcom/applovin/impl/sdk/ba;->e:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Lcom/applovin/impl/sdk/ba;->f:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v9, v0, Lcom/applovin/impl/sdk/ba;->g:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v10, v0, Lcom/applovin/impl/sdk/ba;->h:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lcom/applovin/impl/sdk/ba;->i:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget v12, v0, Lcom/applovin/impl/sdk/ba;->j:F
-
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/applovin/impl/sdk/ba;->k:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/applovin/impl/sdk/ba;->l:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/applovin/impl/sdk/ba;->m:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/applovin/impl/sdk/ba;->n:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/applovin/impl/sdk/ba;->o:Ljava/lang/String;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/applovin/impl/sdk/ba;->p:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/applovin/impl/sdk/ba;->q:Ljava/lang/String;
-
-    move-object/from16 v19, v0
-
-    move-object/from16 v0, p0
-
-    iget-wide v0, v0, Lcom/applovin/impl/sdk/ba;->r:J
-
-    move-wide/from16 v20, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/applovin/impl/sdk/ba;->s:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x0
-
-    invoke-direct/range {v2 .. v23}, Lcom/applovin/impl/sdk/NativeAdImpl;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLcom/applovin/impl/sdk/AppLovinSdkImpl;Lcom/applovin/impl/sdk/az;)V
-
-    return-object v2
+    return-object v0
 .end method
 
-.method public a(F)Lcom/applovin/impl/sdk/ba;
-    .locals 0
-
-    iput p1, p0, Lcom/applovin/impl/sdk/ba;->j:F
-
-    return-object p0
-.end method
-
-.method public a(J)Lcom/applovin/impl/sdk/ba;
+.method a(Lcom/applovin/impl/sdk/ax;)Lcom/applovin/impl/sdk/d;
     .locals 1
 
-    iput-wide p1, p0, Lcom/applovin/impl/sdk/ba;->r:J
+    sget-object v0, Lcom/applovin/impl/sdk/NativeAdImpl;->SPEC_NATIVE:Lcom/applovin/impl/sdk/d;
 
-    return-object p0
+    return-object v0
 .end method
 
-.method public a(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)Lcom/applovin/impl/sdk/ba;
-    .locals 0
+.method a()Ljava/util/Map;
+    .locals 4
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->s:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+    new-instance v1, Ljava/util/HashMap;
 
-    return-object p0
+    const/4 v0, 0x1
+
+    invoke-direct {v1, v0}, Ljava/util/HashMap;-><init>(I)V
+
+    new-instance v2, Lcom/applovin/impl/sdk/bn;
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/ba;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+
+    sget-object v3, Lcom/applovin/impl/sdk/br;->aR:Lcom/applovin/impl/sdk/bt;
+
+    invoke-virtual {v0, v3}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/impl/sdk/bt;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-direct {v2, v0}, Lcom/applovin/impl/sdk/bn;-><init>(I)V
+
+    sget-object v0, Lcom/applovin/impl/sdk/NativeAdImpl;->SPEC_NATIVE:Lcom/applovin/impl/sdk/d;
+
+    invoke-interface {v1, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object v1
 .end method
 
-.method public a(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
+.method public a(Lcom/applovin/impl/sdk/d;I)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->a:Ljava/lang/String;
-
-    return-object p0
+    return-void
 .end method
 
-.method public b(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
-    .locals 0
+.method a(Ljava/lang/Object;Lcom/applovin/impl/sdk/ax;)V
+    .locals 2
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->b:Ljava/lang/String;
+    const/4 v0, 0x1
 
-    return-object p0
+    new-array v0, v0, [Lcom/applovin/nativeAds/AppLovinNativeAd;
+
+    const/4 v1, 0x0
+
+    check-cast p2, Lcom/applovin/nativeAds/AppLovinNativeAd;
+
+    aput-object p2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    check-cast p1, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+    invoke-interface {p1, v0}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsLoaded(Ljava/util/List;)V
+
+    return-void
 .end method
 
-.method public c(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
+.method a(Ljava/lang/Object;Lcom/applovin/impl/sdk/d;I)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->c:Ljava/lang/String;
+    check-cast p1, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
-    return-object p0
+    invoke-interface {p1, p3}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsFailedToLoad(I)V
+
+    return-void
 .end method
 
-.method public d(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
-    .locals 0
+.method public bridge synthetic a(Lcom/applovin/impl/sdk/d;Ljava/lang/Object;)Z
+    .locals 1
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->d:Ljava/lang/String;
+    invoke-super {p0, p1, p2}, Lcom/applovin/impl/sdk/bm;->a(Lcom/applovin/impl/sdk/d;Ljava/lang/Object;)Z
 
-    return-object p0
+    move-result v0
+
+    return v0
 .end method
 
-.method public e(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
+.method public adReceived(Lcom/applovin/sdk/AppLovinAd;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->e:Ljava/lang/String;
-
-    return-object p0
+    return-void
 .end method
 
-.method public f(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
-    .locals 0
+.method public bridge synthetic b(Lcom/applovin/impl/sdk/d;)Lcom/applovin/impl/sdk/ax;
+    .locals 1
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->f:Ljava/lang/String;
+    invoke-super {p0, p1}, Lcom/applovin/impl/sdk/bm;->b(Lcom/applovin/impl/sdk/d;)Lcom/applovin/impl/sdk/ax;
 
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public g(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
+.method public bridge synthetic b(Lcom/applovin/impl/sdk/d;Ljava/lang/Object;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->g:Ljava/lang/String;
+    invoke-super {p0, p1, p2}, Lcom/applovin/impl/sdk/bm;->b(Lcom/applovin/impl/sdk/d;Ljava/lang/Object;)V
 
-    return-object p0
+    return-void
 .end method
 
-.method public h(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
-    .locals 0
+.method public bridge synthetic c(Lcom/applovin/impl/sdk/d;)Z
+    .locals 1
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->h:Ljava/lang/String;
+    invoke-super {p0, p1}, Lcom/applovin/impl/sdk/bm;->c(Lcom/applovin/impl/sdk/d;)Z
 
-    return-object p0
+    move-result v0
+
+    return v0
 .end method
 
-.method public i(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
+.method public bridge synthetic d(Lcom/applovin/impl/sdk/d;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->i:Ljava/lang/String;
+    invoke-super {p0, p1}, Lcom/applovin/impl/sdk/bm;->d(Lcom/applovin/impl/sdk/d;)V
 
-    return-object p0
+    return-void
 .end method
 
-.method public j(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
-    .locals 0
+.method public bridge synthetic e(Lcom/applovin/impl/sdk/d;)Z
+    .locals 1
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->k:Ljava/lang/String;
+    invoke-super {p0, p1}, Lcom/applovin/impl/sdk/bm;->e(Lcom/applovin/impl/sdk/d;)Z
 
-    return-object p0
+    move-result v0
+
+    return v0
 .end method
 
-.method public k(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
+.method public bridge synthetic f(Lcom/applovin/impl/sdk/d;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->l:Ljava/lang/String;
+    invoke-super {p0, p1}, Lcom/applovin/impl/sdk/bm;->f(Lcom/applovin/impl/sdk/d;)V
 
-    return-object p0
+    return-void
 .end method
 
-.method public l(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
+.method public failedToReceiveAd(I)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->m:Ljava/lang/String;
-
-    return-object p0
+    return-void
 .end method
 
-.method public m(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
-    .locals 0
+.method public onNativeAdsFailedToLoad(I)V
+    .locals 1
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->n:Ljava/lang/String;
+    sget-object v0, Lcom/applovin/impl/sdk/NativeAdImpl;->SPEC_NATIVE:Lcom/applovin/impl/sdk/d;
 
-    return-object p0
+    invoke-virtual {p0, v0, p1}, Lcom/applovin/impl/sdk/ba;->b(Lcom/applovin/impl/sdk/d;I)V
+
+    return-void
 .end method
 
-.method public n(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
-    .locals 0
+.method public onNativeAdsLoaded(Ljava/util/List;)V
+    .locals 3
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->o:Ljava/lang/String;
+    const/4 v0, 0x0
 
-    return-object p0
-.end method
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-.method public o(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
-    .locals 0
+    move-result-object v0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->p:Ljava/lang/String;
+    check-cast v0, Lcom/applovin/nativeAds/AppLovinNativeAd;
 
-    return-object p0
-.end method
+    iget-object v1, p0, Lcom/applovin/impl/sdk/ba;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-.method public p(Ljava/lang/String;)Lcom/applovin/impl/sdk/ba;
-    .locals 0
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getNativeAdService()Lcom/applovin/nativeAds/AppLovinNativeAdService;
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ba;->q:Ljava/lang/String;
+    move-result-object v1
 
-    return-object p0
+    new-instance v2, Lcom/applovin/impl/sdk/bb;
+
+    invoke-direct {v2, p0}, Lcom/applovin/impl/sdk/bb;-><init>(Lcom/applovin/impl/sdk/ba;)V
+
+    invoke-interface {v1, v0, v2}, Lcom/applovin/nativeAds/AppLovinNativeAdService;->precacheResources(Lcom/applovin/nativeAds/AppLovinNativeAd;Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;)V
+
+    return-void
 .end method

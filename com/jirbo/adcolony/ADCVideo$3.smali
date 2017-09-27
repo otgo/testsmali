@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/media/MediaPlayer$OnCompletionListener;
+.implements Landroid/media/MediaPlayer$OnPreparedListener;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 773
+    .line 645
     iput-object p1, p0, Lcom/jirbo/adcolony/ADCVideo$3;->a:Lcom/jirbo/adcolony/ADCVideo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,32 +36,20 @@
 
 
 # virtual methods
-.method public onCompletion(Landroid/media/MediaPlayer;)V
+.method public onPrepared(Landroid/media/MediaPlayer;)V
     .locals 2
     .param p1, "media_player"    # Landroid/media/MediaPlayer;
 
     .prologue
-    .line 777
+    .line 649
     iget-object v0, p0, Lcom/jirbo/adcolony/ADCVideo$3;->a:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v1, p0, Lcom/jirbo/adcolony/ADCVideo$3;->a:Lcom/jirbo/adcolony/ADCVideo;
+    iget-object v0, v0, Lcom/jirbo/adcolony/ADCVideo;->P:Landroid/widget/FrameLayout;
 
-    iget-object v1, v1, Lcom/jirbo/adcolony/ADCVideo;->P:Landroid/widget/FrameLayout;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/ADCVideo;->setContentView(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->removeViewAt(I)V
 
-    .line 778
-    iget-object v0, p0, Lcom/jirbo/adcolony/ADCVideo$3;->a:Lcom/jirbo/adcolony/ADCVideo;
-
-    iget-object v0, v0, Lcom/jirbo/adcolony/ADCVideo;->R:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
-
-    .line 779
-    const/4 v0, 0x0
-
-    sput-boolean v0, Lcom/jirbo/adcolony/ADCVideo;->g:Z
-
-    .line 780
+    .line 650
     return-void
 .end method

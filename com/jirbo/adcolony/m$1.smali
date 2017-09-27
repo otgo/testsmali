@@ -43,7 +43,7 @@
     .line 58
     const/4 v0, 0x0
 
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     .line 59
     return-void

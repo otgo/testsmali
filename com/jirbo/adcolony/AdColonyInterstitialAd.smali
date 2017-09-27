@@ -4,9 +4,13 @@
 
 
 # instance fields
-.field C:Lcom/jirbo/adcolony/AdColonyNativeAdListener;
+.field v:Lcom/jirbo/adcolony/AdColonyAdListener;
 
-.field D:Z
+.field w:Lcom/jirbo/adcolony/AdColonyNativeAdListener;
+
+.field x:Lcom/jirbo/adcolony/AdColonyNativeAdView;
+
+.field y:Z
 
 
 # direct methods
@@ -16,36 +20,36 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 28
+    .line 30
     invoke-direct {p0}, Lcom/jirbo/adcolony/AdColonyAd;-><init>()V
 
-    .line 29
-    sput-boolean v1, Lcom/jirbo/adcolony/a;->D:Z
+    .line 31
+    sput-boolean v1, Lcom/jirbo/adcolony/a;->u:Z
 
-    .line 30
+    .line 32
     invoke-static {}, Lcom/jirbo/adcolony/a;->e()V
 
-    .line 31
+    .line 33
     const-string v0, "interstitial"
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->j:Ljava/lang/String;
+
+    .line 34
+    const-string v0, "fullscreen"
 
     iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->k:Ljava/lang/String;
 
-    .line 32
-    const-string v0, "fullscreen"
+    .line 35
+    iput-boolean v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Z
 
-    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->l:Ljava/lang/String;
-
-    .line 33
-    iput-boolean v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->D:Z
-
-    .line 34
-    invoke-static {}, Lcom/jirbo/adcolony/aa;->b()Ljava/lang/String;
+    .line 36
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->b()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->m:Ljava/lang/String;
+    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->l:Ljava/lang/String;
 
-    .line 35
+    .line 37
     return-void
 .end method
 
@@ -54,38 +58,38 @@
     .param p1, "zone_id"    # Ljava/lang/String;
 
     .prologue
-    .line 38
+    .line 40
     invoke-direct {p0}, Lcom/jirbo/adcolony/AdColonyAd;-><init>()V
 
-    .line 39
+    .line 41
     const-string v0, "interstitial"
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->j:Ljava/lang/String;
+
+    .line 42
+    const-string v0, "fullscreen"
 
     iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->k:Ljava/lang/String;
 
-    .line 40
-    const-string v0, "fullscreen"
-
-    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->l:Ljava/lang/String;
-
-    .line 41
+    .line 43
     invoke-static {}, Lcom/jirbo/adcolony/a;->e()V
 
-    .line 42
-    iput-object p1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
+    .line 44
+    iput-object p1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
 
-    .line 43
+    .line 45
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->D:Z
+    iput-boolean v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Z
 
-    .line 44
-    invoke-static {}, Lcom/jirbo/adcolony/aa;->b()Ljava/lang/String;
+    .line 46
+    invoke-static {}, Lcom/jirbo/adcolony/ab;->b()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->m:Ljava/lang/String;
+    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->l:Ljava/lang/String;
 
-    .line 45
+    .line 47
     return-void
 .end method
 
@@ -99,37 +103,36 @@
 
     const/4 v3, 0x1
 
-    .line 140
+    .line 139
     const-string v1, "interstitial"
+
+    iput-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->j:Ljava/lang/String;
+
+    .line 140
+    const-string v1, "fullscreen"
 
     iput-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->k:Ljava/lang/String;
 
     .line 141
-    const-string v1, "fullscreen"
-
-    iput-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->l:Ljava/lang/String;
-
-    .line 142
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Lcom/jirbo/adcolony/AdColonyAdListener;
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->v:Lcom/jirbo/adcolony/AdColonyAdListener;
 
     if-eqz v1, :cond_1
 
-    iget-boolean v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->w:Z
-
-    if-nez v1, :cond_1
-
-    .line 144
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Lcom/jirbo/adcolony/AdColonyAdListener;
+    .line 143
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->v:Lcom/jirbo/adcolony/AdColonyAdListener;
 
     invoke-interface {v1, p0}, Lcom/jirbo/adcolony/AdColonyAdListener;->onAdColonyAdAttemptFinished(Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 152
+    .line 151
     :cond_0
     :goto_0
+    invoke-static {}, Lcom/jirbo/adcolony/a;->h()V
+
+    .line 152
     invoke-static {}, Ljava/lang/System;->gc()V
 
     .line 155
-    sget-boolean v1, Lcom/jirbo/adcolony/a;->D:Z
+    sget-boolean v1, Lcom/jirbo/adcolony/a;->u:Z
 
     if-nez v1, :cond_4
 
@@ -141,7 +144,7 @@
 
     .line 157
     :goto_1
-    sget-object v0, Lcom/jirbo/adcolony/a;->an:Ljava/util/ArrayList;
+    sget-object v0, Lcom/jirbo/adcolony/a;->ae:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -149,7 +152,7 @@
 
     if-ge v1, v0, :cond_3
 
-    sget-object v0, Lcom/jirbo/adcolony/a;->an:Ljava/util/ArrayList;
+    sget-object v0, Lcom/jirbo/adcolony/a;->ae:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -165,13 +168,13 @@
 
     goto :goto_1
 
-    .line 146
+    .line 145
     :cond_1
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->C:Lcom/jirbo/adcolony/AdColonyNativeAdListener;
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->w:Lcom/jirbo/adcolony/AdColonyNativeAdListener;
 
     if-eqz v1, :cond_0
 
-    .line 148
+    .line 147
     invoke-virtual {p0}, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->canceled()Z
 
     move-result v1
@@ -182,9 +185,9 @@
 
     iput-boolean v3, v1, Lcom/jirbo/adcolony/AdColonyNativeAdView;->I:Z
 
-    .line 150
+    .line 149
     :goto_2
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->C:Lcom/jirbo/adcolony/AdColonyNativeAdListener;
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->w:Lcom/jirbo/adcolony/AdColonyNativeAdListener;
 
     iget-object v2, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->x:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
@@ -192,7 +195,7 @@
 
     goto :goto_0
 
-    .line 149
+    .line 148
     :cond_2
     iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->x:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
@@ -202,66 +205,58 @@
 
     .line 158
     :cond_3
-    sget-object v0, Lcom/jirbo/adcolony/a;->an:Ljava/util/ArrayList;
+    sget-object v0, Lcom/jirbo/adcolony/a;->ae:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     .line 161
     :cond_4
-    iput-boolean v3, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->w:Z
-
-    .line 162
     const/4 v0, 0x0
 
-    sput-object v0, Lcom/jirbo/adcolony/a;->U:Lcom/jirbo/adcolony/ADCVideo;
+    sput-object v0, Lcom/jirbo/adcolony/a;->L:Lcom/jirbo/adcolony/ADCVideo;
+
+    .line 162
+    sput-boolean v3, Lcom/jirbo/adcolony/a;->v:Z
 
     .line 163
-    sput-boolean v3, Lcom/jirbo/adcolony/a;->E:Z
-
-    .line 164
     return-void
 .end method
 
 .method a(Z)Z
-    .locals 3
+    .locals 2
 
     .prologue
-    const/4 v0, 0x0
-
-    .line 57
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
-
-    if-nez v1, :cond_0
-
     .line 59
-    sget-object v1, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
+    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
 
-    invoke-virtual {v1}, Lcom/jirbo/adcolony/d;->e()Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    move-result-object v1
+    .line 61
+    sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    iput-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/jirbo/adcolony/d;->e()Ljava/lang/String;
 
-    .line 60
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
+    move-result-object v0
 
-    if-nez v1, :cond_0
+    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
 
     .line 62
+    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    .line 64
     :goto_0
     return v0
 
     :cond_0
-    sget-object v1, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
+    sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    iget-object v2, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
 
-    if-nez p1, :cond_1
-
-    const/4 v0, 0x1
-
-    :cond_1
-    invoke-virtual {v1, v2, p1, v0}, Lcom/jirbo/adcolony/d;->a(Ljava/lang/String;ZZ)Z
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/d;->f(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -272,7 +267,7 @@
     .locals 1
 
     .prologue
-    .line 47
+    .line 49
     const/4 v0, 0x0
 
     return v0
@@ -284,32 +279,32 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 67
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
+    .line 69
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 69
+    .line 71
     sget-object v1, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     invoke-virtual {v1}, Lcom/jirbo/adcolony/d;->e()Ljava/lang/String;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
+    iput-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
 
-    .line 70
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
+    .line 72
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 78
+    .line 80
     :goto_0
     return v0
 
-    .line 73
+    .line 75
     :cond_0
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/jirbo/adcolony/AdColony;->isZoneNative(Ljava/lang/String;)Z
 
@@ -317,20 +312,20 @@
 
     if-eqz v1, :cond_1
 
-    .line 75
+    .line 77
     const/16 v1, 0xc
 
-    sput v1, Lcom/jirbo/adcolony/a;->am:I
+    sput v1, Lcom/jirbo/adcolony/a;->ad:I
 
     goto :goto_0
 
-    .line 78
+    .line 80
     :cond_1
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
-    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->h:Ljava/lang/String;
+    iget-object v1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/d;->e(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/d;->f(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -341,110 +336,97 @@
     .locals 4
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v2, 0x1
-
-    .line 83
-    iget-boolean v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->D:Z
-
-    if-eqz v0, :cond_0
+    const/4 v2, 0x0
 
     .line 85
+    sput v2, Lcom/jirbo/adcolony/a;->ad:I
+
+    .line 86
+    iget-boolean v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Z
+
+    if-eqz v0, :cond_1
+
+    .line 88
     sget-object v0, Lcom/jirbo/adcolony/l;->d:Lcom/jirbo/adcolony/l;
 
     const-string v1, "Show attempt on out of date ad object. Please instantiate a new ad object for each ad attempt."
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 136
+    .line 135
+    :cond_0
     :goto_0
     return-void
 
-    .line 88
-    :cond_0
-    sput v3, Lcom/jirbo/adcolony/a;->am:I
+    .line 91
+    :cond_1
+    iput-boolean v3, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Z
 
-    .line 89
+    .line 92
     const-string v0, "interstitial"
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->j:Ljava/lang/String;
+
+    .line 93
+    const-string v0, "fullscreen"
 
     iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->k:Ljava/lang/String;
 
-    .line 90
-    const-string v0, "fullscreen"
-
-    iput-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->l:Ljava/lang/String;
-
-    .line 91
+    .line 94
     invoke-virtual {p0}, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->isReady()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 93
-    sget v0, Lcom/jirbo/adcolony/a;->am:I
-
-    iput v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:I
-
-    .line 95
+    .line 97
     new-instance v0, Lcom/jirbo/adcolony/AdColonyInterstitialAd$1;
 
     sget-object v1, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     invoke-direct {v0, p0, v1}, Lcom/jirbo/adcolony/AdColonyInterstitialAd$1;-><init>(Lcom/jirbo/adcolony/AdColonyInterstitialAd;Lcom/jirbo/adcolony/d;)V
 
-    .line 102
+    .line 104
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->f:I
 
-    .line 103
-    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Lcom/jirbo/adcolony/AdColonyAdListener;
+    .line 105
+    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->v:Lcom/jirbo/adcolony/AdColonyAdListener;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Lcom/jirbo/adcolony/AdColonyAdListener;
+    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->v:Lcom/jirbo/adcolony/AdColonyAdListener;
 
     invoke-interface {v0, p0}, Lcom/jirbo/adcolony/AdColonyAdListener;->onAdColonyAdAttemptFinished(Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 104
-    :cond_1
-    iput-boolean v2, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->D:Z
-
     goto :goto_0
 
-    .line 107
-    :cond_2
-    sget v0, Lcom/jirbo/adcolony/a;->am:I
-
-    iput v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->g:I
-
     .line 108
-    iput-boolean v2, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->D:Z
-
-    .line 109
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->E:Z
+    :cond_2
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->v:Z
 
     if-eqz v0, :cond_5
 
-    .line 112
+    .line 111
     new-instance v0, Lcom/jirbo/adcolony/AdColonyInterstitialAd$2;
 
     sget-object v1, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     invoke-direct {v0, p0, v1}, Lcom/jirbo/adcolony/AdColonyInterstitialAd$2;-><init>(Lcom/jirbo/adcolony/AdColonyInterstitialAd;Lcom/jirbo/adcolony/d;)V
 
-    .line 119
-    sput-boolean v3, Lcom/jirbo/adcolony/a;->E:Z
+    .line 118
+    sput-boolean v2, Lcom/jirbo/adcolony/a;->v:Z
 
-    .line 120
+    .line 119
     invoke-virtual {p0}, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->c()Z
 
-    .line 121
-    sput-object p0, Lcom/jirbo/adcolony/a;->T:Lcom/jirbo/adcolony/AdColonyAd;
+    .line 120
+    sput-object p0, Lcom/jirbo/adcolony/a;->K:Lcom/jirbo/adcolony/AdColonyAd;
 
-    .line 123
+    .line 122
     sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
 
     invoke-virtual {v0, p0}, Lcom/jirbo/adcolony/d;->b(Lcom/jirbo/adcolony/AdColonyInterstitialAd;)Z
@@ -453,32 +435,32 @@
 
     if-nez v0, :cond_4
 
-    .line 125
-    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Lcom/jirbo/adcolony/AdColonyAdListener;
+    .line 124
+    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->v:Lcom/jirbo/adcolony/AdColonyAdListener;
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Lcom/jirbo/adcolony/AdColonyAdListener;
+    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->v:Lcom/jirbo/adcolony/AdColonyAdListener;
 
     invoke-interface {v0, p0}, Lcom/jirbo/adcolony/AdColonyAdListener;->onAdColonyAdAttemptFinished(Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 126
+    .line 125
     :cond_3
-    sput-boolean v2, Lcom/jirbo/adcolony/a;->E:Z
+    sput-boolean v3, Lcom/jirbo/adcolony/a;->v:Z
 
     goto :goto_0
 
-    .line 131
+    .line 130
     :cond_4
-    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Lcom/jirbo/adcolony/AdColonyAdListener;
+    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->v:Lcom/jirbo/adcolony/AdColonyAdListener;
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Lcom/jirbo/adcolony/AdColonyAdListener;
+    iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->v:Lcom/jirbo/adcolony/AdColonyAdListener;
 
     invoke-interface {v0, p0}, Lcom/jirbo/adcolony/AdColonyAdListener;->onAdColonyAdStarted(Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 135
+    .line 134
     :cond_5
     const/4 v0, 0x4
 
@@ -492,9 +474,9 @@
     .param p1, "listener"    # Lcom/jirbo/adcolony/AdColonyAdListener;
 
     .prologue
-    .line 51
-    iput-object p1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->y:Lcom/jirbo/adcolony/AdColonyAdListener;
+    .line 53
+    iput-object p1, p0, Lcom/jirbo/adcolony/AdColonyInterstitialAd;->v:Lcom/jirbo/adcolony/AdColonyAdListener;
 
-    .line 52
+    .line 54
     return-object p0
 .end method

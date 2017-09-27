@@ -1,16 +1,12 @@
 .class public final Lcom/purplebrain/adbuddiz/sdk/b/d;
-.super Lcom/purplebrain/adbuddiz/sdk/b/b;
+.super Ljava/lang/Exception;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 0
 
-    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->AD_IS_ALREADY_ON_SCREEN:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
-
-    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;->AD_IS_ALREADY_ON_SCREEN:Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;
-
-    invoke-direct {p0, v0, v1}, Lcom/purplebrain/adbuddiz/sdk/b/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;Lcom/purplebrain/adbuddiz/sdk/AdBuddizRewardedVideoError;)V
+    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
     return-void
 .end method

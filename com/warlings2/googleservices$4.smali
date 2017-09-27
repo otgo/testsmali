@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 274
+    .line 225
     iput-object p1, p0, Lcom/warlings2/googleservices$4;->this$0:Lcom/warlings2/googleservices;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,23 +40,23 @@
     .locals 4
 
     .prologue
-    .line 276
+    .line 227
     sget-object v0, Lcom/warlings2/googleservices;->room:Lcom/google/android/gms/games/multiplayer/realtime/Room;
 
     if-eqz v0, :cond_0
 
-    .line 277
+    .line 228
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v1, "----- There was a room when onInvitationReceived -----"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 308
+    .line 259
     :goto_0
     return-void
 
-    .line 281
+    .line 232
     :cond_0
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
@@ -64,12 +64,12 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 282
+    .line 233
     const-string v1, "New Game"
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 283
+    .line 234
     const-string v1, "One of your friends is inviting you to a game."
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
@@ -100,12 +100,12 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 306
+    .line 257
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 307
+    .line 258
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
     goto :goto_0
@@ -115,6 +115,6 @@
     .locals 0
 
     .prologue
-    .line 312
+    .line 263
     return-void
 .end method

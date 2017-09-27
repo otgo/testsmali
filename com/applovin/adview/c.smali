@@ -29,7 +29,7 @@
 
     iget-object v0, v0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->e(Lcom/applovin/adview/AppLovinInterstitialActivity;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->d(Lcom/applovin/adview/AppLovinInterstitialActivity;)Landroid/os/Handler;
 
     move-result-object v0
 

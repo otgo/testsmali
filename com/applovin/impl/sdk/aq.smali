@@ -1,166 +1,117 @@
 .class Lcom/applovin/impl/sdk/aq;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field private final a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-.field private final b:Lcom/applovin/impl/sdk/z;
-
-.field private c:Landroid/app/Activity;
-
-.field private d:Lcom/applovin/sdk/AppLovinAdDisplayListener;
-
-.field private e:Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
-
-.field private f:Lcom/applovin/sdk/AppLovinAdClickListener;
-
-.field private g:Lcom/applovin/sdk/AppLovinAdRewardListener;
-
-.field private final h:Ljava/util/Timer;
+.field final synthetic a:Lcom/applovin/impl/sdk/ap;
 
 
 # direct methods
-.method constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;Lcom/applovin/impl/sdk/z;)V
-    .locals 2
+.method constructor <init>(Lcom/applovin/impl/sdk/ap;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/applovin/impl/sdk/aq;->a:Lcom/applovin/impl/sdk/ap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/Timer;
-
-    const-string v1, "IncentivizedAdLauncher"
-
-    invoke-direct {v0, v1}, Ljava/util/Timer;-><init>(Ljava/lang/String;)V
-
-    iput-object v0, p0, Lcom/applovin/impl/sdk/aq;->h:Ljava/util/Timer;
-
-    iput-object p1, p0, Lcom/applovin/impl/sdk/aq;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    iput-object p2, p0, Lcom/applovin/impl/sdk/aq;->b:Lcom/applovin/impl/sdk/z;
-
     return-void
-.end method
-
-.method static synthetic a(Lcom/applovin/impl/sdk/aq;)Landroid/app/Activity;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->c:Landroid/app/Activity;
-
-    return-object v0
-.end method
-
-.method static synthetic b(Lcom/applovin/impl/sdk/aq;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    return-object v0
-.end method
-
-.method private b()V
-    .locals 6
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->b:Lcom/applovin/impl/sdk/z;
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/aq;->c:Landroid/app/Activity;
-
-    iget-object v2, p0, Lcom/applovin/impl/sdk/aq;->g:Lcom/applovin/sdk/AppLovinAdRewardListener;
-
-    iget-object v3, p0, Lcom/applovin/impl/sdk/aq;->e:Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
-
-    iget-object v4, p0, Lcom/applovin/impl/sdk/aq;->d:Lcom/applovin/sdk/AppLovinAdDisplayListener;
-
-    iget-object v5, p0, Lcom/applovin/impl/sdk/aq;->f:Lcom/applovin/sdk/AppLovinAdClickListener;
-
-    invoke-virtual/range {v0 .. v5}, Lcom/applovin/impl/sdk/z;->b(Landroid/app/Activity;Lcom/applovin/sdk/AppLovinAdRewardListener;Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;Lcom/applovin/sdk/AppLovinAdDisplayListener;Lcom/applovin/sdk/AppLovinAdClickListener;)V
-
-    return-void
-.end method
-
-.method static synthetic c(Lcom/applovin/impl/sdk/aq;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/applovin/impl/sdk/aq;->b()V
-
-    return-void
-.end method
-
-.method static synthetic d(Lcom/applovin/impl/sdk/aq;)Ljava/util/Timer;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->h:Ljava/util/Timer;
-
-    return-object v0
-.end method
-
-.method static synthetic e(Lcom/applovin/impl/sdk/aq;)Lcom/applovin/sdk/AppLovinAdRewardListener;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->g:Lcom/applovin/sdk/AppLovinAdRewardListener;
-
-    return-object v0
-.end method
-
-.method static synthetic f(Lcom/applovin/impl/sdk/aq;)Lcom/applovin/impl/sdk/z;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->b:Lcom/applovin/impl/sdk/z;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method a()V
-    .locals 2
+.method public run()V
+    .locals 3
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->c:Landroid/app/Activity;
+    new-instance v1, Landroid/app/AlertDialog$Builder;
 
-    new-instance v1, Lcom/applovin/impl/sdk/ar;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->a:Lcom/applovin/impl/sdk/ap;
 
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/ar;-><init>(Lcom/applovin/impl/sdk/aq;)V
+    invoke-static {v0}, Lcom/applovin/impl/sdk/ap;->a(Lcom/applovin/impl/sdk/ap;)Landroid/app/Activity;
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+    move-result-object v0
 
-    return-void
-.end method
+    invoke-direct {v1, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-.method public a(Landroid/app/Activity;)V
-    .locals 0
+    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->a:Lcom/applovin/impl/sdk/ap;
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/aq;->c:Landroid/app/Activity;
+    invoke-static {v0}, Lcom/applovin/impl/sdk/ap;->b(Lcom/applovin/impl/sdk/ap;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public a(Lcom/applovin/sdk/AppLovinAdClickListener;)V
-    .locals 0
+    sget-object v2, Lcom/applovin/impl/sdk/br;->X:Lcom/applovin/impl/sdk/bt;
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/aq;->f:Lcom/applovin/sdk/AppLovinAdClickListener;
+    invoke-virtual {v0, v2}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/impl/sdk/bt;)Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public a(Lcom/applovin/sdk/AppLovinAdDisplayListener;)V
-    .locals 0
+    check-cast v0, Ljava/lang/CharSequence;
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/aq;->d:Lcom/applovin/sdk/AppLovinAdDisplayListener;
+    invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    return-void
-.end method
+    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->a:Lcom/applovin/impl/sdk/ap;
 
-.method public a(Lcom/applovin/sdk/AppLovinAdRewardListener;)V
-    .locals 0
+    invoke-static {v0}, Lcom/applovin/impl/sdk/ap;->b(Lcom/applovin/impl/sdk/ap;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/aq;->g:Lcom/applovin/sdk/AppLovinAdRewardListener;
+    move-result-object v0
 
-    return-void
-.end method
+    sget-object v2, Lcom/applovin/impl/sdk/br;->Y:Lcom/applovin/impl/sdk/bt;
 
-.method public a(Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;)V
-    .locals 0
+    invoke-virtual {v0, v2}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/impl/sdk/bt;)Ljava/lang/Object;
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/aq;->e:Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/CharSequence;
+
+    invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->a:Lcom/applovin/impl/sdk/ap;
+
+    invoke-static {v0}, Lcom/applovin/impl/sdk/ap;->b(Lcom/applovin/impl/sdk/ap;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+
+    move-result-object v0
+
+    sget-object v2, Lcom/applovin/impl/sdk/br;->Z:Lcom/applovin/impl/sdk/bt;
+
+    invoke-virtual {v0, v2}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/impl/sdk/bt;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/CharSequence;
+
+    new-instance v2, Lcom/applovin/impl/sdk/ar;
+
+    invoke-direct {v2, p0}, Lcom/applovin/impl/sdk/ar;-><init>(Lcom/applovin/impl/sdk/aq;)V
+
+    invoke-virtual {v1, v0, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/aq;->a:Lcom/applovin/impl/sdk/ap;
+
+    invoke-static {v0}, Lcom/applovin/impl/sdk/ap;->b(Lcom/applovin/impl/sdk/ap;)Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+
+    move-result-object v0
+
+    sget-object v2, Lcom/applovin/impl/sdk/br;->aa:Lcom/applovin/impl/sdk/bt;
+
+    invoke-virtual {v0, v2}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/impl/sdk/bt;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/CharSequence;
+
+    new-instance v2, Lcom/applovin/impl/sdk/au;
+
+    invoke-direct {v2, p0}, Lcom/applovin/impl/sdk/au;-><init>(Lcom/applovin/impl/sdk/aq;)V
+
+    invoke-virtual {v1, v0, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     return-void
 .end method

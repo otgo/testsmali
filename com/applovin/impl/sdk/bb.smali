@@ -1,224 +1,108 @@
-.class public Lcom/applovin/impl/sdk/bb;
-.super Lcom/applovin/impl/sdk/bq;
+.class Lcom/applovin/impl/sdk/bb;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;
+
+
+# instance fields
+.field final synthetic a:Lcom/applovin/impl/sdk/ba;
 
 
 # direct methods
-.method public constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+.method constructor <init>(Lcom/applovin/impl/sdk/ba;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/applovin/impl/sdk/bq;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+    iput-object p1, p0, Lcom/applovin/impl/sdk/bb;->a:Lcom/applovin/impl/sdk/ba;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method a(Lcom/applovin/impl/sdk/c;)Lcom/applovin/impl/sdk/bv;
-    .locals 3
-
-    const/4 v2, 0x1
-
-    new-instance v0, Lcom/applovin/impl/sdk/co;
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/bb;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-direct {v0, v1, v2, p0}, Lcom/applovin/impl/sdk/co;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;ILcom/applovin/nativeAds/AppLovinNativeAdLoadListener;)V
-
-    invoke-virtual {v0, v2}, Lcom/applovin/impl/sdk/co;->a(Z)V
-
-    return-object v0
-.end method
-
-.method a(Lcom/applovin/impl/sdk/ay;)Lcom/applovin/impl/sdk/c;
-    .locals 1
-
-    sget-object v0, Lcom/applovin/impl/sdk/NativeAdImpl;->SPEC_NATIVE:Lcom/applovin/impl/sdk/c;
-
-    return-object v0
-.end method
-
-.method a()Ljava/util/Map;
-    .locals 4
-
-    new-instance v1, Ljava/util/HashMap;
-
-    const/4 v0, 0x1
-
-    invoke-direct {v1, v0}, Ljava/util/HashMap;-><init>(I)V
-
-    new-instance v2, Lcom/applovin/impl/sdk/br;
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/bb;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    sget-object v3, Lcom/applovin/impl/sdk/bw;->aR:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v3}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-direct {v2, v0}, Lcom/applovin/impl/sdk/br;-><init>(I)V
-
-    sget-object v0, Lcom/applovin/impl/sdk/NativeAdImpl;->SPEC_NATIVE:Lcom/applovin/impl/sdk/c;
-
-    invoke-interface {v1, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object v1
-.end method
-
-.method public a(Lcom/applovin/impl/sdk/c;I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method a(Ljava/lang/Object;Lcom/applovin/impl/sdk/ay;)V
+.method public onNativeAdImagePrecachingFailed(Lcom/applovin/nativeAds/AppLovinNativeAd;I)V
     .locals 2
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bb;->a:Lcom/applovin/impl/sdk/ba;
 
-    new-array v0, v0, [Lcom/applovin/nativeAds/AppLovinNativeAd;
+    sget-object v1, Lcom/applovin/impl/sdk/NativeAdImpl;->SPEC_NATIVE:Lcom/applovin/impl/sdk/d;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0, v1, p2}, Lcom/applovin/impl/sdk/ba;->b(Lcom/applovin/impl/sdk/d;I)V
 
-    check-cast p2, Lcom/applovin/nativeAds/AppLovinNativeAd;
+    return-void
+.end method
 
-    aput-object p2, v0, v1
+.method public onNativeAdImagesPrecached(Lcom/applovin/nativeAds/AppLovinNativeAd;)V
+    .locals 1
 
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-interface {p1}, Lcom/applovin/nativeAds/AppLovinNativeAd;->getVideoUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast p1, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
-
-    invoke-interface {p1, v0}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsLoaded(Ljava/util/List;)V
-
-    return-void
-.end method
-
-.method a(Ljava/lang/Object;Lcom/applovin/impl/sdk/c;I)V
-    .locals 0
-
-    check-cast p1, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
-
-    invoke-interface {p1, p3}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsFailedToLoad(I)V
-
-    return-void
-.end method
-
-.method public bridge synthetic a(Lcom/applovin/impl/sdk/c;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-super {p0, p1, p2}, Lcom/applovin/impl/sdk/bq;->a(Lcom/applovin/impl/sdk/c;Ljava/lang/Object;)Z
+    invoke-static {v0}, Lcom/applovin/sdk/AppLovinSdkUtils;->isValidString(Ljava/lang/String;)Z
 
     move-result v0
 
-    return v0
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bb;->a:Lcom/applovin/impl/sdk/ba;
+
+    check-cast p1, Lcom/applovin/impl/sdk/ax;
+
+    invoke-virtual {v0, p1}, Lcom/applovin/impl/sdk/ba;->c(Lcom/applovin/impl/sdk/ax;)V
+
+    :cond_0
+    return-void
 .end method
 
-.method public adReceived(Lcom/applovin/sdk/AppLovinAd;)V
-    .locals 0
+.method public onNativeAdVideoPrecachingFailed(Lcom/applovin/nativeAds/AppLovinNativeAd;I)V
+    .locals 4
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bb;->a:Lcom/applovin/impl/sdk/ba;
+
+    iget-object v0, v0, Lcom/applovin/impl/sdk/ba;->b:Lcom/applovin/sdk/AppLovinLogger;
+
+    const-string v1, "NativeAdPreloadManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Video failed to cache during native ad preload. "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->w(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bb;->a:Lcom/applovin/impl/sdk/ba;
+
+    check-cast p1, Lcom/applovin/impl/sdk/ax;
+
+    invoke-virtual {v0, p1}, Lcom/applovin/impl/sdk/ba;->c(Lcom/applovin/impl/sdk/ax;)V
 
     return-void
 .end method
 
-.method public bridge synthetic b(Lcom/applovin/impl/sdk/c;)Lcom/applovin/impl/sdk/ay;
+.method public onNativeAdVideoPreceached(Lcom/applovin/nativeAds/AppLovinNativeAd;)V
     .locals 1
 
-    invoke-super {p0, p1}, Lcom/applovin/impl/sdk/bq;->b(Lcom/applovin/impl/sdk/c;)Lcom/applovin/impl/sdk/ay;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bb;->a:Lcom/applovin/impl/sdk/ba;
 
-    move-result-object v0
+    check-cast p1, Lcom/applovin/impl/sdk/ax;
 
-    return-object v0
-.end method
-
-.method public bridge synthetic b(Lcom/applovin/impl/sdk/c;Ljava/lang/Object;)V
-    .locals 0
-
-    invoke-super {p0, p1, p2}, Lcom/applovin/impl/sdk/bq;->b(Lcom/applovin/impl/sdk/c;Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public bridge synthetic c(Lcom/applovin/impl/sdk/c;)Z
-    .locals 1
-
-    invoke-super {p0, p1}, Lcom/applovin/impl/sdk/bq;->c(Lcom/applovin/impl/sdk/c;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public bridge synthetic d(Lcom/applovin/impl/sdk/c;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Lcom/applovin/impl/sdk/bq;->d(Lcom/applovin/impl/sdk/c;)V
-
-    return-void
-.end method
-
-.method public bridge synthetic e(Lcom/applovin/impl/sdk/c;)Z
-    .locals 1
-
-    invoke-super {p0, p1}, Lcom/applovin/impl/sdk/bq;->e(Lcom/applovin/impl/sdk/c;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public bridge synthetic f(Lcom/applovin/impl/sdk/c;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Lcom/applovin/impl/sdk/bq;->f(Lcom/applovin/impl/sdk/c;)V
-
-    return-void
-.end method
-
-.method public failedToReceiveAd(I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onNativeAdsFailedToLoad(I)V
-    .locals 1
-
-    sget-object v0, Lcom/applovin/impl/sdk/NativeAdImpl;->SPEC_NATIVE:Lcom/applovin/impl/sdk/c;
-
-    invoke-virtual {p0, v0, p1}, Lcom/applovin/impl/sdk/bb;->b(Lcom/applovin/impl/sdk/c;I)V
-
-    return-void
-.end method
-
-.method public onNativeAdsLoaded(Ljava/util/List;)V
-    .locals 3
-
-    const/4 v0, 0x0
-
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/applovin/nativeAds/AppLovinNativeAd;
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/bb;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getNativeAdService()Lcom/applovin/nativeAds/AppLovinNativeAdService;
-
-    move-result-object v1
-
-    new-instance v2, Lcom/applovin/impl/sdk/bc;
-
-    invoke-direct {v2, p0}, Lcom/applovin/impl/sdk/bc;-><init>(Lcom/applovin/impl/sdk/bb;)V
-
-    invoke-interface {v1, v0, v2}, Lcom/applovin/nativeAds/AppLovinNativeAdService;->precacheResources(Lcom/applovin/nativeAds/AppLovinNativeAd;Lcom/applovin/nativeAds/AppLovinNativeAdPrecacheListener;)V
+    invoke-virtual {v0, p1}, Lcom/applovin/impl/sdk/ba;->c(Lcom/applovin/impl/sdk/ax;)V
 
     return-void
 .end method

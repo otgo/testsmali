@@ -47,7 +47,7 @@
 
     .prologue
     .line 17
-    iput-object p1, p0, Lcom/jirbo/adcolony/AdColonyVideoAd;->y:Lcom/jirbo/adcolony/AdColonyAdListener;
+    iput-object p1, p0, Lcom/jirbo/adcolony/AdColonyVideoAd;->v:Lcom/jirbo/adcolony/AdColonyAdListener;
 
     .line 18
     return-object p0

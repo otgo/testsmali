@@ -6,37 +6,40 @@
 # instance fields
 .field H:Z
 
+.field I:Z
+
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyV4VCAd;)V
     .locals 4
 
     .prologue
-    .line 22
+    .line 24
     invoke-direct {p0}, Lcom/jirbo/adcolony/h;-><init>()V
 
-    .line 23
+    .line 25
     iput-object p1, p0, Lcom/jirbo/adcolony/ac;->F:Ljava/lang/String;
 
-    .line 24
+    .line 26
     iput-object p2, p0, Lcom/jirbo/adcolony/ac;->G:Lcom/jirbo/adcolony/AdColonyV4VCAd;
 
-    .line 26
+    .line 28
     invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->a()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
-    .line 31
+    .line 35
+    :cond_0
     :goto_0
     return-void
 
-    .line 28
-    :cond_0
+    .line 30
+    :cond_1
     const/4 v0, -0x1
 
-    .line 29
+    .line 31
     invoke-static {}, Lcom/jirbo/adcolony/AdColony;->activity()Landroid/app/Activity;
 
     move-result-object v1
@@ -49,762 +52,661 @@
 
     invoke-virtual {v1, p0, v2}, Landroid/app/Activity;->addContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
+    .line 34
+    iget-boolean v0, p0, Lcom/jirbo/adcolony/ac;->n:Z
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lcom/jirbo/adcolony/ac;->D:I
+
+    add-int/lit8 v0, v0, 0x14
+
+    iput v0, p0, Lcom/jirbo/adcolony/ac;->D:I
+
     goto :goto_0
 .end method
 
 
 # virtual methods
-.method d()V
-    .locals 10
-
-    .prologue
-    .line 103
-    invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v0
-
-    .line 104
-    invoke-virtual {v0}, Landroid/view/Display;->getWidth()I
-
-    move-result v2
-
-    .line 105
-    invoke-virtual {v0}, Landroid/view/Display;->getHeight()I
-
-    move-result v3
-
-    .line 107
-    iget-boolean v0, p0, Lcom/jirbo/adcolony/ac;->n:Z
-
-    if-eqz v0, :cond_0
-
-    const-wide/high16 v0, 0x4028000000000000L    # 12.0
-
-    .line 109
-    :goto_0
-    iget-object v4, p0, Lcom/jirbo/adcolony/ac;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v4, v4, Lcom/jirbo/adcolony/ADCImage;->f:I
-
-    sub-int/2addr v2, v4
-
-    div-int/lit8 v2, v2, 0x2
-
-    iput v2, p0, Lcom/jirbo/adcolony/ac;->x:I
-
-    .line 110
-    iget-object v2, p0, Lcom/jirbo/adcolony/ac;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v2, v2, Lcom/jirbo/adcolony/ADCImage;->g:I
-
-    sub-int v2, v3, v2
-
-    div-int/lit8 v2, v2, 0x2
-
-    add-int/lit8 v2, v2, -0x50
-
-    iput v2, p0, Lcom/jirbo/adcolony/ac;->y:I
-
-    .line 111
-    iget v2, p0, Lcom/jirbo/adcolony/ac;->x:I
-
-    iget-object v3, p0, Lcom/jirbo/adcolony/ac;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v3, v3, Lcom/jirbo/adcolony/ADCImage;->f:I
-
-    div-int/lit8 v3, v3, 0x2
-
-    add-int/2addr v2, v3
-
-    iput v2, p0, Lcom/jirbo/adcolony/ac;->z:I
-
-    .line 112
-    iget v2, p0, Lcom/jirbo/adcolony/ac;->y:I
-
-    iget-object v3, p0, Lcom/jirbo/adcolony/ac;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v3, v3, Lcom/jirbo/adcolony/ADCImage;->g:I
-
-    div-int/lit8 v3, v3, 0x2
-
-    add-int/2addr v2, v3
-
-    iput v2, p0, Lcom/jirbo/adcolony/ac;->A:I
-
-    .line 114
-    iget v2, p0, Lcom/jirbo/adcolony/ac;->y:I
-
-    iget-object v3, p0, Lcom/jirbo/adcolony/ac;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v3, v3, Lcom/jirbo/adcolony/ADCImage;->g:I
-
-    int-to-double v4, v3
-
-    iget-object v3, p0, Lcom/jirbo/adcolony/ac;->h:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v3, v3, Lcom/jirbo/adcolony/ADCImage;->g:I
-
-    int-to-double v6, v3
-
-    sget-wide v8, Lcom/jirbo/adcolony/ac;->p:D
-
-    mul-double/2addr v0, v8
-
-    add-double/2addr v0, v6
-
-    sub-double v0, v4, v0
-
-    double-to-int v0, v0
-
-    add-int/2addr v0, v2
-
-    iput v0, p0, Lcom/jirbo/adcolony/ac;->D:I
-
-    .line 115
-    iget v0, p0, Lcom/jirbo/adcolony/ac;->z:I
-
-    iget-object v1, p0, Lcom/jirbo/adcolony/ac;->h:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, v1, Lcom/jirbo/adcolony/ADCImage;->f:I
-
-    div-int/lit8 v1, v1, 0x2
-
-    sub-int/2addr v0, v1
-
-    iput v0, p0, Lcom/jirbo/adcolony/ac;->B:I
-
-    .line 116
-    return-void
-
-    .line 107
-    :cond_0
-    const-wide/high16 v0, 0x4030000000000000L    # 16.0
-
-    goto :goto_0
-.end method
-
 .method public onDraw(Landroid/graphics/Canvas;)V
-    .locals 10
+    .locals 14
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 35
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->d()V
+    const/4 v7, 0x1
 
-    .line 38
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    const/16 v1, 0x80
 
-    move-result-wide v0
-
-    .line 39
-    iget-wide v2, p0, Lcom/jirbo/adcolony/ac;->w:J
-
-    sub-long/2addr v0, v2
-
-    long-to-int v0, v0
+    const/4 v6, 0x0
 
     .line 40
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->c()V
+
+    .line 43
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    .line 44
+    iget-wide v4, p0, Lcom/jirbo/adcolony/ac;->w:J
+
+    sub-long/2addr v2, v4
+
+    long-to-int v0, v2
+
+    .line 45
     mul-int/lit16 v0, v0, 0xff
 
     div-int/lit16 v0, v0, 0x3e8
 
-    .line 41
-    const/16 v1, 0x80
-
+    .line 46
     if-le v0, v1, :cond_0
 
-    const/16 v0, 0x80
-
-    .line 42
-    :cond_0
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawARGB(IIII)V
-
-    .line 44
-    iget-object v1, p0, Lcom/jirbo/adcolony/ac;->a:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v2, p0, Lcom/jirbo/adcolony/ac;->x:I
-
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->y:I
-
-    invoke-virtual {v1, p1, v2, v3}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
-
-    .line 46
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->b()I
-
-    move-result v1
+    move v0, v1
 
     .line 47
-    mul-int/lit8 v1, v1, 0x3
-
-    div-int/lit8 v2, v1, 0x2
+    :cond_0
+    invoke-virtual {p1, v0, v6, v6, v6}, Landroid/graphics/Canvas;->drawARGB(IIII)V
 
     .line 49
-    iget-object v1, p0, Lcom/jirbo/adcolony/ac;->G:Lcom/jirbo/adcolony/AdColonyV4VCAd;
+    iget-object v2, p0, Lcom/jirbo/adcolony/ac;->a:Lcom/jirbo/adcolony/ADCImage;
 
-    invoke-virtual {v1}, Lcom/jirbo/adcolony/AdColonyV4VCAd;->getRemainingViewsUntilReward()I
+    iget v3, p0, Lcom/jirbo/adcolony/ac;->x:I
 
-    move-result v3
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->y:I
+
+    invoke-virtual {v2, p1, v3, v4}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
+
+    .line 51
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->b()I
+
+    move-result v2
 
     .line 52
-    iget-object v1, p0, Lcom/jirbo/adcolony/ac;->G:Lcom/jirbo/adcolony/AdColonyV4VCAd;
+    mul-int/lit8 v2, v2, 0x3
 
-    invoke-virtual {v1}, Lcom/jirbo/adcolony/AdColonyV4VCAd;->getViewsPerReward()I
-
-    move-result v1
-
-    if-eq v3, v1, :cond_1
-
-    if-nez v3, :cond_4
+    div-int/lit8 v3, v2, 0x2
 
     .line 54
-    :cond_1
-    iget-object v1, p0, Lcom/jirbo/adcolony/ac;->F:Ljava/lang/String;
+    iget-object v2, p0, Lcom/jirbo/adcolony/ac;->G:Lcom/jirbo/adcolony/AdColonyV4VCAd;
 
-    const-string v3, "video. You earned"
+    invoke-virtual {v2}, Lcom/jirbo/adcolony/AdColonyV4VCAd;->getRemainingViewsUntilReward()I
 
-    invoke-virtual {p0, v1, v3}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 55
-    sget-boolean v1, Lcom/jirbo/adcolony/ac;->s:Z
-
-    if-eqz v1, :cond_3
+    move-result v4
 
     .line 57
-    const-string v1, "Thanks for watching the sponsored"
+    iget-object v2, p0, Lcom/jirbo/adcolony/ac;->G:Lcom/jirbo/adcolony/AdColonyV4VCAd;
 
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->z:I
+    invoke-virtual {v2}, Lcom/jirbo/adcolony/AdColonyV4VCAd;->getViewsPerReward()I
 
-    iget v4, p0, Lcom/jirbo/adcolony/ac;->A:I
+    move-result v2
 
-    int-to-double v4, v4
+    if-ne v2, v7, :cond_3
 
-    int-to-double v6, v2
+    .line 59
+    iget-object v2, p0, Lcom/jirbo/adcolony/ac;->F:Ljava/lang/String;
 
-    const-wide/high16 v8, 0x4004000000000000L    # 2.5
+    const-string v4, ""
 
-    mul-double/2addr v6, v8
+    invoke-virtual {p0, v2, v4}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    sub-double/2addr v4, v6
+    .line 60
+    sget-boolean v2, Lcom/jirbo/adcolony/ac;->s:Z
 
-    double-to-int v4, v4
+    if-nez v2, :cond_2
 
-    invoke-virtual {p0, v1, v3, v4, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+    .line 62
+    const-string v2, "Watch a video to earn"
 
-    .line 58
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->z:I
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    iget v5, p0, Lcom/jirbo/adcolony/ac;->A:I
 
-    const-string v3, "video. You earned "
+    int-to-double v6, v5
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    int-to-double v8, v3
 
-    move-result-object v1
+    iget-wide v10, p0, Lcom/jirbo/adcolony/ac;->i:D
 
-    sget-object v3, Lcom/jirbo/adcolony/ac;->q:Ljava/lang/String;
+    mul-double/2addr v8, v10
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sub-double/2addr v6, v8
 
-    move-result-object v1
+    double-to-int v5, v6
 
-    const-string v3, "."
+    invoke-virtual {p0, v2, v4, v5, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 63
+    sget-object v2, Lcom/jirbo/adcolony/ac;->q:Ljava/lang/String;
 
-    move-result-object v1
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->z:I
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget v5, p0, Lcom/jirbo/adcolony/ac;->A:I
 
-    move-result-object v1
+    int-to-double v6, v5
 
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->z:I
+    int-to-double v8, v3
 
-    iget v4, p0, Lcom/jirbo/adcolony/ac;->A:I
+    iget-wide v10, p0, Lcom/jirbo/adcolony/ac;->j:D
 
-    int-to-double v4, v4
+    mul-double/2addr v8, v10
 
-    int-to-double v6, v2
+    sub-double/2addr v6, v8
 
-    const-wide/high16 v8, 0x3ff8000000000000L    # 1.5
+    double-to-int v5, v6
 
-    mul-double/2addr v6, v8
+    invoke-virtual {p0, v2, v4, v5, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
 
-    sub-double/2addr v4, v6
+    .line 64
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    double-to-int v2, v4
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0, v1, v3, v2, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+    sget-object v4, Lcom/jirbo/adcolony/ac;->r:Ljava/lang/String;
 
-    .line 86
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, "."
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->z:I
+
+    iget v5, p0, Lcom/jirbo/adcolony/ac;->A:I
+
+    int-to-double v6, v5
+
+    int-to-double v8, v3
+
+    iget-wide v10, p0, Lcom/jirbo/adcolony/ac;->k:D
+
+    mul-double/2addr v8, v10
+
+    sub-double/2addr v6, v8
+
+    double-to-int v3, v6
+
+    invoke-virtual {p0, v2, v4, v3, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+
+    .line 93
     :goto_0
-    iget-object v1, p0, Lcom/jirbo/adcolony/ac;->b:Lcom/jirbo/adcolony/ADCImage;
+    iget-object v2, p0, Lcom/jirbo/adcolony/ac;->b:Lcom/jirbo/adcolony/ADCImage;
 
-    iget v2, p0, Lcom/jirbo/adcolony/ac;->z:I
-
-    iget-object v3, p0, Lcom/jirbo/adcolony/ac;->b:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v3, v3, Lcom/jirbo/adcolony/ADCImage;->f:I
-
-    div-int/lit8 v3, v3, 0x2
-
-    sub-int/2addr v2, v3
-
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->A:I
+    iget v3, p0, Lcom/jirbo/adcolony/ac;->z:I
 
     iget-object v4, p0, Lcom/jirbo/adcolony/ac;->b:Lcom/jirbo/adcolony/ADCImage;
 
-    iget v4, v4, Lcom/jirbo/adcolony/ADCImage;->g:I
+    iget v4, v4, Lcom/jirbo/adcolony/ADCImage;->f:I
 
     div-int/lit8 v4, v4, 0x2
 
     sub-int/2addr v3, v4
 
-    invoke-virtual {v1, p1, v2, v3}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->A:I
 
-    .line 88
-    iget-boolean v1, p0, Lcom/jirbo/adcolony/ac;->H:Z
+    iget-object v5, p0, Lcom/jirbo/adcolony/ac;->b:Lcom/jirbo/adcolony/ADCImage;
 
-    if-nez v1, :cond_7
+    iget v5, v5, Lcom/jirbo/adcolony/ADCImage;->g:I
 
-    .line 90
-    iget-object v1, p0, Lcom/jirbo/adcolony/ac;->h:Lcom/jirbo/adcolony/ADCImage;
+    div-int/lit8 v5, v5, 0x2
 
-    iget v2, p0, Lcom/jirbo/adcolony/ac;->B:I
+    sub-int/2addr v4, v5
 
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->D:I
+    invoke-virtual {v2, p1, v3, v4}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
 
-    invoke-virtual {v1, p1, v2, v3}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
+    .line 95
+    iget-boolean v2, p0, Lcom/jirbo/adcolony/ac;->I:Z
+
+    if-nez v2, :cond_6
 
     .line 97
+    iget-object v2, p0, Lcom/jirbo/adcolony/ac;->c:Lcom/jirbo/adcolony/ADCImage;
+
+    iget v3, p0, Lcom/jirbo/adcolony/ac;->B:I
+
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->D:I
+
+    invoke-virtual {v2, p1, v3, v4}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
+
+    .line 104
     :goto_1
-    const-string v1, "Ok"
+    iget-boolean v2, p0, Lcom/jirbo/adcolony/ac;->H:Z
 
-    iget v2, p0, Lcom/jirbo/adcolony/ac;->B:I
+    if-nez v2, :cond_7
 
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->D:I
+    .line 106
+    iget-object v2, p0, Lcom/jirbo/adcolony/ac;->e:Lcom/jirbo/adcolony/ADCImage;
 
-    invoke-virtual {p0, v1, v2, v3, p1}, Lcom/jirbo/adcolony/ac;->c(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+    iget v3, p0, Lcom/jirbo/adcolony/ac;->C:I
 
-    .line 98
-    const/16 v1, 0x80
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->D:I
 
-    if-eq v0, v1, :cond_2
+    invoke-virtual {v2, p1, v3, v4}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
+
+    .line 113
+    :goto_2
+    const-string v2, "Yes"
+
+    iget v3, p0, Lcom/jirbo/adcolony/ac;->B:I
+
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->D:I
+
+    invoke-virtual {p0, v2, v3, v4, p1}, Lcom/jirbo/adcolony/ac;->c(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+
+    .line 114
+    const-string v2, "No"
+
+    iget v3, p0, Lcom/jirbo/adcolony/ac;->C:I
+
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->D:I
+
+    invoke-virtual {p0, v2, v3, v4, p1}, Lcom/jirbo/adcolony/ac;->c(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+
+    .line 116
+    if-eq v0, v1, :cond_1
 
     invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->invalidate()V
 
-    .line 99
-    :cond_2
+    .line 117
+    :cond_1
     return-void
 
-    .line 62
-    :cond_3
-    const-string v1, "Thanks for watching the sponsored"
+    .line 69
+    :cond_2
+    const-string v2, "Watch a video to earn"
 
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->z:I
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->z:I
 
-    iget v4, p0, Lcom/jirbo/adcolony/ac;->A:I
+    iget v5, p0, Lcom/jirbo/adcolony/ac;->A:I
 
-    int-to-double v4, v4
+    int-to-double v6, v5
 
-    int-to-double v6, v2
+    int-to-double v8, v3
 
-    const-wide v8, 0x4006666666666666L    # 2.8
+    iget-wide v10, p0, Lcom/jirbo/adcolony/ac;->l:D
 
-    mul-double/2addr v6, v8
+    mul-double/2addr v8, v10
 
-    sub-double/2addr v4, v6
+    sub-double/2addr v6, v8
 
-    double-to-int v4, v4
+    double-to-int v5, v6
 
-    invoke-virtual {p0, v1, v3, v4, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
-
-    .line 63
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "video. You earned "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget-object v3, Lcom/jirbo/adcolony/ac;->q:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->z:I
-
-    iget v4, p0, Lcom/jirbo/adcolony/ac;->A:I
-
-    int-to-double v4, v4
-
-    int-to-double v6, v2
-
-    const-wide v8, 0x4000666666666666L    # 2.05
-
-    mul-double/2addr v6, v8
-
-    sub-double/2addr v4, v6
-
-    double-to-int v4, v4
-
-    invoke-virtual {p0, v1, v3, v4, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
-
-    .line 64
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v3, Lcom/jirbo/adcolony/ac;->r:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, "."
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->z:I
-
-    iget v4, p0, Lcom/jirbo/adcolony/ac;->A:I
-
-    int-to-double v4, v4
-
-    int-to-double v6, v2
-
-    const-wide v8, 0x3ff4cccccccccccdL    # 1.3
-
-    mul-double/2addr v6, v8
-
-    sub-double/2addr v4, v6
-
-    double-to-int v2, v4
-
-    invoke-virtual {p0, v1, v3, v2, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
-
-    goto/16 :goto_0
+    invoke-virtual {p0, v2, v4, v5, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
 
     .line 70
-    :cond_4
-    iget-object v1, p0, Lcom/jirbo/adcolony/ac;->F:Ljava/lang/String;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v4, "to earn "
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0, v1, v4}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;Ljava/lang/String;)V
+    sget-object v4, Lcom/jirbo/adcolony/ac;->q:Ljava/lang/String;
 
-    .line 71
-    const/4 v1, 0x1
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-ne v3, v1, :cond_5
+    move-result-object v2
 
-    const-string v1, "video"
+    const-string v4, "."
 
-    .line 72
-    :goto_2
-    sget-boolean v4, Lcom/jirbo/adcolony/ac;->s:Z
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v4, :cond_6
+    move-result-object v2
 
-    .line 74
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v2
 
-    const-string v5, "Thank you. Watch "
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->z:I
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v5, p0, Lcom/jirbo/adcolony/ac;->A:I
 
-    move-result-object v4
+    int-to-double v6, v5
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    int-to-double v8, v3
 
-    move-result-object v3
+    iget-wide v10, p0, Lcom/jirbo/adcolony/ac;->m:D
 
-    const-string v4, " more "
+    mul-double/2addr v8, v10
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sub-double/2addr v6, v8
 
-    move-result-object v3
+    double-to-int v3, v6
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v2, v4, v3, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
 
-    move-result-object v1
+    goto :goto_0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 76
+    :cond_3
+    if-ne v4, v7, :cond_4
 
-    move-result-object v1
+    const-string v2, "video"
 
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->z:I
+    .line 77
+    :goto_3
+    iget-object v5, p0, Lcom/jirbo/adcolony/ac;->F:Ljava/lang/String;
 
-    iget v4, p0, Lcom/jirbo/adcolony/ac;->A:I
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    int-to-double v4, v4
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    int-to-double v6, v2
+    const-string v7, ""
 
-    const-wide/high16 v8, 0x4004000000000000L    # 2.5
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    mul-double/2addr v6, v8
+    move-result-object v6
 
-    sub-double/2addr v4, v6
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    double-to-int v4, v4
+    move-result-object v6
 
-    invoke-virtual {p0, v1, v3, v4, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+    const-string v7, " more "
 
-    .line 75
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v6
 
-    const-string v3, "to earn "
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v1
+    const-string v7, " to earn )?"
 
-    sget-object v3, Lcom/jirbo/adcolony/ac;->q:Ljava/lang/String;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v1
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v3, "."
+    move-result-object v6
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v5, v6}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v1
+    .line 78
+    sget-boolean v5, Lcom/jirbo/adcolony/ac;->s:Z
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->z:I
-
-    iget v4, p0, Lcom/jirbo/adcolony/ac;->A:I
-
-    int-to-double v4, v4
-
-    int-to-double v6, v2
-
-    const-wide/high16 v8, 0x3ff8000000000000L    # 1.5
-
-    mul-double/2addr v6, v8
-
-    sub-double/2addr v4, v6
-
-    double-to-int v2, v4
-
-    invoke-virtual {p0, v1, v3, v2, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
-
-    goto/16 :goto_0
-
-    .line 71
-    :cond_5
-    const-string v1, "videos"
-
-    goto :goto_2
-
-    .line 79
-    :cond_6
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Thank you. Watch "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " more "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->z:I
-
-    iget v4, p0, Lcom/jirbo/adcolony/ac;->A:I
-
-    int-to-double v4, v4
-
-    int-to-double v6, v2
-
-    const-wide v8, 0x4006666666666666L    # 2.8
-
-    mul-double/2addr v6, v8
-
-    sub-double/2addr v4, v6
-
-    double-to-int v4, v4
-
-    invoke-virtual {p0, v1, v3, v4, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+    if-nez v5, :cond_5
 
     .line 80
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v5, "Watch a sponsored video now (Only"
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    iget v6, p0, Lcom/jirbo/adcolony/ac;->z:I
 
-    const-string v3, "to earn "
+    iget v7, p0, Lcom/jirbo/adcolony/ac;->A:I
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    int-to-double v8, v7
 
-    move-result-object v1
+    int-to-double v10, v3
 
-    sget-object v3, Lcom/jirbo/adcolony/ac;->q:Ljava/lang/String;
+    iget-wide v12, p0, Lcom/jirbo/adcolony/ac;->i:D
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    mul-double/2addr v10, v12
 
-    move-result-object v1
+    sub-double/2addr v8, v10
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    double-to-int v7, v8
 
-    move-result-object v1
-
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->z:I
-
-    iget v4, p0, Lcom/jirbo/adcolony/ac;->A:I
-
-    int-to-double v4, v4
-
-    int-to-double v6, v2
-
-    const-wide v8, 0x4000666666666666L    # 2.05
-
-    mul-double/2addr v6, v8
-
-    sub-double/2addr v4, v6
-
-    double-to-int v4, v4
-
-    invoke-virtual {p0, v1, v3, v4, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+    invoke-virtual {p0, v5, v6, v7, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
 
     .line 81
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v3, Lcom/jirbo/adcolony/ac;->r:Ljava/lang/String;
+    const-string v6, ""
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v5
 
-    const-string v3, "."
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    move-result-object v1
+    const-string v5, " more "
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v4
 
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->z:I
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v4, p0, Lcom/jirbo/adcolony/ac;->A:I
+    move-result-object v2
 
-    int-to-double v4, v4
+    const-string v4, " to earn "
 
-    int-to-double v6, v2
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-wide v8, 0x3ff4cccccccccccdL    # 1.3
+    move-result-object v2
 
-    mul-double/2addr v6, v8
+    sget-object v4, Lcom/jirbo/adcolony/ac;->q:Ljava/lang/String;
 
-    sub-double/2addr v4, v6
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    double-to-int v2, v4
+    move-result-object v2
 
-    invoke-virtual {p0, v1, v3, v2, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->z:I
+
+    iget v5, p0, Lcom/jirbo/adcolony/ac;->A:I
+
+    int-to-double v6, v5
+
+    int-to-double v8, v3
+
+    iget-wide v10, p0, Lcom/jirbo/adcolony/ac;->j:D
+
+    mul-double/2addr v8, v10
+
+    sub-double/2addr v6, v8
+
+    double-to-int v5, v6
+
+    invoke-virtual {p0, v2, v4, v5, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+
+    .line 82
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v4, Lcom/jirbo/adcolony/ac;->r:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, ")?"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->z:I
+
+    iget v5, p0, Lcom/jirbo/adcolony/ac;->A:I
+
+    int-to-double v6, v5
+
+    int-to-double v8, v3
+
+    iget-wide v10, p0, Lcom/jirbo/adcolony/ac;->k:D
+
+    mul-double/2addr v8, v10
+
+    sub-double/2addr v6, v8
+
+    double-to-int v3, v6
+
+    invoke-virtual {p0, v2, v4, v3, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
 
     goto/16 :goto_0
 
-    .line 94
-    :cond_7
-    iget-object v1, p0, Lcom/jirbo/adcolony/ac;->g:Lcom/jirbo/adcolony/ADCImage;
+    .line 76
+    :cond_4
+    const-string v2, "videos"
 
-    iget v2, p0, Lcom/jirbo/adcolony/ac;->B:I
+    goto/16 :goto_3
 
-    iget v3, p0, Lcom/jirbo/adcolony/ac;->D:I
+    .line 87
+    :cond_5
+    const-string v5, "Watch a sponsored video now (Only"
 
-    invoke-virtual {v1, p1, v2, v3}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
+    iget v6, p0, Lcom/jirbo/adcolony/ac;->z:I
+
+    iget v7, p0, Lcom/jirbo/adcolony/ac;->A:I
+
+    int-to-double v8, v7
+
+    int-to-double v10, v3
+
+    iget-wide v12, p0, Lcom/jirbo/adcolony/ac;->l:D
+
+    mul-double/2addr v10, v12
+
+    sub-double/2addr v8, v10
+
+    double-to-int v7, v8
+
+    invoke-virtual {p0, v5, v6, v7, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+
+    .line 88
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, ""
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " more "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, " to earn "
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    sget-object v4, Lcom/jirbo/adcolony/ac;->q:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, ")?"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->z:I
+
+    iget v5, p0, Lcom/jirbo/adcolony/ac;->A:I
+
+    int-to-double v6, v5
+
+    int-to-double v8, v3
+
+    iget-wide v10, p0, Lcom/jirbo/adcolony/ac;->m:D
+
+    mul-double/2addr v8, v10
+
+    sub-double/2addr v6, v8
+
+    double-to-int v3, v6
+
+    invoke-virtual {p0, v2, v4, v3, p1}, Lcom/jirbo/adcolony/ac;->a(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+
+    goto/16 :goto_0
+
+    .line 101
+    :cond_6
+    iget-object v2, p0, Lcom/jirbo/adcolony/ac;->d:Lcom/jirbo/adcolony/ADCImage;
+
+    iget v3, p0, Lcom/jirbo/adcolony/ac;->B:I
+
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->D:I
+
+    invoke-virtual {v2, p1, v3, v4}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
 
     goto/16 :goto_1
+
+    .line 110
+    :cond_7
+    iget-object v2, p0, Lcom/jirbo/adcolony/ac;->f:Lcom/jirbo/adcolony/ADCImage;
+
+    iget v3, p0, Lcom/jirbo/adcolony/ac;->C:I
+
+    iget v4, p0, Lcom/jirbo/adcolony/ac;->D:I
+
+    invoke-virtual {v2, p1, v3, v4}, Lcom/jirbo/adcolony/ADCImage;->a(Landroid/graphics/Canvas;II)V
+
+    goto/16 :goto_2
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 6
+    .locals 7
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
+    const/4 v6, 0x0
+
     const/4 v2, 0x0
 
     const/4 v5, 0x1
 
-    .line 121
+    .line 122
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     float-to-int v3, v0
 
-    .line 122
+    .line 123
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
 
     float-to-int v4, v0
 
-    .line 123
+    .line 124
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    if-ne v0, v5, :cond_2
+    if-ne v0, v5, :cond_1
 
-    .line 125
+    .line 126
     iget v0, p0, Lcom/jirbo/adcolony/ac;->B:I
 
     iget v1, p0, Lcom/jirbo/adcolony/ac;->D:I
@@ -813,18 +715,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
-    iget-boolean v0, p0, Lcom/jirbo/adcolony/ac;->H:Z
+    iget-boolean v0, p0, Lcom/jirbo/adcolony/ac;->I:Z
 
-    if-eqz v0, :cond_1
-
-    .line 127
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/jirbo/adcolony/a;->S:Lcom/jirbo/adcolony/h;
+    if-eqz v0, :cond_3
 
     .line 128
+    sput-object v6, Lcom/jirbo/adcolony/a;->J:Lcom/jirbo/adcolony/h;
+
+    .line 129
     invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -833,19 +733,101 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
+    .line 130
+    iget-object v0, p0, Lcom/jirbo/adcolony/ac;->G:Lcom/jirbo/adcolony/AdColonyV4VCAd;
+
+    invoke-virtual {v0, v5}, Lcom/jirbo/adcolony/AdColonyV4VCAd;->c(Z)V
+
+    .line 142
+    :cond_0
+    :goto_0
+    iput-boolean v2, p0, Lcom/jirbo/adcolony/ac;->H:Z
+
+    .line 143
+    iput-boolean v2, p0, Lcom/jirbo/adcolony/ac;->I:Z
+
+    .line 144
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->invalidate()V
+
+    .line 146
+    :cond_1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    .line 150
+    iget v0, p0, Lcom/jirbo/adcolony/ac;->B:I
+
+    iget v1, p0, Lcom/jirbo/adcolony/ac;->D:I
+
+    invoke-virtual {p0, v3, v4, v0, v1}, Lcom/jirbo/adcolony/ac;->a(IIII)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    .line 152
+    iput-boolean v5, p0, Lcom/jirbo/adcolony/ac;->I:Z
+
+    .line 153
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->invalidate()V
+
+    .line 161
+    :cond_2
+    :goto_1
+    return v5
+
+    .line 132
+    :cond_3
+    iget v0, p0, Lcom/jirbo/adcolony/ac;->C:I
+
+    iget v1, p0, Lcom/jirbo/adcolony/ac;->D:I
+
+    invoke-virtual {p0, v3, v4, v0, v1}, Lcom/jirbo/adcolony/ac;->a(IIII)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/jirbo/adcolony/ac;->H:Z
+
+    if-eqz v0, :cond_0
+
+    .line 134
+    sput-object v6, Lcom/jirbo/adcolony/a;->J:Lcom/jirbo/adcolony/h;
+
+    .line 135
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 136
+    iget-object v0, p0, Lcom/jirbo/adcolony/ac;->G:Lcom/jirbo/adcolony/AdColonyV4VCAd;
+
+    invoke-virtual {v0, v2}, Lcom/jirbo/adcolony/AdColonyV4VCAd;->c(Z)V
+
+    .line 137
+    sput-boolean v5, Lcom/jirbo/adcolony/a;->v:Z
+
     move v1, v2
 
-    .line 129
-    :goto_0
-    sget-object v0, Lcom/jirbo/adcolony/a;->an:Ljava/util/ArrayList;
+    .line 138
+    :goto_2
+    sget-object v0, Lcom/jirbo/adcolony/a;->ae:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-ge v1, v0, :cond_0
+    if-ge v1, v0, :cond_4
 
-    sget-object v0, Lcom/jirbo/adcolony/a;->an:Ljava/util/ArrayList;
+    sget-object v0, Lcom/jirbo/adcolony/a;->ae:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -859,34 +841,19 @@
 
     move v1, v0
 
-    goto :goto_0
+    goto :goto_2
 
-    .line 130
-    :cond_0
-    sget-object v0, Lcom/jirbo/adcolony/a;->an:Ljava/util/ArrayList;
+    .line 139
+    :cond_4
+    sget-object v0, Lcom/jirbo/adcolony/a;->ae:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 131
-    sput-boolean v5, Lcom/jirbo/adcolony/a;->E:Z
+    goto :goto_0
 
-    .line 134
-    :cond_1
-    iput-boolean v2, p0, Lcom/jirbo/adcolony/ac;->H:Z
-
-    .line 135
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->invalidate()V
-
-    .line 137
-    :cond_2
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    .line 140
-    iget v0, p0, Lcom/jirbo/adcolony/ac;->B:I
+    .line 155
+    :cond_5
+    iget v0, p0, Lcom/jirbo/adcolony/ac;->C:I
 
     iget v1, p0, Lcom/jirbo/adcolony/ac;->D:I
 
@@ -894,15 +861,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    .line 143
+    .line 157
     iput-boolean v5, p0, Lcom/jirbo/adcolony/ac;->H:Z
 
-    .line 144
+    .line 158
     invoke-virtual {p0}, Lcom/jirbo/adcolony/ac;->invalidate()V
 
-    .line 147
-    :cond_3
-    return v5
+    goto :goto_1
 .end method

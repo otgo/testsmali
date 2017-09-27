@@ -1,143 +1,198 @@
 .class public final Lcom/purplebrain/adbuddiz/sdk/h/e;
-.super Lcom/purplebrain/adbuddiz/sdk/h/b;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/purplebrain/adbuddiz/sdk/h/e$a;
-    }
-.end annotation
-
-
-# instance fields
-.field public e:Lcom/purplebrain/adbuddiz/sdk/f/a/a/c;
-
-.field public f:Lcom/purplebrain/adbuddiz/sdk/h/e$a;
+.super Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/h/b;-><init>()V
-
-    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/h/e;->e:Lcom/purplebrain/adbuddiz/sdk/f/a/a/c;
-
-    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/h/e;->f:Lcom/purplebrain/adbuddiz/sdk/h/e$a;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final c()V
-    .locals 5
-
-    const/4 v1, 0x0
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
 
     :try_start_0
-    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/h/e;->e:Lcom/purplebrain/adbuddiz/sdk/f/a/a/c;
+    new-instance v0, Ljava/io/ByteArrayOutputStream;
 
-    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/f/a/a/c;->d()Ljava/net/URL;
+    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    move-result-object v0
+    new-instance v1, Ljava/util/zip/GZIPOutputStream;
 
-    const-string v2, "GET"
+    invoke-direct {v1, v0}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    invoke-static {v0, v2}, Lcom/purplebrain/adbuddiz/sdk/h/b;->a(Ljava/net/URL;Ljava/lang/String;)Ljava/net/HttpURLConnection;
+    const-string v2, "UTF-8"
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
-
-    move-result v0
-
-    const/16 v2, 0xc8
-
-    if-ne v0, v2, :cond_2
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/AdBuddiz;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v1}, Lcom/purplebrain/adbuddiz/sdk/h/e;->a(Ljava/net/HttpURLConnection;)Ljava/io/InputStream;
+    invoke-virtual {p0, v2}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/purplebrain/adbuddiz/sdk/h/e;->e:Lcom/purplebrain/adbuddiz/sdk/f/a/a/c;
+    invoke-virtual {v1, v2}, Ljava/util/zip/GZIPOutputStream;->write([B)V
 
-    invoke-static {v0, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/i/m;->a(Landroid/content/Context;Ljava/io/InputStream;Lcom/purplebrain/adbuddiz/sdk/f/a/a/c;)V
+    invoke-virtual {v1}, Ljava/util/zip/GZIPOutputStream;->flush()V
 
-    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/h/e;->f:Lcom/purplebrain/adbuddiz/sdk/h/e$a;
+    invoke-virtual {v1}, Ljava/util/zip/GZIPOutputStream;->close()V
 
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/h/e;->e:Lcom/purplebrain/adbuddiz/sdk/f/a/a/c;
+    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
-    invoke-interface {v0, v2}, Lcom/purplebrain/adbuddiz/sdk/h/e$a;->a(Lcom/purplebrain/adbuddiz/sdk/f/a/a/c;)V
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/e;->a([B)Ljava/lang/String;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
-
-    :cond_1
-    return-void
-
-    :cond_2
-    const/16 v2, 0x1f4
-
-    if-lt v0, v2, :cond_0
-
-    :try_start_1
-    new-instance v2, Lcom/purplebrain/adbuddiz/sdk/h/k;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Server Error : "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :goto_0
+    return-object v0
 
-    move-result-object v0
-
-    invoke-direct {v2, v0}, Lcom/purplebrain/adbuddiz/sdk/h/k;-><init>(Ljava/lang/String;)V
-
-    throw v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :catchall_0
+    :catch_0
     move-exception v0
 
-    if-eqz v1, :cond_3
+    const-string v1, "ABDataEncryptionHelper.gzipAndEncode()"
 
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
+    invoke-static {v1, v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_3
-    throw v0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method protected final d()Z
-    .locals 1
+.method private static a([B)Ljava/lang/String;
+    .locals 5
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "TrulyRandom"
+        }
+    .end annotation
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    return v0
-.end method
+    :try_start_0
+    const-string v1, "bWZSYjVSNUtlc2tkYjJ4Tg=="
 
-.method protected final e()Ljava/lang/String;
-    .locals 1
+    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/h/d;->a(Ljava/lang/String;)[B
 
-    const-string v0, "DownloadAdResource"
+    move-result-object v1
 
+    new-instance v2, Ljavax/crypto/spec/IvParameterSpec;
+
+    invoke-direct {v2, v1}, Ljavax/crypto/spec/IvParameterSpec;-><init>([B)V
+
+    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/h/e;->a()Ljavax/crypto/spec/SecretKeySpec;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    :goto_0
     return-object v0
+
+    :cond_0
+    const-string v3, "AES/CBC/PKCS5Padding"
+
+    invoke-static {v3}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
+
+    move-result-object v3
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v3, v4, v1, v2}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+
+    invoke-virtual {v3, p0}, Ljavax/crypto/Cipher;->doFinal([B)[B
+
+    move-result-object v2
+
+    new-instance v1, Ljava/lang/String;
+
+    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/h/d;->a([B)[C
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/lang/String;-><init>([C)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    const-string v2, "ABDataEncryptionHelper.encrypt()"
+
+    invoke-static {v2, v1}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+.end method
+
+.method private static a()Ljavax/crypto/spec/SecretKeySpec;
+    .locals 5
+
+    const/4 v0, 0x0
+
+    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/d/i;->a()Lcom/purplebrain/adbuddiz/sdk/d/i;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/purplebrain/adbuddiz/sdk/d/i;->b()Lcom/purplebrain/adbuddiz/sdk/e/b;
+
+    move-result-object v2
+
+    if-nez v2, :cond_0
+
+    move-object v1, v0
+
+    :goto_0
+    if-nez v1, :cond_2
+
+    :goto_1
+    return-object v0
+
+    :cond_0
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/4 v1, 0x0
+
+    :goto_2
+    const/16 v4, 0xc
+
+    if-ge v1, v4, :cond_1
+
+    iget-object v4, v2, Lcom/purplebrain/adbuddiz/sdk/e/b;->c:Ljava/lang/String;
+
+    invoke-virtual {v4, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    const-string v4, "D01FX2jKW5g="
+
+    invoke-virtual {v4, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_1
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/h/d;->a(Ljava/lang/String;)[B
+
+    move-result-object v1
+
+    new-instance v0, Ljavax/crypto/spec/SecretKeySpec;
+
+    const-string v2, "AES"
+
+    invoke-direct {v0, v1, v2}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
+
+    goto :goto_1
 .end method

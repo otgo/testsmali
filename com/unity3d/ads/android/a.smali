@@ -7,20 +7,16 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/app/AlertDialog;
-
-.field final synthetic b:Lcom/unity3d/ads/android/UnityAds;
+.field final synthetic a:Lcom/unity3d/ads/android/UnityAds;
 
 
 # direct methods
-.method constructor <init>(Lcom/unity3d/ads/android/UnityAds;Landroid/app/AlertDialog;)V
+.method constructor <init>(Lcom/unity3d/ads/android/UnityAds;)V
     .locals 0
 
     .prologue
-    .line 430
-    iput-object p1, p0, Lcom/unity3d/ads/android/a;->b:Lcom/unity3d/ads/android/UnityAds;
-
-    iput-object p2, p0, Lcom/unity3d/ads/android/a;->a:Landroid/app/AlertDialog;
+    .line 546
+    iput-object p1, p0, Lcom/unity3d/ads/android/a;->a:Lcom/unity3d/ads/android/UnityAds;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,11 +29,13 @@
     .locals 1
 
     .prologue
-    .line 433
-    iget-object v0, p0, Lcom/unity3d/ads/android/a;->a:Landroid/app/AlertDialog;
+    .line 549
+    invoke-static {}, Lcom/unity3d/ads/android/UnityAds;->a()Landroid/app/AlertDialog;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 434
+    .line 550
     return-void
 .end method

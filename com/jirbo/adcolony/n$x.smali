@@ -15,352 +15,1065 @@
 
 
 # instance fields
-.field a:Z
+.field A:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field b:I
+.field B:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field c:I
+.field C:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
-.field d:Ljava/lang/String;
+.field a:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field e:Ljava/lang/String;
+.field b:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field f:Lcom/jirbo/adcolony/n$g;
+.field c:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field g:Lcom/jirbo/adcolony/n$g;
+.field d:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field h:Lcom/jirbo/adcolony/n$g;
+.field e:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field i:Lcom/jirbo/adcolony/n$g;
+.field f:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field g:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field h:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field i:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field j:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field k:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field l:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field m:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field n:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field o:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field p:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field q:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field r:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field s:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field t:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field u:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field v:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field w:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field x:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field y:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field z:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method constructor <init>()V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 1795
+    .line 309
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 312
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->a:Ljava/util/ArrayList;
+
+    .line 313
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->b:Ljava/util/ArrayList;
+
+    .line 314
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->c:Ljava/util/ArrayList;
+
+    .line 315
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->d:Ljava/util/ArrayList;
+
+    .line 316
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->e:Ljava/util/ArrayList;
+
+    .line 317
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->f:Ljava/util/ArrayList;
+
+    .line 318
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->g:Ljava/util/ArrayList;
+
+    .line 319
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->h:Ljava/util/ArrayList;
+
+    .line 320
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->i:Ljava/util/ArrayList;
+
+    .line 321
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->j:Ljava/util/ArrayList;
+
+    .line 322
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->k:Ljava/util/ArrayList;
+
+    .line 323
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->l:Ljava/util/ArrayList;
+
+    .line 324
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->m:Ljava/util/ArrayList;
+
+    .line 325
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->n:Ljava/util/ArrayList;
+
+    .line 326
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->o:Ljava/util/ArrayList;
+
+    .line 327
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->p:Ljava/util/ArrayList;
+
+    .line 328
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->q:Ljava/util/ArrayList;
+
+    .line 331
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->r:Ljava/util/ArrayList;
+
+    .line 332
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->s:Ljava/util/ArrayList;
+
+    .line 333
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->t:Ljava/util/ArrayList;
+
+    .line 334
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->u:Ljava/util/ArrayList;
+
+    .line 335
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->v:Ljava/util/ArrayList;
+
+    .line 336
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->w:Ljava/util/ArrayList;
+
+    .line 337
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->x:Ljava/util/ArrayList;
+
+    .line 338
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->y:Ljava/util/ArrayList;
+
+    .line 339
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->z:Ljava/util/ArrayList;
+
+    .line 340
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->A:Ljava/util/ArrayList;
+
+    .line 341
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->B:Ljava/util/ArrayList;
+
+    .line 343
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method a()Z
-    .locals 4
-
-    .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 1812
-    iget-boolean v2, p0, Lcom/jirbo/adcolony/n$x;->a:Z
-
-    if-nez v2, :cond_1
-
-    .line 1818
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 1813
-    :cond_1
-    sget-object v2, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
-
-    iget-object v2, v2, Lcom/jirbo/adcolony/d;->c:Lcom/jirbo/adcolony/o;
-
-    iget-object v3, p0, Lcom/jirbo/adcolony/n$x;->d:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Lcom/jirbo/adcolony/o;->a(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    move v0, v1
-
-    goto :goto_0
-
-    .line 1814
-    :cond_2
-    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->h:Lcom/jirbo/adcolony/n$g;
-
-    invoke-virtual {v2}, Lcom/jirbo/adcolony/n$g;->a()Z
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    move v0, v1
-
-    goto :goto_0
-
-    .line 1815
-    :cond_3
-    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->i:Lcom/jirbo/adcolony/n$g;
-
-    invoke-virtual {v2}, Lcom/jirbo/adcolony/n$g;->a()Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    move v0, v1
-
-    goto :goto_0
-
-    .line 1816
-    :cond_4
-    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->g:Lcom/jirbo/adcolony/n$g;
-
-    invoke-virtual {v2}, Lcom/jirbo/adcolony/n$g;->a()Z
-
-    move-result v2
-
-    if-nez v2, :cond_5
-
-    move v0, v1
-
-    goto :goto_0
-
-    .line 1817
-    :cond_5
-    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->f:Lcom/jirbo/adcolony/n$g;
-
-    invoke-virtual {v2}, Lcom/jirbo/adcolony/n$g;->a()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-.end method
-
 .method a(Lcom/jirbo/adcolony/ADCData$g;)Z
-    .locals 4
-
-    .prologue
-    const/4 v1, 0x1
-
-    const/4 v0, 0x0
-
-    .line 1824
-    if-nez p1, :cond_1
-
-    .line 1851
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 1826
-    :cond_1
-    const-string v2, "enabled"
-
-    invoke-virtual {p1, v2}, Lcom/jirbo/adcolony/ADCData$g;->h(Ljava/lang/String;)Z
-
-    move-result v2
-
-    iput-boolean v2, p0, Lcom/jirbo/adcolony/n$x;->a:Z
-
-    .line 1827
-    iget-boolean v2, p0, Lcom/jirbo/adcolony/n$x;->a:Z
-
-    if-nez v2, :cond_2
-
-    move v0, v1
-
-    goto :goto_0
-
-    .line 1829
-    :cond_2
-    const-string v2, "width"
-
-    invoke-virtual {p1, v2}, Lcom/jirbo/adcolony/ADCData$g;->g(Ljava/lang/String;)I
-
-    move-result v2
-
-    iput v2, p0, Lcom/jirbo/adcolony/n$x;->b:I
-
-    .line 1830
-    const-string v2, "height"
-
-    invoke-virtual {p1, v2}, Lcom/jirbo/adcolony/ADCData$g;->g(Ljava/lang/String;)I
-
-    move-result v2
-
-    iput v2, p0, Lcom/jirbo/adcolony/n$x;->c:I
-
-    .line 1831
-    const-string v2, "background_image"
-
-    invoke-virtual {p1, v2}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/jirbo/adcolony/n$x;->d:Ljava/lang/String;
-
-    .line 1832
-    const-string v2, "background_image_last_modified"
-
-    invoke-virtual {p1, v2}, Lcom/jirbo/adcolony/ADCData$g;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/jirbo/adcolony/n$x;->e:Ljava/lang/String;
-
-    .line 1834
-    sget-object v2, Lcom/jirbo/adcolony/a;->f:Ljava/lang/String;
-
-    if-eqz v2, :cond_3
-
-    .line 1836
-    sget-object v2, Lcom/jirbo/adcolony/a;->f:Ljava/lang/String;
-
-    iput-object v2, p0, Lcom/jirbo/adcolony/n$x;->d:Ljava/lang/String;
-
-    .line 1839
-    :cond_3
-    new-instance v2, Lcom/jirbo/adcolony/n$g;
-
-    invoke-direct {v2}, Lcom/jirbo/adcolony/n$g;-><init>()V
-
-    iput-object v2, p0, Lcom/jirbo/adcolony/n$x;->h:Lcom/jirbo/adcolony/n$g;
-
-    .line 1840
-    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->h:Lcom/jirbo/adcolony/n$g;
-
-    const-string v3, "replay"
-
-    invoke-virtual {p1, v3}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;)Lcom/jirbo/adcolony/ADCData$g;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/jirbo/adcolony/n$g;->a(Lcom/jirbo/adcolony/ADCData$g;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 1842
-    new-instance v2, Lcom/jirbo/adcolony/n$g;
-
-    invoke-direct {v2}, Lcom/jirbo/adcolony/n$g;-><init>()V
-
-    iput-object v2, p0, Lcom/jirbo/adcolony/n$x;->i:Lcom/jirbo/adcolony/n$g;
-
-    .line 1843
-    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->i:Lcom/jirbo/adcolony/n$g;
-
-    const-string v3, "continue"
-
-    invoke-virtual {p1, v3}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;)Lcom/jirbo/adcolony/ADCData$g;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/jirbo/adcolony/n$g;->a(Lcom/jirbo/adcolony/ADCData$g;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 1845
-    new-instance v2, Lcom/jirbo/adcolony/n$g;
-
-    invoke-direct {v2}, Lcom/jirbo/adcolony/n$g;-><init>()V
-
-    iput-object v2, p0, Lcom/jirbo/adcolony/n$x;->g:Lcom/jirbo/adcolony/n$g;
-
-    .line 1846
-    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->g:Lcom/jirbo/adcolony/n$g;
-
-    const-string v3, "download"
-
-    invoke-virtual {p1, v3}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;)Lcom/jirbo/adcolony/ADCData$g;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/jirbo/adcolony/n$g;->a(Lcom/jirbo/adcolony/ADCData$g;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 1848
-    new-instance v2, Lcom/jirbo/adcolony/n$g;
-
-    invoke-direct {v2}, Lcom/jirbo/adcolony/n$g;-><init>()V
-
-    iput-object v2, p0, Lcom/jirbo/adcolony/n$x;->f:Lcom/jirbo/adcolony/n$g;
-
-    .line 1849
-    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->f:Lcom/jirbo/adcolony/n$g;
-
-    const-string v3, "info"
-
-    invoke-virtual {p1, v3}, Lcom/jirbo/adcolony/ADCData$g;->b(Ljava/lang/String;)Lcom/jirbo/adcolony/ADCData$g;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/jirbo/adcolony/n$g;->a(Lcom/jirbo/adcolony/ADCData$g;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    move v0, v1
-
-    .line 1851
-    goto/16 :goto_0
-.end method
-
-.method b()V
     .locals 3
 
     .prologue
-    .line 1856
-    iget-boolean v0, p0, Lcom/jirbo/adcolony/n$x;->a:Z
+    .line 348
+    if-nez p1, :cond_0
 
-    if-nez v0, :cond_0
+    const/4 v0, 0x0
 
-    .line 1862
+    .line 414
     :goto_0
-    return-void
+    return v0
 
-    .line 1857
+    .line 350
     :cond_0
-    sget-object v0, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
+    const-string v0, "replay"
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->c:Lcom/jirbo/adcolony/o;
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/jirbo/adcolony/n$x;->d:Ljava/lang/String;
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->e:Ljava/lang/String;
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v1, v2}, Lcom/jirbo/adcolony/o;->a(Ljava/lang/String;Ljava/lang/String;)V
+    .line 351
+    const-string v0, "card_shown"
 
-    .line 1858
-    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->h:Lcom/jirbo/adcolony/n$g;
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Lcom/jirbo/adcolony/n$g;->b()V
+    move-result-object v0
 
-    .line 1859
-    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->i:Lcom/jirbo/adcolony/n$g;
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->b:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Lcom/jirbo/adcolony/n$g;->b()V
+    .line 352
+    const-string v0, "html5_interaction"
 
-    .line 1860
-    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->g:Lcom/jirbo/adcolony/n$g;
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Lcom/jirbo/adcolony/n$g;->b()V
+    move-result-object v0
 
-    .line 1861
-    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->f:Lcom/jirbo/adcolony/n$g;
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->c:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Lcom/jirbo/adcolony/n$g;->b()V
+    .line 353
+    const-string v0, "cancel"
 
-    goto :goto_0
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->d:Ljava/util/ArrayList;
+
+    .line 354
+    const-string v0, "download"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->e:Ljava/util/ArrayList;
+
+    .line 355
+    const-string v0, "skip"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->f:Ljava/util/ArrayList;
+
+    .line 356
+    const-string v0, "info"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->g:Ljava/util/ArrayList;
+
+    .line 357
+    const-string v0, "midpoint"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->h:Ljava/util/ArrayList;
+
+    .line 358
+    const-string v0, "card_dissolved"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->i:Ljava/util/ArrayList;
+
+    .line 359
+    const-string v0, "start"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->j:Ljava/util/ArrayList;
+
+    .line 360
+    const-string v0, "third_quartile"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->k:Ljava/util/ArrayList;
+
+    .line 361
+    const-string v0, "complete"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->l:Ljava/util/ArrayList;
+
+    .line 362
+    const-string v0, "continue"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->m:Ljava/util/ArrayList;
+
+    .line 363
+    const-string v0, "in_video_engagement"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->n:Ljava/util/ArrayList;
+
+    .line 364
+    const-string v0, "reward_v4vc"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->o:Ljava/util/ArrayList;
+
+    .line 365
+    const-string v0, "first_quartile"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->p:Ljava/util/ArrayList;
+
+    .line 366
+    const-string v0, "v4iap"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->q:Ljava/util/ArrayList;
+
+    .line 369
+    const-string v0, "video_expanded"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->r:Ljava/util/ArrayList;
+
+    .line 370
+    const-string v0, "sound_mute"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->s:Ljava/util/ArrayList;
+
+    .line 371
+    const-string v0, "sound_unmute"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->t:Ljava/util/ArrayList;
+
+    .line 372
+    const-string v0, "video_paused"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->u:Ljava/util/ArrayList;
+
+    .line 373
+    const-string v0, "video_resumed"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->v:Ljava/util/ArrayList;
+
+    .line 374
+    const-string v0, "native_start"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->w:Ljava/util/ArrayList;
+
+    .line 375
+    const-string v0, "native_first_quartile"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->x:Ljava/util/ArrayList;
+
+    .line 376
+    const-string v0, "native_midpoint"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->y:Ljava/util/ArrayList;
+
+    .line 377
+    const-string v0, "native_third_quartile"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->z:Ljava/util/ArrayList;
+
+    .line 378
+    const-string v0, "native_complete"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->A:Ljava/util/ArrayList;
+
+    .line 379
+    const-string v0, "native_overlay_click"
+
+    invoke-virtual {p1, v0}, Lcom/jirbo/adcolony/ADCData$g;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/jirbo/adcolony/n$x;->B:Ljava/util/ArrayList;
+
+    .line 383
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "replay"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 384
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "card_shown"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 385
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "html5_interaction"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 386
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "cancel"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->d:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 387
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "download"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->e:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 388
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "skip"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->f:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 389
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "info"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->g:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 390
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "midpoint"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->h:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 391
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "card_dissolved"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->i:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 392
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "start"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->j:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 393
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "third_quartile"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->k:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 394
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "complete"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->l:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 395
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "continue"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->m:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 396
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "in_video_engagement"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->n:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 397
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "reward_v4vc"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->o:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 398
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "first_quartile"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->p:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 399
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "v4iap"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->q:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 402
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "video_expanded"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->r:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 403
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "sound_mute"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->s:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 404
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "sound_unmute"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->t:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 405
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "video_paused"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->u:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 406
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "video_resumed"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->v:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 407
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "native_start"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->w:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 408
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "native_first_quartile"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->x:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 409
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "native_midpoint"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->y:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 410
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "native_third_quartile"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->z:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 411
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "native_complete"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->A:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 412
+    iget-object v0, p0, Lcom/jirbo/adcolony/n$x;->C:Ljava/util/HashMap;
+
+    const-string v1, "native_overlay_click"
+
+    iget-object v2, p0, Lcom/jirbo/adcolony/n$x;->B:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 414
+    const/4 v0, 0x1
+
+    goto/16 :goto_0
 .end method

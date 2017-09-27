@@ -2,6 +2,10 @@
 .super Lcom/applovin/sdk/AppLovinSdk;
 
 
+# static fields
+.field public static final FULL_VERSION:Ljava/lang/String; = "6.0.0"
+
+
 # instance fields
 .field private a:Ljava/lang/String;
 
@@ -11,43 +15,37 @@
 
 .field private d:Lcom/applovin/sdk/AppLovinLogger;
 
-.field private e:Lcom/applovin/impl/sdk/cq;
+.field private e:Lcom/applovin/impl/sdk/cj;
 
-.field private f:Lcom/applovin/impl/sdk/bz;
+.field private f:Lcom/applovin/impl/sdk/bu;
 
 .field private g:Lcom/applovin/impl/sdk/o;
 
-.field private h:Lcom/applovin/impl/sdk/cb;
+.field private h:Lcom/applovin/impl/sdk/bw;
 
-.field private i:Lcom/applovin/impl/sdk/y;
+.field private i:Lcom/applovin/impl/sdk/x;
 
-.field private j:Lcom/applovin/impl/sdk/b;
+.field private j:Lcom/applovin/impl/sdk/c;
 
-.field private k:Lcom/applovin/impl/sdk/bb;
+.field private k:Lcom/applovin/impl/sdk/ba;
 
-.field private l:Lcom/applovin/impl/sdk/r;
+.field private l:Lcom/applovin/impl/sdk/m;
 
-.field private m:Lcom/applovin/impl/sdk/m;
+.field private m:Lcom/applovin/impl/sdk/f;
 
-.field private n:Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
+.field private n:Lcom/applovin/impl/sdk/bc;
 
-.field private o:Lcom/applovin/impl/sdk/bd;
+.field private o:Lcom/applovin/impl/sdk/PostbackServiceImpl;
 
-.field private p:Lcom/applovin/impl/sdk/PostbackServiceImpl;
+.field private p:Z
 
-.field private q:Lcom/applovin/impl/sdk/EventServiceImpl;
+.field private q:Z
 
-.field private r:Lcom/applovin/impl/sdk/bm;
+.field private r:Z
 
 .field private s:Z
 
 .field private t:Z
-
-.field private u:Z
-
-.field private v:Z
-
-.field private w:Z
 
 
 # direct methods
@@ -60,20 +58,20 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->s:Z
+    iput-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->p:Z
+
+    iput-boolean v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->q:Z
+
+    iput-boolean v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->r:Z
+
+    iput-boolean v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->s:Z
 
     iput-boolean v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->t:Z
-
-    iput-boolean v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->u:Z
-
-    iput-boolean v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->v:Z
-
-    iput-boolean v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->w:Z
 
     return-void
 .end method
 
-.method private static h()Z
+.method private static i()Z
     .locals 2
 
     sget-object v0, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
@@ -119,44 +117,24 @@
 
 
 # virtual methods
-.method a()Lcom/applovin/impl/sdk/cq;
+.method a()Lcom/applovin/impl/sdk/cj;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->e:Lcom/applovin/impl/sdk/cq;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->e:Lcom/applovin/impl/sdk/cj;
 
     return-object v0
 .end method
 
-.method a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
+.method a(Lcom/applovin/impl/sdk/bt;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bz;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
 
-    invoke-virtual {v0, p1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lcom/applovin/impl/sdk/bu;->a(Lcom/applovin/impl/sdk/bt;)Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method a(Lcom/applovin/sdk/AppLovinSdkSettings;)V
-    .locals 4
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->s:Z
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->e:Lcom/applovin/impl/sdk/cq;
-
-    new-instance v1, Lcom/applovin/impl/sdk/cp;
-
-    invoke-direct {v1, p0, p1}, Lcom/applovin/impl/sdk/cp;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;Lcom/applovin/sdk/AppLovinSdkSettings;)V
-
-    const-wide/16 v2, 0x0
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/applovin/impl/sdk/cq;->a(Lcom/applovin/impl/sdk/cp;J)V
-
-    return-void
 .end method
 
 .method a(Z)V
@@ -164,37 +142,37 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->s:Z
+    iput-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->p:Z
 
-    iput-boolean p1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->t:Z
+    iput-boolean p1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->q:Z
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->u:Z
+    iput-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->r:Z
 
     return-void
 .end method
 
-.method b()Lcom/applovin/impl/sdk/cb;
+.method b()Lcom/applovin/impl/sdk/bw;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->h:Lcom/applovin/impl/sdk/cb;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->h:Lcom/applovin/impl/sdk/bw;
 
     return-object v0
 .end method
 
-.method c()Lcom/applovin/impl/sdk/b;
+.method c()Lcom/applovin/impl/sdk/c;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->j:Lcom/applovin/impl/sdk/b;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->j:Lcom/applovin/impl/sdk/c;
 
     return-object v0
 .end method
 
-.method d()Lcom/applovin/impl/sdk/bb;
+.method d()Lcom/applovin/impl/sdk/ba;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->k:Lcom/applovin/impl/sdk/bb;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->k:Lcom/applovin/impl/sdk/ba;
 
     return-object v0
 .end method
@@ -202,7 +180,7 @@
 .method e()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->s:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->p:Z
 
     return v0
 .end method
@@ -210,25 +188,27 @@
 .method f()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->u:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->r:Z
 
     return v0
 .end method
 
 .method g()V
-    .locals 1
+    .locals 4
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bz;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bz;->d()V
+    iput-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->p:Z
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bz;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->e:Lcom/applovin/impl/sdk/cj;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bz;->b()V
+    new-instance v1, Lcom/applovin/impl/sdk/ci;
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->h:Lcom/applovin/impl/sdk/cb;
+    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/ci;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/cb;->a()V
+    const-wide/16 v2, 0x0
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/applovin/impl/sdk/cj;->a(Lcom/applovin/impl/sdk/ci;J)V
 
     return-void
 .end method
@@ -236,7 +216,7 @@
 .method public getAdService()Lcom/applovin/sdk/AppLovinAdService;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->n:Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->m:Lcom/applovin/impl/sdk/f;
 
     return-object v0
 .end method
@@ -257,26 +237,10 @@
     return-object v0
 .end method
 
-.method public getDataCollector()Lcom/applovin/impl/sdk/r;
+.method public getFileManager()Lcom/applovin/impl/sdk/x;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->l:Lcom/applovin/impl/sdk/r;
-
-    return-object v0
-.end method
-
-.method public getEventService()Lcom/applovin/sdk/AppLovinEventService;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->q:Lcom/applovin/impl/sdk/EventServiceImpl;
-
-    return-object v0
-.end method
-
-.method public getFileManager()Lcom/applovin/impl/sdk/y;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->i:Lcom/applovin/impl/sdk/y;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->i:Lcom/applovin/impl/sdk/x;
 
     return-object v0
 .end method
@@ -292,15 +256,7 @@
 .method public getNativeAdService()Lcom/applovin/nativeAds/AppLovinNativeAdService;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->o:Lcom/applovin/impl/sdk/bd;
-
-    return-object v0
-.end method
-
-.method public getPersistentPostbackManager()Lcom/applovin/impl/sdk/bm;
-    .locals 1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->r:Lcom/applovin/impl/sdk/bm;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->n:Lcom/applovin/impl/sdk/bc;
 
     return-object v0
 .end method
@@ -308,7 +264,7 @@
 .method public getPostbackService()Lcom/applovin/impl/sdk/PostbackServiceImpl;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->p:Lcom/applovin/impl/sdk/PostbackServiceImpl;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->o:Lcom/applovin/impl/sdk/PostbackServiceImpl;
 
     return-object v0
 .end method
@@ -339,10 +295,10 @@
     return-object v0
 .end method
 
-.method public getSettingsManager()Lcom/applovin/impl/sdk/bz;
+.method public getSettingsManager()Lcom/applovin/impl/sdk/bu;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bz;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
 
     return-object v0
 .end method
@@ -350,19 +306,37 @@
 .method public getTargetingData()Lcom/applovin/sdk/AppLovinTargetingData;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->m:Lcom/applovin/impl/sdk/m;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->l:Lcom/applovin/impl/sdk/m;
 
     return-object v0
+.end method
+
+.method h()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
+
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bu;->d()V
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
+
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bu;->b()V
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->h:Lcom/applovin/impl/sdk/bw;
+
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bw;->a()V
+
+    return-void
 .end method
 
 .method public hasCriticalErrors()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->v:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->s:Z
 
     if-nez v0, :cond_0
 
-    iget-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->w:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->t:Z
 
     if-eqz v0, :cond_1
 
@@ -398,17 +372,17 @@
 
     iput-object v2, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->d:Lcom/applovin/sdk/AppLovinLogger;
 
-    new-instance v1, Lcom/applovin/impl/sdk/bz;
+    new-instance v1, Lcom/applovin/impl/sdk/bu;
 
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/bz;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/bu;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bz;
+    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
 
-    new-instance v1, Lcom/applovin/impl/sdk/cq;
+    new-instance v1, Lcom/applovin/impl/sdk/cj;
 
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/cq;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/cj;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->e:Lcom/applovin/impl/sdk/cq;
+    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->e:Lcom/applovin/impl/sdk/cj;
 
     new-instance v1, Lcom/applovin/impl/sdk/o;
 
@@ -416,73 +390,55 @@
 
     iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->g:Lcom/applovin/impl/sdk/o;
 
-    new-instance v1, Lcom/applovin/impl/sdk/cb;
+    new-instance v1, Lcom/applovin/impl/sdk/bw;
 
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/cb;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/bw;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->h:Lcom/applovin/impl/sdk/cb;
+    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->h:Lcom/applovin/impl/sdk/bw;
 
-    new-instance v1, Lcom/applovin/impl/sdk/y;
+    new-instance v1, Lcom/applovin/impl/sdk/x;
 
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/y;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
+    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/x;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
 
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->i:Lcom/applovin/impl/sdk/y;
+    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->i:Lcom/applovin/impl/sdk/x;
 
-    new-instance v1, Lcom/applovin/impl/sdk/r;
+    new-instance v1, Lcom/applovin/impl/sdk/f;
 
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/r;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/f;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->l:Lcom/applovin/impl/sdk/r;
+    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->m:Lcom/applovin/impl/sdk/f;
 
-    new-instance v1, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
+    new-instance v1, Lcom/applovin/impl/sdk/bc;
 
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/bc;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->n:Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
-
-    new-instance v1, Lcom/applovin/impl/sdk/bd;
-
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/bd;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
-
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->o:Lcom/applovin/impl/sdk/bd;
+    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->n:Lcom/applovin/impl/sdk/bc;
 
     new-instance v1, Lcom/applovin/impl/sdk/PostbackServiceImpl;
 
     invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/PostbackServiceImpl;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->p:Lcom/applovin/impl/sdk/PostbackServiceImpl;
+    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->o:Lcom/applovin/impl/sdk/PostbackServiceImpl;
 
-    new-instance v1, Lcom/applovin/impl/sdk/EventServiceImpl;
+    new-instance v1, Lcom/applovin/impl/sdk/c;
 
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/EventServiceImpl;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
+    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/c;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->q:Lcom/applovin/impl/sdk/EventServiceImpl;
+    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->j:Lcom/applovin/impl/sdk/c;
 
-    new-instance v1, Lcom/applovin/impl/sdk/bm;
+    new-instance v1, Lcom/applovin/impl/sdk/ba;
 
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/bm;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/ba;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->r:Lcom/applovin/impl/sdk/bm;
-
-    new-instance v1, Lcom/applovin/impl/sdk/b;
-
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/b;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
-
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->j:Lcom/applovin/impl/sdk/b;
-
-    new-instance v1, Lcom/applovin/impl/sdk/bb;
-
-    invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/bb;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
-
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->k:Lcom/applovin/impl/sdk/bb;
+    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->k:Lcom/applovin/impl/sdk/ba;
 
     new-instance v1, Lcom/applovin/impl/sdk/m;
 
     invoke-direct {v1, p0}, Lcom/applovin/impl/sdk/m;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->m:Lcom/applovin/impl/sdk/m;
+    iput-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->l:Lcom/applovin/impl/sdk/m;
 
-    invoke-static {}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->h()Z
+    invoke-static {}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->i()Z
 
     move-result v1
 
@@ -490,7 +446,7 @@
 
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->v:Z
+    iput-boolean v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->s:Z
 
     const-string v1, "AppLovinSdk"
 
@@ -510,7 +466,7 @@
     :cond_1
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->w:Z
+    iput-boolean v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->t:Z
 
     const-string v1, "AppLovinSdk"
 
@@ -565,35 +521,64 @@
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_5
 
-    iget-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bz;
+    iget-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
 
-    invoke-virtual {v2, v1}, Lcom/applovin/impl/sdk/k;->a(Lcom/applovin/impl/sdk/bz;)V
+    invoke-virtual {v2, v1}, Lcom/applovin/impl/sdk/k;->a(Lcom/applovin/impl/sdk/bu;)V
 
-    instance-of v1, p2, Lcom/applovin/impl/sdk/aw;
+    instance-of v1, p2, Lcom/applovin/impl/sdk/av;
 
     if-eqz v1, :cond_3
 
     move-object v0, p2
 
-    check-cast v0, Lcom/applovin/impl/sdk/aw;
+    check-cast v0, Lcom/applovin/impl/sdk/av;
 
     move-object v1, v0
 
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/aw;->a()Lcom/applovin/impl/sdk/l;
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/av;->a()Lcom/applovin/impl/sdk/l;
 
     move-result-object v1
 
     invoke-virtual {v2, v1}, Lcom/applovin/impl/sdk/k;->a(Lcom/applovin/impl/sdk/l;)V
 
     :cond_3
-    invoke-virtual {p0, p2}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/sdk/AppLovinSdkSettings;)V
+    iget-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
+
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bu;->c()V
+
+    iget-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
+
+    sget-object v2, Lcom/applovin/impl/sdk/br;->b:Lcom/applovin/impl/sdk/bt;
+
+    invoke-virtual {v1, v2}, Lcom/applovin/impl/sdk/bu;->a(Lcom/applovin/impl/sdk/bt;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    iget-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
+
+    invoke-virtual {v1, p2}, Lcom/applovin/impl/sdk/bu;->a(Lcom/applovin/sdk/AppLovinSdkSettings;)V
+
+    iget-object v1, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
+
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bu;->b()V
+
+    :cond_4
+    invoke-virtual {p0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->g()V
 
     :goto_0
     return-void
 
-    :cond_4
+    :cond_5
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Z)V
@@ -625,7 +610,7 @@
 .method public isEnabled()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->t:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->q:Z
 
     return v0
 .end method
@@ -644,15 +629,15 @@
     throw v0
 
     :cond_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bz;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
 
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->F:Lcom/applovin/impl/sdk/by;
+    sget-object v1, Lcom/applovin/impl/sdk/br;->F:Lcom/applovin/impl/sdk/bt;
 
-    invoke-virtual {v0, v1, p1}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, p1}, Lcom/applovin/impl/sdk/bu;->a(Lcom/applovin/impl/sdk/bt;Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bz;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->f:Lcom/applovin/impl/sdk/bu;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bz;->b()V
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bu;->b()V
 
     return-void
 .end method

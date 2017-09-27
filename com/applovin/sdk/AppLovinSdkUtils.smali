@@ -2,10 +2,6 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final TAG:Ljava/lang/String; = "AppLovinSdkUtils"
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0
@@ -237,69 +233,24 @@
     goto :goto_0
 .end method
 
-.method public static openUri(Landroid/content/Context;Landroid/net/Uri;Lcom/applovin/sdk/AppLovinSdk;)V
-    .locals 5
+.method public static launchNativeAdClickUrl(Landroid/content/Context;Lcom/applovin/nativeAds/AppLovinNativeAd;)V
+    .locals 3
 
-    :try_start_0
-    new-instance v0, Landroid/content/Intent;
-
-    const-string v1, "android.intent.action.VIEW"
-
-    invoke-direct {v0, v1, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {p2}, Lcom/applovin/sdk/AppLovinSdk;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
-
-    move-result-object v1
-
-    const-string v2, "AppLovinSdkUtils"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Unable to open \""
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "\"."
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v1, v2, v3, v0}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_0
-.end method
-
-.method public static openUrl(Landroid/content/Context;Ljava/lang/String;Lcom/applovin/sdk/AppLovinSdk;)V
-    .locals 1
-
-    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-interface {p1}, Lcom/applovin/nativeAds/AppLovinNativeAd;->getClickUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {p0, v0, p2}, Lcom/applovin/sdk/AppLovinSdkUtils;->openUri(Landroid/content/Context;Landroid/net/Uri;Lcom/applovin/sdk/AppLovinSdk;)V
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.intent.action.VIEW"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-direct {v1, v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -401,7 +352,7 @@
 
     invoke-static {p1}, Lcom/applovin/sdk/AppLovinSdkUtils;->recycleImageView(Landroid/widget/ImageView;)V
 
-    invoke-static {p0, p2, p3}, Lcom/applovin/impl/sdk/dh;->a(Landroid/content/Context;II)Landroid/graphics/Bitmap;
+    invoke-static {p0, p2, p3}, Lcom/applovin/impl/sdk/da;->a(Landroid/content/Context;II)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -426,7 +377,7 @@
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0, p2}, Lcom/applovin/impl/sdk/dh;->a(Ljava/io/File;I)Landroid/graphics/Bitmap;
+    invoke-static {v0, p2}, Lcom/applovin/impl/sdk/da;->a(Ljava/io/File;I)Landroid/graphics/Bitmap;
 
     move-result-object v0
 

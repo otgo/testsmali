@@ -1,587 +1,364 @@
-.class public Lcom/purplebrain/adbuddiz/sdk/i/j;
-.super Ljava/lang/Object;
+.class public final Lcom/purplebrain/adbuddiz/sdk/i/j;
+.super Landroid/os/CountDownTimer;
 
 
-# annotations
-.annotation build Landroid/annotation/SuppressLint;
-    value = {
-        "NewApi"
-    }
-.end annotation
+# instance fields
+.field public a:J
+
+.field public b:J
+
+.field private c:Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;
+
+.field private d:Landroid/media/MediaPlayer;
+
+.field private e:Lcom/purplebrain/adbuddiz/sdk/i/b;
+
+.field private f:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;Landroid/media/MediaPlayer;Ljava/lang/Integer;Lcom/purplebrain/adbuddiz/sdk/i/b;)V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-wide/32 v0, 0x7fffffff
 
-    return-void
-.end method
+    const-wide/16 v2, 0x3e8
 
-.method public static a(Landroid/content/Context;)V
-    .locals 3
+    invoke-direct {p0, v0, v1, v2, v3}, Landroid/os/CountDownTimer;-><init>(JJ)V
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    new-instance v0, Ljava/util/ArrayList;
 
-    const/16 v1, 0x13
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    if-lt v0, v1, :cond_0
+    iput-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->f:Ljava/util/List;
 
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/j$1;
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->c:Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;
 
-    invoke-direct {v0, p0}, Lcom/purplebrain/adbuddiz/sdk/i/j$1;-><init>(Landroid/content/Context;)V
+    iput-object p2, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->d:Landroid/media/MediaPlayer;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    iput-object p4, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->e:Lcom/purplebrain/adbuddiz/sdk/i/b;
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->a:J
+
+    invoke-static {p1}, Lcom/purplebrain/adbuddiz/sdk/i/d/a;->c(Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;)J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->b:J
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;->c:Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;
+
+    const-wide/high16 v2, 0x3fd0000000000000L    # 0.25
+
+    invoke-direct {p0, v0, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/i/j;->a(Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;D)V
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;->d:Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;
+
+    const-wide/high16 v2, 0x3fe0000000000000L    # 0.5
+
+    invoke-direct {p0, v0, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/i/j;->a(Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;D)V
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;->e:Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;
+
+    const-wide/high16 v2, 0x3fe8000000000000L    # 0.75
+
+    invoke-direct {p0, v0, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/i/j;->a(Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;D)V
+
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;->u:Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;
+
+    invoke-static {p1, v0}, Lcom/purplebrain/adbuddiz/sdk/i/d/a;->b(Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/purplebrain/adbuddiz/sdk/i/b/b/i;
+
+    const-string v1, "offset"
+
+    iget-object v3, v0, Lcom/purplebrain/adbuddiz/sdk/i/b/b/i;->c:Ljava/util/Map;
+
+    invoke-interface {v3, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    check-cast v1, Ljava/lang/String;
 
-    move-result-object v2
+    new-instance v3, Lcom/purplebrain/adbuddiz/sdk/i/l;
 
-    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const/4 v4, 0x0
 
-    move-result v1
+    invoke-direct {v3, p0, v4}, Lcom/purplebrain/adbuddiz/sdk/i/l;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/j;B)V
 
-    if-nez v1, :cond_1
+    iget-wide v4, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->b:J
 
-    new-instance v1, Landroid/os/Handler;
+    invoke-static {v1, v4, v5}, Lcom/purplebrain/adbuddiz/sdk/i/a;->a(Ljava/lang/String;J)J
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    move-result-wide v4
 
-    move-result-object v2
+    long-to-int v1, v4
 
-    invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    iput v1, v3, Lcom/purplebrain/adbuddiz/sdk/i/l;->a:I
 
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;->u:Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;
+
+    iput-object v1, v3, Lcom/purplebrain/adbuddiz/sdk/i/l;->b:Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;
+
+    iget-object v0, v0, Lcom/purplebrain/adbuddiz/sdk/i/b/b/i;->b:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, v3, Lcom/purplebrain/adbuddiz/sdk/i/l;->c:Ljava/util/List;
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->f:Ljava/util/List;
+
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
 
     :cond_0
-    :goto_0
-    return-void
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->f:Ljava/util/List;
+
+    new-instance v1, Lcom/purplebrain/adbuddiz/sdk/i/k;
+
+    invoke-direct {v1, p0}, Lcom/purplebrain/adbuddiz/sdk/i/k;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/j;)V
+
+    invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+
+    if-eqz p3, :cond_2
+
+    invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    iput-wide v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->a:J
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->f:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
 
     :cond_1
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    goto :goto_0
-.end method
-
-.method public static b(Landroid/content/Context;)Z
-    .locals 2
-
-    const/4 v1, 0x1
-
-    instance-of v0, p0, Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/AdBuddiz;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/Activity;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
-
-    and-int/lit16 v0, v0, 0x400
-
-    if-eqz v0, :cond_1
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public static c(Landroid/content/Context;)Z
-    .locals 6
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    instance-of v0, p0, Landroid/app/Activity;
-
-    if-nez v0, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/AdBuddiz;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/Activity;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v4, 0xb
-
-    if-lt v3, v4, :cond_3
-
-    invoke-virtual {v0, v1}, Landroid/view/Window;->hasFeature(I)Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    const/16 v3, 0x8
-
-    invoke-virtual {v0, v3}, Landroid/view/Window;->hasFeature(I)Z
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    :cond_1
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_2
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_3
-    :try_start_0
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    const-string v4, "getFeatures"
-
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/Class;
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v3, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-virtual {v3, v0, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Lcom/purplebrain/adbuddiz/sdk/i/l;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    iget v0, v0, Lcom/purplebrain/adbuddiz/sdk/i/l;->a:I
+
+    invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    if-gt v0, v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
+
+    goto :goto_1
+
+    :cond_2
+    return-void
+.end method
+
+.method private a(Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;D)V
+    .locals 4
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->c:Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;
+
+    invoke-static {v0, p1}, Lcom/purplebrain/adbuddiz/sdk/i/d/a;->a(Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Lcom/purplebrain/adbuddiz/sdk/i/l;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lcom/purplebrain/adbuddiz/sdk/i/l;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/j;B)V
+
+    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->c:Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;
+
+    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/i/d/a;->c(Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;)J
+
+    move-result-wide v2
+
+    long-to-double v2, v2
+
+    mul-double/2addr v2, p2
+
+    double-to-int v2, v2
+
+    iput v2, v1, Lcom/purplebrain/adbuddiz/sdk/i/l;->a:I
+
+    iput-object p1, v1, Lcom/purplebrain/adbuddiz/sdk/i/l;->b:Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;
+
+    iput-object v0, v1, Lcom/purplebrain/adbuddiz/sdk/i/l;->c:Ljava/util/List;
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->f:Ljava/util/List;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onFinish()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onTick(J)V
+    .locals 6
+
+    :try_start_0
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->d:Landroid/media/MediaPlayer;
+
+    invoke-virtual {v0}, Landroid/media/MediaPlayer;->getCurrentPosition()I
 
     move-result v0
 
-    const/4 v4, 0x0
+    int-to-long v0, v0
 
-    :try_start_1
-    invoke-virtual {v3, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    iput-wide v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->a:J
 
-    :goto_1
-    and-int/lit8 v0, v0, 0x2
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->f:Ljava/util/List;
 
-    if-eqz v0, :cond_4
+    invoke-interface {v0}, Ljava/util/List;->listIterator()Ljava/util/ListIterator;
 
-    move v0, v1
+    move-result-object v1
 
-    goto :goto_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/ListIterator;->hasNext()Z
 
-    :cond_4
-    move v0, v2
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/purplebrain/adbuddiz/sdk/i/l;
+
+    iget v2, v0, Lcom/purplebrain/adbuddiz/sdk/i/l;->a:I
+
+    iget-object v3, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->d:Landroid/media/MediaPlayer;
+
+    invoke-virtual {v3}, Landroid/media/MediaPlayer;->getCurrentPosition()I
+
+    move-result v3
+
+    if-gt v2, v3, :cond_0
+
+    const/4 v2, 0x3
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    iget-object v4, v0, Lcom/purplebrain/adbuddiz/sdk/i/l;->b:Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;
+
+    iget-object v4, v4, Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;->w:Ljava/lang/String;
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x1
+
+    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->d:Landroid/media/MediaPlayer;
+
+    invoke-virtual {v4}, Landroid/media/MediaPlayer;->getCurrentPosition()I
+
+    move-result v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x2
+
+    iget-wide v4, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->b:J
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    const-string v2, "TimeEvent"
+
+    iget-object v3, v0, Lcom/purplebrain/adbuddiz/sdk/i/l;->c:Ljava/util/List;
+
+    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->c:Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;
+
+    iget-object v5, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->d:Landroid/media/MediaPlayer;
+
+    invoke-virtual {v5}, Landroid/media/MediaPlayer;->getCurrentPosition()I
+
+    move-result v5
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-static {v2, v3, v4, v5}, Lcom/purplebrain/adbuddiz/sdk/i/m;->a(Ljava/lang/String;Ljava/util/List;Lcom/purplebrain/adbuddiz/sdk/e/a/a/a;Ljava/lang/Integer;)V
+
+    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/i/j;->e:Lcom/purplebrain/adbuddiz/sdk/i/b;
+
+    iget-object v0, v0, Lcom/purplebrain/adbuddiz/sdk/i/l;->b:Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;
+
+    invoke-virtual {v2, v0}, Lcom/purplebrain/adbuddiz/sdk/i/b;->a(Lcom/purplebrain/adbuddiz/sdk/i/b/b/d;)V
+
+    invoke-interface {v1}, Ljava/util/ListIterator;->remove()V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
     move-exception v0
 
-    move v0, v2
+    const-string v1, "ABVASTTimeBasedTrackingEventHelper.onTick()"
 
-    goto :goto_1
-
-    :catch_1
-    move-exception v3
-
-    goto :goto_1
-.end method
-
-.method public static d(Landroid/content/Context;)I
-    .locals 6
-
-    const/4 v1, 0x0
-
-    instance-of v0, p0, Landroid/app/Activity;
-
-    if-eqz v0, :cond_1
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0xb
-
-    if-lt v0, v2, :cond_1
-
-    new-instance v4, Ljava/util/Stack;
-
-    invoke-direct {v4}, Ljava/util/Stack;-><init>()V
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/AdBuddiz;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/Activity;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0}, Ljava/util/Stack;->add(Ljava/lang/Object;)Z
-
-    move v0, v1
-
-    :goto_0
-    invoke-virtual {v4}, Ljava/util/Stack;->isEmpty()Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    if-nez v0, :cond_2
-
-    invoke-virtual {v4}, Ljava/util/Stack;->pop()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getSystemUiVisibility()I
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    instance-of v3, v0, Landroid/view/ViewGroup;
-
-    if-eqz v3, :cond_0
-
-    check-cast v0, Landroid/view/ViewGroup;
-
-    move v3, v1
-
-    :goto_1
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
-
-    move-result v5
-
-    if-ge v3, v5, :cond_0
-
-    invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/util/Stack;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_1
+    invoke-static {v1, v0}, Lcom/purplebrain/adbuddiz/sdk/h/s;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_0
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v1
-
-    :cond_2
-    return v0
-.end method
-
-.method public static e(Landroid/content/Context;)Z
-    .locals 3
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "InlinedApi"
-        }
-    .end annotation
-
-    const/4 v0, 0x0
-
-    :try_start_0
-    invoke-static {p0}, Lcom/purplebrain/adbuddiz/sdk/i/j;->d(Landroid/content/Context;)I
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v1
-
-    and-int/lit16 v1, v1, 0x800
-
-    if-eqz v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :catch_0
-    move-exception v1
-
-    const-string v1, "im"
-
-    const-string v2, "ABZ-prefs"
-
-    invoke-virtual {p0, v2, v0}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    invoke-interface {v2, v1, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public static f(Landroid/content/Context;)Ljava/lang/Integer;
-    .locals 3
-
-    const/4 v0, 0x0
-
-    instance-of v1, p0, Landroid/app/Activity;
-
-    if-nez v1, :cond_1
-
-    :cond_0
-    :goto_0
-    return-object v0
-
-    :cond_1
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x15
-
-    if-lt v1, v2, :cond_0
-
-    check-cast p0, Landroid/app/Activity;
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/Window;->getStatusBarColor()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method public static g(Landroid/content/Context;)Ljava/lang/Integer;
-    .locals 3
-
-    const/4 v0, 0x0
-
-    instance-of v1, p0, Landroid/app/Activity;
-
-    if-nez v1, :cond_1
-
-    :cond_0
-    :goto_0
-    return-object v0
-
-    :cond_1
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x15
-
-    if-lt v1, v2, :cond_0
-
-    check-cast p0, Landroid/app/Activity;
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/Window;->getNavigationBarColor()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method public static h(Landroid/content/Context;)Landroid/graphics/Point;
-    .locals 8
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    new-instance v2, Landroid/graphics/RectF;
-
-    invoke-direct {v2, v0, v0, v0, v0}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    new-instance v1, Landroid/graphics/Point;
-
-    invoke-direct {v1}, Landroid/graphics/Point;-><init>()V
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x13
-
-    if-lt v0, v3, :cond_0
-
-    invoke-static {p0}, Lcom/purplebrain/adbuddiz/sdk/i/j;->e(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/AdBuddiz;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string v3, "display"
-
-    invoke-virtual {v0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/display/DisplayManager;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v3}, Landroid/hardware/display/DisplayManager;->getDisplay(I)Landroid/view/Display;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
-
-    move-object v0, v1
-
-    :goto_0
-    invoke-static {p0, v2}, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->a(Landroid/content/Context;Landroid/graphics/RectF;)Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    const/16 v2, 0x8
-
-    invoke-static {p0, v2}, Lcom/purplebrain/adbuddiz/sdk/i/a/k;->a(Landroid/content/Context;I)I
-
-    move-result v2
-
-    const/16 v3, 0xd
-
-    invoke-static {p0, v3}, Lcom/purplebrain/adbuddiz/sdk/i/a/k;->a(Landroid/content/Context;I)I
-
-    move-result v3
-
-    const/16 v4, 0x19
-
-    invoke-static {p0, v4}, Lcom/purplebrain/adbuddiz/sdk/i/a/k;->a(Landroid/content/Context;I)I
-
-    move-result v4
-
-    iget v5, v0, Landroid/graphics/Point;->x:I
-
-    iget v6, v1, Landroid/graphics/Rect;->right:I
-
-    iget v7, v1, Landroid/graphics/Rect;->left:I
-
-    add-int/2addr v6, v7
-
-    add-int/2addr v6, v2
-
-    sub-int/2addr v5, v6
-
-    iput v5, v0, Landroid/graphics/Point;->x:I
-
-    iget v5, v0, Landroid/graphics/Point;->y:I
-
-    iget v6, v1, Landroid/graphics/Rect;->top:I
-
-    iget v1, v1, Landroid/graphics/Rect;->bottom:I
-
-    add-int/2addr v1, v6
-
-    add-int/2addr v1, v2
-
-    add-int/2addr v1, v3
-
-    add-int/2addr v1, v4
-
-    sub-int v1, v5, v1
-
-    iput v1, v0, Landroid/graphics/Point;->y:I
-
-    return-object v0
-
-    :cond_0
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/AdBuddiz;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v0
-
-    iget v3, v0, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    iput v3, v1, Landroid/graphics/Point;->x:I
-
-    iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    iput v0, v1, Landroid/graphics/Point;->y:I
-
-    move-object v0, v1
-
-    goto :goto_0
+    return-void
 .end method

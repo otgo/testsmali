@@ -1,547 +1,406 @@
 .class Lcom/applovin/impl/sdk/cp;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.super Lcom/applovin/impl/sdk/bq;
 
 
 # instance fields
-.field private final a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+.field private final a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
-.field private final b:Lcom/applovin/sdk/AppLovinLogger;
-
-.field private final c:Landroid/content/Context;
-
-.field private final d:Lcom/applovin/sdk/AppLovinSdkSettings;
+.field private final b:Lorg/json/JSONObject;
 
 
 # direct methods
-.method constructor <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;Lcom/applovin/sdk/AppLovinSdkSettings;)V
+.method constructor <init>(Lorg/json/JSONObject;Lcom/applovin/impl/sdk/AppLovinSdkImpl;Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "TaskRenderWidget"
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+    invoke-direct {p0, v0, p2}, Lcom/applovin/impl/sdk/bq;-><init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
 
-    invoke-virtual {p1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getApplicationContext()Landroid/content/Context;
+    iput-object p3, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/applovin/impl/sdk/cp;->c:Landroid/content/Context;
-
-    iput-object p2, p0, Lcom/applovin/impl/sdk/cp;->d:Lcom/applovin/sdk/AppLovinSdkSettings;
-
-    invoke-virtual {p1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/applovin/impl/sdk/cp;->b:Lcom/applovin/sdk/AppLovinLogger;
+    iput-object p1, p0, Lcom/applovin/impl/sdk/cp;->b:Lorg/json/JSONObject;
 
     return-void
 .end method
 
-.method private c()V
-    .locals 7
+.method private a(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+    const-string v0, "simp_url"
 
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->J:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-static {v0}, Lcom/applovin/sdk/AppLovinSdkUtils;->isValidString(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-lez v1, :cond_0
+    if-nez v1, :cond_0
 
-    const-string v1, ","
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    const-string v1, "No impression URL available"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    const-string v1, "{CLCODE}"
+
+    invoke-virtual {v0, v1, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "click_url"
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/applovin/sdk/AppLovinSdkUtils;->isValidString(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "No impression URL available"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    if-nez p3, :cond_1
+
+    const-string p3, ""
+
+    :cond_1
+    const-string v1, "{CLCODE}"
+
+    invoke-virtual {v0, v1, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "{EVENT_ID}"
+
+    invoke-virtual {v0, v1, p3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private a(Lorg/json/JSONObject;)V
+    .locals 10
+
+    const-string v0, "native_ads"
+
+    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/applovin/impl/sdk/aw;->a(Lorg/json/JSONArray;)Ljava/util/List;
+
+    move-result-object v0
+
+    const-string v1, "native_settings"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v1
 
-    array-length v2, v1
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, v2, :cond_0
-
-    aget-object v3, v1, v0
-
-    iget-object v4, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v4}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->c()Lcom/applovin/impl/sdk/b;
+    invoke-static {v1}, Lcom/applovin/impl/sdk/aw;->a(Lorg/json/JSONObject;)Ljava/util/Map;
 
     move-result-object v4
 
-    new-instance v5, Lcom/applovin/impl/sdk/c;
+    new-instance v3, Ljava/util/ArrayList;
 
-    invoke-static {v3}, Lcom/applovin/sdk/AppLovinAdSize;->fromString(Ljava/lang/String;)Lcom/applovin/sdk/AppLovinAdSize;
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result-object v3
+    move-result v1
 
-    sget-object v6, Lcom/applovin/sdk/AppLovinAdType;->REGULAR:Lcom/applovin/sdk/AppLovinAdType;
+    invoke-direct {v3, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-direct {v5, v3, v6}, Lcom/applovin/impl/sdk/c;-><init>(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;)V
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v4, v5}, Lcom/applovin/impl/sdk/b;->d(Lcom/applovin/impl/sdk/c;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->K:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->c()Lcom/applovin/impl/sdk/b;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/applovin/impl/sdk/c;
-
-    sget-object v2, Lcom/applovin/sdk/AppLovinAdSize;->INTERSTITIAL:Lcom/applovin/sdk/AppLovinAdSize;
-
-    sget-object v3, Lcom/applovin/sdk/AppLovinAdType;->INCENTIVIZED:Lcom/applovin/sdk/AppLovinAdType;
-
-    invoke-direct {v1, v2, v3}, Lcom/applovin/impl/sdk/c;-><init>(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;)V
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/b;->d(Lcom/applovin/impl/sdk/c;)V
-
-    :cond_1
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    sget-object v1, Lcom/applovin/impl/sdk/bw;->aM:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->d()Lcom/applovin/impl/sdk/bb;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/applovin/impl/sdk/NativeAdImpl;->SPEC_NATIVE:Lcom/applovin/impl/sdk/c;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/bb;->d(Lcom/applovin/impl/sdk/c;)V
-
-    :cond_2
-    return-void
-.end method
-
-.method private d()V
-    .locals 6
-
-    const/16 v5, 0x266
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->c:Landroid/content/Context;
-
-    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    :try_start_0
-    const-string v0, "com.applovin.sdk.impl.lastKnownVersionCode"
-
-    const/4 v2, 0x0
-
-    invoke-interface {v1, v0, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-ge v0, v5, :cond_0
-
-    const-string v0, "TaskInitializeSdk"
-
-    const-string v2, "SDK has been updated since last run. Continuing..."
-
-    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getSettingsManager()Lcom/applovin/impl/sdk/bz;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bz;->d()V
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getSettingsManager()Lcom/applovin/impl/sdk/bz;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bz;->b()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v5
 
     :goto_0
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "com.applovin.sdk.impl.lastKnownVersionCode"
-
-    invoke-interface {v0, v1, v5}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    :goto_1
-    return-void
-
-    :cond_0
-    :try_start_1
-    const-string v0, "TaskInitializeSdk"
-
-    const-string v2, "SDK has not been updated since last run. Continuing..."
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    :try_start_2
-    iget-object v2, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v2}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
-
-    move-result-object v2
-
-    const-string v3, "TaskInitializeSdk"
-
-    const-string v4, "Unable to check for SDK update"
-
-    invoke-interface {v2, v3, v4, v0}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "com.applovin.sdk.impl.lastKnownVersionCode"
-
-    invoke-interface {v0, v1, v5}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    const-string v2, "com.applovin.sdk.impl.lastKnownVersionCode"
-
-    invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    throw v0
-.end method
-
-
-# virtual methods
-.method a()Z
-    .locals 3
-
-    const-string v0, "android.permission.INTERNET"
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cp;->c:Landroid/content/Context;
-
-    invoke-static {v0, v1}, Lcom/applovin/impl/sdk/r;->a(Ljava/lang/String;Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->b:Lcom/applovin/sdk/AppLovinLogger;
-
-    const-string v1, "TaskInitializeSdk"
-
-    const-string v2, "Unable to enable AppLovin SDK: no android.permission.INTERNET"
-
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->userError(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
-.end method
-
-.method b()V
-    .locals 6
-
-    new-instance v0, Lcom/applovin/impl/sdk/cd;
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-direct {v0, v1}, Lcom/applovin/impl/sdk/cd;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a()Lcom/applovin/impl/sdk/cq;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/applovin/impl/sdk/cr;->a:Lcom/applovin/impl/sdk/cr;
-
-    const-wide/16 v4, 0x1f4
-
-    invoke-virtual {v1, v0, v2, v4, v5}, Lcom/applovin/impl/sdk/cq;->a(Lcom/applovin/impl/sdk/bv;Lcom/applovin/impl/sdk/cr;J)V
-
-    return-void
-.end method
-
-.method public run()V
-    .locals 8
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->b:Lcom/applovin/sdk/AppLovinLogger;
-
-    const-string v1, "TaskInitializeSdk"
-
-    const-string v4, "Initializing AppLovin SDK 6.1.4..."
-
-    invoke-interface {v0, v1, v4}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    :try_start_0
-    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cp;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-direct {p0}, Lcom/applovin/impl/sdk/cp;->d()V
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getSettingsManager()Lcom/applovin/impl/sdk/bz;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bz;->c()V
-
-    sget-object v0, Lcom/applovin/impl/sdk/bw;->b:Lcom/applovin/impl/sdk/by;
-
-    invoke-virtual {v1, v0}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/impl/sdk/by;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->d:Lcom/applovin/sdk/AppLovinSdkSettings;
-
-    invoke-virtual {v1, v0}, Lcom/applovin/impl/sdk/bz;->a(Lcom/applovin/sdk/AppLovinSdkSettings;)V
-
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bz;->b()V
-
-    :cond_0
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->b()Lcom/applovin/impl/sdk/cb;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/cb;->c()V
+    check-cast v0, Ljava/util/Map;
 
-    const-string v1, "ad_imp_session"
+    const-string v1, "clcode"
 
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/cb;->c(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-static {v0}, Lcom/applovin/impl/sdk/a;->b(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getFileManager()Lcom/applovin/impl/sdk/y;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cp;->c:Landroid/content/Context;
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/y;->d(Landroid/content/Context;)V
-
-    invoke-direct {p0}, Lcom/applovin/impl/sdk/cp;->c()V
-
-    invoke-virtual {p0}, Lcom/applovin/impl/sdk/cp;->b()V
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->c:Landroid/content/Context;
-
-    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "com.applovin.sdk.impl.isFirstRun"
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v1, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/applovin/sdk/AppLovinSdkUtils;->isValidString(Ljava/lang/String;)Z
+    check-cast v1, Ljava/lang/String;
 
-    move-result v1
+    new-instance v6, Lcom/applovin/impl/sdk/az;
 
-    if-nez v1, :cond_1
+    invoke-direct {v6}, Lcom/applovin/impl/sdk/az;-><init>()V
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    const-string v2, "title"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->e(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "description"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->f(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "caption"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->g(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "cta"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->p(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "icon_url"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->a(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "image_url"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->b(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "video_url"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->d(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "star_rating_url"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->c(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "icon_url"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->h(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "image_url"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->i(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "video_url"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->j(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "star_rating"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-static {v2}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+
+    move-result v2
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->a(F)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Lcom/applovin/impl/sdk/az;->o(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v2
+
+    invoke-direct {p0, v4, v1}, Lcom/applovin/impl/sdk/cp;->a(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Lcom/applovin/impl/sdk/az;->k(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v6
+
+    const-string v2, "event_id"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-direct {p0, v4, v1, v2}, Lcom/applovin/impl/sdk/cp;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v6, v2}, Lcom/applovin/impl/sdk/az;->l(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v2
+
+    invoke-direct {p0, v4, v1}, Lcom/applovin/impl/sdk/cp;->b(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Lcom/applovin/impl/sdk/az;->m(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v2
+
+    invoke-direct {p0, v4, v1}, Lcom/applovin/impl/sdk/cp;->c(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Lcom/applovin/impl/sdk/az;->n(Ljava/lang/String;)Lcom/applovin/impl/sdk/az;
+
+    move-result-object v1
+
+    const-string v2, "ad_id"
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "com.applovin.sdk.impl.isFirstRun"
+    check-cast v0, Ljava/lang/String;
 
-    const/4 v4, 0x1
-
-    invoke-static {v4}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v0, v1, v4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    :cond_1
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getPersistentPostbackManager()Lcom/applovin/impl/sdk/bm;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bm;->a()V
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getEventService()Lcom/applovin/sdk/AppLovinEventService;
-
-    move-result-object v0
-
-    const-string v1, "landing"
-
-    invoke-interface {v0, v1}, Lcom/applovin/sdk/AppLovinEventService;->trackEvent(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Z)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :goto_0
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cp;->b:Lcom/applovin/sdk/AppLovinLogger;
-
-    const-string v4, "TaskInitializeSdk"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "AppLovin SDK 6.1.4 initialization "
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->isEnabled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    const-string v0, "succeeded"
-
-    :goto_1
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v5, " in "
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v6
 
-    sub-long v2, v6, v2
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6, v7}, Lcom/applovin/impl/sdk/az;->a(J)Lcom/applovin/impl/sdk/az;
 
     move-result-object v0
 
-    const-string v2, "ms"
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/az;->a()Lcom/applovin/impl/sdk/NativeAdImpl;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
+
+    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcom/applovin/impl/sdk/cp;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
+
+    move-result-object v1
+
+    const-string v2, "TaskRenderWidget"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "Prepared slot: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/NativeAdImpl;->getAdId()J
+
+    move-result-wide v8
+
+    invoke-virtual {v6, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -549,179 +408,172 @@
 
     move-result-object v0
 
-    invoke-interface {v1, v4, v0}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v1, v2, v0}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_2
+    goto/16 :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+    if-eqz v0, :cond_1
+
+    iget-object v1, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+    move-object v0, v3
+
+    check-cast v0, Ljava/util/List;
+
+    invoke-interface {v1, v0}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsLoaded(Ljava/util/List;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method private b(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "video_start_url"
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    const-string v1, "{CLCODE}"
+
+    invoke-virtual {v0, v1, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private c(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "video_end_url"
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    const-string v1, "{CLCODE}"
+
+    invoke-virtual {v0, v1, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method a(I)V
+    .locals 4
+
+    :try_start_0
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+    invoke-interface {v0, p1}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsFailedToLoad(I)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    :goto_0
     return-void
 
-    :cond_2
-    :try_start_1
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+    :catch_0
+    move-exception v0
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/applovin/impl/sdk/cp;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Z)V
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
+
+    move-result-object v1
+
+    const-string v2, "TaskRenderWidget"
+
+    const-string v3, "Unable to notify listener about failure."
+
+    invoke-interface {v1, v2, v3, v0}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+.end method
+
+.method public run()V
+    .locals 4
+
+    :try_start_0
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->b:Lorg/json/JSONObject;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->b:Lorg/json/JSONObject;
+
+    invoke-virtual {v0}, Lorg/json/JSONObject;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    const/16 v0, -0x2bc
+
+    invoke-virtual {p0, v0}, Lcom/applovin/impl/sdk/cp;->a(I)V
+
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->b:Lorg/json/JSONObject;
+
+    invoke-direct {p0, v0}, Lcom/applovin/impl/sdk/cp;->a(Lorg/json/JSONObject;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
     move-exception v0
 
-    :try_start_2
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cp;->b:Lcom/applovin/sdk/AppLovinLogger;
+    iget-object v1, p0, Lcom/applovin/impl/sdk/cp;->f:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    const-string v4, "TaskInitializeSdk"
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
 
-    const-string v5, "Unable to intialize SDK, disabling the SDK"
+    move-result-object v1
 
-    invoke-interface {v1, v4, v5, v0}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    const-string v2, "TaskRenderWidget"
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+    const-string v3, "Unable to render widget."
 
-    const/4 v1, 0x0
+    invoke-interface {v1, v2, v3, v0}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a(Z)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    const/16 v0, -0xc8
 
-    iget-object v1, p0, Lcom/applovin/impl/sdk/cp;->b:Lcom/applovin/sdk/AppLovinLogger;
+    invoke-virtual {p0, v0}, Lcom/applovin/impl/sdk/cp;->a(I)V
 
-    const-string v4, "TaskInitializeSdk"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "AppLovin SDK 6.1.4 initialization "
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->isEnabled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    const-string v0, "succeeded"
-
-    :goto_3
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v5, " in "
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v6
-
-    sub-long v2, v6, v2
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "ms"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v1, v4, v0}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :cond_3
-    const-string v0, "failed"
-
-    goto :goto_1
-
-    :cond_4
-    const-string v0, "failed"
-
-    goto :goto_3
-
-    :catchall_0
-    move-exception v0
-
-    move-object v1, v0
-
-    iget-object v4, p0, Lcom/applovin/impl/sdk/cp;->b:Lcom/applovin/sdk/AppLovinLogger;
-
-    const-string v5, "TaskInitializeSdk"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "AppLovin SDK 6.1.4 initialization "
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget-object v0, p0, Lcom/applovin/impl/sdk/cp;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->isEnabled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    const-string v0, "succeeded"
-
-    :goto_4
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v6, " in "
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v6
-
-    sub-long v2, v6, v2
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "ms"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v4, v5, v0}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_5
-    const-string v0, "failed"
-
-    goto :goto_4
+    goto :goto_0
 .end method

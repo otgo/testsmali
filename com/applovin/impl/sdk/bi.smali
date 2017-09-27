@@ -6,14 +6,18 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/applovin/impl/sdk/bh;
+.field final synthetic a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+
+.field final synthetic b:Lcom/applovin/impl/sdk/bc;
 
 
 # direct methods
-.method constructor <init>(Lcom/applovin/impl/sdk/bh;)V
+.method constructor <init>(Lcom/applovin/impl/sdk/bc;Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/impl/sdk/bh;
+    iput-object p1, p0, Lcom/applovin/impl/sdk/bi;->b:Lcom/applovin/impl/sdk/bc;
+
+    iput-object p2, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,15 +29,11 @@
 .method public onNativeAdsFailedToLoad(I)V
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/impl/sdk/bh;
-
-    iget-object v0, v0, Lcom/applovin/impl/sdk/bh;->b:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/impl/sdk/bh;
-
-    iget-object v0, v0, Lcom/applovin/impl/sdk/bh;->b:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
     invoke-interface {v0, p1}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsFailedToLoad(I)V
 
@@ -42,35 +42,15 @@
 .end method
 
 .method public onNativeAdsLoaded(Ljava/util/List;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/impl/sdk/bh;
-
-    iget-object v0, v0, Lcom/applovin/impl/sdk/bh;->b:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/impl/sdk/bh;
-
-    iget-object v1, v1, Lcom/applovin/impl/sdk/bh;->a:Ljava/util/List;
-
-    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/impl/sdk/bh;
-
-    iget-object v1, v1, Lcom/applovin/impl/sdk/bh;->c:Ljava/util/List;
-
-    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/bi;->a:Lcom/applovin/impl/sdk/bh;
-
-    iget-object v1, v1, Lcom/applovin/impl/sdk/bh;->b:Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;
-
-    invoke-interface {v1, v0}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsLoaded(Ljava/util/List;)V
+    invoke-interface {v0, p1}, Lcom/applovin/nativeAds/AppLovinNativeAdLoadListener;->onNativeAdsLoaded(Ljava/util/List;)V
 
     :cond_0
     return-void

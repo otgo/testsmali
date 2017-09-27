@@ -2,149 +2,286 @@
 .super Ljava/lang/Object;
 
 
+# instance fields
+.field public a:Lcom/purplebrain/adbuddiz/sdk/e/g;
+
+.field private b:D
+
+
 # direct methods
-.method public static a(Landroid/content/Context;)V
-    .locals 2
+.method public constructor <init>(Lcom/purplebrain/adbuddiz/sdk/e/g;IIF)V
+    .locals 4
 
-    const-string v0, "BA"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/i/m;->a(Landroid/content/Context;Ljava/lang/String;)Z
+    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/i/d;->a:Lcom/purplebrain/adbuddiz/sdk/e/g;
+
+    int-to-double v0, p2
+
+    int-to-double v2, p3
+
+    add-double/2addr v0, v2
+
+    float-to-double v2, p4
+
+    div-double/2addr v0, v2
+
+    iput-wide v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/d;->b:D
+
+    return-void
+.end method
+
+.method private static a(DDD)I
+    .locals 4
+
+    div-double v0, p2, p0
+
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
+
+    sub-double/2addr v0, v2
+
+    div-double/2addr v0, p4
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
+
+    move-result-wide v0
+
+    double-to-int v0, v0
+
+    return v0
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/util/List;)V
+    .locals 8
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v7
+
+    :goto_0
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
-    :try_start_0
-    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/h/f;
-
-    invoke-direct {v0}, Lcom/purplebrain/adbuddiz/sdk/h/f;-><init>()V
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/i/w;->i()Ljava/net/URL;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/purplebrain/adbuddiz/sdk/h/f;->e:Ljava/net/URL;
-
-    const-string v1, "BA"
-
-    iput-object v1, v0, Lcom/purplebrain/adbuddiz/sdk/h/f;->f:Ljava/lang/String;
-
-    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/h/f;->f()V
-    :try_end_0
-    .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
-.end method
-
-.method public static b(Landroid/content/Context;)Landroid/graphics/Bitmap;
-    .locals 4
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "NewApi"
-        }
-    .end annotation
-
-    const/4 v0, 0x0
-
-    const-string v1, "BA"
-
-    invoke-static {p0, v1}, Lcom/purplebrain/adbuddiz/sdk/i/m;->a(Landroid/content/Context;Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    :try_start_0
-    const-string v1, "BA"
-
-    invoke-static {p0, v1}, Lcom/purplebrain/adbuddiz/sdk/i/m;->b(Landroid/content/Context;Ljava/lang/String;)Ljava/io/InputStream;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v1
-
-    :try_start_1
-    invoke-static {v1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    const/16 v2, 0x168
+    move-object v6, v0
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Bitmap;->setDensity(I)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_4
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    check-cast v6, Lcom/purplebrain/adbuddiz/sdk/i/f;
 
-    :try_start_2
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-    :try_end_2
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
+    iget-object v0, v6, Lcom/purplebrain/adbuddiz/sdk/i/f;->a:Lcom/purplebrain/adbuddiz/sdk/i/b/b/f;
+
+    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/i/b/b/f;->c()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iget-object v1, v6, Lcom/purplebrain/adbuddiz/sdk/i/f;->a:Lcom/purplebrain/adbuddiz/sdk/i/b/b/f;
+
+    invoke-virtual {v1}, Lcom/purplebrain/adbuddiz/sdk/i/b/b/f;->d()Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    int-to-double v2, v0
+
+    iget-wide v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/d;->b:D
+
+    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/i/d;->a:Lcom/purplebrain/adbuddiz/sdk/e/g;
+
+    iget-wide v4, v4, Lcom/purplebrain/adbuddiz/sdk/e/g;->b:D
+
+    invoke-static/range {v0 .. v5}, Lcom/purplebrain/adbuddiz/sdk/i/d;->a(DDD)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    iget-wide v2, v6, Lcom/purplebrain/adbuddiz/sdk/i/f;->b:D
+
+    int-to-double v0, v0
+
+    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/i/d;->a:Lcom/purplebrain/adbuddiz/sdk/e/g;
+
+    iget-wide v4, v4, Lcom/purplebrain/adbuddiz/sdk/e/g;->c:D
+
+    mul-double/2addr v0, v4
+
+    add-double/2addr v0, v2
+
+    iput-wide v0, v6, Lcom/purplebrain/adbuddiz/sdk/i/f;->b:D
+
+    goto :goto_0
+
+    :cond_0
+    iget-wide v2, v6, Lcom/purplebrain/adbuddiz/sdk/i/f;->b:D
+
+    neg-int v0, v0
+
+    int-to-double v0, v0
+
+    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/i/d;->a:Lcom/purplebrain/adbuddiz/sdk/e/g;
+
+    iget-wide v4, v4, Lcom/purplebrain/adbuddiz/sdk/e/g;->d:D
+
+    mul-double/2addr v0, v4
+
+    add-double/2addr v0, v2
+
+    iput-wide v0, v6, Lcom/purplebrain/adbuddiz/sdk/i/f;->b:D
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method public final b(Ljava/util/List;)V
+    .locals 8
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
 
     :cond_0
     :goto_0
-    return-object v0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    :catch_0
-    move-exception v1
+    move-result v0
 
-    move-object v1, v0
+    if-eqz v0, :cond_1
 
-    :goto_1
-    :try_start_3
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-    :try_end_3
-    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_1
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/purplebrain/adbuddiz/sdk/i/f;
+
+    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/i/d;->a:Lcom/purplebrain/adbuddiz/sdk/e/g;
+
+    iget-object v1, v1, Lcom/purplebrain/adbuddiz/sdk/e/g;->e:Ljava/util/Map;
+
+    iget-object v3, v0, Lcom/purplebrain/adbuddiz/sdk/i/f;->a:Lcom/purplebrain/adbuddiz/sdk/i/b/b/f;
+
+    invoke-virtual {v3}, Lcom/purplebrain/adbuddiz/sdk/i/b/b/f;->b()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Double;
+
+    if-eqz v1, :cond_0
+
+    iget-wide v4, v0, Lcom/purplebrain/adbuddiz/sdk/i/f;->b:D
+
+    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v6
+
+    add-double/2addr v4, v6
+
+    iput-wide v4, v0, Lcom/purplebrain/adbuddiz/sdk/i/f;->b:D
 
     goto :goto_0
 
-    :catch_1
-    move-exception v1
+    :cond_1
+    return-void
+.end method
+
+.method public final c(Ljava/util/List;)V
+    .locals 8
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v7
+
+    :cond_0
+    :goto_0
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lcom/purplebrain/adbuddiz/sdk/i/f;
+
+    iget-object v0, v6, Lcom/purplebrain/adbuddiz/sdk/i/f;->a:Lcom/purplebrain/adbuddiz/sdk/i/b/b/f;
+
+    invoke-virtual {v0}, Lcom/purplebrain/adbuddiz/sdk/i/b/b/f;->e()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/purplebrain/adbuddiz/sdk/i/d;->a:Lcom/purplebrain/adbuddiz/sdk/e/g;
+
+    iget v0, v0, Lcom/purplebrain/adbuddiz/sdk/e/g;->f:I
+
+    int-to-double v0, v0
+
+    iget-object v2, v6, Lcom/purplebrain/adbuddiz/sdk/i/f;->a:Lcom/purplebrain/adbuddiz/sdk/i/b/b/f;
+
+    invoke-virtual {v2}, Lcom/purplebrain/adbuddiz/sdk/i/b/b/f;->e()Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    int-to-double v2, v2
+
+    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/i/d;->a:Lcom/purplebrain/adbuddiz/sdk/e/g;
+
+    iget-wide v4, v4, Lcom/purplebrain/adbuddiz/sdk/e/g;->g:D
+
+    invoke-static/range {v0 .. v5}, Lcom/purplebrain/adbuddiz/sdk/i/d;->a(DDD)I
+
+    move-result v0
+
+    iget-wide v2, v6, Lcom/purplebrain/adbuddiz/sdk/i/f;->b:D
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
+
+    move-result v0
+
+    int-to-double v0, v0
+
+    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/i/d;->a:Lcom/purplebrain/adbuddiz/sdk/e/g;
+
+    iget-wide v4, v4, Lcom/purplebrain/adbuddiz/sdk/e/g;->h:D
+
+    mul-double/2addr v0, v4
+
+    add-double/2addr v0, v2
+
+    iput-wide v0, v6, Lcom/purplebrain/adbuddiz/sdk/i/f;->b:D
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v1
-
-    move-object v3, v1
-
-    move-object v1, v0
-
-    move-object v0, v3
-
-    :goto_2
-    :try_start_4
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-    :try_end_4
-    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_3
-
-    :goto_3
-    throw v0
-
-    :catch_2
-    move-exception v1
-
-    goto :goto_0
-
-    :catch_3
-    move-exception v1
-
-    goto :goto_3
-
-    :catchall_1
-    move-exception v0
-
-    goto :goto_2
-
-    :catch_4
-    move-exception v2
-
-    goto :goto_1
+    :cond_1
+    return-void
 .end method

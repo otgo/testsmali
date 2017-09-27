@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 86
+    .line 91
     iput-object p1, p0, Lcom/unity3d/ads/android/video/a;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
     .locals 2
 
     .prologue
-    .line 89
+    .line 94
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "For some reason the device failed to play the video (error: "
@@ -62,12 +62,12 @@
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
 
-    .line 90
+    .line 95
     iget-object v0, p0, Lcom/unity3d/ads/android/video/a;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
 
     invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->a(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)V
 
-    .line 91
+    .line 96
     const/4 v0, 0x1
 
     return v0

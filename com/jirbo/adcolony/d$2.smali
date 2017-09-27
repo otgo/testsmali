@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/jirbo/adcolony/d;->b()V
+    value = Lcom/jirbo/adcolony/d;->c()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 88
+    .line 98
     iput-object p1, p0, Lcom/jirbo/adcolony/d$2;->a:Lcom/jirbo/adcolony/d;
 
     invoke-direct {p0, p2}, Lcom/jirbo/adcolony/j;-><init>(Lcom/jirbo/adcolony/d;)V
@@ -37,13 +37,13 @@
     .locals 1
 
     .prologue
-    .line 91
+    .line 101
     iget-object v0, p0, Lcom/jirbo/adcolony/d$2;->o:Lcom/jirbo/adcolony/d;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/u;
+    iget-object v0, v0, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/v;
 
-    invoke-virtual {v0}, Lcom/jirbo/adcolony/u;->c()V
+    invoke-virtual {v0}, Lcom/jirbo/adcolony/v;->d()V
 
-    .line 92
+    .line 102
     return-void
 .end method

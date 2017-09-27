@@ -32,62 +32,52 @@
 
 .field private volatile m:Lcom/applovin/sdk/AppLovinAd;
 
-.field private n:Lcom/applovin/adview/ClickTrackingOverlayView;
+.field private final n:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field private o:Ljava/lang/ref/WeakReference;
+.field private volatile o:Z
 
-.field private final p:Ljava/util/concurrent/atomic/AtomicReference;
+.field private volatile p:Z
 
 .field private volatile q:Z
 
 .field private volatile r:Z
 
-.field private volatile s:Z
+.field private volatile s:Lcom/applovin/sdk/AppLovinAdLoadListener;
 
-.field private volatile t:Z
+.field private volatile t:Lcom/applovin/sdk/AppLovinAdDisplayListener;
 
-.field private volatile u:Lcom/applovin/sdk/AppLovinAdLoadListener;
+.field private volatile u:Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
 
-.field private volatile v:Lcom/applovin/sdk/AppLovinAdDisplayListener;
-
-.field private volatile w:Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
-
-.field private volatile x:Lcom/applovin/sdk/AppLovinAdClickListener;
-
-.field private volatile y:Z
+.field private volatile v:Lcom/applovin/sdk/AppLovinAdClickListener;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 2
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/4 v0, 0x0
+
     iput-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->m:Lcom/applovin/sdk/AppLovinAd;
-
-    iput-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Lcom/applovin/adview/ClickTrackingOverlayView;
-
-    iput-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Ljava/lang/ref/WeakReference;
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    iput-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->p:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-boolean v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
+    iput-boolean v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Z
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->r:Z
+    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->p:Z
 
-    iput-boolean v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->s:Z
+    iput-boolean v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
 
-    iput-boolean v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->t:Z
+    iput-boolean v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->r:Z
 
     return-void
 .end method
@@ -95,7 +85,7 @@
 .method static synthetic a(Lcom/applovin/impl/adview/AdViewControllerImpl;)Lcom/applovin/sdk/AppLovinAdLoadListener;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->u:Lcom/applovin/sdk/AppLovinAdLoadListener;
+    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->s:Lcom/applovin/sdk/AppLovinAdLoadListener;
 
     return-object v0
 .end method
@@ -181,7 +171,7 @@
 
     iput-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->a:Landroid/app/Activity;
 
-    invoke-static {}, Lcom/applovin/impl/sdk/dh;->a()Lcom/applovin/impl/sdk/AppLovinAdImpl;
+    invoke-static {}, Lcom/applovin/impl/sdk/da;->a()Lcom/applovin/impl/sdk/AppLovinAdImpl;
 
     move-result-object v0
 
@@ -255,7 +245,7 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
+    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Z
 
     :goto_0
     return-void
@@ -268,72 +258,6 @@
     const-string v2, "Web view database is corrupt, AdView not loaded"
 
     invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->userError(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-.end method
-
-.method private a(Lcom/applovin/sdk/AppLovinAd;Lcom/applovin/adview/AppLovinAdView;Landroid/net/Uri;)V
-    .locals 4
-
-    const/4 v3, -0x1
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Lcom/applovin/adview/ClickTrackingOverlayView;
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->d:Lcom/applovin/sdk/AppLovinLogger;
-
-    const-string v1, "AppLovinAdView"
-
-    const-string v2, "Creating and rendering click overlay"
-
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Lcom/applovin/adview/ClickTrackingOverlayView;
-
-    invoke-virtual {p2}, Lcom/applovin/adview/AppLovinAdView;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->b:Lcom/applovin/sdk/AppLovinSdk;
-
-    invoke-direct {v0, v1, v2}, Lcom/applovin/adview/ClickTrackingOverlayView;-><init>(Landroid/content/Context;Lcom/applovin/sdk/AppLovinSdk;)V
-
-    iput-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Lcom/applovin/adview/ClickTrackingOverlayView;
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Lcom/applovin/adview/ClickTrackingOverlayView;
-
-    new-instance v1, Landroid/widget/RelativeLayout$LayoutParams;
-
-    invoke-direct {v1, v3, v3}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
-
-    invoke-virtual {v0, v1}, Lcom/applovin/adview/ClickTrackingOverlayView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Lcom/applovin/adview/ClickTrackingOverlayView;
-
-    invoke-virtual {p2, v0}, Lcom/applovin/adview/AppLovinAdView;->addView(Landroid/view/View;)V
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Lcom/applovin/adview/ClickTrackingOverlayView;
-
-    invoke-virtual {p2, v0}, Lcom/applovin/adview/AppLovinAdView;->bringChildToFront(Landroid/view/View;)V
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->c:Lcom/applovin/sdk/AppLovinAdService;
-
-    check-cast v0, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
-
-    invoke-virtual {v0, p1, p2, p0, p3}, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;->trackForegroundClick(Lcom/applovin/sdk/AppLovinAd;Lcom/applovin/adview/AppLovinAdView;Lcom/applovin/impl/adview/AdViewControllerImpl;Landroid/net/Uri;)V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->d:Lcom/applovin/sdk/AppLovinLogger;
-
-    const-string v1, "AppLovinAdView"
-
-    const-string v2, "Skipping click overlay rendering because it already exists"
-
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -477,31 +401,6 @@
 
     invoke-virtual {v0, v4}, Lcom/applovin/impl/adview/o;->setWillNotCacheDrawing(Z)V
 
-    new-instance v1, Lcom/applovin/impl/sdk/ca;
-
-    iget-object v2, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->b:Lcom/applovin/sdk/AppLovinSdk;
-
-    invoke-direct {v1, v2}, Lcom/applovin/impl/sdk/ca;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
-
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/ca;->F()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x13
-
-    if-lt v1, v2, :cond_0
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lcom/applovin/impl/adview/o;->setLayerType(ILandroid/graphics/Paint;)V
-
-    :cond_0
     return-object v0
 .end method
 
@@ -520,19 +419,19 @@
 
     const/4 v5, -0x2
 
-    const/4 v0, -0x1
+    const/4 v1, -0x1
 
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v2
 
     invoke-virtual {p1}, Lcom/applovin/sdk/AppLovinAdSize;->getLabel()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     sget-object v3, Lcom/applovin/sdk/AppLovinAdSize;->INTERSTITIAL:Lcom/applovin/sdk/AppLovinAdSize;
 
@@ -540,13 +439,13 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
-    move v1, v0
+    move v0, v1
 
     :goto_0
     invoke-virtual {p1}, Lcom/applovin/sdk/AppLovinAdSize;->getLabel()Ljava/lang/String;
@@ -565,84 +464,58 @@
 
     if-eqz v3, :cond_4
 
-    move v2, v0
+    move v2, v1
 
     :goto_1
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v0
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Landroid/widget/RelativeLayout$LayoutParams;
+
+    invoke-direct {v1, v5, v5}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
+
+    :cond_0
+    iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    instance-of v0, v1, Landroid/widget/RelativeLayout$LayoutParams;
+
+    if-eqz v0, :cond_1
+
+    move-object v0, v1
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    if-nez v0, :cond_0
+    const/16 v2, 0xa
 
-    new-instance v0, Landroid/widget/RelativeLayout$LayoutParams;
+    invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    invoke-direct {v0, v5, v5}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
+    const/16 v2, 0x9
 
-    :cond_0
-    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
-
-    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
-
-    instance-of v1, v0, Landroid/widget/RelativeLayout$LayoutParams;
-
-    if-eqz v1, :cond_1
-
-    const/16 v1, 0xa
-
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
-
-    const/16 v1, 0x9
-
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     :cond_1
-    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 
     :cond_2
     invoke-virtual {p1}, Lcom/applovin/sdk/AppLovinAdSize;->getWidth()I
 
-    move-result v1
+    move-result v0
 
-    if-ne v1, v0, :cond_3
+    if-ne v0, v1, :cond_3
 
-    iget v1, v2, Landroid/util/DisplayMetrics;->widthPixels:I
+    iget v0, v2, Landroid/util/DisplayMetrics;->widthPixels:I
 
     goto :goto_0
 
     :cond_3
     invoke-virtual {p1}, Lcom/applovin/sdk/AppLovinAdSize;->getWidth()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    invoke-static {v6, v1, v2}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    goto :goto_0
-
-    :cond_4
-    invoke-virtual {p1}, Lcom/applovin/sdk/AppLovinAdSize;->getHeight()I
-
-    move-result v3
-
-    if-ne v3, v0, :cond_5
-
-    iget v0, v2, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    move v2, v0
-
-    goto :goto_1
-
-    :cond_5
-    invoke-virtual {p1}, Lcom/applovin/sdk/AppLovinAdSize;->getHeight()I
 
     move-result v0
 
@@ -654,7 +527,35 @@
 
     float-to-int v0, v0
 
-    move v2, v0
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {p1}, Lcom/applovin/sdk/AppLovinAdSize;->getHeight()I
+
+    move-result v3
+
+    if-ne v3, v1, :cond_5
+
+    iget v1, v2, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    move v2, v1
+
+    goto :goto_1
+
+    :cond_5
+    invoke-virtual {p1}, Lcom/applovin/sdk/AppLovinAdSize;->getHeight()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-static {v6, v1, v2}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    move v2, v1
 
     goto :goto_1
 .end method
@@ -694,7 +595,7 @@
 .method static synthetic g(Lcom/applovin/impl/adview/AdViewControllerImpl;)Lcom/applovin/sdk/AppLovinAdDisplayListener;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->v:Lcom/applovin/sdk/AppLovinAdDisplayListener;
+    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->t:Lcom/applovin/sdk/AppLovinAdDisplayListener;
 
     return-object v0
 .end method
@@ -702,7 +603,7 @@
 .method static synthetic h(Lcom/applovin/impl/adview/AdViewControllerImpl;)Lcom/applovin/sdk/AppLovinAdClickListener;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->x:Lcom/applovin/sdk/AppLovinAdClickListener;
+    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->v:Lcom/applovin/sdk/AppLovinAdClickListener;
 
     return-object v0
 .end method
@@ -710,7 +611,7 @@
 .method static synthetic i(Lcom/applovin/impl/adview/AdViewControllerImpl;)Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
     .locals 1
 
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->w:Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
+    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->u:Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
 
     return-object v0
 .end method
@@ -742,7 +643,7 @@
 .method a(I)V
     .locals 3
 
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->s:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
 
     if-nez v0, :cond_0
 
@@ -769,15 +670,35 @@
 .end method
 
 .method a(Lcom/applovin/sdk/AppLovinAd;)V
+    .locals 2
+
+    new-instance v0, Lcom/applovin/impl/sdk/b;
+
+    iget-object v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->c:Lcom/applovin/sdk/AppLovinAdService;
+
+    invoke-direct {v0, v1}, Lcom/applovin/impl/sdk/b;-><init>(Lcom/applovin/sdk/AppLovinAdService;)V
+
+    invoke-virtual {v0, p1}, Lcom/applovin/impl/sdk/b;->a(Lcom/applovin/sdk/AppLovinAd;)V
+
+    new-instance v0, Lcom/applovin/impl/adview/g;
+
+    invoke-direct {v0, p0, p1}, Lcom/applovin/impl/adview/g;-><init>(Lcom/applovin/impl/adview/AdViewControllerImpl;Lcom/applovin/sdk/AppLovinAd;)V
+
+    invoke-direct {p0, v0}, Lcom/applovin/impl/adview/AdViewControllerImpl;->a(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method b(Lcom/applovin/sdk/AppLovinAd;)V
     .locals 3
 
     if-eqz p1, :cond_1
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->t:Z
+    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->r:Z
 
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->s:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
 
     if-nez v0, :cond_0
 
@@ -802,7 +723,7 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->p:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
@@ -830,44 +751,6 @@
     invoke-virtual {p0, v0}, Lcom/applovin/impl/adview/AdViewControllerImpl;->a(I)V
 
     goto :goto_1
-.end method
-
-.method a(Lcom/applovin/sdk/AppLovinAd;Lcom/applovin/adview/AppLovinAdView;Lcom/applovin/impl/adview/AdViewControllerImpl;Landroid/net/Uri;)V
-    .locals 3
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->c:Lcom/applovin/sdk/AppLovinAdService;
-
-    check-cast v0, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;
-
-    new-instance v1, Lcom/applovin/impl/sdk/ca;
-
-    iget-object v2, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->b:Lcom/applovin/sdk/AppLovinSdk;
-
-    invoke-direct {v1, v2}, Lcom/applovin/impl/sdk/ca;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
-
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/ca;->H()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    if-eqz p4, :cond_0
-
-    invoke-direct {p0, p1, p2, p4}, Lcom/applovin/impl/adview/AdViewControllerImpl;->a(Lcom/applovin/sdk/AppLovinAd;Lcom/applovin/adview/AppLovinAdView;Landroid/net/Uri;)V
-
-    :goto_0
-    new-instance v0, Lcom/applovin/impl/adview/g;
-
-    invoke-direct {v0, p0, p1}, Lcom/applovin/impl/adview/g;-><init>(Lcom/applovin/impl/adview/AdViewControllerImpl;Lcom/applovin/sdk/AppLovinAd;)V
-
-    invoke-direct {p0, v0}, Lcom/applovin/impl/adview/AdViewControllerImpl;->a(Ljava/lang/Runnable;)V
-
-    return-void
-
-    :cond_0
-    invoke-virtual {v0, p1, p2, p0, p4}, Lcom/applovin/impl/sdk/AppLovinAdServiceImpl;->trackClickOn(Lcom/applovin/sdk/AppLovinAd;Lcom/applovin/adview/AppLovinAdView;Lcom/applovin/impl/adview/AdViewControllerImpl;Landroid/net/Uri;)V
-
-    goto :goto_0
 .end method
 
 .method public destroy()V
@@ -907,7 +790,7 @@
     :goto_0
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->s:Z
+    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
 
     return-void
 
@@ -921,61 +804,6 @@
     const-string v3, "Unable to destroy ad view"
 
     invoke-interface {v1, v2, v3, v0}, Lcom/applovin/sdk/AppLovinLogger;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_0
-.end method
-
-.method public dismissInterstitialIfRequired()V
-    .locals 2
-
-    new-instance v0, Lcom/applovin/impl/sdk/ca;
-
-    iget-object v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->b:Lcom/applovin/sdk/AppLovinSdk;
-
-    invoke-direct {v0, v1}, Lcom/applovin/impl/sdk/ca;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/ca;->L()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->a:Landroid/app/Activity;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->a:Landroid/app/Activity;
-
-    instance-of v0, v0, Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->a:Landroid/app/Activity;
-
-    check-cast v0, Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    invoke-virtual {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->dismiss()V
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Ljava/lang/ref/WeakReference;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/applovin/impl/adview/x;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lcom/applovin/impl/adview/x;->dismiss()V
 
     goto :goto_0
 .end method
@@ -1075,15 +903,7 @@
 .method public isAutoDestroy()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->r:Z
-
-    return v0
-.end method
-
-.method public isForegroundClickInvalidated()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->y:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->p:Z
 
     return v0
 .end method
@@ -1103,7 +923,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Z
 
     if-eqz v0, :cond_0
 
@@ -1140,11 +960,11 @@
     invoke-virtual {p1, v0}, Landroid/webkit/WebView;->setVisibility(I)V
 
     :try_start_0
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->v:Lcom/applovin/sdk/AppLovinAdDisplayListener;
+    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->t:Lcom/applovin/sdk/AppLovinAdDisplayListener;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->v:Lcom/applovin/sdk/AppLovinAdDisplayListener;
+    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->t:Lcom/applovin/sdk/AppLovinAdDisplayListener;
 
     iget-object v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->m:Lcom/applovin/sdk/AppLovinAd;
 
@@ -1173,7 +993,7 @@
 .method public onDetachedFromWindow()V
     .locals 2
 
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Z
 
     if-nez v0, :cond_1
 
@@ -1190,7 +1010,7 @@
 
     invoke-direct {p0, v0}, Lcom/applovin/impl/adview/AdViewControllerImpl;->a(Ljava/lang/Runnable;)V
 
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->r:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->p:Z
 
     if-eqz v0, :cond_0
 
@@ -1202,7 +1022,7 @@
 .method public onVisibilityChanged(I)V
     .locals 1
 
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Z
 
     if-nez v0, :cond_1
 
@@ -1211,7 +1031,7 @@
     return-void
 
     :cond_1
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->r:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->p:Z
 
     if-eqz v0, :cond_0
 
@@ -1239,7 +1059,7 @@
 .method public pause()V
     .locals 3
 
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Z
 
     if-nez v0, :cond_0
 
@@ -1265,59 +1085,14 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->p:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
     :cond_1
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->s:Z
-
-    goto :goto_0
-.end method
-
-.method public removeClickTrackingOverlay()V
-    .locals 3
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Lcom/applovin/adview/ClickTrackingOverlayView;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Lcom/applovin/adview/ClickTrackingOverlayView;
-
-    invoke-virtual {v0}, Lcom/applovin/adview/ClickTrackingOverlayView;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    instance-of v1, v0, Landroid/view/ViewGroup;
-
-    if-eqz v1, :cond_0
-
-    check-cast v0, Landroid/view/ViewGroup;
-
-    iget-object v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Lcom/applovin/adview/ClickTrackingOverlayView;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Lcom/applovin/adview/ClickTrackingOverlayView;
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->d:Lcom/applovin/sdk/AppLovinLogger;
-
-    const-string v1, "AppLovinAdView"
-
-    const-string v2, "Asked to remove an overlay when none existed. Skipping..."
-
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
+    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
 
     goto :goto_0
 .end method
@@ -1336,7 +1111,7 @@
     throw v0
 
     :cond_0
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Z
 
     if-eqz v0, :cond_4
 
@@ -1400,7 +1175,7 @@
 
     invoke-direct {p0, v0}, Lcom/applovin/impl/adview/AdViewControllerImpl;->a(Ljava/lang/Runnable;)V
 
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->p:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Ljava/util/concurrent/atomic/AtomicReference;
 
     const/4 v1, 0x0
 
@@ -1422,13 +1197,13 @@
 
     :cond_1
     :goto_0
-    new-instance v0, Lcom/applovin/impl/sdk/cc;
+    new-instance v0, Lcom/applovin/impl/sdk/bx;
 
     iget-object v1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->b:Lcom/applovin/sdk/AppLovinSdk;
 
-    invoke-direct {v0, v1}, Lcom/applovin/impl/sdk/cc;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
+    invoke-direct {v0, v1}, Lcom/applovin/impl/sdk/bx;-><init>(Lcom/applovin/sdk/AppLovinSdk;)V
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/cc;->a()V
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bx;->a()V
 
     :goto_1
     return-void
@@ -1502,7 +1277,7 @@
 .method public resume()V
     .locals 3
 
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Z
 
     if-nez v0, :cond_0
 
@@ -1510,7 +1285,7 @@
     return-void
 
     :cond_0
-    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->t:Z
+    iget-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->r:Z
 
     if-eqz v0, :cond_1
 
@@ -1523,7 +1298,7 @@
     invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinAdService;->addAdUpdateListener(Lcom/applovin/sdk/AppLovinAdUpdateListener;Lcom/applovin/sdk/AppLovinAdSize;)V
 
     :cond_1
-    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->p:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->n:Ljava/util/concurrent/atomic/AtomicReference;
 
     const/4 v1, 0x0
 
@@ -1540,7 +1315,7 @@
     :cond_2
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->s:Z
+    iput-boolean v0, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->q:Z
 
     goto :goto_0
 .end method
@@ -1548,7 +1323,7 @@
 .method public setAdClickListener(Lcom/applovin/sdk/AppLovinAdClickListener;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->x:Lcom/applovin/sdk/AppLovinAdClickListener;
+    iput-object p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->v:Lcom/applovin/sdk/AppLovinAdClickListener;
 
     return-void
 .end method
@@ -1556,7 +1331,7 @@
 .method public setAdDisplayListener(Lcom/applovin/sdk/AppLovinAdDisplayListener;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->v:Lcom/applovin/sdk/AppLovinAdDisplayListener;
+    iput-object p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->t:Lcom/applovin/sdk/AppLovinAdDisplayListener;
 
     return-void
 .end method
@@ -1564,7 +1339,7 @@
 .method public setAdLoadListener(Lcom/applovin/sdk/AppLovinAdLoadListener;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->u:Lcom/applovin/sdk/AppLovinAdLoadListener;
+    iput-object p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->s:Lcom/applovin/sdk/AppLovinAdLoadListener;
 
     return-void
 .end method
@@ -1572,7 +1347,7 @@
 .method public setAdVideoPlaybackListener(Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->w:Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
+    iput-object p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->u:Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
 
     return-void
 .end method
@@ -1580,23 +1355,7 @@
 .method public setAutoDestroy(Z)V
     .locals 0
 
-    iput-boolean p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->r:Z
-
-    return-void
-.end method
-
-.method public setIsForegroundClickInvalidated(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->y:Z
-
-    return-void
-.end method
-
-.method public setParentDialog(Ljava/lang/ref/WeakReference;)V
-    .locals 0
-
-    iput-object p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->o:Ljava/lang/ref/WeakReference;
+    iput-boolean p1, p0, Lcom/applovin/impl/adview/AdViewControllerImpl;->p:Z
 
     return-void
 .end method

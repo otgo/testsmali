@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 211
+    .line 162
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .locals 0
 
     .prologue
-    .line 212
+    .line 163
     return-void
 .end method
 
@@ -44,37 +44,37 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 214
+    .line 165
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v1, "------------------ onDisconnectedFromRoom -----------------------"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 216
+    .line 167
     sput-object v2, Lcom/warlings2/googleservices;->room:Lcom/google/android/gms/games/multiplayer/realtime/Room;
 
-    .line 217
+    .line 168
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    invoke-static {v0}, Lcom/warlings2/googleservices;->access$102(Ljava/util/HashMap;)Ljava/util/HashMap;
+    invoke-static {v0}, Lcom/warlings2/googleservices;->access$002(Ljava/util/HashMap;)Ljava/util/HashMap;
 
-    .line 218
+    .line 169
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lcom/warlings2/googleservices;->access$202(Z)Z
+    invoke-static {v0}, Lcom/warlings2/googleservices;->access$102(Z)Z
 
-    .line 219
+    .line 170
     sput-object v2, Lcom/warlings2/googleservices;->other_player_participant_id:Ljava/lang/String;
 
-    .line 220
+    .line 171
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/warlings2/googleservices;->is_room_connected:Z
 
-    .line 222
+    .line 173
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .locals 0
 
     .prologue
-    .line 223
+    .line 174
     return-void
 .end method
 
@@ -90,14 +90,14 @@
     .locals 2
 
     .prologue
-    .line 225
+    .line 176
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v1, "[Warlings] onP2PDisconnected"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 226
+    .line 177
     return-void
 .end method
 
@@ -117,26 +117,26 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 229
+    .line 180
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v1, "------------------ onPeerDeclined -----------------------"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 230
+    .line 181
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v1, "--- googleservices__leave_room ---"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 231
+    .line 182
     sget-object v0, Lcom/warlings2/googleservices;->room:Lcom/google/android/gms/games/multiplayer/realtime/Room;
 
     if-eqz v0, :cond_0
 
-    .line 232
+    .line 183
     sget-object v0, Lcom/google/android/gms/games/Games;->RealTimeMultiplayer:Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;
 
     sget-object v1, Lcom/warlings2/googleservices;->client:Lcom/google/android/gms/common/api/GoogleApiClient;
@@ -149,31 +149,31 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;->leave(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/games/multiplayer/realtime/RoomUpdateListener;Ljava/lang/String;)V
 
-    .line 235
+    .line 186
     :cond_0
     sput-object v4, Lcom/warlings2/googleservices;->room:Lcom/google/android/gms/games/multiplayer/realtime/Room;
 
-    .line 236
+    .line 187
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    invoke-static {v0}, Lcom/warlings2/googleservices;->access$102(Ljava/util/HashMap;)Ljava/util/HashMap;
+    invoke-static {v0}, Lcom/warlings2/googleservices;->access$002(Ljava/util/HashMap;)Ljava/util/HashMap;
 
-    .line 237
+    .line 188
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lcom/warlings2/googleservices;->access$202(Z)Z
+    invoke-static {v0}, Lcom/warlings2/googleservices;->access$102(Z)Z
 
-    .line 238
+    .line 189
     sput-object v4, Lcom/warlings2/googleservices;->other_player_participant_id:Ljava/lang/String;
 
-    .line 239
+    .line 190
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/warlings2/googleservices;->is_room_connected:Z
 
-    .line 240
+    .line 191
     return-void
 .end method
 
@@ -191,7 +191,7 @@
     .end annotation
 
     .prologue
-    .line 242
+    .line 193
     return-void
 .end method
 
@@ -209,7 +209,7 @@
     .end annotation
 
     .prologue
-    .line 243
+    .line 194
     return-void
 .end method
 
@@ -229,19 +229,19 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 245
+    .line 196
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v1, "------------------ onPeerLeft -----------------------"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 246
+    .line 197
     sget-object v0, Lcom/warlings2/googleservices;->room:Lcom/google/android/gms/games/multiplayer/realtime/Room;
 
     if-eqz v0, :cond_0
 
-    .line 247
+    .line 198
     sget-object v0, Lcom/google/android/gms/games/Games;->RealTimeMultiplayer:Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;
 
     sget-object v1, Lcom/warlings2/googleservices;->client:Lcom/google/android/gms/common/api/GoogleApiClient;
@@ -254,31 +254,31 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;->leave(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/games/multiplayer/realtime/RoomUpdateListener;Ljava/lang/String;)V
 
-    .line 250
+    .line 201
     :cond_0
     sput-object v4, Lcom/warlings2/googleservices;->room:Lcom/google/android/gms/games/multiplayer/realtime/Room;
 
-    .line 251
+    .line 202
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    invoke-static {v0}, Lcom/warlings2/googleservices;->access$102(Ljava/util/HashMap;)Ljava/util/HashMap;
+    invoke-static {v0}, Lcom/warlings2/googleservices;->access$002(Ljava/util/HashMap;)Ljava/util/HashMap;
 
-    .line 252
+    .line 203
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lcom/warlings2/googleservices;->access$202(Z)Z
+    invoke-static {v0}, Lcom/warlings2/googleservices;->access$102(Z)Z
 
-    .line 253
+    .line 204
     sput-object v4, Lcom/warlings2/googleservices;->other_player_participant_id:Ljava/lang/String;
 
-    .line 254
+    .line 205
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/warlings2/googleservices;->is_room_connected:Z
 
-    .line 255
+    .line 206
     return-void
 .end method
 
@@ -296,7 +296,7 @@
     .end annotation
 
     .prologue
-    .line 257
+    .line 208
     return-void
 .end method
 
@@ -316,19 +316,19 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 259
+    .line 210
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v1, "------------------ onPeersDisconnected -----------------------"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 260
+    .line 211
     sget-object v0, Lcom/warlings2/googleservices;->room:Lcom/google/android/gms/games/multiplayer/realtime/Room;
 
     if-eqz v0, :cond_0
 
-    .line 261
+    .line 212
     sget-object v0, Lcom/google/android/gms/games/Games;->RealTimeMultiplayer:Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;
 
     sget-object v1, Lcom/warlings2/googleservices;->client:Lcom/google/android/gms/common/api/GoogleApiClient;
@@ -341,31 +341,31 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;->leave(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/games/multiplayer/realtime/RoomUpdateListener;Ljava/lang/String;)V
 
-    .line 264
+    .line 215
     :cond_0
     sput-object v4, Lcom/warlings2/googleservices;->room:Lcom/google/android/gms/games/multiplayer/realtime/Room;
 
-    .line 265
+    .line 216
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    invoke-static {v0}, Lcom/warlings2/googleservices;->access$102(Ljava/util/HashMap;)Ljava/util/HashMap;
+    invoke-static {v0}, Lcom/warlings2/googleservices;->access$002(Ljava/util/HashMap;)Ljava/util/HashMap;
 
-    .line 266
+    .line 217
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lcom/warlings2/googleservices;->access$202(Z)Z
+    invoke-static {v0}, Lcom/warlings2/googleservices;->access$102(Z)Z
 
-    .line 267
+    .line 218
     sput-object v4, Lcom/warlings2/googleservices;->other_player_participant_id:Ljava/lang/String;
 
-    .line 268
+    .line 219
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/warlings2/googleservices;->is_room_connected:Z
 
-    .line 269
+    .line 220
     return-void
 .end method
 
@@ -373,7 +373,7 @@
     .locals 0
 
     .prologue
-    .line 270
+    .line 221
     return-void
 .end method
 
@@ -381,6 +381,6 @@
     .locals 0
 
     .prologue
-    .line 271
+    .line 222
     return-void
 .end method

@@ -21,7 +21,7 @@
     .locals 0
 
     .prologue
-    .line 68
+    .line 66
     iput-object p1, p0, Lcom/unity3d/ads/android/unity3d/b;->d:Lcom/unity3d/ads/android/unity3d/UnityAdsUnityWrapper;
 
     iput p2, p0, Lcom/unity3d/ads/android/unity3d/b;->a:I
@@ -41,12 +41,12 @@
     .locals 3
 
     .prologue
-    .line 71
+    .line 69
     iget v0, p0, Lcom/unity3d/ads/android/unity3d/b;->a:I
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->setLogLevel(I)V
 
-    .line 72
+    .line 70
     iget-object v0, p0, Lcom/unity3d/ads/android/unity3d/b;->d:Lcom/unity3d/ads/android/unity3d/UnityAdsUnityWrapper;
 
     invoke-static {v0}, Lcom/unity3d/ads/android/unity3d/UnityAdsUnityWrapper;->a(Lcom/unity3d/ads/android/unity3d/UnityAdsUnityWrapper;)Z
@@ -55,7 +55,7 @@
 
     invoke-static {v0}, Lcom/unity3d/ads/android/UnityAds;->setTestMode(Z)V
 
-    .line 73
+    .line 71
     iget-object v0, p0, Lcom/unity3d/ads/android/unity3d/b;->b:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -64,12 +64,12 @@
 
     if-lez v0, :cond_0
 
-    .line 74
+    .line 72
     iget-object v0, p0, Lcom/unity3d/ads/android/unity3d/b;->b:Ljava/lang/String;
 
     sput-object v0, Lcom/unity3d/ads/android/properties/UnityAdsProperties;->UNITY_VERSION:Ljava/lang/String;
 
-    .line 76
+    .line 74
     :cond_0
     iget-object v0, p0, Lcom/unity3d/ads/android/unity3d/b;->d:Lcom/unity3d/ads/android/unity3d/UnityAdsUnityWrapper;
 
@@ -87,6 +87,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/unity3d/ads/android/UnityAds;->init(Landroid/app/Activity;Ljava/lang/String;Lcom/unity3d/ads/android/IUnityAdsListener;)V
 
-    .line 77
+    .line 75
     return-void
 .end method

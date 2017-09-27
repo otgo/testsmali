@@ -3,9 +3,9 @@
 .source "LoaderView.java"
 
 # interfaces
-.implements Landroid/view/SurfaceHolder$Callback;
 .implements Landroid/content/DialogInterface$OnClickListener;
 .implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Landroid/view/SurfaceHolder$Callback;
 
 
 # annotations

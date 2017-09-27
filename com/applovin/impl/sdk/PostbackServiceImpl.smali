@@ -31,73 +31,6 @@
 
 # virtual methods
 .method public dispatchPostbackAsync(Ljava/lang/String;Lcom/applovin/sdk/AppLovinPostbackListener;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0, p2}, Lcom/applovin/impl/sdk/PostbackServiceImpl;->dispatchPostbackAsync(Ljava/lang/String;Ljava/util/Map;Lcom/applovin/sdk/AppLovinPostbackListener;)V
-
-    return-void
-.end method
-
-.method public dispatchPostbackAsync(Ljava/lang/String;Ljava/util/Map;IIILcom/applovin/sdk/AppLovinPostbackListener;)V
-    .locals 3
-
-    invoke-static {p1}, Lcom/applovin/sdk/AppLovinSdkUtils;->isValidString(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    new-instance v0, Lcom/applovin/impl/sdk/ck;
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/PostbackServiceImpl;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-direct {v0, v1, p1, p2, p6}, Lcom/applovin/impl/sdk/ck;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/lang/String;Ljava/util/Map;Lcom/applovin/sdk/AppLovinPostbackListener;)V
-
-    invoke-virtual {v0, p4}, Lcom/applovin/impl/sdk/ck;->b(I)V
-
-    invoke-virtual {v0, p3}, Lcom/applovin/impl/sdk/ck;->a(I)V
-
-    invoke-virtual {v0, p5}, Lcom/applovin/impl/sdk/ck;->c(I)V
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/PostbackServiceImpl;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a()Lcom/applovin/impl/sdk/cq;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/applovin/impl/sdk/cr;->c:Lcom/applovin/impl/sdk/cr;
-
-    invoke-virtual {v1, v0, v2}, Lcom/applovin/impl/sdk/cq;->a(Lcom/applovin/impl/sdk/bv;Lcom/applovin/impl/sdk/cr;)V
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/applovin/impl/sdk/PostbackServiceImpl;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
-
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getLogger()Lcom/applovin/sdk/AppLovinLogger;
-
-    move-result-object v0
-
-    const-string v1, "PostbackService"
-
-    const-string v2, "Requested a postback dispatch for an empty URL; nothing to do..."
-
-    invoke-interface {v0, v1, v2}, Lcom/applovin/sdk/AppLovinLogger;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    if-eqz p6, :cond_0
-
-    const/16 v0, -0x384
-
-    invoke-interface {p6, p1, v0}, Lcom/applovin/sdk/AppLovinPostbackListener;->onPostbackFailure(Ljava/lang/String;I)V
-
-    goto :goto_0
-.end method
-
-.method public dispatchPostbackAsync(Ljava/lang/String;Ljava/util/Map;Lcom/applovin/sdk/AppLovinPostbackListener;)V
     .locals 3
 
     invoke-static {p1}, Lcom/applovin/sdk/AppLovinSdkUtils;->isValidString(Ljava/lang/String;)Z
@@ -122,25 +55,25 @@
     return-void
 
     :cond_0
-    new-instance v0, Lcom/applovin/impl/sdk/ck;
+    new-instance v0, Lcom/applovin/impl/sdk/cd;
 
     iget-object v1, p0, Lcom/applovin/impl/sdk/PostbackServiceImpl;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    new-instance v2, Lcom/applovin/impl/sdk/bp;
+    new-instance v2, Lcom/applovin/impl/sdk/bl;
 
-    invoke-direct {v2, p0, p3}, Lcom/applovin/impl/sdk/bp;-><init>(Lcom/applovin/impl/sdk/PostbackServiceImpl;Lcom/applovin/sdk/AppLovinPostbackListener;)V
+    invoke-direct {v2, p0, p2}, Lcom/applovin/impl/sdk/bl;-><init>(Lcom/applovin/impl/sdk/PostbackServiceImpl;Lcom/applovin/sdk/AppLovinPostbackListener;)V
 
-    invoke-direct {v0, v1, p1, p2, v2}, Lcom/applovin/impl/sdk/ck;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/lang/String;Ljava/util/Map;Lcom/applovin/sdk/AppLovinPostbackListener;)V
+    invoke-direct {v0, v1, p1, v2}, Lcom/applovin/impl/sdk/cd;-><init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/lang/String;Lcom/applovin/sdk/AppLovinPostbackListener;)V
 
     iget-object v1, p0, Lcom/applovin/impl/sdk/PostbackServiceImpl;->a:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a()Lcom/applovin/impl/sdk/cq;
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->a()Lcom/applovin/impl/sdk/cj;
 
     move-result-object v1
 
-    sget-object v2, Lcom/applovin/impl/sdk/cr;->c:Lcom/applovin/impl/sdk/cr;
+    sget-object v2, Lcom/applovin/impl/sdk/ck;->c:Lcom/applovin/impl/sdk/ck;
 
-    invoke-virtual {v1, v0, v2}, Lcom/applovin/impl/sdk/cq;->a(Lcom/applovin/impl/sdk/bv;Lcom/applovin/impl/sdk/cr;)V
+    invoke-virtual {v1, v0, v2}, Lcom/applovin/impl/sdk/cj;->a(Lcom/applovin/impl/sdk/bq;Lcom/applovin/impl/sdk/ck;)V
 
     goto :goto_0
 .end method

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/media/MediaPlayer$OnCompletionListener;
+.implements Landroid/media/MediaPlayer$OnErrorListener;
 
 
 # instance fields
@@ -22,18 +22,22 @@
 
 
 # virtual methods
-.method public onCompletion(Landroid/media/MediaPlayer;)V
+.method public onError(Landroid/media/MediaPlayer;II)Z
     .locals 2
 
     iget-object v0, p0, Lcom/applovin/adview/k;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    const/4 v1, 0x1
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->d(Lcom/applovin/adview/AppLovinInterstitialActivity;)Landroid/os/Handler;
 
-    invoke-static {v0, v1}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(Lcom/applovin/adview/AppLovinInterstitialActivity;Z)Z
+    move-result-object v0
 
-    iget-object v0, p0, Lcom/applovin/adview/k;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
+    new-instance v1, Lcom/applovin/adview/l;
 
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->j(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    invoke-direct {v1, p0, p2, p3}, Lcom/applovin/adview/l;-><init>(Lcom/applovin/adview/k;II)V
 
-    return-void
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    const/4 v0, 0x1
+
+    return v0
 .end method

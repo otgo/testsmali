@@ -6,7 +6,11 @@
 # static fields
 .field public static final CACHE_DIR_NAME:Ljava/lang/String; = "UnityAdsVideoCache"
 
-.field public static final PENDING_REQUESTS_FILENAME:Ljava/lang/String; = "UnityAds-pendingrequests.dat"
+.field public static final CACHE_MANIFEST_FILENAME:Ljava/lang/String; = "manifest.json"
+
+.field public static final LOG_NAME:Ljava/lang/String; = "UnityAds"
+
+.field public static final PENDING_REQUESTS_FILENAME:Ljava/lang/String; = "pendingrequests.dat"
 
 .field public static final UNITY_ADS_ANALYTICS_EVENTTYPE_VIDEOERROR:Ljava/lang/String; = "videoError"
 
@@ -37,6 +41,8 @@
 .field public static final UNITY_ADS_CAMPAIGN_APPFILTERING_KEY:Ljava/lang/String; = "appFiltering"
 
 .field public static final UNITY_ADS_CAMPAIGN_APP_WHITELIST_URL:Ljava/lang/String; = "appWhitelist"
+
+.field public static final UNITY_ADS_CAMPAIGN_BYPASSAPPSHEET_KEY:Ljava/lang/String; = "bypassAppSheet"
 
 .field public static final UNITY_ADS_CAMPAIGN_CACHE_VIDEO_KEY:Ljava/lang/String; = "cacheVideo"
 
@@ -108,6 +114,8 @@
 
 .field public static final UNITY_ADS_INIT_QUERYPARAM_HARDWAREVERSION_KEY:Ljava/lang/String; = "hardwareVersion"
 
+.field public static final UNITY_ADS_INIT_QUERYPARAM_MACADDRESS_KEY:Ljava/lang/String; = "macAddress"
+
 .field public static final UNITY_ADS_INIT_QUERYPARAM_PLATFORM_KEY:Ljava/lang/String; = "platform"
 
 .field public static final UNITY_ADS_INIT_QUERYPARAM_RAWADVERTISINGTRACKINGID_KEY:Ljava/lang/String; = "rawAdvertisingTrackingId"
@@ -132,11 +140,13 @@
 
 .field public static final UNITY_ADS_JSON_DATA_ROOTKEY:Ljava/lang/String; = "data"
 
-.field public static final UNITY_ADS_LOCALFILE_PREFIX:Ljava/lang/String; = "UnityAds-"
-
 .field public static final UNITY_ADS_NATIVEEVENT_CAMPAIGNID_KEY:Ljava/lang/String; = "campaignId"
 
+.field public static final UNITY_ADS_NATIVEEVENT_HIDESPINNER:Ljava/lang/String; = "hideSpinner"
+
 .field public static final UNITY_ADS_NATIVEEVENT_SHOWERROR:Ljava/lang/String; = "showError"
+
+.field public static final UNITY_ADS_NATIVEEVENT_SHOWSPINNER:Ljava/lang/String; = "showSpinner"
 
 .field public static final UNITY_ADS_NATIVEEVENT_VIDEOCOMPLETED:Ljava/lang/String; = "videoCompleted"
 
@@ -164,7 +174,7 @@
 
 .field public static final UNITY_ADS_URL_KEY:Ljava/lang/String; = "impactUrl"
 
-.field public static final UNITY_ADS_VERSION:Ljava/lang/String; = "1502"
+.field public static final UNITY_ADS_VERSION:Ljava/lang/String; = "1407"
 
 .field public static final UNITY_ADS_WEBVIEW_API_ACTION_KEY:Ljava/lang/String; = "action"
 
@@ -239,6 +249,8 @@
 .field public static final UNITY_ADS_WEBVIEW_VIEWTYPE_COMPLETED:Ljava/lang/String; = "completed"
 
 .field public static final UNITY_ADS_WEBVIEW_VIEWTYPE_NONE:Ljava/lang/String; = "none"
+
+.field public static final UNITY_ADS_WEBVIEW_VIEWTYPE_START:Ljava/lang/String; = "start"
 
 .field public static final UNITY_ADS_ZONES_KEY:Ljava/lang/String; = "zones"
 

@@ -1,111 +1,99 @@
-.class final synthetic Lcom/unity3d/ads/android/d;
+.class final Lcom/unity3d/ads/android/d;
 .super Ljava/lang/Object;
-.source "UnityAdsDeviceLog.java"
+.source "UnityAds.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field static final synthetic a:[I
+# instance fields
+.field final synthetic a:Lcom/unity3d/ads/android/c;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>(Lcom/unity3d/ads/android/c;)V
+    .locals 0
+
+    .prologue
+    .line 955
+    iput-object p1, p0, Lcom/unity3d/ads/android/d;->a:Lcom/unity3d/ads/android/c;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
     .locals 3
 
     .prologue
-    .line 118
-    invoke-static {}, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->values()[Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;
+    .line 957
+    sget-object v0, Lcom/unity3d/ads/android/UnityAds;->mainview:Lcom/unity3d/ads/android/view/UnityAdsMainView;
+
+    if-eqz v0, :cond_2
+
+    .line 958
+    sget-object v0, Lcom/unity3d/ads/android/UnityAds;->mainview:Lcom/unity3d/ads/android/view/UnityAdsMainView;
+
+    iget-object v1, p0, Lcom/unity3d/ads/android/d;->a:Lcom/unity3d/ads/android/c;
+
+    iget-object v1, v1, Lcom/unity3d/ads/android/c;->a:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/unity3d/ads/android/d;->a:Lcom/unity3d/ads/android/c;
+
+    iget-object v2, v2, Lcom/unity3d/ads/android/c;->b:Lorg/json/JSONObject;
+
+    invoke-virtual {v0, v1, v2}, Lcom/unity3d/ads/android/view/UnityAdsMainView;->openAds(Ljava/lang/String;Lorg/json/JSONObject;)V
+
+    .line 960
+    invoke-static {}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData;->getZoneManager()Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;
 
     move-result-object v0
 
-    array-length v0, v0
+    invoke-virtual {v0}, Lcom/unity3d/ads/android/zone/UnityAdsZoneManager;->getCurrentZone()Lcom/unity3d/ads/android/zone/UnityAdsZone;
 
-    new-array v0, v0, [I
+    move-result-object v0
 
-    sput-object v0, Lcom/unity3d/ads/android/d;->a:[I
+    .line 961
+    invoke-virtual {v0}, Lcom/unity3d/ads/android/zone/UnityAdsZone;->noOfferScreen()Z
 
-    :try_start_0
-    sget-object v0, Lcom/unity3d/ads/android/d;->a:[I
+    move-result v0
 
-    sget-object v1, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->INFO:Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->ordinal()I
+    .line 962
+    invoke-static {}, Lcom/unity3d/ads/android/UnityAds;->c()V
 
-    move-result v1
+    .line 965
+    :cond_0
+    invoke-static {}, Lcom/unity3d/ads/android/UnityAds;->d()Lcom/unity3d/ads/android/IUnityAdsListener;
 
-    const/4 v2, 0x1
+    move-result-object v0
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_3
+    if-eqz v0, :cond_1
 
+    .line 966
+    invoke-static {}, Lcom/unity3d/ads/android/UnityAds;->d()Lcom/unity3d/ads/android/IUnityAdsListener;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/unity3d/ads/android/IUnityAdsListener;->onShow()V
+
+    .line 971
+    :cond_1
     :goto_0
-    :try_start_1
-    sget-object v0, Lcom/unity3d/ads/android/d;->a:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->DEBUG:Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_2
-
-    :goto_1
-    :try_start_2
-    sget-object v0, Lcom/unity3d/ads/android/d;->a:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->WARNING:Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_1
-
-    :goto_2
-    :try_start_3
-    sget-object v0, Lcom/unity3d/ads/android/d;->a:[I
-
-    sget-object v1, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->ERROR:Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;
-
-    invoke-virtual {v1}, Lcom/unity3d/ads/android/UnityAdsDeviceLog$UnityAdsLogLevel;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_0
-
-    :goto_3
     return-void
 
-    :catch_0
-    move-exception v0
+    .line 968
+    :cond_2
+    const-string v0, "mainview null after open, closing"
 
-    goto :goto_3
+    invoke-static {v0}, Lcom/unity3d/ads/android/UnityAdsDeviceLog;->error(Ljava/lang/String;)V
 
-    :catch_1
-    move-exception v0
-
-    goto :goto_2
-
-    :catch_2
-    move-exception v0
-
-    goto :goto_1
-
-    :catch_3
-    move-exception v0
+    .line 969
+    invoke-static {}, Lcom/unity3d/ads/android/UnityAds;->e()V
 
     goto :goto_0
 .end method

@@ -1,189 +1,129 @@
 .class public final Lcom/purplebrain/adbuddiz/sdk/h/c;
-.super Lcom/purplebrain/adbuddiz/sdk/h/a;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field public e:Lcom/purplebrain/adbuddiz/sdk/f/a/a;
+# static fields
+.field private static a:Ljava/lang/String;
 
-.field public f:Ljava/lang/String;
+.field private static b:Ljava/lang/String;
+
+.field private static c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Lcom/purplebrain/adbuddiz/sdk/h/a;-><init>()V
+    const-string v0, "iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowQzY2QjlGRDlFNjIxMUU0OTU4Q0EwMTQwODk2RTZFQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowQzY2QjlGRTlFNjIxMUU0OTU4Q0EwMTQwODk2RTZFQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBDNjZCOUZCOUU2MjExRTQ5NThDQTAxNDA4OTZFNkVDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBDNjZCOUZDOUU2MjExRTQ5NThDQTAxNDA4OTZFNkVDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+h8ktDgAAESpJREFUeNrMmgeM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"
+
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/h/c;->a:Ljava/lang/String;
+
+    const-string v0, "iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMTgwMTE3NDA3MjA2ODExODIyQUZBQzcyRTg2MTRBQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowQzY2QjlGQTlFNjIxMUU0OTU4Q0EwMTQwODk2RTZFQyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowQzY2QjlGOTlFNjIxMUU0OTU4Q0EwMTQwODk2RTZFQyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Rjc3RjExNzQwNzIwNjgxMTgzRDFFREVDRTlCMUM2OTkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDE4MDExNzQwNzIwNjgxMTgyMkFGQUM3MkU4NjE0QUMiLz4gPC9yZGY6RGVzY3Jp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"
+
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/h/c;->b:Ljava/lang/String;
+
+    const-string v0, "iVBORw0KGgoAAAANSUhEUgAAADwAAAA9CAYAAADxoArXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMTgwMTE3NDA3MjA2ODExODIyQUZBQzcyRTg2MTRBQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGQTEzMjREQ0VGRTcxMUU0OTJCREQ5OTNDODE4MzIwNyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGQTEzMjREQkVGRTcxMUU0OTJCREQ5OTNDODE4MzIwNyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Rjc3RjExNzQwNzIwNjgxMTgzRDFFREVDRTlCMUM2OTkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDE4MDExNzQwNzIwNjgxMTgyMkFGQUM3MkU4NjE0QUMiLz4gPC9yZGY6RGVzY3Jp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"
+
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/h/c;->c:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public static a()Landroid/graphics/Bitmap;
+    .locals 3
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
-# virtual methods
-.method protected final c()V
-    .locals 8
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/h/c;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/d;->a([C)[B
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
-    :try_start_0
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/i/w;->g()Ljava/net/URL;
+    array-length v2, v0
+
+    invoke-static {v0, v1, v2}, Landroid/graphics/BitmapFactory;->decodeByteArray([BII)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/AdBuddiz;->getContext()Landroid/content/Context;
+    const/16 v1, 0x168
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Landroid/graphics/Bitmap;->setDensity(I)V
 
-    new-instance v3, Lorg/json/JSONObject;
-
-    invoke-direct {v3}, Lorg/json/JSONObject;-><init>()V
-
-    const-string v4, "a"
-
-    new-instance v5, Lcom/purplebrain/adbuddiz/sdk/h/a/a$a;
-
-    invoke-direct {v5}, Lcom/purplebrain/adbuddiz/sdk/h/a/a$a;-><init>()V
-
-    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/h/a/a$a;->a(Landroid/content/Context;)Lcom/purplebrain/adbuddiz/sdk/h/a/a;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/h/a/a;->a()Lorg/json/JSONObject;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v4, "d"
-
-    new-instance v5, Lcom/purplebrain/adbuddiz/sdk/h/a/b$a;
-
-    invoke-direct {v5}, Lcom/purplebrain/adbuddiz/sdk/h/a/b$a;-><init>()V
-
-    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/h/a/b$a;->a(Landroid/content/Context;)Lcom/purplebrain/adbuddiz/sdk/h/a/b;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/h/a/b;->a()Lorg/json/JSONObject;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v4, "s"
-
-    new-instance v5, Lcom/purplebrain/adbuddiz/sdk/h/a/d$a;
-
-    invoke-direct {v5}, Lcom/purplebrain/adbuddiz/sdk/h/a/d$a;-><init>()V
-
-    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/h/a/d$a;->a(Landroid/content/Context;)Lcom/purplebrain/adbuddiz/sdk/h/a/d;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/h/a/d;->a()Lorg/json/JSONObject;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v4, "p"
-
-    iget-object v5, p0, Lcom/purplebrain/adbuddiz/sdk/h/c;->f:Ljava/lang/String;
-
-    invoke-virtual {v3, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v4, "or"
-
-    invoke-static {}, Lcom/purplebrain/adbuddiz/sdk/i/a/d;->a()Lcom/purplebrain/adbuddiz/sdk/f/e;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/purplebrain/adbuddiz/sdk/f/e;->name()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v4, "t"
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v6
-
-    invoke-virtual {v3, v4, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
-
-    iget-object v4, p0, Lcom/purplebrain/adbuddiz/sdk/h/c;->e:Lcom/purplebrain/adbuddiz/sdk/f/a/a;
-
-    invoke-virtual {v4, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/f/a/a;->a(Landroid/content/Context;Lorg/json/JSONObject;)V
-
-    invoke-virtual {v3}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v0, v2}, Lcom/purplebrain/adbuddiz/sdk/h/c;->b(Ljava/net/URL;Ljava/lang/String;)Ljava/net/HttpURLConnection;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
-
-    move-result v0
-
-    const/16 v2, 0x1f4
-
-    if-lt v0, v2, :cond_1
-
-    new-instance v2, Lcom/purplebrain/adbuddiz/sdk/h/k;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Server Error : "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v2, v0}, Lcom/purplebrain/adbuddiz/sdk/h/k;-><init>(Ljava/lang/String;)V
-
-    throw v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception v0
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
-
-    :cond_0
-    throw v0
-
-    :cond_1
-    if-eqz v1, :cond_2
-
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
-
-    :cond_2
-    return-void
+    return-object v0
 .end method
 
-.method protected final d()Z
-    .locals 1
+.method public static b()Landroid/graphics/Bitmap;
+    .locals 3
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
-    const/4 v0, 0x0
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/h/c;->b:Ljava/lang/String;
 
-    return v0
+    invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/d;->a([C)[B
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    array-length v2, v0
+
+    invoke-static {v0, v1, v2}, Landroid/graphics/BitmapFactory;->decodeByteArray([BII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    const/16 v1, 0x168
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Bitmap;->setDensity(I)V
+
+    return-object v0
 .end method
 
-.method protected final e()Ljava/lang/String;
-    .locals 1
+.method public static c()Landroid/graphics/Bitmap;
+    .locals 3
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "NewApi"
+        }
+    .end annotation
 
-    const-string v0, "AdClick"
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/h/c;->c:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/purplebrain/adbuddiz/sdk/h/d;->a([C)[B
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    array-length v2, v0
+
+    invoke-static {v0, v1, v2}, Landroid/graphics/BitmapFactory;->decodeByteArray([BII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    const/16 v1, 0x168
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Bitmap;->setDensity(I)V
 
     return-object v0
 .end method

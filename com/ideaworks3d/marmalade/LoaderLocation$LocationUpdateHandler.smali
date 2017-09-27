@@ -3,8 +3,8 @@
 .source "LoaderLocation.java"
 
 # interfaces
-.implements Landroid/location/LocationListener;
 .implements Landroid/location/GpsStatus$Listener;
+.implements Landroid/location/LocationListener;
 
 
 # annotations

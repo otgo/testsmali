@@ -311,24 +311,24 @@
     .locals 4
 
     .prologue
-    .line 163
+    .line 158
     invoke-virtual {p0, p1}, Lcom/jirbo/adcolony/h;->a(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 164
+    .line 159
     div-int/lit8 v0, v0, 0x2
 
     sub-int v0, p2, v0
 
-    .line 166
+    .line 161
     sget-object v1, Lcom/jirbo/adcolony/h;->t:Landroid/graphics/Paint;
 
     const v2, -0xf0f10
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 167
+    .line 162
     add-int/lit8 v1, v0, 0x1
 
     int-to-float v1, v1
@@ -341,14 +341,14 @@
 
     invoke-virtual {p4, p1, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 168
+    .line 163
     sget-object v1, Lcom/jirbo/adcolony/h;->t:Landroid/graphics/Paint;
 
     const v2, -0x7f7f80
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 169
+    .line 164
     int-to-float v0, v0
 
     int-to-float v1, p3
@@ -357,7 +357,7 @@
 
     invoke-virtual {p4, p1, v0, v1, v2}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 170
+    .line 165
     return-void
 .end method
 
@@ -369,25 +369,25 @@
 
     const/4 v1, 0x0
 
-    .line 204
+    .line 199
     invoke-virtual {p0, p1}, Lcom/jirbo/adcolony/h;->a(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 205
+    .line 200
     const-string v0, ""
 
     sput-object v0, Lcom/jirbo/adcolony/h;->q:Ljava/lang/String;
 
-    .line 206
+    .line 201
     const-string v0, ""
 
     sput-object v0, Lcom/jirbo/adcolony/h;->r:Ljava/lang/String;
 
-    .line 207
+    .line 202
     const-string v0, ""
 
-    .line 210
+    .line 205
     iget-object v3, p0, Lcom/jirbo/adcolony/h;->a:Lcom/jirbo/adcolony/ADCImage;
 
     iget v3, v3, Lcom/jirbo/adcolony/ADCImage;->f:I
@@ -408,7 +408,7 @@
 
     if-le v2, v3, :cond_5
 
-    .line 213
+    .line 208
     sput-boolean v1, Lcom/jirbo/adcolony/h;->s:Z
 
     move v2, v1
@@ -417,7 +417,7 @@
 
     move v0, v1
 
-    .line 216
+    .line 211
     :goto_0
     iget-object v4, p0, Lcom/jirbo/adcolony/h;->a:Lcom/jirbo/adcolony/ADCImage;
 
@@ -439,7 +439,7 @@
 
     if-ge v0, v4, :cond_0
 
-    .line 218
+    .line 213
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -460,10 +460,10 @@
 
     move-result-object v3
 
-    .line 219
+    .line 214
     add-int/lit8 v2, v2, 0x1
 
-    .line 216
+    .line 211
     invoke-virtual {p0, v3}, Lcom/jirbo/adcolony/h;->a(Ljava/lang/String;)I
 
     move-result v0
@@ -475,11 +475,11 @@
 
     move v5, v1
 
-    .line 223
+    .line 218
     :goto_1
     if-ge v4, v2, :cond_3
 
-    .line 225
+    .line 220
     invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
@@ -490,7 +490,7 @@
 
     if-lt v4, v7, :cond_1
 
-    .line 228
+    .line 223
     invoke-virtual {p1, v1, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
@@ -499,7 +499,7 @@
 
     move v0, v4
 
-    .line 223
+    .line 218
     :goto_2
     add-int/lit8 v4, v4, 0x1
 
@@ -507,7 +507,7 @@
 
     goto :goto_1
 
-    .line 232
+    .line 227
     :cond_1
     if-ge v5, v7, :cond_2
 
@@ -527,7 +527,7 @@
 
     goto :goto_3
 
-    .line 235
+    .line 230
     :cond_3
     if-ge v5, v7, :cond_4
 
@@ -538,11 +538,11 @@
     :goto_4
     sput-object v0, Lcom/jirbo/adcolony/h;->r:Ljava/lang/String;
 
-    .line 244
+    .line 239
     :goto_5
     return-void
 
-    .line 235
+    .line 230
     :cond_4
     invoke-virtual {p1, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -550,16 +550,16 @@
 
     goto :goto_4
 
-    .line 239
+    .line 234
     :cond_5
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/jirbo/adcolony/h;->s:Z
 
-    .line 240
+    .line 235
     sput-object p1, Lcom/jirbo/adcolony/h;->q:Ljava/lang/String;
 
-    .line 241
+    .line 236
     const-string v0, ""
 
     sput-object v0, Lcom/jirbo/adcolony/h;->r:Ljava/lang/String;
@@ -967,19 +967,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 193
+    .line 188
     if-ge p1, p3, :cond_1
 
-    .line 197
+    .line 192
     :cond_0
     :goto_0
     return v0
 
-    .line 194
+    .line 189
     :cond_1
     if-lt p2, p4, :cond_0
 
-    .line 195
+    .line 190
     iget-object v1, p0, Lcom/jirbo/adcolony/h;->c:Lcom/jirbo/adcolony/ADCImage;
 
     iget v1, v1, Lcom/jirbo/adcolony/ADCImage;->f:I
@@ -988,7 +988,7 @@
 
     if-ge p1, v1, :cond_0
 
-    .line 196
+    .line 191
     iget-object v1, p0, Lcom/jirbo/adcolony/h;->c:Lcom/jirbo/adcolony/ADCImage;
 
     iget v1, v1, Lcom/jirbo/adcolony/ADCImage;->g:I
@@ -997,7 +997,7 @@
 
     if-ge p2, v1, :cond_0
 
-    .line 197
+    .line 192
     const/4 v0, 0x1
 
     goto :goto_0
@@ -1023,24 +1023,24 @@
     .locals 4
 
     .prologue
-    .line 174
+    .line 169
     invoke-virtual {p0, p1}, Lcom/jirbo/adcolony/h;->a(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 175
+    .line 170
     div-int/lit8 v0, v0, 0x2
 
     sub-int v0, p2, v0
 
-    .line 177
+    .line 172
     sget-object v1, Lcom/jirbo/adcolony/h;->t:Landroid/graphics/Paint;
 
     const v2, -0x7f7f80
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 178
+    .line 173
     add-int/lit8 v1, v0, 0x2
 
     int-to-float v1, v1
@@ -1053,14 +1053,14 @@
 
     invoke-virtual {p4, p1, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 179
+    .line 174
     sget-object v1, Lcom/jirbo/adcolony/h;->t:Landroid/graphics/Paint;
 
     const/4 v2, -0x1
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 180
+    .line 175
     int-to-float v0, v0
 
     int-to-float v1, p3
@@ -1069,76 +1069,22 @@
 
     invoke-virtual {p4, p1, v0, v1, v2}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 181
+    .line 176
     return-void
 .end method
 
-.method c()Landroid/view/ViewGroup;
-    .locals 1
-
-    .prologue
-    .line 158
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/h;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup;
-
-    return-object v0
-.end method
-
-.method c(Ljava/lang/String;IILandroid/graphics/Canvas;)V
-    .locals 3
-
-    .prologue
-    .line 185
-    iget-object v0, p0, Lcom/jirbo/adcolony/h;->c:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v0, v0, Lcom/jirbo/adcolony/ADCImage;->f:I
-
-    div-int/lit8 v0, v0, 0x2
-
-    add-int/2addr v0, p2
-
-    .line 186
-    iget-object v1, p0, Lcom/jirbo/adcolony/h;->c:Lcom/jirbo/adcolony/ADCImage;
-
-    iget v1, v1, Lcom/jirbo/adcolony/ADCImage;->g:I
-
-    div-int/lit8 v1, v1, 0x2
-
-    add-int/2addr v1, p3
-
-    .line 187
-    invoke-virtual {p0}, Lcom/jirbo/adcolony/h;->b()I
-
-    move-result v2
-
-    mul-int/lit8 v2, v2, 0x4
-
-    div-int/lit8 v2, v2, 0xa
-
-    add-int/2addr v1, v2
-
-    .line 188
-    invoke-virtual {p0, p1, v0, v1, p4}, Lcom/jirbo/adcolony/h;->b(Ljava/lang/String;IILandroid/graphics/Canvas;)V
-
-    .line 189
-    return-void
-.end method
-
-.method d()V
+.method c()V
     .locals 10
 
     .prologue
-    .line 248
+    .line 243
     iget-boolean v0, p0, Lcom/jirbo/adcolony/h;->n:Z
 
     if-eqz v0, :cond_0
 
     const-wide/high16 v0, 0x4028000000000000L    # 12.0
 
-    .line 249
+    .line 244
     :goto_0
     invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
 
@@ -1152,17 +1098,17 @@
 
     move-result-object v2
 
-    .line 250
+    .line 245
     invoke-virtual {v2}, Landroid/view/Display;->getWidth()I
 
     move-result v3
 
-    .line 251
+    .line 246
     invoke-virtual {v2}, Landroid/view/Display;->getHeight()I
 
     move-result v2
 
-    .line 253
+    .line 248
     iget-object v4, p0, Lcom/jirbo/adcolony/h;->a:Lcom/jirbo/adcolony/ADCImage;
 
     iget v4, v4, Lcom/jirbo/adcolony/ADCImage;->f:I
@@ -1173,7 +1119,7 @@
 
     iput v3, p0, Lcom/jirbo/adcolony/h;->x:I
 
-    .line 254
+    .line 249
     iget-object v3, p0, Lcom/jirbo/adcolony/h;->a:Lcom/jirbo/adcolony/ADCImage;
 
     iget v3, v3, Lcom/jirbo/adcolony/ADCImage;->g:I
@@ -1186,7 +1132,7 @@
 
     iput v2, p0, Lcom/jirbo/adcolony/h;->y:I
 
-    .line 255
+    .line 250
     iget v2, p0, Lcom/jirbo/adcolony/h;->x:I
 
     iget-object v3, p0, Lcom/jirbo/adcolony/h;->a:Lcom/jirbo/adcolony/ADCImage;
@@ -1199,7 +1145,7 @@
 
     iput v2, p0, Lcom/jirbo/adcolony/h;->z:I
 
-    .line 256
+    .line 251
     iget v2, p0, Lcom/jirbo/adcolony/h;->y:I
 
     iget-object v3, p0, Lcom/jirbo/adcolony/h;->a:Lcom/jirbo/adcolony/ADCImage;
@@ -1212,7 +1158,7 @@
 
     iput v2, p0, Lcom/jirbo/adcolony/h;->A:I
 
-    .line 258
+    .line 253
     iget v2, p0, Lcom/jirbo/adcolony/h;->y:I
 
     iget-object v3, p0, Lcom/jirbo/adcolony/h;->a:Lcom/jirbo/adcolony/ADCImage;
@@ -1241,7 +1187,7 @@
 
     iput v2, p0, Lcom/jirbo/adcolony/h;->D:I
 
-    .line 259
+    .line 254
     iget v2, p0, Lcom/jirbo/adcolony/h;->x:I
 
     sget-wide v4, Lcom/jirbo/adcolony/h;->p:D
@@ -1254,7 +1200,7 @@
 
     iput v2, p0, Lcom/jirbo/adcolony/h;->B:I
 
-    .line 260
+    .line 255
     iget v2, p0, Lcom/jirbo/adcolony/h;->x:I
 
     iget-object v3, p0, Lcom/jirbo/adcolony/h;->a:Lcom/jirbo/adcolony/ADCImage;
@@ -1283,12 +1229,52 @@
 
     iput v0, p0, Lcom/jirbo/adcolony/h;->C:I
 
-    .line 261
+    .line 256
     return-void
 
-    .line 248
+    .line 243
     :cond_0
     const-wide/high16 v0, 0x4030000000000000L    # 16.0
 
     goto :goto_0
+.end method
+
+.method c(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+    .locals 3
+
+    .prologue
+    .line 180
+    iget-object v0, p0, Lcom/jirbo/adcolony/h;->c:Lcom/jirbo/adcolony/ADCImage;
+
+    iget v0, v0, Lcom/jirbo/adcolony/ADCImage;->f:I
+
+    div-int/lit8 v0, v0, 0x2
+
+    add-int/2addr v0, p2
+
+    .line 181
+    iget-object v1, p0, Lcom/jirbo/adcolony/h;->c:Lcom/jirbo/adcolony/ADCImage;
+
+    iget v1, v1, Lcom/jirbo/adcolony/ADCImage;->g:I
+
+    div-int/lit8 v1, v1, 0x2
+
+    add-int/2addr v1, p3
+
+    .line 182
+    invoke-virtual {p0}, Lcom/jirbo/adcolony/h;->b()I
+
+    move-result v2
+
+    mul-int/lit8 v2, v2, 0x4
+
+    div-int/lit8 v2, v2, 0xa
+
+    add-int/2addr v1, v2
+
+    .line 183
+    invoke-virtual {p0, p1, v0, v1, p4}, Lcom/jirbo/adcolony/h;->b(Ljava/lang/String;IILandroid/graphics/Canvas;)V
+
+    .line 184
+    return-void
 .end method

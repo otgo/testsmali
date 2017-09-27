@@ -1,12 +1,14 @@
 .class public final Lcom/purplebrain/adbuddiz/sdk/b/h;
-.super Ljava/lang/Exception;
+.super Lcom/purplebrain/adbuddiz/sdk/b/e;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
+    sget-object v0, Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;->FORBIDDEN_RECEIVED_FROM_NETWORK:Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;
+
+    invoke-direct {p0, v0}, Lcom/purplebrain/adbuddiz/sdk/b/e;-><init>(Lcom/purplebrain/adbuddiz/sdk/AdBuddizError;)V
 
     return-void
 .end method

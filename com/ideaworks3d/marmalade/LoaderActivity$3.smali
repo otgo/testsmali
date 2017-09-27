@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 419
+    .line 422
     iput-object p1, p0, Lcom/ideaworks3d/marmalade/LoaderActivity$3;->this$0:Lcom/ideaworks3d/marmalade/LoaderActivity;
 
     iput-object p2, p0, Lcom/ideaworks3d/marmalade/LoaderActivity$3;->val$uri:Landroid/net/Uri;
@@ -54,19 +54,19 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 423
+    .line 426
     sget-object v0, Landroid/os/Build$VERSION;->SDK:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 424
+    .line 427
     const/16 v1, 0xb
 
     if-lt v0, v1, :cond_0
 
-    .line 427
+    .line 430
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/LoaderActivity$3;->val$uri:Landroid/net/Uri;
 
     iget-object v1, p0, Lcom/ideaworks3d/marmalade/LoaderActivity$3;->val$proj:[Ljava/lang/String;
@@ -75,11 +75,11 @@
 
     invoke-static {v0, v1, v2}, Lcom/ideaworks3d/marmalade/CursorLoaderHelper;->getCursor(Landroid/net/Uri;[Ljava/lang/String;Lcom/ideaworks3d/marmalade/LoaderActivity$CursorCompleteListener;)Z
 
-    .line 441
+    .line 444
     :goto_0
     return-void
 
-    .line 432
+    .line 435
     :cond_0
     iget-object v0, p0, Lcom/ideaworks3d/marmalade/LoaderActivity$3;->this$0:Lcom/ideaworks3d/marmalade/LoaderActivity;
 
@@ -95,7 +95,7 @@
 
     move-result-object v0
 
-    .line 439
+    .line 442
     iget-object v1, p0, Lcom/ideaworks3d/marmalade/LoaderActivity$3;->val$completeCallback:Lcom/ideaworks3d/marmalade/LoaderActivity$CursorCompleteListener;
 
     invoke-interface {v1, v0}, Lcom/ideaworks3d/marmalade/LoaderActivity$CursorCompleteListener;->cursorLoadComplete(Landroid/database/Cursor;)V

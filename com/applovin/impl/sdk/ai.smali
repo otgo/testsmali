@@ -8,16 +8,24 @@
 # instance fields
 .field final synthetic a:Lcom/applovin/sdk/AppLovinAd;
 
-.field final synthetic b:Lcom/applovin/impl/sdk/ae;
+.field final synthetic b:D
+
+.field final synthetic c:Z
+
+.field final synthetic d:Lcom/applovin/impl/sdk/ad;
 
 
 # direct methods
-.method constructor <init>(Lcom/applovin/impl/sdk/ae;Lcom/applovin/sdk/AppLovinAd;)V
-    .locals 0
+.method constructor <init>(Lcom/applovin/impl/sdk/ad;Lcom/applovin/sdk/AppLovinAd;DZ)V
+    .locals 1
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/ai;->b:Lcom/applovin/impl/sdk/ae;
+    iput-object p1, p0, Lcom/applovin/impl/sdk/ai;->d:Lcom/applovin/impl/sdk/ad;
 
     iput-object p2, p0, Lcom/applovin/impl/sdk/ai;->a:Lcom/applovin/sdk/AppLovinAd;
+
+    iput-wide p3, p0, Lcom/applovin/impl/sdk/ai;->b:D
+
+    iput-boolean p5, p0, Lcom/applovin/impl/sdk/ai;->c:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,17 +35,21 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 5
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/ai;->b:Lcom/applovin/impl/sdk/ae;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/ai;->d:Lcom/applovin/impl/sdk/ad;
 
-    invoke-static {v0}, Lcom/applovin/impl/sdk/ae;->d(Lcom/applovin/impl/sdk/ae;)Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
+    invoke-static {v0}, Lcom/applovin/impl/sdk/ad;->d(Lcom/applovin/impl/sdk/ad;)Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/applovin/impl/sdk/ai;->a:Lcom/applovin/sdk/AppLovinAd;
 
-    invoke-interface {v0, v1}, Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;->videoPlaybackBegan(Lcom/applovin/sdk/AppLovinAd;)V
+    iget-wide v2, p0, Lcom/applovin/impl/sdk/ai;->b:D
+
+    iget-boolean v4, p0, Lcom/applovin/impl/sdk/ai;->c:Z
+
+    invoke-interface {v0, v1, v2, v3, v4}, Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;->videoPlaybackEnded(Lcom/applovin/sdk/AppLovinAd;DZ)V
 
     return-void
 .end method

@@ -1,96 +1,204 @@
-.class public final Lcom/purplebrain/adbuddiz/sdk/i/a/a;
-.super Ljava/lang/Object;
+.class public final enum Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+.super Ljava/lang/Enum;
+
+
+# static fields
+.field public static final enum a:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+.field public static final enum b:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+.field public static final enum c:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+.field public static final enum d:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+.field public static final enum e:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+.field public static final enum f:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+.field public static final enum g:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+.field public static final enum h:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+.field public static final enum i:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+.field private static final synthetic k:[Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+
+# instance fields
+.field public j:I
 
 
 # direct methods
-.method public static a(Landroid/content/Context;Landroid/graphics/RectF;)Landroid/graphics/Rect;
-    .locals 8
+.method static constructor <clinit>()V
+    .locals 9
 
-    const-wide/high16 v6, 0x403a000000000000L    # 26.0
+    const/4 v8, 0x4
 
-    new-instance v0, Landroid/graphics/Rect;
+    const/4 v7, 0x3
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    const/4 v6, 0x2
 
-    invoke-static {p0}, Lcom/purplebrain/adbuddiz/sdk/i/a/m;->a(Landroid/content/Context;)Lcom/purplebrain/adbuddiz/sdk/i/a/m;
+    const/4 v5, 0x1
 
-    move-result-object v1
+    const/4 v4, 0x0
 
-    iget-wide v2, v1, Lcom/purplebrain/adbuddiz/sdk/i/a/m;->e:D
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    mul-double/2addr v2, v6
+    const-string v1, "XML_PARSING_ERROR"
 
-    iget v4, p1, Landroid/graphics/RectF;->left:F
+    const/16 v2, 0x64
 
-    float-to-double v4, v4
+    invoke-direct {v0, v1, v4, v2}, Lcom/purplebrain/adbuddiz/sdk/i/a/a;-><init>(Ljava/lang/String;II)V
 
-    mul-double/2addr v2, v4
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->a:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    double-to-int v2, v2
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    invoke-static {p0, v2}, Lcom/purplebrain/adbuddiz/sdk/i/a/k;->a(Landroid/content/Context;I)I
+    const-string v1, "TRAFFICKING_ERROR"
 
-    move-result v2
+    const/16 v2, 0xc8
 
-    iput v2, v0, Landroid/graphics/Rect;->left:I
+    invoke-direct {v0, v1, v5, v2}, Lcom/purplebrain/adbuddiz/sdk/i/a/a;-><init>(Ljava/lang/String;II)V
 
-    iget-wide v2, v1, Lcom/purplebrain/adbuddiz/sdk/i/a/m;->f:D
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->b:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    mul-double/2addr v2, v6
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    iget v4, p1, Landroid/graphics/RectF;->top:F
+    const-string v1, "EXPECTING_DIFFERENT_LINEARITY"
 
-    float-to-double v4, v4
+    const/16 v2, 0xc9
 
-    mul-double/2addr v2, v4
+    invoke-direct {v0, v1, v6, v2}, Lcom/purplebrain/adbuddiz/sdk/i/a/a;-><init>(Ljava/lang/String;II)V
 
-    double-to-int v2, v2
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->c:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    iget v3, v1, Lcom/purplebrain/adbuddiz/sdk/i/a/m;->g:I
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    add-int/2addr v2, v3
+    const-string v1, "GENERAL_WRAPPER_ERROR"
 
-    invoke-static {p0, v2}, Lcom/purplebrain/adbuddiz/sdk/i/a/k;->a(Landroid/content/Context;I)I
+    const/16 v2, 0x12c
 
-    move-result v2
+    invoke-direct {v0, v1, v7, v2}, Lcom/purplebrain/adbuddiz/sdk/i/a/a;-><init>(Ljava/lang/String;II)V
 
-    iput v2, v0, Landroid/graphics/Rect;->top:I
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->d:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    iget-wide v2, v1, Lcom/purplebrain/adbuddiz/sdk/i/a/m;->e:D
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    mul-double/2addr v2, v6
+    const-string v1, "WRAPPER_LIMIT_REACHED"
 
-    iget v4, p1, Landroid/graphics/RectF;->right:F
+    const/16 v2, 0x12e
 
-    float-to-double v4, v4
+    invoke-direct {v0, v1, v8, v2}, Lcom/purplebrain/adbuddiz/sdk/i/a/a;-><init>(Ljava/lang/String;II)V
 
-    mul-double/2addr v2, v4
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->e:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    double-to-int v2, v2
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    invoke-static {p0, v2}, Lcom/purplebrain/adbuddiz/sdk/i/a/k;->a(Landroid/content/Context;I)I
+    const-string v1, "NO_ADS_AFTER_WRAPPER"
 
-    move-result v2
+    const/4 v2, 0x5
 
-    iput v2, v0, Landroid/graphics/Rect;->right:I
+    const/16 v3, 0x12f
 
-    iget-wide v2, v1, Lcom/purplebrain/adbuddiz/sdk/i/a/m;->e:D
+    invoke-direct {v0, v1, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/i/a/a;-><init>(Ljava/lang/String;II)V
 
-    mul-double/2addr v2, v6
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->f:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    iget v1, p1, Landroid/graphics/RectF;->bottom:F
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    float-to-double v4, v1
+    const-string v1, "UNSUPPORTED_MEDIA_FILES"
 
-    mul-double/2addr v2, v4
+    const/4 v2, 0x6
 
-    double-to-int v1, v2
+    const/16 v3, 0x193
 
-    invoke-static {p0, v1}, Lcom/purplebrain/adbuddiz/sdk/i/a/k;->a(Landroid/content/Context;I)I
+    invoke-direct {v0, v1, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/i/a/a;-><init>(Ljava/lang/String;II)V
 
-    move-result v1
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->g:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    iput v1, v0, Landroid/graphics/Rect;->bottom:I
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    return-object v0
+    const-string v1, "PROBLEM_DISPLAYING_MEDIA_FILE"
+
+    const/4 v2, 0x7
+
+    const/16 v3, 0x195
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/i/a/a;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->h:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    const-string v1, "UNDEFINED_ERROR"
+
+    const/16 v2, 0x8
+
+    const/16 v3, 0x384
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/purplebrain/adbuddiz/sdk/i/a/a;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->i:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    const/16 v0, 0x9
+
+    new-array v0, v0, [Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->a:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->b:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->c:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    aput-object v1, v0, v6
+
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->d:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    aput-object v1, v0, v7
+
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->e:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    aput-object v1, v0, v8
+
+    const/4 v1, 0x5
+
+    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->f:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->g:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->h:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->i:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->k:[Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;II)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput p3, p0, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->j:I
+
+    return-void
 .end method

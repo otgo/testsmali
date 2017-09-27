@@ -10,8 +10,6 @@
 .end method
 
 .method public abstract getClickUrl()Ljava/lang/String;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 .end method
 
 .method public abstract getCtaText()Ljava/lang/String;
@@ -48,7 +46,4 @@
 .end method
 
 .method public abstract isVideoPrecached()Z
-.end method
-
-.method public abstract launchClickTarget(Landroid/content/Context;)V
 .end method

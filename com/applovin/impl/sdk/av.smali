@@ -1,49 +1,42 @@
 .class Lcom/applovin/impl/sdk/av;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.super Lcom/applovin/sdk/AppLovinSdkSettings;
 
 
 # instance fields
-.field final synthetic a:Lcom/applovin/impl/sdk/ar;
+.field private final a:Ljava/util/Map;
+
+.field private b:Lcom/applovin/impl/sdk/l;
 
 
 # direct methods
-.method constructor <init>(Lcom/applovin/impl/sdk/ar;)V
-    .locals 0
+.method constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lcom/applovin/impl/sdk/av;->a:Lcom/applovin/impl/sdk/ar;
+    invoke-direct {p0}, Lcom/applovin/sdk/AppLovinSdkSettings;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/applovin/impl/sdk/av;->a:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+.method a()Lcom/applovin/impl/sdk/l;
+    .locals 1
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    iget-object v0, p0, Lcom/applovin/impl/sdk/av;->b:Lcom/applovin/impl/sdk/l;
 
-    iget-object v0, p0, Lcom/applovin/impl/sdk/av;->a:Lcom/applovin/impl/sdk/ar;
+    return-object v0
+.end method
 
-    iget-object v0, v0, Lcom/applovin/impl/sdk/ar;->a:Lcom/applovin/impl/sdk/aq;
+.method b()Ljava/util/Map;
+    .locals 1
 
-    invoke-static {v0}, Lcom/applovin/impl/sdk/aq;->f(Lcom/applovin/impl/sdk/aq;)Lcom/applovin/impl/sdk/z;
+    iget-object v0, p0, Lcom/applovin/impl/sdk/av;->a:Ljava/util/Map;
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/applovin/impl/sdk/av;->a:Lcom/applovin/impl/sdk/ar;
-
-    iget-object v1, v1, Lcom/applovin/impl/sdk/ar;->a:Lcom/applovin/impl/sdk/aq;
-
-    invoke-static {v1}, Lcom/applovin/impl/sdk/aq;->e(Lcom/applovin/impl/sdk/aq;)Lcom/applovin/sdk/AppLovinAdRewardListener;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/applovin/impl/sdk/z;->a(Lcom/applovin/sdk/AppLovinAdRewardListener;)V
-
-    return-void
+    return-object v0
 .end method

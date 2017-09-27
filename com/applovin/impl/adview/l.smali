@@ -78,7 +78,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, p1}, Lcom/applovin/impl/adview/AdViewControllerImpl;->a(Lcom/applovin/sdk/AppLovinAd;)V
+    invoke-virtual {v0, p1}, Lcom/applovin/impl/adview/AdViewControllerImpl;->b(Lcom/applovin/sdk/AppLovinAd;)V
 
     :goto_0
     return-void
@@ -108,7 +108,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, p1}, Lcom/applovin/impl/adview/AdViewControllerImpl;->a(Lcom/applovin/sdk/AppLovinAd;)V
+    invoke-virtual {v0, p1}, Lcom/applovin/impl/adview/AdViewControllerImpl;->b(Lcom/applovin/sdk/AppLovinAd;)V
 
     :goto_0
     return-void

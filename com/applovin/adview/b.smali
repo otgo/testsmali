@@ -25,31 +25,6 @@
 .method public onPrepared(Landroid/media/MediaPlayer;)V
     .locals 6
 
-    iget-object v0, p0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    new-instance v1, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v1, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    invoke-static {v0, v1}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(Lcom/applovin/adview/AppLovinInterstitialActivity;Ljava/lang/ref/WeakReference;)Ljava/lang/ref/WeakReference;
-
-    iget-object v0, p0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(Lcom/applovin/adview/AppLovinInterstitialActivity;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    int-to-float v1, v0
-
-    int-to-float v0, v0
-
-    invoke-virtual {p1, v1, v0}, Landroid/media/MediaPlayer;->setVolume(FF)V
-
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->getVideoWidth()I
 
     move-result v0
@@ -78,7 +53,7 @@
 
     iget-object v2, p0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    invoke-static {v2}, Lcom/applovin/adview/AppLovinInterstitialActivity;->b(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/AppLovinVideoView;
+    invoke-static {v2}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/AppLovinVideoView;
 
     move-result-object v2
 
@@ -86,7 +61,7 @@
 
     iget-object v0, p0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->b(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/AppLovinVideoView;
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->a(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/AppLovinVideoView;
 
     move-result-object v0
 
@@ -104,24 +79,15 @@
 
     iget-object v0, p0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->e(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+
+    iget-object v0, p0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
+
     invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->f(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
     iget-object v0, p0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
     invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->g(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
 
-    iget-object v0, p0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->h(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
-
-    iget-object v0, p0, Lcom/applovin/adview/b;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
-
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->i(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
-
     return-void
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
 .end method

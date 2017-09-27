@@ -27,7 +27,11 @@
 
     iget-object v0, p0, Lcom/applovin/adview/q;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->n(Lcom/applovin/adview/AppLovinInterstitialActivity;)V
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->m(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/u;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/applovin/impl/adview/u;->performClick()Z
 
     return-void
 .end method

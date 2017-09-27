@@ -2,8 +2,8 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/gms/common/data/DataBufferObserver;
 .implements Lcom/google/android/gms/common/data/DataBufferObserver$Observable;
+.implements Lcom/google/android/gms/common/data/DataBufferObserver;
 
 
 # instance fields

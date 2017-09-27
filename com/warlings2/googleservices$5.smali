@@ -3,12 +3,12 @@
 .source "googleservices.java"
 
 # interfaces
-.implements Lcom/supersonic/mediationsdk/sdk/RewardedVideoListener;
+.implements Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/warlings2/googleservices;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/warlings2/googleservices;->googleservices__sign_in(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,14 +20,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/warlings2/googleservices;
 
+.field final synthetic val$show_ad:Z
+
 
 # direct methods
-.method constructor <init>(Lcom/warlings2/googleservices;)V
+.method constructor <init>(Lcom/warlings2/googleservices;Z)V
     .locals 0
 
     .prologue
-    .line 315
+    .line 288
     iput-object p1, p0, Lcom/warlings2/googleservices$5;->this$0:Lcom/warlings2/googleservices;
+
+    iput-boolean p2, p0, Lcom/warlings2/googleservices$5;->val$show_ad:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,101 +40,146 @@
 
 
 # virtual methods
-.method public onRewardedVideoAdClosed()V
-    .locals 0
+.method public onConnected(Landroid/os/Bundle;)V
+    .locals 4
 
     .prologue
-    .line 342
-    return-void
-.end method
+    .line 290
+    if-eqz p1, :cond_1
 
-.method public onRewardedVideoAdOpened()V
-    .locals 0
+    .line 291
+    const-string v0, "invitation"
 
-    .prologue
-    .line 337
-    return-void
-.end method
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-.method public onRewardedVideoAdRewarded(Lcom/supersonic/mediationsdk/model/Placement;)V
-    .locals 2
+    move-result-object v0
 
-    .prologue
-    .line 361
-    invoke-virtual {p1}, Lcom/supersonic/mediationsdk/model/Placement;->getRewardName()Ljava/lang/String;
+    check-cast v0, Lcom/google/android/gms/games/multiplayer/Invitation;
 
-    .line 362
-    invoke-virtual {p1}, Lcom/supersonic/mediationsdk/model/Placement;->getRewardAmount()I
+    .line 292
+    sget-object v1, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    .line 363
-    const/4 v0, 0x1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v0, v1}, Lcom/warlings2/googleservices;->give_reward(II)V
+    const-string v3, "ConnectionCallbacks, is connected:"
 
-    .line 364
-    return-void
-.end method
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public onRewardedVideoInitFail(Lcom/supersonic/mediationsdk/logger/SupersonicError;)V
-    .locals 2
+    move-result-object v2
 
-    .prologue
-    .line 323
-    invoke-virtual {p1}, Lcom/supersonic/mediationsdk/logger/SupersonicError;->getErrorCode()I
+    sget-object v3, Lcom/warlings2/googleservices;->client:Lcom/google/android/gms/common/api/GoogleApiClient;
 
-    move-result v0
+    invoke-interface {v3}, Lcom/google/android/gms/common/api/GoogleApiClient;->isConnected()Z
 
-    .line 324
-    invoke-virtual {p1}, Lcom/supersonic/mediationsdk/logger/SupersonicError;->getErrorMessage()Ljava/lang/String;
+    move-result v3
 
-    .line 325
-    const/16 v1, 0x1fe
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    if-ne v0, v1, :cond_0
+    move-result-object v2
 
-    .line 328
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+
+    .line 293
+    if-eqz v0, :cond_0
+
+    .line 295
+    sget-object v1, Lcom/warlings2/googleservices;->room_update_listener:Lcom/google/android/gms/games/multiplayer/realtime/RoomUpdateListener;
+
+    invoke-static {v1}, Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig;->builder(Lcom/google/android/gms/games/multiplayer/realtime/RoomUpdateListener;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/warlings2/googleservices;->real_time_message_listener:Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMessageReceivedListener;
+
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;->setMessageReceivedListener(Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMessageReceivedListener;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/warlings2/googleservices;->room_status_update_listener:Lcom/google/android/gms/games/multiplayer/realtime/RoomStatusUpdateListener;
+
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;->setRoomStatusUpdateListener(Lcom/google/android/gms/games/multiplayer/realtime/RoomStatusUpdateListener;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;
+
+    move-result-object v1
+
+    .line 299
+    invoke-interface {v0}, Lcom/google/android/gms/games/multiplayer/Invitation;->getInvitationId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;->setInvitationIdToAccept(Ljava/lang/String;)Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;
+
+    .line 300
+    sget-object v0, Lcom/google/android/gms/games/Games;->RealTimeMultiplayer:Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;
+
+    sget-object v2, Lcom/warlings2/googleservices;->client:Lcom/google/android/gms/common/api/GoogleApiClient;
+
+    invoke-virtual {v1}, Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig$Builder;->build()Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig;
+
+    move-result-object v1
+
+    invoke-interface {v0, v2, v1}, Lcom/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer;->join(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/games/multiplayer/realtime/RoomConfig;)V
+
+    .line 301
+    invoke-static {}, Lcom/warlings2/googleservices;->access$300()V
+
+    .line 308
     :cond_0
+    :goto_0
+    sget-object v0, Lcom/google/android/gms/games/Games;->Invitations:Lcom/google/android/gms/games/multiplayer/Invitations;
+
+    sget-object v1, Lcom/warlings2/googleservices;->client:Lcom/google/android/gms/common/api/GoogleApiClient;
+
+    iget-object v2, p0, Lcom/warlings2/googleservices$5;->this$0:Lcom/warlings2/googleservices;
+
+    iget-object v2, v2, Lcom/warlings2/googleservices;->on_invitation_received_listener:Lcom/google/android/gms/games/multiplayer/OnInvitationReceivedListener;
+
+    invoke-interface {v0, v1, v2}, Lcom/google/android/gms/games/multiplayer/Invitations;->registerInvitationListener(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/games/multiplayer/OnInvitationReceivedListener;)V
+
+    .line 309
+    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    const-string v1, "Calling native method: show_multiplayer_waiting_screen"
+
+    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+
+    .line 310
     return-void
+
+    .line 304
+    :cond_1
+    iget-boolean v0, p0, Lcom/warlings2/googleservices$5;->val$show_ad:Z
+
+    if-eqz v0, :cond_0
+
+    .line 305
+    iget-object v0, p0, Lcom/warlings2/googleservices$5;->this$0:Lcom/warlings2/googleservices;
+
+    const-string v1, "ADMOB_ID"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lcom/warlings2/googleservices;->googleservices__show_fullscreen_ad(Ljava/lang/String;I)V
+
+    goto :goto_0
 .end method
 
-.method public onRewardedVideoInitSuccess()V
-    .locals 0
+.method public onConnectionSuspended(I)V
+    .locals 2
 
     .prologue
-    .line 319
-    return-void
-.end method
+    .line 314
+    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-.method public onRewardedVideoShowFail(Lcom/supersonic/mediationsdk/logger/SupersonicError;)V
-    .locals 0
+    const-string v1, "onConnectionSuspended"
 
-    .prologue
-    .line 333
-    return-void
-.end method
+    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-.method public onVideoAvailabilityChanged(Z)V
-    .locals 0
-
-    .prologue
-    .line 346
-    return-void
-.end method
-
-.method public onVideoEnd()V
-    .locals 0
-
-    .prologue
-    .line 356
-    return-void
-.end method
-
-.method public onVideoStart()V
-    .locals 0
-
-    .prologue
-    .line 351
+    .line 315
     return-void
 .end method

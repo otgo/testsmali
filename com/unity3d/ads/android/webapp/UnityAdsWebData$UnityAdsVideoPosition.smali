@@ -32,7 +32,7 @@
 
     const/4 v2, 0x0
 
-    .line 77
+    .line 70
     new-instance v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;
 
     const-string v1, "Start"
@@ -106,7 +106,7 @@
     .locals 0
 
     .prologue
-    .line 77
+    .line 70
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -116,7 +116,7 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 70
     const-class v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -132,7 +132,7 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 70
     sget-object v0, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->a:[Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;
 
     invoke-virtual {v0}, [Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->clone()Ljava/lang/Object;
@@ -155,8 +155,8 @@
     .end annotation
 
     .prologue
-    .line 81
-    sget-object v0, Lcom/unity3d/ads/android/webapp/h;->a:[I
+    .line 74
+    sget-object v0, Lcom/unity3d/ads/android/webapp/g;->a:[I
 
     invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->ordinal()I
 
@@ -166,45 +166,54 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 93
+    .line 92
     invoke-virtual {p0}, Lcom/unity3d/ads/android/webapp/UnityAdsWebData$UnityAdsVideoPosition;->name()Ljava/lang/String;
 
     move-result-object v0
 
+    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 96
     :goto_0
     return-object v0
 
-    .line 83
+    .line 77
     :pswitch_0
     const-string v0, "first_quartile"
 
     goto :goto_0
 
-    .line 85
+    .line 80
     :pswitch_1
     const-string v0, "mid_point"
 
     goto :goto_0
 
-    .line 87
+    .line 83
     :pswitch_2
     const-string v0, "third_quartile"
 
     goto :goto_0
 
-    .line 89
+    .line 86
     :pswitch_3
     const-string v0, "video_end"
 
     goto :goto_0
 
-    .line 91
+    .line 89
     :pswitch_4
     const-string v0, "video_start"
 
     goto :goto_0
 
-    .line 81
+    .line 74
     nop
 
     :pswitch_data_0

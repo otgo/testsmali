@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 218
+    .line 196
     iput-object p1, p0, Lcom/jirbo/adcolony/AdColony$2$1;->a:Lcom/jirbo/adcolony/AdColony$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +42,11 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 221
+    .line 199
     move v1, v2
 
     :goto_0
-    sget-object v0, Lcom/jirbo/adcolony/a;->aq:Ljava/util/ArrayList;
+    sget-object v0, Lcom/jirbo/adcolony/a;->ah:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -54,8 +54,8 @@
 
     if-ge v1, v0, :cond_1
 
-    .line 223
-    sget-object v0, Lcom/jirbo/adcolony/a;->aq:Ljava/util/ArrayList;
+    .line 201
+    sget-object v0, Lcom/jirbo/adcolony/a;->ah:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -63,7 +63,7 @@
 
     check-cast v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    .line 224
+    .line 202
     if-eqz v0, :cond_0
 
     invoke-static {}, Lcom/jirbo/adcolony/a;->b()Landroid/app/Activity;
@@ -78,28 +78,28 @@
 
     if-nez v3, :cond_0
 
-    .line 226
+    .line 204
     iput-boolean v2, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->A:Z
 
-    .line 227
+    .line 205
     invoke-virtual {v0}, Lcom/jirbo/adcolony/AdColonyNativeAdView;->invalidate()V
 
-    .line 228
-    iget-object v3, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->T:Lcom/jirbo/adcolony/AdColonyNativeAdView$b;
+    .line 206
+    iget-object v3, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->R:Lcom/jirbo/adcolony/AdColonyNativeAdView$b;
 
     if-eqz v3, :cond_0
 
-    .line 230
-    iget-object v3, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->T:Lcom/jirbo/adcolony/AdColonyNativeAdView$b;
+    .line 208
+    iget-object v3, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->R:Lcom/jirbo/adcolony/AdColonyNativeAdView$b;
 
     iput-boolean v2, v3, Lcom/jirbo/adcolony/AdColonyNativeAdView$b;->a:Z
 
-    .line 231
-    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->T:Lcom/jirbo/adcolony/AdColonyNativeAdView$b;
+    .line 209
+    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->R:Lcom/jirbo/adcolony/AdColonyNativeAdView$b;
 
     invoke-virtual {v0}, Lcom/jirbo/adcolony/AdColonyNativeAdView$b;->invalidate()V
 
-    .line 221
+    .line 199
     :cond_0
     add-int/lit8 v0, v1, 0x1
 
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 235
+    .line 213
     :cond_1
     return-void
 .end method

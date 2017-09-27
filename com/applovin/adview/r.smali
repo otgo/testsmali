@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/applovin/adview/r;->a:Lcom/applovin/adview/AppLovinInterstitialActivity;
 
-    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->o(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/u;
+    invoke-static {v0}, Lcom/applovin/adview/AppLovinInterstitialActivity;->n(Lcom/applovin/adview/AppLovinInterstitialActivity;)Lcom/applovin/impl/adview/u;
 
     move-result-object v0
 

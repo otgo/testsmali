@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1135
+    .line 1049
     iput-object p1, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$a$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView$a;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 1138
+    .line 1052
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$a$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView$a;
 
     iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView$a;->c:Lcom/jirbo/adcolony/AdColonyNativeAdView;
@@ -57,14 +57,14 @@
 
     if-nez v0, :cond_0
 
-    .line 1140
+    .line 1054
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$a$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView$a;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView$a;->b:Z
 
-    .line 1141
+    .line 1055
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$a$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView$a;
 
     iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView$a;->c:Lcom/jirbo/adcolony/AdColonyNativeAdView;
@@ -73,18 +73,18 @@
 
     iput-boolean v1, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->u:Z
 
-    .line 1142
+    .line 1056
     iget-object v0, p0, Lcom/jirbo/adcolony/AdColonyNativeAdView$a$1;->a:Lcom/jirbo/adcolony/AdColonyNativeAdView$a;
 
     iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView$a;->c:Lcom/jirbo/adcolony/AdColonyNativeAdView;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->S:Landroid/widget/ImageView;
+    iget-object v0, v0, Lcom/jirbo/adcolony/AdColonyNativeAdView;->Q:Landroid/widget/ImageView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1144
+    .line 1058
     :cond_0
     return-void
 .end method

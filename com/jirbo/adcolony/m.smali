@@ -65,7 +65,7 @@
     const/4 v6, 0x0
 
     .line 149
-    sput-boolean v4, Lcom/jirbo/adcolony/a;->J:Z
+    sput-boolean v4, Lcom/jirbo/adcolony/a;->A:Z
 
     .line 150
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->d:Landroid/os/Handler;
@@ -83,7 +83,7 @@
 
     iget-object v2, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v2, v2, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v2, v2, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {v0, v1, v2}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
@@ -274,15 +274,15 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 205
+    .line 204
     :goto_1
     return-void
 
-    .line 195
+    .line 194
     :catch_0
     move-exception v0
 
-    .line 197
+    .line 196
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     const-string v1, "Error saving screenshot."
@@ -293,7 +293,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 198
+    .line 197
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] FileNotFoundException in MRAIDCommandTakeScreenshot"
@@ -302,11 +302,11 @@
 
     goto :goto_1
 
-    .line 200
+    .line 199
     :catch_1
     move-exception v0
 
-    .line 202
+    .line 201
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     const-string v1, "Error saving screenshot."
@@ -317,7 +317,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 203
+    .line 202
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] IOException in MRAIDCommandTakeScreenshot"
@@ -446,7 +446,7 @@
 
     .line 95
     :cond_2
-    sget-object v0, Lcom/jirbo/adcolony/a;->T:Lcom/jirbo/adcolony/AdColonyAd;
+    sget-object v0, Lcom/jirbo/adcolony/a;->K:Lcom/jirbo/adcolony/AdColonyAd;
 
     iput-object v0, p0, Lcom/jirbo/adcolony/m;->f:Lcom/jirbo/adcolony/AdColonyAd;
 
@@ -461,11 +461,13 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
+    iget-object v1, p0, Lcom/jirbo/adcolony/m;->f:Lcom/jirbo/adcolony/AdColonyAd;
 
-    iget-object v1, v1, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/u;
+    iget-object v1, v1, Lcom/jirbo/adcolony/AdColonyAd;->h:Lcom/jirbo/adcolony/n$ab;
 
-    iget v1, v1, Lcom/jirbo/adcolony/u;->j:I
+    iget-object v1, v1, Lcom/jirbo/adcolony/n$ab;->k:Lcom/jirbo/adcolony/ag;
+
+    iget v1, v1, Lcom/jirbo/adcolony/ag;->d:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -536,7 +538,7 @@
 
     if-eqz v0, :cond_6
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     if-nez v0, :cond_6
 
@@ -562,7 +564,7 @@
 
     if-eqz v0, :cond_7
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     if-nez v0, :cond_7
 
@@ -610,7 +612,7 @@
 
     if-eqz v0, :cond_9
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     if-nez v0, :cond_9
 
@@ -628,7 +630,7 @@
 
     if-eqz v0, :cond_a
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     if-nez v0, :cond_a
 
@@ -646,7 +648,7 @@
 
     if-eqz v0, :cond_b
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     if-nez v0, :cond_b
 
@@ -664,7 +666,7 @@
 
     if-eqz v0, :cond_c
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     if-nez v0, :cond_c
 
@@ -696,7 +698,7 @@
 
     if-eqz v0, :cond_e
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     if-nez v0, :cond_e
 
@@ -756,7 +758,7 @@
 
     if-eqz v0, :cond_12
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     if-nez v0, :cond_12
 
@@ -774,7 +776,7 @@
 
     if-eqz v0, :cond_3
 
-    sget-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sget-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     if-nez v0, :cond_3
 
@@ -790,7 +792,7 @@
     .line 120
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     .line 121
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->d:Landroid/os/Handler;
@@ -808,7 +810,7 @@
 
     iget-object v2, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v2, v2, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v2, v2, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {v0, v1, v2}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
@@ -848,25 +850,25 @@
     .line 128
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v0, v0, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
-    iput-object v1, v0, Lcom/jirbo/adcolony/AdColonyAd;->n:Ljava/lang/String;
+    iput-object v1, v0, Lcom/jirbo/adcolony/AdColonyAd;->m:Ljava/lang/String;
 
     .line 129
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v0, v0, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     sget-object v1, Lcom/jirbo/adcolony/AdColonyIAPEngagement;->END_CARD:Lcom/jirbo/adcolony/AdColonyIAPEngagement;
 
-    iput-object v1, v0, Lcom/jirbo/adcolony/AdColonyAd;->z:Lcom/jirbo/adcolony/AdColonyIAPEngagement;
+    iput-object v1, v0, Lcom/jirbo/adcolony/AdColonyAd;->u:Lcom/jirbo/adcolony/AdColonyIAPEngagement;
 
     .line 130
-    sget-object v0, Lcom/jirbo/adcolony/a;->W:Lcom/jirbo/adcolony/a$a;
+    sget-object v0, Lcom/jirbo/adcolony/a;->N:Lcom/jirbo/adcolony/a$a;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v1, v1, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v1, v1, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/a$a;->a(Lcom/jirbo/adcolony/AdColonyAd;)V
 
@@ -878,28 +880,28 @@
     .locals 2
 
     .prologue
-    .line 215
+    .line 214
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandClose called"
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 216
+    .line 215
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 217
-    sget-object v0, Lcom/jirbo/adcolony/a;->W:Lcom/jirbo/adcolony/a$a;
+    .line 216
+    sget-object v0, Lcom/jirbo/adcolony/a;->N:Lcom/jirbo/adcolony/a$a;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v1, v1, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v1, v1, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-virtual {v0, v1}, Lcom/jirbo/adcolony/a$a;->a(Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 218
+    .line 217
     return-void
 .end method
 
@@ -907,7 +909,7 @@
     .locals 2
 
     .prologue
-    .line 209
+    .line 208
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandSendADCEvent called with type: "
@@ -918,14 +920,14 @@
 
     invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 210
+    .line 209
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v0, v0, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v0, v0, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {p1, v0}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 211
+    .line 210
     return-void
 .end method
 
@@ -936,7 +938,7 @@
     .line 135
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
     .line 136
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->d:Landroid/os/Handler;
@@ -1031,7 +1033,7 @@
     .locals 4
 
     .prologue
-    .line 222
+    .line 221
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandOpenStore called with item: "
@@ -1042,12 +1044,12 @@
 
     invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 224
+    .line 223
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
-    .line 225
+    .line 224
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->d:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->e:Ljava/lang/Runnable;
@@ -1056,23 +1058,23 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 228
+    .line 227
     const-string v0, "html5_interaction"
 
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->g:Ljava/lang/String;
 
     iget-object v2, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v2, v2, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v2, v2, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {v0, v1, v2}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 231
+    .line 230
     invoke-virtual {p0, p1}, Lcom/jirbo/adcolony/m;->g(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 236
+    .line 235
     :try_start_0
     new-instance v1, Landroid/content/Intent;
 
@@ -1084,22 +1086,22 @@
 
     invoke-direct {v1, v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 237
+    .line 236
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 243
+    .line 242
     :goto_0
     return-void
 
-    .line 239
+    .line 238
     :catch_0
     move-exception v0
 
-    .line 241
+    .line 240
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     const-string v1, "Unable to open store."
@@ -1119,7 +1121,7 @@
     .locals 25
 
     .prologue
-    .line 309
+    .line 308
     sget-object v4, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v5, "ADC [info] MRAIDCommandCreateCalendarEvent called with parameters: "
@@ -1132,12 +1134,12 @@
 
     invoke-virtual {v4, v0}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 311
+    .line 310
     const/4 v4, 0x1
 
-    sput-boolean v4, Lcom/jirbo/adcolony/a;->J:Z
+    sput-boolean v4, Lcom/jirbo/adcolony/a;->A:Z
 
-    .line 312
+    .line 311
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/jirbo/adcolony/m;->d:Landroid/os/Handler;
@@ -1150,7 +1152,7 @@
 
     invoke-virtual {v4, v5, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 315
+    .line 314
     const-string v4, "html5_interaction"
 
     move-object/from16 v0, p0
@@ -1161,39 +1163,39 @@
 
     iget-object v6, v0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v6, v6, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v6, v6, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {v4, v5, v6}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 318
+    .line 317
     const/4 v7, 0x0
 
     const/4 v11, 0x0
 
     const/4 v10, 0x0
 
-    .line 321
+    .line 320
     new-instance v13, Ljava/text/SimpleDateFormat;
 
     const-string v4, "yyyy-MM-dd\'T\'hh:mmZ"
 
     invoke-direct {v13, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 322
+    .line 321
     new-instance v14, Ljava/text/SimpleDateFormat;
 
     const-string v4, "yyyy-MM-dd\'T\'hh:mm:ssZ"
 
     invoke-direct {v14, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 323
+    .line 322
     new-instance v15, Ljava/text/SimpleDateFormat;
 
     const-string v4, "yyyy-MM-dd"
 
     invoke-direct {v15, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 326
+    .line 325
     const-string v4, "description"
 
     move-object/from16 v0, p1
@@ -1212,7 +1214,7 @@
 
     move-result-object v16
 
-    .line 327
+    .line 326
     const-string v4, "location"
 
     move-object/from16 v0, p1
@@ -1229,7 +1231,7 @@
 
     invoke-virtual {v0, v4}, Lcom/jirbo/adcolony/m;->g(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 328
+    .line 327
     const-string v4, "start"
 
     move-object/from16 v0, p1
@@ -1248,7 +1250,7 @@
 
     move-result-object v17
 
-    .line 329
+    .line 328
     const-string v4, "end"
 
     move-object/from16 v0, p1
@@ -1267,7 +1269,7 @@
 
     move-result-object v18
 
-    .line 330
+    .line 329
     const-string v4, "summary"
 
     move-object/from16 v0, p1
@@ -1286,7 +1288,7 @@
 
     move-result-object v12
 
-    .line 331
+    .line 330
     const-string v4, "recurrence"
 
     move-object/from16 v0, p1
@@ -1305,21 +1307,21 @@
 
     move-result-object v6
 
-    .line 332
+    .line 331
     const-string v5, ""
 
-    .line 333
+    .line 332
     const-string v4, ""
 
-    .line 335
+    .line 334
     const-wide/16 v8, 0x0
 
-    .line 338
+    .line 337
     new-instance v19, Ljava/util/HashMap;
 
     invoke-direct/range {v19 .. v19}, Ljava/util/HashMap;-><init>()V
 
-    .line 339
+    .line 338
     const-string v20, "\""
 
     const-string v21, ""
@@ -1356,7 +1358,7 @@
 
     move-result-object v20
 
-    .line 342
+    .line 341
     const-string v6, ""
 
     move-object/from16 v0, v20
@@ -1367,7 +1369,7 @@
 
     if-nez v6, :cond_1
 
-    .line 344
+    .line 343
     const-string v4, ","
 
     move-object/from16 v0, v20
@@ -1385,7 +1387,7 @@
 
     aget-object v21, v5, v4
 
-    .line 346
+    .line 345
     const/16 v22, 0x0
 
     const-string v23, ":"
@@ -1402,7 +1404,7 @@
 
     move-result-object v22
 
-    .line 347
+    .line 346
     const-string v23, ":"
 
     move-object/from16 v0, v21
@@ -1429,7 +1431,7 @@
 
     move-result-object v21
 
-    .line 348
+    .line 347
     move-object/from16 v0, v19
 
     move-object/from16 v1, v22
@@ -1438,12 +1440,12 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 344
+    .line 343
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 350
+    .line 349
     :cond_0
     const-string v4, "expires"
 
@@ -1463,7 +1465,7 @@
 
     move-result-object v5
 
-    .line 351
+    .line 350
     const-string v4, "frequency"
 
     move-object/from16 v0, v19
@@ -1486,7 +1488,7 @@
 
     move-result-object v4
 
-    .line 352
+    .line 351
     sget-object v6, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v19, "Calendar Recurrence - "
@@ -1501,7 +1503,7 @@
 
     invoke-virtual {v6, v0}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 353
+    .line 352
     sget-object v6, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v19, "Calendar Recurrence - frequency = "
@@ -1514,7 +1516,7 @@
 
     invoke-virtual {v6, v4}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 354
+    .line 353
     sget-object v6, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v19, "Calendar Recurrence - expires =  "
@@ -1532,7 +1534,7 @@
 
     move-object v5, v4
 
-    .line 357
+    .line 356
     const-string v4, ""
 
     invoke-virtual {v12, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1541,7 +1543,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 359
+    .line 358
     const-string v4, "description"
 
     move-object/from16 v0, p1
@@ -1562,7 +1564,7 @@
 
     move-object v12, v4
 
-    .line 365
+    .line 364
     :cond_2
     :try_start_0
     move-object/from16 v0, v17
@@ -1573,7 +1575,7 @@
 
     move-result-object v4
 
-    .line 366
+    .line 365
     :try_start_1
     move-object/from16 v0, v18
 
@@ -1583,11 +1585,11 @@
 
     move-result-object v7
 
-    .line 374
+    .line 373
     :goto_1
     if-nez v4, :cond_b
 
-    .line 378
+    .line 377
     :try_start_2
     move-object/from16 v0, v17
 
@@ -1595,7 +1597,7 @@
 
     move-result-object v4
 
-    .line 379
+    .line 378
     move-object/from16 v0, v18
 
     invoke-virtual {v14, v0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
@@ -1606,7 +1608,7 @@
 
     move-object v11, v4
 
-    .line 390
+    .line 389
     :goto_2
     :try_start_3
     invoke-virtual {v13, v6}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
@@ -1615,11 +1617,11 @@
 
     move-result-object v4
 
-    .line 397
+    .line 396
     :goto_3
     if-nez v4, :cond_3
 
-    .line 401
+    .line 400
     :try_start_4
     invoke-virtual {v15, v6}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
     :try_end_4
@@ -1627,12 +1629,12 @@
 
     move-result-object v4
 
-    .line 409
+    .line 408
     :cond_3
     :goto_4
     if-nez v11, :cond_4
 
-    .line 411
+    .line 410
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
@@ -1647,11 +1649,11 @@
 
     invoke-virtual {v4}, Landroid/widget/Toast;->show()V
 
-    .line 476
+    .line 475
     :goto_5
     return-void
 
-    .line 368
+    .line 367
     :catch_0
     move-exception v4
 
@@ -1662,7 +1664,7 @@
 
     goto :goto_1
 
-    .line 381
+    .line 380
     :catch_1
     move-exception v11
 
@@ -1670,7 +1672,7 @@
 
     goto :goto_2
 
-    .line 392
+    .line 391
     :catch_2
     move-exception v4
 
@@ -1678,24 +1680,24 @@
 
     goto :goto_3
 
-    .line 416
+    .line 415
     :cond_4
     invoke-virtual {v11}, Ljava/util/Date;->getTime()J
 
     move-result-wide v14
 
-    .line 417
+    .line 416
     invoke-virtual {v7}, Ljava/util/Date;->getTime()J
 
     move-result-wide v18
 
-    .line 418
+    .line 417
     const-wide/16 v6, 0x0
 
-    .line 421
+    .line 420
     if-eqz v4, :cond_5
 
-    .line 423
+    .line 422
     invoke-virtual {v4}, Ljava/util/Date;->getTime()J
 
     move-result-wide v6
@@ -1710,7 +1712,7 @@
 
     div-long/2addr v6, v10
 
-    .line 427
+    .line 426
     :cond_5
     const-string v4, "DAILY"
 
@@ -1720,7 +1722,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 429
+    .line 428
     const-wide/32 v8, 0x15180
 
     div-long/2addr v6, v8
@@ -1729,7 +1731,7 @@
 
     add-long/2addr v6, v8
 
-    .line 446
+    .line 445
     :goto_7
     const-string v4, ""
 
@@ -1741,7 +1743,7 @@
 
     if-nez v4, :cond_9
 
-    .line 448
+    .line 447
     new-instance v4, Landroid/content/Intent;
 
     const-string v8, "android.intent.action.EDIT"
@@ -1750,21 +1752,21 @@
 
     const-string v8, "vnd.android.cursor.item/event"
 
-    .line 449
+    .line 448
     invoke-virtual {v4, v8}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v4
 
     const-string v8, "title"
 
-    .line 450
+    .line 449
     invoke-virtual {v4, v8, v12}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v4
 
     const-string v8, "description"
 
-    .line 451
+    .line 450
     move-object/from16 v0, v16
 
     invoke-virtual {v4, v8, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
@@ -1773,14 +1775,14 @@
 
     const-string v8, "beginTime"
 
-    .line 452
+    .line 451
     invoke-virtual {v4, v8, v14, v15}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
     move-result-object v4
 
     const-string v8, "endTime"
 
-    .line 453
+    .line 452
     move-wide/from16 v0, v18
 
     invoke-virtual {v4, v8, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
@@ -1823,12 +1825,12 @@
 
     move-result-object v5
 
-    .line 454
+    .line 453
     invoke-virtual {v4, v8, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v4
 
-    .line 455
+    .line 454
     sget-object v5, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v8, "Calendar Recurrence - count = "
@@ -1841,7 +1843,7 @@
 
     invoke-virtual {v5, v6, v7}, Lcom/jirbo/adcolony/l;->b(D)Lcom/jirbo/adcolony/l;
 
-    .line 470
+    .line 469
     :goto_8
     :try_start_5
     move-object/from16 v0, p0
@@ -1854,11 +1856,11 @@
 
     goto/16 :goto_5
 
-    .line 472
+    .line 471
     :catch_3
     move-exception v4
 
-    .line 474
+    .line 473
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
@@ -1875,7 +1877,7 @@
 
     goto/16 :goto_5
 
-    .line 431
+    .line 430
     :cond_6
     const-string v4, "WEEKLY"
 
@@ -1885,7 +1887,7 @@
 
     if-eqz v4, :cond_7
 
-    .line 433
+    .line 432
     const-wide/32 v8, 0x93a80
 
     div-long/2addr v6, v8
@@ -1896,7 +1898,7 @@
 
     goto/16 :goto_7
 
-    .line 435
+    .line 434
     :cond_7
     const-string v4, "MONTHLY"
 
@@ -1906,7 +1908,7 @@
 
     if-eqz v4, :cond_8
 
-    .line 437
+    .line 436
     const-wide/32 v8, 0x2820a8
 
     div-long/2addr v6, v8
@@ -1917,7 +1919,7 @@
 
     goto/16 :goto_7
 
-    .line 439
+    .line 438
     :cond_8
     const-string v4, "YEARLY"
 
@@ -1927,7 +1929,7 @@
 
     if-eqz v4, :cond_a
 
-    .line 441
+    .line 440
     const-wide/32 v8, 0x1e187e0
 
     div-long/2addr v6, v8
@@ -1938,7 +1940,7 @@
 
     goto/16 :goto_7
 
-    .line 459
+    .line 458
     :cond_9
     new-instance v4, Landroid/content/Intent;
 
@@ -1948,21 +1950,21 @@
 
     const-string v5, "vnd.android.cursor.item/event"
 
-    .line 460
+    .line 459
     invoke-virtual {v4, v5}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v4
 
     const-string v5, "title"
 
-    .line 461
+    .line 460
     invoke-virtual {v4, v5, v12}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v4
 
     const-string v5, "description"
 
-    .line 462
+    .line 461
     move-object/from16 v0, v16
 
     invoke-virtual {v4, v5, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
@@ -1971,14 +1973,14 @@
 
     const-string v5, "beginTime"
 
-    .line 463
+    .line 462
     invoke-virtual {v4, v5, v14, v15}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
     move-result-object v4
 
     const-string v5, "endTime"
 
-    .line 464
+    .line 463
     move-wide/from16 v0, v18
 
     invoke-virtual {v4, v5, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
@@ -1987,13 +1989,13 @@
 
     goto :goto_8
 
-    .line 403
+    .line 402
     :catch_4
     move-exception v6
 
     goto/16 :goto_4
 
-    .line 368
+    .line 367
     :catch_5
     move-exception v7
 
@@ -2014,7 +2016,7 @@
     .locals 5
 
     .prologue
-    .line 247
+    .line 246
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandOpen called with url: "
@@ -2025,12 +2027,12 @@
 
     invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 249
+    .line 248
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
-    .line 250
+    .line 249
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->d:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->e:Ljava/lang/Runnable;
@@ -2039,12 +2041,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 253
+    .line 252
     invoke-virtual {p0, p1}, Lcom/jirbo/adcolony/m;->g(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 255
+    .line 254
     const-string v1, "adcvideo"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -2053,7 +2055,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 257
+    .line 256
     const-string v1, "adcvideo"
 
     const-string v2, "http"
@@ -2062,16 +2064,16 @@
 
     move-result-object v0
 
-    .line 258
+    .line 257
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
     invoke-virtual {v1, v0}, Lcom/jirbo/adcolony/ADCVideo;->a(Ljava/lang/String;)V
 
-    .line 297
+    .line 296
     :goto_0
     return-void
 
-    .line 260
+    .line 259
     :cond_0
     const-string v1, "youtube"
 
@@ -2081,7 +2083,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 265
+    .line 264
     const/16 v1, 0x76
 
     :try_start_0
@@ -2095,7 +2097,7 @@
 
     move-result-object v0
 
-    .line 266
+    .line 265
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.VIEW"
@@ -2124,7 +2126,7 @@
 
     invoke-direct {v1, v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 267
+    .line 266
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
@@ -2133,16 +2135,16 @@
 
     goto :goto_0
 
-    .line 270
+    .line 269
     :catch_0
     move-exception v0
 
-    .line 272
+    .line 271
     invoke-virtual {p0, p1}, Lcom/jirbo/adcolony/m;->g(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 273
+    .line 272
     const-string v1, "safari"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -2159,7 +2161,7 @@
 
     move-result-object v0
 
-    .line 274
+    .line 273
     :cond_1
     new-instance v1, Landroid/content/Intent;
 
@@ -2171,14 +2173,14 @@
 
     invoke-direct {v1, v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 275
+    .line 274
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 279
+    .line 278
     :cond_2
     const-string v1, "browser"
 
@@ -2188,16 +2190,16 @@
 
     if-eqz v1, :cond_3
 
-    .line 282
+    .line 281
     const-string v1, "html5_interaction"
 
     iget-object v2, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v2, v2, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v2, v2, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {v1, v2}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 283
+    .line 282
     const-string v1, "browser"
 
     const-string v2, "http"
@@ -2206,7 +2208,7 @@
 
     move-result-object v0
 
-    .line 284
+    .line 283
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.VIEW"
@@ -2217,14 +2219,14 @@
 
     invoke-direct {v1, v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 285
+    .line 284
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 291
+    .line 290
     :cond_3
     const-string v1, "html5_interaction"
 
@@ -2232,14 +2234,14 @@
 
     iget-object v3, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v3, v3, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v3, v3, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {v1, v2, v3}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 292
+    .line 291
     sput-object v0, Lcom/jirbo/adcolony/AdColonyBrowser;->url:Ljava/lang/String;
 
-    .line 293
+    .line 292
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
@@ -2248,7 +2250,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 294
+    .line 293
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
@@ -2264,7 +2266,7 @@
 
     const/4 v6, 0x0
 
-    .line 480
+    .line 479
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandMail called with parameters: "
@@ -2275,10 +2277,10 @@
 
     invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 482
-    sput-boolean v2, Lcom/jirbo/adcolony/a;->J:Z
+    .line 481
+    sput-boolean v2, Lcom/jirbo/adcolony/a;->A:Z
 
-    .line 483
+    .line 482
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->d:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->e:Ljava/lang/Runnable;
@@ -2287,7 +2289,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 485
+    .line 484
     const-string v0, "subject"
 
     invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2302,7 +2304,7 @@
 
     move-result-object v1
 
-    .line 486
+    .line 485
     const-string v0, "body"
 
     invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2317,7 +2319,7 @@
 
     move-result-object v2
 
-    .line 487
+    .line 486
     const-string v0, "to"
 
     invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2332,18 +2334,18 @@
 
     move-result-object v0
 
-    .line 490
+    .line 489
     const-string v3, "html5_interaction"
 
     iget-object v4, p0, Lcom/jirbo/adcolony/m;->g:Ljava/lang/String;
 
     iget-object v5, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v5, v5, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v5, v5, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {v3, v4, v5}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 495
+    .line 494
     :try_start_0
     new-instance v3, Landroid/content/Intent;
 
@@ -2351,12 +2353,12 @@
 
     invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 496
+    .line 495
     const-string v4, "plain/text"
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 497
+    .line 496
     const-string v4, "android.intent.extra.SUBJECT"
 
     invoke-virtual {v3, v4, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
@@ -2379,28 +2381,28 @@
 
     aput-object v0, v4, v5
 
-    .line 498
+    .line 497
     invoke-virtual {v1, v2, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 499
+    .line 498
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     invoke-virtual {v0, v3}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 507
+    .line 506
     :goto_0
     return-void
 
-    .line 501
+    .line 500
     :catch_0
     move-exception v0
 
-    .line 504
+    .line 503
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 505
+    .line 504
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     const-string v1, "Unable to launch email client."
@@ -2418,7 +2420,7 @@
     .locals 2
 
     .prologue
-    .line 301
+    .line 300
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandExpand called with url: "
@@ -2429,12 +2431,12 @@
 
     invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 304
+    .line 303
     const-string v0, "adc_bridge.fireChangeEvent({state:\'expanded\'});"
 
     invoke-virtual {p0, v0}, Lcom/jirbo/adcolony/m;->f(Ljava/lang/String;)V
 
-    .line 305
+    .line 304
     return-void
 .end method
 
@@ -2442,7 +2444,7 @@
     .locals 6
 
     .prologue
-    .line 511
+    .line 510
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandSMS called with parameters: "
@@ -2453,12 +2455,12 @@
 
     invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 513
+    .line 512
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
-    .line 514
+    .line 513
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->d:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->e:Ljava/lang/Runnable;
@@ -2467,7 +2469,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 516
+    .line 515
     const-string v0, "to"
 
     invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2482,7 +2484,7 @@
 
     move-result-object v1
 
-    .line 517
+    .line 516
     const-string v0, "body"
 
     invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2497,18 +2499,18 @@
 
     move-result-object v0
 
-    .line 520
+    .line 519
     const-string v2, "html5_interaction"
 
     iget-object v3, p0, Lcom/jirbo/adcolony/m;->g:Ljava/lang/String;
 
     iget-object v4, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v4, v4, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v4, v4, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {v2, v3, v4}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 525
+    .line 524
     :try_start_0
     new-instance v2, Landroid/content/Intent;
 
@@ -2544,25 +2546,25 @@
 
     move-result-object v0
 
-    .line 526
+    .line 525
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 534
+    .line 533
     :goto_0
     return-void
 
-    .line 528
+    .line 527
     :catch_0
     move-exception v0
 
-    .line 531
+    .line 530
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 532
+    .line 531
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     const-string v1, "Failed to create sms."
@@ -2582,7 +2584,7 @@
     .locals 3
 
     .prologue
-    .line 610
+    .line 609
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->a:Landroid/webkit/WebView;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2605,7 +2607,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 611
+    .line 610
     return-void
 .end method
 
@@ -2613,7 +2615,7 @@
     .locals 4
 
     .prologue
-    .line 538
+    .line 537
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandTel called with parameters: "
@@ -2624,12 +2626,12 @@
 
     invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 540
+    .line 539
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
-    .line 541
+    .line 540
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->d:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->e:Ljava/lang/Runnable;
@@ -2638,7 +2640,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 543
+    .line 542
     const-string v0, "number"
 
     invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2653,18 +2655,18 @@
 
     move-result-object v0
 
-    .line 546
+    .line 545
     const-string v1, "html5_interaction"
 
     iget-object v2, p0, Lcom/jirbo/adcolony/m;->g:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v3, v3, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v3, v3, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {v1, v2, v3}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 551
+    .line 550
     :try_start_0
     new-instance v1, Landroid/content/Intent;
 
@@ -2698,22 +2700,22 @@
 
     move-result-object v0
 
-    .line 552
+    .line 551
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 559
+    .line 558
     :goto_0
     return-void
 
-    .line 554
+    .line 553
     :catch_0
     move-exception v0
 
-    .line 557
+    .line 556
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     const-string v1, "Failed to dial number."
@@ -2733,12 +2735,12 @@
     .locals 1
 
     .prologue
-    .line 616
+    .line 615
     if-nez p1, :cond_0
 
     const-string v0, ""
 
-    .line 617
+    .line 616
     :goto_0
     return-object v0
 
@@ -2754,7 +2756,7 @@
     .locals 3
 
     .prologue
-    .line 563
+    .line 562
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandSendCustomADCEvent called with parameters: "
@@ -2765,7 +2767,7 @@
 
     invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 564
+    .line 563
     const-string v0, "event_type"
 
     invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2778,7 +2780,7 @@
 
     move-result-object v0
 
-    .line 565
+    .line 564
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2799,11 +2801,13 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/jirbo/adcolony/a;->l:Lcom/jirbo/adcolony/d;
+    iget-object v1, p0, Lcom/jirbo/adcolony/m;->f:Lcom/jirbo/adcolony/AdColonyAd;
 
-    iget-object v1, v1, Lcom/jirbo/adcolony/d;->e:Lcom/jirbo/adcolony/u;
+    iget-object v1, v1, Lcom/jirbo/adcolony/AdColonyAd;->h:Lcom/jirbo/adcolony/n$ab;
 
-    iget v1, v1, Lcom/jirbo/adcolony/u;->j:I
+    iget-object v1, v1, Lcom/jirbo/adcolony/n$ab;->k:Lcom/jirbo/adcolony/ag;
+
+    iget v1, v1, Lcom/jirbo/adcolony/ag;->d:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2819,16 +2823,16 @@
 
     move-result-object v0
 
-    .line 566
+    .line 565
     const-string v1, "custom_event"
 
     iget-object v2, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v2, v2, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v2, v2, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {v1, v0, v2}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 567
+    .line 566
     return-void
 .end method
 
@@ -2836,7 +2840,7 @@
     .locals 4
 
     .prologue
-    .line 571
+    .line 570
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandLaunchApp called with parameters: "
@@ -2847,12 +2851,12 @@
 
     invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 573
+    .line 572
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/jirbo/adcolony/a;->J:Z
+    sput-boolean v0, Lcom/jirbo/adcolony/a;->A:Z
 
-    .line 574
+    .line 573
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->d:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->e:Ljava/lang/Runnable;
@@ -2861,7 +2865,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 576
+    .line 575
     const-string v0, "handle"
 
     invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2876,18 +2880,18 @@
 
     move-result-object v0
 
-    .line 579
+    .line 578
     const-string v1, "html5_interaction"
 
     iget-object v2, p0, Lcom/jirbo/adcolony/m;->g:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/jirbo/adcolony/m;->c:Lcom/jirbo/adcolony/ADCVideo;
 
-    iget-object v3, v3, Lcom/jirbo/adcolony/ADCVideo;->I:Lcom/jirbo/adcolony/AdColonyAd;
+    iget-object v3, v3, Lcom/jirbo/adcolony/ADCVideo;->G:Lcom/jirbo/adcolony/AdColonyAd;
 
     invoke-static {v1, v2, v3}, Lcom/jirbo/adcolony/a;->a(Ljava/lang/String;Ljava/lang/String;Lcom/jirbo/adcolony/AdColonyAd;)V
 
-    .line 584
+    .line 583
     :try_start_0
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
@@ -2899,22 +2903,22 @@
 
     move-result-object v0
 
-    .line 585
+    .line 584
     iget-object v1, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 592
+    .line 591
     :goto_0
     return-void
 
-    .line 587
+    .line 586
     :catch_0
     move-exception v0
 
-    .line 589
+    .line 588
     iget-object v0, p0, Lcom/jirbo/adcolony/m;->b:Landroid/app/Activity;
 
     const-string v1, "Failed to launch external application."
@@ -2934,7 +2938,7 @@
     .locals 4
 
     .prologue
-    .line 596
+    .line 595
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandCheckAppPresence called with parameters: "
@@ -2945,7 +2949,7 @@
 
     invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 597
+    .line 596
     const-string v0, "handle"
 
     invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2960,12 +2964,12 @@
 
     move-result-object v0
 
-    .line 598
-    invoke-static {v0}, Lcom/jirbo/adcolony/aa;->a(Ljava/lang/String;)Z
+    .line 597
+    invoke-static {v0}, Lcom/jirbo/adcolony/ab;->a(Ljava/lang/String;)Z
 
     move-result v1
 
-    .line 599
+    .line 598
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3002,7 +3006,7 @@
 
     invoke-virtual {p0, v0}, Lcom/jirbo/adcolony/m;->f(Ljava/lang/String;)V
 
-    .line 600
+    .line 599
     return-void
 .end method
 
@@ -3010,7 +3014,7 @@
     .locals 2
 
     .prologue
-    .line 605
+    .line 604
     sget-object v0, Lcom/jirbo/adcolony/l;->a:Lcom/jirbo/adcolony/l;
 
     const-string v1, "ADC [info] MRAIDCommandCheckAutoPlay called with parameters: "
@@ -3021,6 +3025,6 @@
 
     invoke-virtual {v0, p1}, Lcom/jirbo/adcolony/l;->b(Ljava/lang/Object;)Lcom/jirbo/adcolony/l;
 
-    .line 606
+    .line 605
     return-void
 .end method

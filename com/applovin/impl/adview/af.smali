@@ -502,7 +502,7 @@
 
     iget-object v0, p0, Lcom/applovin/impl/adview/af;->e:Lcom/applovin/impl/sdk/AppLovinSdkImpl;
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getFileManager()Lcom/applovin/impl/sdk/y;
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getFileManager()Lcom/applovin/impl/sdk/x;
 
     move-result-object v0
 
@@ -514,7 +514,7 @@
 
     iget-object v2, p0, Lcom/applovin/impl/adview/af;->f:Landroid/app/Activity;
 
-    invoke-virtual {v0, v1, v2}, Lcom/applovin/impl/sdk/y;->a(Ljava/lang/String;Landroid/content/Context;)Z
+    invoke-virtual {v0, v1, v2}, Lcom/applovin/impl/sdk/x;->a(Ljava/lang/String;Landroid/content/Context;)Z
 
     move-result v0
 

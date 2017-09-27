@@ -2,118 +2,228 @@
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field public a:Lcom/purplebrain/adbuddiz/sdk/f/a/a;
-
-.field public b:Ljava/lang/String;
-
-.field private c:Landroid/content/Context;
-
-
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 0
+.method public static a(Ljava/lang/String;)J
+    .locals 11
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v10, 0x3
 
-    iput-object p1, p0, Lcom/purplebrain/adbuddiz/sdk/i/a;->c:Landroid/content/Context;
+    const-string v0, "([0-9]{2}):([0-9]{2}):([0-9]{2})(\\.([0-9]{3}))?"
 
-    return-void
-.end method
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
+    move-result-object v0
 
-# virtual methods
-.method public final a()Landroid/content/Intent;
-    .locals 3
-
-    new-instance v0, Landroid/content/Intent;
-
-    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/i/a;->c:Landroid/content/Context;
-
-    const-class v2, Lcom/purplebrain/adbuddiz/sdk/AdBuddizActivity;
-
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string v1, "a"
-
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/i/a;->a:Lcom/purplebrain/adbuddiz/sdk/f/a/a;
-
-    invoke-virtual {v2}, Lcom/purplebrain/adbuddiz/sdk/f/a/a;->a()Lorg/json/JSONObject;
+    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/util/regex/Matcher;->matches()Z
 
-    move-result-object v2
+    move-result v0
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/i/a;->b:Ljava/lang/String;
+    new-instance v0, Lcom/purplebrain/adbuddiz/sdk/i/a/b;
 
-    if-eqz v1, :cond_0
+    sget-object v1, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->a:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
 
-    const-string v1, "p"
+    invoke-direct {v0, v1}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;)V
 
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/i/a;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    throw v0
 
     :cond_0
-    const-string v1, "fs"
+    const/4 v0, 0x1
 
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/i/a;->c:Landroid/content/Context;
+    :try_start_0
+    invoke-virtual {v2, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/i/j;->b(Landroid/content/Context;)Z
+    move-result-object v0
 
-    move-result v2
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    move-result v0
 
-    const-string v1, "wt"
+    int-to-long v4, v0
 
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/i/a;->c:Landroid/content/Context;
+    const/4 v0, 0x2
 
-    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/i/j;->c(Landroid/content/Context;)Z
+    invoke-virtual {v2, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    move-result v2
+    move-result-object v0
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    const-string v1, "suf"
+    move-result v0
 
-    iget-object v2, p0, Lcom/purplebrain/adbuddiz/sdk/i/a;->c:Landroid/content/Context;
+    int-to-long v6, v0
 
-    invoke-static {v2}, Lcom/purplebrain/adbuddiz/sdk/i/j;->d(Landroid/content/Context;)I
+    const/4 v0, 0x3
 
-    move-result v2
+    invoke-virtual {v2, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    move-result-object v0
 
-    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/i/a;->c:Landroid/content/Context;
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/j;->f(Landroid/content/Context;)Ljava/lang/Integer;
+    move-result v0
 
-    move-result-object v1
+    int-to-long v8, v0
 
-    if-eqz v1, :cond_1
+    const-wide/16 v0, 0x0
 
-    const-string v2, "sbc"
+    invoke-virtual {v2}, Ljava/util/regex/Matcher;->groupCount()I
 
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+    move-result v3
+
+    if-le v3, v10, :cond_1
+
+    const/4 v3, 0x5
+
+    invoke-virtual {v2, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_1
+
+    const/4 v0, 0x5
+
+    invoke-virtual {v2, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    int-to-long v0, v0
 
     :cond_1
-    iget-object v1, p0, Lcom/purplebrain/adbuddiz/sdk/i/a;->c:Landroid/content/Context;
+    const-wide/32 v2, 0x36ee80
 
-    invoke-static {v1}, Lcom/purplebrain/adbuddiz/sdk/i/j;->g(Landroid/content/Context;)Ljava/lang/Integer;
+    mul-long/2addr v2, v4
 
-    move-result-object v1
+    const-wide/32 v4, 0xea60
 
-    if-eqz v1, :cond_2
+    mul-long/2addr v4, v6
 
-    const-string v2, "snc"
+    add-long/2addr v2, v4
 
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+    const-wide/16 v4, 0x3e8
 
-    :cond_2
-    return-object v0
+    mul-long/2addr v4, v8
+
+    add-long/2addr v2, v4
+
+    add-long/2addr v0, v2
+
+    return-wide v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Lcom/purplebrain/adbuddiz/sdk/i/a/b;
+
+    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->a:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    invoke-direct {v1, v2, v0}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public static a(Ljava/lang/String;J)J
+    .locals 5
+
+    const-string v0, "%"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {p0}, Lcom/purplebrain/adbuddiz/sdk/i/a;->b(Ljava/lang/String;)D
+
+    move-result-wide v0
+
+    long-to-double v2, p1
+
+    mul-double/2addr v0, v2
+
+    double-to-long p1, v0
+
+    :cond_0
+    :goto_0
+    return-wide p1
+
+    :cond_1
+    invoke-static {p0}, Lcom/purplebrain/adbuddiz/sdk/i/a;->a(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    cmp-long v2, v0, p1
+
+    if-gtz v2, :cond_0
+
+    move-wide p1, v0
+
+    goto :goto_0
+.end method
+
+.method private static b(Ljava/lang/String;)D
+    .locals 4
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    const/16 v1, 0x64
+
+    if-le v0, v1, :cond_1
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Lcom/purplebrain/adbuddiz/sdk/i/a/b;
+
+    sget-object v2, Lcom/purplebrain/adbuddiz/sdk/i/a/a;->a:Lcom/purplebrain/adbuddiz/sdk/i/a/a;
+
+    invoke-direct {v1, v2, v0}, Lcom/purplebrain/adbuddiz/sdk/i/a/b;-><init>(Lcom/purplebrain/adbuddiz/sdk/i/a/a;Ljava/lang/Throwable;)V
+
+    throw v1
+
+    :cond_1
+    int-to-double v0, v0
+
+    const-wide/high16 v2, 0x4059000000000000L    # 100.0
+
+    div-double/2addr v0, v2
+
+    return-wide v0
 .end method

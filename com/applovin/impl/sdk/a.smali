@@ -205,11 +205,11 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
-    invoke-virtual {p1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getSettingsManager()Lcom/applovin/impl/sdk/bz;
+    invoke-virtual {p1}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getSettingsManager()Lcom/applovin/impl/sdk/bu;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bz;->a()Landroid/content/SharedPreferences;
+    invoke-virtual {v0}, Lcom/applovin/impl/sdk/bu;->a()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -219,7 +219,7 @@
 
     const-string v1, "ad_data_cache"
 
-    invoke-static {p0}, Lcom/applovin/impl/sdk/dh;->a(Ljava/util/Map;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/applovin/impl/sdk/da;->a(Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -327,11 +327,11 @@
 
     if-nez v0, :cond_2
 
-    invoke-virtual {p0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getSettingsManager()Lcom/applovin/impl/sdk/bz;
+    invoke-virtual {p0}, Lcom/applovin/impl/sdk/AppLovinSdkImpl;->getSettingsManager()Lcom/applovin/impl/sdk/bu;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bz;->a()Landroid/content/SharedPreferences;
+    invoke-virtual {v1}, Lcom/applovin/impl/sdk/bu;->a()Landroid/content/SharedPreferences;
 
     move-result-object v2
 

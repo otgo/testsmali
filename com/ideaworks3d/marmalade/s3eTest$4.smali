@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 54
+    .line 50
     iput-object p1, p0, Lcom/ideaworks3d/marmalade/s3eTest$4;->this$0:Lcom/ideaworks3d/marmalade/s3eTest;
 
     iput-boolean p2, p0, Lcom/ideaworks3d/marmalade/s3eTest$4;->val$focus:Z
@@ -44,7 +44,7 @@
     .locals 2
 
     .prologue
-    .line 57
+    .line 53
     sget-object v0, Lcom/ideaworks3d/marmalade/LoaderActivity;->m_Activity:Lcom/ideaworks3d/marmalade/LoaderActivity;
 
     iget-object v0, v0, Lcom/ideaworks3d/marmalade/LoaderActivity;->m_View:Lcom/ideaworks3d/marmalade/LoaderView;
@@ -53,6 +53,6 @@
 
     invoke-virtual {v0, v1}, Lcom/ideaworks3d/marmalade/LoaderView;->onWindowFocusChanged(Z)V
 
-    .line 58
+    .line 54
     return-void
 .end method

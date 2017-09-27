@@ -3,7 +3,7 @@
 .source "UnityAdsVideoPlayView.java"
 
 # interfaces
-.implements Landroid/media/MediaPlayer$OnCompletionListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 234
+    .line 120
     iput-object p1, p0, Lcom/unity3d/ads/android/video/d;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,19 +25,31 @@
 
 
 # virtual methods
-.method public final onCompletion(Landroid/media/MediaPlayer;)V
-    .locals 1
+.method public final run()V
+    .locals 2
 
     .prologue
-    .line 237
+    .line 123
     iget-object v0, p0, Lcom/unity3d/ads/android/video/d;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
 
-    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->d(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Lcom/unity3d/ads/android/video/IUnityAdsVideoPlayerListener;
+    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->b(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)Landroid/widget/VideoView;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lcom/unity3d/ads/android/video/IUnityAdsVideoPlayerListener;->onCompletion(Landroid/media/MediaPlayer;)V
+    invoke-virtual {v0}, Landroid/widget/VideoView;->pause()V
 
-    .line 238
+    .line 124
+    iget-object v0, p0, Lcom/unity3d/ads/android/video/d;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->setKeepScreenOn(Z)V
+
+    .line 125
+    iget-object v0, p0, Lcom/unity3d/ads/android/video/d;->a:Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;
+
+    invoke-static {v0}, Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;->c(Lcom/unity3d/ads/android/video/UnityAdsVideoPlayView;)V
+
+    .line 126
     return-void
 .end method
